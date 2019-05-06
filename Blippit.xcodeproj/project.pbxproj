@@ -16,6 +16,7 @@
 		3E97FA422280385B003419AE /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E97FA412280385B003419AE /* Cuckoo.framework */; };
 		3E97FA4322803869003419AE /* Cuckoo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E97FA412280385B003419AE /* Cuckoo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3E97FA4722804537003419AE /* Mocks.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA4622804537003419AE /* Mocks.generated.swift */; };
+		3E97FA4C22804CE9003419AE /* MockableURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA4B22804CE9003419AE /* MockableURLSessionDataTask.swift */; };
 		3EBAC76A227C2CA200D5C693 /* Blippit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EBAC768227C2CA200D5C693 /* Blippit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3EBAC774227C30A500D5C693 /* Podz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC773227C30A500D5C693 /* Podz.framework */; };
 		3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC79740228025BE00AD79CE /* Cancellable.swift */; };
@@ -56,6 +57,7 @@
 		3E97FA3422803641003419AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E97FA412280385B003419AE /* Cuckoo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cuckoo.framework; path = Carthage/Build/iOS/Cuckoo.framework; sourceTree = "<group>"; };
 		3E97FA4622804537003419AE /* Mocks.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mocks.generated.swift; sourceTree = "<group>"; };
+		3E97FA4B22804CE9003419AE /* MockableURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockableURLSessionDataTask.swift; sourceTree = "<group>"; };
 		3EBAC765227C2CA200D5C693 /* Blippit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Blippit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EBAC768227C2CA200D5C693 /* Blippit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Blippit.h; sourceTree = "<group>"; };
 		3EBAC769227C2CA200D5C693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		3E97FA45228039D0003419AE /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				3E97FA4B22804CE9003419AE /* MockableURLSessionDataTask.swift */,
 				3E97FA4622804537003419AE /* Mocks.generated.swift */,
 			);
 			path = Mocks;
@@ -292,6 +295,7 @@
 			);
 			inputPaths = (
 				"$(PROJECT_DIR)/$(PROJECT_NAME)/Networking/DataTaskFactory.swift",
+				"$(PROJECT_DIR)/$(PROJECT_NAME)Tests/Mocks/MockableURLSessionDataTask.swift",
 			);
 			outputFileListPaths = (
 			);
@@ -309,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E97FA4722804537003419AE /* Mocks.generated.swift in Sources */,
+				3E97FA4C22804CE9003419AE /* MockableURLSessionDataTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
