@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3EBAC76A227C2CA200D5C693 /* Blippit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EBAC768227C2CA200D5C693 /* Blippit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3EBAC774227C30A500D5C693 /* Podz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC773227C30A500D5C693 /* Podz.framework */; };
+		3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC79740228025BE00AD79CE /* Cancellable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +18,7 @@
 		3EBAC769227C2CA200D5C693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EBAC770227C2FC200D5C693 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		3EBAC773227C30A500D5C693 /* Podz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Podz.framework; path = Carthage/Build/iOS/Podz.framework; sourceTree = "<group>"; };
+		3EC79740228025BE00AD79CE /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		3EBAC767227C2CA200D5C693 /* Blippit */ = {
 			isa = PBXGroup;
 			children = (
+				3EC79744228026F100AD79CE /* Commons */,
 				3EAEA7FD2280109F008B7E77 /* Resources */,
 			);
 			path = Blippit;
@@ -72,6 +75,14 @@
 				3EBAC773227C30A500D5C693 /* Podz.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3EC79744228026F100AD79CE /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				3EC79740228025BE00AD79CE /* Cancellable.swift */,
+			);
+			path = Commons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
