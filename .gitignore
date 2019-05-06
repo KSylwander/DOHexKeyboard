@@ -48,3 +48,6 @@ Carthage/Build
 
 ## Xcode
 *.xcuserstate
+
+# Auto-generated files
+*.generated.swift
