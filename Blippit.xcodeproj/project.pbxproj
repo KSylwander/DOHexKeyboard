@@ -291,6 +291,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(PROJECT_DIR)/$(PROJECT_NAME)/Networking/DataTaskFactory.swift",
 			);
 			outputFileListPaths = (
 			);
