@@ -31,6 +31,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EAEA7FD2280109F008B7E77 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3EBAC768227C2CA200D5C693 /* Blippit.h */,
+				3EBAC770227C2FC200D5C693 /* Cartfile */,
+				3EBAC769227C2CA200D5C693 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		3EBAC75B227C2CA200D5C693 = {
 			isa = PBXGroup;
 			children = (
@@ -51,9 +61,7 @@
 		3EBAC767227C2CA200D5C693 /* Blippit */ = {
 			isa = PBXGroup;
 			children = (
-				3EBAC768227C2CA200D5C693 /* Blippit.h */,
-				3EBAC770227C2FC200D5C693 /* Cartfile */,
-				3EBAC769227C2CA200D5C693 /* Info.plist */,
+				3EAEA7FD2280109F008B7E77 /* Resources */,
 			);
 			path = Blippit;
 			sourceTree = "<group>";
@@ -286,7 +294,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = Blippit/Info.plist;
+				INFOPLIST_FILE = Blippit/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -316,7 +324,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = Blippit/Info.plist;
+				INFOPLIST_FILE = Blippit/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
