@@ -13,7 +13,9 @@ struct DefaultFetchDataUseCase {
 }
 
 extension DefaultFetchDataUseCase: FetchDataUseCase {
-  func fetchData(with request: URLRequest, completion: @escaping FetchDataUseCase.Completion) -> Cancellable {
+  @discardableResult func fetchData(with request: URLRequest,
+                                    completion: @escaping FetchDataUseCase.Completion) -> Cancellable {
+
     let task = dataTaskFactory.dataTask(with: request) { data, response, error in
       let response = response.map { $0 as! HTTPURLResponse }
 

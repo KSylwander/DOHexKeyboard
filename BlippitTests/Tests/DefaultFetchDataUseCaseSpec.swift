@@ -7,6 +7,7 @@
 //
 
 import Cuckoo
+import Nimble
 import Quick
 
 @testable import Blippit
@@ -23,7 +24,26 @@ final class DefaultFetchDataUseCaseSpec: QuickSpec {
         reset(dataTaskFactory)
       }
 
-      /* TODO: Implement me */
+      it("fails on error") {
+        /* Arrange */
+        stub(dataTaskFactory) { stub in
+          when(stub.dataTask(with: any(), completionHandler: any())).then { _, completion in
+            /* Complete with an error */
+            completion(nil, immaterial(), any())
+            return dataTask
+          }
+        }
+
+        /* Act */
+        var theResult: Result<Data, Error>?
+        sut.fetchData(with: immaterial()) { _, result in
+          theResult = result
+        }
+
+        /* Assert */
+        expect(theResult).notTo(beNil())
+        expect(theResult).notTo(beASuccess())
+      }
     }
   }
 }
