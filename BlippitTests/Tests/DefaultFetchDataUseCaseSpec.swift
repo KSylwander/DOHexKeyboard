@@ -26,10 +26,9 @@ final class DefaultFetchDataUseCaseSpec: QuickSpec {
 
       it("fails on error") {
         /* Arrange */
-        onDataTask { _, completion in
+        onDataTask { completion in
           /* Complete with an error */
           completion(nil, immaterial(), any())
-          return dataTask
         }
 
         /* Act */
@@ -46,10 +45,9 @@ final class DefaultFetchDataUseCaseSpec: QuickSpec {
       it("returns the data on success") {
         /* Arrange */
         let expectedData: Data = any()
-        onDataTask { _, completion in
+        onDataTask { completion in
           /* Complete with data */
           completion(expectedData, immaterial(), nil)
-          return dataTask
         }
 
         /* Act */
@@ -64,11 +62,14 @@ final class DefaultFetchDataUseCaseSpec: QuickSpec {
       }
 
       typealias DataTaskCompletion = (Data?, URLResponse?, Error?) -> Void
-      typealias DataTaskMethod = (URLRequest, @escaping DataTaskCompletion) -> URLSessionDataTask
+      typealias DataTaskMethod = (@escaping DataTaskCompletion) -> Void
 
       func onDataTask(_ implementation: @escaping DataTaskMethod) {
         stub(dataTaskFactory) { stub in
-          when(stub.dataTask(with: any(), completionHandler: any())).then(implementation)
+          when(stub.dataTask(with: any(), completionHandler: any())).then { _, completion in
+            implementation(completion)
+            return dataTask
+          }
         }
       }
     }
