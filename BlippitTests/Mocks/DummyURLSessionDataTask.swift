@@ -8,6 +8,9 @@
 
 import Foundation
 
+/* Allows the `URLSessionDataTask` to be mocked from within this project. See `Mocks.generated.swift` for the
+ * generated mock.
+ */
 class DummyURLSessionDataTask: URLSessionDataTask {
   override func resume() {
     super.resume()

@@ -61,10 +61,7 @@ final class DefaultFetchDataUseCaseSpec: QuickSpec {
         expect(theResult).to(equal(expectedData))
       }
 
-      typealias DataTaskCompletion = (Data?, URLResponse?, Error?) -> Void
-      typealias DataTaskMethod = (@escaping DataTaskCompletion) -> Void
-
-      func onDataTask(_ implementation: @escaping DataTaskMethod) {
+      func onDataTask(_ implementation: @escaping OnDataTask) {
         stub(dataTaskFactory) { stub in
           when(stub.dataTask(with: any(), completionHandler: any())).then { _, completion in
             implementation(completion)
@@ -72,6 +69,9 @@ final class DefaultFetchDataUseCaseSpec: QuickSpec {
           }
         }
       }
+
+      typealias OnDataTaskCompletion = (Data?, URLResponse?, Error?) -> Void
+      typealias OnDataTask = (@escaping OnDataTaskCompletion) -> Void
     }
   }
 }

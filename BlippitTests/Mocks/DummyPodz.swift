@@ -8,6 +8,7 @@
 
 import Podz
 
+/* Allows `Podz` to be mocked from within this project. See `Mocks.generated.swift` for the generated mock. */
 protocol DummyPodz: Podz {
   var status: PodzStatus { get }
 
