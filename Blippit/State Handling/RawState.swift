@@ -11,5 +11,6 @@ import Foundation
 /* State representations that include relevant metadata to create the corresponding actual states */
 enum RawState {
   case initial
+  case starting
   case started
 }
