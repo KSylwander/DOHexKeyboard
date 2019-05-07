@@ -1,5 +1,5 @@
 //
-//  MockableURLSessionDataTask.swift
+//  DummyURLSessionDataTask.swift
 //  BlippitTests
 //
 //  Created by Jerson Perpetua on 2019-05-06.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MockableURLSessionDataTask: URLSessionDataTask {
+class DummyURLSessionDataTask: URLSessionDataTask {
   override func resume() {
     super.resume()
   }

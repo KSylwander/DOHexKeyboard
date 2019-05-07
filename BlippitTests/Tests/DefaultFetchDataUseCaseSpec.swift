@@ -15,7 +15,7 @@ import Quick
 final class DefaultFetchDataUseCaseSpec: QuickSpec {
   override func spec() {
     describe("the DefaultFetchDataUseCase") {
-      let dataTask = MockableURLSessionDataTaskStub()
+      let dataTask = DummyURLSessionDataTaskStub()
       let dataTaskFactory = MockDataTaskFactory()
 
       let sut = DefaultFetchDataUseCase(dataTaskFactory: dataTaskFactory)

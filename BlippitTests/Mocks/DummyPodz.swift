@@ -1,5 +1,5 @@
 //
-//  MockablePodz.swift
+//  DummyPodz.swift
 //  BlippitTests
 //
 //  Created by Jerson Perpetua on 2019-05-07.
@@ -8,7 +8,7 @@
 
 import Podz
 
-protocol MockablePodz: Podz {
+protocol DummyPodz: Podz {
   var status: PodzStatus { get }
 
   func start()

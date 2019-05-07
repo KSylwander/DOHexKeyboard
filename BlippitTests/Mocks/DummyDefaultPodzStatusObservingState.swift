@@ -1,5 +1,5 @@
 //
-//  MockableDefaultPodzStatusObservingState.swift
+//  DummyDefaultPodzStatusObservingState.swift
 //  BlippitTests
 //
 //  Created by Jerson Perpetua on 2019-05-07.
@@ -8,5 +8,5 @@
 
 @testable import Blippit
 
-protocol MockableDefaultPodzStatusObservingState:
+protocol DummyDefaultPodzStatusObservingState:
   DefaultPodzStatusObservingState, Cancellable, ValidPodzStatusObserving {}
