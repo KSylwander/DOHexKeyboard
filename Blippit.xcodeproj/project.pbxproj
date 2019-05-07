@@ -394,6 +394,7 @@
 				"$(PROJECT_DIR)/$(PROJECT_NAME)/Networking/DataTaskFactory.swift",
 				"$(PROJECT_DIR)/$(PROJECT_NAME)Tests/Mocks/MockableURLSessionDataTask.swift",
 				"$(PROJECT_DIR)/$(PROJECT_NAME)Tests/Mocks/MockablePodz.swift",
+				"$(PROJECT_DIR)/$(PROJECT_NAME)/State Handling/StateDelegate.swift",
 			);
 			outputFileListPaths = (
 			);
