@@ -26,12 +26,10 @@ final class DefaultFetchDataUseCaseSpec: QuickSpec {
 
       it("fails on error") {
         /* Arrange */
-        stub(dataTaskFactory) { stub in
-          when(stub.dataTask(with: any(), completionHandler: any())).then { _, completion in
-            /* Complete with an error */
-            completion(nil, immaterial(), any())
-            return dataTask
-          }
+        onDataTask { _, completion in
+          /* Complete with an error */
+          completion(nil, immaterial(), any())
+          return dataTask
         }
 
         /* Act */
@@ -43,6 +41,35 @@ final class DefaultFetchDataUseCaseSpec: QuickSpec {
         /* Assert */
         expect(theResult).notTo(beNil())
         expect(theResult).notTo(beASuccess())
+      }
+
+      it("returns the data on success") {
+        /* Arrange */
+        let expectedData: Data = any()
+        onDataTask { _, completion in
+          /* Complete with data */
+          completion(expectedData, immaterial(), nil)
+          return dataTask
+        }
+
+        /* Act */
+        var theResult: Result<Data, Error>?
+        sut.fetchData(with: immaterial()) { _, result in
+          theResult = result
+        }
+
+        /* Assert */
+        expect(theResult).notTo(beNil())
+        expect(theResult).to(equal(expectedData))
+      }
+
+      typealias DataTaskCompletion = (Data?, URLResponse?, Error?) -> Void
+      typealias DataTaskMethod = (URLRequest, @escaping DataTaskCompletion) -> URLSessionDataTask
+
+      func onDataTask(_ implementation: @escaping DataTaskMethod) {
+        stub(dataTaskFactory) { stub in
+          when(stub.dataTask(with: any(), completionHandler: any())).then(implementation)
+        }
       }
     }
   }

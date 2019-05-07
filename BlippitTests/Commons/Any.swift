@@ -14,3 +14,7 @@ func any() -> Error {
   }
   return Error.any
 }
+
+func any() -> Data {
+  return Data(UUID().uuidString.utf8)
+}
