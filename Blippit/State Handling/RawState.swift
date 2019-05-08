@@ -14,3 +14,5 @@ enum RawState {
   case starting
   case started
 }
+
+extension RawState: Equatable {}
