@@ -15,13 +15,13 @@ import Quick
 final class DefaultFetchDataUseCaseSpec: QuickSpec {
   override func spec() {
     describe("the DefaultFetchDataUseCase") {
-      let dataTask = DummyURLSessionDataTaskStub()
-      let dataTaskFactory = MockDataTaskFactory()
+      let dataTaskFactory = MockDataTaskFactory().withEnabledDefaultImplementation(DataTaskFactoryStub())
 
-      let sut = DefaultFetchDataUseCase(dataTaskFactory: dataTaskFactory)
+      var sut = DefaultFetchDataUseCase(dataTaskFactory: dataTaskFactory)
 
       afterEach {
         reset(dataTaskFactory)
+        sut = DefaultFetchDataUseCase(dataTaskFactory: dataTaskFactory)
       }
 
       it("fails on error") {
@@ -65,7 +65,7 @@ final class DefaultFetchDataUseCaseSpec: QuickSpec {
         stub(dataTaskFactory) { stub in
           when(stub.dataTask(with: any(), completionHandler: any())).then { _, completion in
             implementation(completion)
-            return dataTask
+            return DummyURLSessionDataTaskStub()
           }
         }
       }
