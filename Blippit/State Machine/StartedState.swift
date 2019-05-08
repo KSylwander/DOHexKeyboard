@@ -10,10 +10,10 @@ import os.log
 import Podz
 
 /* Waits for a blip to occur, and handles opening of the session thereinafter */
-private final class StartedState {
-  fileprivate weak var delegate: StateDelegate?
+final class StartedState {
+  weak var delegate: StateDelegate?
 
-  private var isAborting = false
+  private var isCancelling = false
 
   init(delegate: StateDelegate) {
     self.delegate = delegate
@@ -30,7 +30,7 @@ extension StartedState: PodStateObserving {
 
     do {
       try session.open()
-      delegate?.state(self, moveTo: .initializePayment(session))
+      // TODO: Transition to the next state
     } catch {
       delegate?.state(self, didFailWithError: error)
     }
@@ -39,13 +39,13 @@ extension StartedState: PodStateObserving {
 
 extension StartedState: Cancellable {
   func cancel() {
-    guard !isAborting else {
+    guard !isCancelling else {
       return
     }
-    isAborting = true
+    isCancelling = true
 
     os_log(
-      "%{public}@ %{public}@:%{public}d -> Aborting %{public}@...",
+      "%{public}@ %{public}@:%{public}d -> Cancelling %{public}@...",
       log: Constants.log,
       type: .debug,
       "[DEBUG]", #function, #line,
