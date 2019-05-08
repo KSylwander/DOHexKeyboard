@@ -7,7 +7,10 @@
 //
 
 import Cuckoo
+import Nimble
 import Quick
+
+@testable import Blippit
 
 final class DefaultPodzStatusObservingStateSpec: QuickSpec {
   override func spec() {
@@ -28,7 +31,21 @@ final class DefaultPodzStatusObservingStateSpec: QuickSpec {
         reset(stateDelegate, podz, sut)
       }
 
-      // TODO: Implement me
+      it("stops Podz when the latter is locked") {
+        /* Arrange */
+        var thatPodzWasStopped = false
+        stub(podz) { stub in
+          when(stub.stop()).then {
+            thatPodzWasStopped = true
+          }
+        }
+
+        /* Act */
+        sut.handleStatus(.locked, for: podz)
+
+        /* Assert */
+        expect(thatPodzWasStopped).to(beTrue())
+      }
     }
   }
 }
