@@ -91,6 +91,29 @@ final class DefaultPodzStatusObservingStateSpec: QuickSpec {
           expect(theError).to(equal(BlippitError.invalidPodzStatus(status)))
         }
       }
+
+      let validStates: [PodzStatus] = [
+        .running,
+        .idle
+      ]
+      validStates.forEach { status in
+        it("handles valid Podz \(status) state") {
+          /* Arrange */
+          var theStatus: PodzStatus?
+          stub(sut) { stub in
+            when(stub.handleValidStatus(any(), for: any())).then { status, _ in
+              theStatus = status
+            }
+          }
+
+          /* Act */
+          sut.handleStatus(status, for: podz)
+
+          /* Assert */
+          expect(theStatus).toNot(beNil())
+          expect(theStatus).to(equal(status))
+        }
+      }
     }
   }
 }
