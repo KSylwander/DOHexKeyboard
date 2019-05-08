@@ -45,6 +45,7 @@
 		3EC4DE49228307CC007A05C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE48228307CC007A05C9 /* Constants.swift */; };
 		3EC4DE4B228308D4007A05C9 /* DummyPod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE4A228308D4007A05C9 /* DummyPod.swift */; };
 		3EC4DE4D22830991007A05C9 /* DummyPodSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE4C22830991007A05C9 /* DummyPodSession.swift */; };
+		3EC4DE4F22830CA2007A05C9 /* StartedStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE4E22830CA2007A05C9 /* StartedStateSpec.swift */; };
 		3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC79740228025BE00AD79CE /* Cancellable.swift */; };
 		3EC7974C2280298800AD79CE /* FetchDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */; };
 		3EC7974E22802A0C00AD79CE /* URLSessionTask+Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */; };
@@ -116,6 +117,7 @@
 		3EC4DE48228307CC007A05C9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3EC4DE4A228308D4007A05C9 /* DummyPod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyPod.swift; sourceTree = "<group>"; };
 		3EC4DE4C22830991007A05C9 /* DummyPodSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyPodSession.swift; sourceTree = "<group>"; };
+		3EC4DE4E22830CA2007A05C9 /* StartedStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartedStateSpec.swift; sourceTree = "<group>"; };
 		3EC79740228025BE00AD79CE /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchDataUseCase.swift; sourceTree = "<group>"; };
 		3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSessionTask+Cancellable.swift"; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			children = (
 				3E97FA552280548B003419AE /* DefaultFetchDataUseCaseSpec.swift */,
 				3E38F91E2281C44000C114B7 /* DefaultPodzStatusObservingStateSpec.swift */,
+				3EC4DE4E22830CA2007A05C9 /* StartedStateSpec.swift */,
 				3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */,
 			);
 			path = Tests;
@@ -449,6 +452,7 @@
 				3E97FA562280548B003419AE /* DefaultFetchDataUseCaseSpec.swift in Sources */,
 				3E38F91F2281C44000C114B7 /* DefaultPodzStatusObservingStateSpec.swift in Sources */,
 				3E9EA18E228182EA00B1B837 /* CustomMatchers.swift in Sources */,
+				3EC4DE4F22830CA2007A05C9 /* StartedStateSpec.swift in Sources */,
 				3EC4DE4B228308D4007A05C9 /* DummyPod.swift in Sources */,
 				3E97FA4C22804CE9003419AE /* DummyURLSessionDataTask.swift in Sources */,
 				3E38F91D2281BB2F00C114B7 /* DummyDefaultPodzStatusObservingState.swift in Sources */,
