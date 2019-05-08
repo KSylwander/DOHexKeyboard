@@ -33,19 +33,11 @@ final class DefaultPodzStatusObservingStateSpec: QuickSpec {
       }
 
       it("stops Podz when the latter is locked") {
-        /* Arrange */
-        var thatPodzWasStopped = false
-        stub(podz) { stub in
-          when(stub.stop()).then {
-            thatPodzWasStopped = true
-          }
-        }
-
         /* Act */
         sut.handleStatus(.locked, for: podz)
 
         /* Assert */
-        expect(thatPodzWasStopped).to(beTrue())
+        verify(podz).stop()
       }
 
       let invalidStates: [PodzStatus] = [
@@ -59,19 +51,11 @@ final class DefaultPodzStatusObservingStateSpec: QuickSpec {
       ]
       invalidStates.forEach { status in
         it("cancels itself when Podz is \(status)") {
-          /* Arrange */
-          var thatSutWasCancelled = false
-          stub(sut) { stub in
-            when(stub.cancel()).then {
-              thatSutWasCancelled = true
-            }
-          }
-
           /* Act */
           sut.handleStatus(status, for: podz)
 
           /* Assert */
-          expect(thatSutWasCancelled).to(beTrue())
+          verify(sut).cancel()
         }
 
         it("fails with corresponding error when Podz is \(status)") {

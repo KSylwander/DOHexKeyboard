@@ -26,12 +26,7 @@ final class StartingStateSpec: QuickSpec {
 
       it("starts Podz when started") {
         /* Arrange */
-        var thatPodzWasStarted = false
         stub(podz) { stub in
-          when(stub.start()).then {
-            thatPodzWasStarted = true
-          }
-
           when(stub.status.get).thenReturn(.idle)
         }
 
@@ -39,7 +34,7 @@ final class StartingStateSpec: QuickSpec {
         sut.start()
 
         /* Assert */
-        expect(thatPodzWasStarted).to(beTrue())
+        verify(podz).start()
       }
 
       it("transitions to started state when Podz is running") {
