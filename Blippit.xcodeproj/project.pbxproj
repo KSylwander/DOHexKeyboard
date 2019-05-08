@@ -41,6 +41,7 @@
 		3EBAC76A227C2CA200D5C693 /* Blippit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EBAC768227C2CA200D5C693 /* Blippit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3EBAC774227C30A500D5C693 /* Podz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC773227C30A500D5C693 /* Podz.framework */; };
 		3EC4DE45228306F1007A05C9 /* PodStateObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE44228306F1007A05C9 /* PodStateObserving.swift */; };
+		3EC4DE49228307CC007A05C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE48228307CC007A05C9 /* Constants.swift */; };
 		3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC79740228025BE00AD79CE /* Cancellable.swift */; };
 		3EC7974C2280298800AD79CE /* FetchDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */; };
 		3EC7974E22802A0C00AD79CE /* URLSessionTask+Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */; };
@@ -108,6 +109,7 @@
 		3EBAC770227C2FC200D5C693 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		3EBAC773227C30A500D5C693 /* Podz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Podz.framework; path = Carthage/Build/iOS/Podz.framework; sourceTree = "<group>"; };
 		3EC4DE44228306F1007A05C9 /* PodStateObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodStateObserving.swift; sourceTree = "<group>"; };
+		3EC4DE48228307CC007A05C9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3EC79740228025BE00AD79CE /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchDataUseCase.swift; sourceTree = "<group>"; };
 		3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSessionTask+Cancellable.swift"; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			children = (
 				3E38F9132281A1DB00C114B7 /* BlippitError.swift */,
 				3EC79740228025BE00AD79CE /* Cancellable.swift */,
+				3EC4DE48228307CC007A05C9 /* Constants.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				3E38F90622819EB100C114B7 /* State.swift in Sources */,
 				3EC7974E22802A0C00AD79CE /* URLSessionTask+Cancellable.swift in Sources */,
 				3E38F90A22819F3600C114B7 /* StateDelegate.swift in Sources */,
+				3EC4DE49228307CC007A05C9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
