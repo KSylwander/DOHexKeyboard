@@ -8,6 +8,7 @@
 
 import Cuckoo
 import Nimble
+import Podz
 import Quick
 
 @testable import Blippit
@@ -45,6 +46,50 @@ final class DefaultPodzStatusObservingStateSpec: QuickSpec {
 
         /* Assert */
         expect(thatPodzWasStopped).to(beTrue())
+      }
+
+      let invalidStates: [PodzStatus] = [
+        .locked,
+        .pending(error: .bluetoothOff),
+        .pending(error: .bluetoothUnauthorized),
+        .pending(error: .locationDenied),
+        .pending(error: .locationNotDetermined),
+        .pending(error: .locationRestricted),
+        .pending(error: .internetNotAvailable)
+      ]
+      invalidStates.forEach { status in
+        it("cancels itself when Podz is \(status)") {
+          /* Arrange */
+          var thatSutWasCancelled = false
+          stub(sut) { stub in
+            when(stub.cancel()).then {
+              thatSutWasCancelled = true
+            }
+          }
+
+          /* Act */
+          sut.handleStatus(status, for: podz)
+
+          /* Assert */
+          expect(thatSutWasCancelled).to(beTrue())
+        }
+
+        it("fails with corresponding error when Podz is \(status)") {
+          /* Arrange */
+          var theError: Error?
+          stub(stateDelegate) { stub in
+            when(stub.state(any(), didFailWithError: any())).then { _, error in
+              theError = error
+            }
+          }
+
+          /* Act */
+          sut.handleStatus(status, for: podz)
+
+          /* Assert */
+          expect(theError).notTo(beNil())
+          expect(theError).to(equal(BlippitError.invalidPodzStatus(status)))
+        }
       }
     }
   }

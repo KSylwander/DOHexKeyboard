@@ -21,3 +21,5 @@ enum BlippitError {
 }
 
 extension BlippitError: Error {}
+
+extension BlippitError: Equatable {}
