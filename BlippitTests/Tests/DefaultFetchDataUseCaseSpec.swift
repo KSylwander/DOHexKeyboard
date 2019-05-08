@@ -38,8 +38,8 @@ final class DefaultFetchDataUseCaseSpec: QuickSpec {
         }
 
         /* Assert */
-        expect(theResult).notTo(beNil())
-        expect(theResult).notTo(beASuccess())
+        expect(theResult).toNot(beNil())
+        expect(theResult).toNot(beASuccess())
       }
 
       it("returns the data on success") {
@@ -57,7 +57,7 @@ final class DefaultFetchDataUseCaseSpec: QuickSpec {
         }
 
         /* Assert */
-        expect(theResult).notTo(beNil())
+        expect(theResult).toNot(beNil())
         expect(theResult).to(equal(expectedData))
       }
 

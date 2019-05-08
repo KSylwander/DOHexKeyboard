@@ -55,7 +55,7 @@ final class StartingStateSpec: QuickSpec {
         sut.handleStatus(.running, for: podz)
 
         /* Assert */
-        expect(theNextState).notTo(beNil())
+        expect(theNextState).toNot(beNil())
         expect(theNextState).to(equal(.started))
       }
     }

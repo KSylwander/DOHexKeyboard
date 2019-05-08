@@ -87,7 +87,7 @@ final class DefaultPodzStatusObservingStateSpec: QuickSpec {
           sut.handleStatus(status, for: podz)
 
           /* Assert */
-          expect(theError).notTo(beNil())
+          expect(theError).toNot(beNil())
           expect(theError).to(equal(BlippitError.invalidPodzStatus(status)))
         }
       }
