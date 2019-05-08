@@ -7,6 +7,7 @@
 //
 
 import Cuckoo
+import Nimble
 import Quick
 
 @testable import Blippit
@@ -23,7 +24,23 @@ final class StartingStateSpec: QuickSpec {
         reset(stateDelegate, podz)
       }
 
-      // TODO: Implement me
+      it("starts Podz when started") {
+        /* Arrange */
+        var thatPodzWasStarted = false
+        stub(podz) { stub in
+          when(stub.start()).then {
+            thatPodzWasStarted = true
+          }
+
+          when(stub.status.get).thenReturn(.idle)
+        }
+
+        /* Act */
+        sut.start()
+
+        /* Assert */
+        expect(thatPodzWasStarted).to(beTrue())
+      }
     }
   }
 }
