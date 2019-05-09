@@ -7,6 +7,7 @@
 //
 
 import Cuckoo
+import Nimble
 import Podz
 import Quick
 
@@ -68,6 +69,23 @@ final class StartedStateSpec: QuickSpec {
           /* Assert */
           verify(stateDelegate).state(any(), didFailWithError: any())
         }
+      }
+
+      it("transitions back to starting when cancelled") {
+        /* Arrange */
+        var theNextState: RawState?
+        stub(stateDelegate) { stub in
+          when(stub.state(any(), moveTo: any())).then { _, nextState in
+            theNextState = nextState
+          }
+        }
+
+        /* Act */
+        sut.cancel()
+
+        /* Assert */
+        expect(theNextState).toNot(beNil())
+        expect(theNextState).to(equal(.starting))
       }
     }
   }
