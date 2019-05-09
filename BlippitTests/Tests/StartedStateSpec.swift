@@ -7,6 +7,7 @@
 //
 
 import Cuckoo
+import Podz
 import Quick
 
 @testable import Blippit
@@ -23,7 +24,30 @@ final class StartedStateSpec: QuickSpec {
         sut = StartedState(delegate: stateDelegate)
       }
 
-      // TODO: Implement me
+      context("when handling pod states") {
+        let pod = DummyPodStub()
+        let session = MockDummyPodSession().withEnabledDefaultImplementation(DummyPodSessionStub())
+
+        afterEach {
+          reset(session)
+        }
+
+        let nonBlipStates: [PodState] = [
+          .far,
+          .close,
+          .unknown
+        ]
+        nonBlipStates.forEach { state in
+          it("ignores \(state) state") {
+            /* Act */
+            sut.handleState(state, for: pod)
+
+            /* Assert */
+            verifyNoMoreInteractions(stateDelegate)
+            verifyNoMoreInteractions(session)
+          }
+        }
+      }
     }
   }
 }
