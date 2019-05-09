@@ -87,6 +87,16 @@ final class StartedStateSpec: QuickSpec {
         expect(theNextState).toNot(beNil())
         expect(theNextState).to(equal(.starting))
       }
+
+      it("ignores multiple cancels") {
+        /* Act */
+        sut.cancel()
+        sut.cancel()
+        sut.cancel()
+
+        /* Assert */
+        verify(stateDelegate, times(1)).state(any(), moveTo: any())
+      }
     }
   }
 }
