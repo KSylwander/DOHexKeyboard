@@ -47,6 +47,14 @@ final class StartedStateSpec: QuickSpec {
             verifyNoMoreInteractions(session)
           }
         }
+
+        it("opens session on blip") {
+          /* Act */
+          sut.handleState(.blip(session: session), for: pod)
+
+          /* Assert */
+          verify(session).open()
+        }
       }
     }
   }
