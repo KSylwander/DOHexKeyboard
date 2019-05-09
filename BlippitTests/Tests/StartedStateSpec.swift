@@ -55,6 +55,19 @@ final class StartedStateSpec: QuickSpec {
           /* Assert */
           verify(session).open()
         }
+
+        it("fails on session open error") {
+          /* Arrange */
+          stub(session) { stub in
+            when(stub.open()).thenThrow(any())
+          }
+
+          /* Act */
+          sut.handleState(.blip(session: session), for: pod)
+
+          /* Assert */
+          verify(stateDelegate).state(any(), didFailWithError: any())
+        }
       }
     }
   }
