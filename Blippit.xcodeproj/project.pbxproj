@@ -21,6 +21,7 @@
 		3E38F91F2281C44000C114B7 /* DefaultPodzStatusObservingStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F91E2281C44000C114B7 /* DefaultPodzStatusObservingStateSpec.swift */; };
 		3E790F6D228AD17600DB072F /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F6C228AD17600DB072F /* Curry.swift */; };
 		3E790F6F228AD18800DB072F /* Flip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F6E228AD18800DB072F /* Flip.swift */; };
+		3E790F71228AD19C00DB072F /* Fmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F70228AD19C00DB072F /* Fmap.swift */; };
 		3E97FA262280313F003419AE /* DataTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA252280313F003419AE /* DataTaskFactory.swift */; };
 		3E97FA282280318B003419AE /* URLSession+DataTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA272280318B003419AE /* URLSession+DataTaskFactory.swift */; };
 		3E97FA2A228031CF003419AE /* DefaultFetchDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA29228031CF003419AE /* DefaultFetchDataUseCase.swift */; };
@@ -95,6 +96,7 @@
 		3E38F91E2281C44000C114B7 /* DefaultPodzStatusObservingStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPodzStatusObservingStateSpec.swift; sourceTree = "<group>"; };
 		3E790F6C228AD17600DB072F /* Curry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curry.swift; sourceTree = "<group>"; };
 		3E790F6E228AD18800DB072F /* Flip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flip.swift; sourceTree = "<group>"; };
+		3E790F70228AD19C00DB072F /* Fmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fmap.swift; sourceTree = "<group>"; };
 		3E97FA252280313F003419AE /* DataTaskFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTaskFactory.swift; sourceTree = "<group>"; };
 		3E97FA272280318B003419AE /* URLSession+DataTaskFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+DataTaskFactory.swift"; sourceTree = "<group>"; };
 		3E97FA29228031CF003419AE /* DefaultFetchDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchDataUseCase.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			children = (
 				3E790F6C228AD17600DB072F /* Curry.swift */,
 				3E790F6E228AD18800DB072F /* Flip.swift */,
+				3E790F70228AD19C00DB072F /* Fmap.swift */,
 			);
 			path = Functional;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				3E38F9122281A16500C114B7 /* DefaultPodzStatusObservingState.swift in Sources */,
 				3E38F9102281A10B00C114B7 /* ValidPodzStatusObserving.swift in Sources */,
 				3E97FA2A228031CF003419AE /* DefaultFetchDataUseCase.swift in Sources */,
+				3E790F71228AD19C00DB072F /* Fmap.swift in Sources */,
 				3EC4DE45228306F1007A05C9 /* PodStateObserving.swift in Sources */,
 				3EC7974C2280298800AD79CE /* FetchDataUseCase.swift in Sources */,
 				3E38F9142281A1DB00C114B7 /* BlippitError.swift in Sources */,
