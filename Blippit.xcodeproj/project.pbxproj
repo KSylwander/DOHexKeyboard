@@ -48,6 +48,7 @@
 		3E790FB4228ADD9500DB072F /* CertificatePinningManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FB3228ADD9400DB072F /* CertificatePinningManager.swift */; };
 		3E790FB6228AEE1F00DB072F /* SACAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FB5228AEE1F00DB072F /* SACAuthenticationManager.swift */; };
 		3E790FB8228AF9F500DB072F /* Constants+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FB7228AF9F500DB072F /* Constants+Networking.swift */; };
+		3E790FBA228AFA2200DB072F /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FB9228AFA2200DB072F /* HttpMethod.swift */; };
 		3E97FA262280313F003419AE /* DataTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA252280313F003419AE /* DataTaskFactory.swift */; };
 		3E97FA282280318B003419AE /* URLSession+DataTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA272280318B003419AE /* URLSession+DataTaskFactory.swift */; };
 		3E97FA2A228031CF003419AE /* DefaultFetchDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA29228031CF003419AE /* DefaultFetchDataUseCase.swift */; };
@@ -149,6 +150,7 @@
 		3E790FB3228ADD9400DB072F /* CertificatePinningManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificatePinningManager.swift; sourceTree = "<group>"; };
 		3E790FB5228AEE1F00DB072F /* SACAuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SACAuthenticationManager.swift; sourceTree = "<group>"; };
 		3E790FB7228AF9F500DB072F /* Constants+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Networking.swift"; sourceTree = "<group>"; };
+		3E790FB9228AFA2200DB072F /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		3E97FA252280313F003419AE /* DataTaskFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTaskFactory.swift; sourceTree = "<group>"; };
 		3E97FA272280318B003419AE /* URLSession+DataTaskFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+DataTaskFactory.swift"; sourceTree = "<group>"; };
 		3E97FA29228031CF003419AE /* DefaultFetchDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchDataUseCase.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				3E97FA252280313F003419AE /* DataTaskFactory.swift */,
 				3E97FA29228031CF003419AE /* DefaultFetchDataUseCase.swift */,
 				3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */,
+				3E790FB9228AFA2200DB072F /* HttpMethod.swift */,
 				3E790FB5228AEE1F00DB072F /* SACAuthenticationManager.swift */,
 				3E97FA272280318B003419AE /* URLSession+DataTaskFactory.swift */,
 				3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */,
@@ -578,6 +581,7 @@
 				3E790FAE228ADD7700DB072F /* ValidateTrustedCertificatesUseCase.swift in Sources */,
 				3E790F9A228ADC1700DB072F /* SecurityError.swift in Sources */,
 				3E790FA6228ADC6B00DB072F /* DefaultApplyCertificatePinningUseCaseFactory.swift in Sources */,
+				3E790FBA228AFA2200DB072F /* HttpMethod.swift in Sources */,
 				3E790FA8228ADC7800DB072F /* ValidateTrustUseCase.swift in Sources */,
 				3E97FA2A228031CF003419AE /* DefaultFetchDataUseCase.swift in Sources */,
 				3E790FB0228ADD7D00DB072F /* DefaultValidateTrustedCertificatesUseCase.swift in Sources */,
