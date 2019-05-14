@@ -47,6 +47,7 @@
 		3E790FB0228ADD7D00DB072F /* DefaultValidateTrustedCertificatesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FAF228ADD7D00DB072F /* DefaultValidateTrustedCertificatesUseCase.swift */; };
 		3E790FB2228ADD8B00DB072F /* CertificatePinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FB1228ADD8B00DB072F /* CertificatePinning.swift */; };
 		3E790FB4228ADD9500DB072F /* CertificatePinningManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FB3228ADD9400DB072F /* CertificatePinningManager.swift */; };
+		3E790FB6228AEE1F00DB072F /* SACAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FB5228AEE1F00DB072F /* SACAuthenticationManager.swift */; };
 		3E97FA262280313F003419AE /* DataTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA252280313F003419AE /* DataTaskFactory.swift */; };
 		3E97FA282280318B003419AE /* URLSession+DataTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA272280318B003419AE /* URLSession+DataTaskFactory.swift */; };
 		3E97FA2A228031CF003419AE /* DefaultFetchDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA29228031CF003419AE /* DefaultFetchDataUseCase.swift */; };
@@ -147,6 +148,7 @@
 		3E790FAF228ADD7D00DB072F /* DefaultValidateTrustedCertificatesUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultValidateTrustedCertificatesUseCase.swift; sourceTree = "<group>"; };
 		3E790FB1228ADD8B00DB072F /* CertificatePinning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificatePinning.swift; sourceTree = "<group>"; };
 		3E790FB3228ADD9400DB072F /* CertificatePinningManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificatePinningManager.swift; sourceTree = "<group>"; };
+		3E790FB5228AEE1F00DB072F /* SACAuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SACAuthenticationManager.swift; sourceTree = "<group>"; };
 		3E97FA252280313F003419AE /* DataTaskFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTaskFactory.swift; sourceTree = "<group>"; };
 		3E97FA272280318B003419AE /* URLSession+DataTaskFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+DataTaskFactory.swift"; sourceTree = "<group>"; };
 		3E97FA29228031CF003419AE /* DefaultFetchDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchDataUseCase.swift; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 				3E97FA252280313F003419AE /* DataTaskFactory.swift */,
 				3E97FA29228031CF003419AE /* DefaultFetchDataUseCase.swift */,
 				3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */,
+				3E790FB5228AEE1F00DB072F /* SACAuthenticationManager.swift */,
 				3E97FA272280318B003419AE /* URLSession+DataTaskFactory.swift */,
 				3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */,
 			);
@@ -606,6 +609,7 @@
 				3E790F73228AD1AF00DB072F /* Application.swift in Sources */,
 				3E790F88228AD99700DB072F /* UnsafeBitCast.swift in Sources */,
 				3E790F6D228AD17600DB072F /* Curry.swift in Sources */,
+				3E790FB6228AEE1F00DB072F /* SACAuthenticationManager.swift in Sources */,
 				3EC7974E22802A0C00AD79CE /* URLSessionTask+Cancellable.swift in Sources */,
 				3E790F94228ADA2700DB072F /* SecTrustHandler.swift in Sources */,
 				3E38F90A22819F3600C114B7 /* StateDelegate.swift in Sources */,
