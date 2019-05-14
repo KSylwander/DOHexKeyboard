@@ -45,6 +45,7 @@
 		3E790FAC228ADCD400DB072F /* DefaultValidateTrustUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FAB228ADCD400DB072F /* DefaultValidateTrustUseCase.swift */; };
 		3E790FAE228ADD7700DB072F /* ValidateTrustedCertificatesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FAD228ADD7600DB072F /* ValidateTrustedCertificatesUseCase.swift */; };
 		3E790FB0228ADD7D00DB072F /* DefaultValidateTrustedCertificatesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FAF228ADD7D00DB072F /* DefaultValidateTrustedCertificatesUseCase.swift */; };
+		3E790FB2228ADD8B00DB072F /* CertificatePinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FB1228ADD8B00DB072F /* CertificatePinning.swift */; };
 		3E97FA262280313F003419AE /* DataTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA252280313F003419AE /* DataTaskFactory.swift */; };
 		3E97FA282280318B003419AE /* URLSession+DataTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA272280318B003419AE /* URLSession+DataTaskFactory.swift */; };
 		3E97FA2A228031CF003419AE /* DefaultFetchDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA29228031CF003419AE /* DefaultFetchDataUseCase.swift */; };
@@ -143,6 +144,7 @@
 		3E790FAB228ADCD400DB072F /* DefaultValidateTrustUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultValidateTrustUseCase.swift; sourceTree = "<group>"; };
 		3E790FAD228ADD7600DB072F /* ValidateTrustedCertificatesUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateTrustedCertificatesUseCase.swift; sourceTree = "<group>"; };
 		3E790FAF228ADD7D00DB072F /* DefaultValidateTrustedCertificatesUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultValidateTrustedCertificatesUseCase.swift; sourceTree = "<group>"; };
+		3E790FB1228ADD8B00DB072F /* CertificatePinning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificatePinning.swift; sourceTree = "<group>"; };
 		3E97FA252280313F003419AE /* DataTaskFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTaskFactory.swift; sourceTree = "<group>"; };
 		3E97FA272280318B003419AE /* URLSession+DataTaskFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+DataTaskFactory.swift"; sourceTree = "<group>"; };
 		3E97FA29228031CF003419AE /* DefaultFetchDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchDataUseCase.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				3E790F81228AD96200DB072F /* Certificate.swift */,
 				3E790F9B228ADC2500DB072F /* CertificateFactory.swift */,
 				3E790F8D228AD9FB00DB072F /* CertificateHandling.swift */,
+				3E790FB1228ADD8B00DB072F /* CertificatePinning.swift */,
 				3E790FA1228ADC5600DB072F /* DefaultApplyCertificatePinningUseCase.swift */,
 				3E790FA5228ADC6B00DB072F /* DefaultApplyCertificatePinningUseCaseFactory.swift */,
 				3E790F9D228ADC3000DB072F /* DefaultCertificateFactory.swift */,
@@ -581,6 +584,7 @@
 				3E790F9C228ADC2500DB072F /* CertificateFactory.swift in Sources */,
 				3E790F8A228AD9AA00DB072F /* SecurityPolicyHandling.swift in Sources */,
 				3E97FA262280313F003419AE /* DataTaskFactory.swift in Sources */,
+				3E790FB2228ADD8B00DB072F /* CertificatePinning.swift in Sources */,
 				3E97FA282280318B003419AE /* URLSession+DataTaskFactory.swift in Sources */,
 				3E38F90822819EE300C114B7 /* RawState.swift in Sources */,
 				3E790F8E228AD9FB00DB072F /* CertificateHandling.swift in Sources */,
