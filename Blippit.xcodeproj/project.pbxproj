@@ -31,6 +31,7 @@
 		3E790F8A228AD9AA00DB072F /* SecurityPolicyHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F89228AD9AA00DB072F /* SecurityPolicyHandling.swift */; };
 		3E790F8C228AD9BF00DB072F /* SecPolicyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F8B228AD9BF00DB072F /* SecPolicyHandler.swift */; };
 		3E790F8E228AD9FB00DB072F /* CertificateHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F8D228AD9FB00DB072F /* CertificateHandling.swift */; };
+		3E790F90228ADA0D00DB072F /* SecCertificateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F8F228ADA0D00DB072F /* SecCertificateHandler.swift */; };
 		3E97FA262280313F003419AE /* DataTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA252280313F003419AE /* DataTaskFactory.swift */; };
 		3E97FA282280318B003419AE /* URLSession+DataTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA272280318B003419AE /* URLSession+DataTaskFactory.swift */; };
 		3E97FA2A228031CF003419AE /* DefaultFetchDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA29228031CF003419AE /* DefaultFetchDataUseCase.swift */; };
@@ -115,6 +116,7 @@
 		3E790F89228AD9AA00DB072F /* SecurityPolicyHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityPolicyHandling.swift; sourceTree = "<group>"; };
 		3E790F8B228AD9BF00DB072F /* SecPolicyHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecPolicyHandler.swift; sourceTree = "<group>"; };
 		3E790F8D228AD9FB00DB072F /* CertificateHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificateHandling.swift; sourceTree = "<group>"; };
+		3E790F8F228ADA0D00DB072F /* SecCertificateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecCertificateHandler.swift; sourceTree = "<group>"; };
 		3E97FA252280313F003419AE /* DataTaskFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTaskFactory.swift; sourceTree = "<group>"; };
 		3E97FA272280318B003419AE /* URLSession+DataTaskFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+DataTaskFactory.swift"; sourceTree = "<group>"; };
 		3E97FA29228031CF003419AE /* DefaultFetchDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchDataUseCase.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			children = (
 				3E790F81228AD96200DB072F /* Certificate.swift */,
 				3E790F8D228AD9FB00DB072F /* CertificateHandling.swift */,
+				3E790F8F228ADA0D00DB072F /* SecCertificateHandler.swift */,
 				3E790F8B228AD9BF00DB072F /* SecPolicyHandler.swift */,
 				3E790F7F228AD93700DB072F /* SecurityPolicy.swift */,
 				3E790F89228AD9AA00DB072F /* SecurityPolicyHandling.swift */,
@@ -538,6 +541,7 @@
 				3E790F8C228AD9BF00DB072F /* SecPolicyHandler.swift in Sources */,
 				3E790F84228AD96E00DB072F /* Trust.swift in Sources */,
 				3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */,
+				3E790F90228ADA0D00DB072F /* SecCertificateHandler.swift in Sources */,
 				3E790F6F228AD18800DB072F /* Flip.swift in Sources */,
 				3E38F90622819EB100C114B7 /* State.swift in Sources */,
 				3E790F73228AD1AF00DB072F /* Application.swift in Sources */,
