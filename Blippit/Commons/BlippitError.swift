@@ -18,6 +18,7 @@ enum BlippitError {
      */
     PodzStatus
   )
+  case invalidPodSessionState(PodSessionState)
 }
 
 extension BlippitError: Error {}
