@@ -45,9 +45,8 @@ extension EstablishCloudSessionState: Startable {
       switch result {
       case let .failure(error):
         self.delegate?.state(self, didFailWithError: error)
-      case .success:
-        // TODO: Transition to the next state
-        break
+      case let .success(sessionId):
+        self.delegate?.state(self, moveTo: .uploadCommandData(cloudSessionId: sessionId, podSession: self.podSession))
       }
     }
   }
