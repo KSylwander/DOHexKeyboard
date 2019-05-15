@@ -18,15 +18,20 @@ struct DefaultEstablishCloudSessionUseCase {
 }
 
 extension DefaultEstablishCloudSessionUseCase: EstablishCloudSessionUseCase {
-  func establishCloudSession(pid: UInt32, userId: String, completion: @escaping Completion) throws -> Cancellable {
-    let request = requestBuilder.build()
-    let data = try encoder.encode(EstablishCloudSessionRequestDto(pid: pid, userId: userId, appId: appId))
+  func establishCloudSession(pid: UInt32, userId: String, completion: @escaping Completion) -> Cancellable? {
+    do {
+      let request = requestBuilder.build()
+      let data = try encoder.encode(EstablishCloudSessionRequestDto(pid: pid, userId: userId, appId: appId))
 
-    return uploadDataUseCase.uploadData(with: request, from: data) { response, result in
-      let sessionId = result.flatMap { data in
-        return Result(catching: { try self.decoder.decode(EstablishCloudSessionResponseDto.self, from: data).sessionId })
+      return uploadDataUseCase.uploadData(with: request, from: data) { response, result in
+        let sessionId = result.flatMap { data in
+          return Result(catching: { try self.decoder.decode(EstablishCloudSessionResponseDto.self, from: data).sessionId })
+        }
+        completion(response, sessionId)
       }
-      completion(response, sessionId)
+    } catch {
+      completion(nil, .failure(error))
+      return nil
     }
   }
 }
