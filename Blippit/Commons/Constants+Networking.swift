@@ -22,5 +22,9 @@ extension Constants {
       static let cachePolicy = URLRequest.CachePolicy.useProtocolCachePolicy
       static let timeoutInterval = TimeInterval(60.0)
     }
+
+    enum establishSession {
+      static let config = ApiConfig(method: .post, resource: "user/establishSession")
+    }
   }
 }
