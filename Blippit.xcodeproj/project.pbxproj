@@ -10,6 +10,7 @@
 		3E23C21A228C0E9400DA3305 /* UploadTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C219228C0E9400DA3305 /* UploadTaskFactory.swift */; };
 		3E23C21C228C0E9E00DA3305 /* URLSession+UploadTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C21B228C0E9E00DA3305 /* URLSession+UploadTaskFactory.swift */; };
 		3E23C21E228C0EA400DA3305 /* UploadDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C21D228C0EA400DA3305 /* UploadDataUseCase.swift */; };
+		3E23C220228C0EA900DA3305 /* DefaultUploadDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C21F228C0EA900DA3305 /* DefaultUploadDataUseCase.swift */; };
 		3E38F90622819EB100C114B7 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90522819EB100C114B7 /* State.swift */; };
 		3E38F90822819EE300C114B7 /* RawState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90722819EE300C114B7 /* RawState.swift */; };
 		3E38F90A22819F3600C114B7 /* StateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90922819F3600C114B7 /* StateDelegate.swift */; };
@@ -118,6 +119,7 @@
 		3E23C219228C0E9400DA3305 /* UploadTaskFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadTaskFactory.swift; sourceTree = "<group>"; };
 		3E23C21B228C0E9E00DA3305 /* URLSession+UploadTaskFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+UploadTaskFactory.swift"; sourceTree = "<group>"; };
 		3E23C21D228C0EA400DA3305 /* UploadDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadDataUseCase.swift; sourceTree = "<group>"; };
+		3E23C21F228C0EA900DA3305 /* DefaultUploadDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultUploadDataUseCase.swift; sourceTree = "<group>"; };
 		3E38F90522819EB100C114B7 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		3E38F90722819EE300C114B7 /* RawState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawState.swift; sourceTree = "<group>"; };
 		3E38F90922819F3600C114B7 /* StateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDelegate.swift; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 				3E790FBB228AFA3A00DB072F /* ApiConfig.swift */,
 				3E97FA252280313F003419AE /* DataTaskFactory.swift */,
 				3E97FA29228031CF003419AE /* DefaultFetchDataUseCase.swift */,
+				3E23C21F228C0EA900DA3305 /* DefaultUploadDataUseCase.swift */,
 				3E790FBF228AFA6E00DB072F /* DefaultURLRequestBuilder.swift */,
 				3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */,
 				3E790FB9228AFA2200DB072F /* HttpMethod.swift */,
@@ -642,6 +645,7 @@
 				3E790F94228ADA2700DB072F /* SecTrustHandler.swift in Sources */,
 				3E38F90A22819F3600C114B7 /* StateDelegate.swift in Sources */,
 				3EC4DE49228307CC007A05C9 /* Constants.swift in Sources */,
+				3E23C220228C0EA900DA3305 /* DefaultUploadDataUseCase.swift in Sources */,
 				3E790F80228AD93700DB072F /* SecurityPolicy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
