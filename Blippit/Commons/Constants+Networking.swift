@@ -10,8 +10,14 @@ import Foundation
 
 extension Constants {
   enum api {
+    static let version = "0.1.0"
+
     enum defaults {
-      static let basePath = ""
+#if DEBUG
+      static let basePath = "https://stage-bsac.bubbelskum.com/api/\(version)"
+#else
+      static let basePath = "https://prod-bsac.bubbelskum.com/api/\(version)"
+#endif
 
       static let cachePolicy = URLRequest.CachePolicy.useProtocolCachePolicy
       static let timeoutInterval = TimeInterval(60.0)
