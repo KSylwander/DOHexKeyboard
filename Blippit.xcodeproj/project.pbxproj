@@ -28,6 +28,7 @@
 		3E23C24C228C42DC00DA3305 /* UploadCommandDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C24B228C42DC00DA3305 /* UploadCommandDataUseCase.swift */; };
 		3E23C24E228C434000DA3305 /* DefaultUploadCommandDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C24D228C434000DA3305 /* DefaultUploadCommandDataUseCase.swift */; };
 		3E23C250228C460E00DA3305 /* UploadCommandDataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C24F228C460E00DA3305 /* UploadCommandDataState.swift */; };
+		3E23C252228C4B4E00DA3305 /* RawState+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C251228C4B4E00DA3305 /* RawState+Equatable.swift */; };
 		3E38F90622819EB100C114B7 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90522819EB100C114B7 /* State.swift */; };
 		3E38F90822819EE300C114B7 /* RawState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90722819EE300C114B7 /* RawState.swift */; };
 		3E38F90A22819F3600C114B7 /* StateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90922819F3600C114B7 /* StateDelegate.swift */; };
@@ -154,6 +155,7 @@
 		3E23C24B228C42DC00DA3305 /* UploadCommandDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCommandDataUseCase.swift; sourceTree = "<group>"; };
 		3E23C24D228C434000DA3305 /* DefaultUploadCommandDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUploadCommandDataUseCase.swift; sourceTree = "<group>"; };
 		3E23C24F228C460E00DA3305 /* UploadCommandDataState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCommandDataState.swift; sourceTree = "<group>"; };
+		3E23C251228C4B4E00DA3305 /* RawState+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RawState+Equatable.swift"; sourceTree = "<group>"; };
 		3E38F90522819EB100C114B7 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		3E38F90722819EE300C114B7 /* RawState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawState.swift; sourceTree = "<group>"; };
 		3E38F90922819F3600C114B7 /* StateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDelegate.swift; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 				3E9EA1872281829B00B1B837 /* Any.swift */,
 				3E9EA18D228182EA00B1B837 /* CustomMatchers.swift */,
 				3E9EA189228182B800B1B837 /* Immaterial.swift */,
+				3E23C251228C4B4E00DA3305 /* RawState+Equatable.swift */,
 				3E9EA18B228182CE00B1B837 /* Result+IsSuccess.swift */,
 			);
 			path = Commons;
@@ -648,6 +651,7 @@
 				3E9EA18E228182EA00B1B837 /* CustomMatchers.swift in Sources */,
 				3EC4DE4F22830CA2007A05C9 /* StartedStateSpec.swift in Sources */,
 				3EC4DE4B228308D4007A05C9 /* DummyPod.swift in Sources */,
+				3E23C252228C4B4E00DA3305 /* RawState+Equatable.swift in Sources */,
 				3E97FA4C22804CE9003419AE /* DummyURLSessionDataTask.swift in Sources */,
 				3E38F91D2281BB2F00C114B7 /* DummyDefaultPodzStatusObservingState.swift in Sources */,
 				3EC4DE4D22830991007A05C9 /* DummyPodSession.swift in Sources */,
