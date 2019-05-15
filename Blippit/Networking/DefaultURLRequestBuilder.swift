@@ -28,7 +28,6 @@ extension DefaultURLRequestBuilder: URLRequestBuilder {
     )
 
     request.httpMethod = apiConfig.method.rawValue
-    request.addValue(apiConfig.apiKey, forHTTPHeaderField: "x-apikey")
 
     return request
   }

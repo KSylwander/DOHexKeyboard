@@ -12,7 +12,6 @@ extension Constants {
   enum api {
     enum defaults {
       static let basePath = ""
-      static let apiKey = ""
 
       static let cachePolicy = URLRequest.CachePolicy.useProtocolCachePolicy
       static let timeoutInterval = TimeInterval(60.0)

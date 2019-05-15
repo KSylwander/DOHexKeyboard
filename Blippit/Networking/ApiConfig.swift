@@ -12,7 +12,6 @@ struct ApiConfig {
   let method: HttpMethod
   let basePath = Constants.api.defaults.basePath
   let resource: String
-  let apiKey = Constants.api.defaults.apiKey
 
   let cachePolicy = Constants.api.defaults.cachePolicy
   let timeoutInterval = Constants.api.defaults.timeoutInterval
