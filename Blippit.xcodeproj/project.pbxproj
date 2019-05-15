@@ -24,6 +24,7 @@
 		3E23C241228C35D800DA3305 /* SetupTransferIdState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C240228C35D800DA3305 /* SetupTransferIdState.swift */; };
 		3E23C245228C3DC700DA3305 /* CancellationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C244228C3DC700DA3305 /* CancellationHandler.swift */; };
 		3E23C247228C3F4100DA3305 /* EstablishCloudSessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C246228C3F4100DA3305 /* EstablishCloudSessionState.swift */; };
+		3E23C24A228C42A600DA3305 /* UploadCommandDataResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C249228C42A600DA3305 /* UploadCommandDataResponseDto.swift */; };
 		3E38F90622819EB100C114B7 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90522819EB100C114B7 /* State.swift */; };
 		3E38F90822819EE300C114B7 /* RawState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90722819EE300C114B7 /* RawState.swift */; };
 		3E38F90A22819F3600C114B7 /* StateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90922819F3600C114B7 /* StateDelegate.swift */; };
@@ -146,6 +147,7 @@
 		3E23C240228C35D800DA3305 /* SetupTransferIdState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTransferIdState.swift; sourceTree = "<group>"; };
 		3E23C244228C3DC700DA3305 /* CancellationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationHandler.swift; sourceTree = "<group>"; };
 		3E23C246228C3F4100DA3305 /* EstablishCloudSessionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstablishCloudSessionState.swift; sourceTree = "<group>"; };
+		3E23C249228C42A600DA3305 /* UploadCommandDataResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCommandDataResponseDto.swift; sourceTree = "<group>"; };
 		3E38F90522819EB100C114B7 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		3E38F90722819EE300C114B7 /* RawState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawState.swift; sourceTree = "<group>"; };
 		3E38F90922819F3600C114B7 /* StateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDelegate.swift; sourceTree = "<group>"; };
@@ -257,6 +259,14 @@
 				3E23C22A228C0F2300DA3305 /* EstablishCloudSessionUseCase.swift */,
 			);
 			path = "Establish Session";
+			sourceTree = "<group>";
+		};
+		3E23C248228C414600DA3305 /* Upload Command Data */ = {
+			isa = PBXGroup;
+			children = (
+				3E23C249228C42A600DA3305 /* UploadCommandDataResponseDto.swift */,
+			);
+			path = "Upload Command Data";
 			sourceTree = "<group>";
 		};
 		3E38F90422819E9100C114B7 /* State Machine */ = {
@@ -426,6 +436,7 @@
 				3E790F7E228AD90F00DB072F /* Security */,
 				3E38F9172281A31F00C114B7 /* State Handling */,
 				3E38F90422819E9100C114B7 /* State Machine */,
+				3E23C248228C414600DA3305 /* Upload Command Data */,
 			);
 			path = Blippit;
 			sourceTree = "<group>";
@@ -668,6 +679,7 @@
 				3E790FA2228ADC5600DB072F /* DefaultApplyCertificatePinningUseCase.swift in Sources */,
 				3E23C227228C0F1100DA3305 /* EstablishCloudSessionRequestDto.swift in Sources */,
 				3E38F9142281A1DB00C114B7 /* BlippitError.swift in Sources */,
+				3E23C24A228C42A600DA3305 /* UploadCommandDataResponseDto.swift in Sources */,
 				3E790F9C228ADC2500DB072F /* CertificateFactory.swift in Sources */,
 				3E790F8A228AD9AA00DB072F /* SecurityPolicyHandling.swift in Sources */,
 				3E97FA262280313F003419AE /* DataTaskFactory.swift in Sources */,
