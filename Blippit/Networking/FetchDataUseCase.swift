@@ -10,5 +10,5 @@ import Foundation
 
 protocol FetchDataUseCase {
   typealias Completion = (_ response: HTTPURLResponse?, _ result: Result<Data, Error>) -> Void
-  func fetchData(with request: URLRequest, completion: @escaping Completion) -> Cancellable
+  @discardableResult func fetchData(with request: URLRequest, completion: @escaping Completion) -> Cancellable
 }
