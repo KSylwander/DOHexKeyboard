@@ -23,7 +23,7 @@ extension Constants {
       static let timeoutInterval = TimeInterval(60.0)
     }
 
-    enum establishSession {
+    enum establishCloudSession {
       static let config = ApiConfig(method: .post, resource: "user/establishSession")
     }
   }

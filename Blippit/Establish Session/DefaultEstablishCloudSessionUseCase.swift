@@ -1,5 +1,5 @@
 //
-//  DefaultEstablishSessionRequestUseCase.swift
+//  DefaultEstablishCloudSessionUseCase.swift
 //  Blippit
 //
 //  Created by Jerson Perpetua on 2019-05-15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DefaultEstablishSessionRequestUseCase {
+struct DefaultEstablishCloudSessionUseCase {
   let appId: UUID
 
   let requestBuilder: URLRequestBuilder
@@ -17,14 +17,14 @@ struct DefaultEstablishSessionRequestUseCase {
   let uploadDataUseCase: UploadDataUseCase
 }
 
-extension DefaultEstablishSessionRequestUseCase: EstablishSessionRequestUseCase {
-  func establishSession(pid: UInt32, userId: String, completion: @escaping Completion) throws -> Cancellable {
+extension DefaultEstablishCloudSessionUseCase: EstablishCloudSessionUseCase {
+  func establishCloudSession(pid: UInt32, userId: String, completion: @escaping Completion) throws -> Cancellable {
     let request = requestBuilder.build()
-    let data = try encoder.encode(EstablishSessionRequestDto(pid: pid, userId: userId, appId: appId))
+    let data = try encoder.encode(EstablishCloudSessionRequestDto(pid: pid, userId: userId, appId: appId))
 
     return uploadDataUseCase.uploadData(with: request, from: data) { response, result in
       let sessionId = result.flatMap { data in
-        return Result(catching: { try self.decoder.decode(EstablishSessionResponseDto.self, from: data).sessionId })
+        return Result(catching: { try self.decoder.decode(EstablishCloudSessionResponseDto.self, from: data).sessionId })
       }
       completion(response, sessionId)
     }

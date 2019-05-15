@@ -1,5 +1,5 @@
 //
-//  EstablishSessionResponseDto.swift
+//  EstablishCloudSessionResponseDto.swift
 //  Blippit
 //
 //  Created by Jerson Perpetua on 2019-05-15.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct EstablishSessionResponseDto {
+struct EstablishCloudSessionResponseDto {
   let sessionId: String
 }
 
-extension EstablishSessionResponseDto: Decodable {
+extension EstablishCloudSessionResponseDto: Decodable {
   private enum CodingKeys: String, CodingKey {
     case sessionId = "sessionid"
   }
