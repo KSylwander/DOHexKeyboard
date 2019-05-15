@@ -18,6 +18,7 @@
 		3E23C22B228C0F2300DA3305 /* EstablishCloudSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C22A228C0F2300DA3305 /* EstablishCloudSessionUseCase.swift */; };
 		3E23C22D228C0F2800DA3305 /* DefaultEstablishCloudSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C22C228C0F2800DA3305 /* DefaultEstablishCloudSessionUseCase.swift */; };
 		3E23C239228C2AA800DA3305 /* CancellablePodSessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C238228C2AA800DA3305 /* CancellablePodSessionState.swift */; };
+		3E23C23B228C2E0100DA3305 /* PodSessionStateObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C23A228C2E0100DA3305 /* PodSessionStateObserving.swift */; };
 		3E38F90622819EB100C114B7 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90522819EB100C114B7 /* State.swift */; };
 		3E38F90822819EE300C114B7 /* RawState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90722819EE300C114B7 /* RawState.swift */; };
 		3E38F90A22819F3600C114B7 /* StateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90922819F3600C114B7 /* StateDelegate.swift */; };
@@ -134,6 +135,7 @@
 		3E23C22A228C0F2300DA3305 /* EstablishCloudSessionUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstablishCloudSessionUseCase.swift; sourceTree = "<group>"; };
 		3E23C22C228C0F2800DA3305 /* DefaultEstablishCloudSessionUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultEstablishCloudSessionUseCase.swift; sourceTree = "<group>"; };
 		3E23C238228C2AA800DA3305 /* CancellablePodSessionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancellablePodSessionState.swift; sourceTree = "<group>"; };
+		3E23C23A228C2E0100DA3305 /* PodSessionStateObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodSessionStateObserving.swift; sourceTree = "<group>"; };
 		3E38F90522819EB100C114B7 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		3E38F90722819EE300C114B7 /* RawState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawState.swift; sourceTree = "<group>"; };
 		3E38F90922819F3600C114B7 /* StateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDelegate.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			children = (
 				3E23C238228C2AA800DA3305 /* CancellablePodSessionState.swift */,
 				3E38F9112281A16500C114B7 /* DefaultPodzStatusObservingState.swift */,
+				3E23C23A228C2E0100DA3305 /* PodSessionStateObserving.swift */,
 				3EC4DE44228306F1007A05C9 /* PodStateObserving.swift */,
 				3E38F90D2281A0ED00C114B7 /* PodzStatusObserving.swift */,
 				3E38F90722819EE300C114B7 /* RawState.swift */,
@@ -669,6 +672,7 @@
 				3E790F92228ADA1C00DB072F /* TrustHandling.swift in Sources */,
 				3E790F90228ADA0D00DB072F /* SecCertificateHandler.swift in Sources */,
 				3E790F6F228AD18800DB072F /* Flip.swift in Sources */,
+				3E23C23B228C2E0100DA3305 /* PodSessionStateObserving.swift in Sources */,
 				3E790F9E228ADC3000DB072F /* DefaultCertificateFactory.swift in Sources */,
 				3E38F90622819EB100C114B7 /* State.swift in Sources */,
 				3E23C21C228C0E9E00DA3305 /* URLSession+UploadTaskFactory.swift in Sources */,
