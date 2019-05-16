@@ -8,12 +8,9 @@
 
 import os.log
 
-private final class Placeholder: NSObject {}
-
 enum Constants {
   static let log = OSLog(
-    subsystem: Bundle(for: Placeholder.self).bundleIdentifier!,
-    // TODO: Replace placeholder with Blippit artifact
+    subsystem: Bundle(for: DefaultBlippit.self).bundleIdentifier!,
     category: String(describing: Blippit.self)
   )
 }
