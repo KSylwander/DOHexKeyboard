@@ -114,6 +114,7 @@
 		3EFADD30228D53B100B3559A /* Blippit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD2F228D53B100B3559A /* Blippit.swift */; };
 		3EFADD34228D567E00B3559A /* BlippitDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD33228D567E00B3559A /* BlippitDelegate.swift */; };
 		3EFADD36228D56C000B3559A /* DefaultBlippit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD35228D56C000B3559A /* DefaultBlippit.swift */; };
+		3EFADD38228D5AAD00B3559A /* BlippitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD37228D5AAD00B3559A /* BlippitFactory.swift */; };
 		3EFDCAC22282F42400774A21 /* StartingStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -251,6 +252,7 @@
 		3EFADD2F228D53B100B3559A /* Blippit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blippit.swift; sourceTree = "<group>"; };
 		3EFADD33228D567E00B3559A /* BlippitDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitDelegate.swift; sourceTree = "<group>"; };
 		3EFADD35228D56C000B3559A /* DefaultBlippit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultBlippit.swift; sourceTree = "<group>"; };
+		3EFADD37228D5AAD00B3559A /* BlippitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitFactory.swift; sourceTree = "<group>"; };
 		3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingStateSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -539,6 +541,7 @@
 				3EFADD2F228D53B100B3559A /* Blippit.swift */,
 				3EFADD2D228D534F00B3559A /* BlippitConfiguration.swift */,
 				3EFADD33228D567E00B3559A /* BlippitDelegate.swift */,
+				3EFADD37228D5AAD00B3559A /* BlippitFactory.swift */,
 				3EFADD35228D56C000B3559A /* DefaultBlippit.swift */,
 			);
 			path = Entrypoint;
@@ -776,6 +779,7 @@
 				3E790F9E228ADC3000DB072F /* DefaultCertificateFactory.swift in Sources */,
 				3E38F90622819EB100C114B7 /* State.swift in Sources */,
 				3E23C21C228C0E9E00DA3305 /* URLSession+UploadTaskFactory.swift in Sources */,
+				3EFADD38228D5AAD00B3559A /* BlippitFactory.swift in Sources */,
 				3E790FBC228AFA3A00DB072F /* ApiConfig.swift in Sources */,
 				3E790F88228AD99700DB072F /* UnsafeBitCast.swift in Sources */,
 				3E23C24C228C42DC00DA3305 /* UploadCommandDataUseCase.swift in Sources */,
