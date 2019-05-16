@@ -117,6 +117,7 @@
 		3EFADD38228D5AAD00B3559A /* BlippitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD37228D5AAD00B3559A /* BlippitFactory.swift */; };
 		3EFADD3A228D5B3600B3559A /* DefaultBlippitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD39228D5B3600B3559A /* DefaultBlippitFactory.swift */; };
 		3EFADD3C228D608200B3559A /* EstablishCloudSessionUseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD3B228D608200B3559A /* EstablishCloudSessionUseCaseFactory.swift */; };
+		3EFADD3E228D60AD00B3559A /* DefaultEstablishCloudSessionUseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD3D228D60AD00B3559A /* DefaultEstablishCloudSessionUseCaseFactory.swift */; };
 		3EFDCAC22282F42400774A21 /* StartingStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -257,6 +258,7 @@
 		3EFADD37228D5AAD00B3559A /* BlippitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitFactory.swift; sourceTree = "<group>"; };
 		3EFADD39228D5B3600B3559A /* DefaultBlippitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBlippitFactory.swift; sourceTree = "<group>"; };
 		3EFADD3B228D608200B3559A /* EstablishCloudSessionUseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishCloudSessionUseCaseFactory.swift; sourceTree = "<group>"; };
+		3EFADD3D228D60AD00B3559A /* DefaultEstablishCloudSessionUseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultEstablishCloudSessionUseCaseFactory.swift; sourceTree = "<group>"; };
 		3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingStateSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -288,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				3E23C22C228C0F2800DA3305 /* DefaultEstablishCloudSessionUseCase.swift */,
+				3EFADD3D228D60AD00B3559A /* DefaultEstablishCloudSessionUseCaseFactory.swift */,
 				3E23C226228C0F1100DA3305 /* EstablishCloudSessionRequestDto.swift */,
 				3E23C228228C0F1C00DA3305 /* EstablishCloudSessionResponseDto.swift */,
 				3E23C22A228C0F2300DA3305 /* EstablishCloudSessionUseCase.swift */,
@@ -751,6 +754,7 @@
 				3E790FA2228ADC5600DB072F /* DefaultApplyCertificatePinningUseCase.swift in Sources */,
 				3EFADD25228D4D6500B3559A /* RetryHandlerFactory.swift in Sources */,
 				3E23C227228C0F1100DA3305 /* EstablishCloudSessionRequestDto.swift in Sources */,
+				3EFADD3E228D60AD00B3559A /* DefaultEstablishCloudSessionUseCaseFactory.swift in Sources */,
 				3E38F9142281A1DB00C114B7 /* BlippitError.swift in Sources */,
 				3E23C24A228C42A600DA3305 /* UploadCommandDataResponseDto.swift in Sources */,
 				3EFADD34228D567E00B3559A /* BlippitDelegate.swift in Sources */,
