@@ -14,3 +14,25 @@ public protocol Blippit {
 
   func reset()
 }
+
+public extension Blippit {
+  var factory: BlippitFactory {
+    let decoder = JSONDecoder()
+    let urlSession = URLSession(configuration: .default)
+
+    return DefaultBlippitFactory(
+      establishCloudSessionUseCaseFactory: DefaultEstablishCloudSessionUseCaseFactory(
+        requestBuilder: DefaultURLRequestBuilder(apiConfig: Constants.api.establishCloudSession.config),
+        encoder: JSONEncoder(),
+        decoder: decoder,
+        uploadDataUseCase: DefaultUploadDataUseCase(uploadTaskFactory: urlSession)
+      ),
+      uploadCommandDataUseCase: DefaultUploadCommandDataUseCase(
+        requestBuilder: DefaultURLRequestBuilder(apiConfig: Constants.api.uploadCommandData.config),
+        decoder: decoder,
+        fetchDataUseCase: DefaultFetchDataUseCase(dataTaskFactory: urlSession)
+      ),
+      retryHandlerFactory: DefaultRetryHandlerFactory(maxRetries: Constants.states.transferDataToken.maxRetries)
+    )
+  }
+}
