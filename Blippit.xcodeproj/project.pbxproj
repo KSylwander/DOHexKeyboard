@@ -122,6 +122,7 @@
 		3EFADD42228D808D00B3559A /* HttpStatusCodeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD41228D808D00B3559A /* HttpStatusCodeValidator.swift */; };
 		3EFADD44228D80B800B3559A /* DefaultHttpStatusCodeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD43228D80B800B3559A /* DefaultHttpStatusCodeValidator.swift */; };
 		3EFADD48228D999800B3559A /* StartingStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD47228D999800B3559A /* StartingStateFactory.swift */; };
+		3EFADD4A228D99BB00B3559A /* DefaultStartingStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD49228D99BB00B3559A /* DefaultStartingStateFactory.swift */; };
 		3EFDCAC22282F42400774A21 /* StartingStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -267,6 +268,7 @@
 		3EFADD41228D808D00B3559A /* HttpStatusCodeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpStatusCodeValidator.swift; sourceTree = "<group>"; };
 		3EFADD43228D80B800B3559A /* DefaultHttpStatusCodeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHttpStatusCodeValidator.swift; sourceTree = "<group>"; };
 		3EFADD47228D999800B3559A /* StartingStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingStateFactory.swift; sourceTree = "<group>"; };
+		3EFADD49228D99BB00B3559A /* DefaultStartingStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStartingStateFactory.swift; sourceTree = "<group>"; };
 		3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingStateSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -337,6 +339,7 @@
 				3E23C244228C3DC700DA3305 /* CancellationHandler.swift */,
 				3E23C23E228C32FD00DA3305 /* DefaultPodSessionStateObservingState.swift */,
 				3E38F9112281A16500C114B7 /* DefaultPodzStatusObservingState.swift */,
+				3EFADD49228D99BB00B3559A /* DefaultStartingStateFactory.swift */,
 				3E23C23A228C2E0100DA3305 /* PodSessionStateObserving.swift */,
 				3EC4DE44228306F1007A05C9 /* PodStateObserving.swift */,
 				3E38F90D2281A0ED00C114B7 /* PodzStatusObserving.swift */,
@@ -814,6 +817,7 @@
 				3E23C24E228C434000DA3305 /* DefaultUploadCommandDataUseCase.swift in Sources */,
 				3E790F6D228AD17600DB072F /* Curry.swift in Sources */,
 				3E23C245228C3DC700DA3305 /* CancellationHandler.swift in Sources */,
+				3EFADD4A228D99BB00B3559A /* DefaultStartingStateFactory.swift in Sources */,
 				3E790FB6228AEE1F00DB072F /* SACAuthenticationManager.swift in Sources */,
 				3EC7974E22802A0C00AD79CE /* URLSessionTask+Cancellable.swift in Sources */,
 				3E790F94228ADA2700DB072F /* SecTrustHandler.swift in Sources */,
