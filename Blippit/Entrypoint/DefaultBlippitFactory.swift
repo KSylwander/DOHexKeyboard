@@ -11,6 +11,7 @@ import Podz
 struct DefaultBlippitFactory {
   let startingStateFactory: StartingStateFactory
   let startedStateFactory: StartedStateFactory
+  let setupTransferIdStateFactory: SetupTransferIdStateFactory
   let establishCloudSessionUseCaseFactory: EstablishCloudSessionUseCaseFactory
   let uploadCommandDataUseCase: UploadCommandDataUseCase
   let retryHandlerFactory: RetryHandlerFactory
@@ -23,6 +24,7 @@ extension DefaultBlippitFactory: BlippitFactory {
       podz: try PodzSetup.setup(appId: configuration.podzAppId, apiKey: configuration.podzApiKey),
       startingStateFactory: startingStateFactory,
       startedStateFactory: startedStateFactory,
+      setupTransferIdStateFactory: setupTransferIdStateFactory,
       establishCloudSessionUseCase: establishCloudSessionUseCaseFactory.makeUseCase(appId: configuration.blippitAppId),
       uploadCommandDataUseCase: uploadCommandDataUseCase,
       retryHandlerFactory: retryHandlerFactory

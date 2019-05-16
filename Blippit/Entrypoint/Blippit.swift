@@ -24,6 +24,7 @@ public extension Blippit {
     return DefaultBlippitFactory(
       startingStateFactory: DefaultStartingStateFactory(),
       startedStateFactory: DefaultStartedStateFactory(),
+      setupTransferIdStateFactory: DefaultSetupTransferIdStateFactory(),
       establishCloudSessionUseCaseFactory: DefaultEstablishCloudSessionUseCaseFactory(
         requestBuilder: DefaultURLRequestBuilder(apiConfig: Constants.api.establishCloudSession.config),
         encoder: JSONEncoder(),
