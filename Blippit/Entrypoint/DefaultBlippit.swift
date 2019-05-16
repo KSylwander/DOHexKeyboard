@@ -26,9 +26,9 @@ final class DefaultBlippit {
   private let startingStateFactory: StartingStateFactory
   private let startedStateFactory: StartedStateFactory
   private let setupTransferIdStateFactory: SetupTransferIdStateFactory
+  private let transferDataTokenStateFactory: TransferDataTokenStateFactory
   private let establishCloudSessionUseCase: EstablishCloudSessionUseCase
   private let uploadCommandDataUseCase: UploadCommandDataUseCase
-  private let retryHandlerFactory: RetryHandlerFactory
 
   private var userId: String!
   private static let commandData = "Data"
@@ -40,9 +40,9 @@ final class DefaultBlippit {
        startingStateFactory: StartingStateFactory,
        startedStateFactory: StartedStateFactory,
        setupTransferIdStateFactory: SetupTransferIdStateFactory,
+       transferDataTokenStateFactory: TransferDataTokenStateFactory,
        establishCloudSessionUseCase: EstablishCloudSessionUseCase,
-       uploadCommandDataUseCase: UploadCommandDataUseCase,
-       retryHandlerFactory: RetryHandlerFactory) {
+       uploadCommandDataUseCase: UploadCommandDataUseCase) {
 
     self.delegate = delegate
 
@@ -50,9 +50,9 @@ final class DefaultBlippit {
     self.startingStateFactory = startingStateFactory
     self.startedStateFactory = startedStateFactory
     self.setupTransferIdStateFactory = setupTransferIdStateFactory
+    self.transferDataTokenStateFactory = transferDataTokenStateFactory
     self.establishCloudSessionUseCase = establishCloudSessionUseCase
     self.uploadCommandDataUseCase = uploadCommandDataUseCase
-    self.retryHandlerFactory = retryHandlerFactory
 
     podz.onStatusChanged = { [weak self] status in
       self?.handlePodzStatus(status)
@@ -138,12 +138,7 @@ final class DefaultBlippit {
           uploadCommandDataUseCase: uploadCommandDataUseCase
         )
       case let .transferDataToken(podSession, dataToken):
-        return TransferDataTokenState(
-          delegate: self,
-          session: podSession,
-          dataToken: dataToken,
-          retryHandlerFactory: retryHandlerFactory
-        )
+        return transferDataTokenStateFactory.makeState(delegate: self, session: podSession, dataToken: dataToken)
       case .transferDataTokenCompleted:
         return StartedState(delegate: self)
       }

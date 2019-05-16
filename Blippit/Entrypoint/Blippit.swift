@@ -25,6 +25,9 @@ public extension Blippit {
       startingStateFactory: DefaultStartingStateFactory(),
       startedStateFactory: DefaultStartedStateFactory(),
       setupTransferIdStateFactory: DefaultSetupTransferIdStateFactory(),
+      transferDataTokenStateFactory: DefaultTransferDataTokenStateFactory(
+        retryHandlerFactory: DefaultRetryHandlerFactory(maxRetries: Constants.states.transferDataToken.maxRetries)
+      ),
       establishCloudSessionUseCaseFactory: DefaultEstablishCloudSessionUseCaseFactory(
         requestBuilder: DefaultURLRequestBuilder(apiConfig: Constants.api.establishCloudSession.config),
         encoder: JSONEncoder(),
@@ -41,8 +44,7 @@ public extension Blippit {
           dataTaskFactory: urlSession,
           httpStatusCodeValidator: httpStatusCodeValidator
         )
-      ),
-      retryHandlerFactory: DefaultRetryHandlerFactory(maxRetries: Constants.states.transferDataToken.maxRetries)
+      )
     )
   }
 }

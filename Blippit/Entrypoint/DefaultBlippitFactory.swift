@@ -12,9 +12,9 @@ struct DefaultBlippitFactory {
   let startingStateFactory: StartingStateFactory
   let startedStateFactory: StartedStateFactory
   let setupTransferIdStateFactory: SetupTransferIdStateFactory
+  let transferDataTokenStateFactory: TransferDataTokenStateFactory
   let establishCloudSessionUseCaseFactory: EstablishCloudSessionUseCaseFactory
   let uploadCommandDataUseCase: UploadCommandDataUseCase
-  let retryHandlerFactory: RetryHandlerFactory
 }
 
 extension DefaultBlippitFactory: BlippitFactory {
@@ -25,9 +25,9 @@ extension DefaultBlippitFactory: BlippitFactory {
       startingStateFactory: startingStateFactory,
       startedStateFactory: startedStateFactory,
       setupTransferIdStateFactory: setupTransferIdStateFactory,
+      transferDataTokenStateFactory: transferDataTokenStateFactory,
       establishCloudSessionUseCase: establishCloudSessionUseCaseFactory.makeUseCase(appId: configuration.blippitAppId),
-      uploadCommandDataUseCase: uploadCommandDataUseCase,
-      retryHandlerFactory: retryHandlerFactory
+      uploadCommandDataUseCase: uploadCommandDataUseCase
     )
   }
 }
