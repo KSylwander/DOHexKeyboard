@@ -30,7 +30,7 @@ extension StartedState: PodStateObserving {
 
     do {
       try session.open()
-      delegate?.state(self, moveTo: .setupTransferId(session))
+      delegate?.state(self, moveTo: .setupTransferId(pid: pod.pid, podSession: session))
     } catch {
       delegate?.state(self, didFailWithError: error)
     }

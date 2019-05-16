@@ -14,9 +14,12 @@ final class SetupTransferIdState {
   let session: PodSession
   var isCancelling = false
 
-  init(delegate: StateDelegate, session: PodSession) {
+  private let pid: UInt32
+
+  init(delegate: StateDelegate, pid: UInt32, session: PodSession) {
     self.delegate = delegate
     self.session = session
+    self.pid = pid
   }
 }
 
@@ -32,7 +35,7 @@ extension SetupTransferIdState: ValidPodSessionStateObserving {
         throw BlippitError.podDoesNotTransferId
       }
 
-      // TODO: Transition to the next state
+      delegate?.state(self, moveTo: .establishCloudSession(pid: pid, podSession: session))
     } catch {
       cancel()
       delegate?.state(self, didFailWithError: error)

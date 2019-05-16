@@ -13,7 +13,8 @@ enum RawState {
   case initial
   case starting
   case started
-  case setupTransferId(PodSession)
+  case setupTransferId(pid: UInt32, podSession: PodSession)
+  case establishCloudSession(pid: UInt32, podSession: PodSession)
 }
 
 extension RawState: Equatable {
@@ -25,8 +26,9 @@ extension RawState: Equatable {
       return true
     case (.started, .started):
       return true
-    case let (.setupTransferId(lhs), .setupTransferId(rhs)):
-      return lhs === rhs
+    case let (.setupTransferId(lhs), .setupTransferId(rhs)),
+         let (.establishCloudSession(lhs), .establishCloudSession(rhs)):
+      return lhs.pid == rhs.pid && lhs.podSession === rhs.podSession
     default:
       return false
     }
