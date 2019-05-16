@@ -107,6 +107,7 @@
 		3EFADD21228D4D5300B3559A /* RetryHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD20228D4D5300B3559A /* RetryHandling.swift */; };
 		3EFADD23228D4D5E00B3559A /* RetryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD22228D4D5E00B3559A /* RetryHandler.swift */; };
 		3EFADD25228D4D6500B3559A /* RetryHandlerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD24228D4D6500B3559A /* RetryHandlerFactory.swift */; };
+		3EFADD27228D4D6A00B3559A /* DefaultRetryHandlerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD26228D4D6900B3559A /* DefaultRetryHandlerFactory.swift */; };
 		3EFDCAC22282F42400774A21 /* StartingStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -237,6 +238,7 @@
 		3EFADD20228D4D5300B3559A /* RetryHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetryHandling.swift; sourceTree = "<group>"; };
 		3EFADD22228D4D5E00B3559A /* RetryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetryHandler.swift; sourceTree = "<group>"; };
 		3EFADD24228D4D6500B3559A /* RetryHandlerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetryHandlerFactory.swift; sourceTree = "<group>"; };
+		3EFADD26228D4D6900B3559A /* DefaultRetryHandlerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultRetryHandlerFactory.swift; sourceTree = "<group>"; };
 		3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingStateSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -508,6 +510,7 @@
 		3EFADD1F228D4BF500B3559A /* Retry Handling */ = {
 			isa = PBXGroup;
 			children = (
+				3EFADD26228D4D6900B3559A /* DefaultRetryHandlerFactory.swift */,
 				3EFADD22228D4D5E00B3559A /* RetryHandler.swift */,
 				3EFADD24228D4D6500B3559A /* RetryHandlerFactory.swift */,
 				3EFADD20228D4D5300B3559A /* RetryHandling.swift */,
@@ -692,6 +695,7 @@
 				3E790FAE228ADD7700DB072F /* ValidateTrustedCertificatesUseCase.swift in Sources */,
 				3E790F9A228ADC1700DB072F /* SecurityError.swift in Sources */,
 				3E790FA6228ADC6B00DB072F /* DefaultApplyCertificatePinningUseCaseFactory.swift in Sources */,
+				3EFADD27228D4D6A00B3559A /* DefaultRetryHandlerFactory.swift in Sources */,
 				3E790FBA228AFA2200DB072F /* HttpMethod.swift in Sources */,
 				3E790FA8228ADC7800DB072F /* ValidateTrustUseCase.swift in Sources */,
 				3E97FA2A228031CF003419AE /* DefaultFetchDataUseCase.swift in Sources */,
