@@ -23,6 +23,7 @@ public extension Blippit {
 
     return DefaultBlippitFactory(
       startingStateFactory: DefaultStartingStateFactory(),
+      startedStateFactory: DefaultStartedStateFactory(),
       establishCloudSessionUseCaseFactory: DefaultEstablishCloudSessionUseCaseFactory(
         requestBuilder: DefaultURLRequestBuilder(apiConfig: Constants.api.establishCloudSession.config),
         encoder: JSONEncoder(),

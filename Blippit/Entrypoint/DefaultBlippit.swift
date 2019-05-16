@@ -24,6 +24,7 @@ final class DefaultBlippit {
 
   private let podz: Podz
   private let startingStateFactory: StartingStateFactory
+  private let startedStateFactory: StartedStateFactory
   private let establishCloudSessionUseCase: EstablishCloudSessionUseCase
   private let uploadCommandDataUseCase: UploadCommandDataUseCase
   private let retryHandlerFactory: RetryHandlerFactory
@@ -36,6 +37,7 @@ final class DefaultBlippit {
   init(delegate: BlippitDelegate,
        podz: Podz,
        startingStateFactory: StartingStateFactory,
+       startedStateFactory: StartedStateFactory,
        establishCloudSessionUseCase: EstablishCloudSessionUseCase,
        uploadCommandDataUseCase: UploadCommandDataUseCase,
        retryHandlerFactory: RetryHandlerFactory) {
@@ -44,6 +46,7 @@ final class DefaultBlippit {
 
     self.podz = podz
     self.startingStateFactory = startingStateFactory
+    self.startedStateFactory = startedStateFactory
     self.establishCloudSessionUseCase = establishCloudSessionUseCase
     self.uploadCommandDataUseCase = uploadCommandDataUseCase
     self.retryHandlerFactory = retryHandlerFactory
@@ -112,7 +115,7 @@ final class DefaultBlippit {
         return startingStateFactory.makeState(delegate: self, podz: podz)
       case .started:
         isActive = true
-        return StartedState(delegate: self)
+        return startedStateFactory.makeState(delegate: self)
       case let .setupTransferId(pid, podSession):
         return SetupTransferIdState(delegate: self, pid: pid, session: podSession)
       case let .establishCloudSession(pid, podSession):
