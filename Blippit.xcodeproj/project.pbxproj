@@ -109,6 +109,7 @@
 		3EFADD25228D4D6500B3559A /* RetryHandlerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD24228D4D6500B3559A /* RetryHandlerFactory.swift */; };
 		3EFADD27228D4D6A00B3559A /* DefaultRetryHandlerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD26228D4D6900B3559A /* DefaultRetryHandlerFactory.swift */; };
 		3EFADD29228D4D8A00B3559A /* TransferIdState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD28228D4D8A00B3559A /* TransferIdState.swift */; };
+		3EFADD2B228D4D9B00B3559A /* TransferDataTokenState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD2A228D4D9B00B3559A /* TransferDataTokenState.swift */; };
 		3EFDCAC22282F42400774A21 /* StartingStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -241,6 +242,7 @@
 		3EFADD24228D4D6500B3559A /* RetryHandlerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetryHandlerFactory.swift; sourceTree = "<group>"; };
 		3EFADD26228D4D6900B3559A /* DefaultRetryHandlerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultRetryHandlerFactory.swift; sourceTree = "<group>"; };
 		3EFADD28228D4D8A00B3559A /* TransferIdState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferIdState.swift; sourceTree = "<group>"; };
+		3EFADD2A228D4D9B00B3559A /* TransferDataTokenState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferDataTokenState.swift; sourceTree = "<group>"; };
 		3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingStateSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -296,6 +298,7 @@
 				3E23C240228C35D800DA3305 /* SetupTransferIdState.swift */,
 				3EC4DE462283073A007A05C9 /* StartedState.swift */,
 				3E38F9152281A2A200C114B7 /* StartingState.swift */,
+				3EFADD2A228D4D9B00B3559A /* TransferDataTokenState.swift */,
 				3E23C24F228C460E00DA3305 /* UploadCommandDataState.swift */,
 			);
 			path = "State Machine";
@@ -744,6 +747,7 @@
 				3E790F90228ADA0D00DB072F /* SecCertificateHandler.swift in Sources */,
 				3E23C250228C460E00DA3305 /* UploadCommandDataState.swift in Sources */,
 				3E790F6F228AD18800DB072F /* Flip.swift in Sources */,
+				3EFADD2B228D4D9B00B3559A /* TransferDataTokenState.swift in Sources */,
 				3E23C23B228C2E0100DA3305 /* PodSessionStateObserving.swift in Sources */,
 				3E790F9E228ADC3000DB072F /* DefaultCertificateFactory.swift in Sources */,
 				3E38F90622819EB100C114B7 /* State.swift in Sources */,

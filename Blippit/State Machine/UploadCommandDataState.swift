@@ -50,9 +50,13 @@ extension UploadCommandDataState: Startable {
         switch result {
         case let .failure(error):
           self.delegate?.state(self, didFailWithError: error)
-        case .success:
-          // TODO: Transition to the next state
-          break
+        case let .success(dataToken):
+          do {
+            let dataToken = try TransferId(from: dataToken)
+            self.delegate?.state(self, moveTo: .transferDataToken(podSession: self.session, dataToken: dataToken))
+          } catch {
+            self.delegate?.state(self, didFailWithError: error)
+          }
         }
       }
     )
