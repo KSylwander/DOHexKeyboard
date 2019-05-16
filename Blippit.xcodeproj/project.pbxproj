@@ -124,6 +124,7 @@
 		3EFADD48228D999800B3559A /* StartingStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD47228D999800B3559A /* StartingStateFactory.swift */; };
 		3EFADD4A228D99BB00B3559A /* DefaultStartingStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD49228D99BB00B3559A /* DefaultStartingStateFactory.swift */; };
 		3EFADD4C228D9ADF00B3559A /* StartedStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD4B228D9ADF00B3559A /* StartedStateFactory.swift */; };
+		3EFADD4E228D9B0000B3559A /* DefaultStartedStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD4D228D9B0000B3559A /* DefaultStartedStateFactory.swift */; };
 		3EFDCAC22282F42400774A21 /* StartingStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -271,6 +272,7 @@
 		3EFADD47228D999800B3559A /* StartingStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingStateFactory.swift; sourceTree = "<group>"; };
 		3EFADD49228D99BB00B3559A /* DefaultStartingStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStartingStateFactory.swift; sourceTree = "<group>"; };
 		3EFADD4B228D9ADF00B3559A /* StartedStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartedStateFactory.swift; sourceTree = "<group>"; };
+		3EFADD4D228D9B0000B3559A /* DefaultStartedStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStartedStateFactory.swift; sourceTree = "<group>"; };
 		3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingStateSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -341,6 +343,7 @@
 				3E23C244228C3DC700DA3305 /* CancellationHandler.swift */,
 				3E23C23E228C32FD00DA3305 /* DefaultPodSessionStateObservingState.swift */,
 				3E38F9112281A16500C114B7 /* DefaultPodzStatusObservingState.swift */,
+				3EFADD4D228D9B0000B3559A /* DefaultStartedStateFactory.swift */,
 				3EFADD49228D99BB00B3559A /* DefaultStartingStateFactory.swift */,
 				3E23C23A228C2E0100DA3305 /* PodSessionStateObserving.swift */,
 				3EC4DE44228306F1007A05C9 /* PodStateObserving.swift */,
@@ -785,6 +788,7 @@
 				3E23C23F228C32FD00DA3305 /* DefaultPodSessionStateObservingState.swift in Sources */,
 				3EFADD36228D56C000B3559A /* DefaultBlippit.swift in Sources */,
 				3E790FC0228AFA6E00DB072F /* DefaultURLRequestBuilder.swift in Sources */,
+				3EFADD4E228D9B0000B3559A /* DefaultStartedStateFactory.swift in Sources */,
 				3E97FA282280318B003419AE /* URLSession+DataTaskFactory.swift in Sources */,
 				3EFADD40228D6EF500B3559A /* Constants+States.swift in Sources */,
 				3E38F90822819EE300C114B7 /* RawState.swift in Sources */,
