@@ -19,7 +19,7 @@ enum BlippitError {
     PodzStatus
   )
   case invalidPodSessionState(PodSessionState)
-  case podDoesNotTransferId
+  case podDoesNotSupportTransferId
 
   case invalidHttpStatusCode(Int)
 
