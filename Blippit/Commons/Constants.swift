@@ -14,6 +14,6 @@ enum Constants {
   static let log = OSLog(
     subsystem: Bundle(for: Placeholder.self).bundleIdentifier!,
     // TODO: Replace placeholder with Blippit artifact
-    category: String(describing: Placeholder.self)
+    category: String(describing: Blippit.self)
   )
 }
