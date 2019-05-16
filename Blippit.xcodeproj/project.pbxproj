@@ -104,6 +104,7 @@
 		3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC79740228025BE00AD79CE /* Cancellable.swift */; };
 		3EC7974C2280298800AD79CE /* FetchDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */; };
 		3EC7974E22802A0C00AD79CE /* URLSessionTask+Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */; };
+		3EFADD21228D4D5300B3559A /* RetryHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD20228D4D5300B3559A /* RetryHandling.swift */; };
 		3EFDCAC22282F42400774A21 /* StartingStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -231,6 +232,7 @@
 		3EC79740228025BE00AD79CE /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchDataUseCase.swift; sourceTree = "<group>"; };
 		3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSessionTask+Cancellable.swift"; sourceTree = "<group>"; };
+		3EFADD20228D4D5300B3559A /* RetryHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetryHandling.swift; sourceTree = "<group>"; };
 		3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingStateSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -445,6 +447,7 @@
 				3E790F6B228AD15200DB072F /* Functional */,
 				3EC797462280279900AD79CE /* Networking */,
 				3EAEA7FD2280109F008B7E77 /* Resources */,
+				3EFADD1F228D4BF500B3559A /* Retry Handling */,
 				3E790F7E228AD90F00DB072F /* Security */,
 				3E38F9172281A31F00C114B7 /* State Handling */,
 				3E38F90422819E9100C114B7 /* State Machine */,
@@ -496,6 +499,14 @@
 				3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		3EFADD1F228D4BF500B3559A /* Retry Handling */ = {
+			isa = PBXGroup;
+			children = (
+				3EFADD20228D4D5300B3559A /* RetryHandling.swift */,
+			);
+			path = "Retry Handling";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -696,6 +707,7 @@
 				3E790F9C228ADC2500DB072F /* CertificateFactory.swift in Sources */,
 				3E790F8A228AD9AA00DB072F /* SecurityPolicyHandling.swift in Sources */,
 				3E97FA262280313F003419AE /* DataTaskFactory.swift in Sources */,
+				3EFADD21228D4D5300B3559A /* RetryHandling.swift in Sources */,
 				3E790FB2228ADD8B00DB072F /* CertificatePinning.swift in Sources */,
 				3E23C23F228C32FD00DA3305 /* DefaultPodSessionStateObservingState.swift in Sources */,
 				3E790FC0228AFA6E00DB072F /* DefaultURLRequestBuilder.swift in Sources */,
