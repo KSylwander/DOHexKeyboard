@@ -37,6 +37,10 @@ extension CancellablePodSessionState {
       delegate?.state(self, didFailWithError: error)
     }
 
+    if let self = self as? CancellationHandler {
+      self.handleCancellation()
+    }
+
     /* Move back to the starting state after a cancellation. This allows us to make sure that the Podz is still in the
      * correct state after the previous operations.
      */
