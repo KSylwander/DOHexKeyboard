@@ -282,7 +282,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3E23C225228C0ED900DA3305 /* Establish Session */ = {
+		3E23C225228C0ED900DA3305 /* Establish Cloud Session */ = {
 			isa = PBXGroup;
 			children = (
 				3E23C22C228C0F2800DA3305 /* DefaultEstablishCloudSessionUseCase.swift */,
@@ -290,7 +290,7 @@
 				3E23C228228C0F1C00DA3305 /* EstablishCloudSessionResponseDto.swift */,
 				3E23C22A228C0F2300DA3305 /* EstablishCloudSessionUseCase.swift */,
 			);
-			path = "Establish Session";
+			path = "Establish Cloud Session";
 			sourceTree = "<group>";
 		};
 		3E23C248228C414600DA3305 /* Upload Command Data */ = {
@@ -468,7 +468,7 @@
 			children = (
 				3EC79744228026F100AD79CE /* Commons */,
 				3EFADD2C228D532300B3559A /* Entrypoint */,
-				3E23C225228C0ED900DA3305 /* Establish Session */,
+				3E23C225228C0ED900DA3305 /* Establish Cloud Session */,
 				3E790F6B228AD15200DB072F /* Functional */,
 				3EC797462280279900AD79CE /* Networking */,
 				3EAEA7FD2280109F008B7E77 /* Resources */,
