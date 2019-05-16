@@ -10,6 +10,7 @@ import Foundation
 
 struct DefaultFetchDataUseCase {
   let dataTaskFactory: DataTaskFactory
+  let httpStatusCodeValidator: HttpStatusCodeValidator
 }
 
 extension DefaultFetchDataUseCase: FetchDataUseCase {
@@ -18,6 +19,11 @@ extension DefaultFetchDataUseCase: FetchDataUseCase {
 
     let task = dataTaskFactory.dataTask(with: request) { data, response, error in
       let response = response.map { $0 as! HTTPURLResponse }
+
+      if let statusCode = response?.statusCode, let error = self.httpStatusCodeValidator.validate(statusCode) {
+        completion(response, .failure(error))
+        return
+      }
 
       if let error = error {
         completion(response, .failure(error))
