@@ -23,6 +23,7 @@ final class DefaultBlippit {
   private weak var delegate: BlippitDelegate?
 
   private let podz: Podz
+  private let startingStateFactory: StartingStateFactory
   private let establishCloudSessionUseCase: EstablishCloudSessionUseCase
   private let uploadCommandDataUseCase: UploadCommandDataUseCase
   private let retryHandlerFactory: RetryHandlerFactory
@@ -34,6 +35,7 @@ final class DefaultBlippit {
 
   init(delegate: BlippitDelegate,
        podz: Podz,
+       startingStateFactory: StartingStateFactory,
        establishCloudSessionUseCase: EstablishCloudSessionUseCase,
        uploadCommandDataUseCase: UploadCommandDataUseCase,
        retryHandlerFactory: RetryHandlerFactory) {
@@ -41,6 +43,7 @@ final class DefaultBlippit {
     self.delegate = delegate
 
     self.podz = podz
+    self.startingStateFactory = startingStateFactory
     self.establishCloudSessionUseCase = establishCloudSessionUseCase
     self.uploadCommandDataUseCase = uploadCommandDataUseCase
     self.retryHandlerFactory = retryHandlerFactory
@@ -106,7 +109,7 @@ final class DefaultBlippit {
         return nil
       case .starting:
         delegate?.blippitWillStart(self)
-        return StartingState(delegate: self, podz: podz)
+        return startingStateFactory.makeState(delegate: self, podz: podz)
       case .started:
         isActive = true
         return StartedState(delegate: self)

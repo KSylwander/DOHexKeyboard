@@ -22,6 +22,7 @@ public extension Blippit {
     let httpStatusCodeValidator = DefaultHttpStatusCodeValidator()
 
     return DefaultBlippitFactory(
+      startingStateFactory: DefaultStartingStateFactory(),
       establishCloudSessionUseCaseFactory: DefaultEstablishCloudSessionUseCaseFactory(
         requestBuilder: DefaultURLRequestBuilder(apiConfig: Constants.api.establishCloudSession.config),
         encoder: JSONEncoder(),
