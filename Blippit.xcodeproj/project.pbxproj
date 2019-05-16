@@ -112,6 +112,7 @@
 		3EFADD2B228D4D9B00B3559A /* TransferDataTokenState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD2A228D4D9B00B3559A /* TransferDataTokenState.swift */; };
 		3EFADD2E228D534F00B3559A /* BlippitConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD2D228D534F00B3559A /* BlippitConfiguration.swift */; };
 		3EFADD30228D53B100B3559A /* Blippit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD2F228D53B100B3559A /* Blippit.swift */; };
+		3EFADD34228D567E00B3559A /* BlippitDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD33228D567E00B3559A /* BlippitDelegate.swift */; };
 		3EFDCAC22282F42400774A21 /* StartingStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -247,6 +248,7 @@
 		3EFADD2A228D4D9B00B3559A /* TransferDataTokenState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferDataTokenState.swift; sourceTree = "<group>"; };
 		3EFADD2D228D534F00B3559A /* BlippitConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitConfiguration.swift; sourceTree = "<group>"; };
 		3EFADD2F228D53B100B3559A /* Blippit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blippit.swift; sourceTree = "<group>"; };
+		3EFADD33228D567E00B3559A /* BlippitDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitDelegate.swift; sourceTree = "<group>"; };
 		3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingStateSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -534,6 +536,7 @@
 			children = (
 				3EFADD2F228D53B100B3559A /* Blippit.swift */,
 				3EFADD2D228D534F00B3559A /* BlippitConfiguration.swift */,
+				3EFADD33228D567E00B3559A /* BlippitDelegate.swift */,
 			);
 			path = Entrypoint;
 			sourceTree = "<group>";
@@ -738,6 +741,7 @@
 				3E23C227228C0F1100DA3305 /* EstablishCloudSessionRequestDto.swift in Sources */,
 				3E38F9142281A1DB00C114B7 /* BlippitError.swift in Sources */,
 				3E23C24A228C42A600DA3305 /* UploadCommandDataResponseDto.swift in Sources */,
+				3EFADD34228D567E00B3559A /* BlippitDelegate.swift in Sources */,
 				3E790F9C228ADC2500DB072F /* CertificateFactory.swift in Sources */,
 				3E790F8A228AD9AA00DB072F /* SecurityPolicyHandling.swift in Sources */,
 				3E97FA262280313F003419AE /* DataTaskFactory.swift in Sources */,
