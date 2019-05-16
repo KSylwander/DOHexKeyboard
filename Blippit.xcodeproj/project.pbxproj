@@ -120,6 +120,7 @@
 		3EFADD3E228D60AD00B3559A /* DefaultEstablishCloudSessionUseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD3D228D60AD00B3559A /* DefaultEstablishCloudSessionUseCaseFactory.swift */; };
 		3EFADD40228D6EF500B3559A /* Constants+States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD3F228D6EF500B3559A /* Constants+States.swift */; };
 		3EFADD42228D808D00B3559A /* HttpStatusCodeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD41228D808D00B3559A /* HttpStatusCodeValidator.swift */; };
+		3EFADD44228D80B800B3559A /* DefaultHttpStatusCodeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD43228D80B800B3559A /* DefaultHttpStatusCodeValidator.swift */; };
 		3EFDCAC22282F42400774A21 /* StartingStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -263,6 +264,7 @@
 		3EFADD3D228D60AD00B3559A /* DefaultEstablishCloudSessionUseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultEstablishCloudSessionUseCaseFactory.swift; sourceTree = "<group>"; };
 		3EFADD3F228D6EF500B3559A /* Constants+States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+States.swift"; sourceTree = "<group>"; };
 		3EFADD41228D808D00B3559A /* HttpStatusCodeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpStatusCodeValidator.swift; sourceTree = "<group>"; };
+		3EFADD43228D80B800B3559A /* DefaultHttpStatusCodeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHttpStatusCodeValidator.swift; sourceTree = "<group>"; };
 		3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingStateSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -522,6 +524,7 @@
 				3E790FBB228AFA3A00DB072F /* ApiConfig.swift */,
 				3E97FA252280313F003419AE /* DataTaskFactory.swift */,
 				3E97FA29228031CF003419AE /* DefaultFetchDataUseCase.swift */,
+				3EFADD43228D80B800B3559A /* DefaultHttpStatusCodeValidator.swift */,
 				3E23C21F228C0EA900DA3305 /* DefaultUploadDataUseCase.swift */,
 				3E790FBF228AFA6E00DB072F /* DefaultURLRequestBuilder.swift */,
 				3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */,
@@ -728,6 +731,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E790F82228AD96200DB072F /* Certificate.swift in Sources */,
+				3EFADD44228D80B800B3559A /* DefaultHttpStatusCodeValidator.swift in Sources */,
 				3E38F90C2281A09600C114B7 /* Startable.swift in Sources */,
 				3E38F9162281A2A200C114B7 /* StartingState.swift in Sources */,
 				3E23C23D228C2F0800DA3305 /* ValidPodSessionStateObserving.swift in Sources */,
