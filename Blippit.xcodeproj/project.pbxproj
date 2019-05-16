@@ -128,6 +128,7 @@
 		3EFADD50228D9D2900B3559A /* SetupTransferIdStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD4F228D9D2900B3559A /* SetupTransferIdStateFactory.swift */; };
 		3EFADD52228D9D8200B3559A /* DefaultSetupTransferIdStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD51228D9D8200B3559A /* DefaultSetupTransferIdStateFactory.swift */; };
 		3EFADD54228D9F6600B3559A /* TransferDataTokenStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD53228D9F6600B3559A /* TransferDataTokenStateFactory.swift */; };
+		3EFADD56228D9F9100B3559A /* DefaultTransferDataTokenStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD55228D9F9100B3559A /* DefaultTransferDataTokenStateFactory.swift */; };
 		3EFDCAC22282F42400774A21 /* StartingStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -279,6 +280,7 @@
 		3EFADD4F228D9D2900B3559A /* SetupTransferIdStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTransferIdStateFactory.swift; sourceTree = "<group>"; };
 		3EFADD51228D9D8200B3559A /* DefaultSetupTransferIdStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSetupTransferIdStateFactory.swift; sourceTree = "<group>"; };
 		3EFADD53228D9F6600B3559A /* TransferDataTokenStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDataTokenStateFactory.swift; sourceTree = "<group>"; };
+		3EFADD55228D9F9100B3559A /* DefaultTransferDataTokenStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTransferDataTokenStateFactory.swift; sourceTree = "<group>"; };
 		3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingStateSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -352,6 +354,7 @@
 				3EFADD51228D9D8200B3559A /* DefaultSetupTransferIdStateFactory.swift */,
 				3EFADD4D228D9B0000B3559A /* DefaultStartedStateFactory.swift */,
 				3EFADD49228D99BB00B3559A /* DefaultStartingStateFactory.swift */,
+				3EFADD55228D9F9100B3559A /* DefaultTransferDataTokenStateFactory.swift */,
 				3E23C23A228C2E0100DA3305 /* PodSessionStateObserving.swift */,
 				3EC4DE44228306F1007A05C9 /* PodStateObserving.swift */,
 				3E38F90D2281A0ED00C114B7 /* PodzStatusObserving.swift */,
@@ -778,6 +781,7 @@
 				3EFADD30228D53B100B3559A /* Blippit.swift in Sources */,
 				3EFADD54228D9F6600B3559A /* TransferDataTokenStateFactory.swift in Sources */,
 				3EFADD23228D4D5E00B3559A /* RetryHandler.swift in Sources */,
+				3EFADD56228D9F9100B3559A /* DefaultTransferDataTokenStateFactory.swift in Sources */,
 				3EC7974C2280298800AD79CE /* FetchDataUseCase.swift in Sources */,
 				3E23C229228C0F1C00DA3305 /* EstablishCloudSessionResponseDto.swift in Sources */,
 				3EFADD50228D9D2900B3559A /* SetupTransferIdStateFactory.swift in Sources */,

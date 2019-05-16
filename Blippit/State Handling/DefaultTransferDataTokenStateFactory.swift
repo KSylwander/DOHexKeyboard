@@ -1,0 +1,24 @@
+//
+//  DefaultTransferDataTokenStateFactory.swift
+//  Blippit
+//
+//  Created by Jerson Perpetua on 2019-05-16.
+//  Copyright © 2019 Crunchfish AB. All rights reserved.
+//
+
+import Podz
+
+struct DefaultTransferDataTokenStateFactory {
+  let retryHandlerFactory: RetryHandlerFactory
+}
+
+extension DefaultTransferDataTokenStateFactory: TransferDataTokenStateFactory {
+  func makeState(delegate: StateDelegate, session: PodSession, dataToken: TransferId) -> State {
+    return TransferDataTokenState(
+      delegate: delegate,
+      session: session,
+      dataToken: dataToken,
+      retryHandlerFactory: retryHandlerFactory
+    )
+  }
+}
