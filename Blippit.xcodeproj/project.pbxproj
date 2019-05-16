@@ -110,6 +110,7 @@
 		3EFADD27228D4D6A00B3559A /* DefaultRetryHandlerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD26228D4D6900B3559A /* DefaultRetryHandlerFactory.swift */; };
 		3EFADD29228D4D8A00B3559A /* TransferIdState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD28228D4D8A00B3559A /* TransferIdState.swift */; };
 		3EFADD2B228D4D9B00B3559A /* TransferDataTokenState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD2A228D4D9B00B3559A /* TransferDataTokenState.swift */; };
+		3EFADD2E228D534F00B3559A /* BlippitConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD2D228D534F00B3559A /* BlippitConfiguration.swift */; };
 		3EFDCAC22282F42400774A21 /* StartingStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -243,6 +244,7 @@
 		3EFADD26228D4D6900B3559A /* DefaultRetryHandlerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultRetryHandlerFactory.swift; sourceTree = "<group>"; };
 		3EFADD28228D4D8A00B3559A /* TransferIdState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferIdState.swift; sourceTree = "<group>"; };
 		3EFADD2A228D4D9B00B3559A /* TransferDataTokenState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferDataTokenState.swift; sourceTree = "<group>"; };
+		3EFADD2D228D534F00B3559A /* BlippitConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitConfiguration.swift; sourceTree = "<group>"; };
 		3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingStateSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -455,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				3EC79744228026F100AD79CE /* Commons */,
+				3EFADD2C228D532300B3559A /* Entrypoint */,
 				3E23C225228C0ED900DA3305 /* Establish Session */,
 				3E790F6B228AD15200DB072F /* Functional */,
 				3EC797462280279900AD79CE /* Networking */,
@@ -522,6 +525,14 @@
 				3EFADD20228D4D5300B3559A /* RetryHandling.swift */,
 			);
 			path = "Retry Handling";
+			sourceTree = "<group>";
+		};
+		3EFADD2C228D532300B3559A /* Entrypoint */ = {
+			isa = PBXGroup;
+			children = (
+				3EFADD2D228D534F00B3559A /* BlippitConfiguration.swift */,
+			);
+			path = Entrypoint;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -708,6 +719,7 @@
 				3E23C22D228C0F2800DA3305 /* DefaultEstablishCloudSessionUseCase.swift in Sources */,
 				3E790FB0228ADD7D00DB072F /* DefaultValidateTrustedCertificatesUseCase.swift in Sources */,
 				3E790F71228AD19C00DB072F /* Fmap.swift in Sources */,
+				3EFADD2E228D534F00B3559A /* BlippitConfiguration.swift in Sources */,
 				3E23C241228C35D800DA3305 /* SetupTransferIdState.swift in Sources */,
 				3EC4DE45228306F1007A05C9 /* PodStateObserving.swift in Sources */,
 				3E23C222228C0EC600DA3305 /* Encoder.swift in Sources */,
