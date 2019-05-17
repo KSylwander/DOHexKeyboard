@@ -25,6 +25,16 @@ public extension Blippit {
       startingStateFactory: DefaultStartingStateFactory(),
       startedStateFactory: DefaultStartedStateFactory(),
       setupTransferIdStateFactory: DefaultSetupTransferIdStateFactory(),
+      uploadCommandDataStateFactory: DefaultUploadCommandDataStateFactory(
+        uploadCommandDataUseCase: DefaultUploadCommandDataUseCase(
+          requestBuilder: DefaultURLRequestBuilder(apiConfig: Constants.api.uploadCommandData.config),
+          decoder: decoder,
+          fetchDataUseCase: DefaultFetchDataUseCase(
+            dataTaskFactory: urlSession,
+            httpStatusCodeValidator: httpStatusCodeValidator
+          )
+        )
+      ),
       transferDataTokenStateFactory: DefaultTransferDataTokenStateFactory(
         retryHandlerFactory: DefaultRetryHandlerFactory(maxRetries: Constants.states.transferDataToken.maxRetries)
       ),
@@ -34,14 +44,6 @@ public extension Blippit {
         decoder: decoder,
         uploadDataUseCase: DefaultUploadDataUseCase(
           uploadTaskFactory: urlSession,
-          httpStatusCodeValidator: httpStatusCodeValidator
-        )
-      ),
-      uploadCommandDataUseCase: DefaultUploadCommandDataUseCase(
-        requestBuilder: DefaultURLRequestBuilder(apiConfig: Constants.api.uploadCommandData.config),
-        decoder: decoder,
-        fetchDataUseCase: DefaultFetchDataUseCase(
-          dataTaskFactory: urlSession,
           httpStatusCodeValidator: httpStatusCodeValidator
         )
       )

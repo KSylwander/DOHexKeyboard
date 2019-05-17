@@ -26,9 +26,9 @@ final class DefaultBlippit {
   private let startingStateFactory: StartingStateFactory
   private let startedStateFactory: StartedStateFactory
   private let setupTransferIdStateFactory: SetupTransferIdStateFactory
+  private let uploadCommandDataStateFactory: UploadCommandDataStateFactory
   private let transferDataTokenStateFactory: TransferDataTokenStateFactory
   private let establishCloudSessionUseCase: EstablishCloudSessionUseCase
-  private let uploadCommandDataUseCase: UploadCommandDataUseCase
 
   private var userId: String!
   private static let commandData = "Data"
@@ -40,9 +40,9 @@ final class DefaultBlippit {
        startingStateFactory: StartingStateFactory,
        startedStateFactory: StartedStateFactory,
        setupTransferIdStateFactory: SetupTransferIdStateFactory,
+       uploadCommandDataStateFactory: UploadCommandDataStateFactory,
        transferDataTokenStateFactory: TransferDataTokenStateFactory,
-       establishCloudSessionUseCase: EstablishCloudSessionUseCase,
-       uploadCommandDataUseCase: UploadCommandDataUseCase) {
+       establishCloudSessionUseCase: EstablishCloudSessionUseCase) {
 
     self.delegate = delegate
 
@@ -50,9 +50,9 @@ final class DefaultBlippit {
     self.startingStateFactory = startingStateFactory
     self.startedStateFactory = startedStateFactory
     self.setupTransferIdStateFactory = setupTransferIdStateFactory
+    self.uploadCommandDataStateFactory = uploadCommandDataStateFactory
     self.transferDataTokenStateFactory = transferDataTokenStateFactory
     self.establishCloudSessionUseCase = establishCloudSessionUseCase
-    self.uploadCommandDataUseCase = uploadCommandDataUseCase
 
     podz.onStatusChanged = { [weak self] status in
       self?.handlePodzStatus(status)
@@ -130,12 +130,11 @@ final class DefaultBlippit {
           establishCloudSessionUseCase: establishCloudSessionUseCase
         )
       case let .uploadCommandData(cloudSessionId, podSession):
-        return UploadCommandDataState(
+        return uploadCommandDataStateFactory.makeState(
           delegate: self,
           cloudSessionId: cloudSessionId,
           data: DefaultBlippit.commandData,
-          podSession: podSession,
-          uploadCommandDataUseCase: uploadCommandDataUseCase
+          podSession: podSession
         )
       case let .transferDataToken(podSession, dataToken):
         return transferDataTokenStateFactory.makeState(delegate: self, session: podSession, dataToken: dataToken)
