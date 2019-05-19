@@ -104,6 +104,7 @@
 		3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC79740228025BE00AD79CE /* Cancellable.swift */; };
 		3EC7974C2280298800AD79CE /* FetchDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */; };
 		3EC7974E22802A0C00AD79CE /* URLSessionTask+Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */; };
+		3EE74B492291EEF400AFB75D /* EstablishCloudSessionStateMetaFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE74B482291EEF400AFB75D /* EstablishCloudSessionStateMetaFactory.swift */; };
 		3EE9ABD1228E94E70018896E /* EstablishCloudSessionStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE9ABD0228E94E70018896E /* EstablishCloudSessionStateFactory.swift */; };
 		3EE9ABD3228E95210018896E /* DefaultEstablishCloudSessionStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE9ABD2228E95210018896E /* DefaultEstablishCloudSessionStateFactory.swift */; };
 		3EFADD21228D4D5300B3559A /* RetryHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD20228D4D5300B3559A /* RetryHandling.swift */; };
@@ -260,6 +261,7 @@
 		3EC79740228025BE00AD79CE /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchDataUseCase.swift; sourceTree = "<group>"; };
 		3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSessionTask+Cancellable.swift"; sourceTree = "<group>"; };
+		3EE74B482291EEF400AFB75D /* EstablishCloudSessionStateMetaFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishCloudSessionStateMetaFactory.swift; sourceTree = "<group>"; };
 		3EE9ABD0228E94E70018896E /* EstablishCloudSessionStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishCloudSessionStateFactory.swift; sourceTree = "<group>"; };
 		3EE9ABD2228E95210018896E /* DefaultEstablishCloudSessionStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultEstablishCloudSessionStateFactory.swift; sourceTree = "<group>"; };
 		3EFADD20228D4D5300B3559A /* RetryHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetryHandling.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				3EFADD55228D9F9100B3559A /* DefaultTransferDataTokenStateFactory.swift */,
 				3EFADD59228DA19B00B3559A /* DefaultUploadCommandDataStateFactory.swift */,
 				3EE9ABD0228E94E70018896E /* EstablishCloudSessionStateFactory.swift */,
+				3EE74B482291EEF400AFB75D /* EstablishCloudSessionStateMetaFactory.swift */,
 				3E23C23A228C2E0100DA3305 /* PodSessionStateObserving.swift */,
 				3EC4DE44228306F1007A05C9 /* PodStateObserving.swift */,
 				3E38F90D2281A0ED00C114B7 /* PodzStatusObserving.swift */,
@@ -785,6 +788,7 @@
 				3E790FA8228ADC7800DB072F /* ValidateTrustUseCase.swift in Sources */,
 				3E97FA2A228031CF003419AE /* DefaultFetchDataUseCase.swift in Sources */,
 				3E23C22D228C0F2800DA3305 /* DefaultEstablishCloudSessionUseCase.swift in Sources */,
+				3EE74B492291EEF400AFB75D /* EstablishCloudSessionStateMetaFactory.swift in Sources */,
 				3E790FB0228ADD7D00DB072F /* DefaultValidateTrustedCertificatesUseCase.swift in Sources */,
 				3E790F71228AD19C00DB072F /* Fmap.swift in Sources */,
 				3EFADD2E228D534F00B3559A /* BlippitConfiguration.swift in Sources */,
