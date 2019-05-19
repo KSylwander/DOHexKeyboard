@@ -26,9 +26,9 @@ final class DefaultBlippit {
   private let startingStateFactory: StartingStateFactory
   private let startedStateFactory: StartedStateFactory
   private let setupTransferIdStateFactory: SetupTransferIdStateFactory
+  private let establishCloudSessionStateFactory: EstablishCloudSessionStateFactory
   private let uploadCommandDataStateFactory: UploadCommandDataStateFactory
   private let transferDataTokenStateFactory: TransferDataTokenStateFactory
-  private let establishCloudSessionUseCase: EstablishCloudSessionUseCase
 
   private var userId: String!
   private static let commandData = "Data"
@@ -40,9 +40,9 @@ final class DefaultBlippit {
        startingStateFactory: StartingStateFactory,
        startedStateFactory: StartedStateFactory,
        setupTransferIdStateFactory: SetupTransferIdStateFactory,
+       establishCloudSessionStateFactory: EstablishCloudSessionStateFactory,
        uploadCommandDataStateFactory: UploadCommandDataStateFactory,
-       transferDataTokenStateFactory: TransferDataTokenStateFactory,
-       establishCloudSessionUseCase: EstablishCloudSessionUseCase) {
+       transferDataTokenStateFactory: TransferDataTokenStateFactory) {
 
     self.delegate = delegate
 
@@ -50,9 +50,9 @@ final class DefaultBlippit {
     self.startingStateFactory = startingStateFactory
     self.startedStateFactory = startedStateFactory
     self.setupTransferIdStateFactory = setupTransferIdStateFactory
+    self.establishCloudSessionStateFactory = establishCloudSessionStateFactory
     self.uploadCommandDataStateFactory = uploadCommandDataStateFactory
     self.transferDataTokenStateFactory = transferDataTokenStateFactory
-    self.establishCloudSessionUseCase = establishCloudSessionUseCase
 
     podz.onStatusChanged = { [weak self] status in
       self?.handlePodzStatus(status)
@@ -122,12 +122,11 @@ final class DefaultBlippit {
       case let .setupTransferId(pid, podSession):
         return setupTransferIdStateFactory.makeState(delegate: self, pid: pid, session: podSession)
       case let .establishCloudSession(pid, podSession):
-        return EstablishCloudSessionState(
+        return establishCloudSessionStateFactory.makeState(
           delegate: self,
           pid: pid,
           userId: userId,
-          podSession: podSession,
-          establishCloudSessionUseCase: establishCloudSessionUseCase
+          podSession: podSession
         )
       case let .uploadCommandData(cloudSessionId, podSession):
         return uploadCommandDataStateFactory.makeState(

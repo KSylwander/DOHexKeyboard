@@ -25,6 +25,17 @@ public extension Blippit {
       startingStateFactory: DefaultStartingStateFactory(),
       startedStateFactory: DefaultStartedStateFactory(),
       setupTransferIdStateFactory: DefaultSetupTransferIdStateFactory(),
+      establishCloudSessionStateMetaFactory: DefaultEstablishCloudSessionStateMetaFactory(
+        establishCloudSessionUseCaseFactory: DefaultEstablishCloudSessionUseCaseFactory(
+          requestBuilder: DefaultURLRequestBuilder(apiConfig: Constants.api.establishCloudSession.config),
+          encoder: JSONEncoder(),
+          decoder: decoder,
+          uploadDataUseCase: DefaultUploadDataUseCase(
+            uploadTaskFactory: urlSession,
+            httpStatusCodeValidator: httpStatusCodeValidator
+          )
+        )
+      ),
       uploadCommandDataStateFactory: DefaultUploadCommandDataStateFactory(
         uploadCommandDataUseCase: DefaultUploadCommandDataUseCase(
           requestBuilder: DefaultURLRequestBuilder(apiConfig: Constants.api.uploadCommandData.config),
@@ -37,15 +48,6 @@ public extension Blippit {
       ),
       transferDataTokenStateFactory: DefaultTransferDataTokenStateFactory(
         retryHandlerFactory: DefaultRetryHandlerFactory(maxRetries: Constants.states.transferDataToken.maxRetries)
-      ),
-      establishCloudSessionUseCaseFactory: DefaultEstablishCloudSessionUseCaseFactory(
-        requestBuilder: DefaultURLRequestBuilder(apiConfig: Constants.api.establishCloudSession.config),
-        encoder: JSONEncoder(),
-        decoder: decoder,
-        uploadDataUseCase: DefaultUploadDataUseCase(
-          uploadTaskFactory: urlSession,
-          httpStatusCodeValidator: httpStatusCodeValidator
-        )
       )
     )
   }
