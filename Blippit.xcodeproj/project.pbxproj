@@ -105,6 +105,7 @@
 		3EC7974C2280298800AD79CE /* FetchDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */; };
 		3EC7974E22802A0C00AD79CE /* URLSessionTask+Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */; };
 		3EE9ABD1228E94E70018896E /* EstablishCloudSessionStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE9ABD0228E94E70018896E /* EstablishCloudSessionStateFactory.swift */; };
+		3EE9ABD3228E95210018896E /* DefaultEstablishCloudSessionStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE9ABD2228E95210018896E /* DefaultEstablishCloudSessionStateFactory.swift */; };
 		3EFADD21228D4D5300B3559A /* RetryHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD20228D4D5300B3559A /* RetryHandling.swift */; };
 		3EFADD23228D4D5E00B3559A /* RetryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD22228D4D5E00B3559A /* RetryHandler.swift */; };
 		3EFADD25228D4D6500B3559A /* RetryHandlerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD24228D4D6500B3559A /* RetryHandlerFactory.swift */; };
@@ -260,6 +261,7 @@
 		3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchDataUseCase.swift; sourceTree = "<group>"; };
 		3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSessionTask+Cancellable.swift"; sourceTree = "<group>"; };
 		3EE9ABD0228E94E70018896E /* EstablishCloudSessionStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishCloudSessionStateFactory.swift; sourceTree = "<group>"; };
+		3EE9ABD2228E95210018896E /* DefaultEstablishCloudSessionStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultEstablishCloudSessionStateFactory.swift; sourceTree = "<group>"; };
 		3EFADD20228D4D5300B3559A /* RetryHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetryHandling.swift; sourceTree = "<group>"; };
 		3EFADD22228D4D5E00B3559A /* RetryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetryHandler.swift; sourceTree = "<group>"; };
 		3EFADD24228D4D6500B3559A /* RetryHandlerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetryHandlerFactory.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 			children = (
 				3E23C238228C2AA800DA3305 /* CancellablePodSessionState.swift */,
 				3E23C244228C3DC700DA3305 /* CancellationHandler.swift */,
+				3EE9ABD2228E95210018896E /* DefaultEstablishCloudSessionStateFactory.swift */,
 				3E23C23E228C32FD00DA3305 /* DefaultPodSessionStateObservingState.swift */,
 				3E38F9112281A16500C114B7 /* DefaultPodzStatusObservingState.swift */,
 				3EFADD51228D9D8200B3559A /* DefaultSetupTransferIdStateFactory.swift */,
@@ -855,6 +858,7 @@
 				3E23C245228C3DC700DA3305 /* CancellationHandler.swift in Sources */,
 				3EFADD4A228D99BB00B3559A /* DefaultStartingStateFactory.swift in Sources */,
 				3E790FB6228AEE1F00DB072F /* SACAuthenticationManager.swift in Sources */,
+				3EE9ABD3228E95210018896E /* DefaultEstablishCloudSessionStateFactory.swift in Sources */,
 				3EC7974E22802A0C00AD79CE /* URLSessionTask+Cancellable.swift in Sources */,
 				3E790F94228ADA2700DB072F /* SecTrustHandler.swift in Sources */,
 				3E38F90A22819F3600C114B7 /* StateDelegate.swift in Sources */,
