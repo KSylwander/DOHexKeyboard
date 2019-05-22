@@ -10,9 +10,11 @@ import Foundation
 
 final class DefaultURLRequestBuilder {
   private let apiConfig: ApiConfig
+  private let apiKey: UUID
 
-  init(apiConfig: ApiConfig) {
+  init(apiConfig: ApiConfig, apiKey: UUID) {
     self.apiConfig = apiConfig
+    self.apiKey = apiKey
   }
 }
 
@@ -28,6 +30,7 @@ extension DefaultURLRequestBuilder: URLRequestBuilder {
     )
 
     request.httpMethod = apiConfig.method.rawValue
+    request.addValue(apiKey.uuidString, forHTTPHeaderField: "x-apikey")
 
     return request
   }

@@ -13,7 +13,7 @@ struct DefaultBlippitFactory {
   let startedStateFactory: StartedStateFactory
   let setupTransferIdStateFactory: SetupTransferIdStateFactory
   let establishCloudSessionStateMetaFactory: EstablishCloudSessionStateMetaFactory
-  let uploadCommandDataStateFactory: UploadCommandDataStateFactory
+  let uploadCommandDataStateMetaFactory: UploadCommandDataStateMetaFactory
   let transferDataTokenStateFactory: TransferDataTokenStateFactory
 }
 
@@ -26,9 +26,10 @@ extension DefaultBlippitFactory: BlippitFactory {
       startedStateFactory: startedStateFactory,
       setupTransferIdStateFactory: setupTransferIdStateFactory,
       establishCloudSessionStateFactory: establishCloudSessionStateMetaFactory.makeFactory(
+        apiKey: configuration.blippitApiKey,
         appId: configuration.blippitAppId
       ),
-      uploadCommandDataStateFactory: uploadCommandDataStateFactory,
+      uploadCommandDataStateFactory: uploadCommandDataStateMetaFactory.makeFactory(apiKey: configuration.blippitApiKey),
       transferDataTokenStateFactory: transferDataTokenStateFactory
     )
   }

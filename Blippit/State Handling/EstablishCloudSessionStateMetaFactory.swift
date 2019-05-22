@@ -9,5 +9,5 @@
 import Foundation
 
 protocol EstablishCloudSessionStateMetaFactory {
-  func makeFactory(appId: UUID) -> EstablishCloudSessionStateFactory
+  func makeFactory(apiKey: UUID, appId: UUID) -> EstablishCloudSessionStateFactory
 }

@@ -27,7 +27,7 @@ public extension Blippit {
       setupTransferIdStateFactory: DefaultSetupTransferIdStateFactory(),
       establishCloudSessionStateMetaFactory: DefaultEstablishCloudSessionStateMetaFactory(
         establishCloudSessionUseCaseFactory: DefaultEstablishCloudSessionUseCaseFactory(
-          requestBuilder: DefaultURLRequestBuilder(apiConfig: Constants.api.establishCloudSession.config),
+          requestBuilderFactory: DefaultURLRequestBuilderFactory(apiConfig: Constants.api.establishCloudSession.config),
           encoder: JSONEncoder(),
           decoder: decoder,
           uploadDataUseCase: DefaultUploadDataUseCase(
@@ -36,9 +36,9 @@ public extension Blippit {
           )
         )
       ),
-      uploadCommandDataStateFactory: DefaultUploadCommandDataStateFactory(
-        uploadCommandDataUseCase: DefaultUploadCommandDataUseCase(
-          requestBuilder: DefaultURLRequestBuilder(apiConfig: Constants.api.uploadCommandData.config),
+      uploadCommandDataStateMetaFactory: DefaultUploadCommandDataStateMetaFactory(
+        uploadCommandDataUseCaseFactory: DefaultUploadCommandDataUseCaseFactory(
+          requestBuilderFactory: DefaultURLRequestBuilderFactory(apiConfig: Constants.api.uploadCommandData.config),
           decoder: decoder,
           fetchDataUseCase: DefaultFetchDataUseCase(
             dataTaskFactory: urlSession,

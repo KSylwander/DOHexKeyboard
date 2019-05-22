@@ -13,9 +13,9 @@ struct DefaultEstablishCloudSessionStateMetaFactory {
 }
 
 extension DefaultEstablishCloudSessionStateMetaFactory: EstablishCloudSessionStateMetaFactory {
-  func makeFactory(appId: UUID) -> EstablishCloudSessionStateFactory {
+  func makeFactory(apiKey: UUID, appId: UUID) -> EstablishCloudSessionStateFactory {
     return DefaultEstablishCloudSessionStateFactory(
-      establishCloudSessionUseCase: establishCloudSessionUseCaseFactory.makeUseCase(appId: appId)
+      establishCloudSessionUseCase: establishCloudSessionUseCaseFactory.makeUseCase(apiKey: apiKey, appId: appId)
     )
   }
 }

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol EstablishCloudSessionUseCaseFactory {
-  func makeUseCase(appId: UUID) -> EstablishCloudSessionUseCase
+  func makeUseCase(apiKey: UUID, appId: UUID) -> EstablishCloudSessionUseCase
 }
