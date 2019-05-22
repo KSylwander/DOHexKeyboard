@@ -17,38 +17,69 @@ public protocol Blippit {
 
 public extension Blippit {
   var factory: BlippitFactory {
-    let decoder = JSONDecoder()
-    let urlSession = URLSession(configuration: .default)
-    let httpStatusCodeValidator = DefaultHttpStatusCodeValidator()
+    do {
+      let decoder = JSONDecoder()
 
-    return DefaultBlippitFactory(
-      startingStateFactory: DefaultStartingStateFactory(),
-      startedStateFactory: DefaultStartedStateFactory(),
-      setupTransferIdStateFactory: DefaultSetupTransferIdStateFactory(),
-      establishCloudSessionStateMetaFactory: DefaultEstablishCloudSessionStateMetaFactory(
-        establishCloudSessionUseCaseFactory: DefaultEstablishCloudSessionUseCaseFactory(
-          requestBuilderFactory: DefaultURLRequestBuilderFactory(apiConfig: Constants.api.establishCloudSession.config),
-          encoder: JSONEncoder(),
-          decoder: decoder,
-          uploadDataUseCase: DefaultUploadDataUseCase(
-            uploadTaskFactory: urlSession,
-            httpStatusCodeValidator: httpStatusCodeValidator
+      let policyHandler = SecPolicyHandler()
+      let trustHandler = SecTrustHandler()
+      let certificateHandler = SecCertificateHandler()
+
+      let pinnedCertificates: [Certificate] = try {
+        let bundle = Bundle(for: DefaultBlippit.self)
+        let urls = bundle.urls(forResourcesWithExtension: "crt", subdirectory: nil)
+        let certificateFactory = DefaultCertificateFactory(certificateHandling: certificateHandler)
+        return try (urls ?? []).map(certificateFactory.makeCertificate(url:))
+      }()
+
+      let authenticationManager = SACAuthenticationManager(
+        certificatePinning: CertificatePinningManager(
+          pinnedCertificates: pinnedCertificates,
+          applyCertificatePinningUseCaseFactory: DefaultApplyCertificatePinningUseCaseFactory(
+            policyHandler: policyHandler,
+            trustHandler: trustHandler
+          ),
+          validateTrustUseCase: DefaultValidateTrustUseCase(trustHandler: trustHandler),
+          validateTrustedCertificatesUseCase: DefaultValidateTrustedCertificatesUseCase(
+            trustHandler: trustHandler,
+            certificateHandler: certificateHandler
           )
         )
-      ),
-      uploadCommandDataStateMetaFactory: DefaultUploadCommandDataStateMetaFactory(
-        uploadCommandDataUseCaseFactory: DefaultUploadCommandDataUseCaseFactory(
-          requestBuilderFactory: DefaultURLRequestBuilderFactory(apiConfig: Constants.api.uploadCommandData.config),
-          decoder: decoder,
-          fetchDataUseCase: DefaultFetchDataUseCase(
-            dataTaskFactory: urlSession,
-            httpStatusCodeValidator: httpStatusCodeValidator
-          )
-        )
-      ),
-      transferDataTokenStateFactory: DefaultTransferDataTokenStateFactory(
-        retryHandlerFactory: DefaultRetryHandlerFactory(maxRetries: Constants.states.transferDataToken.maxRetries)
       )
-    )
+
+      let urlSession = URLSession(configuration: .default, retainedDelegate: authenticationManager)
+      let httpStatusCodeValidator = DefaultHttpStatusCodeValidator()
+
+      return DefaultBlippitFactory(
+        startingStateFactory: DefaultStartingStateFactory(),
+        startedStateFactory: DefaultStartedStateFactory(),
+        setupTransferIdStateFactory: DefaultSetupTransferIdStateFactory(),
+        establishCloudSessionStateMetaFactory: DefaultEstablishCloudSessionStateMetaFactory(
+          establishCloudSessionUseCaseFactory: DefaultEstablishCloudSessionUseCaseFactory(
+            requestBuilderFactory: DefaultURLRequestBuilderFactory(apiConfig: Constants.api.establishCloudSession.config),
+            encoder: JSONEncoder(),
+            decoder: decoder,
+            uploadDataUseCase: DefaultUploadDataUseCase(
+              uploadTaskFactory: urlSession,
+              httpStatusCodeValidator: httpStatusCodeValidator
+            )
+          )
+        ),
+        uploadCommandDataStateMetaFactory: DefaultUploadCommandDataStateMetaFactory(
+          uploadCommandDataUseCaseFactory: DefaultUploadCommandDataUseCaseFactory(
+            requestBuilderFactory: DefaultURLRequestBuilderFactory(apiConfig: Constants.api.uploadCommandData.config),
+            decoder: decoder,
+            fetchDataUseCase: DefaultFetchDataUseCase(
+              dataTaskFactory: urlSession,
+              httpStatusCodeValidator: httpStatusCodeValidator
+            )
+          )
+        ),
+        transferDataTokenStateFactory: DefaultTransferDataTokenStateFactory(
+          retryHandlerFactory: DefaultRetryHandlerFactory(maxRetries: Constants.states.transferDataToken.maxRetries)
+        )
+      )
+    } catch {
+      fatalError("Unable to setup construction root: \(error)")
+    }
   }
 }
