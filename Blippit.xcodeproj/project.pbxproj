@@ -53,6 +53,7 @@
 		3E5353102295669F004FD948 /* AsyncRetryHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E53530F2295669F004FD948 /* AsyncRetryHandling.swift */; };
 		3E535312229566DB004FD948 /* AsyncRetryHandlerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E535311229566DB004FD948 /* AsyncRetryHandlerFactory.swift */; };
 		3E5353142295678E004FD948 /* DefaultAsyncRetryHandlerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5353132295678E004FD948 /* DefaultAsyncRetryHandlerFactory.swift */; };
+		3E53531622956A7D004FD948 /* HttpRequestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E53531522956A7D004FD948 /* HttpRequestState.swift */; };
 		3E790F6D228AD17600DB072F /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F6C228AD17600DB072F /* Curry.swift */; };
 		3E790F6F228AD18800DB072F /* Flip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F6E228AD18800DB072F /* Flip.swift */; };
 		3E790F71228AD19C00DB072F /* Fmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F70228AD19C00DB072F /* Fmap.swift */; };
@@ -223,6 +224,7 @@
 		3E53530F2295669F004FD948 /* AsyncRetryHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncRetryHandling.swift; sourceTree = "<group>"; };
 		3E535311229566DB004FD948 /* AsyncRetryHandlerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncRetryHandlerFactory.swift; sourceTree = "<group>"; };
 		3E5353132295678E004FD948 /* DefaultAsyncRetryHandlerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAsyncRetryHandlerFactory.swift; sourceTree = "<group>"; };
+		3E53531522956A7D004FD948 /* HttpRequestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestState.swift; sourceTree = "<group>"; };
 		3E790F6C228AD17600DB072F /* Curry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curry.swift; sourceTree = "<group>"; };
 		3E790F6E228AD18800DB072F /* Flip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flip.swift; sourceTree = "<group>"; };
 		3E790F70228AD19C00DB072F /* Fmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fmap.swift; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 				3E5352FB22953C5F004FD948 /* DefaultUploadCommandDataStateMetaFactory.swift */,
 				3EE9ABD0228E94E70018896E /* EstablishCloudSessionStateFactory.swift */,
 				3EE74B482291EEF400AFB75D /* EstablishCloudSessionStateMetaFactory.swift */,
+				3E53531522956A7D004FD948 /* HttpRequestState.swift */,
 				3E23C23A228C2E0100DA3305 /* PodSessionStateObserving.swift */,
 				3EC4DE44228306F1007A05C9 /* PodStateObserving.swift */,
 				3E38F90D2281A0ED00C114B7 /* PodzStatusObserving.swift */,
@@ -836,6 +839,7 @@
 				3EFADD2E228D534F00B3559A /* BlippitConfiguration.swift in Sources */,
 				3EFADD5A228DA19B00B3559A /* DefaultUploadCommandDataStateFactory.swift in Sources */,
 				3E23C241228C35D800DA3305 /* SetupTransferIdState.swift in Sources */,
+				3E53531622956A7D004FD948 /* HttpRequestState.swift in Sources */,
 				3EC4DE45228306F1007A05C9 /* PodStateObserving.swift in Sources */,
 				3E23C222228C0EC600DA3305 /* Encoder.swift in Sources */,
 				3EFADD30228D53B100B3559A /* Blippit.swift in Sources */,

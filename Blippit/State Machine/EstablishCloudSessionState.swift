@@ -22,7 +22,7 @@ final class EstablishCloudSessionState {
   private let establishCloudSessionUseCase: EstablishCloudSessionUseCase
 
   private let retryHandlerFactory: AsyncRetryHandlerFactory
-  private lazy var retryHandler = retryHandlerFactory.makeRetryHandler { [weak self] in
+  lazy var retryHandler = retryHandlerFactory.makeRetryHandler { [weak self] in
     self?.performRequest()
   }
 
@@ -46,12 +46,8 @@ final class EstablishCloudSessionState {
 
 extension EstablishCloudSessionState: State {}
 
-extension EstablishCloudSessionState: Startable {
-  func start() {
-    performRequest()
-  }
-
-  private func performRequest() {
+extension EstablishCloudSessionState: HttpRequestState {
+  func performRequest() {
     guard !isCancelling else {
       return
     }
@@ -63,32 +59,6 @@ extension EstablishCloudSessionState: Startable {
       case let .success(sessionId):
         self.move(to: .uploadCommandData(cloudSessionId: sessionId, podSession: self.podSession))
       }
-    }
-  }
-
-  private func handleError(_ error: Error) {
-    DispatchQueue.main.async {
-      self.handleErrors {
-        switch error {
-        case let error as URLError where error.code == .cancelled:
-          return
-        case is URLError, BlippitError.invalidHttpStatusCode:
-          /* Retry URL and HTTP status errors */
-          self.retryHandler.perform(withMaxRetriesExceededError: error, onError: self.handleError(_:))
-        default:
-          /* Propagate all other errors */
-          throw error
-        }
-      }
-    }
-  }
-
-  private func handleErrors(in action: () throws -> Void) {
-    do {
-      try action()
-    } catch {
-      cancel()
-      self.delegate?.state(self, didFailWithError: error)
     }
   }
 
