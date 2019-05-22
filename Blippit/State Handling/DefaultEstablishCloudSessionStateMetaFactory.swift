@@ -10,12 +10,14 @@ import Foundation
 
 struct DefaultEstablishCloudSessionStateMetaFactory {
   let establishCloudSessionUseCaseFactory: EstablishCloudSessionUseCaseFactory
+  let retryHandlerFactory: AsyncRetryHandlerFactory
 }
 
 extension DefaultEstablishCloudSessionStateMetaFactory: EstablishCloudSessionStateMetaFactory {
   func makeFactory(apiKey: UUID, appId: UUID) -> EstablishCloudSessionStateFactory {
     return DefaultEstablishCloudSessionStateFactory(
-      establishCloudSessionUseCase: establishCloudSessionUseCaseFactory.makeUseCase(apiKey: apiKey, appId: appId)
+      establishCloudSessionUseCase: establishCloudSessionUseCaseFactory.makeUseCase(apiKey: apiKey, appId: appId),
+      retryHandlerFactory: retryHandlerFactory
     )
   }
 }

@@ -10,6 +10,7 @@ import Podz
 
 struct DefaultEstablishCloudSessionStateFactory {
   let establishCloudSessionUseCase: EstablishCloudSessionUseCase
+  let retryHandlerFactory: AsyncRetryHandlerFactory
 }
 
 extension DefaultEstablishCloudSessionStateFactory: EstablishCloudSessionStateFactory {
@@ -19,7 +20,8 @@ extension DefaultEstablishCloudSessionStateFactory: EstablishCloudSessionStateFa
       pid: pid,
       userId: userId,
       podSession: podSession,
-      establishCloudSessionUseCase: establishCloudSessionUseCase
+      establishCloudSessionUseCase: establishCloudSessionUseCase,
+      retryHandlerFactory: retryHandlerFactory
     )
   }
 }
