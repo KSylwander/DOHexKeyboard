@@ -47,6 +47,7 @@
 		3E5352FC22953C5F004FD948 /* DefaultUploadCommandDataStateMetaFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5352FB22953C5F004FD948 /* DefaultUploadCommandDataStateMetaFactory.swift */; };
 		3E5352FE22953CB3004FD948 /* UploadCommandDataUseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5352FD22953CB3004FD948 /* UploadCommandDataUseCaseFactory.swift */; };
 		3E53530022953CDE004FD948 /* DefaultUploadCommandDataUseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5352FF22953CDE004FD948 /* DefaultUploadCommandDataUseCaseFactory.swift */; };
+		3E5353022295482D004FD948 /* Error+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5353012295482D004FD948 /* Error+Name.swift */; };
 		3E790F6D228AD17600DB072F /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F6C228AD17600DB072F /* Curry.swift */; };
 		3E790F6F228AD18800DB072F /* Flip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F6E228AD18800DB072F /* Flip.swift */; };
 		3E790F71228AD19C00DB072F /* Fmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F70228AD19C00DB072F /* Fmap.swift */; };
@@ -211,6 +212,7 @@
 		3E5352FB22953C5F004FD948 /* DefaultUploadCommandDataStateMetaFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUploadCommandDataStateMetaFactory.swift; sourceTree = "<group>"; };
 		3E5352FD22953CB3004FD948 /* UploadCommandDataUseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCommandDataUseCaseFactory.swift; sourceTree = "<group>"; };
 		3E5352FF22953CDE004FD948 /* DefaultUploadCommandDataUseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUploadCommandDataUseCaseFactory.swift; sourceTree = "<group>"; };
+		3E5353012295482D004FD948 /* Error+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Name.swift"; sourceTree = "<group>"; };
 		3E790F6C228AD17600DB072F /* Curry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curry.swift; sourceTree = "<group>"; };
 		3E790F6E228AD18800DB072F /* Flip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flip.swift; sourceTree = "<group>"; };
 		3E790F70228AD19C00DB072F /* Fmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fmap.swift; sourceTree = "<group>"; };
@@ -572,6 +574,7 @@
 				3EFADD3F228D6EF500B3559A /* Constants+States.swift */,
 				3E23C223228C0ECB00DA3305 /* Decoder.swift */,
 				3E23C221228C0EC600DA3305 /* Encoder.swift */,
+				3E5353012295482D004FD948 /* Error+Name.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -893,6 +896,7 @@
 				3EC7974E22802A0C00AD79CE /* URLSessionTask+Cancellable.swift in Sources */,
 				3E790F94228ADA2700DB072F /* SecTrustHandler.swift in Sources */,
 				3E38F90A22819F3600C114B7 /* StateDelegate.swift in Sources */,
+				3E5353022295482D004FD948 /* Error+Name.swift in Sources */,
 				3EC4DE49228307CC007A05C9 /* Constants.swift in Sources */,
 				3E23C220228C0EA900DA3305 /* DefaultUploadDataUseCase.swift in Sources */,
 				3E5352FC22953C5F004FD948 /* DefaultUploadCommandDataStateMetaFactory.swift in Sources */,

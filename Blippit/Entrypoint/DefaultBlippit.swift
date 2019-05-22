@@ -194,6 +194,13 @@ extension DefaultBlippit: StateDelegate {
   }
 
   func state(_ state: State, didFailWithError error: Error) {
+    os_log(
+      "%{public}@ %{public}@:%{public}d -> Error: %{public}@",
+      log: Constants.log,
+      type: .error,
+      "[ERROR]", #function, #line,
+      error.name
+    )
     delegate?.blippit(self, didFailWithError: error)
   }
 }
