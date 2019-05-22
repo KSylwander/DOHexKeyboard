@@ -22,11 +22,17 @@ final class UploadCommandDataState {
 
   private let uploadCommandDataUseCase: UploadCommandDataUseCase
 
+  private let retryHandlerFactory: AsyncRetryHandlerFactory
+  lazy var retryHandler = retryHandlerFactory.makeRetryHandler { [weak self] in
+    self?.performRequest()
+  }
+
   init(delegate: StateDelegate,
        cloudSessionId: String,
        data: String,
        podSession: PodSession,
-       uploadCommandDataUseCase: UploadCommandDataUseCase) {
+       uploadCommandDataUseCase: UploadCommandDataUseCase,
+       retryHandlerFactory: AsyncRetryHandlerFactory) {
 
     self.delegate = delegate
 
@@ -36,30 +42,41 @@ final class UploadCommandDataState {
     self.podSession = podSession
 
     self.uploadCommandDataUseCase = uploadCommandDataUseCase
+    self.retryHandlerFactory = retryHandlerFactory
   }
 }
 
 extension UploadCommandDataState: State {}
 
-extension UploadCommandDataState: Startable {
-  func start() {
+extension UploadCommandDataState: HttpRequestState {
+  func performRequest() {
+    guard !isCancelling else {
+      return
+    }
+
     task = uploadCommandDataUseCase.uploadCommandData(
       sessionId: cloudSessionId,
       data: data,
       completion: { response, result in
         switch result {
         case let .failure(error):
-          self.delegate?.state(self, didFailWithError: error)
+          self.handleError(error)
         case let .success(dataToken):
           do {
             let dataToken = try TransferId(from: dataToken)
-            self.delegate?.state(self, moveTo: .transferDataToken(podSession: self.session, dataToken: dataToken))
+            self.move(to: .transferDataToken(podSession: self.session, dataToken: dataToken))
           } catch {
-            self.delegate?.state(self, didFailWithError: error)
+            self.handleError(error)
           }
         }
       }
     )
+  }
+
+  private func move(to state: RawState) {
+    DispatchQueue.main.async {
+      self.delegate?.state(self, moveTo: state)
+    }
   }
 }
 

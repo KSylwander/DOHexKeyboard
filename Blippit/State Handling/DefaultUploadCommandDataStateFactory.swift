@@ -10,6 +10,7 @@ import Podz
 
 struct DefaultUploadCommandDataStateFactory {
   let uploadCommandDataUseCase: UploadCommandDataUseCase
+  let retryHandlerFactory: AsyncRetryHandlerFactory
 }
 
 extension DefaultUploadCommandDataStateFactory: UploadCommandDataStateFactory {
@@ -19,7 +20,8 @@ extension DefaultUploadCommandDataStateFactory: UploadCommandDataStateFactory {
       cloudSessionId: cloudSessionId,
       data: data,
       podSession: podSession,
-      uploadCommandDataUseCase: uploadCommandDataUseCase
+      uploadCommandDataUseCase: uploadCommandDataUseCase,
+      retryHandlerFactory: retryHandlerFactory
     )
   }
 }

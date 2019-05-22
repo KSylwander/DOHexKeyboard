@@ -10,12 +10,14 @@ import Foundation
 
 struct DefaultUploadCommandDataStateMetaFactory {
   let uploadCommandDataUseCaseFactory: UploadCommandDataUseCaseFactory
+  let retryHandlerFactory: AsyncRetryHandlerFactory
 }
 
 extension DefaultUploadCommandDataStateMetaFactory: UploadCommandDataStateMetaFactory {
   func makeFactory(apiKey: UUID) -> UploadCommandDataStateFactory {
     return DefaultUploadCommandDataStateFactory(
-      uploadCommandDataUseCase: uploadCommandDataUseCaseFactory.makeUseCase(apiKey: apiKey)
+      uploadCommandDataUseCase: uploadCommandDataUseCaseFactory.makeUseCase(apiKey: apiKey),
+      retryHandlerFactory: retryHandlerFactory
     )
   }
 }

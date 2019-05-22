@@ -76,6 +76,10 @@ public extension Blippit {
               dataTaskFactory: urlSession,
               httpStatusCodeValidator: httpStatusCodeValidator
             )
+          ),
+          retryHandlerFactory: DefaultAsyncRetryHandlerFactory(
+            maxRetries: Constants.states.uploadCommandData.maxRetries,
+            retryInterval: Constants.states.uploadCommandData.retryInterval
           )
         ),
         transferDataTokenStateFactory: DefaultTransferDataTokenStateFactory(
