@@ -8,7 +8,7 @@
 
 import Podz
 
-enum BlippitError {
+public enum BlippitError {
   case invalidPodzStatus(
     /* 1. `PodzStatus.pending(PodzError)`: `PodzError` represents a user-resolvable error (i.e., should be handled in
      *    a user-friendly way). Each error is passed in the pending state after the previous one is resolved. Blippit
