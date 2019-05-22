@@ -52,6 +52,7 @@
 		3E535306229555C9004FD948 /* abubbl.crt in Resources */ = {isa = PBXBuildFile; fileRef = 3E535305229555C9004FD948 /* abubbl.crt */; };
 		3E5353102295669F004FD948 /* AsyncRetryHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E53530F2295669F004FD948 /* AsyncRetryHandling.swift */; };
 		3E535312229566DB004FD948 /* AsyncRetryHandlerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E535311229566DB004FD948 /* AsyncRetryHandlerFactory.swift */; };
+		3E5353142295678E004FD948 /* DefaultAsyncRetryHandlerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5353132295678E004FD948 /* DefaultAsyncRetryHandlerFactory.swift */; };
 		3E790F6D228AD17600DB072F /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F6C228AD17600DB072F /* Curry.swift */; };
 		3E790F6F228AD18800DB072F /* Flip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F6E228AD18800DB072F /* Flip.swift */; };
 		3E790F71228AD19C00DB072F /* Fmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F70228AD19C00DB072F /* Fmap.swift */; };
@@ -221,6 +222,7 @@
 		3E535305229555C9004FD948 /* abubbl.crt */ = {isa = PBXFileReference; lastKnownFileType = file; path = abubbl.crt; sourceTree = "<group>"; };
 		3E53530F2295669F004FD948 /* AsyncRetryHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncRetryHandling.swift; sourceTree = "<group>"; };
 		3E535311229566DB004FD948 /* AsyncRetryHandlerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncRetryHandlerFactory.swift; sourceTree = "<group>"; };
+		3E5353132295678E004FD948 /* DefaultAsyncRetryHandlerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAsyncRetryHandlerFactory.swift; sourceTree = "<group>"; };
 		3E790F6C228AD17600DB072F /* Curry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curry.swift; sourceTree = "<group>"; };
 		3E790F6E228AD18800DB072F /* Flip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flip.swift; sourceTree = "<group>"; };
 		3E790F70228AD19C00DB072F /* Fmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fmap.swift; sourceTree = "<group>"; };
@@ -619,6 +621,7 @@
 			children = (
 				3E535311229566DB004FD948 /* AsyncRetryHandlerFactory.swift */,
 				3E53530F2295669F004FD948 /* AsyncRetryHandling.swift */,
+				3E5353132295678E004FD948 /* DefaultAsyncRetryHandlerFactory.swift */,
 				3EFADD26228D4D6900B3559A /* DefaultRetryHandlerFactory.swift */,
 				3EFADD22228D4D5E00B3559A /* RetryHandler.swift */,
 				3EFADD24228D4D6500B3559A /* RetryHandlerFactory.swift */,
@@ -860,6 +863,7 @@
 				3EFADD21228D4D5300B3559A /* RetryHandling.swift in Sources */,
 				3E790FB2228ADD8B00DB072F /* CertificatePinning.swift in Sources */,
 				3E23C23F228C32FD00DA3305 /* DefaultPodSessionStateObservingState.swift in Sources */,
+				3E5353142295678E004FD948 /* DefaultAsyncRetryHandlerFactory.swift in Sources */,
 				3EFADD36228D56C000B3559A /* DefaultBlippit.swift in Sources */,
 				3E790FC0228AFA6E00DB072F /* DefaultURLRequestBuilder.swift in Sources */,
 				3EFADD4E228D9B0000B3559A /* DefaultStartedStateFactory.swift in Sources */,
