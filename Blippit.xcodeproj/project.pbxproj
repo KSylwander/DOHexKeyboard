@@ -785,6 +785,7 @@
 				"$(PROJECT_DIR)/$(PROJECT_NAME)Tests/Mocks/DummyDefaultPodzStatusObservingState.swift",
 				"$(PROJECT_DIR)/$(PROJECT_NAME)Tests/Mocks/DummyPod.swift",
 				"$(PROJECT_DIR)/$(PROJECT_NAME)Tests/Mocks/DummyPodSession.swift",
+				"$(PROJECT_DIR)/$(PROJECT_NAME)/Networking/HttpStatusCodeValidator.swift",
 			);
 			outputFileListPaths = (
 			);
