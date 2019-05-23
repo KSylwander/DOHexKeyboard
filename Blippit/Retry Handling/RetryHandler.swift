@@ -41,7 +41,7 @@ extension RetryHandler: RetryHandling {
 
 extension RetryHandler: AsyncRetryHandling {
   func perform(withMaxRetriesExceededError maxRetriesExceededError: Error, onError: @escaping (Error) -> Void) {
-    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(Int(1.0 * 1000.0))) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(Int(retryInterval * 1000.0))) {
       guard self.retriesRemaining > 0 else {
         onError(maxRetriesExceededError)
         return
