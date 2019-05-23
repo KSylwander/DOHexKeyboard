@@ -7,31 +7,174 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E97FA262280313F003419AE /* DataTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA252280313F003419AE /* DataTaskFactory.swift */; };
+		3E97FA282280318B003419AE /* URLSession+DataTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA272280318B003419AE /* URLSession+DataTaskFactory.swift */; };
+		3E97FA2A228031CF003419AE /* DefaultFetchDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA29228031CF003419AE /* DefaultFetchDataUseCase.swift */; };
+		3E97FA3522803641003419AE /* Blippit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC765227C2CA200D5C693 /* Blippit.framework */; };
+		3E97FA3D2280375E003419AE /* Podz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC773227C30A500D5C693 /* Podz.framework */; };
+		3E97FA40228037F7003419AE /* Podz.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3EBAC773227C30A500D5C693 /* Podz.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3E97FA422280385B003419AE /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E97FA412280385B003419AE /* Cuckoo.framework */; };
+		3E97FA4322803869003419AE /* Cuckoo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E97FA412280385B003419AE /* Cuckoo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3E97FA4722804537003419AE /* Mocks.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA4622804537003419AE /* Mocks.generated.swift */; };
+		3E97FA4C22804CE9003419AE /* MockableURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA4B22804CE9003419AE /* MockableURLSessionDataTask.swift */; };
+		3E97FA4E228053B2003419AE /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E97FA4D228053B2003419AE /* Quick.framework */; };
+		3E97FA50228053BF003419AE /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E97FA4F228053BF003419AE /* Nimble.framework */; };
+		3E97FA51228053CC003419AE /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E97FA4D228053B2003419AE /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3E97FA52228053D0003419AE /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E97FA4F228053BF003419AE /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3E97FA562280548B003419AE /* DefaultFetchDataUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA552280548B003419AE /* DefaultFetchDataUseCaseSpec.swift */; };
+		3E9EA1882281829B00B1B837 /* Any.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9EA1872281829B00B1B837 /* Any.swift */; };
+		3E9EA18A228182B800B1B837 /* Immaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9EA189228182B800B1B837 /* Immaterial.swift */; };
+		3E9EA18C228182CE00B1B837 /* Result+IsSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9EA18B228182CE00B1B837 /* Result+IsSuccess.swift */; };
+		3E9EA18E228182EA00B1B837 /* CustomMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9EA18D228182EA00B1B837 /* CustomMatchers.swift */; };
 		3EBAC76A227C2CA200D5C693 /* Blippit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EBAC768227C2CA200D5C693 /* Blippit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3EBAC774227C30A500D5C693 /* Podz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC773227C30A500D5C693 /* Podz.framework */; };
+		3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC79740228025BE00AD79CE /* Cancellable.swift */; };
+		3EC7974C2280298800AD79CE /* FetchDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */; };
+		3EC7974E22802A0C00AD79CE /* URLSessionTask+Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3E97FA3622803641003419AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EBAC75C227C2CA200D5C693 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3EBAC764227C2CA200D5C693;
+			remoteInfo = Blippit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3E97FA3F228037EB003419AE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3E97FA52228053D0003419AE /* Nimble.framework in CopyFiles */,
+				3E97FA51228053CC003419AE /* Quick.framework in CopyFiles */,
+				3E97FA4322803869003419AE /* Cuckoo.framework in CopyFiles */,
+				3E97FA40228037F7003419AE /* Podz.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3E97FA252280313F003419AE /* DataTaskFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTaskFactory.swift; sourceTree = "<group>"; };
+		3E97FA272280318B003419AE /* URLSession+DataTaskFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+DataTaskFactory.swift"; sourceTree = "<group>"; };
+		3E97FA29228031CF003419AE /* DefaultFetchDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchDataUseCase.swift; sourceTree = "<group>"; };
+		3E97FA2B2280349A003419AE /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = SOURCE_ROOT; };
+		3E97FA3022803641003419AE /* BlippitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlippitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E97FA3422803641003419AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E97FA412280385B003419AE /* Cuckoo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cuckoo.framework; path = Carthage/Build/iOS/Cuckoo.framework; sourceTree = "<group>"; };
+		3E97FA4622804537003419AE /* Mocks.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mocks.generated.swift; sourceTree = "<group>"; };
+		3E97FA4B22804CE9003419AE /* MockableURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockableURLSessionDataTask.swift; sourceTree = "<group>"; };
+		3E97FA4D228053B2003419AE /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		3E97FA4F228053BF003419AE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		3E97FA552280548B003419AE /* DefaultFetchDataUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchDataUseCaseSpec.swift; sourceTree = "<group>"; };
+		3E9EA1872281829B00B1B837 /* Any.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Any.swift; sourceTree = "<group>"; };
+		3E9EA189228182B800B1B837 /* Immaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Immaterial.swift; sourceTree = "<group>"; };
+		3E9EA18B228182CE00B1B837 /* Result+IsSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+IsSuccess.swift"; sourceTree = "<group>"; };
+		3E9EA18D228182EA00B1B837 /* CustomMatchers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMatchers.swift; sourceTree = "<group>"; };
 		3EBAC765227C2CA200D5C693 /* Blippit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Blippit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EBAC768227C2CA200D5C693 /* Blippit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Blippit.h; sourceTree = "<group>"; };
 		3EBAC769227C2CA200D5C693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EBAC770227C2FC200D5C693 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
+		3EBAC773227C30A500D5C693 /* Podz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Podz.framework; path = Carthage/Build/iOS/Podz.framework; sourceTree = "<group>"; };
+		3EC79740228025BE00AD79CE /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
+		3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchDataUseCase.swift; sourceTree = "<group>"; };
+		3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSessionTask+Cancellable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3E97FA2D22803641003419AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E97FA50228053BF003419AE /* Nimble.framework in Frameworks */,
+				3E97FA4E228053B2003419AE /* Quick.framework in Frameworks */,
+				3E97FA422280385B003419AE /* Cuckoo.framework in Frameworks */,
+				3E97FA3D2280375E003419AE /* Podz.framework in Frameworks */,
+				3E97FA3522803641003419AE /* Blippit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3EBAC762227C2CA200D5C693 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EBAC774227C30A500D5C693 /* Podz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E97FA3122803641003419AE /* BlippitTests */ = {
+			isa = PBXGroup;
+			children = (
+				3E9EA1862281828C00B1B837 /* Commons */,
+				3E97FA45228039D0003419AE /* Mocks */,
+				3E97FA5322805417003419AE /* Resources */,
+				3E97FA542280545F003419AE /* Tests */,
+			);
+			path = BlippitTests;
+			sourceTree = "<group>";
+		};
+		3E97FA45228039D0003419AE /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				3E97FA4B22804CE9003419AE /* MockableURLSessionDataTask.swift */,
+				3E97FA4622804537003419AE /* Mocks.generated.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		3E97FA5322805417003419AE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3E97FA3422803641003419AE /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3E97FA542280545F003419AE /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				3E97FA552280548B003419AE /* DefaultFetchDataUseCaseSpec.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		3E9EA1862281828C00B1B837 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				3E9EA1872281829B00B1B837 /* Any.swift */,
+				3E9EA18D228182EA00B1B837 /* CustomMatchers.swift */,
+				3E9EA189228182B800B1B837 /* Immaterial.swift */,
+				3E9EA18B228182CE00B1B837 /* Result+IsSuccess.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		3EAEA7FD2280109F008B7E77 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3EBAC768227C2CA200D5C693 /* Blippit.h */,
+				3EBAC770227C2FC200D5C693 /* Cartfile */,
+				3E97FA2B2280349A003419AE /* Cartfile.private */,
+				3EBAC769227C2CA200D5C693 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		3EBAC75B227C2CA200D5C693 = {
 			isa = PBXGroup;
 			children = (
 				3EBAC767227C2CA200D5C693 /* Blippit */,
+				3E97FA3122803641003419AE /* BlippitTests */,
 				3EBAC766227C2CA200D5C693 /* Products */,
+				3EBAC772227C30A500D5C693 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -39,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				3EBAC765227C2CA200D5C693 /* Blippit.framework */,
+				3E97FA3022803641003419AE /* BlippitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -46,10 +190,42 @@
 		3EBAC767227C2CA200D5C693 /* Blippit */ = {
 			isa = PBXGroup;
 			children = (
-				3EBAC768227C2CA200D5C693 /* Blippit.h */,
-				3EBAC769227C2CA200D5C693 /* Info.plist */,
+				3EC79744228026F100AD79CE /* Commons */,
+				3EC797462280279900AD79CE /* Networking */,
+				3EAEA7FD2280109F008B7E77 /* Resources */,
 			);
 			path = Blippit;
+			sourceTree = "<group>";
+		};
+		3EBAC772227C30A500D5C693 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E97FA4F228053BF003419AE /* Nimble.framework */,
+				3E97FA4D228053B2003419AE /* Quick.framework */,
+				3E97FA412280385B003419AE /* Cuckoo.framework */,
+				3EBAC773227C30A500D5C693 /* Podz.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3EC79744228026F100AD79CE /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				3EC79740228025BE00AD79CE /* Cancellable.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		3EC797462280279900AD79CE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3E97FA252280313F003419AE /* DataTaskFactory.swift */,
+				3E97FA29228031CF003419AE /* DefaultFetchDataUseCase.swift */,
+				3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */,
+				3E97FA272280318B003419AE /* URLSession+DataTaskFactory.swift */,
+				3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -66,6 +242,26 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		3E97FA2F22803641003419AE /* BlippitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E97FA3A22803641003419AE /* Build configuration list for PBXNativeTarget "BlippitTests" */;
+			buildPhases = (
+				3E97FA4A22804ADA003419AE /* ShellScript */,
+				3E97FA2C22803641003419AE /* Sources */,
+				3E97FA2D22803641003419AE /* Frameworks */,
+				3E97FA2E22803641003419AE /* Resources */,
+				3E97FA3F228037EB003419AE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3E97FA3722803641003419AE /* PBXTargetDependency */,
+			);
+			name = BlippitTests;
+			productName = BlippitTests;
+			productReference = 3E97FA3022803641003419AE /* BlippitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3EBAC764227C2CA200D5C693 /* Blippit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3EBAC76D227C2CA200D5C693 /* Build configuration list for PBXNativeTarget "Blippit" */;
@@ -90,11 +286,17 @@
 		3EBAC75C227C2CA200D5C693 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Crunchfish AB";
 				TargetAttributes = {
+					3E97FA2F22803641003419AE = {
+						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
+					};
 					3EBAC764227C2CA200D5C693 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -104,6 +306,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 3EBAC75B227C2CA200D5C693;
 			productRefGroup = 3EBAC766227C2CA200D5C693 /* Products */;
@@ -111,11 +314,19 @@
 			projectRoot = "";
 			targets = (
 				3EBAC764227C2CA200D5C693 /* Blippit */,
+				3E97FA2F22803641003419AE /* BlippitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3E97FA2E22803641003419AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3EBAC763227C2CA200D5C693 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -125,17 +336,116 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3E97FA4A22804ADA003419AE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/$(PROJECT_NAME)/Networking/DataTaskFactory.swift",
+				"$(PROJECT_DIR)/$(PROJECT_NAME)Tests/Mocks/MockableURLSessionDataTask.swift",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/Mocks/Mocks.generated.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PROJECT_DIR}/Carthage/Checkouts/Cuckoo/run\" generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\"\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `Mocks.generated.swift` and drag it into your Xcode test target group.\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		3E97FA2C22803641003419AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E9EA18C228182CE00B1B837 /* Result+IsSuccess.swift in Sources */,
+				3E9EA1882281829B00B1B837 /* Any.swift in Sources */,
+				3E97FA4722804537003419AE /* Mocks.generated.swift in Sources */,
+				3E9EA18A228182B800B1B837 /* Immaterial.swift in Sources */,
+				3E97FA562280548B003419AE /* DefaultFetchDataUseCaseSpec.swift in Sources */,
+				3E9EA18E228182EA00B1B837 /* CustomMatchers.swift in Sources */,
+				3E97FA4C22804CE9003419AE /* MockableURLSessionDataTask.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3EBAC761227C2CA200D5C693 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E97FA2A228031CF003419AE /* DefaultFetchDataUseCase.swift in Sources */,
+				3EC7974C2280298800AD79CE /* FetchDataUseCase.swift in Sources */,
+				3E97FA262280313F003419AE /* DataTaskFactory.swift in Sources */,
+				3E97FA282280318B003419AE /* URLSession+DataTaskFactory.swift in Sources */,
+				3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */,
+				3EC7974E22802A0C00AD79CE /* URLSessionTask+Cancellable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		3E97FA3722803641003419AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3EBAC764227C2CA200D5C693 /* Blippit */;
+			targetProxy = 3E97FA3622803641003419AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		3E97FA3822803641003419AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F75CSJAHS9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = BlippitTests/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.crunchfish.BlippitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3E97FA3922803641003419AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F75CSJAHS9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = BlippitTests/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.crunchfish.BlippitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		3EBAC76B227C2CA200D5C693 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -261,6 +571,7 @@
 		3EBAC76E227C2CA200D5C693 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -268,7 +579,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Blippit/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Blippit/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -279,7 +594,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.crunchfish.Blippit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -287,6 +603,7 @@
 		3EBAC76F227C2CA200D5C693 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -294,7 +611,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Blippit/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Blippit/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -305,7 +626,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.crunchfish.Blippit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -313,6 +634,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3E97FA3A22803641003419AE /* Build configuration list for PBXNativeTarget "BlippitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E97FA3822803641003419AE /* Debug */,
+				3E97FA3922803641003419AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3EBAC75F227C2CA200D5C693 /* Build configuration list for PBXProject "Blippit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
