@@ -40,7 +40,9 @@ extension DefaultURLRequestBuilder: URLRequestBuilder {
 
     request.httpMethod = apiConfig.method.rawValue
     request.addValue(apiConfig.contentType, forHTTPHeaderField: "Content-Type")
-    request.addValue(apiKey.uuidString, forHTTPHeaderField: "x-apikey")
+
+    // TODO: Remove lowercasing call when the corresponding bug on the BSAC server is fixed
+    request.addValue(apiKey.uuidString.lowercased(), forHTTPHeaderField: "x-apikey")
 
     return request
   }
