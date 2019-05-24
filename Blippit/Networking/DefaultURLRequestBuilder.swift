@@ -39,6 +39,7 @@ extension DefaultURLRequestBuilder: URLRequestBuilder {
     )
 
     request.httpMethod = apiConfig.method.rawValue
+    request.addValue(apiConfig.contentType, forHTTPHeaderField: "Content-Type")
     request.addValue(apiKey.uuidString, forHTTPHeaderField: "x-apikey")
 
     return request

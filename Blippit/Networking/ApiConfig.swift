@@ -13,6 +13,8 @@ struct ApiConfig {
   let basePath = Constants.api.defaults.basePath
   let resource: String
 
+  let contentType = Constants.api.defaults.contentType
+
   let cachePolicy = Constants.api.defaults.cachePolicy
   let timeoutInterval = Constants.api.defaults.timeoutInterval
 }

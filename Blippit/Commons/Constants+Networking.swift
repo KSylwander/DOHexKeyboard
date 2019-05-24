@@ -19,6 +19,8 @@ extension Constants {
       static let basePath = "https://prod-bsac.bubbelskum.com/api/\(version)"
 #endif
 
+      static let contentType = "application/json"
+
       static let cachePolicy = URLRequest.CachePolicy.useProtocolCachePolicy
       static let timeoutInterval = TimeInterval(60.0)
     }
