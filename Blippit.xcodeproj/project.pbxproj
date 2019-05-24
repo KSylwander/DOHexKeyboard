@@ -62,6 +62,7 @@
 		3E55DB6A2296CD03009CF6D2 /* GetCloudSessionStatusUseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E55DB692296CD03009CF6D2 /* GetCloudSessionStatusUseCaseFactory.swift */; };
 		3E55DB6C2296CD3C009CF6D2 /* DefaultGetCloudSessionStatusUseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E55DB6B2296CD3C009CF6D2 /* DefaultGetCloudSessionStatusUseCaseFactory.swift */; };
 		3E55DB6E2296CDD7009CF6D2 /* WaitForCloudSessionDoneState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E55DB6D2296CDD7009CF6D2 /* WaitForCloudSessionDoneState.swift */; };
+		3E55DB702296D5F0009CF6D2 /* WaitForCloudSessionDoneStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E55DB6F2296D5F0009CF6D2 /* WaitForCloudSessionDoneStateFactory.swift */; };
 		3E790F6D228AD17600DB072F /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F6C228AD17600DB072F /* Curry.swift */; };
 		3E790F6F228AD18800DB072F /* Flip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F6E228AD18800DB072F /* Flip.swift */; };
 		3E790F71228AD19C00DB072F /* Fmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F70228AD19C00DB072F /* Fmap.swift */; };
@@ -241,6 +242,7 @@
 		3E55DB692296CD03009CF6D2 /* GetCloudSessionStatusUseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCloudSessionStatusUseCaseFactory.swift; sourceTree = "<group>"; };
 		3E55DB6B2296CD3C009CF6D2 /* DefaultGetCloudSessionStatusUseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGetCloudSessionStatusUseCaseFactory.swift; sourceTree = "<group>"; };
 		3E55DB6D2296CDD7009CF6D2 /* WaitForCloudSessionDoneState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitForCloudSessionDoneState.swift; sourceTree = "<group>"; };
+		3E55DB6F2296D5F0009CF6D2 /* WaitForCloudSessionDoneStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitForCloudSessionDoneStateFactory.swift; sourceTree = "<group>"; };
 		3E790F6C228AD17600DB072F /* Curry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curry.swift; sourceTree = "<group>"; };
 		3E790F6E228AD18800DB072F /* Flip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flip.swift; sourceTree = "<group>"; };
 		3E790F70228AD19C00DB072F /* Fmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fmap.swift; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 				3EFADD57228DA13400B3559A /* UploadCommandDataStateFactory.swift */,
 				3E23C23C228C2F0800DA3305 /* ValidPodSessionStateObserving.swift */,
 				3E38F90F2281A10B00C114B7 /* ValidPodzStatusObserving.swift */,
+				3E55DB6F2296D5F0009CF6D2 /* WaitForCloudSessionDoneStateFactory.swift */,
 			);
 			path = "State Handling";
 			sourceTree = "<group>";
@@ -856,6 +859,7 @@
 				3E790F82228AD96200DB072F /* Certificate.swift in Sources */,
 				3EFADD44228D80B800B3559A /* DefaultHttpStatusCodeValidator.swift in Sources */,
 				3E38F90C2281A09600C114B7 /* Startable.swift in Sources */,
+				3E55DB702296D5F0009CF6D2 /* WaitForCloudSessionDoneStateFactory.swift in Sources */,
 				3E38F9162281A2A200C114B7 /* StartingState.swift in Sources */,
 				3E23C23D228C2F0800DA3305 /* ValidPodSessionStateObserving.swift in Sources */,
 				3EC4DE472283073A007A05C9 /* StartedState.swift in Sources */,
