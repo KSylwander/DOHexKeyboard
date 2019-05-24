@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9VG-gb-OMM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Secular_One.ttf">
+            <string>SecularOne-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="xFp-lA-6ob">
+            <objects>
+                <viewController id="9VG-gb-OMM" customClass="MainViewController" customModule="BlippitTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ovf-ip-AGl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Kfp-0V-Zya">
+                                <rect key="frame" x="16" y="44" width="343" height="223"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ejj-d4-uqP">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="98"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blippit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xc-Y8-brD">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="35"/>
+                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="24"/>
+                                                <color key="textColor" name="LightShades"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="yfU-ga-wR2">
+                                                <rect key="frame" x="0.0" y="45" width="343" height="53"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rb9-QR-w3b">
+                                                        <rect key="frame" x="8" y="0.0" width="327" height="26.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKw-Gg-qkl">
+                                                                <rect key="frame" x="0.0" y="0.0" width="61" height="26.5"/>
+                                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="18"/>
+                                                                <color key="textColor" name="LightShades"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Not started" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dq-p5-osV">
+                                                                <rect key="frame" x="69" y="0.0" width="96" height="26.5"/>
+                                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="18"/>
+                                                                <color key="textColor" name="LightShades"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="26" translatesAutoresizingMaskIntoConstraints="NO" id="MiP-Rl-OcX">
+                                                                <rect key="frame" x="173" y="0.0" width="154" height="26"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ltB-qH-X2q">
+                                                        <rect key="frame" x="8" y="26.5" width="327" height="26.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Error:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBb-26-iVf">
+                                                                <rect key="frame" x="0.0" y="0.0" width="48.5" height="26.5"/>
+                                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="18"/>
+                                                                <color key="textColor" name="LightShades"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dC5-Sf-Kum">
+                                                                <rect key="frame" x="56.5" y="0.0" width="270.5" height="26.5"/>
+                                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="18"/>
+                                                                <color key="textColor" name="LightShades"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <edgeInsets key="layoutMargins" top="0.0" left="8" bottom="0.0" right="8"/>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="we6-yT-9oW">
+                                        <rect key="frame" x="0.0" y="114" width="343" height="109"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yED-8L-d0W">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="41"/>
+                                                <color key="backgroundColor" name="LightShades"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="41" id="W44-5Z-lFB"/>
+                                                </constraints>
+                                                <color key="textColor" name="DarkShades"/>
+                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" keyboardAppearance="alert" returnKeyType="done" textContentType="tel"/>
+                                            </textField>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QR8-O3-O7N">
+                                                <rect key="frame" x="0.0" y="65" width="343" height="44"/>
+                                                <subviews>
+                                                    <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEm-xu-ACg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                                        <color key="backgroundColor" name="LightShades"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="oAP-EC-Axe"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="20"/>
+                                                        <state key="normal" title="Start">
+                                                            <color key="titleColor" name="DarkShades"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="toggleBlippitButtonTapped" destination="9VG-gb-OMM" eventType="touchUpInside" id="k1Y-xr-faM"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="HqF-iM-zXM">
+                                <rect key="frame" x="195" y="91.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" name="DarkShades"/>
+                        <constraints>
+                            <constraint firstItem="HqF-iM-zXM" firstAttribute="leading" secondItem="8dq-p5-osV" secondAttribute="trailing" constant="6" id="7wz-nc-QSF"/>
+                            <constraint firstItem="8dq-p5-osV" firstAttribute="centerY" secondItem="HqF-iM-zXM" secondAttribute="centerY" constant="1" id="KwO-Tc-agc"/>
+                            <constraint firstItem="Kfp-0V-Zya" firstAttribute="top" secondItem="t2Q-sD-jTD" secondAttribute="top" constant="24" id="Sz7-wV-z6Y"/>
+                            <constraint firstItem="t2Q-sD-jTD" firstAttribute="trailing" secondItem="Kfp-0V-Zya" secondAttribute="trailing" constant="16" id="glU-AT-YnU"/>
+                            <constraint firstItem="Kfp-0V-Zya" firstAttribute="leading" secondItem="t2Q-sD-jTD" secondAttribute="leading" constant="16" id="m4O-Is-R0L"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="t2Q-sD-jTD"/>
+                    </view>
+                    <connections>
+                        <outlet property="errorLabel" destination="dC5-Sf-Kum" id="d23-1H-WsQ"/>
+                        <outlet property="loadingIndicator" destination="HqF-iM-zXM" id="frw-Cu-Ji2"/>
+                        <outlet property="statusLabel" destination="8dq-p5-osV" id="zwV-wB-mxh"/>
+                        <outlet property="toggleBlippitButton" destination="rEm-xu-ACg" id="k5y-Jo-ek3"/>
+                        <outlet property="userIdTextField" destination="yED-8L-d0W" id="3ta-H4-irr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BMm-G5-Y5k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142" y="113"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="DarkShades">
+            <color red="0.18799999356269836" green="0.19599999487400055" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LightShades">
+            <color red="0.96100002527236938" green="0.96899998188018799" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
