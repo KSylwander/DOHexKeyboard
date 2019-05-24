@@ -9,7 +9,7 @@
 import Foundation
 
 struct SecCertificateHandler {
-  let createWithData = SecCertificateCreateWithData >>> (UnsafeBitCast.toCertificate |> curry(fmap))
+  let createWithData = SecCertificateCreateWithData >>> apply(UnsafeBitCast.toCertificate, curry(fmap))
   let copyData = UnsafeBitCast.toSecCertificate >> SecCertificateCopyData
 }
 

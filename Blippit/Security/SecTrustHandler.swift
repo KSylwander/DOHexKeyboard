@@ -9,16 +9,21 @@
 import Foundation
 
 struct SecTrustHandler {
-  let setPolicies = (UnsafeBitCast.toSecPolicies >> ((UnsafeBitCast.toSecTrust >> SecTrustSetPolicies) |> flip)) |> flip
+  let setPolicies = apply(
+    UnsafeBitCast.toSecPolicies >> apply(UnsafeBitCast.toSecTrust >> SecTrustSetPolicies, flip),
+    flip
+  )
 
-  let setAnchorCertificates
-    = (UnsafeBitCast.toSecCertificates >> ((UnsafeBitCast.toSecTrust >> SecTrustSetAnchorCertificates) |> flip)) |> flip
+  let setAnchorCertificates = apply(
+    UnsafeBitCast.toSecCertificates >> apply(UnsafeBitCast.toSecTrust >> SecTrustSetAnchorCertificates, flip),
+    flip
+  )
 
   let evaluate = UnsafeBitCast.toSecTrust >> SecTrustEvaluate
   let getCertificateCount = UnsafeBitCast.toSecTrust >> SecTrustGetCertificateCount
 
   let getCertificateAtIndex
-    = (UnsafeBitCast.toSecTrust >> SecTrustGetCertificateAtIndex) >>> (UnsafeBitCast.toCertificate |> curry(fmap))
+    = (UnsafeBitCast.toSecTrust >> SecTrustGetCertificateAtIndex) >>> apply(UnsafeBitCast.toCertificate, curry(fmap))
 }
 
 extension SecTrustHandler: TrustHandling {}

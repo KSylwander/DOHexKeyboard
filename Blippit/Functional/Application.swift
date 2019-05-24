@@ -8,12 +8,6 @@
 
 import Foundation
 
-precedencegroup ForwardApplication {
-  associativity: left
-  higherThan: AssignmentPrecedence
-}
-infix operator |>: ForwardApplication
-
-func |><T, U>(_ a: T, _ f: (T) -> U) -> U {
+func apply<A, B>(_ a: A, _ f: (A) -> B) -> B {
   return f(a)
 }
