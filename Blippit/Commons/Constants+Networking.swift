@@ -10,7 +10,7 @@ import Foundation
 
 extension Constants {
   enum api {
-    static let version = "0.1.0"
+    static let version = "0"
 
     enum defaults {
 #if DEBUG
@@ -26,7 +26,7 @@ extension Constants {
     enum establishCloudSession {
       static let config = ApiConfig(
         method: .post,
-        resource: "user/establishSession"
+        resource: "session"
       )
     }
 
