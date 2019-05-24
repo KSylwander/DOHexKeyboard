@@ -23,5 +23,12 @@ extension Constants {
     enum transferDataToken {
       static let maxRetries = 3
     }
+
+    enum waitForCloudSessionDone {
+      static let maxRetries = 3
+      static let retryInterval = TimeInterval(1.0)
+
+      static let pollInterval = TimeInterval(1.0)
+    }
   }
 }

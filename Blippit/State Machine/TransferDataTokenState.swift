@@ -36,7 +36,7 @@ final class TransferDataTokenState {
 extension TransferDataTokenState: TransferIdState {
   func handleTransactionSuccess() throws {
     try session.close()
-    delegate?.state(self, moveTo: .transferDataTokenCompleted)
+    delegate?.state(self, moveTo: .cloudSessionCompleted)
   }
 }
 
