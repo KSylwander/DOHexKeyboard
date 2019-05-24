@@ -32,3 +32,17 @@ func equal<V: Equatable, E>(_ expectedValue: V?) -> Predicate<Result<V, E>> {
     }
   }
 }
+
+func equal<V: Equatable>(_ expectedValue: V?) -> Predicate<Error> {
+  return Predicate.define("equal <\(String(describing: expectedValue))") { actualExpression, message in
+    let actualValue = try actualExpression.evaluate()
+    switch (expectedValue, actualValue) {
+    case (nil, _?):
+      return PredicateResult(status: .fail, message: message.appendedBeNilHint())
+    case (let expectedValue?, let actualValue as V):
+      return PredicateResult(bool: expectedValue == actualValue, message: message)
+    default:
+      return PredicateResult(status: .fail, message: message)
+    }
+  }
+}

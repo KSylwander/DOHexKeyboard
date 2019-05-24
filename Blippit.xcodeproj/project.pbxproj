@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E38F90622819EB100C114B7 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90522819EB100C114B7 /* State.swift */; };
+		3E38F90822819EE300C114B7 /* RawState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90722819EE300C114B7 /* RawState.swift */; };
+		3E38F90A22819F3600C114B7 /* StateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90922819F3600C114B7 /* StateDelegate.swift */; };
+		3E38F90C2281A09600C114B7 /* Startable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90B2281A09600C114B7 /* Startable.swift */; };
+		3E38F90E2281A0ED00C114B7 /* PodzStatusObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90D2281A0ED00C114B7 /* PodzStatusObserving.swift */; };
+		3E38F9102281A10B00C114B7 /* ValidPodzStatusObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90F2281A10B00C114B7 /* ValidPodzStatusObserving.swift */; };
+		3E38F9122281A16500C114B7 /* DefaultPodzStatusObservingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F9112281A16500C114B7 /* DefaultPodzStatusObservingState.swift */; };
+		3E38F9142281A1DB00C114B7 /* BlippitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F9132281A1DB00C114B7 /* BlippitError.swift */; };
+		3E38F9162281A2A200C114B7 /* StartingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F9152281A2A200C114B7 /* StartingState.swift */; };
+		3E38F9192281AB9300C114B7 /* DummyPodz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F9182281AB9300C114B7 /* DummyPodz.swift */; };
+		3E38F91D2281BB2F00C114B7 /* DummyDefaultPodzStatusObservingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F91A2281BA8000C114B7 /* DummyDefaultPodzStatusObservingState.swift */; };
+		3E38F91F2281C44000C114B7 /* DefaultPodzStatusObservingStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F91E2281C44000C114B7 /* DefaultPodzStatusObservingStateSpec.swift */; };
 		3E97FA262280313F003419AE /* DataTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA252280313F003419AE /* DataTaskFactory.swift */; };
 		3E97FA282280318B003419AE /* URLSession+DataTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA272280318B003419AE /* URLSession+DataTaskFactory.swift */; };
 		3E97FA2A228031CF003419AE /* DefaultFetchDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA29228031CF003419AE /* DefaultFetchDataUseCase.swift */; };
@@ -16,7 +28,7 @@
 		3E97FA422280385B003419AE /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E97FA412280385B003419AE /* Cuckoo.framework */; };
 		3E97FA4322803869003419AE /* Cuckoo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E97FA412280385B003419AE /* Cuckoo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3E97FA4722804537003419AE /* Mocks.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA4622804537003419AE /* Mocks.generated.swift */; };
-		3E97FA4C22804CE9003419AE /* MockableURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA4B22804CE9003419AE /* MockableURLSessionDataTask.swift */; };
+		3E97FA4C22804CE9003419AE /* DummyURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA4B22804CE9003419AE /* DummyURLSessionDataTask.swift */; };
 		3E97FA4E228053B2003419AE /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E97FA4D228053B2003419AE /* Quick.framework */; };
 		3E97FA50228053BF003419AE /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E97FA4F228053BF003419AE /* Nimble.framework */; };
 		3E97FA51228053CC003419AE /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E97FA4D228053B2003419AE /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -28,9 +40,16 @@
 		3E9EA18E228182EA00B1B837 /* CustomMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9EA18D228182EA00B1B837 /* CustomMatchers.swift */; };
 		3EBAC76A227C2CA200D5C693 /* Blippit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EBAC768227C2CA200D5C693 /* Blippit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3EBAC774227C30A500D5C693 /* Podz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC773227C30A500D5C693 /* Podz.framework */; };
+		3EC4DE45228306F1007A05C9 /* PodStateObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE44228306F1007A05C9 /* PodStateObserving.swift */; };
+		3EC4DE472283073A007A05C9 /* StartedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE462283073A007A05C9 /* StartedState.swift */; };
+		3EC4DE49228307CC007A05C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE48228307CC007A05C9 /* Constants.swift */; };
+		3EC4DE4B228308D4007A05C9 /* DummyPod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE4A228308D4007A05C9 /* DummyPod.swift */; };
+		3EC4DE4D22830991007A05C9 /* DummyPodSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE4C22830991007A05C9 /* DummyPodSession.swift */; };
+		3EC4DE4F22830CA2007A05C9 /* StartedStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE4E22830CA2007A05C9 /* StartedStateSpec.swift */; };
 		3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC79740228025BE00AD79CE /* Cancellable.swift */; };
 		3EC7974C2280298800AD79CE /* FetchDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */; };
 		3EC7974E22802A0C00AD79CE /* URLSessionTask+Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */; };
+		3EFDCAC22282F42400774A21 /* StartingStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +79,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3E38F90522819EB100C114B7 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		3E38F90722819EE300C114B7 /* RawState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawState.swift; sourceTree = "<group>"; };
+		3E38F90922819F3600C114B7 /* StateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDelegate.swift; sourceTree = "<group>"; };
+		3E38F90B2281A09600C114B7 /* Startable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Startable.swift; sourceTree = "<group>"; };
+		3E38F90D2281A0ED00C114B7 /* PodzStatusObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodzStatusObserving.swift; sourceTree = "<group>"; };
+		3E38F90F2281A10B00C114B7 /* ValidPodzStatusObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidPodzStatusObserving.swift; sourceTree = "<group>"; };
+		3E38F9112281A16500C114B7 /* DefaultPodzStatusObservingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPodzStatusObservingState.swift; sourceTree = "<group>"; };
+		3E38F9132281A1DB00C114B7 /* BlippitError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitError.swift; sourceTree = "<group>"; };
+		3E38F9152281A2A200C114B7 /* StartingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingState.swift; sourceTree = "<group>"; };
+		3E38F9182281AB9300C114B7 /* DummyPodz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyPodz.swift; sourceTree = "<group>"; };
+		3E38F91A2281BA8000C114B7 /* DummyDefaultPodzStatusObservingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyDefaultPodzStatusObservingState.swift; sourceTree = "<group>"; };
+		3E38F91E2281C44000C114B7 /* DefaultPodzStatusObservingStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPodzStatusObservingStateSpec.swift; sourceTree = "<group>"; };
 		3E97FA252280313F003419AE /* DataTaskFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTaskFactory.swift; sourceTree = "<group>"; };
 		3E97FA272280318B003419AE /* URLSession+DataTaskFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+DataTaskFactory.swift"; sourceTree = "<group>"; };
 		3E97FA29228031CF003419AE /* DefaultFetchDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchDataUseCase.swift; sourceTree = "<group>"; };
@@ -68,7 +99,7 @@
 		3E97FA3422803641003419AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E97FA412280385B003419AE /* Cuckoo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cuckoo.framework; path = Carthage/Build/iOS/Cuckoo.framework; sourceTree = "<group>"; };
 		3E97FA4622804537003419AE /* Mocks.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mocks.generated.swift; sourceTree = "<group>"; };
-		3E97FA4B22804CE9003419AE /* MockableURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockableURLSessionDataTask.swift; sourceTree = "<group>"; };
+		3E97FA4B22804CE9003419AE /* DummyURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyURLSessionDataTask.swift; sourceTree = "<group>"; };
 		3E97FA4D228053B2003419AE /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		3E97FA4F228053BF003419AE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		3E97FA552280548B003419AE /* DefaultFetchDataUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchDataUseCaseSpec.swift; sourceTree = "<group>"; };
@@ -81,9 +112,16 @@
 		3EBAC769227C2CA200D5C693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EBAC770227C2FC200D5C693 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		3EBAC773227C30A500D5C693 /* Podz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Podz.framework; path = Carthage/Build/iOS/Podz.framework; sourceTree = "<group>"; };
+		3EC4DE44228306F1007A05C9 /* PodStateObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodStateObserving.swift; sourceTree = "<group>"; };
+		3EC4DE462283073A007A05C9 /* StartedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartedState.swift; sourceTree = "<group>"; };
+		3EC4DE48228307CC007A05C9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3EC4DE4A228308D4007A05C9 /* DummyPod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyPod.swift; sourceTree = "<group>"; };
+		3EC4DE4C22830991007A05C9 /* DummyPodSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyPodSession.swift; sourceTree = "<group>"; };
+		3EC4DE4E22830CA2007A05C9 /* StartedStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartedStateSpec.swift; sourceTree = "<group>"; };
 		3EC79740228025BE00AD79CE /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchDataUseCase.swift; sourceTree = "<group>"; };
 		3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSessionTask+Cancellable.swift"; sourceTree = "<group>"; };
+		3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingStateSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +148,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E38F90422819E9100C114B7 /* State Machine */ = {
+			isa = PBXGroup;
+			children = (
+				3EC4DE462283073A007A05C9 /* StartedState.swift */,
+				3E38F9152281A2A200C114B7 /* StartingState.swift */,
+			);
+			path = "State Machine";
+			sourceTree = "<group>";
+		};
+		3E38F9172281A31F00C114B7 /* State Handling */ = {
+			isa = PBXGroup;
+			children = (
+				3E38F9112281A16500C114B7 /* DefaultPodzStatusObservingState.swift */,
+				3EC4DE44228306F1007A05C9 /* PodStateObserving.swift */,
+				3E38F90D2281A0ED00C114B7 /* PodzStatusObserving.swift */,
+				3E38F90722819EE300C114B7 /* RawState.swift */,
+				3E38F90B2281A09600C114B7 /* Startable.swift */,
+				3E38F90522819EB100C114B7 /* State.swift */,
+				3E38F90922819F3600C114B7 /* StateDelegate.swift */,
+				3E38F90F2281A10B00C114B7 /* ValidPodzStatusObserving.swift */,
+			);
+			path = "State Handling";
+			sourceTree = "<group>";
+		};
 		3E97FA3122803641003419AE /* BlippitTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,7 +186,11 @@
 		3E97FA45228039D0003419AE /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				3E97FA4B22804CE9003419AE /* MockableURLSessionDataTask.swift */,
+				3E38F91A2281BA8000C114B7 /* DummyDefaultPodzStatusObservingState.swift */,
+				3EC4DE4A228308D4007A05C9 /* DummyPod.swift */,
+				3EC4DE4C22830991007A05C9 /* DummyPodSession.swift */,
+				3E38F9182281AB9300C114B7 /* DummyPodz.swift */,
+				3E97FA4B22804CE9003419AE /* DummyURLSessionDataTask.swift */,
 				3E97FA4622804537003419AE /* Mocks.generated.swift */,
 			);
 			path = Mocks;
@@ -142,6 +208,9 @@
 			isa = PBXGroup;
 			children = (
 				3E97FA552280548B003419AE /* DefaultFetchDataUseCaseSpec.swift */,
+				3E38F91E2281C44000C114B7 /* DefaultPodzStatusObservingStateSpec.swift */,
+				3EC4DE4E22830CA2007A05C9 /* StartedStateSpec.swift */,
+				3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -193,6 +262,8 @@
 				3EC79744228026F100AD79CE /* Commons */,
 				3EC797462280279900AD79CE /* Networking */,
 				3EAEA7FD2280109F008B7E77 /* Resources */,
+				3E38F9172281A31F00C114B7 /* State Handling */,
+				3E38F90422819E9100C114B7 /* State Machine */,
 			);
 			path = Blippit;
 			sourceTree = "<group>";
@@ -211,7 +282,9 @@
 		3EC79744228026F100AD79CE /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				3E38F9132281A1DB00C114B7 /* BlippitError.swift */,
 				3EC79740228025BE00AD79CE /* Cancellable.swift */,
+				3EC4DE48228307CC007A05C9 /* Constants.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -346,7 +419,15 @@
 			);
 			inputPaths = (
 				"$(PROJECT_DIR)/$(PROJECT_NAME)/Networking/DataTaskFactory.swift",
-				"$(PROJECT_DIR)/$(PROJECT_NAME)Tests/Mocks/MockableURLSessionDataTask.swift",
+				"$(PROJECT_DIR)/$(PROJECT_NAME)Tests/Mocks/DummyURLSessionDataTask.swift",
+				"$(PROJECT_DIR)/$(PROJECT_NAME)Tests/Mocks/DummyPodz.swift",
+				"$(PROJECT_DIR)/$(PROJECT_NAME)/State Handling/StateDelegate.swift",
+				"$(PROJECT_DIR)/$(PROJECT_NAME)/State Handling/DefaultPodzStatusObservingState.swift",
+				"$(PROJECT_DIR)/$(PROJECT_NAME)/Commons/Cancellable.swift",
+				"$(PROJECT_DIR)/$(PROJECT_NAME)/State Handling/ValidPodzStatusObserving.swift",
+				"$(PROJECT_DIR)/$(PROJECT_NAME)Tests/Mocks/DummyDefaultPodzStatusObservingState.swift",
+				"$(PROJECT_DIR)/$(PROJECT_NAME)Tests/Mocks/DummyPod.swift",
+				"$(PROJECT_DIR)/$(PROJECT_NAME)Tests/Mocks/DummyPodSession.swift",
 			);
 			outputFileListPaths = (
 			);
@@ -365,11 +446,18 @@
 			files = (
 				3E9EA18C228182CE00B1B837 /* Result+IsSuccess.swift in Sources */,
 				3E9EA1882281829B00B1B837 /* Any.swift in Sources */,
+				3E38F9192281AB9300C114B7 /* DummyPodz.swift in Sources */,
 				3E97FA4722804537003419AE /* Mocks.generated.swift in Sources */,
 				3E9EA18A228182B800B1B837 /* Immaterial.swift in Sources */,
 				3E97FA562280548B003419AE /* DefaultFetchDataUseCaseSpec.swift in Sources */,
+				3E38F91F2281C44000C114B7 /* DefaultPodzStatusObservingStateSpec.swift in Sources */,
 				3E9EA18E228182EA00B1B837 /* CustomMatchers.swift in Sources */,
-				3E97FA4C22804CE9003419AE /* MockableURLSessionDataTask.swift in Sources */,
+				3EC4DE4F22830CA2007A05C9 /* StartedStateSpec.swift in Sources */,
+				3EC4DE4B228308D4007A05C9 /* DummyPod.swift in Sources */,
+				3E97FA4C22804CE9003419AE /* DummyURLSessionDataTask.swift in Sources */,
+				3E38F91D2281BB2F00C114B7 /* DummyDefaultPodzStatusObservingState.swift in Sources */,
+				3EC4DE4D22830991007A05C9 /* DummyPodSession.swift in Sources */,
+				3EFDCAC22282F42400774A21 /* StartingStateSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,12 +465,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E38F90C2281A09600C114B7 /* Startable.swift in Sources */,
+				3E38F9162281A2A200C114B7 /* StartingState.swift in Sources */,
+				3EC4DE472283073A007A05C9 /* StartedState.swift in Sources */,
+				3E38F9122281A16500C114B7 /* DefaultPodzStatusObservingState.swift in Sources */,
+				3E38F9102281A10B00C114B7 /* ValidPodzStatusObserving.swift in Sources */,
 				3E97FA2A228031CF003419AE /* DefaultFetchDataUseCase.swift in Sources */,
+				3EC4DE45228306F1007A05C9 /* PodStateObserving.swift in Sources */,
 				3EC7974C2280298800AD79CE /* FetchDataUseCase.swift in Sources */,
+				3E38F9142281A1DB00C114B7 /* BlippitError.swift in Sources */,
 				3E97FA262280313F003419AE /* DataTaskFactory.swift in Sources */,
 				3E97FA282280318B003419AE /* URLSession+DataTaskFactory.swift in Sources */,
+				3E38F90822819EE300C114B7 /* RawState.swift in Sources */,
+				3E38F90E2281A0ED00C114B7 /* PodzStatusObserving.swift in Sources */,
 				3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */,
+				3E38F90622819EB100C114B7 /* State.swift in Sources */,
 				3EC7974E22802A0C00AD79CE /* URLSessionTask+Cancellable.swift in Sources */,
+				3E38F90A22819F3600C114B7 /* StateDelegate.swift in Sources */,
+				3EC4DE49228307CC007A05C9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

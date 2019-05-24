@@ -15,21 +15,20 @@ import Quick
 final class DefaultFetchDataUseCaseSpec: QuickSpec {
   override func spec() {
     describe("the DefaultFetchDataUseCase") {
-      let dataTask = MockableURLSessionDataTaskStub()
-      let dataTaskFactory = MockDataTaskFactory()
+      let dataTaskFactory = MockDataTaskFactory().withEnabledDefaultImplementation(DataTaskFactoryStub())
 
-      let sut = DefaultFetchDataUseCase(dataTaskFactory: dataTaskFactory)
+      var sut = DefaultFetchDataUseCase(dataTaskFactory: dataTaskFactory)
 
       afterEach {
         reset(dataTaskFactory)
+        sut = DefaultFetchDataUseCase(dataTaskFactory: dataTaskFactory)
       }
 
       it("fails on error") {
         /* Arrange */
-        onDataTask { _, completion in
+        onDataTask { completion in
           /* Complete with an error */
           completion(nil, immaterial(), any())
-          return dataTask
         }
 
         /* Act */
@@ -39,17 +38,16 @@ final class DefaultFetchDataUseCaseSpec: QuickSpec {
         }
 
         /* Assert */
-        expect(theResult).notTo(beNil())
-        expect(theResult).notTo(beASuccess())
+        expect(theResult).toNot(beNil())
+        expect(theResult).toNot(beASuccess())
       }
 
       it("returns the data on success") {
         /* Arrange */
         let expectedData: Data = any()
-        onDataTask { _, completion in
+        onDataTask { completion in
           /* Complete with data */
           completion(expectedData, immaterial(), nil)
-          return dataTask
         }
 
         /* Act */
@@ -59,18 +57,21 @@ final class DefaultFetchDataUseCaseSpec: QuickSpec {
         }
 
         /* Assert */
-        expect(theResult).notTo(beNil())
+        expect(theResult).toNot(beNil())
         expect(theResult).to(equal(expectedData))
       }
 
-      typealias DataTaskCompletion = (Data?, URLResponse?, Error?) -> Void
-      typealias DataTaskMethod = (URLRequest, @escaping DataTaskCompletion) -> URLSessionDataTask
-
-      func onDataTask(_ implementation: @escaping DataTaskMethod) {
+      func onDataTask(_ implementation: @escaping OnDataTask) {
         stub(dataTaskFactory) { stub in
-          when(stub.dataTask(with: any(), completionHandler: any())).then(implementation)
+          when(stub.dataTask(with: any(), completionHandler: any())).then { _, completion in
+            implementation(completion)
+            return DummyURLSessionDataTaskStub()
+          }
         }
       }
+
+      typealias OnDataTaskCompletion = (Data?, URLResponse?, Error?) -> Void
+      typealias OnDataTask = (@escaping OnDataTaskCompletion) -> Void
     }
   }
 }
