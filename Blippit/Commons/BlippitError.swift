@@ -21,6 +21,7 @@ public enum BlippitError {
   case invalidPodSessionState(PodSessionState)
   case podDoesNotSupportTransferId
 
+  case invalidCredentials
   case invalidHttpStatusCode(Int)
 
   /* Sending of data token failed after `Constants.states.transferDataToken.maxRetries + 1` attempts. May be fixed by
