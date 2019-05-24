@@ -41,6 +41,13 @@
 		3E38F9192281AB9300C114B7 /* DummyPodz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F9182281AB9300C114B7 /* DummyPodz.swift */; };
 		3E38F91D2281BB2F00C114B7 /* DummyDefaultPodzStatusObservingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F91A2281BA8000C114B7 /* DummyDefaultPodzStatusObservingState.swift */; };
 		3E38F91F2281C44000C114B7 /* DefaultPodzStatusObservingStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F91E2281C44000C114B7 /* DefaultPodzStatusObservingStateSpec.swift */; };
+		3E428BE12297EB670038FBB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E428BE02297EB670038FBB9 /* AppDelegate.swift */; };
+		3E428BE82297EB680038FBB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E428BE72297EB680038FBB9 /* Assets.xcassets */; };
+		3E428BEB2297EB680038FBB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E428BE92297EB680038FBB9 /* LaunchScreen.storyboard */; };
+		3E428BF22297EC690038FBB9 /* Podz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC773227C30A500D5C693 /* Podz.framework */; };
+		3E428BF32297EC690038FBB9 /* Podz.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC773227C30A500D5C693 /* Podz.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3E428BF52297EC6C0038FBB9 /* Blippit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC765227C2CA200D5C693 /* Blippit.framework */; };
+		3E428BF62297EC6C0038FBB9 /* Blippit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC765227C2CA200D5C693 /* Blippit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3E5352F62295393D004FD948 /* URLRequestBuilderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5352F52295393D004FD948 /* URLRequestBuilderFactory.swift */; };
 		3E5352F8229539E3004FD948 /* DefaultURLRequestBuilderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5352F7229539E3004FD948 /* DefaultURLRequestBuilderFactory.swift */; };
 		3E5352FA22953C16004FD948 /* UploadCommandDataStateMetaFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5352F922953C16004FD948 /* UploadCommandDataStateMetaFactory.swift */; };
@@ -166,6 +173,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3E428BF72297EC6C0038FBB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EBAC75C227C2CA200D5C693 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3EBAC764227C2CA200D5C693;
+			remoteInfo = Blippit;
+		};
 		3E97FA3622803641003419AE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3EBAC75C227C2CA200D5C693 /* Project object */;
@@ -176,6 +190,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		3E428BF42297EC690038FBB9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3E428BF32297EC690038FBB9 /* Podz.framework in Embed Frameworks */,
+				3E428BF62297EC6C0038FBB9 /* Blippit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3E97FA3F228037EB003419AE /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -226,6 +252,11 @@
 		3E38F9182281AB9300C114B7 /* DummyPodz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyPodz.swift; sourceTree = "<group>"; };
 		3E38F91A2281BA8000C114B7 /* DummyDefaultPodzStatusObservingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyDefaultPodzStatusObservingState.swift; sourceTree = "<group>"; };
 		3E38F91E2281C44000C114B7 /* DefaultPodzStatusObservingStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPodzStatusObservingStateSpec.swift; sourceTree = "<group>"; };
+		3E428BDE2297EB670038FBB9 /* BlippitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlippitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E428BE02297EB670038FBB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3E428BE72297EB680038FBB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3E428BEA2297EB680038FBB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3E428BEC2297EB680038FBB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E5352F52295393D004FD948 /* URLRequestBuilderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilderFactory.swift; sourceTree = "<group>"; };
 		3E5352F7229539E3004FD948 /* DefaultURLRequestBuilderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultURLRequestBuilderFactory.swift; sourceTree = "<group>"; };
 		3E5352F922953C16004FD948 /* UploadCommandDataStateMetaFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCommandDataStateMetaFactory.swift; sourceTree = "<group>"; };
@@ -351,6 +382,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3E428BDB2297EB670038FBB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E428BF22297EC690038FBB9 /* Podz.framework in Frameworks */,
+				3E428BF52297EC6C0038FBB9 /* Blippit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3E97FA2D22803641003419AE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -440,6 +480,33 @@
 				3E55DB6F2296D5F0009CF6D2 /* WaitForCloudSessionDoneStateFactory.swift */,
 			);
 			path = "State Handling";
+			sourceTree = "<group>";
+		};
+		3E428BDF2297EB670038FBB9 /* BlippitTest */ = {
+			isa = PBXGroup;
+			children = (
+				3E428BF12297EC120038FBB9 /* Entrypoint */,
+				3E428BF02297EB720038FBB9 /* Resources */,
+			);
+			path = BlippitTest;
+			sourceTree = "<group>";
+		};
+		3E428BF02297EB720038FBB9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3E428BE72297EB680038FBB9 /* Assets.xcassets */,
+				3E428BEC2297EB680038FBB9 /* Info.plist */,
+				3E428BE92297EB680038FBB9 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3E428BF12297EC120038FBB9 /* Entrypoint */ = {
+			isa = PBXGroup;
+			children = (
+				3E428BE02297EB670038FBB9 /* AppDelegate.swift */,
+			);
+			path = Entrypoint;
 			sourceTree = "<group>";
 		};
 		3E53531A22956F72004FD948 /* Construction Root */ = {
@@ -596,6 +663,7 @@
 			children = (
 				3EBAC767227C2CA200D5C693 /* Blippit */,
 				3E97FA3122803641003419AE /* BlippitTests */,
+				3E428BDF2297EB670038FBB9 /* BlippitTest */,
 				3EBAC766227C2CA200D5C693 /* Products */,
 				3EBAC772227C30A500D5C693 /* Frameworks */,
 			);
@@ -606,6 +674,7 @@
 			children = (
 				3EBAC765227C2CA200D5C693 /* Blippit.framework */,
 				3E97FA3022803641003419AE /* BlippitTests.xctest */,
+				3E428BDE2297EB670038FBB9 /* BlippitTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -718,6 +787,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		3E428BDD2297EB670038FBB9 /* BlippitTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E428BEF2297EB680038FBB9 /* Build configuration list for PBXNativeTarget "BlippitTest" */;
+			buildPhases = (
+				3E428BDA2297EB670038FBB9 /* Sources */,
+				3E428BDB2297EB670038FBB9 /* Frameworks */,
+				3E428BDC2297EB670038FBB9 /* Resources */,
+				3E428BF42297EC690038FBB9 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3E428BF82297EC6C0038FBB9 /* PBXTargetDependency */,
+			);
+			name = BlippitTest;
+			productName = BlippitTest;
+			productReference = 3E428BDE2297EB670038FBB9 /* BlippitTest.app */;
+			productType = "com.apple.product-type.application";
+		};
 		3E97FA2F22803641003419AE /* BlippitTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E97FA3A22803641003419AE /* Build configuration list for PBXNativeTarget "BlippitTests" */;
@@ -766,6 +854,9 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Crunchfish AB";
 				TargetAttributes = {
+					3E428BDD2297EB670038FBB9 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 					3E97FA2F22803641003419AE = {
 						CreatedOnToolsVersion = 10.2.1;
 						LastSwiftMigration = 1020;
@@ -791,11 +882,21 @@
 			targets = (
 				3EBAC764227C2CA200D5C693 /* Blippit */,
 				3E97FA2F22803641003419AE /* BlippitTests */,
+				3E428BDD2297EB670038FBB9 /* BlippitTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3E428BDC2297EB670038FBB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E428BEB2297EB680038FBB9 /* LaunchScreen.storyboard in Resources */,
+				3E428BE82297EB680038FBB9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3E97FA2E22803641003419AE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -845,6 +946,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3E428BDA2297EB670038FBB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E428BE12297EB670038FBB9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3E97FA2C22803641003419AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1006,6 +1115,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3E428BF82297EC6C0038FBB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3EBAC764227C2CA200D5C693 /* Blippit */;
+			targetProxy = 3E428BF72297EC6C0038FBB9 /* PBXContainerItemProxy */;
+		};
 		3E97FA3722803641003419AE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3EBAC764227C2CA200D5C693 /* Blippit */;
@@ -1013,7 +1127,66 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		3E428BE92297EB680038FBB9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E428BEA2297EB680038FBB9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		3E428BED2297EB680038FBB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F75CSJAHS9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = BlippitTest/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.crunchfish.BlippitTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3E428BEE2297EB680038FBB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F75CSJAHS9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = BlippitTest/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.crunchfish.BlippitTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		3E97FA3822803641003419AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1251,6 +1424,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3E428BEF2297EB680038FBB9 /* Build configuration list for PBXNativeTarget "BlippitTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E428BED2297EB680038FBB9 /* Debug */,
+				3E428BEE2297EB680038FBB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3E97FA3A22803641003419AE /* Build configuration list for PBXNativeTarget "BlippitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
