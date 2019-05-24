@@ -54,15 +54,7 @@ final class MainViewController: UIViewController {
         return
       }
 
-      let blippit = try blippitFactory.makeBlippit(
-        delegate: self,
-        configuration: BlippitConfiguration(
-          podzApiKey: UUID(),
-          podzAppId: UUID(),
-          blippitApiKey: UUID(),
-          blippitAppId: UUID()
-        )
-      )
+      let blippit = try blippitFactory.makeBlippit(delegate: self)
       blippit.start(userId: userId)
       self.blippit = blippit
 
