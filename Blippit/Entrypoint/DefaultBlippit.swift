@@ -30,6 +30,7 @@ final class DefaultBlippit {
   private let establishCloudSessionStateFactory: EstablishCloudSessionStateFactory
   private let uploadCommandDataStateFactory: UploadCommandDataStateFactory
   private let transferDataTokenStateFactory: TransferDataTokenStateFactory
+  private let waitForCloudSessionDoneStateFactory: WaitForCloudSessionDoneStateFactory
 
   private var userId: String!
   private static let commandData = "Data"
@@ -43,7 +44,8 @@ final class DefaultBlippit {
        setupTransferIdStateFactory: SetupTransferIdStateFactory,
        establishCloudSessionStateFactory: EstablishCloudSessionStateFactory,
        uploadCommandDataStateFactory: UploadCommandDataStateFactory,
-       transferDataTokenStateFactory: TransferDataTokenStateFactory) {
+       transferDataTokenStateFactory: TransferDataTokenStateFactory,
+       waitForCloudSessionDoneStateFactory: WaitForCloudSessionDoneStateFactory) {
 
     self.delegate = delegate
 
@@ -55,6 +57,7 @@ final class DefaultBlippit {
     self.establishCloudSessionStateFactory = establishCloudSessionStateFactory
     self.uploadCommandDataStateFactory = uploadCommandDataStateFactory
     self.transferDataTokenStateFactory = transferDataTokenStateFactory
+    self.waitForCloudSessionDoneStateFactory = waitForCloudSessionDoneStateFactory
 
     podz.onStatusChanged = { [weak self] status in
       self?.handlePodzStatus(status)
@@ -137,9 +140,20 @@ final class DefaultBlippit {
           data: DefaultBlippit.commandData,
           podSession: podSession
         )
-      case let .transferDataToken(podSession, dataToken):
-        return transferDataTokenStateFactory.makeState(delegate: self, session: podSession, dataToken: dataToken)
-      case .transferDataTokenCompleted:
+      case let .transferDataToken(cloudSessionId, podSession, dataToken):
+        return transferDataTokenStateFactory.makeState(
+          delegate: self,
+          cloudSessionId: cloudSessionId,
+          session: podSession,
+          dataToken: dataToken
+        )
+      case let .waitForCloudSessionDone(cloudSessionId, podSession):
+        return waitForCloudSessionDoneStateFactory.makeState(
+          delegate: self,
+          cloudSessionId: cloudSessionId,
+          podSession: podSession
+        )
+      case .cloudSessionCompleted:
         return StartedState(delegate: self)
       }
     }()

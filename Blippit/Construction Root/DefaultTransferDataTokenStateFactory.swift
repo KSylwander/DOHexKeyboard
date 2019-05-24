@@ -13,9 +13,10 @@ struct DefaultTransferDataTokenStateFactory {
 }
 
 extension DefaultTransferDataTokenStateFactory: TransferDataTokenStateFactory {
-  func makeState(delegate: StateDelegate, session: PodSession, dataToken: TransferId) -> State {
+  func makeState(delegate: StateDelegate, cloudSessionId: String, session: PodSession, dataToken: TransferId) -> State {
     return TransferDataTokenState(
       delegate: delegate,
+      cloudSessionId: cloudSessionId,
       session: session,
       dataToken: dataToken,
       retryHandlerFactory: retryHandlerFactory

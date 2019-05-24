@@ -16,7 +16,7 @@ enum RawState {
   case setupTransferId(pid: UInt32, podSession: PodSession)
   case establishCloudSession(pid: UInt32, podSession: PodSession)
   case uploadCommandData(cloudSessionId: String, podSession: PodSession)
-  case transferDataToken(podSession: PodSession, dataToken: TransferId)
+  case transferDataToken(cloudSessionId: String, podSession: PodSession, dataToken: TransferId)
   case waitForCloudSessionDone(cloudSessionId: String, podSession: PodSession)
   case cloudSessionCompleted
 }

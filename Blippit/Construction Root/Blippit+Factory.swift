@@ -77,6 +77,21 @@ public extension Blippit {
         ),
         transferDataTokenStateFactory: DefaultTransferDataTokenStateFactory(
           retryHandlerFactory: DefaultRetryHandlerFactory(maxRetries: Constants.states.transferDataToken.maxRetries)
+        ),
+        waitForCloudSessionDoneStateMetaFactory: DefaultWaitForCloudSessionDoneStateMetaFactory(
+          pollInterval: Constants.states.waitForCloudSessionDone.pollInterval,
+          getCloudSessionStatusUseCaseFactory: DefaultGetCloudSessionStatusUseCaseFactory(
+            requestBuilderFactory: DefaultURLRequestBuilderFactory(apiConfig: Constants.api.getCloudSessionStatus.config),
+            decoder: decoder,
+            fetchDataUseCase: DefaultFetchDataUseCase(
+              dataTaskFactory: urlSession,
+              httpStatusCodeValidator: httpStatusCodeValidator
+            )
+          ),
+          retryHandlerFactory: DefaultAsyncRetryHandlerFactory(
+            maxRetries: Constants.states.waitForCloudSessionDone.maxRetries,
+            retryInterval: Constants.states.waitForCloudSessionDone.retryInterval
+          )
         )
       )
     } catch {

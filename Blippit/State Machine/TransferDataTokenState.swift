@@ -13,6 +13,7 @@ final class TransferDataTokenState {
   static let transactionFailedError: Error = BlippitError.transferDataTokenFailed
 
   weak var delegate: StateDelegate?
+  let cloudSessionId: String
   let session: PodSession
   let transferId: TransferId
 
@@ -25,8 +26,14 @@ final class TransferDataTokenState {
     try self?.performAction()
   }
 
-  init(delegate: StateDelegate, session: PodSession, dataToken: TransferId, retryHandlerFactory: RetryHandlerFactory) {
+  init(delegate: StateDelegate,
+       cloudSessionId: String,
+       session: PodSession,
+       dataToken: TransferId,
+       retryHandlerFactory: RetryHandlerFactory) {
+
     self.delegate = delegate
+    self.cloudSessionId = cloudSessionId
     self.session = session
     self.transferId = dataToken
     self.retryHandlerFactory = retryHandlerFactory
@@ -36,7 +43,7 @@ final class TransferDataTokenState {
 extension TransferDataTokenState: TransferIdState {
   func handleTransactionSuccess() throws {
     try session.close()
-    delegate?.state(self, moveTo: .cloudSessionCompleted)
+    delegate?.state(self, moveTo: .waitForCloudSessionDone(cloudSessionId: cloudSessionId, podSession: session))
   }
 }
 
