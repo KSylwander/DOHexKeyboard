@@ -153,7 +153,7 @@ final class DefaultBlippit {
           cloudSessionId: cloudSessionId,
           podSession: podSession
         )
-      case .cloudSessionCompleted:
+      case .blippitSessionCompleted:
         return StartedState(delegate: self)
       }
     }()

@@ -62,7 +62,7 @@ extension WaitForCloudSessionDoneState: HttpRequestState {
         case .established, .notStarted:
           self.scheduleNextPoll()
         case .done:
-          self.move(to: .cloudSessionCompleted)
+          self.move(to: .blippitSessionCompleted)
         }
       }
     }
