@@ -11,6 +11,7 @@ import Foundation
 public extension Blippit {
   var factory: BlippitFactory {
     do {
+      let encoder = JSONEncoder()
       let decoder = JSONDecoder()
 
       let policyHandler = SecPolicyHandler()
@@ -49,7 +50,7 @@ public extension Blippit {
         establishCloudSessionStateMetaFactory: DefaultEstablishCloudSessionStateMetaFactory(
           establishCloudSessionUseCaseFactory: DefaultEstablishCloudSessionUseCaseFactory(
             requestBuilderFactory: DefaultURLRequestBuilderFactory(apiConfig: Constants.api.establishCloudSession.config),
-            encoder: JSONEncoder(),
+            encoder: encoder,
             decoder: decoder,
             uploadDataUseCase: DefaultUploadDataUseCase(
               uploadTaskFactory: urlSession,
@@ -64,9 +65,10 @@ public extension Blippit {
         uploadCommandDataStateMetaFactory: DefaultUploadCommandDataStateMetaFactory(
           uploadCommandDataUseCaseFactory: DefaultUploadCommandDataUseCaseFactory(
             requestBuilderFactory: DefaultURLRequestBuilderFactory(apiConfig: Constants.api.uploadCommandData.config),
+            encoder: encoder,
             decoder: decoder,
-            fetchDataUseCase: DefaultFetchDataUseCase(
-              dataTaskFactory: urlSession,
+            uploadDataUseCase: DefaultUploadDataUseCase(
+              uploadTaskFactory: urlSession,
               httpStatusCodeValidator: httpStatusCodeValidator
             )
           ),

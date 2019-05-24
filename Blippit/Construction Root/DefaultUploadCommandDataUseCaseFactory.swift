@@ -10,16 +10,18 @@ import Foundation
 
 struct DefaultUploadCommandDataUseCaseFactory {
   let requestBuilderFactory: URLRequestBuilderFactory
+  let encoder: Encoder
   let decoder: Decoder
-  let fetchDataUseCase: FetchDataUseCase
+  let uploadDataUseCase: UploadDataUseCase
 }
 
 extension DefaultUploadCommandDataUseCaseFactory: UploadCommandDataUseCaseFactory {
   func makeUseCase(apiKey: UUID) -> UploadCommandDataUseCase {
     return DefaultUploadCommandDataUseCase(
       requestBuilder: requestBuilderFactory.makeBuilder(apiKey: apiKey),
+      encoder: encoder,
       decoder: decoder,
-      fetchDataUseCase: fetchDataUseCase
+      uploadDataUseCase: uploadDataUseCase
     )
   }
 }

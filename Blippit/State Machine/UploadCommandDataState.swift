@@ -14,7 +14,7 @@ final class UploadCommandDataState {
   var isCancelling = false
 
   private let cloudSessionId: String
-  private let data: String
+  private let data: CommandData
 
   private let podSession: PodSession
 
@@ -29,7 +29,7 @@ final class UploadCommandDataState {
 
   init(delegate: StateDelegate,
        cloudSessionId: String,
-       data: String,
+       data: CommandData,
        podSession: PodSession,
        uploadCommandDataUseCase: UploadCommandDataUseCase,
        retryHandlerFactory: AsyncRetryHandlerFactory) {

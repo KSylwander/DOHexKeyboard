@@ -9,5 +9,5 @@
 import Podz
 
 protocol UploadCommandDataStateFactory {
-  func makeState(delegate: StateDelegate, cloudSessionId: String, data: String, podSession: PodSession) -> State
+  func makeState(delegate: StateDelegate, cloudSessionId: String, data: CommandData, podSession: PodSession) -> State
 }

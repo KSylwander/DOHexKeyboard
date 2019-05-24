@@ -33,7 +33,7 @@ final class DefaultBlippit {
   private let waitForCloudSessionDoneStateFactory: WaitForCloudSessionDoneStateFactory
 
   private var userId: String!
-  private static let commandData = "Data"
+  private static let commandData = CommandData(data: "Some interesting data") // TODO: Replace me with actual data
 
   private var currentState: State?
 

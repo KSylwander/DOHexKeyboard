@@ -133,6 +133,8 @@
 		3EE74B4B2291EF6100AFB75D /* DefaultEstablishCloudSessionStateMetaFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE74B4A2291EF6100AFB75D /* DefaultEstablishCloudSessionStateMetaFactory.swift */; };
 		3EE9ABD1228E94E70018896E /* EstablishCloudSessionStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE9ABD0228E94E70018896E /* EstablishCloudSessionStateFactory.swift */; };
 		3EE9ABD3228E95210018896E /* DefaultEstablishCloudSessionStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE9ABD2228E95210018896E /* DefaultEstablishCloudSessionStateFactory.swift */; };
+		3EEC063C2297C86E009B98CD /* UploadCommandDataRequestDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC063B2297C86E009B98CD /* UploadCommandDataRequestDto.swift */; };
+		3EEC063E2297C8C6009B98CD /* CommandData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC063D2297C8C6009B98CD /* CommandData.swift */; };
 		3EFADD21228D4D5300B3559A /* RetryHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD20228D4D5300B3559A /* RetryHandling.swift */; };
 		3EFADD23228D4D5E00B3559A /* RetryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD22228D4D5E00B3559A /* RetryHandler.swift */; };
 		3EFADD25228D4D6500B3559A /* RetryHandlerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD24228D4D6500B3559A /* RetryHandlerFactory.swift */; };
@@ -316,6 +318,8 @@
 		3EE74B4A2291EF6100AFB75D /* DefaultEstablishCloudSessionStateMetaFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultEstablishCloudSessionStateMetaFactory.swift; sourceTree = "<group>"; };
 		3EE9ABD0228E94E70018896E /* EstablishCloudSessionStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishCloudSessionStateFactory.swift; sourceTree = "<group>"; };
 		3EE9ABD2228E95210018896E /* DefaultEstablishCloudSessionStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultEstablishCloudSessionStateFactory.swift; sourceTree = "<group>"; };
+		3EEC063B2297C86E009B98CD /* UploadCommandDataRequestDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCommandDataRequestDto.swift; sourceTree = "<group>"; };
+		3EEC063D2297C8C6009B98CD /* CommandData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandData.swift; sourceTree = "<group>"; };
 		3EFADD20228D4D5300B3559A /* RetryHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetryHandling.swift; sourceTree = "<group>"; };
 		3EFADD22228D4D5E00B3559A /* RetryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetryHandler.swift; sourceTree = "<group>"; };
 		3EFADD24228D4D6500B3559A /* RetryHandlerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetryHandlerFactory.swift; sourceTree = "<group>"; };
@@ -385,7 +389,9 @@
 		3E23C248228C414600DA3305 /* Upload Command Data */ = {
 			isa = PBXGroup;
 			children = (
+				3EEC063D2297C8C6009B98CD /* CommandData.swift */,
 				3E23C24D228C434000DA3305 /* DefaultUploadCommandDataUseCase.swift */,
+				3EEC063B2297C86E009B98CD /* UploadCommandDataRequestDto.swift */,
 				3E23C249228C42A600DA3305 /* UploadCommandDataResponseDto.swift */,
 				3E23C24B228C42DC00DA3305 /* UploadCommandDataUseCase.swift */,
 				3E5352FD22953CB3004FD948 /* UploadCommandDataUseCaseFactory.swift */,
@@ -910,6 +916,7 @@
 				3E23C22B228C0F2300DA3305 /* EstablishCloudSessionUseCase.swift in Sources */,
 				3E5352FA22953C16004FD948 /* UploadCommandDataStateMetaFactory.swift in Sources */,
 				3E790F75228AD1C500DB072F /* Composition.swift in Sources */,
+				3EEC063C2297C86E009B98CD /* UploadCommandDataRequestDto.swift in Sources */,
 				3E790FA2228ADC5600DB072F /* DefaultApplyCertificatePinningUseCase.swift in Sources */,
 				3EFADD25228D4D6500B3559A /* RetryHandlerFactory.swift in Sources */,
 				3E23C227228C0F1100DA3305 /* EstablishCloudSessionRequestDto.swift in Sources */,
@@ -943,6 +950,7 @@
 				3E55DB662296CC1E009CF6D2 /* GetCloudSessionStatusResponseDto.swift in Sources */,
 				3EFADD29228D4D8A00B3559A /* TransferIdState.swift in Sources */,
 				3EFADD3A228D5B3600B3559A /* DefaultBlippitFactory.swift in Sources */,
+				3EEC063E2297C8C6009B98CD /* CommandData.swift in Sources */,
 				3E790FB4228ADD9500DB072F /* CertificatePinningManager.swift in Sources */,
 				3E790FA0228ADC4400DB072F /* ApplyCertificatePinningUseCase.swift in Sources */,
 				3E790F8C228AD9BF00DB072F /* SecPolicyHandler.swift in Sources */,

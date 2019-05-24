@@ -12,4 +12,8 @@ struct UploadCommandDataResponseDto {
   let dataToken: String
 }
 
-extension UploadCommandDataResponseDto: Decodable {}
+extension UploadCommandDataResponseDto: Decodable {
+  private enum CodingKeys: String, CodingKey {
+    case dataToken = "datatoken"
+  }
+}

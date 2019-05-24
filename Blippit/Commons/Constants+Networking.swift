@@ -32,8 +32,8 @@ extension Constants {
 
     enum uploadCommandData {
       static let config = ApiConfig(
-        method: .get,
-        resource: "user/uploadCommandData"
+        method: .post,
+        resource: "session/%@/commandData"
       )
     }
 
