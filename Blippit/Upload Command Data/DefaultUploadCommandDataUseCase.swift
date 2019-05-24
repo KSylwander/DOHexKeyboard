@@ -18,10 +18,10 @@ extension DefaultUploadCommandDataUseCase: UploadCommandDataUseCase {
   func uploadCommandData(sessionId: String, data: String, completion: @escaping Completion) -> Cancellable? {
     let request = requestBuilder.build()
     return fetchDataUseCase.fetchData(with: request) { response, result in
-      let dataToken = result.flatMap { data in
+      let result = result.flatMap { data in
         return Result(catching: { try self.decoder.decode(UploadCommandDataResponseDto.self, from: data).dataToken })
       }
-      completion(response, dataToken)
+      completion(response, result)
     }
   }
 }

@@ -8,14 +8,9 @@
 
 import Foundation
 
-final class DefaultURLRequestBuilder {
-  private let apiConfig: ApiConfig
-  private let apiKey: UUID
-
-  init(apiConfig: ApiConfig, apiKey: UUID) {
-    self.apiConfig = apiConfig
-    self.apiKey = apiKey
-  }
+struct DefaultURLRequestBuilder {
+  let apiConfig: ApiConfig
+  let apiKey: UUID
 }
 
 extension DefaultURLRequestBuilder: URLRequestBuilder {

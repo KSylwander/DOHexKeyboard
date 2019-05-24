@@ -21,16 +21,18 @@ extension DefaultEstablishCloudSessionUseCase: EstablishCloudSessionUseCase {
   func establishCloudSession(pid: UInt32, userId: String, completion: @escaping Completion) -> Cancellable? {
     do {
       let request = requestBuilder.build()
-      let data = try encoder.encode(EstablishCloudSessionRequestDto(pid: pid, userId: userId, appId: appId))
+
+      let requestDto = EstablishCloudSessionRequestDto(pid: pid, userId: userId, appId: appId)
+      let data = try encoder.encode(requestDto)
 
       return uploadDataUseCase.uploadData(with: request, from: data) { response, result in
-        let sessionId = result.flatMap { data in
+        let result = result.flatMap { data in
           return Result(catching: { () -> String in
             let responseDto = try self.decoder.decode(EstablishCloudSessionResponseDto.self, from: data)
             return responseDto.sessionId
           })
         }
-        completion(response, sessionId)
+        completion(response, result)
       }
     } catch {
       completion(nil, .failure(error))

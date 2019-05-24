@@ -20,7 +20,7 @@ public extension Blippit {
       let pinnedCertificates: [Certificate] = try {
         let bundle = Bundle(for: DefaultBlippit.self)
         let urls = bundle.urls(forResourcesWithExtension: "crt", subdirectory: nil)
-        let certificateFactory = DefaultCertificateFactory(certificateHandling: certificateHandler)
+        let certificateFactory = DefaultCertificateFactory(certificateHandler: certificateHandler)
         return try (urls ?? []).map(certificateFactory.makeCertificate(url:))
       }()
 

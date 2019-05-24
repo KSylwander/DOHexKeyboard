@@ -419,7 +419,6 @@
 				3E790FA5228ADC6B00DB072F /* DefaultApplyCertificatePinningUseCaseFactory.swift */,
 				3E5353132295678E004FD948 /* DefaultAsyncRetryHandlerFactory.swift */,
 				3EFADD39228D5B3600B3559A /* DefaultBlippitFactory.swift */,
-				3E790F9D228ADC3000DB072F /* DefaultCertificateFactory.swift */,
 				3EE9ABD2228E95210018896E /* DefaultEstablishCloudSessionStateFactory.swift */,
 				3EE74B4A2291EF6100AFB75D /* DefaultEstablishCloudSessionStateMetaFactory.swift */,
 				3EFADD3D228D60AD00B3559A /* DefaultEstablishCloudSessionUseCaseFactory.swift */,
@@ -434,8 +433,6 @@
 				3E5352F7229539E3004FD948 /* DefaultURLRequestBuilderFactory.swift */,
 				3EE74B482291EEF400AFB75D /* EstablishCloudSessionStateMetaFactory.swift */,
 				3E5352F922953C16004FD948 /* UploadCommandDataStateMetaFactory.swift */,
-				3E97FA272280318B003419AE /* URLSession+DataTaskFactory.swift */,
-				3E23C21B228C0E9E00DA3305 /* URLSession+UploadTaskFactory.swift */,
 			);
 			path = "Construction Root";
 			sourceTree = "<group>";
@@ -463,6 +460,7 @@
 				3E790FB1228ADD8B00DB072F /* CertificatePinning.swift */,
 				3E790FB3228ADD9400DB072F /* CertificatePinningManager.swift */,
 				3E790FA1228ADC5600DB072F /* DefaultApplyCertificatePinningUseCase.swift */,
+				3E790F9D228ADC3000DB072F /* DefaultCertificateFactory.swift */,
 				3E790FAF228ADD7D00DB072F /* DefaultValidateTrustedCertificatesUseCase.swift */,
 				3E790FAB228ADCD400DB072F /* DefaultValidateTrustUseCase.swift */,
 				3E790F8F228ADA0D00DB072F /* SecCertificateHandler.swift */,
@@ -628,6 +626,8 @@
 				3E23C219228C0E9400DA3305 /* UploadTaskFactory.swift */,
 				3E790FBD228AFA4F00DB072F /* URLRequestBuilder.swift */,
 				3E5352F52295393D004FD948 /* URLRequestBuilderFactory.swift */,
+				3E97FA272280318B003419AE /* URLSession+DataTaskFactory.swift */,
+				3E23C21B228C0E9E00DA3305 /* URLSession+UploadTaskFactory.swift */,
 				3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */,
 			);
 			path = Networking;

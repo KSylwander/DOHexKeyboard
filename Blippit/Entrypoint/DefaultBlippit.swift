@@ -10,7 +10,7 @@ import os.log
 import Podz
 
 final class DefaultBlippit {
-  private(set) var isActive = false {
+  private var isActive = false {
     didSet {
       if isActive {
         delegate?.blippitDidStart(self)
@@ -23,6 +23,7 @@ final class DefaultBlippit {
   private weak var delegate: BlippitDelegate?
 
   private let podz: Podz
+
   private let startingStateFactory: StartingStateFactory
   private let startedStateFactory: StartedStateFactory
   private let setupTransferIdStateFactory: SetupTransferIdStateFactory
@@ -47,6 +48,7 @@ final class DefaultBlippit {
     self.delegate = delegate
 
     self.podz = podz
+
     self.startingStateFactory = startingStateFactory
     self.startedStateFactory = startedStateFactory
     self.setupTransferIdStateFactory = setupTransferIdStateFactory

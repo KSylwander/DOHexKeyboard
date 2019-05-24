@@ -24,11 +24,17 @@ extension Constants {
     }
 
     enum establishCloudSession {
-      static let config = ApiConfig(method: .post, resource: "user/establishSession")
+      static let config = ApiConfig(
+        method: .post,
+        resource: "user/establishSession"
+      )
     }
 
     enum uploadCommandData {
-      static let config = ApiConfig(method: .get, resource: "user/uploadCommandData")
+      static let config = ApiConfig(
+        method: .get,
+        resource: "user/uploadCommandData"
+      )
     }
   }
 }

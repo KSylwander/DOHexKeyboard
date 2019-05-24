@@ -23,8 +23,8 @@ public enum BlippitError {
 
   case invalidHttpStatusCode(Int)
 
-  /* Sending of data token failed after `Constants.transactionStage.maxRetries + 1` attempts. May be fixed by asking
-   * the user to blip again.
+  /* Sending of data token failed after `Constants.states.transferDataToken.maxRetries + 1` attempts. May be fixed by
+   * asking the user to blip again.
    */
   case transferDataTokenFailed
 }
