@@ -10,7 +10,7 @@ import Foundation
 
 struct DefaultUploadDataUseCase {
   let uploadTaskFactory: UploadTaskFactory
-  let httpStatusCodeValidator: HttpStatusCodeValidator
+  let responseValidator: HttpUrlResponseValidator
 }
 
 extension DefaultUploadDataUseCase: UploadDataUseCase {
@@ -21,7 +21,7 @@ extension DefaultUploadDataUseCase: UploadDataUseCase {
     let task = uploadTaskFactory.uploadTask(with: request, from: data) { data, response, error in
       let response = response.map { $0 as! HTTPURLResponse }
 
-      if let statusCode = response?.statusCode, let error = self.httpStatusCodeValidator.validate(statusCode) {
+      if let response = response, let error = self.responseValidator.validate(response, data: data) {
         completion(response, .failure(error))
         return
       }

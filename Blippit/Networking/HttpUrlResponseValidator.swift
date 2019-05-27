@@ -1,5 +1,5 @@
 //
-//  HttpStatusCodeValidator.swift
+//  HttpUrlResponseValidator.swift
 //  Blippit
 //
 //  Created by Jerson Perpetua on 2019-05-16.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol HttpStatusCodeValidator {
-  func validate(_ statusCode: Int) -> Error?
+protocol HttpUrlResponseValidator {
+  func validate(_ response: HTTPURLResponse, data: Data?) -> Error?
 }

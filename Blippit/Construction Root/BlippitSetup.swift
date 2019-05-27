@@ -40,7 +40,7 @@ public enum BlippitSetup {
     )
 
     let urlSession = URLSession(configuration: .default, retainedDelegate: authenticationManager)
-    let httpStatusCodeValidator = DefaultHttpStatusCodeValidator()
+    let responseValidator = DefaultHttpUrlResponseValidator()
 
     return DefaultBlippit(
       delegate: delegate,
@@ -59,7 +59,7 @@ public enum BlippitSetup {
           decoder: decoder,
           uploadDataUseCase: DefaultUploadDataUseCase(
             uploadTaskFactory: urlSession,
-            httpStatusCodeValidator: httpStatusCodeValidator
+            responseValidator: responseValidator
           )
         ),
         retryHandlerFactory: DefaultAsyncRetryHandlerFactory(
@@ -77,7 +77,7 @@ public enum BlippitSetup {
           decoder: decoder,
           uploadDataUseCase: DefaultUploadDataUseCase(
             uploadTaskFactory: urlSession,
-            httpStatusCodeValidator: httpStatusCodeValidator
+            responseValidator: responseValidator
           )
         ),
         retryHandlerFactory: DefaultAsyncRetryHandlerFactory(
@@ -98,7 +98,7 @@ public enum BlippitSetup {
           decoder: decoder,
           fetchDataUseCase: DefaultFetchDataUseCase(
             dataTaskFactory: urlSession,
-            httpStatusCodeValidator: httpStatusCodeValidator
+            responseValidator: responseValidator
           )
         ),
         retryHandlerFactory: DefaultAsyncRetryHandlerFactory(
