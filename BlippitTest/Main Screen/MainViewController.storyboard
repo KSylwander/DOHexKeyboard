@@ -93,7 +93,10 @@
                                                 </constraints>
                                                 <color key="textColor" name="DarkShades"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" keyboardAppearance="alert" returnKeyType="done" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="username"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="9VG-gb-OMM" id="SKd-z8-y9N"/>
+                                                </connections>
                                             </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QR8-O3-O7N">
                                                 <rect key="frame" x="0.0" y="65" width="343" height="44"/>
