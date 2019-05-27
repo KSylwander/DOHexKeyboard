@@ -123,6 +123,7 @@
 		3EAABD6F2297F42500C0A37A /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAABD6E2297F42500C0A37A /* UIView+CornerRadius.swift */; };
 		3EB8228E229BC72100826236 /* Secular_One.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3EAABD6D2297F40200C0A37A /* Secular_One.ttf */; };
 		3EB82290229BE40200826236 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB8228F229BE40200826236 /* Identity.swift */; };
+		3EB82292229C019400826236 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB82291229C019400826236 /* Log.swift */; };
 		3EBAC76A227C2CA200D5C693 /* Blippit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EBAC768227C2CA200D5C693 /* Blippit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3EBAC774227C30A500D5C693 /* Podz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC773227C30A500D5C693 /* Podz.framework */; };
 		3EC4DE45228306F1007A05C9 /* PodStateObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE44228306F1007A05C9 /* PodStateObserving.swift */; };
@@ -321,6 +322,7 @@
 		3EAABD6D2297F40200C0A37A /* Secular_One.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Secular_One.ttf; sourceTree = "<group>"; };
 		3EAABD6E2297F42500C0A37A /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
 		3EB8228F229BE40200826236 /* Identity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
+		3EB82291229C019400826236 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		3EBAC765227C2CA200D5C693 /* Blippit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Blippit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EBAC768227C2CA200D5C693 /* Blippit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Blippit.h; sourceTree = "<group>"; };
 		3EBAC769227C2CA200D5C693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -715,6 +717,7 @@
 				3E23C223228C0ECB00DA3305 /* Decoder.swift */,
 				3E23C221228C0EC600DA3305 /* Encoder.swift */,
 				3E5353012295482D004FD948 /* Error+Name.swift */,
+				3EB82291229C019400826236 /* Log.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -1026,6 +1029,7 @@
 				3E23C24A228C42A600DA3305 /* UploadCommandDataResponseDto.swift in Sources */,
 				3EFADD34228D567E00B3559A /* BlippitDelegate.swift in Sources */,
 				3E790F9C228ADC2500DB072F /* CertificateFactory.swift in Sources */,
+				3EB82292229C019400826236 /* Log.swift in Sources */,
 				3E790F8A228AD9AA00DB072F /* SecurityPolicyHandling.swift in Sources */,
 				3E97FA262280313F003419AE /* DataTaskFactory.swift in Sources */,
 				3EFADD21228D4D5300B3559A /* RetryHandling.swift in Sources */,
