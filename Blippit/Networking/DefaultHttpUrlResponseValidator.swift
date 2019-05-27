@@ -13,17 +13,15 @@ struct DefaultHttpUrlResponseValidator {}
 extension DefaultHttpUrlResponseValidator: HttpUrlResponseValidator {
   func validate(_ response: HTTPURLResponse, data: Data?) -> Error? {
     switch response.statusCode {
+    case 200..<300:
+      /* Valid status codes */
+      return nil
     case 401:
       /* Invalid API key */
       return BlippitError.invalidCredentials(data: data)
-    case 400:
-      /* Generic bad request error */
-      fallthrough
-    case 404:
-      /* Invalid app ID */
-      return BlippitError.invalidHttpStatusCode(response.statusCode, data: data)
     default:
-      return nil
+      /* Everything else is an error */
+      return BlippitError.invalidHttpStatusCode(response.statusCode, data: data)
     }
   }
 }
