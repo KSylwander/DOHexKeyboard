@@ -50,14 +50,16 @@ final class MainViewController: UIViewController {
 
   private func setupBlippitWithUserId(_ userId: String) {
     do {
-      guard blippit == nil else {
-        return
-      }
-
-      let blippit = try blippitFactory.makeBlippit(delegate: self)
+      let blippit: Blippit = try {
+        if let blippit = self.blippit {
+          return blippit
+        } else {
+          let blippit = try blippitFactory.makeBlippit(delegate: self)
+          self.blippit = blippit
+          return blippit
+        }
+      }()
       blippit.start(userId: userId)
-      self.blippit = blippit
-
       isBlippitActive = true
     } catch {
       handleError(error)
@@ -153,6 +155,7 @@ extension MainViewController: BlippitDelegate {
   func blippitDidStop(_ blippit: Blippit) {
     setStatus("Stopped")
 
+    isBlippitActive = false
     updateUserIdTextField()
     updateToggleBlippitButton()
   }
