@@ -8,7 +8,9 @@
 
 import Foundation
 
+/* Allows the security policy to mocked when calling its handling functions */
 struct SecPolicyHandler {
+  /* `compose2` converts `(Bool, CFString?) -> SecPolicy` to `(Bool, CFString?) -> SecurityPolicy` */
   let createSSL = compose2(SecPolicyCreateSSL, UnsafeBitCast.toSecurityPolicy)
 }
 
