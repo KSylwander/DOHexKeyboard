@@ -147,11 +147,10 @@ final class DefaultBlippit {
           session: podSession,
           dataToken: dataToken
         )
-      case let .waitForCloudSessionDone(cloudSessionId, podSession):
+      case let .waitForCloudSessionDone(cloudSessionId):
         return waitForCloudSessionDoneStateFactory.makeState(
           delegate: self,
-          cloudSessionId: cloudSessionId,
-          podSession: podSession
+          cloudSessionId: cloudSessionId
         )
       case .blippitSessionCompleted:
         return StartedState(delegate: self)
