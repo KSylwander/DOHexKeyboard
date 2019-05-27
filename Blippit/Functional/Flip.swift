@@ -8,6 +8,12 @@
 
 import Foundation
 
-func flip<T, U, V>(_ f: @escaping (T, U) -> V) -> (U, T) -> V {
+/* Adapted from https://github.com/robrix/Prelude/blob/master/Prelude/Flip.swift */
+
+/* Returns a binary function which calls `f` with its arguments reversed.
+ *
+ * This is the function such that `flip(f)(a, b)` = `f(b, a)`.
+ */
+func flip<A, B, C>(_ f: @escaping (A, B) -> C) -> (B, A) -> C {
   return { a, b in f(b, a) }
 }
