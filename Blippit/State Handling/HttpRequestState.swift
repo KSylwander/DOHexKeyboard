@@ -28,12 +28,18 @@ extension HttpRequestState {
           return
         case is URLError, BlippitError.invalidHttpStatusCode:
           /* Retry URL and HTTP status errors */
-          self.retryHandler.perform(withMaxRetriesExceededError: error, onError: self.handleError(_:))
+          self.retryHandler.perform(withMaxRetriesExceededError: error, onError: self.handleRetryFailure(_:))
         default:
           /* Propagate all other errors */
           throw error
         }
       }
+    }
+  }
+
+  private func handleRetryFailure(_ error: Error) {
+    handleErrors {
+      throw error
     }
   }
 
