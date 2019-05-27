@@ -10,40 +10,36 @@ import Foundation
 
 /* Allows the trust to be mocked when calling its handling functions */
 struct SecTrustHandler {
-  /* `apply` converts `([SecurityPolicy], Trust) -> OSStatus` to `(Trust, [SecurityPolicy]) -> OSStatus` */
-  let setPolicies = apply(
+  /* `flip` converts `([SecurityPolicy], Trust) -> OSStatus` to `(Trust, [SecurityPolicy]) -> OSStatus` */
+  let setPolicies = flip(
     /* Converts `(CFTypeRef, Trust) -> OSStatus` to `([SecurityPolicy], Trust) -> OSStatus` */
     compose(
       UnsafeBitCast.toSecPolicies,
       /* Converts `(Trust, CFTypeRef) -> OSStatus` to `(CFTypeRef, Trust) -> OSStatus` */
-      apply(
+      flip(
         /* Converts `(SecTrust, CFTypeRef) -> OSStatus` to `(Trust, CFTypeRef) -> OSStatus` */
         compose(
           UnsafeBitCast.toSecTrust,
           SecTrustSetPolicies
-        ),
-        flip
+        )
       )
-    ),
-    flip
+    )
   )
 
-  /* `apply` converts `([Certificate], Trust) -> OSStatus` to `(Trust, [Certificate]) -> OSStatus` */
-  let setAnchorCertificates = apply(
+  /* `flip` converts `([Certificate], Trust) -> OSStatus` to `(Trust, [Certificate]) -> OSStatus` */
+  let setAnchorCertificates = flip(
     /* Converts `(CFArray, Trust) -> OSStatus` to `([Certificate], Trust) -> OSStatus` */
     compose(
       UnsafeBitCast.toSecCertificates,
       /* Converts `(Trust, CFArray) -> OSStatus` to `(CFArray, Trust) -> OSStatus` */
-      apply(
+      flip(
         /* Converts `(SecTrust, CFArray) -> OSStatus` to `(Trust, CFArray) -> OSStatus` */
         compose(
           UnsafeBitCast.toSecTrust,
           SecTrustSetAnchorCertificates
-        ),
-        flip
+        )
       )
-    ),
-    flip
+    )
   )
 
   /* `compose` converts `(SecTrust, UnsafeMutablePointer<SecTrustResultType>) -> OSStatus` to
@@ -62,10 +58,7 @@ struct SecTrustHandler {
       SecTrustGetCertificateAtIndex
     ),
     /* Converts `(SecCertificate) -> Certificate` to `(SecCertificate?) -> Certificate?` */
-    apply(
-      UnsafeBitCast.toCertificate,
-      curry(fmap)
-    )
+    curry(fmap)(UnsafeBitCast.toCertificate)
   )
 }
 

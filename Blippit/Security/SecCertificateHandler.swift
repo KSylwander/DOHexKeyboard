@@ -14,10 +14,7 @@ struct SecCertificateHandler {
   let createWithData = compose2(
     SecCertificateCreateWithData,
     /* Converts `(SecCertificate) -> Certificate` to `(SecCertificate?) -> Certificate?` */
-    apply(
-      UnsafeBitCast.toCertificate,
-      curry(fmap)
-    )
+    curry(fmap)(UnsafeBitCast.toCertificate)
   )
 
   /* `compose` converts `(SecCertificate) -> CFData` to `(Certificate) -> CFData` */
