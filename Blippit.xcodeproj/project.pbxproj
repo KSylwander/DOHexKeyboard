@@ -654,6 +654,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		3EB82293229C15D700826236 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				3EB82291229C019400826236 /* Log.swift */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
 		3EBAC75B227C2CA200D5C693 = {
 			isa = PBXGroup;
 			children = (
@@ -684,6 +692,7 @@
 				3E23C225228C0ED900DA3305 /* Establish Cloud Session */,
 				3E790F6B228AD15200DB072F /* Functional */,
 				3E55DB5E2296CB78009CF6D2 /* Get Cloud Session Status */,
+				3EB82293229C15D700826236 /* Logging */,
 				3EC797462280279900AD79CE /* Networking */,
 				3EAEA7FD2280109F008B7E77 /* Resources */,
 				3EFADD1F228D4BF500B3559A /* Retry Handling */,
@@ -717,7 +726,6 @@
 				3E23C223228C0ECB00DA3305 /* Decoder.swift */,
 				3E23C221228C0EC600DA3305 /* Encoder.swift */,
 				3E5353012295482D004FD948 /* Error+Name.swift */,
-				3EB82291229C019400826236 /* Log.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
