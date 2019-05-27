@@ -6,7 +6,6 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import os.log
 import Podz
 
 final class DefaultBlippit {
@@ -157,14 +156,7 @@ final class DefaultBlippit {
       }
     }()
 
-    os_log(
-      "%{public}@ %{public}@:%{public}d -> Transitioning to %{public}@ state (%{public}@)...",
-      log: Constants.log,
-      type: .debug,
-      "[DEBUG]", #function, #line,
-      String(String(describing: rawState).prefix(while: { $0 != "(" })),
-      state.map { String(describing: type(of: $0)) } ?? "nil"
-    )
+    Log.debug(.public("Transitioning to \(rawState.name) state (\(state?.name ?? "nil"))..."))
 
     /* Assigning the current state here makes sure that any state changes during the invocation of the `start()` method
      * below are only applied afterwards
@@ -209,13 +201,7 @@ extension DefaultBlippit: StateDelegate {
   }
 
   func state(_ state: State, didFailWithError error: Error) {
-    os_log(
-      "%{public}@ %{public}@:%{public}d -> Error: %{public}@",
-      log: Constants.log,
-      type: .error,
-      "[ERROR]", #function, #line,
-      error.name
-    )
+    Log.error(.public("Error: \(error.name)"))
     delegate?.blippit(self, didFailWithError: error)
   }
 }

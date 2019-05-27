@@ -6,7 +6,6 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import os.log
 import Podz
 
 /* Waits for the cloud session to be marked as done */
@@ -85,14 +84,7 @@ extension WaitForCloudSessionDoneState: Cancellable {
     }
     isCancelling = true
 
-    os_log(
-      "%{public}@ %{public}@:%{public}d -> Aborting %{public}@...",
-      log: Constants.log,
-      type: .debug,
-      "[DEBUG]", #function, #line,
-      String(describing: type(of: self))
-    )
-
+    Log.debug(.public("Cancelling \(name)..."))
     task?.cancel()
 
     /* Move back to the starting state after a cancellation. This allows us to make sure that the Podz is still in the
