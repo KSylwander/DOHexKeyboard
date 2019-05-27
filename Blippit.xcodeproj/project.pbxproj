@@ -58,6 +58,7 @@
 		3E55DB622296CBAB009CF6D2 /* CloudSessionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E55DB612296CBAB009CF6D2 /* CloudSessionStatus.swift */; };
 		3E55DB642296CBDC009CF6D2 /* GetCloudSessionStatusUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E55DB632296CBDC009CF6D2 /* GetCloudSessionStatusUseCase.swift */; };
 		3E55DB662296CC1E009CF6D2 /* GetCloudSessionStatusResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E55DB652296CC1E009CF6D2 /* GetCloudSessionStatusResponseDto.swift */; };
+		3E55DB682296CC46009CF6D2 /* DefaultGetCloudSessionStatusUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E55DB672296CC46009CF6D2 /* DefaultGetCloudSessionStatusUseCase.swift */; };
 		3E790F6D228AD17600DB072F /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F6C228AD17600DB072F /* Curry.swift */; };
 		3E790F6F228AD18800DB072F /* Flip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F6E228AD18800DB072F /* Flip.swift */; };
 		3E790F71228AD19C00DB072F /* Fmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F70228AD19C00DB072F /* Fmap.swift */; };
@@ -233,6 +234,7 @@
 		3E55DB612296CBAB009CF6D2 /* CloudSessionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudSessionStatus.swift; sourceTree = "<group>"; };
 		3E55DB632296CBDC009CF6D2 /* GetCloudSessionStatusUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCloudSessionStatusUseCase.swift; sourceTree = "<group>"; };
 		3E55DB652296CC1E009CF6D2 /* GetCloudSessionStatusResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCloudSessionStatusResponseDto.swift; sourceTree = "<group>"; };
+		3E55DB672296CC46009CF6D2 /* DefaultGetCloudSessionStatusUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGetCloudSessionStatusUseCase.swift; sourceTree = "<group>"; };
 		3E790F6C228AD17600DB072F /* Curry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curry.swift; sourceTree = "<group>"; };
 		3E790F6E228AD18800DB072F /* Flip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flip.swift; sourceTree = "<group>"; };
 		3E790F70228AD19C00DB072F /* Fmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fmap.swift; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 			isa = PBXGroup;
 			children = (
 				3E55DB612296CBAB009CF6D2 /* CloudSessionStatus.swift */,
+				3E55DB672296CC46009CF6D2 /* DefaultGetCloudSessionStatusUseCase.swift */,
 				3E55DB652296CC1E009CF6D2 /* GetCloudSessionStatusResponseDto.swift */,
 				3E55DB632296CBDC009CF6D2 /* GetCloudSessionStatusUseCase.swift */,
 			);
@@ -939,6 +942,7 @@
 				3EFADD38228D5AAD00B3559A /* BlippitFactory.swift in Sources */,
 				3EFADD4C228D9ADF00B3559A /* StartedStateFactory.swift in Sources */,
 				3E790FBC228AFA3A00DB072F /* ApiConfig.swift in Sources */,
+				3E55DB682296CC46009CF6D2 /* DefaultGetCloudSessionStatusUseCase.swift in Sources */,
 				3EFADD3C228D608200B3559A /* EstablishCloudSessionUseCaseFactory.swift in Sources */,
 				3E790F88228AD99700DB072F /* UnsafeBitCast.swift in Sources */,
 				3E23C24C228C42DC00DA3305 /* UploadCommandDataUseCase.swift in Sources */,
