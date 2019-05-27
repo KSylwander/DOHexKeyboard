@@ -1,23 +1,24 @@
 //
-//  DefaultFetchDataUseCase.swift
+//  DefaultUploadDataUseCase.swift
 //  Blippit
 //
-//  Created by Jerson Perpetua on 2019-05-06.
+//  Created by Jerson Perpetua on 2019-05-15.
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
 import Foundation
 
-struct DefaultFetchDataUseCase {
-  let dataTaskFactory: DataTaskFactory
+struct DefaultUploadDataUseCase {
+  let uploadTaskFactory: UploadTaskFactory
   let httpStatusCodeValidator: HttpStatusCodeValidator
 }
 
-extension DefaultFetchDataUseCase: FetchDataUseCase {
-  @discardableResult func fetchData(with request: URLRequest,
-                                    completion: @escaping FetchDataUseCase.Completion) -> Cancellable {
+extension DefaultUploadDataUseCase: UploadDataUseCase {
+  @discardableResult func uploadData(with request: URLRequest,
+                                     from data: Data,
+                                     completion: @escaping Completion) -> Cancellable {
 
-    let task = dataTaskFactory.dataTask(with: request) { data, response, error in
+    let task = uploadTaskFactory.uploadTask(with: request, from: data) { data, response, error in
       let response = response.map { $0 as! HTTPURLResponse }
 
       if let statusCode = response?.statusCode, let error = self.httpStatusCodeValidator.validate(statusCode) {

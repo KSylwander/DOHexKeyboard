@@ -18,6 +18,15 @@ enum BlippitError {
      */
     PodzStatus
   )
+  case invalidPodSessionState(PodSessionState)
+  case podDoesNotTransferId
+
+  case invalidHttpStatusCode(Int)
+
+  /* Sending of data token failed after `Constants.transactionStage.maxRetries + 1` attempts. May be fixed by asking
+   * the user to blip again.
+   */
+  case transferDataTokenFailed
 }
 
 extension BlippitError: Error {}
