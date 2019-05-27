@@ -8,21 +8,14 @@
 
 import Foundation
 
-precedencegroup Composition {
-  associativity: right
-  higherThan: BitwiseShiftPrecedence
-}
-infix operator >>: Composition
-infix operator >>>: Composition
-
-func >><T, U, V>(_ f: @escaping (T) -> U, _ g: @escaping (U) -> V) -> (T) -> V {
+func compose<A, B, C>(_ f: @escaping (A) -> B, _ g: @escaping (B) -> C) -> (A) -> C {
   return { a in g(f(a)) }
 }
 
-func >><T, U, V, W>(_ f: @escaping (T) -> U, _ g: @escaping (U, V) -> W) -> (T, V) -> W {
-  return { a, b in g(f(a), b) }
+func compose<A, B, C, D>(_ f: @escaping (A) -> (B), _ g: @escaping (B, C) -> D) -> (A, C) -> D {
+  return { a, c in g(f(a), c) }
 }
 
-func >>><T, U, V, W>(_ f: @escaping (T, U) -> V, _ g: @escaping (V) -> W) -> (T, U) -> W {
+func compose2<A, B, C, D>(_ f: @escaping (A, B) -> C, _ g: @escaping (C) -> D) -> (A, B) -> D {
   return { a, b in g(f(a, b)) }
 }

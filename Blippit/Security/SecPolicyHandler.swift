@@ -9,7 +9,7 @@
 import Foundation
 
 struct SecPolicyHandler {
-  let createSSL = SecPolicyCreateSSL >>> UnsafeBitCast.toSecurityPolicy
+  let createSSL = compose2(SecPolicyCreateSSL, UnsafeBitCast.toSecurityPolicy)
 }
 
 extension SecPolicyHandler: SecurityPolicyHandling {}
