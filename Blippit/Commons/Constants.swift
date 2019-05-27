@@ -13,4 +13,6 @@ enum Constants {
     subsystem: Bundle(for: DefaultBlippit.self).bundleIdentifier!,
     category: String(describing: Blippit.self)
   )
+
+  static let dataTokenPrefix = "9959999"
 }

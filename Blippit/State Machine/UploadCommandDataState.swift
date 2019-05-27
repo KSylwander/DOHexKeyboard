@@ -63,7 +63,7 @@ extension UploadCommandDataState: HttpRequestState {
           self.handleError(error)
         case let .success(dataToken):
           do {
-            let dataToken = try TransferId(from: dataToken)
+            let dataToken = try TransferId(from: "\(Constants.dataTokenPrefix)\(dataToken)")
             self.move(
               to: .transferDataToken(
                 cloudSessionId: self.cloudSessionId,
