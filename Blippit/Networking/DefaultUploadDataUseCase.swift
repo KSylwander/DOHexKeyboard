@@ -20,6 +20,10 @@ extension DefaultUploadDataUseCase: UploadDataUseCase {
 
     let task = uploadTaskFactory.uploadTask(with: request, from: data) { data, response, error in
       let response = response.map { $0 as! HTTPURLResponse }
+      Log.debug(.public("""
+        \(response.logDescription(with: request)), Data: \(data.logDescription), Error: \(error.logDescription)
+        """
+      ))
 
       if let response = response, let error = self.responseValidator.validate(response, data: data) {
         completion(response, .failure(error))

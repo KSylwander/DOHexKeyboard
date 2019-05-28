@@ -126,6 +126,8 @@
 		3EB82292229C019400826236 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB82291229C019400826236 /* Log.swift */; };
 		3EB82295229C1A9000826236 /* Error+LogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB82294229C1A9000826236 /* Error+LogDescription.swift */; };
 		3EB82297229C1AD000826236 /* State+LogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB82296229C1AD000826236 /* State+LogDescription.swift */; };
+		3EB8229D229C21BF00826236 /* Data+LogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB8229C229C21BF00826236 /* Data+LogDescription.swift */; };
+		3EB8229F229C222800826236 /* HTTPURLResponse+LogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB8229E229C222800826236 /* HTTPURLResponse+LogDescription.swift */; };
 		3EBAC76A227C2CA200D5C693 /* Blippit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EBAC768227C2CA200D5C693 /* Blippit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3EBAC774227C30A500D5C693 /* Podz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC773227C30A500D5C693 /* Podz.framework */; };
 		3EC4DE45228306F1007A05C9 /* PodStateObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE44228306F1007A05C9 /* PodStateObserving.swift */; };
@@ -327,6 +329,8 @@
 		3EB82291229C019400826236 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		3EB82294229C1A9000826236 /* Error+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+LogDescription.swift"; sourceTree = "<group>"; };
 		3EB82296229C1AD000826236 /* State+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "State+LogDescription.swift"; sourceTree = "<group>"; };
+		3EB8229C229C21BF00826236 /* Data+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+LogDescription.swift"; sourceTree = "<group>"; };
+		3EB8229E229C222800826236 /* HTTPURLResponse+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+LogDescription.swift"; sourceTree = "<group>"; };
 		3EBAC765227C2CA200D5C693 /* Blippit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Blippit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EBAC768227C2CA200D5C693 /* Blippit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Blippit.h; sourceTree = "<group>"; };
 		3EBAC769227C2CA200D5C693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -661,7 +665,9 @@
 		3EB82293229C15D700826236 /* Logging */ = {
 			isa = PBXGroup;
 			children = (
+				3EB8229C229C21BF00826236 /* Data+LogDescription.swift */,
 				3EB82294229C1A9000826236 /* Error+LogDescription.swift */,
+				3EB8229E229C222800826236 /* HTTPURLResponse+LogDescription.swift */,
 				3EB82291229C019400826236 /* Log.swift */,
 				3E5353012295482D004FD948 /* RawState+LogDescription.swift */,
 				3EB82296229C1AD000826236 /* State+LogDescription.swift */,
@@ -1050,11 +1056,13 @@
 				3E790FB2228ADD8B00DB072F /* CertificatePinning.swift in Sources */,
 				3E23C23F228C32FD00DA3305 /* DefaultPodSessionStateObservingState.swift in Sources */,
 				3E5353142295678E004FD948 /* DefaultAsyncRetryHandlerFactory.swift in Sources */,
+				3EB8229F229C222800826236 /* HTTPURLResponse+LogDescription.swift in Sources */,
 				3EFADD36228D56C000B3559A /* DefaultBlippit.swift in Sources */,
 				3E790FC0228AFA6E00DB072F /* DefaultURLRequestBuilder.swift in Sources */,
 				3EFADD4E228D9B0000B3559A /* DefaultStartedStateFactory.swift in Sources */,
 				3E97FA282280318B003419AE /* URLSession+DataTaskFactory.swift in Sources */,
 				3EFADD58228DA13400B3559A /* UploadCommandDataStateFactory.swift in Sources */,
+				3EB8229D229C21BF00826236 /* Data+LogDescription.swift in Sources */,
 				3EFADD40228D6EF500B3559A /* Constants+States.swift in Sources */,
 				3E38F90822819EE300C114B7 /* RawState.swift in Sources */,
 				3E55DB622296CBAB009CF6D2 /* CloudSessionStatus.swift in Sources */,
