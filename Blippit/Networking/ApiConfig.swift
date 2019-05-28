@@ -10,7 +10,10 @@ import Foundation
 
 struct ApiConfig {
   let method: HttpMethod
+
+  /* Trailing slash on base path required */
   let basePath = Constants.api.defaults.basePath
+
   let resource: String
 
   let contentType = Constants.api.defaults.contentType

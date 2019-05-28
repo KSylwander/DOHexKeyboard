@@ -20,4 +20,11 @@ extension EstablishCloudSessionRequestDto: Encodable {
     case userId = "userid"
     case appId = "appid"
   }
+
+  func encode(to encoder: Swift.Encoder) throws {
+    var container = encoder.container(keyedBy: CodingKeys.self)
+    try container.encode("\(pid)", forKey: .pid)
+    try container.encode(userId, forKey: .userId)
+    try container.encode(appId, forKey: .appId)
+  }
 }

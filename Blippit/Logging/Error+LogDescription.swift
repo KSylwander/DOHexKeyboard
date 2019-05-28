@@ -9,7 +9,13 @@
 import Foundation
 
 extension Error {
-  var name: String {
+  var logDescription: String {
     return String(reflecting: self)
+  }
+}
+
+extension Optional where Wrapped: Error {
+  var logDescription: String {
+    return self?.logDescription ?? "<nil>"
   }
 }

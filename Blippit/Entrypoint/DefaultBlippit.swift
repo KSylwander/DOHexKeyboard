@@ -6,7 +6,6 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import os.log
 import Podz
 
 final class DefaultBlippit {
@@ -147,25 +146,17 @@ final class DefaultBlippit {
           session: podSession,
           dataToken: dataToken
         )
-      case let .waitForCloudSessionDone(cloudSessionId, podSession):
+      case let .waitForCloudSessionDone(cloudSessionId):
         return waitForCloudSessionDoneStateFactory.makeState(
           delegate: self,
-          cloudSessionId: cloudSessionId,
-          podSession: podSession
+          cloudSessionId: cloudSessionId
         )
       case .blippitSessionCompleted:
         return StartedState(delegate: self)
       }
     }()
 
-    os_log(
-      "%{public}@ %{public}@:%{public}d -> Transitioning to %{public}@ state (%{public}@)...",
-      log: Constants.log,
-      type: .debug,
-      "[DEBUG]", #function, #line,
-      String(String(describing: rawState).prefix(while: { $0 != "(" })),
-      state.map { String(describing: type(of: $0)) } ?? "nil"
-    )
+    Log.debug(.public("Transitioning to \(rawState.logDescription) state (\(state.logDescription))..."))
 
     /* Assigning the current state here makes sure that any state changes during the invocation of the `start()` method
      * below are only applied afterwards
@@ -210,13 +201,7 @@ extension DefaultBlippit: StateDelegate {
   }
 
   func state(_ state: State, didFailWithError error: Error) {
-    os_log(
-      "%{public}@ %{public}@:%{public}d -> Error: %{public}@",
-      log: Constants.log,
-      type: .error,
-      "[ERROR]", #function, #line,
-      error.name
-    )
+    Log.error(.public("Error: \(error.logDescription)"))
     delegate?.blippit(self, didFailWithError: error)
   }
 }

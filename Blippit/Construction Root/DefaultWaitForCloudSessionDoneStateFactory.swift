@@ -15,11 +15,10 @@ struct DefaultWaitForCloudSessionDoneStateFactory {
 }
 
 extension DefaultWaitForCloudSessionDoneStateFactory: WaitForCloudSessionDoneStateFactory {
-  func makeState(delegate: StateDelegate, cloudSessionId: String, podSession: PodSession) -> State {
+  func makeState(delegate: StateDelegate, cloudSessionId: String) -> State {
     return WaitForCloudSessionDoneState(
       delegate: delegate,
       cloudSessionId: cloudSessionId,
-      podSession: podSession,
       pollInterval: pollInterval,
       getCloudSessionStatusUseCase: getCloudSessionStatusUseCase,
       retryHandlerFactory: retryHandlerFactory

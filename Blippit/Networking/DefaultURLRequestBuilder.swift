@@ -21,8 +21,13 @@ final class DefaultURLRequestBuilder {
 }
 
 extension DefaultURLRequestBuilder: URLRequestBuilder {
+  func resetQueryParameters() -> Self {
+    queryParameters.removeAll()
+    return self
+  }
+
   func addQueryParameter(_ queryParameter: CVarArg) -> Self {
-    self.queryParameters.append(queryParameter)
+    queryParameters.append(queryParameter)
     return self
   }
 
@@ -40,7 +45,9 @@ extension DefaultURLRequestBuilder: URLRequestBuilder {
 
     request.httpMethod = apiConfig.method.rawValue
     request.addValue(apiConfig.contentType, forHTTPHeaderField: "Content-Type")
-    request.addValue(apiKey.uuidString, forHTTPHeaderField: "x-apikey")
+
+    // TODO: Remove lowercasing call when the corresponding bug on the BSAC server is fixed
+    request.addValue(apiKey.uuidString.lowercased(), forHTTPHeaderField: "x-apikey")
 
     return request
   }

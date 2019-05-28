@@ -6,7 +6,6 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import os.log
 import Podz
 
 /* Mix-in that supports cancelling of a pod session-based state */
@@ -23,13 +22,7 @@ extension CancellablePodSessionState {
     }
     isCancelling = true
 
-    os_log(
-      "%{public}@ %{public}@:%{public}d -> Aborting %{public}@...",
-      log: Constants.log,
-      type: .debug,
-      "[DEBUG]", #function, #line,
-      String(describing: type(of: self))
-    )
+    Log.debug(.public("Cancelling \(logDescription)..."))
 
     do {
       try session.close()

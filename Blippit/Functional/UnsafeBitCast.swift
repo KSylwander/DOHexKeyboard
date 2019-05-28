@@ -11,19 +11,19 @@ import Foundation
 /* Unsafe bit cast utility functions.
  *
  * Each of these helper functions standardize the types for a specific conversion. This standardization helps the
- * compiler to infer the correct types when performing functional operations on a function.
+ * compiler infer the correct types when performing functional operations on a function.
  *
  * This is needed because a direct call to the `unsafeBitCast` function in the above case confuses the Swift compiler.
  */
 enum UnsafeBitCast {
-  static let toSecurityPolicy: (SecPolicy) -> SecurityPolicy = performAction
+  static let toSecurityPolicy: (SecPolicy) -> SecurityPolicy = identity
   static let toSecPolicies: ([SecurityPolicy]) -> CFTypeRef = performAction
-  static let toCertificate: (SecCertificate) -> Certificate = performAction
+  static let toCertificate: (SecCertificate) -> Certificate = identity
   static let toSecCertificate: (Certificate) -> SecCertificate = performAction
   static let toSecCertificates: ([Certificate]) -> CFArray = performAction
   static let toSecTrust: (Trust) -> SecTrust = performAction
 
   static func performAction<T, U>(_ value: T) -> U {
-    return unsafeBitCast(value, to: U.self)
+    return value as! U
   }
 }

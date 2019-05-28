@@ -17,6 +17,7 @@ struct DefaultGetCloudSessionStatusUseCase {
 extension DefaultGetCloudSessionStatusUseCase: GetCloudSessionStatusUseCase {
   func getCloudSessionStatus(sessionId: String, completion: @escaping Completion) -> Cancellable? {
     let request = requestBuilder
+      .resetQueryParameters()
       .addQueryParameter(sessionId)
       .build()
 

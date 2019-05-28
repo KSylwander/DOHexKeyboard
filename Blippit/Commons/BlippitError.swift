@@ -21,8 +21,8 @@ public enum BlippitError {
   case invalidPodSessionState(PodSessionState)
   case podDoesNotSupportTransferId
 
-  case invalidCredentials
-  case invalidHttpStatusCode(Int)
+  case invalidCredentials(data: Data?)
+  case invalidHttpStatusCode(Int, data: Data?)
 
   /* Sending of data token failed after `Constants.states.transferDataToken.maxRetries + 1` attempts. May be fixed by
    * asking the user to blip again.
