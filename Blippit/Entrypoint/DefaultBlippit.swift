@@ -156,7 +156,7 @@ final class DefaultBlippit {
       }
     }()
 
-    Log.debug(.public("Transitioning to \(rawState.name) state (\(state?.name ?? "nil"))..."))
+    Log.debug(.public("Transitioning to \(rawState.logDescription) state (\(state?.name ?? "nil"))..."))
 
     /* Assigning the current state here makes sure that any state changes during the invocation of the `start()` method
      * below are only applied afterwards
