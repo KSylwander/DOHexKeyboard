@@ -22,7 +22,7 @@ extension CancellablePodSessionState {
     }
     isCancelling = true
 
-    Log.debug(.public("Cancelling \(name)..."))
+    Log.debug(.public("Cancelling \(logDescription)..."))
 
     do {
       try session.close()

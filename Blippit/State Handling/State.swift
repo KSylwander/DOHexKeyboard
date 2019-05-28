@@ -9,9 +9,3 @@
 import Foundation
 
 protocol State: AnyObject {}
-
-extension State {
-  var name: String {
-    return String(describing: type(of: self))
-  }
-}

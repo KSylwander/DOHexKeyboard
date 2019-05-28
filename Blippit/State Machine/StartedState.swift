@@ -43,7 +43,7 @@ extension StartedState: Cancellable {
     }
     isCancelling = true
 
-    Log.debug(.public("Cancelling \(name)..."))
+    Log.debug(.public("Cancelling \(logDescription)..."))
     delegate?.state(self, moveTo: .starting)
   }
 }

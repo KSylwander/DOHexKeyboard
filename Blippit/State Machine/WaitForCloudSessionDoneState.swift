@@ -84,7 +84,7 @@ extension WaitForCloudSessionDoneState: Cancellable {
     }
     isCancelling = true
 
-    Log.debug(.public("Cancelling \(name)..."))
+    Log.debug(.public("Cancelling \(logDescription)..."))
     task?.cancel()
 
     /* Move back to the starting state after a cancellation. This allows us to make sure that the Podz is still in the
