@@ -19,6 +19,7 @@ extension DefaultUploadCommandDataUseCase: UploadCommandDataUseCase {
   func uploadCommandData(sessionId: String, data: CommandData, completion: @escaping Completion) -> Cancellable? {
     do {
       let request = requestBuilder
+        .resetQueryParameters()
         .addQueryParameter(sessionId)
         .build()
 

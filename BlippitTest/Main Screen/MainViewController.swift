@@ -149,7 +149,7 @@ extension MainViewController: BlippitDelegate {
     setErrorText("None")
 
     updateUserIdTextField()
-    updateToggleBlippitButton(isStarting: false)
+    updateToggleBlippitButton()
   }
 
   func blippitDidStop(_ blippit: Blippit) {

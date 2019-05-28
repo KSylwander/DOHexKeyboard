@@ -21,8 +21,13 @@ final class DefaultURLRequestBuilder {
 }
 
 extension DefaultURLRequestBuilder: URLRequestBuilder {
+  func resetQueryParameters() -> Self {
+    queryParameters.removeAll()
+    return self
+  }
+
   func addQueryParameter(_ queryParameter: CVarArg) -> Self {
-    self.queryParameters.append(queryParameter)
+    queryParameters.append(queryParameter)
     return self
   }
 
