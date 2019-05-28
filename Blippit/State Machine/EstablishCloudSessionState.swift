@@ -21,11 +21,17 @@ final class EstablishCloudSessionState {
 
   private let establishCloudSessionUseCase: EstablishCloudSessionUseCase
 
+  private let retryHandlerFactory: AsyncRetryHandlerFactory
+  lazy var retryHandler = retryHandlerFactory.makeRetryHandler { [weak self] in
+    self?.performRequest()
+  }
+
   init(delegate: StateDelegate,
        pid: UInt32,
        userId: String,
        podSession: PodSession,
-       establishCloudSessionUseCase: EstablishCloudSessionUseCase) {
+       establishCloudSessionUseCase: EstablishCloudSessionUseCase,
+       retryHandlerFactory: AsyncRetryHandlerFactory) {
 
     self.delegate = delegate
 
@@ -34,20 +40,31 @@ final class EstablishCloudSessionState {
     self.userId = userId
 
     self.establishCloudSessionUseCase = establishCloudSessionUseCase
+    self.retryHandlerFactory = retryHandlerFactory
   }
 }
 
 extension EstablishCloudSessionState: State {}
 
-extension EstablishCloudSessionState: Startable {
-  func start() {
+extension EstablishCloudSessionState: HttpRequestState {
+  func performRequest() {
+    guard !isCancelling else {
+      return
+    }
+
     task = establishCloudSessionUseCase.establishCloudSession(pid: pid, userId: userId) { _, result in
       switch result {
       case let .failure(error):
-        self.delegate?.state(self, didFailWithError: error)
+        self.handleError(error)
       case let .success(sessionId):
-        self.delegate?.state(self, moveTo: .uploadCommandData(cloudSessionId: sessionId, podSession: self.podSession))
+        self.move(to: .uploadCommandData(cloudSessionId: sessionId, podSession: self.podSession))
       }
+    }
+  }
+
+  private func move(to state: RawState) {
+    DispatchQueue.main.async {
+      self.delegate?.state(self, moveTo: state)
     }
   }
 }

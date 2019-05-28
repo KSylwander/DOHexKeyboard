@@ -24,6 +24,6 @@ enum UnsafeBitCast {
   static let toSecTrust: (Trust) -> SecTrust = performAction
 
   static func performAction<T, U>(_ value: T) -> U {
-    return Swift.unsafeBitCast(value, to: U.self)
+    return unsafeBitCast(value, to: U.self)
   }
 }

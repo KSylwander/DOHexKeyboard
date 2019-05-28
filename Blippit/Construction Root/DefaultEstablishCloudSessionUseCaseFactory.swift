@@ -9,17 +9,17 @@
 import Foundation
 
 struct DefaultEstablishCloudSessionUseCaseFactory {
-  let requestBuilder: URLRequestBuilder
+  let requestBuilderFactory: URLRequestBuilderFactory
   let encoder: Encoder
   let decoder: Decoder
   let uploadDataUseCase: UploadDataUseCase
 }
 
 extension DefaultEstablishCloudSessionUseCaseFactory: EstablishCloudSessionUseCaseFactory {
-  func makeUseCase(appId: UUID) -> EstablishCloudSessionUseCase {
+  func makeUseCase(apiKey: UUID, appId: UUID) -> EstablishCloudSessionUseCase {
     return DefaultEstablishCloudSessionUseCase(
       appId: appId,
-      requestBuilder: requestBuilder,
+      requestBuilder: requestBuilderFactory.makeBuilder(apiKey: apiKey),
       encoder: encoder,
       decoder: decoder,
       uploadDataUseCase: uploadDataUseCase

@@ -9,13 +9,13 @@
 import Foundation
 
 struct DefaultCertificateFactory {
-  let certificateHandling: CertificateHandling
+  let certificateHandler: CertificateHandling
 }
 
 extension DefaultCertificateFactory: CertificateFactory {
   func makeCertificate(url: URL) throws -> Certificate {
     let data = try Data(contentsOf: url)
-    guard let certificate = certificateHandling.createWithData(nil, data as CFData) else {
+    guard let certificate = certificateHandler.createWithData(nil, data as CFData) else {
       throw SecurityError.invalidCertificateData
     }
     return certificate

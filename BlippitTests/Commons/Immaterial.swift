@@ -15,3 +15,7 @@ func immaterial() -> URLResponse {
 func immaterial() -> URLRequest {
   return URLRequest(url: URL(string: "https://www.crunchfish.com/")!)
 }
+
+func immaterial() -> Data {
+  return Data("Hello, world!".utf8)
+}

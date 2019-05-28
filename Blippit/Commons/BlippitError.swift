@@ -8,7 +8,7 @@
 
 import Podz
 
-enum BlippitError {
+public enum BlippitError {
   case invalidPodzStatus(
     /* 1. `PodzStatus.pending(PodzError)`: `PodzError` represents a user-resolvable error (i.e., should be handled in
      *    a user-friendly way). Each error is passed in the pending state after the previous one is resolved. Blippit
@@ -19,12 +19,13 @@ enum BlippitError {
     PodzStatus
   )
   case invalidPodSessionState(PodSessionState)
-  case podDoesNotTransferId
+  case podDoesNotSupportTransferId
 
+  case invalidCredentials
   case invalidHttpStatusCode(Int)
 
-  /* Sending of data token failed after `Constants.transactionStage.maxRetries + 1` attempts. May be fixed by asking
-   * the user to blip again.
+  /* Sending of data token failed after `Constants.states.transferDataToken.maxRetries + 1` attempts. May be fixed by
+   * asking the user to blip again.
    */
   case transferDataTokenFailed
 }

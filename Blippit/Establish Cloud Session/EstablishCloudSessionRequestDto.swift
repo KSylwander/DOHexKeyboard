@@ -17,7 +17,7 @@ struct EstablishCloudSessionRequestDto {
 extension EstablishCloudSessionRequestDto: Encodable {
   private enum CodingKeys: String, CodingKey {
     case pid = "atid"
-    case userId = "appid"
-    case appId = "userid"
+    case userId = "userid"
+    case appId = "appid"
   }
 }

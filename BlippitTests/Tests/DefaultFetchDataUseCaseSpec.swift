@@ -16,12 +16,21 @@ final class DefaultFetchDataUseCaseSpec: QuickSpec {
   override func spec() {
     describe("the DefaultFetchDataUseCase") {
       let dataTaskFactory = MockDataTaskFactory().withEnabledDefaultImplementation(DataTaskFactoryStub())
+      let httpStatusCodeValidator = MockHttpStatusCodeValidator()
+        .withEnabledDefaultImplementation(HttpStatusCodeValidatorStub())
 
-      var sut = DefaultFetchDataUseCase(dataTaskFactory: dataTaskFactory)
+      var sut = DefaultFetchDataUseCase(
+        dataTaskFactory: dataTaskFactory,
+        httpStatusCodeValidator: httpStatusCodeValidator
+      )
 
       afterEach {
         reset(dataTaskFactory)
-        sut = DefaultFetchDataUseCase(dataTaskFactory: dataTaskFactory)
+        reset(httpStatusCodeValidator)
+        sut = DefaultFetchDataUseCase(
+          dataTaskFactory: dataTaskFactory,
+          httpStatusCodeValidator: httpStatusCodeValidator
+        )
       }
 
       it("fails on error") {
@@ -29,6 +38,28 @@ final class DefaultFetchDataUseCaseSpec: QuickSpec {
         onDataTask { completion in
           /* Complete with an error */
           completion(nil, immaterial(), any())
+        }
+
+        /* Act */
+        var theResult: Result<Data, Error>?
+        sut.fetchData(with: immaterial()) { _, result in
+          theResult = result
+        }
+
+        /* Assert */
+        expect(theResult).toNot(beNil())
+        expect(theResult).toNot(beASuccess())
+      }
+
+      it("fails on HTTP status code validation error") {
+        /* Arrange */
+        stub(httpStatusCodeValidator) { stub in
+          when(stub.validate(any())).thenReturn(any())
+        }
+
+        onDataTask { completion in
+          /* Complete normally */
+          completion(immaterial(), immaterial(), nil)
         }
 
         /* Act */

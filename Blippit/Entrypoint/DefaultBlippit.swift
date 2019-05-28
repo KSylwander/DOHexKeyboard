@@ -10,7 +10,7 @@ import os.log
 import Podz
 
 final class DefaultBlippit {
-  private(set) var isActive = false {
+  private var isActive = false {
     didSet {
       if isActive {
         delegate?.blippitDidStart(self)
@@ -23,27 +23,41 @@ final class DefaultBlippit {
   private weak var delegate: BlippitDelegate?
 
   private let podz: Podz
-  private let establishCloudSessionUseCase: EstablishCloudSessionUseCase
-  private let uploadCommandDataUseCase: UploadCommandDataUseCase
-  private let retryHandlerFactory: RetryHandlerFactory
+
+  private let startingStateFactory: StartingStateFactory
+  private let startedStateFactory: StartedStateFactory
+  private let setupTransferIdStateFactory: SetupTransferIdStateFactory
+  private let establishCloudSessionStateFactory: EstablishCloudSessionStateFactory
+  private let uploadCommandDataStateFactory: UploadCommandDataStateFactory
+  private let transferDataTokenStateFactory: TransferDataTokenStateFactory
+  private let waitForCloudSessionDoneStateFactory: WaitForCloudSessionDoneStateFactory
 
   private var userId: String!
-  private static let commandData = "Data"
+  private static let commandData = CommandData(data: "Some interesting data") // TODO: Replace me with actual data
 
   private var currentState: State?
 
   init(delegate: BlippitDelegate,
        podz: Podz,
-       establishCloudSessionUseCase: EstablishCloudSessionUseCase,
-       uploadCommandDataUseCase: UploadCommandDataUseCase,
-       retryHandlerFactory: RetryHandlerFactory) {
+       startingStateFactory: StartingStateFactory,
+       startedStateFactory: StartedStateFactory,
+       setupTransferIdStateFactory: SetupTransferIdStateFactory,
+       establishCloudSessionStateFactory: EstablishCloudSessionStateFactory,
+       uploadCommandDataStateFactory: UploadCommandDataStateFactory,
+       transferDataTokenStateFactory: TransferDataTokenStateFactory,
+       waitForCloudSessionDoneStateFactory: WaitForCloudSessionDoneStateFactory) {
 
     self.delegate = delegate
 
     self.podz = podz
-    self.establishCloudSessionUseCase = establishCloudSessionUseCase
-    self.uploadCommandDataUseCase = uploadCommandDataUseCase
-    self.retryHandlerFactory = retryHandlerFactory
+
+    self.startingStateFactory = startingStateFactory
+    self.startedStateFactory = startedStateFactory
+    self.setupTransferIdStateFactory = setupTransferIdStateFactory
+    self.establishCloudSessionStateFactory = establishCloudSessionStateFactory
+    self.uploadCommandDataStateFactory = uploadCommandDataStateFactory
+    self.transferDataTokenStateFactory = transferDataTokenStateFactory
+    self.waitForCloudSessionDoneStateFactory = waitForCloudSessionDoneStateFactory
 
     podz.onStatusChanged = { [weak self] status in
       self?.handlePodzStatus(status)
@@ -106,36 +120,40 @@ final class DefaultBlippit {
         return nil
       case .starting:
         delegate?.blippitWillStart(self)
-        return StartingState(delegate: self, podz: podz)
+        return startingStateFactory.makeState(delegate: self, podz: podz)
       case .started:
         isActive = true
-        return StartedState(delegate: self)
+        return startedStateFactory.makeState(delegate: self)
       case let .setupTransferId(pid, podSession):
-        return SetupTransferIdState(delegate: self, pid: pid, session: podSession)
+        return setupTransferIdStateFactory.makeState(delegate: self, pid: pid, session: podSession)
       case let .establishCloudSession(pid, podSession):
-        return EstablishCloudSessionState(
+        return establishCloudSessionStateFactory.makeState(
           delegate: self,
           pid: pid,
           userId: userId,
-          podSession: podSession,
-          establishCloudSessionUseCase: establishCloudSessionUseCase
+          podSession: podSession
         )
       case let .uploadCommandData(cloudSessionId, podSession):
-        return UploadCommandDataState(
+        return uploadCommandDataStateFactory.makeState(
           delegate: self,
           cloudSessionId: cloudSessionId,
           data: DefaultBlippit.commandData,
-          podSession: podSession,
-          uploadCommandDataUseCase: uploadCommandDataUseCase
+          podSession: podSession
         )
-      case let .transferDataToken(podSession, dataToken):
-        return TransferDataTokenState(
+      case let .transferDataToken(cloudSessionId, podSession, dataToken):
+        return transferDataTokenStateFactory.makeState(
           delegate: self,
+          cloudSessionId: cloudSessionId,
           session: podSession,
-          dataToken: dataToken,
-          retryHandlerFactory: retryHandlerFactory
+          dataToken: dataToken
         )
-      case .transferDataTokenCompleted:
+      case let .waitForCloudSessionDone(cloudSessionId, podSession):
+        return waitForCloudSessionDoneStateFactory.makeState(
+          delegate: self,
+          cloudSessionId: cloudSessionId,
+          podSession: podSession
+        )
+      case .blippitSessionCompleted:
         return StartedState(delegate: self)
       }
     }()
@@ -192,6 +210,13 @@ extension DefaultBlippit: StateDelegate {
   }
 
   func state(_ state: State, didFailWithError error: Error) {
+    os_log(
+      "%{public}@ %{public}@:%{public}d -> Error: %{public}@",
+      log: Constants.log,
+      type: .error,
+      "[ERROR]", #function, #line,
+      error.name
+    )
     delegate?.blippit(self, didFailWithError: error)
   }
 }

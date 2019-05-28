@@ -9,5 +9,7 @@
 import Foundation
 
 protocol URLRequestBuilder {
+  func addQueryParameter(_ queryParameter: CVarArg) -> Self
+
   func build() -> URLRequest
 }

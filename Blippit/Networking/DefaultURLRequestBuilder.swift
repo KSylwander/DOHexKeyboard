@@ -10,16 +10,27 @@ import Foundation
 
 final class DefaultURLRequestBuilder {
   private let apiConfig: ApiConfig
+  private let apiKey: UUID
 
-  init(apiConfig: ApiConfig) {
+  private var queryParameters = [CVarArg]()
+
+  init(apiConfig: ApiConfig, apiKey: UUID) {
     self.apiConfig = apiConfig
+    self.apiKey = apiKey
   }
 }
 
 extension DefaultURLRequestBuilder: URLRequestBuilder {
+  func addQueryParameter(_ queryParameter: CVarArg) -> Self {
+    self.queryParameters.append(queryParameter)
+    return self
+  }
+
   func build() -> URLRequest {
     let baseUrl = URL(string: apiConfig.basePath)!
-    let resourceUrl = URL(string: apiConfig.resource, relativeTo: baseUrl)!
+
+    let resource = String(format: apiConfig.resource, arguments: queryParameters)
+    let resourceUrl = URL(string: resource, relativeTo: baseUrl)!
 
     var request = URLRequest(
       url: resourceUrl,
@@ -28,6 +39,8 @@ extension DefaultURLRequestBuilder: URLRequestBuilder {
     )
 
     request.httpMethod = apiConfig.method.rawValue
+    request.addValue(apiConfig.contentType, forHTTPHeaderField: "Content-Type")
+    request.addValue(apiKey.uuidString, forHTTPHeaderField: "x-apikey")
 
     return request
   }

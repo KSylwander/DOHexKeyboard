@@ -10,5 +10,5 @@ import Foundation
 
 protocol UploadCommandDataUseCase {
   typealias Completion = (_ response: HTTPURLResponse?, _ result: Result<String, Error>) -> Void
-  func uploadCommandData(sessionId: String, data: String, completion: @escaping Completion) -> Cancellable?
+  func uploadCommandData(sessionId: String, data: CommandData, completion: @escaping Completion) -> Cancellable?
 }

@@ -16,8 +16,9 @@ enum RawState {
   case setupTransferId(pid: UInt32, podSession: PodSession)
   case establishCloudSession(pid: UInt32, podSession: PodSession)
   case uploadCommandData(cloudSessionId: String, podSession: PodSession)
-  case transferDataToken(podSession: PodSession, dataToken: TransferId)
-  case transferDataTokenCompleted
+  case transferDataToken(cloudSessionId: String, podSession: PodSession, dataToken: TransferId)
+  case waitForCloudSessionDone(cloudSessionId: String, podSession: PodSession)
+  case blippitSessionCompleted
 }
 
 /* NOTE: Don't forget to update the `RawState+Equatable.swift` file in the test target when updating the cases */

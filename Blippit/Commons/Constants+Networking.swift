@@ -10,7 +10,7 @@ import Foundation
 
 extension Constants {
   enum api {
-    static let version = "0.1.0"
+    static let version = "0"
 
     enum defaults {
 #if DEBUG
@@ -19,16 +19,30 @@ extension Constants {
       static let basePath = "https://prod-bsac.bubbelskum.com/api/\(version)"
 #endif
 
+      static let contentType = "application/json"
+
       static let cachePolicy = URLRequest.CachePolicy.useProtocolCachePolicy
       static let timeoutInterval = TimeInterval(60.0)
     }
 
     enum establishCloudSession {
-      static let config = ApiConfig(method: .post, resource: "user/establishSession")
+      static let config = ApiConfig(
+        method: .post,
+        resource: "session"
+      )
     }
 
     enum uploadCommandData {
-      static let config = ApiConfig(method: .get, resource: "user/uploadCommandData")
+      static let config = ApiConfig(
+        method: .post,
+        resource: "session/%@/commandData"
+      )
+    }
+
+    enum getCloudSessionStatus {
+      static let config = ApiConfig(
+        method: .get,
+        resource: "session/%@/status")
     }
   }
 }
