@@ -17,6 +17,7 @@ extension DefaultFetchDataUseCase: FetchDataUseCase {
   @discardableResult func fetchData(with request: URLRequest,
                                     completion: @escaping FetchDataUseCase.Completion) -> Cancellable {
 
+    Log.debug(.public(request.logDescription(.long)))
     let task = dataTaskFactory.dataTask(with: request) { data, response, error in
       let response = response.map { $0 as! HTTPURLResponse }
       Log.debug(.public("""

@@ -18,6 +18,7 @@ extension DefaultUploadDataUseCase: UploadDataUseCase {
                                      from data: Data,
                                      completion: @escaping Completion) -> Cancellable {
 
+    Log.debug(.public(request.logDescription(.long)))
     let task = uploadTaskFactory.uploadTask(with: request, from: data) { data, response, error in
       let response = response.map { $0 as! HTTPURLResponse }
       Log.debug(.public("""

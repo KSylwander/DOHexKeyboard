@@ -128,6 +128,7 @@
 		3EB82297229C1AD000826236 /* State+LogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB82296229C1AD000826236 /* State+LogDescription.swift */; };
 		3EB8229D229C21BF00826236 /* Data+LogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB8229C229C21BF00826236 /* Data+LogDescription.swift */; };
 		3EB8229F229C222800826236 /* HTTPURLResponse+LogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB8229E229C222800826236 /* HTTPURLResponse+LogDescription.swift */; };
+		3EB822A3229C228300826236 /* URLRequest+LogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB822A2229C228300826236 /* URLRequest+LogDescription.swift */; };
 		3EBAC76A227C2CA200D5C693 /* Blippit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EBAC768227C2CA200D5C693 /* Blippit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3EBAC774227C30A500D5C693 /* Podz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC773227C30A500D5C693 /* Podz.framework */; };
 		3EC4DE45228306F1007A05C9 /* PodStateObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE44228306F1007A05C9 /* PodStateObserving.swift */; };
@@ -331,6 +332,7 @@
 		3EB82296229C1AD000826236 /* State+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "State+LogDescription.swift"; sourceTree = "<group>"; };
 		3EB8229C229C21BF00826236 /* Data+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+LogDescription.swift"; sourceTree = "<group>"; };
 		3EB8229E229C222800826236 /* HTTPURLResponse+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+LogDescription.swift"; sourceTree = "<group>"; };
+		3EB822A2229C228300826236 /* URLRequest+LogDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+LogDescription.swift"; sourceTree = "<group>"; };
 		3EBAC765227C2CA200D5C693 /* Blippit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Blippit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EBAC768227C2CA200D5C693 /* Blippit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Blippit.h; sourceTree = "<group>"; };
 		3EBAC769227C2CA200D5C693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -671,6 +673,7 @@
 				3EB82291229C019400826236 /* Log.swift */,
 				3E5353012295482D004FD948 /* RawState+LogDescription.swift */,
 				3EB82296229C1AD000826236 /* State+LogDescription.swift */,
+				3EB822A2229C228300826236 /* URLRequest+LogDescription.swift */,
 			);
 			path = Logging;
 			sourceTree = "<group>";
@@ -1009,6 +1012,7 @@
 				3E38F9162281A2A200C114B7 /* StartingState.swift in Sources */,
 				3E23C23D228C2F0800DA3305 /* ValidPodSessionStateObserving.swift in Sources */,
 				3EC4DE472283073A007A05C9 /* StartedState.swift in Sources */,
+				3EB822A3229C228300826236 /* URLRequest+LogDescription.swift in Sources */,
 				3E38F9122281A16500C114B7 /* DefaultPodzStatusObservingState.swift in Sources */,
 				3E790FB8228AF9F500DB072F /* Constants+Networking.swift in Sources */,
 				3E23C21E228C0EA400DA3305 /* UploadDataUseCase.swift in Sources */,
