@@ -60,7 +60,6 @@ final class MainViewController: UIViewController {
         }
       }()
       blippit.start(userId: userId)
-      isBlippitActive = true
     } catch {
       handleError(error)
     }
@@ -148,6 +147,7 @@ extension MainViewController: BlippitDelegate {
 
     setErrorText("None")
 
+    isBlippitActive = true
     updateUserIdTextField()
     updateToggleBlippitButton()
   }
