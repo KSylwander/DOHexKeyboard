@@ -201,7 +201,7 @@ extension DefaultBlippit: StateDelegate {
   }
 
   func state(_ state: State, didFailWithError error: Error) {
-    Log.error(.public("Error: \(error.name)"))
+    Log.error(.public("Error: \(error.logDescription)"))
     delegate?.blippit(self, didFailWithError: error)
   }
 }
