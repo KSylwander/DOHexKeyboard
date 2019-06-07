@@ -40,6 +40,8 @@ final class TransferDataTokenState {
   }
 }
 
+extension TransferDataTokenState: BlippitSessionState {}
+
 extension TransferDataTokenState: TransferIdState {
   func handleTransactionSuccess() throws {
     try session.close()

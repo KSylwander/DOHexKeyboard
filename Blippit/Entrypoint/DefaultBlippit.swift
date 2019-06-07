@@ -167,6 +167,14 @@ extension DefaultBlippit: Blippit {
 
     setState(to: .initial)
   }
+
+  func cancelOngoingSession() {
+    /* Abort the current stage, if applicable */
+    guard let currentState = currentState as? BlippitSessionState else {
+      return
+    }
+    currentState.cancel()
+  }
 }
 
 extension DefaultBlippit: StateDelegate {

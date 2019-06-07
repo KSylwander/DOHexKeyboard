@@ -46,6 +46,8 @@ final class EstablishCloudSessionState {
 
 extension EstablishCloudSessionState: State {}
 
+extension EstablishCloudSessionState: BlippitSessionState {}
+
 extension EstablishCloudSessionState: HttpRequestState {
   func performRequest() {
     guard !isCancelling else {

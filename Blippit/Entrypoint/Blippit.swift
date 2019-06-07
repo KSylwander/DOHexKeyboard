@@ -11,4 +11,6 @@ import Foundation
 public protocol Blippit {
   func start()
   func stop()
+
+  func cancelOngoingSession()
 }

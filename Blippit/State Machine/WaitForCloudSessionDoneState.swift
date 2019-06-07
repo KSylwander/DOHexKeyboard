@@ -42,6 +42,8 @@ final class WaitForCloudSessionDoneState {
 
 extension WaitForCloudSessionDoneState: State {}
 
+extension WaitForCloudSessionDoneState: BlippitSessionState {}
+
 extension WaitForCloudSessionDoneState: HttpRequestState {
   func performRequest() {
     guard !isCancelling else {

@@ -17,6 +17,7 @@ final class MainViewController: UIViewController {
   @IBOutlet private var errorLabel: UILabel!
   @IBOutlet private var userIdTextField: UITextField!
   @IBOutlet private var toggleBlippitButton: UIButton!
+  @IBOutlet private var cancelSessionButton: UIButton!
 
   private lazy var locationManager = CLLocationManager()
 
@@ -105,6 +106,10 @@ final class MainViewController: UIViewController {
     errorLabel.text = errorText
   }
 
+  @IBAction private func cancelSessionButtonTapped() {
+    blippit.cancelOngoingSession()
+  }
+
   private func updateToggleBlippitButton(withUserId userId: String? = nil, isStarting: Bool = false) {
     UIView.performWithoutAnimation {
       toggleBlippitButton.setTitle(!isBlippitActive ? "Start" : "Stop", for: .normal)
@@ -150,18 +155,23 @@ extension MainViewController: BlippitDelegate {
       setErrorText("None")
       updateUserIdTextField()
       updateToggleBlippitButton()
+      setIsCancelSessionEnabled(false)
     case .appTerminalFound:
       setStatus("App terminal found")
       loadingIndicator.isHidden = true
+      setIsCancelSessionEnabled(true)
     case .initiatingSession:
       setStatus("Initiating session...")
       loadingIndicator.isHidden = false
+      setIsCancelSessionEnabled(true)
     case .waitingForSessionDone:
       setStatus("Waiting for session done...")
       loadingIndicator.isHidden = false
+      setIsCancelSessionEnabled(true)
     case .sessionDone:
       setStatus("Session completed")
       loadingIndicator.isHidden = true
+      setIsCancelSessionEnabled(false)
     }
   }
 
@@ -175,6 +185,11 @@ extension MainViewController: BlippitDelegate {
     let isEnabled = !isBlippitActive
     userIdTextField.isEnabled = isEnabled
     userIdTextField.alpha = isEnabled ? 1.0 : 0.7
+  }
+
+  private func setIsCancelSessionEnabled(_ isCancelSessionEnabled: Bool) {
+    cancelSessionButton.isEnabled = isCancelSessionEnabled
+    cancelSessionButton.alpha = isCancelSessionEnabled ? 1.0 : 0.7
   }
 
   private func setStatus(_ status: String) {

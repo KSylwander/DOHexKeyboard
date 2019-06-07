@@ -23,6 +23,8 @@ final class SetupTransferIdState {
   }
 }
 
+extension SetupTransferIdState: BlippitSessionState {}
+
 extension SetupTransferIdState: ValidPodSessionStateObserving {
   func handleValidState(_ state: PodSessionState, for session: PodSession) {
     do {
