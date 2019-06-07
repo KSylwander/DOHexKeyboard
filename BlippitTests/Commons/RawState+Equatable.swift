@@ -25,7 +25,7 @@ extension RawState: Equatable {
         && lhs.podSession === rhs.podSession
         && lhs.dataToken == rhs.dataToken
     case let (.waitForCloudSessionDone(lhs), .waitForCloudSessionDone(rhs)):
-      return lhs == rhs
+      return lhs.cloudSessionId == rhs.cloudSessionId && lhs.podSession === rhs.podSession
     case (.blippitSessionCompleted, .blippitSessionCompleted):
       return true
     default:

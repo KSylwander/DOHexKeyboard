@@ -44,8 +44,7 @@ extension TransferDataTokenState: BlippitSessionState {}
 
 extension TransferDataTokenState: TransferIdState {
   func handleTransactionSuccess() throws {
-    try session.close()
-    delegate?.state(self, moveTo: .waitForCloudSessionDone(cloudSessionId: cloudSessionId))
+    delegate?.state(self, moveTo: .waitForCloudSessionDone(cloudSessionId: cloudSessionId, podSession: session))
   }
 }
 

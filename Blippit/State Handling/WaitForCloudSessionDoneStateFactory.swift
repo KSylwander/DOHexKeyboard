@@ -9,5 +9,5 @@
 import Podz
 
 protocol WaitForCloudSessionDoneStateFactory {
-  func makeState(delegate: StateDelegate, cloudSessionId: String) -> State
+  func makeState(delegate: StateDelegate, cloudSessionId: String, podSession: PodSession) -> State
 }
