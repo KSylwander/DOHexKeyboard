@@ -19,6 +19,7 @@ final class DefaultBlippit {
   private let establishCloudSessionStateFactory: EstablishCloudSessionStateFactory
   private let transferDataTokenStateFactory: TransferDataTokenStateFactory
   private let waitForCloudSessionDoneStateFactory: WaitForCloudSessionDoneStateFactory
+  private let transferCloudSessionDoneTokenStateFactory: TransferCloudSessionDoneTokenStateFactory
 
   private var currentState: State?
 
@@ -29,7 +30,8 @@ final class DefaultBlippit {
        setupTransferIdStateFactory: SetupTransferIdStateFactory,
        establishCloudSessionStateFactory: EstablishCloudSessionStateFactory,
        transferDataTokenStateFactory: TransferDataTokenStateFactory,
-       waitForCloudSessionDoneStateFactory: WaitForCloudSessionDoneStateFactory) {
+       waitForCloudSessionDoneStateFactory: WaitForCloudSessionDoneStateFactory,
+       transferCloudSessionDoneTokenStateFactory: TransferCloudSessionDoneTokenStateFactory) {
 
     self.delegate = delegate
 
@@ -41,6 +43,7 @@ final class DefaultBlippit {
     self.establishCloudSessionStateFactory = establishCloudSessionStateFactory
     self.transferDataTokenStateFactory = transferDataTokenStateFactory
     self.waitForCloudSessionDoneStateFactory = waitForCloudSessionDoneStateFactory
+    self.transferCloudSessionDoneTokenStateFactory = transferCloudSessionDoneTokenStateFactory
 
     podz.onStatusChanged = { [weak self] status in
       self?.handlePodzStatus(status)
@@ -128,6 +131,12 @@ final class DefaultBlippit {
           delegate: self,
           cloudSessionId: cloudSessionId,
           podSession: podSession
+        )
+      case let .transferCloudSessionDoneToken(podSession, doneToken):
+        return transferCloudSessionDoneTokenStateFactory.makeState(
+          delegate: self,
+          session: podSession,
+          doneToken: doneToken
         )
       case .blippitSessionCompleted:
         delegate?.blippit(self, didChangeState: .sessionDone)

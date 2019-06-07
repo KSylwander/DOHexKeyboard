@@ -11,6 +11,9 @@
 		3E1AF01922AA327800066C80 /* BlippitState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1AF01822AA327800066C80 /* BlippitState.swift */; };
 		3E1AF04822AA4D9900066C80 /* BlippitSessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1AF04722AA4D9900066C80 /* BlippitSessionState.swift */; };
 		3E1AF04A22AA517C00066C80 /* CloudSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1AF04922AA517B00066C80 /* CloudSession.swift */; };
+		3E1AF04D22AA6B4C00066C80 /* TransferCloudSessionDoneTokenState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1AF04C22AA6B4C00066C80 /* TransferCloudSessionDoneTokenState.swift */; };
+		3E1AF04F22AA6C9B00066C80 /* TransferCloudSessionDoneTokenStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1AF04E22AA6C9B00066C80 /* TransferCloudSessionDoneTokenStateFactory.swift */; };
+		3E1AF05122AA6CC200066C80 /* DefaultTransferCloudSessionDoneTokenStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1AF05022AA6CC200066C80 /* DefaultTransferCloudSessionDoneTokenStateFactory.swift */; };
 		3E23C21A228C0E9400DA3305 /* UploadTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C219228C0E9400DA3305 /* UploadTaskFactory.swift */; };
 		3E23C21C228C0E9E00DA3305 /* URLSession+UploadTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C21B228C0E9E00DA3305 /* URLSession+UploadTaskFactory.swift */; };
 		3E23C21E228C0EA400DA3305 /* UploadDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C21D228C0EA400DA3305 /* UploadDataUseCase.swift */; };
@@ -216,6 +219,9 @@
 		3E1AF01822AA327800066C80 /* BlippitState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitState.swift; sourceTree = "<group>"; };
 		3E1AF04722AA4D9900066C80 /* BlippitSessionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitSessionState.swift; sourceTree = "<group>"; };
 		3E1AF04922AA517B00066C80 /* CloudSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudSession.swift; sourceTree = "<group>"; };
+		3E1AF04C22AA6B4C00066C80 /* TransferCloudSessionDoneTokenState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferCloudSessionDoneTokenState.swift; sourceTree = "<group>"; };
+		3E1AF04E22AA6C9B00066C80 /* TransferCloudSessionDoneTokenStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferCloudSessionDoneTokenStateFactory.swift; sourceTree = "<group>"; };
+		3E1AF05022AA6CC200066C80 /* DefaultTransferCloudSessionDoneTokenStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTransferCloudSessionDoneTokenStateFactory.swift; sourceTree = "<group>"; };
 		3E23C219228C0E9400DA3305 /* UploadTaskFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadTaskFactory.swift; sourceTree = "<group>"; };
 		3E23C21B228C0E9E00DA3305 /* URLSession+UploadTaskFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+UploadTaskFactory.swift"; sourceTree = "<group>"; };
 		3E23C21D228C0EA400DA3305 /* UploadDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadDataUseCase.swift; sourceTree = "<group>"; };
@@ -421,6 +427,7 @@
 				3E23C240228C35D800DA3305 /* SetupTransferIdState.swift */,
 				3EC4DE462283073A007A05C9 /* StartedState.swift */,
 				3E38F9152281A2A200C114B7 /* StartingState.swift */,
+				3E1AF04C22AA6B4C00066C80 /* TransferCloudSessionDoneTokenState.swift */,
 				3EFADD2A228D4D9B00B3559A /* TransferDataTokenState.swift */,
 				3E55DB6D2296CDD7009CF6D2 /* WaitForCloudSessionDoneState.swift */,
 			);
@@ -446,6 +453,7 @@
 				3EFADD47228D999800B3559A /* StartingStateFactory.swift */,
 				3E38F90522819EB100C114B7 /* State.swift */,
 				3E38F90922819F3600C114B7 /* StateDelegate.swift */,
+				3E1AF04E22AA6C9B00066C80 /* TransferCloudSessionDoneTokenStateFactory.swift */,
 				3EFADD53228D9F6600B3559A /* TransferDataTokenStateFactory.swift */,
 				3EFADD28228D4D8A00B3559A /* TransferIdState.swift */,
 				3E23C23C228C2F0800DA3305 /* ValidPodSessionStateObserving.swift */,
@@ -497,6 +505,7 @@
 				3EFADD51228D9D8200B3559A /* DefaultSetupTransferIdStateFactory.swift */,
 				3EFADD4D228D9B0000B3559A /* DefaultStartedStateFactory.swift */,
 				3EFADD49228D99BB00B3559A /* DefaultStartingStateFactory.swift */,
+				3E1AF05022AA6CC200066C80 /* DefaultTransferCloudSessionDoneTokenStateFactory.swift */,
 				3EFADD55228D9F9100B3559A /* DefaultTransferDataTokenStateFactory.swift */,
 				3E55DB712296D63E009CF6D2 /* DefaultWaitForCloudSessionDoneStateFactory.swift */,
 			);
@@ -996,6 +1005,7 @@
 				3E1AF04822AA4D9900066C80 /* BlippitSessionState.swift in Sources */,
 				3E38F9122281A16500C114B7 /* DefaultPodzStatusObservingState.swift in Sources */,
 				3E790FB8228AF9F500DB072F /* Constants+Networking.swift in Sources */,
+				3E1AF05122AA6CC200066C80 /* DefaultTransferCloudSessionDoneTokenStateFactory.swift in Sources */,
 				3E23C21E228C0EA400DA3305 /* UploadDataUseCase.swift in Sources */,
 				3E38F9102281A10B00C114B7 /* ValidPodzStatusObserving.swift in Sources */,
 				3E790FAE228ADD7700DB072F /* ValidateTrustedCertificatesUseCase.swift in Sources */,
@@ -1013,6 +1023,7 @@
 				3EFADD2E228D534F00B3559A /* BlippitConfiguration.swift in Sources */,
 				3E23C241228C35D800DA3305 /* SetupTransferIdState.swift in Sources */,
 				3E1AF01722AA2ECC00066C80 /* ServiceInfo.swift in Sources */,
+				3E1AF04D22AA6B4C00066C80 /* TransferCloudSessionDoneTokenState.swift in Sources */,
 				3E53531622956A7D004FD948 /* HttpRequestState.swift in Sources */,
 				3EC4DE45228306F1007A05C9 /* PodStateObserving.swift in Sources */,
 				3E23C222228C0EC600DA3305 /* Encoder.swift in Sources */,
@@ -1064,6 +1075,7 @@
 				3E790F84228AD96E00DB072F /* Trust.swift in Sources */,
 				3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */,
 				3E5353102295669F004FD948 /* AsyncRetryHandling.swift in Sources */,
+				3E1AF04F22AA6C9B00066C80 /* TransferCloudSessionDoneTokenStateFactory.swift in Sources */,
 				3E790FAC228ADCD400DB072F /* DefaultValidateTrustUseCase.swift in Sources */,
 				3E790F92228ADA1C00DB072F /* TrustHandling.swift in Sources */,
 				3E535312229566DB004FD948 /* AsyncRetryHandlerFactory.swift in Sources */,

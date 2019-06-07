@@ -28,6 +28,11 @@ public enum BlippitError {
    * asking the user to blip again.
    */
   case transferDataTokenFailed
+
+  /* Sending of cloud session done token failed after `Constants.states.transferCloudSessionDoneToken.maxRetries + 1`
+   * attempts. May be fixed by asking the user to blip again.
+   */
+  case transferCloudSessionDoneTokenFailed
 }
 
 extension BlippitError: Error {}

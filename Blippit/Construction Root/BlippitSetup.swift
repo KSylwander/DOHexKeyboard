@@ -88,6 +88,11 @@ public enum BlippitSetup {
           maxRetries: Constants.states.waitForCloudSessionDone.maxRetries,
           retryInterval: Constants.states.waitForCloudSessionDone.retryInterval
         )
+      ),
+      transferCloudSessionDoneTokenStateFactory: DefaultTransferCloudSessionDoneTokenStateFactory(
+        retryHandlerFactory: DefaultRetryHandlerFactory(
+          maxRetries: Constants.states.transferCloudSessionDoneToken.maxRetries
+        )
       )
     )
   }
