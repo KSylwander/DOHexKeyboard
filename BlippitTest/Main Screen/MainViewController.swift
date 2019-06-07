@@ -54,7 +54,7 @@ final class MainViewController: UIViewController {
         if let blippit = self.blippit {
           return blippit
         } else {
-          let blippit = try blippitFactory.makeBlippit(delegate: self)
+          let blippit = try blippitFactory.makeBlippit(delegate: self, userId: userId)
           self.blippit = blippit
           return blippit
         }

@@ -21,12 +21,10 @@ extension AppDelegate: UIApplicationDelegate {
     let window = self.window!
     window.rootViewController = MainViewController.instantiate(
       blippitFactory: DefaultBlippitFactory(
-        configuration: BlippitConfiguration(
-          podzApiKey: UUID(uuidString: "CF2A0178-E4BD-47F9-A508-4E50F4113BAD")!,
-          podzAppId: UUID(uuidString: "CF000000-0000-0000-0000-000000000004")!,
-          blippitApiKey: UUID(uuidString: "a6d9a801-752b-433f-b0e9-19b7c290afcd")!,
-          blippitAppId: UUID(uuidString: "CF000000-0000-0000-0000-000000000004")!
-        )
+        podzApiKey: UUID(uuidString: "CF2A0178-E4BD-47F9-A508-4E50F4113BAD")!,
+        podzAppId: UUID(uuidString: "CF000000-0000-0000-0000-000000000004")!,
+        blippitApiKey: UUID(uuidString: "a6d9a801-752b-433f-b0e9-19b7c290afcd")!,
+        blippitAppId: UUID(uuidString: "CF000000-0000-0000-0000-000000000004")!
       )
     )
     window.makeKeyAndVisible()

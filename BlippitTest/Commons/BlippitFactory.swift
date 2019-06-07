@@ -9,5 +9,5 @@
 import Blippit
 
 protocol BlippitFactory {
-  func makeBlippit(delegate: BlippitDelegate) throws -> Blippit
+  func makeBlippit(delegate: BlippitDelegate, userId: String) throws -> Blippit
 }
