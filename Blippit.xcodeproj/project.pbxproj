@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E1AF01722AA2ECC00066C80 /* ServiceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1AF01622AA2ECC00066C80 /* ServiceInfo.swift */; };
 		3E23C21A228C0E9400DA3305 /* UploadTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C219228C0E9400DA3305 /* UploadTaskFactory.swift */; };
 		3E23C21C228C0E9E00DA3305 /* URLSession+UploadTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C21B228C0E9E00DA3305 /* URLSession+UploadTaskFactory.swift */; };
 		3E23C21E228C0EA400DA3305 /* UploadDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C21D228C0EA400DA3305 /* UploadDataUseCase.swift */; };
@@ -216,6 +217,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3E1AF01622AA2ECC00066C80 /* ServiceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInfo.swift; sourceTree = "<group>"; };
 		3E23C219228C0E9400DA3305 /* UploadTaskFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadTaskFactory.swift; sourceTree = "<group>"; };
 		3E23C21B228C0E9E00DA3305 /* URLSession+UploadTaskFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+UploadTaskFactory.swift"; sourceTree = "<group>"; };
 		3E23C21D228C0EA400DA3305 /* UploadDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadDataUseCase.swift; sourceTree = "<group>"; };
@@ -787,6 +789,7 @@
 				3EFADD2D228D534F00B3559A /* BlippitConfiguration.swift */,
 				3EFADD33228D567E00B3559A /* BlippitDelegate.swift */,
 				3EFADD35228D56C000B3559A /* DefaultBlippit.swift */,
+				3E1AF01622AA2ECC00066C80 /* ServiceInfo.swift */,
 			);
 			path = Entrypoint;
 			sourceTree = "<group>";
@@ -1031,6 +1034,7 @@
 				3EFADD2E228D534F00B3559A /* BlippitConfiguration.swift in Sources */,
 				3EFADD5A228DA19B00B3559A /* DefaultUploadCommandDataStateFactory.swift in Sources */,
 				3E23C241228C35D800DA3305 /* SetupTransferIdState.swift in Sources */,
+				3E1AF01722AA2ECC00066C80 /* ServiceInfo.swift in Sources */,
 				3E53531622956A7D004FD948 /* HttpRequestState.swift in Sources */,
 				3EC4DE45228306F1007A05C9 /* PodStateObserving.swift in Sources */,
 				3E23C222228C0EC600DA3305 /* Encoder.swift in Sources */,
