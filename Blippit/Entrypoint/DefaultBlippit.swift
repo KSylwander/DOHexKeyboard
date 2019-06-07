@@ -179,10 +179,6 @@ extension DefaultBlippit: Blippit {
 
     setState(to: .initial)
   }
-
-  func reset() {
-    // TODO: Implement me
-  }
 }
 
 extension DefaultBlippit: StateDelegate {
