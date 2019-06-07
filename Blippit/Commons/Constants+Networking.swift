@@ -33,13 +33,6 @@ extension Constants {
       )
     }
 
-    enum uploadCommandData {
-      static let config = ApiConfig(
-        method: .post,
-        resource: "session/%@/commandData"
-      )
-    }
-
     enum getCloudSessionStatus {
       static let config = ApiConfig(
         method: .get,

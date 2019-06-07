@@ -17,11 +17,8 @@ final class DefaultBlippit {
   private let startedStateFactory: StartedStateFactory
   private let setupTransferIdStateFactory: SetupTransferIdStateFactory
   private let establishCloudSessionStateFactory: EstablishCloudSessionStateFactory
-  private let uploadCommandDataStateFactory: UploadCommandDataStateFactory
   private let transferDataTokenStateFactory: TransferDataTokenStateFactory
   private let waitForCloudSessionDoneStateFactory: WaitForCloudSessionDoneStateFactory
-
-  private static let commandData = CommandData(data: "Some interesting data") // TODO: Replace me with actual data
 
   private var currentState: State?
 
@@ -31,7 +28,6 @@ final class DefaultBlippit {
        startedStateFactory: StartedStateFactory,
        setupTransferIdStateFactory: SetupTransferIdStateFactory,
        establishCloudSessionStateFactory: EstablishCloudSessionStateFactory,
-       uploadCommandDataStateFactory: UploadCommandDataStateFactory,
        transferDataTokenStateFactory: TransferDataTokenStateFactory,
        waitForCloudSessionDoneStateFactory: WaitForCloudSessionDoneStateFactory) {
 
@@ -43,7 +39,6 @@ final class DefaultBlippit {
     self.startedStateFactory = startedStateFactory
     self.setupTransferIdStateFactory = setupTransferIdStateFactory
     self.establishCloudSessionStateFactory = establishCloudSessionStateFactory
-    self.uploadCommandDataStateFactory = uploadCommandDataStateFactory
     self.transferDataTokenStateFactory = transferDataTokenStateFactory
     self.waitForCloudSessionDoneStateFactory = waitForCloudSessionDoneStateFactory
 
@@ -118,13 +113,6 @@ final class DefaultBlippit {
         return establishCloudSessionStateFactory.makeState(
           delegate: self,
           pid: pid,
-          podSession: podSession
-        )
-      case let .uploadCommandData(cloudSessionId, podSession):
-        return uploadCommandDataStateFactory.makeState(
-          delegate: self,
-          cloudSessionId: cloudSessionId,
-          data: DefaultBlippit.commandData,
           podSession: podSession
         )
       case let .transferDataToken(cloudSessionId, podSession, dataToken):

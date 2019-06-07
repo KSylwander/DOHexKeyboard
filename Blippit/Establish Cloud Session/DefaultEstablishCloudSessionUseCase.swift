@@ -27,10 +27,7 @@ extension DefaultEstablishCloudSessionUseCase: EstablishCloudSessionUseCase {
 
       return uploadDataUseCase.uploadData(with: request, from: data) { response, result in
         let result = result.flatMap { data in
-          return Result(catching: { () -> String in
-            let responseDto = try self.decoder.decode(EstablishCloudSessionResponseDto.self, from: data)
-            return responseDto.sessionId
-          })
+          return Result(catching: { try self.decoder.decode(EstablishCloudSessionResponseDto.self, from: data) })
         }
         completion(response, result)
       }

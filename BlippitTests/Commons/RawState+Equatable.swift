@@ -20,8 +20,6 @@ extension RawState: Equatable {
     case let (.setupTransferId(lhs), .setupTransferId(rhs)),
          let (.establishCloudSession(lhs), .establishCloudSession(rhs)):
       return lhs.pid == rhs.pid && lhs.podSession === rhs.podSession
-    case let (.uploadCommandData(lhs), .uploadCommandData(rhs)):
-      return lhs.cloudSessionId == rhs.cloudSessionId && lhs.podSession === rhs.podSession
     case let (.transferDataToken(lhs), .transferDataToken(rhs)):
       return lhs.cloudSessionId == rhs.cloudSessionId
         && lhs.podSession === rhs.podSession

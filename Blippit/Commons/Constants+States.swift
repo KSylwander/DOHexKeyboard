@@ -15,11 +15,6 @@ extension Constants {
       static let retryInterval = TimeInterval(1.0)
     }
 
-    enum uploadCommandData {
-      static let maxRetries = 3
-      static let retryInterval = TimeInterval(1.0)
-    }
-
     enum transferDataToken {
       static let maxRetries = 3
     }

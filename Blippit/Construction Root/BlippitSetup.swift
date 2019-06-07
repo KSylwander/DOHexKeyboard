@@ -68,24 +68,6 @@ public enum BlippitSetup {
           retryInterval: Constants.states.establishCloudSession.retryInterval
         )
       ),
-      uploadCommandDataStateFactory: DefaultUploadCommandDataStateFactory(
-        uploadCommandDataUseCase: DefaultUploadCommandDataUseCase(
-          requestBuilder: DefaultURLRequestBuilder(
-            apiConfig: Constants.api.uploadCommandData.config,
-            apiKey: configuration.blippitApiKey
-          ),
-          encoder: encoder,
-          decoder: decoder,
-          uploadDataUseCase: DefaultUploadDataUseCase(
-            uploadTaskFactory: urlSession,
-            responseValidator: responseValidator
-          )
-        ),
-        retryHandlerFactory: DefaultAsyncRetryHandlerFactory(
-          maxRetries: Constants.states.uploadCommandData.maxRetries,
-          retryInterval: Constants.states.uploadCommandData.retryInterval
-        )
-      ),
       transferDataTokenStateFactory: DefaultTransferDataTokenStateFactory(
         retryHandlerFactory: DefaultRetryHandlerFactory(maxRetries: Constants.states.transferDataToken.maxRetries)
       ),
