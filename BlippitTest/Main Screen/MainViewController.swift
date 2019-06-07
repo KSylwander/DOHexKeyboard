@@ -160,12 +160,8 @@ extension MainViewController: BlippitDelegate {
       setStatus("App terminal found")
       loadingIndicator.isHidden = true
       setIsCancelSessionEnabled(true)
-    case .initiatingSession:
+    case .sessionInitiated:
       setStatus("Initiating session...")
-      loadingIndicator.isHidden = false
-      setIsCancelSessionEnabled(true)
-    case .waitingForSessionDone:
-      setStatus("Waiting for session done...")
       loadingIndicator.isHidden = false
       setIsCancelSessionEnabled(true)
     case .sessionDone:

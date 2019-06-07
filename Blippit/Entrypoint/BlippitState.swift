@@ -12,7 +12,6 @@ public enum BlippitState {
   case lookingForAppTerminals
   case appTerminalFound
 
-  case initiatingSession
-  case waitingForSessionDone
+  case sessionInitiated
   case sessionDone
 }

@@ -112,7 +112,7 @@ final class DefaultBlippit {
         delegate?.blippit(self, didChangeState: .appTerminalFound)
         return setupTransferIdStateFactory.makeState(delegate: self, pid: pid, session: podSession)
       case let .establishCloudSession(pid, podSession):
-        delegate?.blippit(self, didChangeState: .initiatingSession)
+        delegate?.blippit(self, didChangeState: .sessionInitiated)
         return establishCloudSessionStateFactory.makeState(
           delegate: self,
           pid: pid,
@@ -126,7 +126,6 @@ final class DefaultBlippit {
           dataToken: dataToken
         )
       case let .waitForCloudSessionDone(cloudSessionId, podSession):
-        delegate?.blippit(self, didChangeState: .waitingForSessionDone)
         return waitForCloudSessionDoneStateFactory.makeState(
           delegate: self,
           cloudSessionId: cloudSessionId,
