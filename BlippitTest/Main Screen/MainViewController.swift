@@ -59,7 +59,7 @@ final class MainViewController: UIViewController {
           return blippit
         }
       }()
-      blippit.start(userId: userId)
+      blippit.start()
     } catch {
       handleError(error)
     }

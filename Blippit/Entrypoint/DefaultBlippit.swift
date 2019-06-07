@@ -31,7 +31,6 @@ final class DefaultBlippit {
   private let transferDataTokenStateFactory: TransferDataTokenStateFactory
   private let waitForCloudSessionDoneStateFactory: WaitForCloudSessionDoneStateFactory
 
-  private var userId: String!
   private static let commandData = CommandData(data: "Some interesting data") // TODO: Replace me with actual data
 
   private var currentState: State?
@@ -129,7 +128,6 @@ final class DefaultBlippit {
         return establishCloudSessionStateFactory.makeState(
           delegate: self,
           pid: pid,
-          userId: userId,
           podSession: podSession
         )
       case let .uploadCommandData(cloudSessionId, podSession):
@@ -171,11 +169,10 @@ final class DefaultBlippit {
 }
 
 extension DefaultBlippit: Blippit {
-  func start(userId: String) {
+  func start() {
     guard currentState == nil else {
       return
     }
-    self.userId = userId
     setState(to: .starting)
   }
 

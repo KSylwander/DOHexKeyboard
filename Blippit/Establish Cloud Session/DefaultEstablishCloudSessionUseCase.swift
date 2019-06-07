@@ -18,11 +18,11 @@ struct DefaultEstablishCloudSessionUseCase {
 }
 
 extension DefaultEstablishCloudSessionUseCase: EstablishCloudSessionUseCase {
-  func establishCloudSession(pid: UInt32, userId: String, completion: @escaping Completion) -> Cancellable? {
+  func establishCloudSession(pid: UInt32, serviceInfo: ServiceInfo, completion: @escaping Completion) -> Cancellable? {
     do {
       let request = requestBuilder.build()
 
-      let requestDto = EstablishCloudSessionRequestDto(pid: pid, userId: userId, appId: appId)
+      let requestDto = EstablishCloudSessionRequestDto(pid: pid, appId: appId, serviceInfo: serviceInfo)
       let data = try encoder.encode(requestDto)
 
       return uploadDataUseCase.uploadData(with: request, from: data) { response, result in

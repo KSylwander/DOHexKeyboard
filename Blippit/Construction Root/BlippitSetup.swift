@@ -49,6 +49,7 @@ public enum BlippitSetup {
       startedStateFactory: DefaultStartedStateFactory(),
       setupTransferIdStateFactory: DefaultSetupTransferIdStateFactory(),
       establishCloudSessionStateFactory: DefaultEstablishCloudSessionStateFactory(
+        serviceInfo: configuration.serviceInfo,
         establishCloudSessionUseCase: DefaultEstablishCloudSessionUseCase(
           appId: configuration.blippitAppId,
           requestBuilder: DefaultURLRequestBuilder(

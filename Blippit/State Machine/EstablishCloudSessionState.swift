@@ -15,7 +15,7 @@ final class EstablishCloudSessionState {
 
   private let pid: UInt32
   private let podSession: PodSession
-  private let userId: String
+  private let serviceInfo: ServiceInfo
 
   private var task: Cancellable?
 
@@ -28,7 +28,7 @@ final class EstablishCloudSessionState {
 
   init(delegate: StateDelegate,
        pid: UInt32,
-       userId: String,
+       serviceInfo: ServiceInfo,
        podSession: PodSession,
        establishCloudSessionUseCase: EstablishCloudSessionUseCase,
        retryHandlerFactory: AsyncRetryHandlerFactory) {
@@ -37,7 +37,7 @@ final class EstablishCloudSessionState {
 
     self.pid = pid
     self.podSession = podSession
-    self.userId = userId
+    self.serviceInfo = serviceInfo
 
     self.establishCloudSessionUseCase = establishCloudSessionUseCase
     self.retryHandlerFactory = retryHandlerFactory
@@ -52,7 +52,7 @@ extension EstablishCloudSessionState: HttpRequestState {
       return
     }
 
-    task = establishCloudSessionUseCase.establishCloudSession(pid: pid, userId: userId) { _, result in
+    task = establishCloudSessionUseCase.establishCloudSession(pid: pid, serviceInfo: serviceInfo) { _, result in
       switch result {
       case let .failure(error):
         self.handleError(error)

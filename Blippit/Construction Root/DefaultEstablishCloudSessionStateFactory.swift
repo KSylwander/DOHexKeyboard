@@ -9,16 +9,18 @@
 import Podz
 
 struct DefaultEstablishCloudSessionStateFactory {
+  let serviceInfo: ServiceInfo
+
   let establishCloudSessionUseCase: EstablishCloudSessionUseCase
   let retryHandlerFactory: AsyncRetryHandlerFactory
 }
 
 extension DefaultEstablishCloudSessionStateFactory: EstablishCloudSessionStateFactory {
-  func makeState(delegate: StateDelegate, pid: UInt32, userId: String, podSession: PodSession) -> State {
+  func makeState(delegate: StateDelegate, pid: UInt32, podSession: PodSession) -> State {
     return EstablishCloudSessionState(
       delegate: delegate,
       pid: pid,
-      userId: userId,
+      serviceInfo: serviceInfo,
       podSession: podSession,
       establishCloudSessionUseCase: establishCloudSessionUseCase,
       retryHandlerFactory: retryHandlerFactory

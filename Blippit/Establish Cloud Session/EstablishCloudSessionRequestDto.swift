@@ -10,21 +10,21 @@ import Foundation
 
 struct EstablishCloudSessionRequestDto {
   let pid: UInt32
-  let userId: String
   let appId: UUID
+  let serviceInfo: ServiceInfo
 }
 
 extension EstablishCloudSessionRequestDto: Encodable {
   private enum CodingKeys: String, CodingKey {
     case pid = "atid"
-    case userId = "userid"
     case appId = "appid"
+    case serviceInfo = "serviceinfo"
   }
 
   func encode(to encoder: Swift.Encoder) throws {
     var container = encoder.container(keyedBy: CodingKeys.self)
     try container.encode("\(pid)", forKey: .pid)
-    try container.encode(userId, forKey: .userId)
     try container.encode(appId, forKey: .appId)
+    try container.encode(serviceInfo, forKey: .serviceInfo)
   }
 }

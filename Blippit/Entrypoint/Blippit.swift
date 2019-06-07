@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol Blippit {
-  func start(userId: String)
+  func start()
   func stop()
 
   func reset()
