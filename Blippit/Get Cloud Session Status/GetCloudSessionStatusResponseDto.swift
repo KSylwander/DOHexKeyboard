@@ -9,7 +9,22 @@
 import Foundation
 
 struct GetCloudSessionStatusResponseDto {
-  let status: CloudSessionStatus
+  enum Value: String, Decodable {
+    case notStarted = "not_started"
+    case established
+    case done
+  }
+  let value: Value
+
+  struct Content: Decodable {
+    let token: String
+  }
+  let content: Content
 }
 
-extension GetCloudSessionStatusResponseDto: Decodable {}
+extension GetCloudSessionStatusResponseDto: Decodable {
+  private enum CodingKeys: String, CodingKey {
+    case value = "status"
+    case content
+  }
+}

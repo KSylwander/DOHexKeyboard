@@ -8,10 +8,19 @@
 
 import Foundation
 
-enum CloudSessionStatus: String {
-  case notStarted = "not_started"
+enum CloudSessionStatus {
+  case notStarted
   case established
-  case done
-}
+  case done(token: String)
 
-extension CloudSessionStatus: Decodable {}
+  init(_ response: GetCloudSessionStatusResponseDto) {
+    switch response.value {
+    case .notStarted:
+      self = .notStarted
+    case .established:
+      self = .established
+    case .done:
+      self = .done(token: response.content.token)
+    }
+  }
+}
