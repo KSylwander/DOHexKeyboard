@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E1AF01722AA2ECC00066C80 /* ServiceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1AF01622AA2ECC00066C80 /* ServiceInfo.swift */; };
+		3E1AF01922AA327800066C80 /* BlippitState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1AF01822AA327800066C80 /* BlippitState.swift */; };
 		3E23C21A228C0E9400DA3305 /* UploadTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C219228C0E9400DA3305 /* UploadTaskFactory.swift */; };
 		3E23C21C228C0E9E00DA3305 /* URLSession+UploadTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C21B228C0E9E00DA3305 /* URLSession+UploadTaskFactory.swift */; };
 		3E23C21E228C0EA400DA3305 /* UploadDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C21D228C0EA400DA3305 /* UploadDataUseCase.swift */; };
@@ -218,6 +219,7 @@
 
 /* Begin PBXFileReference section */
 		3E1AF01622AA2ECC00066C80 /* ServiceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInfo.swift; sourceTree = "<group>"; };
+		3E1AF01822AA327800066C80 /* BlippitState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitState.swift; sourceTree = "<group>"; };
 		3E23C219228C0E9400DA3305 /* UploadTaskFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadTaskFactory.swift; sourceTree = "<group>"; };
 		3E23C21B228C0E9E00DA3305 /* URLSession+UploadTaskFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+UploadTaskFactory.swift"; sourceTree = "<group>"; };
 		3E23C21D228C0EA400DA3305 /* UploadDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadDataUseCase.swift; sourceTree = "<group>"; };
@@ -788,6 +790,7 @@
 				3EFADD2F228D53B100B3559A /* Blippit.swift */,
 				3EFADD2D228D534F00B3559A /* BlippitConfiguration.swift */,
 				3EFADD33228D567E00B3559A /* BlippitDelegate.swift */,
+				3E1AF01822AA327800066C80 /* BlippitState.swift */,
 				3EFADD35228D56C000B3559A /* DefaultBlippit.swift */,
 				3E1AF01622AA2ECC00066C80 /* ServiceInfo.swift */,
 			);
@@ -1024,6 +1027,7 @@
 				3E790F9A228ADC1700DB072F /* SecurityError.swift in Sources */,
 				3EE9ABD1228E94E70018896E /* EstablishCloudSessionStateFactory.swift in Sources */,
 				3E790FA6228ADC6B00DB072F /* DefaultApplyCertificatePinningUseCaseFactory.swift in Sources */,
+				3E1AF01922AA327800066C80 /* BlippitState.swift in Sources */,
 				3EFADD27228D4D6A00B3559A /* DefaultRetryHandlerFactory.swift in Sources */,
 				3E790FBA228AFA2200DB072F /* HttpMethod.swift in Sources */,
 				3E790FA8228ADC7800DB072F /* ValidateTrustUseCase.swift in Sources */,
