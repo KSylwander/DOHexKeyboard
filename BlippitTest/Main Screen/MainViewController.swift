@@ -22,7 +22,13 @@ final class MainViewController: UIViewController {
 
   private var blippitFactory: BlippitFactory!
   private var blippit: Blippit!
-  private var isBlippitActive = false
+
+  private var isBlippitActive = false {
+    didSet {
+      updateUserIdTextField()
+      updateToggleBlippitButton()
+    }
+  }
 
   static func instantiate(blippitFactory: BlippitFactory) -> MainViewController {
     let storyboard = UIStoryboard(name: String(describing: self), bundle: nil)
@@ -42,8 +48,10 @@ final class MainViewController: UIViewController {
   @IBAction private func toggleBlippitButtonTapped() {
     if !isBlippitActive {
       setupBlippitWithUserId(userIdTextField.text!)
+      isBlippitActive = true
     } else {
       blippit.stop()
+      isBlippitActive = false
     }
     view.endEditing(true)
   }
@@ -134,30 +142,27 @@ extension MainViewController: UITextFieldDelegate {
 }
 
 extension MainViewController: BlippitDelegate {
-  func blippitWillStart(_ blippit: Blippit) {
-    setStatus("Starting...")
-    loadingIndicator.isHidden = false
-
-    updateToggleBlippitButton(isStarting: true)
-  }
-
-  func blippitDidStart(_ blippit: Blippit) {
-    setStatus("Started")
-    loadingIndicator.isHidden = true
-
-    setErrorText("None")
-
-    isBlippitActive = true
-    updateUserIdTextField()
-    updateToggleBlippitButton()
-  }
-
-  func blippitDidStop(_ blippit: Blippit) {
-    setStatus("Stopped")
-
-    isBlippitActive = false
-    updateUserIdTextField()
-    updateToggleBlippitButton()
+  func blippit(_ blippit: Blippit, didChangeState state: BlippitState) {
+    switch state {
+    case .lookingForAppTerminals:
+      setStatus("Looking for app terminals...")
+      loadingIndicator.isHidden = false
+      setErrorText("None")
+      updateUserIdTextField()
+      updateToggleBlippitButton()
+    case .appTerminalFound:
+      setStatus("App terminal found")
+      loadingIndicator.isHidden = true
+    case .initiatingSession:
+      setStatus("Initiating session...")
+      loadingIndicator.isHidden = false
+    case .waitingForSessionDone:
+      setStatus("Waiting for session done...")
+      loadingIndicator.isHidden = false
+    case .sessionDone:
+      setStatus("Session completed")
+      loadingIndicator.isHidden = true
+    }
   }
 
   func blippit(_ blippit: Blippit, didFailWithError error: Error) {

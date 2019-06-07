@@ -9,16 +9,6 @@
 import Podz
 
 final class DefaultBlippit {
-  private var isActive = false {
-    didSet {
-      if isActive {
-        delegate?.blippitDidStart(self)
-      } else {
-        delegate?.blippitDidStop(self)
-      }
-    }
-  }
-
   private weak var delegate: BlippitDelegate?
 
   private let podz: Podz
@@ -114,17 +104,17 @@ final class DefaultBlippit {
     let state: State? = {
       switch rawState {
       case .initial:
-        isActive = false
         return nil
       case .starting:
-        delegate?.blippitWillStart(self)
         return startingStateFactory.makeState(delegate: self, podz: podz)
       case .started:
-        isActive = true
+        delegate?.blippit(self, didChangeState: .lookingForAppTerminals)
         return startedStateFactory.makeState(delegate: self)
       case let .setupTransferId(pid, podSession):
+        delegate?.blippit(self, didChangeState: .appTerminalFound)
         return setupTransferIdStateFactory.makeState(delegate: self, pid: pid, session: podSession)
       case let .establishCloudSession(pid, podSession):
+        delegate?.blippit(self, didChangeState: .initiatingSession)
         return establishCloudSessionStateFactory.makeState(
           delegate: self,
           pid: pid,
@@ -145,12 +135,15 @@ final class DefaultBlippit {
           dataToken: dataToken
         )
       case let .waitForCloudSessionDone(cloudSessionId):
+        delegate?.blippit(self, didChangeState: .waitingForSessionDone)
         return waitForCloudSessionDoneStateFactory.makeState(
           delegate: self,
           cloudSessionId: cloudSessionId
         )
       case .blippitSessionCompleted:
-        return StartedState(delegate: self)
+        delegate?.blippit(self, didChangeState: .sessionDone)
+        delegate?.blippit(self, didChangeState: .lookingForAppTerminals)
+        return startedStateFactory.makeState(delegate: self)
       }
     }()
 
