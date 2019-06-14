@@ -19,7 +19,7 @@ struct GetCloudSessionStatusResponseDto {
   struct Content: Decodable {
     let token: String
   }
-  let content: Content
+  let content: Content?
 }
 
 extension GetCloudSessionStatusResponseDto: Decodable {

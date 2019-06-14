@@ -13,14 +13,17 @@ enum CloudSessionStatus {
   case established
   case done(token: String)
 
-  init(_ response: GetCloudSessionStatusResponseDto) {
+  init(_ response: GetCloudSessionStatusResponseDto) throws {
     switch response.value {
     case .notStarted:
       self = .notStarted
     case .established:
       self = .established
     case .done:
-      self = .done(token: response.content.token)
+      guard let token = response.content?.token else {
+        throw InternalBlippitError.nilDoneToken
+      }
+      self = .done(token: token)
     }
   }
 }
