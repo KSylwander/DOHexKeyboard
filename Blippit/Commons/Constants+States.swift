@@ -15,7 +15,7 @@ extension Constants {
       static let retryInterval = TimeInterval(1.0)
     }
 
-    enum transferDataToken {
+    enum transferSessionToken {
       static let maxRetries = 3
     }
 

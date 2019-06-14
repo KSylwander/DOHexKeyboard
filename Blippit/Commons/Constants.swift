@@ -7,5 +7,5 @@
 //
 
 enum Constants {
-  static let dataTokenPrefix = "9959999"
+  static let sessionTokenPrefix = "9959999"
 }

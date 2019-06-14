@@ -60,12 +60,12 @@ extension EstablishCloudSessionState: HttpRequestState {
         self.handleError(error)
       case let .success(response):
         do {
-          let dataToken = try TransferId(from: "\(Constants.dataTokenPrefix)\(response.dataToken)")
+          let sessionToken = try TransferId(from: "\(Constants.sessionTokenPrefix)\(response.sessionToken)")
           self.move(
-            to: .transferDataToken(
+            to: .transferSessionToken(
               cloudSessionId: response.sessionId,
               podSession: self.podSession,
-              dataToken: dataToken
+              sessionToken: sessionToken
             )
           )
         } catch {

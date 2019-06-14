@@ -24,10 +24,10 @@ public enum BlippitError {
   case invalidCredentials(responseData: Data?)
   case invalidHttpStatusCode(Int, responseData: Data?)
 
-  /* Sending of data token failed after `Constants.states.transferDataToken.maxRetries + 1` attempts. May be fixed by
-   * asking the user to blip again.
+  /* Sending of session token failed after `Constants.states.transferSessionToken.maxRetries + 1` attempts. May be fixed
+   * by asking the user to blip again.
    */
-  case transferDataTokenFailed
+  case transferSessionTokenFailed
 
   /* Sending of cloud session done token failed after `Constants.states.transferCloudSessionDoneToken.maxRetries + 1`
    * attempts. May be fixed by asking the user to blip again.

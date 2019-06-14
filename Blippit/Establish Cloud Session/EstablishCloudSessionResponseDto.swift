@@ -10,12 +10,12 @@ import Foundation
 
 struct EstablishCloudSessionResponseDto {
   let sessionId: String
-  let dataToken: String
+  let sessionToken: String
 }
 
 extension EstablishCloudSessionResponseDto: Decodable {
   private enum CodingKeys: String, CodingKey {
     case sessionId = "sessionid"
-    case dataToken = "datatoken"
+    case sessionToken = "sessiontoken"
   }
 }
