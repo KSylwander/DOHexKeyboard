@@ -21,6 +21,9 @@ extension EstablishCloudSessionRequestDto: Encodable {
     case serviceInfo = "serviceinfo"
   }
 
+  /* TODO: Remove `encode(to:)` method when `atid` parameter is fixed on the server (i.e., needs to be an int instead
+   * of a string)
+   */
   func encode(to encoder: Swift.Encoder) throws {
     var container = encoder.container(keyedBy: CodingKeys.self)
     try container.encode("\(pid)", forKey: .pid)
