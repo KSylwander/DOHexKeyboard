@@ -14,7 +14,8 @@ final class DefaultBlippit {
   private let podz: Podz
 
   private let startingStateFactory: StartingStateFactory
-  private let startedStateFactory: StartedStateFactory
+  private let waitForPodStateFactory: WaitForPodStateFactory
+  private let waitForBlipStateFactory: WaitForBlipStateFactory
   private let setupTransferIdStateFactory: SetupTransferIdStateFactory
   private let establishCloudSessionStateFactory: EstablishCloudSessionStateFactory
   private let transferSessionTokenStateFactory: TransferSessionTokenStateFactory
@@ -26,7 +27,8 @@ final class DefaultBlippit {
   init(delegate: BlippitDelegate,
        podz: Podz,
        startingStateFactory: StartingStateFactory,
-       startedStateFactory: StartedStateFactory,
+       waitForPodStateFactory: WaitForPodStateFactory,
+       waitForBlipStateFactory: WaitForBlipStateFactory,
        setupTransferIdStateFactory: SetupTransferIdStateFactory,
        establishCloudSessionStateFactory: EstablishCloudSessionStateFactory,
        transferSessionTokenStateFactory: TransferSessionTokenStateFactory,
@@ -38,7 +40,8 @@ final class DefaultBlippit {
     self.podz = podz
 
     self.startingStateFactory = startingStateFactory
-    self.startedStateFactory = startedStateFactory
+    self.waitForPodStateFactory = waitForPodStateFactory
+    self.waitForBlipStateFactory = waitForBlipStateFactory
     self.setupTransferIdStateFactory = setupTransferIdStateFactory
     self.establishCloudSessionStateFactory = establishCloudSessionStateFactory
     self.transferSessionTokenStateFactory = transferSessionTokenStateFactory
@@ -71,6 +74,11 @@ final class DefaultBlippit {
   }
 
   private func handleNewPod(_ pod: Pod) {
+    /* Propagate new pod event to the current state, if applicable */
+    if let currentState = currentState as? NewPodObserving {
+      currentState.handleNewPod(pod)
+    }
+
     pod.onStateChanged = { [weak self] pod, state in
       self?.handleState(state, for: pod)
     }
@@ -105,14 +113,16 @@ final class DefaultBlippit {
         return nil
       case .starting:
         return startingStateFactory.makeState(delegate: self, podz: podz)
-      case .started:
+      case .waitForPod:
         delegate?.blippit(self, didChangeState: .lookingForAppTerminals)
-        return startedStateFactory.makeState(delegate: self)
-      case let .setupTransferId(pid, podSession):
+        return waitForPodStateFactory.makeState(delegate: self)
+      case .waitForBlip:
         delegate?.blippit(self, didChangeState: .appTerminalFound)
+        return waitForBlipStateFactory.makeState(delegate: self)
+      case let .setupTransferId(pid, podSession):
+        delegate?.blippit(self, didChangeState: .sessionInitiated)
         return setupTransferIdStateFactory.makeState(delegate: self, pid: pid, session: podSession)
       case let .establishCloudSession(pid, podSession):
-        delegate?.blippit(self, didChangeState: .sessionInitiated)
         return establishCloudSessionStateFactory.makeState(
           delegate: self,
           pid: pid,
@@ -139,8 +149,8 @@ final class DefaultBlippit {
         )
       case .blippitSessionCompleted:
         delegate?.blippit(self, didChangeState: .sessionDone)
-        delegate?.blippit(self, didChangeState: .lookingForAppTerminals)
-        return startedStateFactory.makeState(delegate: self)
+        delegate?.blippit(self, didChangeState: .appTerminalFound)
+        return waitForBlipStateFactory.makeState(delegate: self)
       }
     }()
 

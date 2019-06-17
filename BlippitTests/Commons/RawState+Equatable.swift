@@ -15,7 +15,9 @@ extension RawState: Equatable {
       return true
     case (.starting, .starting):
       return true
-    case (.started, .started):
+    case (.waitForPod, .waitForPod):
+      return true
+    case (.waitForBlip, .waitForBlip):
       return true
     case let (.setupTransferId(lhs), .setupTransferId(rhs)),
          let (.establishCloudSession(lhs), .establishCloudSession(rhs)):

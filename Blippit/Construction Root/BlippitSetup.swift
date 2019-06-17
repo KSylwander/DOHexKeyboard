@@ -46,7 +46,8 @@ public enum BlippitSetup {
       delegate: delegate,
       podz: try PodzSetup.setup(appId: configuration.podzAppId, apiKey: configuration.podzApiKey),
       startingStateFactory: DefaultStartingStateFactory(),
-      startedStateFactory: DefaultStartedStateFactory(),
+      waitForPodStateFactory: DefaultWaitForPodStateFactory(),
+      waitForBlipStateFactory: DefaultWaitForBlipStateFactory(),
       setupTransferIdStateFactory: DefaultSetupTransferIdStateFactory(),
       establishCloudSessionStateFactory: DefaultEstablishCloudSessionStateFactory(
         serviceInfo: configuration.serviceInfo,

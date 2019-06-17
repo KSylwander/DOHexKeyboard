@@ -1,5 +1,5 @@
 //
-//  StartedStateSpec.swift
+//  WaitForBlipStateSpec.swift
 //  BlippitTests
 //
 //  Created by Jerson Perpetua on 2019-05-08.
@@ -13,16 +13,16 @@ import Quick
 
 @testable import Blippit
 
-final class StartedStateSpec: QuickSpec {
+final class WaitForBlipStateSpec: QuickSpec {
   override func spec() {
-    describe("the started state") {
+    describe("the wait-for-blip state") {
       let stateDelegate = MockStateDelegate().withEnabledDefaultImplementation(StateDelegateStub())
 
-      var sut = StartedState(delegate: stateDelegate)
+      var sut = WaitForBlipState(delegate: stateDelegate)
 
       afterEach {
         reset(stateDelegate)
-        sut = StartedState(delegate: stateDelegate)
+        sut = WaitForBlipState(delegate: stateDelegate)
       }
 
       context("when handling pod states") {

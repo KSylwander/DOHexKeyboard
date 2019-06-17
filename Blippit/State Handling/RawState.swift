@@ -12,7 +12,8 @@ import Podz
 enum RawState {
   case initial
   case starting
-  case started
+  case waitForPod
+  case waitForBlip
   case setupTransferId(pid: UInt32, podSession: PodSession)
   case establishCloudSession(pid: UInt32, podSession: PodSession)
   case transferSessionToken(cloudSessionId: String, podSession: PodSession, sessionToken: TransferId)

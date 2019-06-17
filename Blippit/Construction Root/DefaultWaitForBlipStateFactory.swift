@@ -1,5 +1,5 @@
 //
-//  DefaultStartedStateFactory.swift
+//  DefaultWaitForBlipStateFactory.swift
 //  Blippit
 //
 //  Created by Jerson Perpetua on 2019-05-16.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct DefaultStartedStateFactory {}
+struct DefaultWaitForBlipStateFactory {}
 
-extension DefaultStartedStateFactory: StartedStateFactory {
+extension DefaultWaitForBlipStateFactory: WaitForBlipStateFactory {
   func makeState(delegate: StateDelegate) -> State {
-    return StartedState(delegate: delegate)
+    return WaitForBlipState(delegate: delegate)
   }
 }
