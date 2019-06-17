@@ -24,6 +24,8 @@ final class DefaultBlippit {
 
   private var currentState: State?
 
+  private var blippedPod: Pod?
+
   init(delegate: BlippitDelegate,
        podz: Podz,
        startingStateFactory: StartingStateFactory,
@@ -55,6 +57,10 @@ final class DefaultBlippit {
     podz.onPodFound = { [weak self] pod in
       self?.handleNewPod(pod)
     }
+
+    podz.onPodLost = { [weak self] pod in
+      self?.handleLostPod(pod)
+    }
   }
 
   private func cancelCurrentState() {
@@ -84,11 +90,19 @@ final class DefaultBlippit {
     }
   }
 
+  private func handleLostPod(_ pod: Pod) {
+    guard pod.pid == blippedPod?.pid else {
+      return
+    }
+    blippedPod = nil
+  }
+
   private func handleState(_ state: PodState, for pod: Pod) {
     if case let .blip(session) = state {
       session.onSessionStateChanged = { [weak self] session, state in
         self?.handleState(state, for: session)
       }
+      blippedPod = pod
     }
 
     /* Propagate pod state changes to the current state, if applicable */
@@ -166,6 +180,9 @@ final class DefaultBlippit {
     if let state = state as? Startable {
       state.start()
     }
+
+    /* Allow interested states (e.g., wait-for-pod) to receive the blipped pod if the latter is still within range */
+    blippedPod.map(handleNewPod(_:))
   }
 }
 
