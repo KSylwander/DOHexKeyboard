@@ -112,6 +112,7 @@ final class DefaultBlippit {
       case .initial:
         return nil
       case .starting:
+        delegate?.blippit(self, didChangeState: .started)
         return startingStateFactory.makeState(delegate: self, podz: podz)
       case .waitForPod:
         delegate?.blippit(self, didChangeState: .lookingForAppTerminals)
@@ -185,6 +186,8 @@ extension DefaultBlippit: Blippit {
     podz.stop()
 
     setState(to: .initial)
+
+    delegate?.blippit(self, didChangeState: .stopped)
   }
 
   func cancelOngoingSession() {

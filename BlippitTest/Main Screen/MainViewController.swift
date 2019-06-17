@@ -49,10 +49,8 @@ final class MainViewController: UIViewController {
   @IBAction private func toggleBlippitButtonTapped() {
     if !isBlippitActive {
       setupBlippitWithUserId(userIdTextField.text!)
-      isBlippitActive = true
     } else {
       blippit.stop()
-      isBlippitActive = false
     }
     view.endEditing(true)
   }
@@ -110,14 +108,14 @@ final class MainViewController: UIViewController {
     blippit.cancelOngoingSession()
   }
 
-  private func updateToggleBlippitButton(withUserId userId: String? = nil, isStarting: Bool = false) {
+  private func updateToggleBlippitButton(withUserId userId: String? = nil) {
     UIView.performWithoutAnimation {
       toggleBlippitButton.setTitle(!isBlippitActive ? "Start" : "Stop", for: .normal)
       toggleBlippitButton.layoutIfNeeded()
     }
 
     let text = userId ?? userIdTextField.text ?? ""
-    let isEnabled = !text.isEmpty && !isStarting
+    let isEnabled = !text.isEmpty
 
     toggleBlippitButton.isEnabled = isEnabled
     toggleBlippitButton.alpha = isEnabled ? 1.0 : 0.7
@@ -149,23 +147,29 @@ extension MainViewController: UITextFieldDelegate {
 extension MainViewController: BlippitDelegate {
   func blippit(_ blippit: Blippit, didChangeState state: BlippitState) {
     switch state {
+    case .started:
+      isBlippitActive = true
+      setStatus("Started")
+      setErrorText("None")
     case .lookingForAppTerminals:
       setStatus("Looking for app terminals...")
       loadingIndicator.isHidden = false
-      setErrorText("None")
-      updateUserIdTextField()
-      updateToggleBlippitButton()
       setIsCancelSessionEnabled(false)
     case .appTerminalFound:
       setStatus("App terminal found")
       loadingIndicator.isHidden = true
-      setIsCancelSessionEnabled(true)
+      setIsCancelSessionEnabled(false)
     case .sessionInitiated:
       setStatus("Initiating session...")
       loadingIndicator.isHidden = false
       setIsCancelSessionEnabled(true)
     case .sessionDone:
       setStatus("Session completed")
+      loadingIndicator.isHidden = true
+      setIsCancelSessionEnabled(false)
+    case .stopped:
+      isBlippitActive = false
+      setStatus("Stopped")
       loadingIndicator.isHidden = true
       setIsCancelSessionEnabled(false)
     }

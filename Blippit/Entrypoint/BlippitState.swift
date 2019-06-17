@@ -9,9 +9,13 @@
 import Foundation
 
 public enum BlippitState {
+  case started
+
   case lookingForAppTerminals
   case appTerminalFound
 
   case sessionInitiated
   case sessionDone
+
+  case stopped
 }
