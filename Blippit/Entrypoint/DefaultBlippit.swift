@@ -23,6 +23,7 @@ final class DefaultBlippit {
   private let transferCloudSessionDoneTokenStateFactory: TransferCloudSessionDoneTokenStateFactory
 
   private var currentState: State?
+  private var isStateTransitioningDisabled = false
 
   private var blippedPod: Pod?
 
@@ -120,6 +121,10 @@ final class DefaultBlippit {
   }
 
   private func setState(to rawState: RawState) {
+    guard !isStateTransitioningDisabled else {
+      return
+    }
+
     /* Create the actual state from the raw state metadata */
     let state: State? = {
       switch rawState {
@@ -199,8 +204,10 @@ extension DefaultBlippit: Blippit {
       return
     }
 
+    isStateTransitioningDisabled = true
     cancelCurrentState()
     podz.stop()
+    isStateTransitioningDisabled = false
 
     setState(to: .initial)
 
