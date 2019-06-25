@@ -18,10 +18,10 @@ extension DefaultHttpUrlResponseValidator: HttpUrlResponseValidator {
       return nil
     case 401:
       /* Invalid API key */
-      return BlippitError.invalidCredentials(data: data)
+      return BlippitError.invalidCredentials(responseData: data)
     default:
       /* Everything else is an error */
-      return BlippitError.invalidHttpStatusCode(response.statusCode, data: data)
+      return BlippitError.invalidHttpStatusCode(response.statusCode, responseData: data)
     }
   }
 }

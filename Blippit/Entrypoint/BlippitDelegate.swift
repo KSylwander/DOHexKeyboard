@@ -9,9 +9,6 @@
 import Foundation
 
 public protocol BlippitDelegate: AnyObject {
-  func blippitWillStart(_ blippit: Blippit)
-  func blippitDidStart(_ blippit: Blippit)
-  func blippitDidStop(_ blippit: Blippit)
-
+  func blippit(_ blippit: Blippit, didChangeState state: BlippitState)
   func blippit(_ blippit: Blippit, didFailWithError error: Error)
 }

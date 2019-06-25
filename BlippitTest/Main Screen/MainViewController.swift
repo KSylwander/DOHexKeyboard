@@ -17,12 +17,19 @@ final class MainViewController: UIViewController {
   @IBOutlet private var errorLabel: UILabel!
   @IBOutlet private var userIdTextField: UITextField!
   @IBOutlet private var toggleBlippitButton: UIButton!
+  @IBOutlet private var cancelSessionButton: UIButton!
 
   private lazy var locationManager = CLLocationManager()
 
   private var blippitFactory: BlippitFactory!
   private var blippit: Blippit!
-  private var isBlippitActive = false
+
+  private var isBlippitActive = false {
+    didSet {
+      updateUserIdTextField()
+      updateToggleBlippitButton()
+    }
+  }
 
   static func instantiate(blippitFactory: BlippitFactory) -> MainViewController {
     let storyboard = UIStoryboard(name: String(describing: self), bundle: nil)
@@ -54,12 +61,12 @@ final class MainViewController: UIViewController {
         if let blippit = self.blippit {
           return blippit
         } else {
-          let blippit = try blippitFactory.makeBlippit(delegate: self)
+          let blippit = try blippitFactory.makeBlippit(delegate: self, userId: userId)
           self.blippit = blippit
           return blippit
         }
       }()
-      blippit.start(userId: userId)
+      blippit.start()
     } catch {
       handleError(error)
     }
@@ -97,14 +104,18 @@ final class MainViewController: UIViewController {
     errorLabel.text = errorText
   }
 
-  private func updateToggleBlippitButton(withUserId userId: String? = nil, isStarting: Bool = false) {
+  @IBAction private func cancelSessionButtonTapped() {
+    blippit.cancelOngoingSession()
+  }
+
+  private func updateToggleBlippitButton(withUserId userId: String? = nil) {
     UIView.performWithoutAnimation {
       toggleBlippitButton.setTitle(!isBlippitActive ? "Start" : "Stop", for: .normal)
       toggleBlippitButton.layoutIfNeeded()
     }
 
     let text = userId ?? userIdTextField.text ?? ""
-    let isEnabled = !text.isEmpty && !isStarting
+    let isEnabled = !text.isEmpty
 
     toggleBlippitButton.isEnabled = isEnabled
     toggleBlippitButton.alpha = isEnabled ? 1.0 : 0.7
@@ -134,30 +145,34 @@ extension MainViewController: UITextFieldDelegate {
 }
 
 extension MainViewController: BlippitDelegate {
-  func blippitWillStart(_ blippit: Blippit) {
-    setStatus("Starting...")
-    loadingIndicator.isHidden = false
-
-    updateToggleBlippitButton(isStarting: true)
-  }
-
-  func blippitDidStart(_ blippit: Blippit) {
-    setStatus("Started")
-    loadingIndicator.isHidden = true
-
-    setErrorText("None")
-
-    isBlippitActive = true
-    updateUserIdTextField()
-    updateToggleBlippitButton()
-  }
-
-  func blippitDidStop(_ blippit: Blippit) {
-    setStatus("Stopped")
-
-    isBlippitActive = false
-    updateUserIdTextField()
-    updateToggleBlippitButton()
+  func blippit(_ blippit: Blippit, didChangeState state: BlippitState) {
+    switch state {
+    case .started:
+      isBlippitActive = true
+      setStatus("Started")
+      setErrorText("None")
+    case .lookingForAppTerminals:
+      setStatus("Looking for app terminals...")
+      loadingIndicator.isHidden = false
+      setIsCancelSessionEnabled(false)
+    case .appTerminalFound:
+      setStatus("App terminal found")
+      loadingIndicator.isHidden = true
+      setIsCancelSessionEnabled(false)
+    case .sessionInitiated:
+      setStatus("Initiating session...")
+      loadingIndicator.isHidden = false
+      setIsCancelSessionEnabled(true)
+    case .sessionDone:
+      setStatus("Session completed")
+      loadingIndicator.isHidden = true
+      setIsCancelSessionEnabled(false)
+    case .stopped:
+      isBlippitActive = false
+      setStatus("Stopped")
+      loadingIndicator.isHidden = true
+      setIsCancelSessionEnabled(false)
+    }
   }
 
   func blippit(_ blippit: Blippit, didFailWithError error: Error) {
@@ -170,6 +185,11 @@ extension MainViewController: BlippitDelegate {
     let isEnabled = !isBlippitActive
     userIdTextField.isEnabled = isEnabled
     userIdTextField.alpha = isEnabled ? 1.0 : 0.7
+  }
+
+  private func setIsCancelSessionEnabled(_ isCancelSessionEnabled: Bool) {
+    cancelSessionButton.isEnabled = isCancelSessionEnabled
+    cancelSessionButton.alpha = isCancelSessionEnabled ? 1.0 : 0.7
   }
 
   private func setStatus(_ status: String) {

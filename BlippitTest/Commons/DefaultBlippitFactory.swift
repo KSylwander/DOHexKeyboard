@@ -9,11 +9,26 @@
 import Blippit
 
 struct DefaultBlippitFactory {
-  let configuration: BlippitConfiguration
+  let podzApiKey: UUID
+  let podzAppId: UUID
+  let blippitApiKey: UUID
+  let blippitAppId: UUID
 }
 
 extension DefaultBlippitFactory: BlippitFactory {
-  func makeBlippit(delegate: BlippitDelegate) throws -> Blippit {
-    return try BlippitSetup.setup(delegate: delegate, configuration: configuration)
+  func makeBlippit(delegate: BlippitDelegate, userId: String) throws -> Blippit {
+    return try BlippitSetup.setup(
+      delegate: delegate,
+      configuration: BlippitConfiguration(
+        podzApiKey: podzApiKey,
+        podzAppId: podzAppId,
+        blippitApiKey: blippitApiKey,
+        blippitAppId: blippitAppId,
+        serviceInfo: [
+          "command": "payment",
+          "userid": userId
+        ]
+      )
+    )
   }
 }

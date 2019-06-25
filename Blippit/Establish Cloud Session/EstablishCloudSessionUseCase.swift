@@ -9,6 +9,6 @@
 import Foundation
 
 protocol EstablishCloudSessionUseCase {
-  typealias Completion = (_ response: HTTPURLResponse?, _ result: Result<String, Error>) -> Void
-  func establishCloudSession(pid: UInt32, userId: String, completion: @escaping Completion) -> Cancellable?
+  typealias Completion = (_ response: HTTPURLResponse?, _ result: Result<CloudSession, Error>) -> Void
+  func establishCloudSession(pid: UInt32, serviceInfo: ServiceInfo, completion: @escaping Completion) -> Cancellable?
 }

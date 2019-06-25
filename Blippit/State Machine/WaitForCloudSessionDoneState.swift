@@ -17,6 +17,8 @@ final class WaitForCloudSessionDoneState {
   private var task: Cancellable?
   private let pollInterval: TimeInterval
 
+  private let podSession: PodSession
+
   private let getCloudSessionStatusUseCase: GetCloudSessionStatusUseCase
 
   private let retryHandlerFactory: AsyncRetryHandlerFactory
@@ -27,6 +29,7 @@ final class WaitForCloudSessionDoneState {
   init(delegate: StateDelegate,
        cloudSessionId: String,
        pollInterval: TimeInterval,
+       podSession: PodSession,
        getCloudSessionStatusUseCase: GetCloudSessionStatusUseCase,
        retryHandlerFactory: AsyncRetryHandlerFactory) {
 
@@ -35,12 +38,16 @@ final class WaitForCloudSessionDoneState {
     self.cloudSessionId = cloudSessionId
     self.pollInterval = pollInterval
 
+    self.podSession = podSession
+
     self.getCloudSessionStatusUseCase = getCloudSessionStatusUseCase
     self.retryHandlerFactory = retryHandlerFactory
   }
 }
 
 extension WaitForCloudSessionDoneState: State {}
+
+extension WaitForCloudSessionDoneState: BlippitSessionState {}
 
 extension WaitForCloudSessionDoneState: HttpRequestState {
   func performRequest() {
@@ -56,8 +63,13 @@ extension WaitForCloudSessionDoneState: HttpRequestState {
         switch status {
         case .established, .notStarted:
           self.scheduleNextPoll()
-        case .done:
-          self.move(to: .blippitSessionCompleted)
+        case let .done(doneToken):
+          do {
+            let doneToken = try TransferId(from: doneToken)
+            self.move(to: .transferCloudSessionDoneToken(podSession: self.podSession, doneToken: doneToken))
+          } catch {
+            self.handleError(error)
+          }
         }
       }
     }
@@ -77,20 +89,17 @@ extension WaitForCloudSessionDoneState: HttpRequestState {
   }
 }
 
-extension WaitForCloudSessionDoneState: Cancellable {
-  func cancel() {
-    guard !isCancelling else {
-      return
-    }
-    isCancelling = true
-
-    Log.debug(.public("Cancelling \(logDescription)..."))
+extension WaitForCloudSessionDoneState: CancellationHandler {
+  func handleCancellation() {
     task?.cancel()
+  }
+}
 
-    /* Move back to the starting state after a cancellation. This allows us to make sure that the Podz is still in the
-     * correct state after the previous operations.
-     */
-    delegate?.state(self, moveTo: .starting)
+extension WaitForCloudSessionDoneState: DefaultPodSessionStateObservingState {}
+
+extension WaitForCloudSessionDoneState: CancellablePodSessionState {
+  var session: PodSession {
+    return podSession
   }
 }
 

@@ -15,19 +15,19 @@ extension RawState: Equatable {
       return true
     case (.starting, .starting):
       return true
-    case (.started, .started):
+    case (.waitForPod, .waitForPod):
+      return true
+    case (.waitForBlip, .waitForBlip):
       return true
     case let (.setupTransferId(lhs), .setupTransferId(rhs)),
          let (.establishCloudSession(lhs), .establishCloudSession(rhs)):
       return lhs.pid == rhs.pid && lhs.podSession === rhs.podSession
-    case let (.uploadCommandData(lhs), .uploadCommandData(rhs)):
-      return lhs.cloudSessionId == rhs.cloudSessionId && lhs.podSession === rhs.podSession
-    case let (.transferDataToken(lhs), .transferDataToken(rhs)):
+    case let (.transferSessionToken(lhs), .transferSessionToken(rhs)):
       return lhs.cloudSessionId == rhs.cloudSessionId
         && lhs.podSession === rhs.podSession
-        && lhs.dataToken == rhs.dataToken
+        && lhs.sessionToken == rhs.sessionToken
     case let (.waitForCloudSessionDone(lhs), .waitForCloudSessionDone(rhs)):
-      return lhs == rhs
+      return lhs.cloudSessionId == rhs.cloudSessionId && lhs.podSession === rhs.podSession
     case (.blippitSessionCompleted, .blippitSessionCompleted):
       return true
     default:

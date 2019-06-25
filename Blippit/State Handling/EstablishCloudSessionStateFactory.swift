@@ -9,5 +9,5 @@
 import Podz
 
 protocol EstablishCloudSessionStateFactory {
-  func makeState(delegate: StateDelegate, pid: UInt32, userId: String, podSession: PodSession) -> State
+  func makeState(delegate: StateDelegate, pid: UInt32, podSession: PodSession) -> State
 }

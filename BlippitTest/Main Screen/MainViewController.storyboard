@@ -102,7 +102,7 @@
                                                 <rect key="frame" x="0.0" y="65" width="343" height="44"/>
                                                 <subviews>
                                                     <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEm-xu-ACg">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="125.5" height="44"/>
                                                         <color key="backgroundColor" name="LightShades"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="oAP-EC-Axe"/>
@@ -120,7 +120,29 @@
                                                             <action selector="toggleBlippitButtonTapped" destination="9VG-gb-OMM" eventType="touchUpInside" id="k1Y-xr-faM"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ly4-99-aF7">
+                                                        <rect key="frame" x="133.5" y="0.0" width="209.5" height="44"/>
+                                                        <color key="backgroundColor" name="DarkAccent"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="c3Z-1T-5z6"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="20"/>
+                                                        <state key="normal" title="Cancel Session">
+                                                            <color key="titleColor" name="LightShades"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="cancelSessionButtonTapped" destination="9VG-gb-OMM" eventType="touchUpInside" id="5vp-21-JzZ"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="rEm-xu-ACg" firstAttribute="width" secondItem="ly4-99-aF7" secondAttribute="width" multiplier="0.6" id="8jk-6n-tEH"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                     </stackView>
@@ -141,6 +163,7 @@
                         <viewLayoutGuide key="safeArea" id="t2Q-sD-jTD"/>
                     </view>
                     <connections>
+                        <outlet property="cancelSessionButton" destination="ly4-99-aF7" id="v2N-hr-FQT"/>
                         <outlet property="errorLabel" destination="dC5-Sf-Kum" id="d23-1H-WsQ"/>
                         <outlet property="loadingIndicator" destination="HqF-iM-zXM" id="frw-Cu-Ji2"/>
                         <outlet property="statusLabel" destination="8dq-p5-osV" id="zwV-wB-mxh"/>
@@ -154,6 +177,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="DarkAccent">
+            <color red="0.83099997043609619" green="0.23899999260902405" blue="0.41999998688697815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="DarkShades">
             <color red="0.18799999356269836" green="0.19599999487400055" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

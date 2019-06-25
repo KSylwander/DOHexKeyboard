@@ -23,6 +23,8 @@ final class SetupTransferIdState {
   }
 }
 
+extension SetupTransferIdState: BlippitSessionState {}
+
 extension SetupTransferIdState: ValidPodSessionStateObserving {
   func handleValidState(_ state: PodSessionState, for session: PodSession) {
     do {
@@ -32,7 +34,7 @@ extension SetupTransferIdState: ValidPodSessionStateObserving {
 
       guard try session.availableTransactions().contains(.transferIds) else {
         /* Allow clients to handle blipping on pods that do not support transferring of IDs */
-        throw BlippitError.podDoesNotSupportTransferId
+        throw BlippitError.appTerminalDoesNotSupportTransferId
       }
 
       delegate?.state(self, moveTo: .establishCloudSession(pid: pid, podSession: session))

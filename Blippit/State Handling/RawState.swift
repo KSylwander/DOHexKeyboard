@@ -12,12 +12,13 @@ import Podz
 enum RawState {
   case initial
   case starting
-  case started
+  case waitForPod
+  case waitForBlip
   case setupTransferId(pid: UInt32, podSession: PodSession)
   case establishCloudSession(pid: UInt32, podSession: PodSession)
-  case uploadCommandData(cloudSessionId: String, podSession: PodSession)
-  case transferDataToken(cloudSessionId: String, podSession: PodSession, dataToken: TransferId)
-  case waitForCloudSessionDone(cloudSessionId: String)
+  case transferSessionToken(cloudSessionId: String, podSession: PodSession, sessionToken: TransferId)
+  case waitForCloudSessionDone(cloudSessionId: String, podSession: PodSession)
+  case transferCloudSessionDoneToken(podSession: PodSession, doneToken: TransferId)
   case blippitSessionCompleted
 }
 

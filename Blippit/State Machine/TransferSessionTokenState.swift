@@ -1,5 +1,5 @@
 //
-//  TransferDataTokenState.swift
+//  TransferSessionTokenState.swift
 //  Blippit
 //
 //  Created by Jerson Perpetua on 2019-05-16.
@@ -8,9 +8,9 @@
 
 import Podz
 
-/* Sends the data token to the pod via its session, then closes the latter */
-final class TransferDataTokenState {
-  static let transactionFailedError: Error = BlippitError.transferDataTokenFailed
+/* Sends the session token to the pod via its session, then closes the latter */
+final class TransferSessionTokenState {
+  static let transactionFailedError: Error = BlippitError.transferSessionTokenFailed
 
   weak var delegate: StateDelegate?
   let cloudSessionId: String
@@ -29,26 +29,27 @@ final class TransferDataTokenState {
   init(delegate: StateDelegate,
        cloudSessionId: String,
        session: PodSession,
-       dataToken: TransferId,
+       sessionToken: TransferId,
        retryHandlerFactory: RetryHandlerFactory) {
 
     self.delegate = delegate
     self.cloudSessionId = cloudSessionId
     self.session = session
-    self.transferId = dataToken
+    self.transferId = sessionToken
     self.retryHandlerFactory = retryHandlerFactory
   }
 }
 
-extension TransferDataTokenState: TransferIdState {
+extension TransferSessionTokenState: BlippitSessionState {}
+
+extension TransferSessionTokenState: TransferIdState {
   func handleTransactionSuccess() throws {
-    try session.close()
-    delegate?.state(self, moveTo: .waitForCloudSessionDone(cloudSessionId: cloudSessionId))
+    delegate?.state(self, moveTo: .waitForCloudSessionDone(cloudSessionId: cloudSessionId, podSession: session))
   }
 }
 
-extension TransferDataTokenState: CancellablePodSessionState {}
+extension TransferSessionTokenState: CancellablePodSessionState {}
 
-extension TransferDataTokenState: DefaultPodSessionStateObservingState {}
+extension TransferSessionTokenState: DefaultPodSessionStateObservingState {}
 
-extension TransferDataTokenState: DefaultPodzStatusObservingState {}
+extension TransferSessionTokenState: DefaultPodzStatusObservingState {}

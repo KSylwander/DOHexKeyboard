@@ -46,9 +46,11 @@ public enum BlippitSetup {
       delegate: delegate,
       podz: try PodzSetup.setup(appId: configuration.podzAppId, apiKey: configuration.podzApiKey),
       startingStateFactory: DefaultStartingStateFactory(),
-      startedStateFactory: DefaultStartedStateFactory(),
+      waitForPodStateFactory: DefaultWaitForPodStateFactory(),
+      waitForBlipStateFactory: DefaultWaitForBlipStateFactory(),
       setupTransferIdStateFactory: DefaultSetupTransferIdStateFactory(),
       establishCloudSessionStateFactory: DefaultEstablishCloudSessionStateFactory(
+        serviceInfo: configuration.serviceInfo,
         establishCloudSessionUseCase: DefaultEstablishCloudSessionUseCase(
           appId: configuration.blippitAppId,
           requestBuilder: DefaultURLRequestBuilder(
@@ -67,26 +69,8 @@ public enum BlippitSetup {
           retryInterval: Constants.states.establishCloudSession.retryInterval
         )
       ),
-      uploadCommandDataStateFactory: DefaultUploadCommandDataStateFactory(
-        uploadCommandDataUseCase: DefaultUploadCommandDataUseCase(
-          requestBuilder: DefaultURLRequestBuilder(
-            apiConfig: Constants.api.uploadCommandData.config,
-            apiKey: configuration.blippitApiKey
-          ),
-          encoder: encoder,
-          decoder: decoder,
-          uploadDataUseCase: DefaultUploadDataUseCase(
-            uploadTaskFactory: urlSession,
-            responseValidator: responseValidator
-          )
-        ),
-        retryHandlerFactory: DefaultAsyncRetryHandlerFactory(
-          maxRetries: Constants.states.uploadCommandData.maxRetries,
-          retryInterval: Constants.states.uploadCommandData.retryInterval
-        )
-      ),
-      transferDataTokenStateFactory: DefaultTransferDataTokenStateFactory(
-        retryHandlerFactory: DefaultRetryHandlerFactory(maxRetries: Constants.states.transferDataToken.maxRetries)
+      transferSessionTokenStateFactory: DefaultTransferSessionTokenStateFactory(
+        retryHandlerFactory: DefaultRetryHandlerFactory(maxRetries: Constants.states.transferSessionToken.maxRetries)
       ),
       waitForCloudSessionDoneStateFactory: DefaultWaitForCloudSessionDoneStateFactory(
         pollInterval: Constants.states.waitForCloudSessionDone.pollInterval,
@@ -104,6 +88,11 @@ public enum BlippitSetup {
         retryHandlerFactory: DefaultAsyncRetryHandlerFactory(
           maxRetries: Constants.states.waitForCloudSessionDone.maxRetries,
           retryInterval: Constants.states.waitForCloudSessionDone.retryInterval
+        )
+      ),
+      transferCloudSessionDoneTokenStateFactory: DefaultTransferCloudSessionDoneTokenStateFactory(
+        retryHandlerFactory: DefaultRetryHandlerFactory(
+          maxRetries: Constants.states.transferCloudSessionDoneToken.maxRetries
         )
       )
     )

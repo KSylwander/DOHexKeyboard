@@ -23,7 +23,9 @@ extension DefaultGetCloudSessionStatusUseCase: GetCloudSessionStatusUseCase {
 
     return fetchDataUseCase.fetchData(with: request) { response, result in
       let result = result.flatMap { data in
-        return Result(catching: { try self.decoder.decode(GetCloudSessionStatusResponseDto.self, from: data).status })
+        return Result(catching: {
+          try CloudSessionStatus(try self.decoder.decode(GetCloudSessionStatusResponseDto.self, from: data))
+        })
       }
       completion(response, result)
     }

@@ -1,5 +1,5 @@
 //
-//  StartedState.swift
+//  WaitForBlipState.swift
 //  Blippit
 //
 //  Created by Jerson Perpetua on 2019-05-08.
@@ -9,7 +9,7 @@
 import Podz
 
 /* Waits for a blip to occur, and handles opening of the session thereinafter */
-final class StartedState {
+final class WaitForBlipState {
   weak var delegate: StateDelegate?
 
   private var isCancelling = false
@@ -19,9 +19,9 @@ final class StartedState {
   }
 }
 
-extension StartedState: State {}
+extension WaitForBlipState: State {}
 
-extension StartedState: PodStateObserving {
+extension WaitForBlipState: PodStateObserving {
   func handleState(_ state: PodState, for pod: Pod) {
     guard case let .blip(session) = state else {
       return
@@ -36,7 +36,7 @@ extension StartedState: PodStateObserving {
   }
 }
 
-extension StartedState: Cancellable {
+extension WaitForBlipState: Cancellable {
   func cancel() {
     guard !isCancelling else {
       return
@@ -48,4 +48,4 @@ extension StartedState: Cancellable {
   }
 }
 
-extension StartedState: DefaultPodzStatusObservingState {}
+extension WaitForBlipState: DefaultPodzStatusObservingState {}

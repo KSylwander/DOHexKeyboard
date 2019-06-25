@@ -1,5 +1,5 @@
 //
-//  Blippit.swift
+//  WaitForBlipStateFactory.swift
 //  Blippit
 //
 //  Created by Jerson Perpetua on 2019-05-16.
@@ -8,9 +8,6 @@
 
 import Foundation
 
-public protocol Blippit {
-  func start()
-  func stop()
-
-  func cancelOngoingSession()
+protocol WaitForBlipStateFactory {
+  func makeState(delegate: StateDelegate) -> State
 }
