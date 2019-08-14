@@ -14,10 +14,12 @@ extension Constants {
 
     enum defaults {
       /* Trailing slash on base path required */
-#if DEBUG
+#if PRODUCTION
+      static let basePath = "https://prod-bsac.bubbelskum.com/api/\(version)/"
+#elseif STAGE
       static let basePath = "https://stage-bsac.bubbelskum.com/api/\(version)/"
 #else
-      static let basePath = "https://prod-bsac.bubbelskum.com/api/\(version)/"
+      static let basePath = "https://dev-bsac.bubbelskum.com/api/\(version)/"
 #endif
 
       static let contentType = "application/json"
