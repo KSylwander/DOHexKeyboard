@@ -29,7 +29,7 @@ extension TransferIdState {
   }
 
   func performAction() throws {
-    let transaction = TransferIdsTransactionBuilder().ids(ids: [transferId]).build()!
+    let transaction = TransferIdViaUSBSerialTransactionBuilder().build(id: transferId)
     transaction.onDone = { [weak self] _, status in
       self?.handleTransactionStatus(status)
     }
