@@ -63,10 +63,10 @@ extension WaitForCloudSessionDoneState: HttpRequestState {
         switch status {
         case .established, .notStarted:
           self.scheduleNextPoll()
-        case let .done(doneToken):
+        case .done:
           do {
-            let doneToken = try TransferId(from: doneToken)
-            self.move(to: .transferCloudSessionDoneToken(podSession: self.podSession, doneToken: doneToken))
+            try self.podSession.close()
+            self.move(to: .blippitSessionCompleted)
           } catch {
             self.handleError(error)
           }
