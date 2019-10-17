@@ -21,6 +21,8 @@ enum PreviousState {
   case establishCloudSession(cloudSessionId: String, podSession: PodSession, sessionToken: TransferId)
   case transferSessionToken(cloudSessionId: String, podSession: PodSession)
   case waitForCloudSessionDone
+
+  case transferPayerId
 }
 
 /* NOTE: Don't forget to update the `PreviousState+Equatable.swift` file in the test target when updating the cases */

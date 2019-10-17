@@ -32,6 +32,8 @@ extension PreviousState: Equatable {
       return lhs.cloudSessionId == rhs.cloudSessionId && lhs.podSession === rhs.podSession
     case (.waitForCloudSessionDone, .waitForCloudSessionDone):
       return true
+    case (.transferPayerId, .transferPayerId):
+      return true
     default:
       return false
     }

@@ -123,6 +123,7 @@
 		3EAABD6C2297F3E500C0A37A /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAABD6B2297F3E500C0A37A /* MainViewController.storyboard */; };
 		3EAABD6F2297F42500C0A37A /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAABD6E2297F42500C0A37A /* UIView+CornerRadius.swift */; };
 		3EAE572523588F1F00645E7A /* BlippitMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE572423588F1F00645E7A /* BlippitMode.swift */; };
+		3EAE57272358918E00645E7A /* TransferPayerIdState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE57262358918E00645E7A /* TransferPayerIdState.swift */; };
 		3EB8228E229BC72100826236 /* Secular_One.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3EAABD6D2297F40200C0A37A /* Secular_One.ttf */; };
 		3EB82290229BE40200826236 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB8228F229BE40200826236 /* Identity.swift */; };
 		3EB82292229C019400826236 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB82291229C019400826236 /* Log.swift */; };
@@ -331,6 +332,7 @@
 		3EAABD6D2297F40200C0A37A /* Secular_One.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Secular_One.ttf; sourceTree = "<group>"; };
 		3EAABD6E2297F42500C0A37A /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
 		3EAE572423588F1F00645E7A /* BlippitMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitMode.swift; sourceTree = "<group>"; };
+		3EAE57262358918E00645E7A /* TransferPayerIdState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPayerIdState.swift; sourceTree = "<group>"; };
 		3EB8228F229BE40200826236 /* Identity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
 		3EB82291229C019400826236 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		3EB82294229C1A9000826236 /* Error+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+LogDescription.swift"; sourceTree = "<group>"; };
@@ -443,6 +445,7 @@
 				3E23C246228C3F4100DA3305 /* EstablishCloudSessionState.swift */,
 				3E23C240228C35D800DA3305 /* SetupTransferIdState.swift */,
 				3E38F9152281A2A200C114B7 /* StartingState.swift */,
+				3EAE57262358918E00645E7A /* TransferPayerIdState.swift */,
 				3EFADD2A228D4D9B00B3559A /* TransferSessionTokenState.swift */,
 				3EC4DE462283073A007A05C9 /* WaitForBlipState.swift */,
 				3E55DB6D2296CDD7009CF6D2 /* WaitForCloudSessionDoneState.swift */,
@@ -1097,6 +1100,7 @@
 				3E790FA0228ADC4400DB072F /* ApplyCertificatePinningUseCase.swift in Sources */,
 				3E790F8C228AD9BF00DB072F /* SecPolicyHandler.swift in Sources */,
 				3E790F84228AD96E00DB072F /* Trust.swift in Sources */,
+				3EAE57272358918E00645E7A /* TransferPayerIdState.swift in Sources */,
 				3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */,
 				3EE673BA22B77DD0004EC0E5 /* DefaultWaitForPodStateFactory.swift in Sources */,
 				3E5353102295669F004FD948 /* AsyncRetryHandling.swift in Sources */,

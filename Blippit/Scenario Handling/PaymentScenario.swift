@@ -59,6 +59,8 @@ extension PaymentScenario: Scenario {
       return waitForBlipStateFactory.makeState(delegate: delegate)
     case .stopping:
       return nil
+    default:
+      fatalError("Unsupported previous state: \(previousState)")
     }
   }
 }

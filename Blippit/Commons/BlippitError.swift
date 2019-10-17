@@ -28,6 +28,11 @@ public enum BlippitError {
    * by asking the user to blip again.
    */
   case transferSessionTokenFailed
+
+  /* Sending of payer ID failed after `Constants.states.transferPayerIdFailed.maxRetries + 1` attempts. May be fixed by
+   * asking the user to blip again.
+   */
+  case transferPayerIdFailed
 }
 
 extension BlippitError: Error {}
