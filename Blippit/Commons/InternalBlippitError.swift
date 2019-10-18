@@ -9,7 +9,6 @@
 import Foundation
 
 enum InternalBlippitError {
-  case nilDoneToken
 }
 
 extension InternalBlippitError: Error {}

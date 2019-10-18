@@ -11,7 +11,7 @@ import Foundation
 enum CloudSessionStatus {
   case notStarted
   case established
-  case done(token: String)
+  case done
 
   init(_ response: GetCloudSessionStatusResponseDto) throws {
     switch response.value {
@@ -20,10 +20,7 @@ enum CloudSessionStatus {
     case .established:
       self = .established
     case .done:
-      guard let token = response.content?.token else {
-        throw InternalBlippitError.nilDoneToken
-      }
-      self = .done(token: token)
+      self = .done
     }
   }
 }

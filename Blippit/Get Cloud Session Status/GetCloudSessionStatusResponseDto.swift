@@ -15,16 +15,10 @@ struct GetCloudSessionStatusResponseDto {
     case done
   }
   let value: Value
-
-  struct Content: Decodable {
-    let token: String
-  }
-  let content: Content?
 }
 
 extension GetCloudSessionStatusResponseDto: Decodable {
   private enum CodingKeys: String, CodingKey {
     case value = "status"
-    case content
   }
 }
