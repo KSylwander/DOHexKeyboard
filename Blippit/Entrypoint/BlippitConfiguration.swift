@@ -12,18 +12,12 @@ public struct BlippitConfiguration {
   public let podzApiKey: UUID
   public let podzAppId: UUID
 
-  public let blippitApiKey: UUID
-  public let blippitAppId: UUID
+  public let mode: BlippitMode
 
-  public let serviceInfo: ServiceInfo
-
-  public init(podzApiKey: UUID, podzAppId: UUID, blippitApiKey: UUID, blippitAppId: UUID, serviceInfo: ServiceInfo) {
+  public init(podzApiKey: UUID, podzAppId: UUID, mode: BlippitMode) {
     self.podzApiKey = podzApiKey
     self.podzAppId = podzAppId
 
-    self.blippitApiKey = blippitApiKey
-    self.blippitAppId = blippitAppId
-
-    self.serviceInfo = serviceInfo
+    self.mode = mode
   }
 }

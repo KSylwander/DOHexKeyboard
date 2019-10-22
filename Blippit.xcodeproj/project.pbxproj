@@ -121,6 +121,7 @@
 		3EAABD6A2297F3C200C0A37A /* Error+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAABD692297F3C200C0A37A /* Error+Name.swift */; };
 		3EAABD6C2297F3E500C0A37A /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAABD6B2297F3E500C0A37A /* MainViewController.storyboard */; };
 		3EAABD6F2297F42500C0A37A /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAABD6E2297F42500C0A37A /* UIView+CornerRadius.swift */; };
+		3EAE572523588F1F00645E7A /* BlippitMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE572423588F1F00645E7A /* BlippitMode.swift */; };
 		3EB8228E229BC72100826236 /* Secular_One.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3EAABD6D2297F40200C0A37A /* Secular_One.ttf */; };
 		3EB82290229BE40200826236 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB8228F229BE40200826236 /* Identity.swift */; };
 		3EB82292229C019400826236 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB82291229C019400826236 /* Log.swift */; };
@@ -327,6 +328,7 @@
 		3EAABD6B2297F3E500C0A37A /* MainViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		3EAABD6D2297F40200C0A37A /* Secular_One.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Secular_One.ttf; sourceTree = "<group>"; };
 		3EAABD6E2297F42500C0A37A /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
+		3EAE572423588F1F00645E7A /* BlippitMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitMode.swift; sourceTree = "<group>"; };
 		3EB8228F229BE40200826236 /* Identity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
 		3EB82291229C019400826236 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		3EB82294229C1A9000826236 /* Error+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+LogDescription.swift"; sourceTree = "<group>"; };
@@ -779,6 +781,7 @@
 				3EFADD2F228D53B100B3559A /* Blippit.swift */,
 				3EFADD2D228D534F00B3559A /* BlippitConfiguration.swift */,
 				3EFADD33228D567E00B3559A /* BlippitDelegate.swift */,
+				3EAE572423588F1F00645E7A /* BlippitMode.swift */,
 				3E1AF01822AA327800066C80 /* BlippitState.swift */,
 				3EFADD35228D56C000B3559A /* DefaultBlippit.swift */,
 				3E1AF01622AA2ECC00066C80 /* ServiceInfo.swift */,
@@ -1043,6 +1046,7 @@
 				3E55DB6E2296CDD7009CF6D2 /* WaitForCloudSessionDoneState.swift in Sources */,
 				3E23C22B228C0F2300DA3305 /* EstablishCloudSessionUseCase.swift in Sources */,
 				3E790F75228AD1C500DB072F /* Composition.swift in Sources */,
+				3EAE572523588F1F00645E7A /* BlippitMode.swift in Sources */,
 				3E790FA2228ADC5600DB072F /* DefaultApplyCertificatePinningUseCase.swift in Sources */,
 				3EFADD25228D4D6500B3559A /* RetryHandlerFactory.swift in Sources */,
 				3E23C227228C0F1100DA3305 /* EstablishCloudSessionRequestDto.swift in Sources */,
