@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3E0652F0235F3517009B9B93 /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0652EF235F3517009B9B93 /* Scenario.swift */; };
 		3E0652F2235F35D6009B9B93 /* PaymentScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0652F1235F35D6009B9B93 /* PaymentScenario.swift */; };
+		3E0652F6235F3EF9009B9B93 /* PayerIdScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0652F5235F3EF9009B9B93 /* PayerIdScenario.swift */; };
 		3E1AF01722AA2ECC00066C80 /* ServiceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1AF01622AA2ECC00066C80 /* ServiceInfo.swift */; };
 		3E1AF01922AA327800066C80 /* BlippitState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1AF01822AA327800066C80 /* BlippitState.swift */; };
 		3E1AF04822AA4D9900066C80 /* BlippitSessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1AF04722AA4D9900066C80 /* BlippitSessionState.swift */; };
@@ -224,6 +225,7 @@
 /* Begin PBXFileReference section */
 		3E0652EF235F3517009B9B93 /* Scenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
 		3E0652F1235F35D6009B9B93 /* PaymentScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentScenario.swift; sourceTree = "<group>"; };
+		3E0652F5235F3EF9009B9B93 /* PayerIdScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayerIdScenario.swift; sourceTree = "<group>"; };
 		3E1AF01622AA2ECC00066C80 /* ServiceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInfo.swift; sourceTree = "<group>"; };
 		3E1AF01822AA327800066C80 /* BlippitState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitState.swift; sourceTree = "<group>"; };
 		3E1AF04722AA4D9900066C80 /* BlippitSessionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitSessionState.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 		3E0652EE235F34F0009B9B93 /* Scenario Handling */ = {
 			isa = PBXGroup;
 			children = (
+				3E0652F5235F3EF9009B9B93 /* PayerIdScenario.swift */,
 				3E0652F1235F35D6009B9B93 /* PaymentScenario.swift */,
 				3E0652EF235F3517009B9B93 /* Scenario.swift */,
 			);
@@ -1109,6 +1112,7 @@
 				3E790F84228AD96E00DB072F /* Trust.swift in Sources */,
 				3EAE57272358918E00645E7A /* TransferPayerIdState.swift in Sources */,
 				3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */,
+				3E0652F6235F3EF9009B9B93 /* PayerIdScenario.swift in Sources */,
 				3EE673BA22B77DD0004EC0E5 /* DefaultWaitForPodStateFactory.swift in Sources */,
 				3E5353102295669F004FD948 /* AsyncRetryHandling.swift in Sources */,
 				3E790FAC228ADCD400DB072F /* DefaultValidateTrustUseCase.swift in Sources */,
