@@ -16,13 +16,13 @@ struct DefaultBlippitFactory {
 }
 
 extension DefaultBlippitFactory: BlippitFactory {
-  func makeBlippit(delegate: BlippitDelegate, userId: String) throws -> Blippit {
+  func makeBlippit(delegate: BlippitDelegate, payerId: String) throws -> Blippit {
     return try BlippitSetup.setup(
       delegate: delegate,
       configuration: BlippitConfiguration(
         podzApiKey: podzApiKey,
         podzAppId: podzAppId,
-        mode: .payerId(userId)
+        mode: .payerId(payerId)
       )
     )
   }

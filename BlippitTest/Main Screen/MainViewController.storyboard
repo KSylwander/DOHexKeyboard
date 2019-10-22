@@ -85,7 +85,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="we6-yT-9oW">
                                         <rect key="frame" x="0.0" y="114" width="343" height="109"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yED-8L-d0W">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Payer ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yED-8L-d0W">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="41"/>
                                                 <color key="backgroundColor" name="LightShades"/>
                                                 <constraints>
@@ -166,9 +166,9 @@
                         <outlet property="cancelSessionButton" destination="ly4-99-aF7" id="v2N-hr-FQT"/>
                         <outlet property="errorLabel" destination="dC5-Sf-Kum" id="d23-1H-WsQ"/>
                         <outlet property="loadingIndicator" destination="HqF-iM-zXM" id="frw-Cu-Ji2"/>
+                        <outlet property="payerIdTextField" destination="yED-8L-d0W" id="3ta-H4-irr"/>
                         <outlet property="statusLabel" destination="8dq-p5-osV" id="zwV-wB-mxh"/>
                         <outlet property="toggleBlippitButton" destination="rEm-xu-ACg" id="k5y-Jo-ek3"/>
-                        <outlet property="userIdTextField" destination="yED-8L-d0W" id="3ta-H4-irr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BMm-G5-Y5k" userLabel="First Responder" sceneMemberID="firstResponder"/>

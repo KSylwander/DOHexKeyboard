@@ -15,7 +15,7 @@ final class MainViewController: UIViewController {
   @IBOutlet private var statusLabel: UILabel!
   @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
   @IBOutlet private var errorLabel: UILabel!
-  @IBOutlet private var userIdTextField: UITextField!
+  @IBOutlet private var payerIdTextField: UITextField!
   @IBOutlet private var toggleBlippitButton: UIButton!
   @IBOutlet private var cancelSessionButton: UIButton!
 
@@ -26,7 +26,7 @@ final class MainViewController: UIViewController {
 
   private var isBlippitActive = false {
     didSet {
-      updateUserIdTextField()
+      updatePayerIdTextField()
       updateToggleBlippitButton()
     }
   }
@@ -48,20 +48,20 @@ final class MainViewController: UIViewController {
 
   @IBAction private func toggleBlippitButtonTapped() {
     if !isBlippitActive {
-      setupBlippitWithUserId(userIdTextField.text!)
+      setupBlippitWithPayerId(payerIdTextField.text!)
     } else {
       blippit.stop()
     }
     view.endEditing(true)
   }
 
-  private func setupBlippitWithUserId(_ userId: String) {
+  private func setupBlippitWithPayerId(_ payerId: String) {
     do {
       let blippit: Blippit = try {
         if let blippit = self.blippit {
           return blippit
         } else {
-          let blippit = try blippitFactory.makeBlippit(delegate: self, userId: userId)
+          let blippit = try blippitFactory.makeBlippit(delegate: self, payerId: payerId)
           self.blippit = blippit
           return blippit
         }
@@ -108,13 +108,13 @@ final class MainViewController: UIViewController {
     blippit.cancelOngoingSession()
   }
 
-  private func updateToggleBlippitButton(withUserId userId: String? = nil) {
+  private func updateToggleBlippitButton(withPayerId payerId: String? = nil) {
     UIView.performWithoutAnimation {
       toggleBlippitButton.setTitle(!isBlippitActive ? "Start" : "Stop", for: .normal)
       toggleBlippitButton.layoutIfNeeded()
     }
 
-    let text = userId ?? userIdTextField.text ?? ""
+    let text = payerId ?? payerIdTextField.text ?? ""
     let isEnabled = !text.isEmpty
 
     toggleBlippitButton.isEnabled = isEnabled
@@ -133,7 +133,7 @@ extension MainViewController: UITextFieldDelegate {
     }
 
     let updatedText = text.replacingCharacters(in: range, with: string)
-    updateToggleBlippitButton(withUserId: updatedText)
+    updateToggleBlippitButton(withPayerId: updatedText)
 
     return true
   }
@@ -181,10 +181,10 @@ extension MainViewController: BlippitDelegate {
     loadingIndicator.isHidden = true
   }
 
-  private func updateUserIdTextField() {
+  private func updatePayerIdTextField() {
     let isEnabled = !isBlippitActive
-    userIdTextField.isEnabled = isEnabled
-    userIdTextField.alpha = isEnabled ? 1.0 : 0.7
+    payerIdTextField.isEnabled = isEnabled
+    payerIdTextField.alpha = isEnabled ? 1.0 : 0.7
   }
 
   private func setIsCancelSessionEnabled(_ isCancelSessionEnabled: Bool) {
