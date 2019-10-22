@@ -37,12 +37,12 @@ final class StartingStateSpec: QuickSpec {
         verify(podz).start()
       }
 
-      it("transitions to wait-for-pod state when Podz is running") {
+      it("transitions to the next state when Podz is running") {
         /* Arrange */
-        var theNextState: RawState?
+        var thePreviousState: PreviousState?
         stub(stateDelegate) { stub in
-          when(stub.state(any(), moveTo: any())).then { _, nextState in
-            theNextState = nextState
+          when(stub.state(any(), moveFrom: any())).then { _, previousState in
+            thePreviousState = previousState
           }
         }
 
@@ -50,8 +50,8 @@ final class StartingStateSpec: QuickSpec {
         sut.handleStatus(.running, for: podz)
 
         /* Assert */
-        expect(theNextState).toNot(beNil())
-        expect(theNextState).to(equal(.waitForPod))
+        expect(thePreviousState).toNot(beNil())
+        expect(thePreviousState).to(equal(.starting))
       }
     }
   }

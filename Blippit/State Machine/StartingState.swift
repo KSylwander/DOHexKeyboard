@@ -33,7 +33,7 @@ extension StartingState: ValidPodzStatusObserving {
     if status == .idle {
       podz.start()
     } else if status == .running {
-      delegate?.state(self, moveTo: .waitForPod)
+      delegate?.state(self, moveFrom: .starting)
     }
   }
 }
