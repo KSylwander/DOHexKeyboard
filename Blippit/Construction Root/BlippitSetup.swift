@@ -11,7 +11,7 @@ import Podz
 public enum BlippitSetup {
   public static func setup(delegate: BlippitDelegate, configuration: BlippitConfiguration) throws -> Blippit {
     let scenario: Scenario = try {
-      switch configuration.mode {
+      switch _BlippitMode(configuration.mode) {
       case let .payment(blippitApiKey, blippitAppId, serviceInfo):
         let encoder = JSONEncoder()
         let decoder = JSONDecoder()

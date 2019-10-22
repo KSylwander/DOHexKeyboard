@@ -7,6 +7,18 @@
 //
 
 public enum BlippitMode {
+  case payerId(String)
+}
+
+/* TODO: Remove when `.payment` is exposed publicly */
+enum _BlippitMode {
   case payment(blippitApiKey: UUID, blippitAppId: UUID, serviceInfo: ServiceInfo)
   case payerId(String)
+
+  init(_ mode: BlippitMode) {
+    switch mode {
+    case let .payerId(value):
+      self = .payerId(value)
+    }
+  }
 }
