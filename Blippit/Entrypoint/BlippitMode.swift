@@ -8,4 +8,5 @@
 
 public enum BlippitMode {
   case payment(blippitApiKey: UUID, blippitAppId: UUID, serviceInfo: ServiceInfo)
+  case payerId(String)
 }

@@ -95,6 +95,20 @@ public enum BlippitSetup {
             )
           )
         )
+      case let .payerId(value):
+        return PayerIdScenario(
+          podz: try PodzSetup.setup(appId: configuration.podzAppId, apiKey: configuration.podzApiKey),
+          startingStateFactory: DefaultStartingStateFactory(),
+          waitForPodStateFactory: DefaultWaitForPodStateFactory(),
+          waitForBlipStateFactory: DefaultWaitForBlipStateFactory(),
+          setupTransferIdStateFactory: DefaultSetupTransferIdStateFactory(),
+          transferPayerIdStateFactory: DefaultTransferPayerIdStateFactory(
+            retryHandlerFactory: DefaultRetryHandlerFactory(
+              maxRetries: Constants.states.transferPayerId.maxRetries
+            ),
+            payerId: try TransferId(from: value)
+          )
+        )
       }
     }()
 

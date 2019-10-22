@@ -25,5 +25,9 @@ extension Constants {
 
       static let pollInterval = TimeInterval(1.0)
     }
+
+    enum transferPayerId {
+      static let maxRetries = 3
+    }
   }
 }
