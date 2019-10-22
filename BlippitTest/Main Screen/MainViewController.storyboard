@@ -93,7 +93,7 @@
                                                 </constraints>
                                                 <color key="textColor" name="DarkShades"/>
                                                 <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="username"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="username"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="9VG-gb-OMM" id="SKd-z8-y9N"/>
                                                 </connections>
