@@ -12,41 +12,18 @@ final class DefaultBlippit {
   private weak var delegate: BlippitDelegate?
 
   private let podz: Podz
-
-  private let startingStateFactory: StartingStateFactory
-  private let waitForPodStateFactory: WaitForPodStateFactory
-  private let waitForBlipStateFactory: WaitForBlipStateFactory
-  private let setupTransferIdStateFactory: SetupTransferIdStateFactory
-  private let establishCloudSessionStateFactory: EstablishCloudSessionStateFactory
-  private let transferSessionTokenStateFactory: TransferSessionTokenStateFactory
-  private let waitForCloudSessionDoneStateFactory: WaitForCloudSessionDoneStateFactory
+  private let scenario: Scenario
 
   private var currentState: State?
   private var isStateTransitioningDisabled = false
 
   private var blippedPod: Pod?
 
-  init(delegate: BlippitDelegate,
-       podz: Podz,
-       startingStateFactory: StartingStateFactory,
-       waitForPodStateFactory: WaitForPodStateFactory,
-       waitForBlipStateFactory: WaitForBlipStateFactory,
-       setupTransferIdStateFactory: SetupTransferIdStateFactory,
-       establishCloudSessionStateFactory: EstablishCloudSessionStateFactory,
-       transferSessionTokenStateFactory: TransferSessionTokenStateFactory,
-       waitForCloudSessionDoneStateFactory: WaitForCloudSessionDoneStateFactory) {
-
+  init(delegate: BlippitDelegate, podz: Podz, scenario: Scenario) {
     self.delegate = delegate
 
     self.podz = podz
-
-    self.startingStateFactory = startingStateFactory
-    self.waitForPodStateFactory = waitForPodStateFactory
-    self.waitForBlipStateFactory = waitForBlipStateFactory
-    self.setupTransferIdStateFactory = setupTransferIdStateFactory
-    self.establishCloudSessionStateFactory = establishCloudSessionStateFactory
-    self.transferSessionTokenStateFactory = transferSessionTokenStateFactory
-    self.waitForCloudSessionDoneStateFactory = waitForCloudSessionDoneStateFactory
+    self.scenario = scenario
 
     podz.onStatusChanged = { [weak self] status in
       self?.handlePodzStatus(status)
@@ -122,7 +99,7 @@ final class DefaultBlippit {
       return
     }
 
-    let state = nextState(for: previousState)
+    let state = scenario.nextState(for: previousState, delegate: self)
     Log.debug(.public("Transitioning to \(state.logDescription)..."))
 
     /* Assigning the current state here makes sure that any state changes during the invocation of the `start()` method
@@ -137,53 +114,25 @@ final class DefaultBlippit {
 
     /* Allow interested states (e.g., wait-for-pod) to receive the blipped pod if the latter is still within range */
     blippedPod.map(handleNewPod(_:))
-  }
 
-  private func nextState(for previousState: PreviousState) -> State? {
-    /* Create the next state from the previous one */
+    /* Notify the delegate that a state-transition has occurred */
     switch previousState {
     case .cancelling:
-      /* Move back to the starting state after a cancellation. This allows us to make sure that the Podz is still in
-       * the correct state after the previous operations.
-       */
       fallthrough
     case .initial:
       delegate?.blippit(self, didChangeState: .started)
-      return startingStateFactory.makeState(delegate: self, podz: podz)
     case .starting:
       delegate?.blippit(self, didChangeState: .lookingForAppTerminals)
-      return waitForPodStateFactory.makeState(delegate: self)
     case .waitForPod:
       delegate?.blippit(self, didChangeState: .appTerminalFound)
-      return waitForBlipStateFactory.makeState(delegate: self)
-    case let .waitForBlip(pid, podSession):
+    case .waitForBlip:
       delegate?.blippit(self, didChangeState: .sessionInitiated)
-      return setupTransferIdStateFactory.makeState(delegate: self, pid: pid, session: podSession)
-    case let .setupTransferId(pid, podSession):
-      return establishCloudSessionStateFactory.makeState(
-        delegate: self,
-        pid: pid,
-        podSession: podSession
-      )
-    case let .establishCloudSession(cloudSessionId, podSession, sessionToken):
-      return transferSessionTokenStateFactory.makeState(
-        delegate: self,
-        cloudSessionId: cloudSessionId,
-        session: podSession,
-        sessionToken: sessionToken
-      )
-    case let .transferSessionToken(cloudSessionId, podSession):
-      return waitForCloudSessionDoneStateFactory.makeState(
-        delegate: self,
-        cloudSessionId: cloudSessionId,
-        podSession: podSession
-      )
     case .waitForCloudSessionDone:
       delegate?.blippit(self, didChangeState: .sessionDone)
       delegate?.blippit(self, didChangeState: .appTerminalFound)
-      return waitForBlipStateFactory.makeState(delegate: self)
-    case .stopping:
-      return nil
+    default:
+      /* Do nothing */
+      break
     }
   }
 }

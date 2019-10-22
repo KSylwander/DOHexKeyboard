@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0652F0235F3517009B9B93 /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0652EF235F3517009B9B93 /* Scenario.swift */; };
+		3E0652F2235F35D6009B9B93 /* PaymentScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0652F1235F35D6009B9B93 /* PaymentScenario.swift */; };
 		3E1AF01722AA2ECC00066C80 /* ServiceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1AF01622AA2ECC00066C80 /* ServiceInfo.swift */; };
 		3E1AF01922AA327800066C80 /* BlippitState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1AF01822AA327800066C80 /* BlippitState.swift */; };
 		3E1AF04822AA4D9900066C80 /* BlippitSessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1AF04722AA4D9900066C80 /* BlippitSessionState.swift */; };
@@ -217,6 +219,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3E0652EF235F3517009B9B93 /* Scenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
+		3E0652F1235F35D6009B9B93 /* PaymentScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentScenario.swift; sourceTree = "<group>"; };
 		3E1AF01622AA2ECC00066C80 /* ServiceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInfo.swift; sourceTree = "<group>"; };
 		3E1AF01822AA327800066C80 /* BlippitState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitState.swift; sourceTree = "<group>"; };
 		3E1AF04722AA4D9900066C80 /* BlippitSessionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitSessionState.swift; sourceTree = "<group>"; };
@@ -412,6 +416,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E0652EE235F34F0009B9B93 /* Scenario Handling */ = {
+			isa = PBXGroup;
+			children = (
+				3E0652F1235F35D6009B9B93 /* PaymentScenario.swift */,
+				3E0652EF235F3517009B9B93 /* Scenario.swift */,
+			);
+			path = "Scenario Handling";
+			sourceTree = "<group>";
+		};
 		3E23C225228C0ED900DA3305 /* Establish Cloud Session */ = {
 			isa = PBXGroup;
 			children = (
@@ -704,6 +717,7 @@
 				3EC797462280279900AD79CE /* Networking */,
 				3EAEA7FD2280109F008B7E77 /* Resources */,
 				3EFADD1F228D4BF500B3559A /* Retry Handling */,
+				3E0652EE235F34F0009B9B93 /* Scenario Handling */,
 				3E790F7E228AD90F00DB072F /* Security */,
 				3E38F9172281A31F00C114B7 /* State Handling */,
 				3E38F90422819E9100C114B7 /* State Machine */,
@@ -1028,6 +1042,7 @@
 				3E790F71228AD19C00DB072F /* Fmap.swift in Sources */,
 				3EFADD2E228D534F00B3559A /* BlippitConfiguration.swift in Sources */,
 				3E23C241228C35D800DA3305 /* SetupTransferIdState.swift in Sources */,
+				3E0652F2235F35D6009B9B93 /* PaymentScenario.swift in Sources */,
 				3E1AF01722AA2ECC00066C80 /* ServiceInfo.swift in Sources */,
 				3E53531622956A7D004FD948 /* HttpRequestState.swift in Sources */,
 				3EC4DE45228306F1007A05C9 /* PodStateObserving.swift in Sources */,
@@ -1067,6 +1082,7 @@
 				3E38F90822819EE300C114B7 /* PreviousState.swift in Sources */,
 				3E55DB622296CBAB009CF6D2 /* CloudSessionStatus.swift in Sources */,
 				3E23C21A228C0E9400DA3305 /* UploadTaskFactory.swift in Sources */,
+				3E0652F0235F3517009B9B93 /* Scenario.swift in Sources */,
 				3E790F8E228AD9FB00DB072F /* CertificateHandling.swift in Sources */,
 				3EE673B822B77D78004EC0E5 /* WaitForPodStateFactory.swift in Sources */,
 				3E38F90E2281A0ED00C114B7 /* PodzStatusObserving.swift in Sources */,
