@@ -22,14 +22,7 @@ extension DefaultBlippitFactory: BlippitFactory {
       configuration: BlippitConfiguration(
         podzApiKey: podzApiKey,
         podzAppId: podzAppId,
-        mode: .payment(
-          blippitApiKey: blippitApiKey,
-          blippitAppId: blippitAppId,
-          serviceInfo: [
-            "command": "payment",
-            "userid": userId
-          ]
-        )
+        mode: .payerId(userId)
       )
     )
   }
