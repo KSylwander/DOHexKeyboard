@@ -128,6 +128,8 @@ final class DefaultBlippit {
     case .waitForBlip:
       delegate?.blippit(self, didChangeState: .sessionInitiated)
     case .waitForCloudSessionDone:
+      fallthrough
+    case .transferPayerId:
       delegate?.blippit(self, didChangeState: .sessionDone)
       delegate?.blippit(self, didChangeState: .appTerminalFound)
     default:

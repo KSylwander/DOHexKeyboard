@@ -36,6 +36,8 @@ extension PayerIdScenario: Scenario {
       return setupTransferIdStateFactory.makeState(delegate: delegate, pid: pid, session: podSession)
     case let .setupTransferId(_, podSession):
       return transferPayerIdStateFactory.makeState(delegate: delegate, session: podSession)
+    case .transferPayerId:
+      return waitForBlipStateFactory.makeState(delegate: delegate)
     case .stopping:
       return nil
     default:
