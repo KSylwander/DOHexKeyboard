@@ -9,7 +9,7 @@
 import Podz
 
 final class PaymentScenario {
-  private weak var delegate: ScenarioDelegate?
+  private(set) weak var delegate: ScenarioDelegate?
 
   private let podz: Podz
 
@@ -43,8 +43,10 @@ final class PaymentScenario {
   }
 }
 
-extension PaymentScenario: Scenario {
-  func nextState(for previousState: PreviousState) -> State? {
+extension PaymentScenario: Scenario {}
+
+extension PaymentScenario: NextStateFactory {
+  func makeNextState(previousState: PreviousState) -> State? {
     switch previousState {
     case .cancelling:
       /* Move back to the starting state after a cancellation. This allows us to make sure that the Podz is still in
@@ -94,12 +96,4 @@ extension PaymentScenario: Scenario {
   }
 }
 
-extension PaymentScenario: StateDelegate {
-  func state(_ state: State, moveFrom previousState: PreviousState) {
-    delegate?.scenario(self, moveFrom: previousState)
-  }
-
-  func state(_ state: State, didFailWithError error: Error) {
-    delegate?.scenario(self, didFailWithError: error)
-  }
-}
+extension PaymentScenario: StateDelegate {}

@@ -96,12 +96,11 @@ final class DefaultBlippit {
     currentState.handleState(state, for: session)
   }
 
-  private func moveState(from previousState: PreviousState) {
+  private func moveState(to state: State?) {
     guard !isStateTransitioningDisabled else {
       return
     }
 
-    let state = scenario.nextState(for: previousState)
     Log.debug(.public("Transitioning to \(state.logDescription)..."))
 
     /* Assigning the current state here makes sure that any state changes during the invocation of the `start()` method
@@ -124,7 +123,7 @@ extension DefaultBlippit: Blippit {
     guard currentState == nil else {
       return
     }
-    moveState(from: .initial)
+    scenario.start()
   }
 
   func stop() {
@@ -137,9 +136,7 @@ extension DefaultBlippit: Blippit {
     podz.stop()
     isStateTransitioningDisabled = false
 
-    moveState(from: .stopping)
-
-    delegate?.blippit(self, didChangeState: .stopped)
+    scenario.stop()
   }
 
   func cancelOngoingSession() {
@@ -152,8 +149,8 @@ extension DefaultBlippit: Blippit {
 }
 
 extension DefaultBlippit: ScenarioDelegate {
-  func scenario(_ scenario: Scenario, moveFrom previousState: PreviousState) {
-    moveState(from: previousState)
+  func scenario(_ scenario: Scenario, moveTo state: State?) {
+    moveState(to: state)
   }
 
   func scenario(_ scenario: Scenario, didFailWithError error: Error) {
