@@ -40,6 +40,7 @@ extension TransferPayerIdState: BlippitSessionState {}
 
 extension TransferPayerIdState: TransferIdState {
   func handleTransactionSuccess() throws {
+    try session.close()
     delegate?.state(self, moveFrom: .transferPayerId)
   }
 }
