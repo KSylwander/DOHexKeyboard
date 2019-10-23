@@ -148,6 +148,10 @@
 		3EC7974C2280298800AD79CE /* FetchDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */; };
 		3EC7974E22802A0C00AD79CE /* URLSessionTask+Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */; };
 		3EDB14B423604E130026889F /* TransferId+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB14B323604E130026889F /* TransferId+Random.swift */; };
+		3EDB14B7236081A40026889F /* ScenarioDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB14B6236081A40026889F /* ScenarioDelegate.swift */; };
+		3EDB14B92360820D0026889F /* ScenarioFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB14B82360820D0026889F /* ScenarioFactory.swift */; };
+		3EDB14BB236082840026889F /* PaymentScenarioFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB14BA236082840026889F /* PaymentScenarioFactory.swift */; };
+		3EDB14BD236082F60026889F /* PayerIdScenarioFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB14BC236082F60026889F /* PayerIdScenarioFactory.swift */; };
 		3EE673B422B77BF2004EC0E5 /* NewPodObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE673B322B77BF2004EC0E5 /* NewPodObserving.swift */; };
 		3EE673B622B77C6E004EC0E5 /* WaitForPodState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE673B522B77C6E004EC0E5 /* WaitForPodState.swift */; };
 		3EE673B822B77D78004EC0E5 /* WaitForPodStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE673B722B77D78004EC0E5 /* WaitForPodStateFactory.swift */; };
@@ -363,6 +367,10 @@
 		3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchDataUseCase.swift; sourceTree = "<group>"; };
 		3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSessionTask+Cancellable.swift"; sourceTree = "<group>"; };
 		3EDB14B323604E130026889F /* TransferId+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransferId+Random.swift"; sourceTree = "<group>"; };
+		3EDB14B6236081A40026889F /* ScenarioDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioDelegate.swift; sourceTree = "<group>"; };
+		3EDB14B82360820D0026889F /* ScenarioFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioFactory.swift; sourceTree = "<group>"; };
+		3EDB14BA236082840026889F /* PaymentScenarioFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentScenarioFactory.swift; sourceTree = "<group>"; };
+		3EDB14BC236082F60026889F /* PayerIdScenarioFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayerIdScenarioFactory.swift; sourceTree = "<group>"; };
 		3EE673B322B77BF2004EC0E5 /* NewPodObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPodObserving.swift; sourceTree = "<group>"; };
 		3EE673B522B77C6E004EC0E5 /* WaitForPodState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitForPodState.swift; sourceTree = "<group>"; };
 		3EE673B722B77D78004EC0E5 /* WaitForPodStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitForPodStateFactory.swift; sourceTree = "<group>"; };
@@ -432,6 +440,8 @@
 				3E0652F5235F3EF9009B9B93 /* PayerIdScenario.swift */,
 				3E0652F1235F35D6009B9B93 /* PaymentScenario.swift */,
 				3E0652EF235F3517009B9B93 /* Scenario.swift */,
+				3EDB14B6236081A40026889F /* ScenarioDelegate.swift */,
+				3EDB14B82360820D0026889F /* ScenarioFactory.swift */,
 			);
 			path = "Scenario Handling";
 			sourceTree = "<group>";
@@ -540,6 +550,8 @@
 				3EFADD4D228D9B0000B3559A /* DefaultWaitForBlipStateFactory.swift */,
 				3E55DB712296D63E009CF6D2 /* DefaultWaitForCloudSessionDoneStateFactory.swift */,
 				3EE673B922B77DD0004EC0E5 /* DefaultWaitForPodStateFactory.swift */,
+				3EDB14BC236082F60026889F /* PayerIdScenarioFactory.swift */,
+				3EDB14BA236082840026889F /* PaymentScenarioFactory.swift */,
 			);
 			path = "Construction Root";
 			sourceTree = "<group>";
@@ -1068,6 +1080,7 @@
 				3EFADD23228D4D5E00B3559A /* RetryHandler.swift in Sources */,
 				3EFADD56228D9F9100B3559A /* DefaultTransferSessionTokenStateFactory.swift in Sources */,
 				3EC7974C2280298800AD79CE /* FetchDataUseCase.swift in Sources */,
+				3EDB14B92360820D0026889F /* ScenarioFactory.swift in Sources */,
 				3E23C229228C0F1C00DA3305 /* EstablishCloudSessionResponseDto.swift in Sources */,
 				3EFADD50228D9D2900B3559A /* SetupTransferIdStateFactory.swift in Sources */,
 				3E790FA4228ADC6300DB072F /* ApplyCertificatePinningUseCaseFactory.swift in Sources */,
@@ -1094,6 +1107,7 @@
 				3EFADD4E228D9B0000B3559A /* DefaultWaitForBlipStateFactory.swift in Sources */,
 				3E97FA282280318B003419AE /* URLSession+DataTaskFactory.swift in Sources */,
 				3EB8229D229C21BF00826236 /* Data+LogDescription.swift in Sources */,
+				3EDB14B7236081A40026889F /* ScenarioDelegate.swift in Sources */,
 				3EFADD40228D6EF500B3559A /* Constants+States.swift in Sources */,
 				3EAE57292358958100645E7A /* TransferPayerIdStateFactory.swift in Sources */,
 				3E38F90822819EE300C114B7 /* PreviousState.swift in Sources */,
@@ -1121,10 +1135,12 @@
 				3E5353102295669F004FD948 /* AsyncRetryHandling.swift in Sources */,
 				3E790FAC228ADCD400DB072F /* DefaultValidateTrustUseCase.swift in Sources */,
 				3E790F92228ADA1C00DB072F /* TrustHandling.swift in Sources */,
+				3EDB14BD236082F60026889F /* PayerIdScenarioFactory.swift in Sources */,
 				3E535312229566DB004FD948 /* AsyncRetryHandlerFactory.swift in Sources */,
 				3E790F90228ADA0D00DB072F /* SecCertificateHandler.swift in Sources */,
 				3E790F6F228AD18800DB072F /* Flip.swift in Sources */,
 				3E535304229550BC004FD948 /* URLSession+RetainedDelegate.swift in Sources */,
+				3EDB14BB236082840026889F /* PaymentScenarioFactory.swift in Sources */,
 				3EFADD52228D9D8200B3559A /* DefaultSetupTransferIdStateFactory.swift in Sources */,
 				3EB82297229C1AD000826236 /* State+LogDescription.swift in Sources */,
 				3EFADD42228D808D00B3559A /* HttpUrlResponseValidator.swift in Sources */,

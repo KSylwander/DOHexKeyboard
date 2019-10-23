@@ -12,18 +12,20 @@ final class DefaultBlippit {
   private weak var delegate: BlippitDelegate?
 
   private let podz: Podz
-  private let scenario: Scenario
+
+  private let scenarioFactory: ScenarioFactory
+  private lazy var scenario = scenarioFactory.makeScenario(delegate: self)
 
   private var currentState: State?
   private var isStateTransitioningDisabled = false
 
   private var blippedPod: Pod?
 
-  init(delegate: BlippitDelegate, podz: Podz, scenario: Scenario) {
+  init(delegate: BlippitDelegate, podz: Podz, scenarioFactory: ScenarioFactory) {
     self.delegate = delegate
 
     self.podz = podz
-    self.scenario = scenario
+    self.scenarioFactory = scenarioFactory
 
     podz.onStatusChanged = { [weak self] status in
       self?.handlePodzStatus(status)
@@ -114,28 +116,6 @@ final class DefaultBlippit {
 
     /* Allow interested states (e.g., wait-for-pod) to receive the blipped pod if the latter is still within range */
     blippedPod.map(handleNewPod(_:))
-
-    /* Notify the delegate that a state-transition has occurred */
-    switch previousState {
-    case .cancelling:
-      fallthrough
-    case .initial:
-      delegate?.blippit(self, didChangeState: .started)
-    case .starting:
-      delegate?.blippit(self, didChangeState: .lookingForAppTerminals)
-    case .waitForPod:
-      delegate?.blippit(self, didChangeState: .appTerminalFound)
-    case .waitForBlip:
-      delegate?.blippit(self, didChangeState: .sessionInitiated)
-    case .waitForCloudSessionDone:
-      fallthrough
-    case .transferPayerId:
-      delegate?.blippit(self, didChangeState: .sessionDone)
-      delegate?.blippit(self, didChangeState: .appTerminalFound)
-    default:
-      /* Do nothing */
-      break
-    }
   }
 }
 
@@ -179,5 +159,11 @@ extension DefaultBlippit: StateDelegate {
   func state(_ state: State, didFailWithError error: Error) {
     Log.error(.public("Error: \(error.logDescription)"))
     delegate?.blippit(self, didFailWithError: error)
+  }
+}
+
+extension DefaultBlippit: ScenarioDelegate {
+  func scenario(_ scenario: Scenario, didChangeBlippitState blippitState: BlippitState) {
+    delegate?.blippit(self, didChangeState: blippitState)
   }
 }

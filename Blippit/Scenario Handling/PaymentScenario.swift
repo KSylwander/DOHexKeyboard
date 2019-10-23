@@ -8,16 +8,39 @@
 
 import Podz
 
-struct PaymentScenario {
-  let podz: Podz
+final class PaymentScenario {
+  private weak var delegate: ScenarioDelegate?
 
-  let startingStateFactory: StartingStateFactory
-  let waitForPodStateFactory: WaitForPodStateFactory
-  let waitForBlipStateFactory: WaitForBlipStateFactory
-  let setupTransferIdStateFactory: SetupTransferIdStateFactory
-  let establishCloudSessionStateFactory: EstablishCloudSessionStateFactory
-  let transferSessionTokenStateFactory: TransferSessionTokenStateFactory
-  let waitForCloudSessionDoneStateFactory: WaitForCloudSessionDoneStateFactory
+  private let podz: Podz
+
+  private let startingStateFactory: StartingStateFactory
+  private let waitForPodStateFactory: WaitForPodStateFactory
+  private let waitForBlipStateFactory: WaitForBlipStateFactory
+  private let setupTransferIdStateFactory: SetupTransferIdStateFactory
+  private let establishCloudSessionStateFactory: EstablishCloudSessionStateFactory
+  private let transferSessionTokenStateFactory: TransferSessionTokenStateFactory
+  private let waitForCloudSessionDoneStateFactory: WaitForCloudSessionDoneStateFactory
+
+  init(delegate: ScenarioDelegate,
+       podz: Podz,
+       startingStateFactory: StartingStateFactory,
+       waitForPodStateFactory: WaitForPodStateFactory,
+       waitForBlipStateFactory: WaitForBlipStateFactory,
+       setupTransferIdStateFactory: SetupTransferIdStateFactory,
+       establishCloudSessionStateFactory: EstablishCloudSessionStateFactory,
+       transferSessionTokenStateFactory: TransferSessionTokenStateFactory,
+       waitForCloudSessionDoneStateFactory: WaitForCloudSessionDoneStateFactory) {
+
+    self.delegate = delegate
+    self.podz = podz
+    self.startingStateFactory = startingStateFactory
+    self.waitForPodStateFactory = waitForPodStateFactory
+    self.waitForBlipStateFactory = waitForBlipStateFactory
+    self.setupTransferIdStateFactory = setupTransferIdStateFactory
+    self.establishCloudSessionStateFactory = establishCloudSessionStateFactory
+    self.transferSessionTokenStateFactory = transferSessionTokenStateFactory
+    self.waitForCloudSessionDoneStateFactory = waitForCloudSessionDoneStateFactory
+  }
 }
 
 extension PaymentScenario: Scenario {
@@ -29,12 +52,16 @@ extension PaymentScenario: Scenario {
        */
       fallthrough
     case .initial:
+      self.delegate?.scenario(self, didChangeBlippitState: .started)
       return startingStateFactory.makeState(delegate: delegate, podz: podz)
     case .starting:
+      self.delegate?.scenario(self, didChangeBlippitState: .lookingForAppTerminals)
       return waitForPodStateFactory.makeState(delegate: delegate)
     case .waitForPod:
+      self.delegate?.scenario(self, didChangeBlippitState: .appTerminalFound)
       return waitForBlipStateFactory.makeState(delegate: delegate)
     case let .waitForBlip(pid, podSession):
+      self.delegate?.scenario(self, didChangeBlippitState: .sessionInitiated)
       return setupTransferIdStateFactory.makeState(delegate: delegate, pid: pid, session: podSession)
     case let .setupTransferId(pid, podSession):
       return establishCloudSessionStateFactory.makeState(
@@ -56,6 +83,8 @@ extension PaymentScenario: Scenario {
         podSession: podSession
       )
     case .waitForCloudSessionDone:
+      self.delegate?.scenario(self, didChangeBlippitState: .sessionDone)
+      self.delegate?.scenario(self, didChangeBlippitState: .appTerminalFound)
       return waitForBlipStateFactory.makeState(delegate: delegate)
     case .stopping:
       return nil

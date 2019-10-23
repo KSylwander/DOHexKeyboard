@@ -12,7 +12,7 @@ public enum BlippitSetup {
   public static func setup(delegate: BlippitDelegate, configuration: BlippitConfiguration) throws -> Blippit {
     let podz = try PodzSetup.setup(appId: configuration.podzAppId, apiKey: configuration.podzApiKey)
 
-    let scenario: Scenario = try {
+    let scenarioFactory: ScenarioFactory = try {
       switch _BlippitMode(configuration.mode) {
       case let .payment(blippitApiKey, blippitAppId, serviceInfo):
         let encoder = JSONEncoder()
@@ -47,7 +47,7 @@ public enum BlippitSetup {
         let urlSession = URLSession(configuration: .default, retainedDelegate: authenticationManager)
         let responseValidator = DefaultHttpUrlResponseValidator()
 
-        return PaymentScenario(
+        return PaymentScenarioFactory(
           podz: podz,
           startingStateFactory: DefaultStartingStateFactory(),
           waitForPodStateFactory: DefaultWaitForPodStateFactory(),
@@ -98,7 +98,7 @@ public enum BlippitSetup {
           )
         )
       case let .payerId(value):
-        return PayerIdScenario(
+        return PayerIdScenarioFactory(
           podz: podz,
           startingStateFactory: DefaultStartingStateFactory(),
           waitForPodStateFactory: DefaultWaitForPodStateFactory(),
@@ -114,6 +114,6 @@ public enum BlippitSetup {
       }
     }()
 
-    return DefaultBlippit(delegate: delegate, podz: podz, scenario: scenario)
+    return DefaultBlippit(delegate: delegate, podz: podz, scenarioFactory: scenarioFactory)
   }
 }
