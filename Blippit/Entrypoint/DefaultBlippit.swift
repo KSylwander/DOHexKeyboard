@@ -101,7 +101,7 @@ final class DefaultBlippit {
       return
     }
 
-    let state = scenario.nextState(for: previousState, delegate: self)
+    let state = scenario.nextState(for: previousState)
     Log.debug(.public("Transitioning to \(state.logDescription)..."))
 
     /* Assigning the current state here makes sure that any state changes during the invocation of the `start()` method
@@ -151,18 +151,16 @@ extension DefaultBlippit: Blippit {
   }
 }
 
-extension DefaultBlippit: StateDelegate {
-  func state(_ state: State, moveFrom previousState: PreviousState) {
+extension DefaultBlippit: ScenarioDelegate {
+  func scenario(_ scenario: Scenario, moveFrom previousState: PreviousState) {
     moveState(from: previousState)
   }
 
-  func state(_ state: State, didFailWithError error: Error) {
+  func scenario(_ scenario: Scenario, didFailWithError error: Error) {
     Log.error(.public("Error: \(error.logDescription)"))
     delegate?.blippit(self, didFailWithError: error)
   }
-}
 
-extension DefaultBlippit: ScenarioDelegate {
   func scenario(_ scenario: Scenario, didChangeBlippitState blippitState: BlippitState) {
     delegate?.blippit(self, didChangeState: blippitState)
   }

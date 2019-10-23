@@ -7,5 +7,5 @@
 //
 
 protocol Scenario {
-  func nextState(for previousState: PreviousState, delegate: StateDelegate) -> State?
+  func nextState(for previousState: PreviousState) -> State?
 }

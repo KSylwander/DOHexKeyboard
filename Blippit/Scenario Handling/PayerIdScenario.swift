@@ -38,7 +38,7 @@ final class PayerIdScenario {
 }
 
 extension PayerIdScenario: Scenario {
-  func nextState(for previousState: PreviousState, delegate: StateDelegate) -> State? {
+  func nextState(for previousState: PreviousState) -> State? {
     switch previousState {
     case .cancelling:
       /* Move back to the starting state after a cancellation. This allows us to make sure that the Podz is still in
@@ -46,27 +46,37 @@ extension PayerIdScenario: Scenario {
        */
       fallthrough
     case .initial:
-      self.delegate?.scenario(self, didChangeBlippitState: .started)
-      return startingStateFactory.makeState(delegate: delegate, podz: podz)
+      delegate?.scenario(self, didChangeBlippitState: .started)
+      return startingStateFactory.makeState(delegate: self, podz: podz)
     case .starting:
-      self.delegate?.scenario(self, didChangeBlippitState: .lookingForAppTerminals)
-      return waitForPodStateFactory.makeState(delegate: delegate)
+      delegate?.scenario(self, didChangeBlippitState: .lookingForAppTerminals)
+      return waitForPodStateFactory.makeState(delegate: self)
     case .waitForPod:
-      self.delegate?.scenario(self, didChangeBlippitState: .appTerminalFound)
-      return waitForBlipStateFactory.makeState(delegate: delegate)
+      delegate?.scenario(self, didChangeBlippitState: .appTerminalFound)
+      return waitForBlipStateFactory.makeState(delegate: self)
     case let .waitForBlip(pid, podSession):
-      self.delegate?.scenario(self, didChangeBlippitState: .sessionInitiated)
-      return setupTransferIdStateFactory.makeState(delegate: delegate, pid: pid, session: podSession)
+      delegate?.scenario(self, didChangeBlippitState: .sessionInitiated)
+      return setupTransferIdStateFactory.makeState(delegate: self, pid: pid, session: podSession)
     case let .setupTransferId(_, podSession):
-      return transferPayerIdStateFactory.makeState(delegate: delegate, session: podSession)
+      return transferPayerIdStateFactory.makeState(delegate: self, session: podSession)
     case .transferPayerId:
-      self.delegate?.scenario(self, didChangeBlippitState: .sessionDone)
-      self.delegate?.scenario(self, didChangeBlippitState: .appTerminalFound)
-      return waitForBlipStateFactory.makeState(delegate: delegate)
+      delegate?.scenario(self, didChangeBlippitState: .sessionDone)
+      delegate?.scenario(self, didChangeBlippitState: .appTerminalFound)
+      return waitForBlipStateFactory.makeState(delegate: self)
     case .stopping:
       return nil
     default:
       fatalError("Unsupported previous state: \(previousState)")
     }
+  }
+}
+
+extension PayerIdScenario: StateDelegate {
+  func state(_ state: State, moveFrom previousState: PreviousState) {
+    delegate?.scenario(self, moveFrom: previousState)
+  }
+
+  func state(_ state: State, didFailWithError error: Error) {
+    delegate?.scenario(self, didFailWithError: error)
   }
 }
