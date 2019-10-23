@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Kfp-0V-Zya">
-                                <rect key="frame" x="16" y="44" width="343" height="223"/>
+                                <rect key="frame" x="16" y="44" width="343" height="296.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ejj-d4-uqP">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="98"/>
@@ -83,23 +83,122 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="we6-yT-9oW">
-                                        <rect key="frame" x="0.0" y="114" width="343" height="109"/>
+                                        <rect key="frame" x="0.0" y="114" width="343" height="182.5"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Payer ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yED-8L-d0W">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="41"/>
-                                                <color key="backgroundColor" name="LightShades"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="41" id="W44-5Z-lFB"/>
-                                                </constraints>
-                                                <color key="textColor" name="DarkShades"/>
-                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="username"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="9VG-gb-OMM" id="SKd-z8-y9N"/>
-                                                </connections>
-                                            </textField>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pkU-gm-R8B">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="114.5"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1U-sk-Lc3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="41"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="a92-ep-f7H">
+                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="41"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pRd-o4-C4q">
+                                                                        <rect key="frame" x="8" y="0.0" width="24" height="41"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="24" id="HVZ-x7-o9M"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="17"/>
+                                                                        <color key="textColor" name="DarkAccent"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Goa-pf-1rT">
+                                                                        <rect key="frame" x="40" y="0.0" width="1" height="41"/>
+                                                                        <subviews>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j5o-1z-prJ">
+                                                                                <rect key="frame" x="0.0" y="5" width="1" height="31"/>
+                                                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.10196078431372549" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="1" id="3eT-ss-Ieo"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" name="LightShades"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="j5o-1z-prJ" firstAttribute="top" secondItem="Goa-pf-1rT" secondAttribute="top" constant="5" id="88z-hw-JnR"/>
+                                                                            <constraint firstItem="j5o-1z-prJ" firstAttribute="leading" secondItem="Goa-pf-1rT" secondAttribute="leading" id="aR5-eC-eB9"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="j5o-1z-prJ" secondAttribute="trailing" id="cTO-FG-9XZ"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="j5o-1z-prJ" secondAttribute="bottom" constant="5" id="mWC-Kd-0AC"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Payer ID" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yED-8L-d0W">
+                                                                        <rect key="frame" x="49" y="0.0" width="286" height="41"/>
+                                                                        <color key="backgroundColor" name="LightShades"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="41" id="W44-5Z-lFB"/>
+                                                                        </constraints>
+                                                                        <color key="textColor" name="DarkShades"/>
+                                                                        <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="18"/>
+                                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="username"/>
+                                                                        <connections>
+                                                                            <outlet property="delegate" destination="9VG-gb-OMM" id="SKd-z8-y9N"/>
+                                                                        </connections>
+                                                                    </textField>
+                                                                </subviews>
+                                                                <edgeInsets key="layoutMargins" top="0.0" left="8" bottom="0.0" right="8"/>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="LightShades"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="a92-ep-f7H" secondAttribute="trailing" id="GY2-Ft-jQd"/>
+                                                            <constraint firstAttribute="bottom" secondItem="a92-ep-f7H" secondAttribute="bottom" id="QPR-H9-28V"/>
+                                                            <constraint firstItem="a92-ep-f7H" firstAttribute="leading" secondItem="B1U-sk-Lc3" secondAttribute="leading" id="dJl-xh-Yt4"/>
+                                                            <constraint firstItem="a92-ep-f7H" firstAttribute="top" secondItem="B1U-sk-Lc3" secondAttribute="top" id="hdQ-G8-boW"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DAj-Lu-kd2">
+                                                        <rect key="frame" x="0.0" y="57" width="343" height="57.5"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1id-2T-XWR">
+                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="37"/>
+                                                                <subviews>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Length" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mOS-J8-Evt">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="159" height="37"/>
+                                                                        <color key="backgroundColor" name="LightShades"/>
+                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad" keyboardAppearance="alert" returnKeyType="done"/>
+                                                                    </textField>
+                                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3t9-SS-Gvj">
+                                                                        <rect key="frame" x="167" y="0.0" width="176" height="37"/>
+                                                                        <color key="backgroundColor" name="Main"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="37" id="bdT-A8-akV"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="17"/>
+                                                                        <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                                                        <state key="normal" title="Generate Random">
+                                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </state>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="5"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="randomPayerIdButtonTapped" destination="9VG-gb-OMM" eventType="touchUpInside" id="fYQ-i9-M9j"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leave the text field blank to generate an ID of random length" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zkp-Yx-OvP">
+                                                                <rect key="frame" x="0.0" y="41" width="343" height="16.5"/>
+                                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="11"/>
+                                                                <color key="textColor" name="LightShades"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QR8-O3-O7N">
-                                                <rect key="frame" x="0.0" y="65" width="343" height="44"/>
+                                                <rect key="frame" x="0.0" y="138.5" width="343" height="44"/>
                                                 <subviews>
                                                     <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEm-xu-ACg">
                                                         <rect key="frame" x="0.0" y="0.0" width="125.5" height="44"/>
@@ -166,7 +265,11 @@
                         <outlet property="cancelSessionButton" destination="ly4-99-aF7" id="v2N-hr-FQT"/>
                         <outlet property="errorLabel" destination="dC5-Sf-Kum" id="d23-1H-WsQ"/>
                         <outlet property="loadingIndicator" destination="HqF-iM-zXM" id="frw-Cu-Ji2"/>
+                        <outlet property="payerIdContainer" destination="pkU-gm-R8B" id="YKb-3I-2wJ"/>
+                        <outlet property="payerIdLengthLabel" destination="pRd-o4-C4q" id="aSM-p7-aeX"/>
                         <outlet property="payerIdTextField" destination="yED-8L-d0W" id="3ta-H4-irr"/>
+                        <outlet property="randomPayerIdButton" destination="3t9-SS-Gvj" id="dNG-HU-Up0"/>
+                        <outlet property="randomPayerIdLengthTextField" destination="mOS-J8-Evt" id="hy3-eC-O1v"/>
                         <outlet property="statusLabel" destination="8dq-p5-osV" id="zwV-wB-mxh"/>
                         <outlet property="toggleBlippitButton" destination="rEm-xu-ACg" id="k5y-Jo-ek3"/>
                     </connections>
@@ -185,6 +288,9 @@
         </namedColor>
         <namedColor name="LightShades">
             <color red="0.96100002527236938" green="0.96899998188018799" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Main">
+            <color red="0.2630000114440918" green="0.63099998235702515" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

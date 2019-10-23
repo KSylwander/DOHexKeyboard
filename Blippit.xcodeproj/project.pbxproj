@@ -147,6 +147,7 @@
 		3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC79740228025BE00AD79CE /* Cancellable.swift */; };
 		3EC7974C2280298800AD79CE /* FetchDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */; };
 		3EC7974E22802A0C00AD79CE /* URLSessionTask+Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */; };
+		3EDB14B423604E130026889F /* TransferId+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB14B323604E130026889F /* TransferId+Random.swift */; };
 		3EE673B422B77BF2004EC0E5 /* NewPodObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE673B322B77BF2004EC0E5 /* NewPodObserving.swift */; };
 		3EE673B622B77C6E004EC0E5 /* WaitForPodState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE673B522B77C6E004EC0E5 /* WaitForPodState.swift */; };
 		3EE673B822B77D78004EC0E5 /* WaitForPodStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE673B722B77D78004EC0E5 /* WaitForPodStateFactory.swift */; };
@@ -361,6 +362,7 @@
 		3EC79740228025BE00AD79CE /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchDataUseCase.swift; sourceTree = "<group>"; };
 		3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSessionTask+Cancellable.swift"; sourceTree = "<group>"; };
+		3EDB14B323604E130026889F /* TransferId+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransferId+Random.swift"; sourceTree = "<group>"; };
 		3EE673B322B77BF2004EC0E5 /* NewPodObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPodObserving.swift; sourceTree = "<group>"; };
 		3EE673B522B77C6E004EC0E5 /* WaitForPodState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitForPodState.swift; sourceTree = "<group>"; };
 		3EE673B722B77D78004EC0E5 /* WaitForPodStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitForPodStateFactory.swift; sourceTree = "<group>"; };
@@ -666,6 +668,7 @@
 				3E5C01B42297FDB800DF47BE /* DefaultBlippitFactory.swift */,
 				3EAABD692297F3C200C0A37A /* Error+Name.swift */,
 				3EAABD6E2297F42500C0A37A /* UIView+CornerRadius.swift */,
+				3EDB14B323604E130026889F /* TransferId+Random.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -991,6 +994,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EDB14B423604E130026889F /* TransferId+Random.swift in Sources */,
 				3E428BE12297EB670038FBB9 /* AppDelegate.swift in Sources */,
 				3EAABD6F2297F42500C0A37A /* UIView+CornerRadius.swift in Sources */,
 				3EAABD672297EEB800C0A37A /* MainViewController.swift in Sources */,
