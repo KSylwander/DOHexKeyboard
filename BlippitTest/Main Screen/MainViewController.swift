@@ -81,15 +81,7 @@ final class MainViewController: UIViewController {
 
   private func setupBlippitWithPayerId(_ payerId: String) {
     do {
-      let blippit: Blippit = try {
-        if let blippit = self.blippit {
-          return blippit
-        } else {
-          let blippit = try blippitFactory.makeBlippit(delegate: self, payerId: payerId)
-          self.blippit = blippit
-          return blippit
-        }
-      }()
+      blippit = try blippitFactory.makeBlippit(delegate: self, payerId: payerId)
       blippit.start()
     } catch {
       handleError(error)
