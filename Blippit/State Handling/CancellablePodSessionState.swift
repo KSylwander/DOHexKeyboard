@@ -24,7 +24,10 @@ extension CancellablePodSessionState {
 
     Log.debug(.public("Cancelling \(logDescription)..."))
 
-    do {
+    closeSession: do {
+      if case .closed = session.state {
+        break closeSession
+      }
       try session.close()
     } catch {
       delegate?.state(self, didFailWithError: error)
