@@ -8,7 +8,7 @@
 
 import Podz
 
-/* Waits for the pod session to be opened, then checks if transferring of IDs is supported */
+/* Opens the pod session, waits for it to be opened, then checks if transferring of IDs is supported */
 final class SetupTransferIdState {
   weak var delegate: StateDelegate?
   let session: PodSession
@@ -24,6 +24,16 @@ final class SetupTransferIdState {
 }
 
 extension SetupTransferIdState: BlippitSessionState {}
+
+extension SetupTransferIdState: Startable {
+  func start() {
+    do {
+      try session.open()
+    } catch {
+      delegate?.state(self, didFailWithError: error)
+    }
+  }
+}
 
 extension SetupTransferIdState: ValidPodSessionStateObserving {
   func handleValidState(_ state: PodSessionState, for session: PodSession) {
