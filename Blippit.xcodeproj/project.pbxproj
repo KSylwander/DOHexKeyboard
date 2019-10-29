@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0652F0235F3517009B9B93 /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0652EF235F3517009B9B93 /* Scenario.swift */; };
+		3E0652F2235F35D6009B9B93 /* PaymentScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0652F1235F35D6009B9B93 /* PaymentScenario.swift */; };
+		3E0652F6235F3EF9009B9B93 /* PayerIdScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0652F5235F3EF9009B9B93 /* PayerIdScenario.swift */; };
 		3E1AF01722AA2ECC00066C80 /* ServiceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1AF01622AA2ECC00066C80 /* ServiceInfo.swift */; };
 		3E1AF01922AA327800066C80 /* BlippitState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1AF01822AA327800066C80 /* BlippitState.swift */; };
 		3E1AF04822AA4D9900066C80 /* BlippitSessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1AF04722AA4D9900066C80 /* BlippitSessionState.swift */; };
@@ -28,9 +31,9 @@
 		3E23C241228C35D800DA3305 /* SetupTransferIdState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C240228C35D800DA3305 /* SetupTransferIdState.swift */; };
 		3E23C245228C3DC700DA3305 /* CancellationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C244228C3DC700DA3305 /* CancellationHandler.swift */; };
 		3E23C247228C3F4100DA3305 /* EstablishCloudSessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C246228C3F4100DA3305 /* EstablishCloudSessionState.swift */; };
-		3E23C252228C4B4E00DA3305 /* RawState+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C251228C4B4E00DA3305 /* RawState+Equatable.swift */; };
+		3E23C252228C4B4E00DA3305 /* PreviousState+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C251228C4B4E00DA3305 /* PreviousState+Equatable.swift */; };
 		3E38F90622819EB100C114B7 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90522819EB100C114B7 /* State.swift */; };
-		3E38F90822819EE300C114B7 /* RawState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90722819EE300C114B7 /* RawState.swift */; };
+		3E38F90822819EE300C114B7 /* PreviousState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90722819EE300C114B7 /* PreviousState.swift */; };
 		3E38F90A22819F3600C114B7 /* StateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90922819F3600C114B7 /* StateDelegate.swift */; };
 		3E38F90C2281A09600C114B7 /* Startable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90B2281A09600C114B7 /* Startable.swift */; };
 		3E38F90E2281A0ED00C114B7 /* PodzStatusObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90D2281A0ED00C114B7 /* PodzStatusObserving.swift */; };
@@ -48,7 +51,6 @@
 		3E428BF32297EC690038FBB9 /* Podz.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC773227C30A500D5C693 /* Podz.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3E428BF52297EC6C0038FBB9 /* Blippit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC765227C2CA200D5C693 /* Blippit.framework */; };
 		3E428BF62297EC6C0038FBB9 /* Blippit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC765227C2CA200D5C693 /* Blippit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3E5353022295482D004FD948 /* RawState+LogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5353012295482D004FD948 /* RawState+LogDescription.swift */; };
 		3E535304229550BC004FD948 /* URLSession+RetainedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E535303229550BC004FD948 /* URLSession+RetainedDelegate.swift */; };
 		3E535306229555C9004FD948 /* abubbl.crt in Resources */ = {isa = PBXBuildFile; fileRef = 3E535305229555C9004FD948 /* abubbl.crt */; };
 		3E5353102295669F004FD948 /* AsyncRetryHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E53530F2295669F004FD948 /* AsyncRetryHandling.swift */; };
@@ -121,6 +123,10 @@
 		3EAABD6A2297F3C200C0A37A /* Error+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAABD692297F3C200C0A37A /* Error+Name.swift */; };
 		3EAABD6C2297F3E500C0A37A /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAABD6B2297F3E500C0A37A /* MainViewController.storyboard */; };
 		3EAABD6F2297F42500C0A37A /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAABD6E2297F42500C0A37A /* UIView+CornerRadius.swift */; };
+		3EAE572523588F1F00645E7A /* BlippitMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE572423588F1F00645E7A /* BlippitMode.swift */; };
+		3EAE57272358918E00645E7A /* TransferPayerIdState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE57262358918E00645E7A /* TransferPayerIdState.swift */; };
+		3EAE57292358958100645E7A /* TransferPayerIdStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE57282358958100645E7A /* TransferPayerIdStateFactory.swift */; };
+		3EAE572B235895AB00645E7A /* DefaultTransferPayerIdStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE572A235895AB00645E7A /* DefaultTransferPayerIdStateFactory.swift */; };
 		3EB8228E229BC72100826236 /* Secular_One.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3EAABD6D2297F40200C0A37A /* Secular_One.ttf */; };
 		3EB82290229BE40200826236 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB8228F229BE40200826236 /* Identity.swift */; };
 		3EB82292229C019400826236 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB82291229C019400826236 /* Log.swift */; };
@@ -141,6 +147,11 @@
 		3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC79740228025BE00AD79CE /* Cancellable.swift */; };
 		3EC7974C2280298800AD79CE /* FetchDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */; };
 		3EC7974E22802A0C00AD79CE /* URLSessionTask+Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */; };
+		3EDB14B423604E130026889F /* TransferId+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB14B323604E130026889F /* TransferId+Random.swift */; };
+		3EDB14B7236081A40026889F /* ScenarioDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB14B6236081A40026889F /* ScenarioDelegate.swift */; };
+		3EDB14B92360820D0026889F /* ScenarioFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB14B82360820D0026889F /* ScenarioFactory.swift */; };
+		3EDB14BB236082840026889F /* PaymentScenarioFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB14BA236082840026889F /* PaymentScenarioFactory.swift */; };
+		3EDB14BD236082F60026889F /* PayerIdScenarioFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB14BC236082F60026889F /* PayerIdScenarioFactory.swift */; };
 		3EE673B422B77BF2004EC0E5 /* NewPodObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE673B322B77BF2004EC0E5 /* NewPodObserving.swift */; };
 		3EE673B622B77C6E004EC0E5 /* WaitForPodState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE673B522B77C6E004EC0E5 /* WaitForPodState.swift */; };
 		3EE673B822B77D78004EC0E5 /* WaitForPodStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE673B722B77D78004EC0E5 /* WaitForPodStateFactory.swift */; };
@@ -217,6 +228,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3E0652EF235F3517009B9B93 /* Scenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
+		3E0652F1235F35D6009B9B93 /* PaymentScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentScenario.swift; sourceTree = "<group>"; };
+		3E0652F5235F3EF9009B9B93 /* PayerIdScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayerIdScenario.swift; sourceTree = "<group>"; };
 		3E1AF01622AA2ECC00066C80 /* ServiceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInfo.swift; sourceTree = "<group>"; };
 		3E1AF01822AA327800066C80 /* BlippitState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitState.swift; sourceTree = "<group>"; };
 		3E1AF04722AA4D9900066C80 /* BlippitSessionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitSessionState.swift; sourceTree = "<group>"; };
@@ -238,9 +252,9 @@
 		3E23C240228C35D800DA3305 /* SetupTransferIdState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTransferIdState.swift; sourceTree = "<group>"; };
 		3E23C244228C3DC700DA3305 /* CancellationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationHandler.swift; sourceTree = "<group>"; };
 		3E23C246228C3F4100DA3305 /* EstablishCloudSessionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstablishCloudSessionState.swift; sourceTree = "<group>"; };
-		3E23C251228C4B4E00DA3305 /* RawState+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RawState+Equatable.swift"; sourceTree = "<group>"; };
+		3E23C251228C4B4E00DA3305 /* PreviousState+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviousState+Equatable.swift"; sourceTree = "<group>"; };
 		3E38F90522819EB100C114B7 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
-		3E38F90722819EE300C114B7 /* RawState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawState.swift; sourceTree = "<group>"; };
+		3E38F90722819EE300C114B7 /* PreviousState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousState.swift; sourceTree = "<group>"; };
 		3E38F90922819F3600C114B7 /* StateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDelegate.swift; sourceTree = "<group>"; };
 		3E38F90B2281A09600C114B7 /* Startable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Startable.swift; sourceTree = "<group>"; };
 		3E38F90D2281A0ED00C114B7 /* PodzStatusObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodzStatusObserving.swift; sourceTree = "<group>"; };
@@ -256,7 +270,6 @@
 		3E428BE72297EB680038FBB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E428BEA2297EB680038FBB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E428BEC2297EB680038FBB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3E5353012295482D004FD948 /* RawState+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RawState+LogDescription.swift"; sourceTree = "<group>"; };
 		3E535303229550BC004FD948 /* URLSession+RetainedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+RetainedDelegate.swift"; sourceTree = "<group>"; };
 		3E535305229555C9004FD948 /* abubbl.crt */ = {isa = PBXFileReference; lastKnownFileType = file; path = abubbl.crt; sourceTree = "<group>"; };
 		3E53530F2295669F004FD948 /* AsyncRetryHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncRetryHandling.swift; sourceTree = "<group>"; };
@@ -327,6 +340,10 @@
 		3EAABD6B2297F3E500C0A37A /* MainViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		3EAABD6D2297F40200C0A37A /* Secular_One.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Secular_One.ttf; sourceTree = "<group>"; };
 		3EAABD6E2297F42500C0A37A /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
+		3EAE572423588F1F00645E7A /* BlippitMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitMode.swift; sourceTree = "<group>"; };
+		3EAE57262358918E00645E7A /* TransferPayerIdState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPayerIdState.swift; sourceTree = "<group>"; };
+		3EAE57282358958100645E7A /* TransferPayerIdStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPayerIdStateFactory.swift; sourceTree = "<group>"; };
+		3EAE572A235895AB00645E7A /* DefaultTransferPayerIdStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTransferPayerIdStateFactory.swift; sourceTree = "<group>"; };
 		3EB8228F229BE40200826236 /* Identity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
 		3EB82291229C019400826236 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		3EB82294229C1A9000826236 /* Error+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+LogDescription.swift"; sourceTree = "<group>"; };
@@ -349,6 +366,11 @@
 		3EC79740228025BE00AD79CE /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchDataUseCase.swift; sourceTree = "<group>"; };
 		3EC7974D22802A0C00AD79CE /* URLSessionTask+Cancellable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSessionTask+Cancellable.swift"; sourceTree = "<group>"; };
+		3EDB14B323604E130026889F /* TransferId+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransferId+Random.swift"; sourceTree = "<group>"; };
+		3EDB14B6236081A40026889F /* ScenarioDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioDelegate.swift; sourceTree = "<group>"; };
+		3EDB14B82360820D0026889F /* ScenarioFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioFactory.swift; sourceTree = "<group>"; };
+		3EDB14BA236082840026889F /* PaymentScenarioFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentScenarioFactory.swift; sourceTree = "<group>"; };
+		3EDB14BC236082F60026889F /* PayerIdScenarioFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayerIdScenarioFactory.swift; sourceTree = "<group>"; };
 		3EE673B322B77BF2004EC0E5 /* NewPodObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPodObserving.swift; sourceTree = "<group>"; };
 		3EE673B522B77C6E004EC0E5 /* WaitForPodState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitForPodState.swift; sourceTree = "<group>"; };
 		3EE673B722B77D78004EC0E5 /* WaitForPodStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitForPodStateFactory.swift; sourceTree = "<group>"; };
@@ -412,6 +434,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E0652EE235F34F0009B9B93 /* Scenario Handling */ = {
+			isa = PBXGroup;
+			children = (
+				3E0652F5235F3EF9009B9B93 /* PayerIdScenario.swift */,
+				3E0652F1235F35D6009B9B93 /* PaymentScenario.swift */,
+				3E0652EF235F3517009B9B93 /* Scenario.swift */,
+				3EDB14B6236081A40026889F /* ScenarioDelegate.swift */,
+				3EDB14B82360820D0026889F /* ScenarioFactory.swift */,
+			);
+			path = "Scenario Handling";
+			sourceTree = "<group>";
+		};
 		3E23C225228C0ED900DA3305 /* Establish Cloud Session */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,6 +464,7 @@
 				3E23C246228C3F4100DA3305 /* EstablishCloudSessionState.swift */,
 				3E23C240228C35D800DA3305 /* SetupTransferIdState.swift */,
 				3E38F9152281A2A200C114B7 /* StartingState.swift */,
+				3EAE57262358918E00645E7A /* TransferPayerIdState.swift */,
 				3EFADD2A228D4D9B00B3559A /* TransferSessionTokenState.swift */,
 				3EC4DE462283073A007A05C9 /* WaitForBlipState.swift */,
 				3E55DB6D2296CDD7009CF6D2 /* WaitForCloudSessionDoneState.swift */,
@@ -452,13 +487,14 @@
 				3E23C23A228C2E0100DA3305 /* PodSessionStateObserving.swift */,
 				3EC4DE44228306F1007A05C9 /* PodStateObserving.swift */,
 				3E38F90D2281A0ED00C114B7 /* PodzStatusObserving.swift */,
-				3E38F90722819EE300C114B7 /* RawState.swift */,
+				3E38F90722819EE300C114B7 /* PreviousState.swift */,
 				3EFADD4F228D9D2900B3559A /* SetupTransferIdStateFactory.swift */,
 				3E38F90B2281A09600C114B7 /* Startable.swift */,
 				3EFADD47228D999800B3559A /* StartingStateFactory.swift */,
 				3E38F90522819EB100C114B7 /* State.swift */,
 				3E38F90922819F3600C114B7 /* StateDelegate.swift */,
 				3EFADD28228D4D8A00B3559A /* TransferIdState.swift */,
+				3EAE57282358958100645E7A /* TransferPayerIdStateFactory.swift */,
 				3EFADD53228D9F6600B3559A /* TransferSessionTokenStateFactory.swift */,
 				3E23C23C228C2F0800DA3305 /* ValidPodSessionStateObserving.swift */,
 				3E38F90F2281A10B00C114B7 /* ValidPodzStatusObserving.swift */,
@@ -509,10 +545,13 @@
 				3EFADD26228D4D6900B3559A /* DefaultRetryHandlerFactory.swift */,
 				3EFADD51228D9D8200B3559A /* DefaultSetupTransferIdStateFactory.swift */,
 				3EFADD49228D99BB00B3559A /* DefaultStartingStateFactory.swift */,
+				3EAE572A235895AB00645E7A /* DefaultTransferPayerIdStateFactory.swift */,
 				3EFADD55228D9F9100B3559A /* DefaultTransferSessionTokenStateFactory.swift */,
 				3EFADD4D228D9B0000B3559A /* DefaultWaitForBlipStateFactory.swift */,
 				3E55DB712296D63E009CF6D2 /* DefaultWaitForCloudSessionDoneStateFactory.swift */,
 				3EE673B922B77DD0004EC0E5 /* DefaultWaitForPodStateFactory.swift */,
+				3EDB14BC236082F60026889F /* PayerIdScenarioFactory.swift */,
+				3EDB14BA236082840026889F /* PaymentScenarioFactory.swift */,
 			);
 			path = "Construction Root";
 			sourceTree = "<group>";
@@ -619,7 +658,7 @@
 				3E9EA1872281829B00B1B837 /* Any.swift */,
 				3E9EA18D228182EA00B1B837 /* CustomMatchers.swift */,
 				3E9EA189228182B800B1B837 /* Immaterial.swift */,
-				3E23C251228C4B4E00DA3305 /* RawState+Equatable.swift */,
+				3E23C251228C4B4E00DA3305 /* PreviousState+Equatable.swift */,
 				3E9EA18B228182CE00B1B837 /* Result+IsSuccess.swift */,
 			);
 			path = Commons;
@@ -641,6 +680,7 @@
 				3E5C01B42297FDB800DF47BE /* DefaultBlippitFactory.swift */,
 				3EAABD692297F3C200C0A37A /* Error+Name.swift */,
 				3EAABD6E2297F42500C0A37A /* UIView+CornerRadius.swift */,
+				3EDB14B323604E130026889F /* TransferId+Random.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -664,7 +704,6 @@
 				3EB82294229C1A9000826236 /* Error+LogDescription.swift */,
 				3EB8229E229C222800826236 /* HTTPURLResponse+LogDescription.swift */,
 				3EB82291229C019400826236 /* Log.swift */,
-				3E5353012295482D004FD948 /* RawState+LogDescription.swift */,
 				3EB82296229C1AD000826236 /* State+LogDescription.swift */,
 				3EB822A2229C228300826236 /* URLRequest+LogDescription.swift */,
 			);
@@ -705,6 +744,7 @@
 				3EC797462280279900AD79CE /* Networking */,
 				3EAEA7FD2280109F008B7E77 /* Resources */,
 				3EFADD1F228D4BF500B3559A /* Retry Handling */,
+				3E0652EE235F34F0009B9B93 /* Scenario Handling */,
 				3E790F7E228AD90F00DB072F /* Security */,
 				3E38F9172281A31F00C114B7 /* State Handling */,
 				3E38F90422819E9100C114B7 /* State Machine */,
@@ -779,6 +819,7 @@
 				3EFADD2F228D53B100B3559A /* Blippit.swift */,
 				3EFADD2D228D534F00B3559A /* BlippitConfiguration.swift */,
 				3EFADD33228D567E00B3559A /* BlippitDelegate.swift */,
+				3EAE572423588F1F00645E7A /* BlippitMode.swift */,
 				3E1AF01822AA327800066C80 /* BlippitState.swift */,
 				3EFADD35228D56C000B3559A /* DefaultBlippit.swift */,
 				3E1AF01622AA2ECC00066C80 /* ServiceInfo.swift */,
@@ -965,6 +1006,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EDB14B423604E130026889F /* TransferId+Random.swift in Sources */,
 				3E428BE12297EB670038FBB9 /* AppDelegate.swift in Sources */,
 				3EAABD6F2297F42500C0A37A /* UIView+CornerRadius.swift in Sources */,
 				3EAABD672297EEB800C0A37A /* MainViewController.swift in Sources */,
@@ -988,7 +1030,7 @@
 				3E9EA18E228182EA00B1B837 /* CustomMatchers.swift in Sources */,
 				3EC4DE4F22830CA2007A05C9 /* WaitForBlipStateSpec.swift in Sources */,
 				3EC4DE4B228308D4007A05C9 /* DummyPod.swift in Sources */,
-				3E23C252228C4B4E00DA3305 /* RawState+Equatable.swift in Sources */,
+				3E23C252228C4B4E00DA3305 /* PreviousState+Equatable.swift in Sources */,
 				3E97FA4C22804CE9003419AE /* DummyURLSessionDataTask.swift in Sources */,
 				3E38F91D2281BB2F00C114B7 /* DummyDefaultPodzStatusObservingState.swift in Sources */,
 				3EC4DE4D22830991007A05C9 /* DummyPodSession.swift in Sources */,
@@ -1028,6 +1070,7 @@
 				3E790F71228AD19C00DB072F /* Fmap.swift in Sources */,
 				3EFADD2E228D534F00B3559A /* BlippitConfiguration.swift in Sources */,
 				3E23C241228C35D800DA3305 /* SetupTransferIdState.swift in Sources */,
+				3E0652F2235F35D6009B9B93 /* PaymentScenario.swift in Sources */,
 				3E1AF01722AA2ECC00066C80 /* ServiceInfo.swift in Sources */,
 				3E53531622956A7D004FD948 /* HttpRequestState.swift in Sources */,
 				3EC4DE45228306F1007A05C9 /* PodStateObserving.swift in Sources */,
@@ -1037,12 +1080,14 @@
 				3EFADD23228D4D5E00B3559A /* RetryHandler.swift in Sources */,
 				3EFADD56228D9F9100B3559A /* DefaultTransferSessionTokenStateFactory.swift in Sources */,
 				3EC7974C2280298800AD79CE /* FetchDataUseCase.swift in Sources */,
+				3EDB14B92360820D0026889F /* ScenarioFactory.swift in Sources */,
 				3E23C229228C0F1C00DA3305 /* EstablishCloudSessionResponseDto.swift in Sources */,
 				3EFADD50228D9D2900B3559A /* SetupTransferIdStateFactory.swift in Sources */,
 				3E790FA4228ADC6300DB072F /* ApplyCertificatePinningUseCaseFactory.swift in Sources */,
 				3E55DB6E2296CDD7009CF6D2 /* WaitForCloudSessionDoneState.swift in Sources */,
 				3E23C22B228C0F2300DA3305 /* EstablishCloudSessionUseCase.swift in Sources */,
 				3E790F75228AD1C500DB072F /* Composition.swift in Sources */,
+				3EAE572523588F1F00645E7A /* BlippitMode.swift in Sources */,
 				3E790FA2228ADC5600DB072F /* DefaultApplyCertificatePinningUseCase.swift in Sources */,
 				3EFADD25228D4D6500B3559A /* RetryHandlerFactory.swift in Sources */,
 				3E23C227228C0F1100DA3305 /* EstablishCloudSessionRequestDto.swift in Sources */,
@@ -1062,10 +1107,13 @@
 				3EFADD4E228D9B0000B3559A /* DefaultWaitForBlipStateFactory.swift in Sources */,
 				3E97FA282280318B003419AE /* URLSession+DataTaskFactory.swift in Sources */,
 				3EB8229D229C21BF00826236 /* Data+LogDescription.swift in Sources */,
+				3EDB14B7236081A40026889F /* ScenarioDelegate.swift in Sources */,
 				3EFADD40228D6EF500B3559A /* Constants+States.swift in Sources */,
-				3E38F90822819EE300C114B7 /* RawState.swift in Sources */,
+				3EAE57292358958100645E7A /* TransferPayerIdStateFactory.swift in Sources */,
+				3E38F90822819EE300C114B7 /* PreviousState.swift in Sources */,
 				3E55DB622296CBAB009CF6D2 /* CloudSessionStatus.swift in Sources */,
 				3E23C21A228C0E9400DA3305 /* UploadTaskFactory.swift in Sources */,
+				3E0652F0235F3517009B9B93 /* Scenario.swift in Sources */,
 				3E790F8E228AD9FB00DB072F /* CertificateHandling.swift in Sources */,
 				3EE673B822B77D78004EC0E5 /* WaitForPodStateFactory.swift in Sources */,
 				3E38F90E2281A0ED00C114B7 /* PodzStatusObserving.swift in Sources */,
@@ -1080,18 +1128,23 @@
 				3E790FA0228ADC4400DB072F /* ApplyCertificatePinningUseCase.swift in Sources */,
 				3E790F8C228AD9BF00DB072F /* SecPolicyHandler.swift in Sources */,
 				3E790F84228AD96E00DB072F /* Trust.swift in Sources */,
+				3EAE57272358918E00645E7A /* TransferPayerIdState.swift in Sources */,
 				3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */,
+				3E0652F6235F3EF9009B9B93 /* PayerIdScenario.swift in Sources */,
 				3EE673BA22B77DD0004EC0E5 /* DefaultWaitForPodStateFactory.swift in Sources */,
 				3E5353102295669F004FD948 /* AsyncRetryHandling.swift in Sources */,
 				3E790FAC228ADCD400DB072F /* DefaultValidateTrustUseCase.swift in Sources */,
 				3E790F92228ADA1C00DB072F /* TrustHandling.swift in Sources */,
+				3EDB14BD236082F60026889F /* PayerIdScenarioFactory.swift in Sources */,
 				3E535312229566DB004FD948 /* AsyncRetryHandlerFactory.swift in Sources */,
 				3E790F90228ADA0D00DB072F /* SecCertificateHandler.swift in Sources */,
 				3E790F6F228AD18800DB072F /* Flip.swift in Sources */,
 				3E535304229550BC004FD948 /* URLSession+RetainedDelegate.swift in Sources */,
+				3EDB14BB236082840026889F /* PaymentScenarioFactory.swift in Sources */,
 				3EFADD52228D9D8200B3559A /* DefaultSetupTransferIdStateFactory.swift in Sources */,
 				3EB82297229C1AD000826236 /* State+LogDescription.swift in Sources */,
 				3EFADD42228D808D00B3559A /* HttpUrlResponseValidator.swift in Sources */,
+				3EAE572B235895AB00645E7A /* DefaultTransferPayerIdStateFactory.swift in Sources */,
 				3EFADD48228D999800B3559A /* StartingStateFactory.swift in Sources */,
 				3EFADD2B228D4D9B00B3559A /* TransferSessionTokenState.swift in Sources */,
 				3EB82295229C1A9000826236 /* Error+LogDescription.swift in Sources */,
@@ -1115,7 +1168,6 @@
 				3E55DB642296CBDC009CF6D2 /* GetCloudSessionStatusUseCase.swift in Sources */,
 				3EE673B622B77C6E004EC0E5 /* WaitForPodState.swift in Sources */,
 				3E38F90A22819F3600C114B7 /* StateDelegate.swift in Sources */,
-				3E5353022295482D004FD948 /* RawState+LogDescription.swift in Sources */,
 				3EC4DE49228307CC007A05C9 /* Constants.swift in Sources */,
 				3E23C220228C0EA900DA3305 /* DefaultUploadDataUseCase.swift in Sources */,
 				3E23C224228C0ECB00DA3305 /* Decoder.swift in Sources */,

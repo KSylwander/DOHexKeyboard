@@ -15,7 +15,13 @@ final class MainViewController: UIViewController {
   @IBOutlet private var statusLabel: UILabel!
   @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
   @IBOutlet private var errorLabel: UILabel!
-  @IBOutlet private var userIdTextField: UITextField!
+
+  @IBOutlet private var payerIdContainer: UIView!
+  @IBOutlet private var payerIdTextField: UITextField!
+  @IBOutlet private var payerIdLengthLabel: UILabel!
+  @IBOutlet private var randomPayerIdLengthTextField: UITextField!
+  @IBOutlet private var randomPayerIdButton: UIButton!
+
   @IBOutlet private var toggleBlippitButton: UIButton!
   @IBOutlet private var cancelSessionButton: UIButton!
 
@@ -26,7 +32,7 @@ final class MainViewController: UIViewController {
 
   private var isBlippitActive = false {
     didSet {
-      updateUserIdTextField()
+      updatePayerIdUI()
       updateToggleBlippitButton()
     }
   }
@@ -46,26 +52,36 @@ final class MainViewController: UIViewController {
     blippit?.stop()
   }
 
+  @IBAction private func randomPayerIdButtonTapped() {
+    view.endEditing(true)
+    do {
+      let id: TransferId
+      if let length = randomPayerIdLengthTextField.text.flatMap(Int.init) {
+        id = try TransferId.random(withLength: length)
+      } else {
+        id = try TransferId.random()
+      }
+      payerIdTextField.text = id.idString
+      updatePayerIdLengthLabel()
+      updateToggleBlippitButton()
+    } catch {
+      handleError(error)
+    }
+  }
+
   @IBAction private func toggleBlippitButtonTapped() {
+    view.endEditing(true)
     if !isBlippitActive {
-      setupBlippitWithUserId(userIdTextField.text!)
+      setupBlippitWithPayerId(payerIdTextField.text!)
     } else {
       blippit.stop()
     }
     view.endEditing(true)
   }
 
-  private func setupBlippitWithUserId(_ userId: String) {
+  private func setupBlippitWithPayerId(_ payerId: String) {
     do {
-      let blippit: Blippit = try {
-        if let blippit = self.blippit {
-          return blippit
-        } else {
-          let blippit = try blippitFactory.makeBlippit(delegate: self, userId: userId)
-          self.blippit = blippit
-          return blippit
-        }
-      }()
+      blippit = try blippitFactory.makeBlippit(delegate: self, payerId: payerId)
       blippit.start()
     } catch {
       handleError(error)
@@ -108,13 +124,25 @@ final class MainViewController: UIViewController {
     blippit.cancelOngoingSession()
   }
 
-  private func updateToggleBlippitButton(withUserId userId: String? = nil) {
+  private func updatePayerIdUI() {
+    let isEnabled = !isBlippitActive
+    payerIdTextField.isEnabled = isEnabled
+    randomPayerIdLengthTextField.isEnabled = isEnabled
+    randomPayerIdButton.isEnabled = isEnabled
+    payerIdContainer.alpha = isEnabled ? 1.0 : 0.7
+  }
+
+  private func updatePayerIdLengthLabel(withPayerId payerId: String? = nil) {
+    payerIdLengthLabel.text = "\((payerId ?? payerIdTextField.text ?? "").count)"
+  }
+
+  private func updateToggleBlippitButton(withPayerId payerId: String? = nil) {
     UIView.performWithoutAnimation {
       toggleBlippitButton.setTitle(!isBlippitActive ? "Start" : "Stop", for: .normal)
       toggleBlippitButton.layoutIfNeeded()
     }
 
-    let text = userId ?? userIdTextField.text ?? ""
+    let text = payerId ?? payerIdTextField.text ?? ""
     let isEnabled = !text.isEmpty
 
     toggleBlippitButton.isEnabled = isEnabled
@@ -128,13 +156,21 @@ extension MainViewController: UITextFieldDelegate {
                  replacementString string: String) -> Bool {
 
     guard let text = textField.text, let range = Range(range, in: text) else {
+      updatePayerIdLengthLabel()
       updateToggleBlippitButton()
       return true
     }
 
     let updatedText = text.replacingCharacters(in: range, with: string)
-    updateToggleBlippitButton(withUserId: updatedText)
+    updatePayerIdLengthLabel(withPayerId: updatedText)
+    updateToggleBlippitButton(withPayerId: updatedText)
 
+    return true
+  }
+
+  func textFieldShouldClear(_ textField: UITextField) -> Bool {
+    updatePayerIdLengthLabel(withPayerId: "")
+    updateToggleBlippitButton(withPayerId: "")
     return true
   }
 
@@ -179,12 +215,6 @@ extension MainViewController: BlippitDelegate {
     handleError(error)
 
     loadingIndicator.isHidden = true
-  }
-
-  private func updateUserIdTextField() {
-    let isEnabled = !isBlippitActive
-    userIdTextField.isEnabled = isEnabled
-    userIdTextField.alpha = isEnabled ? 1.0 : 0.7
   }
 
   private func setIsCancelSessionEnabled(_ isCancelSessionEnabled: Bool) {

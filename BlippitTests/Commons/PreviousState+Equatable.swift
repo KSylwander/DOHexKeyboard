@@ -1,5 +1,5 @@
 //
-//  RawState+Equatable.swift
+//  PreviousState+Equatable.swift
 //  BlippitTests
 //
 //  Created by Jerson Perpetua on 2019-05-15.
@@ -8,27 +8,31 @@
 
 @testable import Blippit
 
-extension RawState: Equatable {
-  public static func ==(lhs: RawState, rhs: RawState) -> Bool {
+extension PreviousState: Equatable {
+  public static func ==(lhs: PreviousState, rhs: PreviousState) -> Bool {
     switch (lhs, rhs) {
     case (.initial, .initial):
+      return true
+    case (.cancelling, .cancelling):
+      return true
+    case (.stopping, .stopping):
       return true
     case (.starting, .starting):
       return true
     case (.waitForPod, .waitForPod):
       return true
-    case (.waitForBlip, .waitForBlip):
-      return true
-    case let (.setupTransferId(lhs), .setupTransferId(rhs)),
-         let (.establishCloudSession(lhs), .establishCloudSession(rhs)):
+    case let (.waitForBlip(lhs), .waitForBlip(rhs)),
+         let (.setupTransferId(lhs), .setupTransferId(rhs)):
       return lhs.pid == rhs.pid && lhs.podSession === rhs.podSession
-    case let (.transferSessionToken(lhs), .transferSessionToken(rhs)):
+    case let (.establishCloudSession(lhs), .establishCloudSession(rhs)):
       return lhs.cloudSessionId == rhs.cloudSessionId
         && lhs.podSession === rhs.podSession
         && lhs.sessionToken == rhs.sessionToken
-    case let (.waitForCloudSessionDone(lhs), .waitForCloudSessionDone(rhs)):
+    case let (.transferSessionToken(lhs), .transferSessionToken(rhs)):
       return lhs.cloudSessionId == rhs.cloudSessionId && lhs.podSession === rhs.podSession
-    case (.blippitSessionCompleted, .blippitSessionCompleted):
+    case (.waitForCloudSessionDone, .waitForCloudSessionDone):
+      return true
+    case (.transferPayerId, .transferPayerId):
       return true
     default:
       return false

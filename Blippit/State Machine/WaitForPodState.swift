@@ -23,7 +23,7 @@ extension WaitForPodState: State {}
 
 extension WaitForPodState: NewPodObserving {
   func handleNewPod(_ pod: Pod) {
-    delegate?.state(self, moveTo: .waitForBlip)
+    delegate?.state(self, moveFrom: .waitForPod)
   }
 }
 
@@ -35,7 +35,7 @@ extension WaitForPodState: Cancellable {
     isCancelling = true
 
     Log.debug(.public("Cancelling \(logDescription)..."))
-    delegate?.state(self, moveTo: .starting)
+    delegate?.state(self, moveFrom: .cancelling)
   }
 }
 

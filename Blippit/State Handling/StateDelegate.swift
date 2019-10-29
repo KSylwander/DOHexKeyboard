@@ -9,6 +9,6 @@
 import Foundation
 
 protocol StateDelegate: AnyObject {
-  func state(_ state: State, moveTo nextState: RawState)
+  func state(_ state: State, moveFrom previousState: PreviousState)
   func state(_ state: State, didFailWithError error: Error)
 }

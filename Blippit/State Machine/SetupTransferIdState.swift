@@ -37,7 +37,7 @@ extension SetupTransferIdState: ValidPodSessionStateObserving {
         throw BlippitError.appTerminalDoesNotSupportTransferId
       }
 
-      delegate?.state(self, moveTo: .establishCloudSession(pid: pid, podSession: session))
+      delegate?.state(self, moveFrom: .setupTransferId(pid: pid, podSession: session))
     } catch {
       cancel()
       delegate?.state(self, didFailWithError: error)
