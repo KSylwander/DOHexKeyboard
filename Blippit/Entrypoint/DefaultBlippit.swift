@@ -133,10 +133,10 @@ extension DefaultBlippit: Blippit {
 
     isStateTransitioningDisabled = true
     cancelCurrentState()
-    podz.stop()
     isStateTransitioningDisabled = false
 
     scenario.stop()
+    podz.stop()
   }
 
   func cancelOngoingSession() {

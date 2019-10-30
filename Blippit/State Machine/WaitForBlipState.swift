@@ -8,7 +8,7 @@
 
 import Podz
 
-/* Waits for a blip to occur, and handles opening of the session thereinafter */
+/* Waits for a blip to occur */
 final class WaitForBlipState {
   weak var delegate: StateDelegate?
 
@@ -26,13 +26,7 @@ extension WaitForBlipState: PodStateObserving {
     guard case let .blip(session) = state else {
       return
     }
-
-    do {
-      try session.open()
-      delegate?.state(self, moveFrom: .waitForBlip(pid: pod.pid, podSession: session))
-    } catch {
-      delegate?.state(self, didFailWithError: error)
-    }
+    delegate?.state(self, moveFrom: .waitForBlip(pid: pod.pid, podSession: session))
   }
 }
 
