@@ -9,8 +9,6 @@
 import Blippit
 
 struct DefaultBlippitFactory {
-  let podzApiKey: UUID
-  let podzAppId: UUID
   let blippitApiKey: UUID
   let blippitAppId: UUID
 }
@@ -20,8 +18,6 @@ extension DefaultBlippitFactory: BlippitFactory {
     return try BlippitSetup.setup(
       delegate: delegate,
       configuration: BlippitConfiguration(
-        podzApiKey: podzApiKey,
-        podzAppId: podzAppId,
         mode: .payerId(payerId)
       )
     )

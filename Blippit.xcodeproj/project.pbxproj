@@ -127,6 +127,7 @@
 		3EAE57272358918E00645E7A /* TransferPayerIdState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE57262358918E00645E7A /* TransferPayerIdState.swift */; };
 		3EAE57292358958100645E7A /* TransferPayerIdStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE57282358958100645E7A /* TransferPayerIdStateFactory.swift */; };
 		3EAE572B235895AB00645E7A /* DefaultTransferPayerIdStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE572A235895AB00645E7A /* DefaultTransferPayerIdStateFactory.swift */; };
+		3EB024B123697822004112B6 /* Constants+Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB024B023697822004112B6 /* Constants+Credentials.swift */; };
 		3EB8228E229BC72100826236 /* Secular_One.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3EAABD6D2297F40200C0A37A /* Secular_One.ttf */; };
 		3EB82290229BE40200826236 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB8228F229BE40200826236 /* Identity.swift */; };
 		3EB82292229C019400826236 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB82291229C019400826236 /* Log.swift */; };
@@ -344,6 +345,7 @@
 		3EAE57262358918E00645E7A /* TransferPayerIdState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPayerIdState.swift; sourceTree = "<group>"; };
 		3EAE57282358958100645E7A /* TransferPayerIdStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPayerIdStateFactory.swift; sourceTree = "<group>"; };
 		3EAE572A235895AB00645E7A /* DefaultTransferPayerIdStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTransferPayerIdStateFactory.swift; sourceTree = "<group>"; };
+		3EB024B023697822004112B6 /* Constants+Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Credentials.swift"; sourceTree = "<group>"; };
 		3EB8228F229BE40200826236 /* Identity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
 		3EB82291229C019400826236 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		3EB82294229C1A9000826236 /* Error+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+LogDescription.swift"; sourceTree = "<group>"; };
@@ -769,6 +771,7 @@
 				3E38F9132281A1DB00C114B7 /* BlippitError.swift */,
 				3EC79740228025BE00AD79CE /* Cancellable.swift */,
 				3EC4DE48228307CC007A05C9 /* Constants.swift */,
+				3EB024B023697822004112B6 /* Constants+Credentials.swift */,
 				3E790FB7228AF9F500DB072F /* Constants+Networking.swift */,
 				3EFADD3F228D6EF500B3559A /* Constants+States.swift */,
 				3E23C223228C0ECB00DA3305 /* Decoder.swift */,
@@ -1130,6 +1133,7 @@
 				3E790F84228AD96E00DB072F /* Trust.swift in Sources */,
 				3EAE57272358918E00645E7A /* TransferPayerIdState.swift in Sources */,
 				3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */,
+				3EB024B123697822004112B6 /* Constants+Credentials.swift in Sources */,
 				3E0652F6235F3EF9009B9B93 /* PayerIdScenario.swift in Sources */,
 				3EE673BA22B77DD0004EC0E5 /* DefaultWaitForPodStateFactory.swift in Sources */,
 				3E5353102295669F004FD948 /* AsyncRetryHandling.swift in Sources */,

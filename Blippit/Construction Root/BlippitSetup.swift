@@ -10,7 +10,10 @@ import Podz
 
 public enum BlippitSetup {
   public static func setup(delegate: BlippitDelegate, configuration: BlippitConfiguration) throws -> Blippit {
-    let podz = try PodzSetup.setup(appId: configuration.podzAppId, apiKey: configuration.podzApiKey)
+    let podz = try PodzSetup.setup(
+      appId: Constants.credentials.podz.appId,
+      apiKey: Constants.credentials.podz.apiKey
+    )
 
     let scenarioFactory: ScenarioFactory = try {
       switch _BlippitMode(configuration.mode) {

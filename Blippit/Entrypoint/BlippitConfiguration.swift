@@ -9,15 +9,9 @@
 import Foundation
 
 public struct BlippitConfiguration {
-  public let podzApiKey: UUID
-  public let podzAppId: UUID
-
   public let mode: BlippitMode
 
-  public init(podzApiKey: UUID, podzAppId: UUID, mode: BlippitMode) {
-    self.podzApiKey = podzApiKey
-    self.podzAppId = podzAppId
-
+  public init(mode: BlippitMode) {
     self.mode = mode
   }
 }
