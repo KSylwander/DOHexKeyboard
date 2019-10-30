@@ -9,8 +9,8 @@
 import Blippit
 
 struct DefaultBlippitFactory {
-  let blippitApiKey: UUID
-  let blippitAppId: UUID
+  let apiKey: UUID
+  let appId: UUID
 }
 
 extension DefaultBlippitFactory: BlippitFactory {

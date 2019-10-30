@@ -17,7 +17,7 @@ public enum BlippitSetup {
 
     let scenarioFactory: ScenarioFactory = try {
       switch _BlippitMode(configuration.mode) {
-      case let .payment(blippitApiKey, blippitAppId, serviceInfo):
+      case let .payment(apiKey, appId, serviceInfo):
         let encoder = JSONEncoder()
         let decoder = JSONDecoder()
 
@@ -59,10 +59,10 @@ public enum BlippitSetup {
           establishCloudSessionStateFactory: DefaultEstablishCloudSessionStateFactory(
             serviceInfo: serviceInfo,
             establishCloudSessionUseCase: DefaultEstablishCloudSessionUseCase(
-              appId: blippitAppId,
+              appId: appId,
               requestBuilder: DefaultURLRequestBuilder(
                 apiConfig: Constants.api.establishCloudSession.config,
-                apiKey: blippitApiKey
+                apiKey: apiKey
               ),
               encoder: encoder,
               decoder: decoder,
@@ -86,7 +86,7 @@ public enum BlippitSetup {
             getCloudSessionStatusUseCase: DefaultGetCloudSessionStatusUseCase(
               requestBuilder: DefaultURLRequestBuilder(
                 apiConfig: Constants.api.getCloudSessionStatus.config,
-                apiKey: blippitApiKey
+                apiKey: apiKey
               ),
               decoder: decoder,
               fetchDataUseCase: DefaultFetchDataUseCase(
