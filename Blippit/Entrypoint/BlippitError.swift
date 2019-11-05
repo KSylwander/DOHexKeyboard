@@ -21,14 +21,6 @@ public enum BlippitError {
   case invalidPodSessionState(PodSessionState)
   case appTerminalDoesNotSupportTransferId
 
-  case invalidCredentials(responseData: Data?)
-  case invalidHttpStatusCode(Int, responseData: Data?)
-
-  /* Sending of session token failed after `Constants.states.transferSessionToken.maxRetries + 1` attempts. May be fixed
-   * by asking the user to blip again.
-   */
-  case transferSessionTokenFailed
-
   /* Sending of payer ID failed after `Constants.states.transferPayerIdFailed.maxRetries + 1` attempts. May be fixed by
    * asking the user to blip again.
    */
@@ -38,3 +30,18 @@ public enum BlippitError {
 extension BlippitError: Error {}
 
 extension BlippitError: Equatable {}
+
+/* TODO: Merge to `BlippitMode` when `_BlippitMode.payment` is exposed publicly */
+enum _BlippitError {
+  case invalidCredentials(responseData: Data?)
+  case invalidHttpStatusCode(Int, responseData: Data?)
+
+  /* Sending of session token failed after `Constants.states.transferSessionToken.maxRetries + 1` attempts. May be fixed
+   * by asking the user to blip again.
+   */
+  case transferSessionTokenFailed
+}
+
+extension _BlippitError: Error {}
+
+extension _BlippitError: Equatable {}
