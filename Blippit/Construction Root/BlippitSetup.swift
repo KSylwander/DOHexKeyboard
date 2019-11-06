@@ -8,7 +8,15 @@
 
 import Podz
 
+/**
+ * Main entrypoint where instances of the Blippit SDK can be created.
+ */
 public enum BlippitSetup {
+  /**
+   * Builds an instance of the Blippit SDK.
+   *
+   * The behaviour of multiple `Blippit` instances created from this method is undefined.
+   */
   public static func setup(delegate: BlippitDelegate, configuration: BlippitConfiguration) throws -> Blippit {
     let podz = try PodzSetup.setup(
       appId: Constants.credentials.podz.appId,
