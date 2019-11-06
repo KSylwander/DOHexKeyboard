@@ -15,12 +15,13 @@ import Foundation
  */
 public protocol Blippit {
   /**
-   * Call when the app is interested in accepting payments via an app terminal.
+   * Call when the app is ready to perform payments via the app terminal. How the actual transaction is performed, as
+   * well as what transaction info it will use, depends on the mode set when this `Blippit` instance is built.
    */
   func start()
 
   /**
-   * Call when the app is no longer interested in accepting app terminal payments. This makes sure that any ongoing
+   * Call when the app is no longer interested in performing app terminal payments. This makes sure that any ongoing
    * state is cancelled and cleaned-up.
    */
   func stop()
