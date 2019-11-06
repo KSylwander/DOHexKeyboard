@@ -48,27 +48,6 @@ final class WaitForBlipStateSpec: QuickSpec {
             verifyNoMoreInteractions(session)
           }
         }
-
-        it("opens session on blip") {
-          /* Act */
-          sut.handleState(.blip(session: session), for: pod)
-
-          /* Assert */
-          verify(session).open()
-        }
-
-        it("fails on session open error") {
-          /* Arrange */
-          stub(session) { stub in
-            when(stub.open()).thenThrow(any())
-          }
-
-          /* Act */
-          sut.handleState(.blip(session: session), for: pod)
-
-          /* Assert */
-          verify(stateDelegate).state(any(), didFailWithError: any())
-        }
       }
 
       it("transitions to the cancel state when cancelled") {
