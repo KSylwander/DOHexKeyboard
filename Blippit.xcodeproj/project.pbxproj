@@ -540,7 +540,6 @@
 		3E53531A22956F72004FD948 /* Construction Root */ = {
 			isa = PBXGroup;
 			children = (
-				3E8E0FD12297FB6C001B1C35 /* BlippitSetup.swift */,
 				3E790FA5228ADC6B00DB072F /* DefaultApplyCertificatePinningUseCaseFactory.swift */,
 				3E5353132295678E004FD948 /* DefaultAsyncRetryHandlerFactory.swift */,
 				3EE9ABD2228E95210018896E /* DefaultEstablishCloudSessionStateFactory.swift */,
@@ -823,6 +822,7 @@
 				3EFADD33228D567E00B3559A /* BlippitDelegate.swift */,
 				3E38F9132281A1DB00C114B7 /* BlippitError.swift */,
 				3EAE572423588F1F00645E7A /* BlippitMode.swift */,
+				3E8E0FD12297FB6C001B1C35 /* BlippitSetup.swift */,
 				3E1AF01822AA327800066C80 /* BlippitState.swift */,
 				3EFADD35228D56C000B3559A /* DefaultBlippit.swift */,
 				3E1AF01622AA2ECC00066C80 /* ServiceInfo.swift */,
