@@ -16,7 +16,8 @@ import Foundation
  */
 public enum BlippitMode {
   /**
-   * Transfer a payer ID on blip.
+   * Transfer a payer ID on blip. The payer ID string passed to this mode must be alphanumeric
+   * (i.e., `[a-zA-Z0-9]{1,128}`).
    */
   case payerId(String)
 }
