@@ -12,7 +12,7 @@ import Foundation
  * States of the Blippit SDK instance.
  *
  * Receive state changes by implementing the `BlippitDelegate.blippit(_:didChangeState:)` method, and passing the
- * the delegate implementation to the `BlippitSetup.setup(delegate:configuration:)` method.
+ * delegate implementation to the `BlippitSetup.setup(delegate:configuration:)` method.
  */
 public enum BlippitState {
   /**
