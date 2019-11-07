@@ -11,11 +11,7 @@
 extension StateOutput: Equatable {
   public static func ==(lhs: StateOutput, rhs: StateOutput) -> Bool {
     switch (lhs, rhs) {
-    case (.initial, .initial):
-      return true
     case (.cancelling, .cancelling):
-      return true
-    case (.stopping, .stopping):
       return true
     case (.starting, .starting):
       return true

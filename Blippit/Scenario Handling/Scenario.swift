@@ -14,10 +14,23 @@ protocol Scenario {
 }
 
 protocol TransitionStateFactory {
-  func makeState(for transition: StateTransition) -> State?
+  func makeStartState() -> State
+  func makeStopState() -> State?
+
+  func makeState(for transition: StateTransition) -> State
 }
 
 extension Scenario where Self: TransitionStateFactory {
+  func start() {
+    delegate?.scenario(self, moveTo: makeStartState())
+  }
+
+  func stop() {
+    delegate?.scenario(self, moveTo: makeStopState())
+  }
+}
+
+extension Scenario where Self: StateDelegate, Self: TransitionStateFactory {
   func move(to transition: StateTransition) {
     guard let delegate = delegate else {
       return
@@ -26,17 +39,6 @@ extension Scenario where Self: TransitionStateFactory {
     delegate.scenario(self, moveTo: nextState)
   }
 
-  func start() {
-    move(to: .next(from: .initial))
-  }
-
-  func stop() {
-    move(to: .next(from: .stopping))
-    delegate?.scenario(self, didChangeBlippitState: .stopped)
-  }
-}
-
-extension Scenario where Self: StateDelegate, Self: TransitionStateFactory {
   func state(_ state: State, didFailWithError error: Error) {
     delegate?.scenario(self, didFailWithError: error)
   }

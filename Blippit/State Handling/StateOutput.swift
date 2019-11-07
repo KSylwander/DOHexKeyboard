@@ -10,9 +10,7 @@ import PodzKit
 
 /* Includes relevant metadata to create the corresponding next states */
 enum StateOutput {
-  case initial
   case cancelling
-  case stopping
 
   case starting
   case waitForPod

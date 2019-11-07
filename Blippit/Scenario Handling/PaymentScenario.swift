@@ -46,7 +46,17 @@ final class PaymentScenario {
 extension PaymentScenario: Scenario {}
 
 extension PaymentScenario: TransitionStateFactory {
-  func makeState(for transition: StateTransition) -> State? {
+  func makeStartState() -> State {
+    delegate?.scenario(self, didChangeBlippitState: .started)
+    return startingStateFactory.makeState(delegate: self, podz: podz)
+  }
+
+  func makeStopState() -> State? {
+    delegate?.scenario(self, didChangeBlippitState: .stopped)
+    return nil
+  }
+
+  func makeState(for transition: StateTransition) -> State {
     switch transition {
     case let .next(from: stateOutput):
       switch stateOutput {
@@ -54,9 +64,6 @@ extension PaymentScenario: TransitionStateFactory {
         /* Move back to the starting state after a cancellation. This allows us to make sure that the Podz is still in
          * the correct state after the previous operations.
          */
-        fallthrough
-      case .initial:
-        delegate?.scenario(self, didChangeBlippitState: .started)
         return startingStateFactory.makeState(delegate: self, podz: podz)
       case .starting:
         delegate?.scenario(self, didChangeBlippitState: .lookingForAppTerminals)
@@ -90,8 +97,6 @@ extension PaymentScenario: TransitionStateFactory {
         delegate?.scenario(self, didChangeBlippitState: .sessionDone)
         delegate?.scenario(self, didChangeBlippitState: .appTerminalFound)
         return waitForBlipStateFactory.makeState(delegate: self)
-      case .stopping:
-        return nil
       default:
         fatalError("Unsupported state output: \(stateOutput)")
       }
