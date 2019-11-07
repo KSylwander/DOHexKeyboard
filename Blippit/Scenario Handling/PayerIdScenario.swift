@@ -52,6 +52,8 @@ extension PayerIdScenario: TransitionStateFactory {
 
   func makeState(for transition: StateTransition) -> State {
     switch transition {
+    case let .previous(from: state):
+      fatalError("Unsupported previous state: \(state.logDescription)")
     case let .next(from: stateOutput):
       switch stateOutput {
       case .starting:
