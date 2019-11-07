@@ -37,6 +37,6 @@ extension CancellablePodSessionState {
       self.handleCancellation()
     }
 
-    delegate?.state(self, moveFrom: .cancelling)
+    delegate?.move(to: .next(from: .cancelling))
   }
 }

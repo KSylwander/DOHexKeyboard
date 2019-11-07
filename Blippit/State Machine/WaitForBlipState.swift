@@ -26,7 +26,7 @@ extension WaitForBlipState: PodStateObserving {
     guard case let .blip(session) = state else {
       return
     }
-    delegate?.state(self, moveFrom: .waitForBlip(pid: pod.pid, podSession: session))
+    delegate?.move(to: .next(from: .waitForBlip(pid: pod.pid, podSession: session)))
   }
 }
 
@@ -38,7 +38,7 @@ extension WaitForBlipState: Cancellable {
     isCancelling = true
 
     Log.debug(.public("Cancelling \(logDescription)..."))
-    delegate?.state(self, moveFrom: .cancelling)
+    delegate?.move(to: .next(from: .cancelling))
   }
 }
 

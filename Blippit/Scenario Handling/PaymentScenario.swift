@@ -45,53 +45,56 @@ final class PaymentScenario {
 
 extension PaymentScenario: Scenario {}
 
-extension PaymentScenario: NextStateFactory {
-  func makeNextState(previousState: PreviousState) -> State? {
-    switch previousState {
-    case .cancelling:
-      /* Move back to the starting state after a cancellation. This allows us to make sure that the Podz is still in
-       * the correct state after the previous operations.
-       */
-      fallthrough
-    case .initial:
-      delegate?.scenario(self, didChangeBlippitState: .started)
-      return startingStateFactory.makeState(delegate: self, podz: podz)
-    case .starting:
-      delegate?.scenario(self, didChangeBlippitState: .lookingForAppTerminals)
-      return waitForPodStateFactory.makeState(delegate: self)
-    case .waitForPod:
-      delegate?.scenario(self, didChangeBlippitState: .appTerminalFound)
-      return waitForBlipStateFactory.makeState(delegate: self)
-    case let .waitForBlip(pid, podSession):
-      delegate?.scenario(self, didChangeBlippitState: .sessionInitiated)
-      return setupTransferIdStateFactory.makeState(delegate: self, pid: pid, session: podSession)
-    case let .setupTransferId(pid, podSession):
-      return establishCloudSessionStateFactory.makeState(
-        delegate: self,
-        pid: pid,
-        podSession: podSession
-      )
-    case let .establishCloudSession(cloudSessionId, podSession, sessionToken):
-      return transferSessionTokenStateFactory.makeState(
-        delegate: self,
-        cloudSessionId: cloudSessionId,
-        session: podSession,
-        sessionToken: sessionToken
-      )
-    case let .transferSessionToken(cloudSessionId, podSession):
-      return waitForCloudSessionDoneStateFactory.makeState(
-        delegate: self,
-        cloudSessionId: cloudSessionId,
-        podSession: podSession
-      )
-    case .waitForCloudSessionDone:
-      delegate?.scenario(self, didChangeBlippitState: .sessionDone)
-      delegate?.scenario(self, didChangeBlippitState: .appTerminalFound)
-      return waitForBlipStateFactory.makeState(delegate: self)
-    case .stopping:
-      return nil
-    default:
-      fatalError("Unsupported previous state: \(previousState)")
+extension PaymentScenario: TransitionStateFactory {
+  func makeState(for transition: StateTransition) -> State? {
+    switch transition {
+    case let .next(from: stateOutput):
+      switch stateOutput {
+      case .cancelling:
+        /* Move back to the starting state after a cancellation. This allows us to make sure that the Podz is still in
+         * the correct state after the previous operations.
+         */
+        fallthrough
+      case .initial:
+        delegate?.scenario(self, didChangeBlippitState: .started)
+        return startingStateFactory.makeState(delegate: self, podz: podz)
+      case .starting:
+        delegate?.scenario(self, didChangeBlippitState: .lookingForAppTerminals)
+        return waitForPodStateFactory.makeState(delegate: self)
+      case .waitForPod:
+        delegate?.scenario(self, didChangeBlippitState: .appTerminalFound)
+        return waitForBlipStateFactory.makeState(delegate: self)
+      case let .waitForBlip(pid, podSession):
+        delegate?.scenario(self, didChangeBlippitState: .sessionInitiated)
+        return setupTransferIdStateFactory.makeState(delegate: self, pid: pid, session: podSession)
+      case let .setupTransferId(pid, podSession):
+        return establishCloudSessionStateFactory.makeState(
+          delegate: self,
+          pid: pid,
+          podSession: podSession
+        )
+      case let .establishCloudSession(cloudSessionId, podSession, sessionToken):
+        return transferSessionTokenStateFactory.makeState(
+          delegate: self,
+          cloudSessionId: cloudSessionId,
+          session: podSession,
+          sessionToken: sessionToken
+        )
+      case let .transferSessionToken(cloudSessionId, podSession):
+        return waitForCloudSessionDoneStateFactory.makeState(
+          delegate: self,
+          cloudSessionId: cloudSessionId,
+          podSession: podSession
+        )
+      case .waitForCloudSessionDone:
+        delegate?.scenario(self, didChangeBlippitState: .sessionDone)
+        delegate?.scenario(self, didChangeBlippitState: .appTerminalFound)
+        return waitForBlipStateFactory.makeState(delegate: self)
+      case .stopping:
+        return nil
+      default:
+        fatalError("Unsupported state output: \(stateOutput)")
+      }
     }
   }
 }

@@ -47,7 +47,7 @@ extension SetupTransferIdState: ValidPodSessionStateObserving {
         throw AppTerminalError.unsupported
       }
 
-      delegate?.state(self, moveFrom: .setupTransferId(pid: pid, podSession: session))
+      delegate?.move(to: .next(from: .setupTransferId(pid: pid, podSession: session)))
     } catch {
       cancel()
       delegate?.state(self, didFailWithError: error)

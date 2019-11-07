@@ -39,9 +39,9 @@
 		3E23C241228C35D800DA3305 /* SetupTransferIdState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C240228C35D800DA3305 /* SetupTransferIdState.swift */; };
 		3E23C245228C3DC700DA3305 /* CancellationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C244228C3DC700DA3305 /* CancellationHandler.swift */; };
 		3E23C247228C3F4100DA3305 /* EstablishCloudSessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C246228C3F4100DA3305 /* EstablishCloudSessionState.swift */; };
-		3E23C252228C4B4E00DA3305 /* PreviousState+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C251228C4B4E00DA3305 /* PreviousState+Equatable.swift */; };
+		3E23C252228C4B4E00DA3305 /* StateOutput+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C251228C4B4E00DA3305 /* StateOutput+Equatable.swift */; };
 		3E38F90622819EB100C114B7 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90522819EB100C114B7 /* State.swift */; };
-		3E38F90822819EE300C114B7 /* PreviousState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90722819EE300C114B7 /* PreviousState.swift */; };
+		3E38F90822819EE300C114B7 /* StateOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90722819EE300C114B7 /* StateOutput.swift */; };
 		3E38F90A22819F3600C114B7 /* StateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90922819F3600C114B7 /* StateDelegate.swift */; };
 		3E38F90C2281A09600C114B7 /* Startable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90B2281A09600C114B7 /* Startable.swift */; };
 		3E38F90E2281A0ED00C114B7 /* PodzStatusObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90D2281A0ED00C114B7 /* PodzStatusObserving.swift */; };
@@ -55,6 +55,7 @@
 		3E428BEB2297EB680038FBB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E428BE92297EB680038FBB9 /* LaunchScreen.storyboard */; };
 		3E428BF52297EC6C0038FBB9 /* BlippitKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC765227C2CA200D5C693 /* BlippitKit.framework */; };
 		3E428BF62297EC6C0038FBB9 /* BlippitKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC765227C2CA200D5C693 /* BlippitKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3E4D1E7F23741EF000DE7187 /* StateTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D1E7E23741EF000DE7187 /* StateTransition.swift */; };
 		3E535304229550BC004FD948 /* URLSession+RetainedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E535303229550BC004FD948 /* URLSession+RetainedDelegate.swift */; };
 		3E535306229555C9004FD948 /* abubbl.crt in Resources */ = {isa = PBXBuildFile; fileRef = 3E535305229555C9004FD948 /* abubbl.crt */; };
 		3E5353102295669F004FD948 /* AsyncRetryHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E53530F2295669F004FD948 /* AsyncRetryHandling.swift */; };
@@ -70,6 +71,7 @@
 		3E55DB722296D63E009CF6D2 /* DefaultWaitForCloudSessionDoneStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E55DB712296D63E009CF6D2 /* DefaultWaitForCloudSessionDoneStateFactory.swift */; };
 		3E5C01B32297FD9700DF47BE /* BlippitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C01B22297FD9700DF47BE /* BlippitFactory.swift */; };
 		3E5C01B52297FDB800DF47BE /* DefaultBlippitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C01B42297FDB800DF47BE /* DefaultBlippitFactory.swift */; };
+		3E722AFE237421B500A1E6F7 /* StateTransition+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E722AFD237421B500A1E6F7 /* StateTransition+Equatable.swift */; };
 		3E790F6D228AD17600DB072F /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F6C228AD17600DB072F /* Curry.swift */; };
 		3E790F6F228AD18800DB072F /* Flip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F6E228AD18800DB072F /* Flip.swift */; };
 		3E790F71228AD19C00DB072F /* Fmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F70228AD19C00DB072F /* Fmap.swift */; };
@@ -267,9 +269,9 @@
 		3E23C240228C35D800DA3305 /* SetupTransferIdState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTransferIdState.swift; sourceTree = "<group>"; };
 		3E23C244228C3DC700DA3305 /* CancellationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationHandler.swift; sourceTree = "<group>"; };
 		3E23C246228C3F4100DA3305 /* EstablishCloudSessionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstablishCloudSessionState.swift; sourceTree = "<group>"; };
-		3E23C251228C4B4E00DA3305 /* PreviousState+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviousState+Equatable.swift"; sourceTree = "<group>"; };
+		3E23C251228C4B4E00DA3305 /* StateOutput+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StateOutput+Equatable.swift"; sourceTree = "<group>"; };
 		3E38F90522819EB100C114B7 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
-		3E38F90722819EE300C114B7 /* PreviousState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousState.swift; sourceTree = "<group>"; };
+		3E38F90722819EE300C114B7 /* StateOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateOutput.swift; sourceTree = "<group>"; };
 		3E38F90922819F3600C114B7 /* StateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDelegate.swift; sourceTree = "<group>"; };
 		3E38F90B2281A09600C114B7 /* Startable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Startable.swift; sourceTree = "<group>"; };
 		3E38F90D2281A0ED00C114B7 /* PodzStatusObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodzStatusObserving.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 		3E428BE72297EB680038FBB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E428BEA2297EB680038FBB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E428BEC2297EB680038FBB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E4D1E7E23741EF000DE7187 /* StateTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTransition.swift; sourceTree = "<group>"; };
 		3E535303229550BC004FD948 /* URLSession+RetainedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+RetainedDelegate.swift"; sourceTree = "<group>"; };
 		3E535305229555C9004FD948 /* abubbl.crt */ = {isa = PBXFileReference; lastKnownFileType = file; path = abubbl.crt; sourceTree = "<group>"; };
 		3E53530F2295669F004FD948 /* AsyncRetryHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncRetryHandling.swift; sourceTree = "<group>"; };
@@ -298,6 +301,7 @@
 		3E55DB712296D63E009CF6D2 /* DefaultWaitForCloudSessionDoneStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultWaitForCloudSessionDoneStateFactory.swift; sourceTree = "<group>"; };
 		3E5C01B22297FD9700DF47BE /* BlippitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitFactory.swift; sourceTree = "<group>"; };
 		3E5C01B42297FDB800DF47BE /* DefaultBlippitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBlippitFactory.swift; sourceTree = "<group>"; };
+		3E722AFD237421B500A1E6F7 /* StateTransition+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StateTransition+Equatable.swift"; sourceTree = "<group>"; };
 		3E790F6C228AD17600DB072F /* Curry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curry.swift; sourceTree = "<group>"; };
 		3E790F6E228AD18800DB072F /* Flip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flip.swift; sourceTree = "<group>"; };
 		3E790F70228AD19C00DB072F /* Fmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fmap.swift; sourceTree = "<group>"; };
@@ -510,12 +514,13 @@
 				3E23C23A228C2E0100DA3305 /* PodSessionStateObserving.swift */,
 				3EC4DE44228306F1007A05C9 /* PodStateObserving.swift */,
 				3E38F90D2281A0ED00C114B7 /* PodzStatusObserving.swift */,
-				3E38F90722819EE300C114B7 /* PreviousState.swift */,
 				3EFADD4F228D9D2900B3559A /* SetupTransferIdStateFactory.swift */,
 				3E38F90B2281A09600C114B7 /* Startable.swift */,
 				3EFADD47228D999800B3559A /* StartingStateFactory.swift */,
 				3E38F90522819EB100C114B7 /* State.swift */,
 				3E38F90922819F3600C114B7 /* StateDelegate.swift */,
+				3E38F90722819EE300C114B7 /* StateOutput.swift */,
+				3E4D1E7E23741EF000DE7187 /* StateTransition.swift */,
 				3EFADD28228D4D8A00B3559A /* TransferIdState.swift */,
 				3EAE57282358958100645E7A /* TransferPayerIdStateFactory.swift */,
 				3EFADD53228D9F6600B3559A /* TransferSessionTokenStateFactory.swift */,
@@ -678,8 +683,9 @@
 				3E9EA1872281829B00B1B837 /* Any.swift */,
 				3E9EA18D228182EA00B1B837 /* CustomMatchers.swift */,
 				3E9EA189228182B800B1B837 /* Immaterial.swift */,
-				3E23C251228C4B4E00DA3305 /* PreviousState+Equatable.swift */,
 				3E9EA18B228182CE00B1B837 /* Result+IsSuccess.swift */,
+				3E23C251228C4B4E00DA3305 /* StateOutput+Equatable.swift */,
+				3E722AFD237421B500A1E6F7 /* StateTransition+Equatable.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -1055,12 +1061,13 @@
 				3E38F9192281AB9300C114B7 /* DummyPodz.swift in Sources */,
 				3E97FA4722804537003419AE /* Mocks.generated.swift in Sources */,
 				3E9EA18A228182B800B1B837 /* Immaterial.swift in Sources */,
+				3E722AFE237421B500A1E6F7 /* StateTransition+Equatable.swift in Sources */,
 				3E97FA562280548B003419AE /* DefaultFetchDataUseCaseSpec.swift in Sources */,
 				3E38F91F2281C44000C114B7 /* DefaultPodzStatusObservingStateSpec.swift in Sources */,
 				3E9EA18E228182EA00B1B837 /* CustomMatchers.swift in Sources */,
 				3EC4DE4F22830CA2007A05C9 /* WaitForBlipStateSpec.swift in Sources */,
 				3EC4DE4B228308D4007A05C9 /* DummyPod.swift in Sources */,
-				3E23C252228C4B4E00DA3305 /* PreviousState+Equatable.swift in Sources */,
+				3E23C252228C4B4E00DA3305 /* StateOutput+Equatable.swift in Sources */,
 				3E97FA4C22804CE9003419AE /* DummyURLSessionDataTask.swift in Sources */,
 				3E38F91D2281BB2F00C114B7 /* DummyDefaultPodzStatusObservingState.swift in Sources */,
 				3EC4DE4D22830991007A05C9 /* DummyPodSession.swift in Sources */,
@@ -1142,7 +1149,7 @@
 				3EDB14B7236081A40026889F /* ScenarioDelegate.swift in Sources */,
 				3EFADD40228D6EF500B3559A /* Constants+States.swift in Sources */,
 				3EAE57292358958100645E7A /* TransferPayerIdStateFactory.swift in Sources */,
-				3E38F90822819EE300C114B7 /* PreviousState.swift in Sources */,
+				3E38F90822819EE300C114B7 /* StateOutput.swift in Sources */,
 				3E55DB622296CBAB009CF6D2 /* CloudSessionStatus.swift in Sources */,
 				3E20B66223841886001BEB88 /* ConfigurationError.swift in Sources */,
 				3E20B6712384299E001BEB88 /* ErrorHandler.swift in Sources */,
@@ -1172,6 +1179,7 @@
 				3E790FAC228ADCD400DB072F /* DefaultValidateTrustUseCase.swift in Sources */,
 				3E790F92228ADA1C00DB072F /* TrustHandling.swift in Sources */,
 				3EDB14BD236082F60026889F /* PayerIdScenarioFactory.swift in Sources */,
+				3E4D1E7F23741EF000DE7187 /* StateTransition.swift in Sources */,
 				3E535312229566DB004FD948 /* AsyncRetryHandlerFactory.swift in Sources */,
 				3E790F90228ADA0D00DB072F /* SecCertificateHandler.swift in Sources */,
 				3E790F6F228AD18800DB072F /* Flip.swift in Sources */,

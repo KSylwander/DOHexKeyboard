@@ -1,5 +1,5 @@
 //
-//  PreviousState+Equatable.swift
+//  StateOutput+Equatable.swift
 //  BlippitTests
 //
 //  Created by Jerson Perpetua on 2019-05-15.
@@ -8,8 +8,8 @@
 
 @testable import BlippitKit
 
-extension PreviousState: Equatable {
-  public static func ==(lhs: PreviousState, rhs: PreviousState) -> Bool {
+extension StateOutput: Equatable {
+  public static func ==(lhs: StateOutput, rhs: StateOutput) -> Bool {
     switch (lhs, rhs) {
     case (.initial, .initial):
       return true
