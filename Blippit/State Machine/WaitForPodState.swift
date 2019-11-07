@@ -12,7 +12,12 @@ import PodzKit
 final class WaitForPodState {
   weak var delegate: StateDelegate?
 
-  private var isCancelling = false
+  private enum Stage {
+    case running
+    case stopped
+    case cancelled
+  }
+  private var stage = Stage.running
 
   init(delegate: StateDelegate) {
     self.delegate = delegate
@@ -23,16 +28,21 @@ extension WaitForPodState: State {}
 
 extension WaitForPodState: NewPodObserving {
   func handleNewPod(_ pod: Pod) {
+    guard stage == .running else {
+      return
+    }
+    stage = .stopped
+
     delegate?.move(to: .next(from: .waitForPod))
   }
 }
 
 extension WaitForPodState: Cancellable {
   func cancel() {
-    guard !isCancelling else {
+    guard stage == .running else {
       return
     }
-    isCancelling = true
+    stage = .cancelled
 
     Log.debug(.public("Cancelling \(logDescription)..."))
     delegate?.move(to: .cancelled(from: self))
