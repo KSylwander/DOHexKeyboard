@@ -60,11 +60,6 @@ extension PaymentScenario: TransitionStateFactory {
     switch transition {
     case let .next(from: stateOutput):
       switch stateOutput {
-      case .cancelling:
-        /* Move back to the starting state after a cancellation. This allows us to make sure that the Podz is still in
-         * the correct state after the previous operations.
-         */
-        return startingStateFactory.makeState(delegate: self, podz: podz)
       case .starting:
         delegate?.scenario(self, didChangeBlippitState: .lookingForAppTerminals)
         return waitForPodStateFactory.makeState(delegate: self)
@@ -100,6 +95,11 @@ extension PaymentScenario: TransitionStateFactory {
       default:
         fatalError("Unsupported state output: \(stateOutput)")
       }
+    case .cancelled:
+      /* Move back to the starting state after a cancellation. This allows us to make sure that the Podz is still in
+       * the correct state after the previous operations.
+       */
+      return startingStateFactory.makeState(delegate: self, podz: podz)
     }
   }
 }

@@ -35,7 +35,7 @@ extension WaitForPodState: Cancellable {
     isCancelling = true
 
     Log.debug(.public("Cancelling \(logDescription)..."))
-    delegate?.move(to: .next(from: .cancelling))
+    delegate?.move(to: .cancelled(from: self))
   }
 }
 

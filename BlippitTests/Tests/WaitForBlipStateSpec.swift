@@ -64,7 +64,7 @@ final class WaitForBlipStateSpec: QuickSpec {
 
         /* Assert */
         expect(theStateTransition).toNot(beNil())
-        expect(theStateTransition).to(equal(.next(from: .cancelling)))
+        expect(theStateTransition).to(equal(.cancelled(from: sut)))
       }
 
       it("ignores multiple cancels") {

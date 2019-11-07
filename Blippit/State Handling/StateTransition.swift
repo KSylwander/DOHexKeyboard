@@ -8,4 +8,6 @@
 
 enum StateTransition {
   case next(from: StateOutput)
+
+  case cancelled(from: State)
 }

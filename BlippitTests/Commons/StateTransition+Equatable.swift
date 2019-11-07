@@ -13,6 +13,10 @@ extension StateTransition: Equatable {
     switch (lhs, rhs) {
     case let (.next(lhs), .next(rhs)):
       return lhs == rhs
+    case let (.cancelled(lhs), .cancelled(rhs)):
+      return type(of: lhs) == type(of: rhs)
+    default:
+      return false
     }
   }
 }

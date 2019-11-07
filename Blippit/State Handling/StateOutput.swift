@@ -10,8 +10,6 @@ import PodzKit
 
 /* Includes relevant metadata to create the corresponding next states */
 enum StateOutput {
-  case cancelling
-
   case starting
   case waitForPod
   case waitForBlip(pid: UInt32, podSession: PodSession)
