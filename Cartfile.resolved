@@ -1,4 +1,4 @@
-git "git@bitbucket.org:crunchfishab/podz-ios.git" "805549371680cdd1a2e933f403b333a6730df867"
+git "git@bitbucket.org:crunchfishab/podz-ios.git" "bcaf2192a11be04b2da1f9b4d4815849c1b0c500"
 github "Brightify/Cuckoo" "1.0.6"
 github "Quick/Nimble" "v8.0.2"
 github "Quick/Quick" "v2.1.0"

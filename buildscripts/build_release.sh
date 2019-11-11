@@ -51,9 +51,9 @@ build_xcode_project() {
 
   echo "Building for Environment: $ENVIRONMENT"
   if [[ $ENVIRONMENT == "STAGE" ]]; then
-    xcodebuild clean build ${flags[0]} ${flags[1]} -project Blippit.xcodeproj -scheme Blippit -configuration ReleaseSTAGE -UseNewBuildSystem=YES || error_occured ${LINENO} "Build failed"
+    xcodebuild clean build ${flags[0]} ${flags[1]} -configuration ReleaseSTAGE || error_occured ${LINENO} "Build failed"
   elif [[ $ENVIRONMENT == "PROD" ]]; then
-    xcodebuild clean build ${flags[0]} ${flags[1]} -project Blippit.xcodeproj -scheme Blippit -configuration ReleasePROD -UseNewBuildSystem=YES || error_occured ${LINENO} "Build failed"
+    xcodebuild clean build ${flags[0]} ${flags[1]} -configuration ReleasePROD || error_occured ${LINENO} "Build failed"
   else
     echo "Building for unsupported environment: $ENVIRONMENT"
     usage
@@ -63,7 +63,7 @@ build_xcode_project() {
 
 run_unit_test() {
   if [[ $RUN_UNIT_TEST == YES ]]; then
-    xcodebuild clean test -project Blippit.xcodeproj -configuration DebugSTAGE -UseNewBuildSystem=YES -scheme Blippit -destination 'platform=iOS Simulator,name=iPhone 7' || error_occured ${LINENO} "Unit tests failed!"
+    xcodebuild clean test -project Blippit.xcodeproj -configuration DebugSTAGE -scheme Blippit -destination 'platform=iOS Simulator,name=iPhone 11' || error_occured ${LINENO} "Unit tests failed!"
   else
     echo "Skipping Unit Tests"
   fi
@@ -95,12 +95,12 @@ create_documentation() {
 
 assemble_sdk() {
   RELEASE_ZIP_NAME="Blippit-SDK-$RELEASE_VERSION-iOS"
-  RELEASE_SDK_FOLDER="Blippit-SDK-$RELEASE_VERSION"
-  DOCUMENTATION_FOLDER="$RELEASE_SDK_FOLDER/Documentation"
-  SDK_FOLDER="$RELEASE_SDK_FOLDER/SDK"
+  RELEASE_FOLDER="Blippit-SDK-$RELEASE_VERSION"
+  DOCUMENTATION_FOLDER="$RELEASE_FOLDER/Documentation"
+  SDK_FOLDER="$RELEASE_FOLDER/SDK"
   FRAMEWORK_FOLDER="Build/Frameworks"
 
-  mkdir -p $RELEASE_SDK_FOLDER $SDK_FOLDER $DOCUMENTATION_FOLDER
+  mkdir -p $RELEASE_FOLDER $SDK_FOLDER $DOCUMENTATION_FOLDER
 
   # SDK
   RELEASE_ZIP_NAME+=".zip"
@@ -109,14 +109,17 @@ assemble_sdk() {
   # Documentation
   cp -R docs $DOCUMENTATION_FOLDER
 
-  zip -r $RELEASE_ZIP_NAME $RELEASE_SDK_FOLDER
-  zip -r symbols "$FRAMEWORK_FOLDER/Blippit.framework.dSYM"
-
-  rm -r $RELEASE_SDK_FOLDER
+  zip -r $RELEASE_ZIP_NAME $RELEASE_FOLDER
+  rm -r $RELEASE_FOLDER
 
   # Move the SDK to the artifacts folder
   mkdir -p artifacts
   mv $RELEASE_ZIP_NAME artifacts/
+
+  # Symbols 
+  cp -R "$FRAMEWORK_FOLDER/Blippit.framework.dSYM" .
+  zip -r symbols "Blippit.framework.dSYM"
+  rm -r "Blippit.framework.dSYM"
   mv symbols.zip artifacts/
 }
 
@@ -192,3 +195,4 @@ assemble_sdk
 cleanup
 
 echo "SDK Built and Assembled successfully"
+
