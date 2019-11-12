@@ -8,7 +8,17 @@
 
 import Foundation
 
+/**
+ * Mode determining the behaviour of the Blippit SDK.
+ *
+ * Customize by setting it on a `BlippitConfiguration` instance, and passing the configuration to the
+ * `BlippitSetup.setup(delegate:configuration:)` method.
+ */
 public enum BlippitMode {
+  /**
+   * Transfer a payer ID on blip. The payer ID string passed to this mode must be alphanumeric
+   * (i.e., `[a-zA-Z0-9]{1,128}`).
+   */
   case payerId(String)
 }
 

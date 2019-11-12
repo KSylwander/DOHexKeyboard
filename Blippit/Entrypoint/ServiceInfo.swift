@@ -8,4 +8,5 @@
 
 import Foundation
 
-public typealias ServiceInfo = Dictionary<String, String>
+/* TODO: Expose publicly when `_BlippitMode.payment` is exposed publicly */
+typealias ServiceInfo = Dictionary<String, String>
