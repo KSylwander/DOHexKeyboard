@@ -18,12 +18,16 @@ extension DefaultPodzStatusObservingState {
     switch status {
     case .locked:
       podz.stop()
-      fallthrough
-    case .pending:
+
       if let self = self as? Cancellable {
         self.cancel()
       }
-      delegate?.state(self, didFailWithError: BlippitError.invalidPodzStatus(status))
+      delegate?.state(self, didFailWithError: ConfigurationError.invalidCredentials)
+    case let .pending(error):
+      if let self = self as? Cancellable {
+        self.cancel()
+      }
+      delegate?.state(self, didFailWithError: error)
     default:
       if let self = self as? ValidPodzStatusObserving {
         self.handleValidStatus(status, for: podz)

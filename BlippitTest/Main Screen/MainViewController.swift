@@ -91,14 +91,16 @@ final class MainViewController: UIViewController {
   private func handleError(_ error: Error) {
     setErrorText(error.name)
 
-    if case BlippitError.invalidPodzStatus(PodzStatus.pending(let error)) = error {
-      if error == .locationDenied {
-        showLocationServicesErrorAlert(withTitle: "Location services is disabled, or access to it has been denied")
-      } else if error == .locationNotDetermined {
-        locationManager.requestAlwaysAuthorization()
-      } else if error == .locationRestricted {
-        showLocationServicesErrorAlert(withTitle: "Access to location services has been restricted")
-      }
+    switch error {
+    case LocationError.denied:
+      showLocationServicesErrorAlert(withTitle: "Location services is disabled, or access to it has been denied")
+    case LocationError.notDetermined:
+      locationManager.requestAlwaysAuthorization()
+    case LocationError.restricted:
+      showLocationServicesErrorAlert(withTitle: "Access to location services has been restricted")
+    default:
+      /* Do nothing */
+      break
     }
   }
 

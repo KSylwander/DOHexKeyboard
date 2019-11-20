@@ -25,6 +25,6 @@ extension DefaultPodSessionStateObservingState {
     if let self = self as? Cancellable {
       self.cancel()
     }
-    delegate?.state(self, didFailWithError: BlippitError.invalidPodSessionState(state))
+    delegate?.state(self, didFailWithError: AppTerminalError.connectionLost)
   }
 }

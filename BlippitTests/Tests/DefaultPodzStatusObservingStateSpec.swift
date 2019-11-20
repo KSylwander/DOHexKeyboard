@@ -58,7 +58,7 @@ final class DefaultPodzStatusObservingStateSpec: QuickSpec {
           verify(sut).cancel()
         }
 
-        it("fails with corresponding error when Podz is \(status)") {
+        it("fails when Podz is \(status)") {
           /* Arrange */
           var theError: Error?
           stub(stateDelegate) { stub in
@@ -72,7 +72,6 @@ final class DefaultPodzStatusObservingStateSpec: QuickSpec {
 
           /* Assert */
           expect(theError).toNot(beNil())
-          expect(theError).to(equal(BlippitError.invalidPodzStatus(status)))
         }
       }
 

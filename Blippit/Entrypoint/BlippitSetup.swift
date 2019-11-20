@@ -18,6 +18,16 @@ public enum BlippitSetup {
    * The behaviour of multiple `Blippit` instances created from this method is undefined.
    */
   public static func setup(delegate: BlippitDelegate, configuration: BlippitConfiguration) throws -> Blippit {
+    let errorHandler = ErrorHandler()
+    return try errorHandler.handleErrors {
+      return try setup(delegate: delegate, configuration: configuration, errorHandler: errorHandler)
+    }
+  }
+
+  private static func setup(delegate: BlippitDelegate,
+                            configuration: BlippitConfiguration,
+                            errorHandler: ErrorHandling) throws -> Blippit {
+
     let podz = try PodzSetup.setup(
       appId: Constants.credentials.podz.appId,
       apiKey: Constants.credentials.podz.apiKey
@@ -125,6 +135,11 @@ public enum BlippitSetup {
       }
     }()
 
-    return DefaultBlippit(delegate: delegate, podz: podz, scenarioFactory: scenarioFactory)
+    return DefaultBlippit(
+      delegate: delegate,
+      podz: podz,
+      scenarioFactory: scenarioFactory,
+      errorHandler: errorHandler
+    )
   }
 }

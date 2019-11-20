@@ -10,8 +10,6 @@ import Podz
 
 /* Sends the session token to the pod via its session, then closes the latter */
 final class TransferSessionTokenState {
-  static let transactionFailedError: Error = _BlippitError.transferSessionTokenFailed
-
   weak var delegate: StateDelegate?
   let cloudSessionId: String
   let session: PodSession

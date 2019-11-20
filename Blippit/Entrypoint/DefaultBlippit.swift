@@ -16,16 +16,20 @@ final class DefaultBlippit {
   private let scenarioFactory: ScenarioFactory
   private lazy var scenario = scenarioFactory.makeScenario(delegate: self)
 
+  private let errorHandler: ErrorHandling
+
   private var currentState: State?
   private var isStateTransitioningDisabled = false
 
   private var blippedPod: Pod?
 
-  init(delegate: BlippitDelegate, podz: Podz, scenarioFactory: ScenarioFactory) {
+  init(delegate: BlippitDelegate, podz: Podz, scenarioFactory: ScenarioFactory, errorHandler: ErrorHandling) {
     self.delegate = delegate
 
     self.podz = podz
     self.scenarioFactory = scenarioFactory
+
+    self.errorHandler = errorHandler
 
     podz.onStatusChanged = { [weak self] status in
       self?.handlePodzStatus(status)
@@ -155,7 +159,7 @@ extension DefaultBlippit: ScenarioDelegate {
 
   func scenario(_ scenario: Scenario, didFailWithError error: Error) {
     Log.error(.public("Error: \(error.logDescription)"))
-    delegate?.blippit(self, didFailWithError: error)
+    delegate?.blippit(self, didFailWithError: errorHandler.handleError(error))
   }
 
   func scenario(_ scenario: Scenario, didChangeBlippitState blippitState: BlippitState) {
