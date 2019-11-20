@@ -48,7 +48,7 @@ public enum BlippitSetup {
           let urls = bundle.urls(forResourcesWithExtension: "crt", subdirectory: nil)
           let certificateFactory = DefaultCertificateFactory(certificateHandler: certificateHandler)
           return try (urls ?? []).map(certificateFactory.makeCertificate(url:))
-          }()
+        }()
 
         let authenticationManager = SACAuthenticationManager(
           certificatePinning: CertificatePinningManager(
