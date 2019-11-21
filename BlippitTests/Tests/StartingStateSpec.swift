@@ -8,6 +8,7 @@
 
 import Cuckoo
 import Nimble
+import Podz
 import Quick
 
 @testable import Blippit
@@ -24,7 +25,7 @@ final class StartingStateSpec: QuickSpec {
         reset(stateDelegate, podz)
       }
 
-      it("starts Podz when started") {
+      it("starts Podz when the latter is idle") {
         /* Arrange */
         stub(podz) { stub in
           when(stub.status.get).thenReturn(.idle)
@@ -35,6 +36,33 @@ final class StartingStateSpec: QuickSpec {
 
         /* Assert */
         verify(podz).start()
+      }
+
+      let invalidStates: [PodzStatus] = [
+        .locked,
+        .pending(error: .bluetoothOff),
+        .pending(error: .bluetoothUnauthorized),
+        .pending(error: .locationDenied),
+        .pending(error: .locationNotDetermined),
+        .pending(error: .locationRestricted),
+        .pending(error: .internetNotAvailable)
+      ]
+      invalidStates.forEach { status in
+        it("fails when Podz is \(status)") {
+          /* Arrange */
+          var theError: Error?
+          stub(stateDelegate) { stub in
+            when(stub.state(any(), didFailWithError: any())).then { _, error in
+              theError = error
+            }
+          }
+
+          /* Act */
+          sut.handleStatus(status, for: podz)
+
+          /* Assert */
+          expect(theError).toNot(beNil())
+        }
       }
 
       it("transitions to the next state when Podz is running") {
@@ -52,6 +80,14 @@ final class StartingStateSpec: QuickSpec {
         /* Assert */
         expect(thePreviousState).toNot(beNil())
         expect(thePreviousState).to(equal(.starting))
+      }
+
+      it("stops Podz when the latter is locked") {
+        /* Act */
+        sut.handleStatus(.locked, for: podz)
+
+        /* Assert */
+        verify(podz).stop()
       }
     }
   }
