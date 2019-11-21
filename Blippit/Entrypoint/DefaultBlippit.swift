@@ -159,6 +159,14 @@ extension DefaultBlippit: ScenarioDelegate {
 
   func scenario(_ scenario: Scenario, didFailWithError error: Error) {
     Log.error(.public("Error: \(error.logDescription)"))
+
+    switch error {
+    case is ConfigurationError:
+      stop()
+    default:
+      /* Do nothing */
+      break
+    }
     delegate?.blippit(self, didFailWithError: errorHandler.handleError(error))
   }
 
