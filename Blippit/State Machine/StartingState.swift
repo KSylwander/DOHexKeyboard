@@ -28,14 +28,18 @@ extension StartingState: Startable {
   }
 }
 
-extension StartingState: ValidPodzStatusObserving {
-  func handleValidStatus(_ status: PodzStatus, for podz: Podz) {
-    if status == .idle {
+extension StartingState: PodzStatusObserving {
+  func handleStatus(_ status: PodzStatus, for podz: Podz) {
+    switch status {
+    case .idle:
       podz.start()
-    } else if status == .running {
+    case let .pending(error):
+      delegate?.state(self, didFailWithError: error)
+    case .running:
       delegate?.state(self, moveFrom: .starting)
+    case .locked:
+      podz.stop()
+      delegate?.state(self, didFailWithError: ConfigurationError.invalidCredentials)
     }
   }
 }
-
-extension StartingState: DefaultPodzStatusObservingState {}

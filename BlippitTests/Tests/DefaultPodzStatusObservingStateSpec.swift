@@ -32,14 +32,6 @@ final class DefaultPodzStatusObservingStateSpec: QuickSpec {
         reset(stateDelegate, podz, sut)
       }
 
-      it("stops Podz when the latter is locked") {
-        /* Act */
-        sut.handleStatus(.locked, for: podz)
-
-        /* Assert */
-        verify(podz).stop()
-      }
-
       let invalidStates: [PodzStatus] = [
         .locked,
         .pending(error: .bluetoothOff),
@@ -57,23 +49,6 @@ final class DefaultPodzStatusObservingStateSpec: QuickSpec {
           /* Assert */
           verify(sut).cancel()
         }
-
-        it("fails with corresponding error when Podz is \(status)") {
-          /* Arrange */
-          var theError: Error?
-          stub(stateDelegate) { stub in
-            when(stub.state(any(), didFailWithError: any())).then { _, error in
-              theError = error
-            }
-          }
-
-          /* Act */
-          sut.handleStatus(status, for: podz)
-
-          /* Assert */
-          expect(theError).toNot(beNil())
-          expect(theError).to(equal(BlippitError.invalidPodzStatus(status)))
-        }
       }
 
       let validStates: [PodzStatus] = [
@@ -81,21 +56,12 @@ final class DefaultPodzStatusObservingStateSpec: QuickSpec {
         .idle
       ]
       validStates.forEach { status in
-        it("handles valid Podz \(status) state") {
-          /* Arrange */
-          var theStatus: PodzStatus?
-          stub(sut) { stub in
-            when(stub.handleValidStatus(any(), for: any())).then { status, _ in
-              theStatus = status
-            }
-          }
-
+        it("does nothing when Podz is \(status)") {
           /* Act */
           sut.handleStatus(status, for: podz)
 
           /* Assert */
-          expect(theStatus).toNot(beNil())
-          expect(theStatus).to(equal(status))
+          verifyNoMoreInteractions(sut)
         }
       }
     }

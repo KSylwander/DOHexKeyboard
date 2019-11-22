@@ -9,8 +9,6 @@
 import Podz
 
 final class TransferPayerIdState {
-  static let transactionFailedError: Error = BlippitError.transferPayerIdFailed
-
   weak var delegate: StateDelegate?
   let session: PodSession
   let transferId: TransferId

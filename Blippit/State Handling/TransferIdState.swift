@@ -10,8 +10,6 @@ import Podz
 
 /* Mix-in that allows a transfer ID to be sent to the pod via its session */
 protocol TransferIdState: State, Startable {
-  static var transactionFailedError: Error { get }
-
   var delegate: StateDelegate? { get }
   var session: PodSession { get }
   var transferId: TransferId { get }
@@ -39,11 +37,7 @@ extension TransferIdState {
 
   private func handleErrors(in action: () throws -> Void) {
     do {
-      do {
-        try action()
-      } catch PodSessionError.invalidState {
-        throw BlippitError.invalidPodSessionState(session.state)
-      }
+      try action()
     } catch {
       if let self = self as? Cancellable {
         self.cancel()
@@ -55,7 +49,7 @@ extension TransferIdState {
   private func handleTransactionStatus(_ status: TransactionStatus) {
     handleErrors {
       guard status == .success else {
-        try retryHandler.perform(withMaxRetriesExceededError: Self.transactionFailedError)
+        try retryHandler.perform(withMaxRetriesExceededError: AppTerminalError.transferFailed)
         return
       }
       retryHandler.reset()

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/* TODO: Make public when `_BlippitMode.payment` is exposed publicly */
 enum SecurityError: Error {
   case applyTrustPoliciesFailed(OSStatus)
   case applyTrustAnchorCertificatesFailed(OSStatus)

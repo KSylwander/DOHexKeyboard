@@ -9,8 +9,6 @@
 @testable import Blippit
 
 /* Allows the `DefaultPodzStatusObservingState` mix-in to be spied on via its various requirements (i.e.,
- * `Cancellable`, `ValidPodzStatusObserving`, and its delegate). See `Mocks.generated.swift` for the
- * generated mock.
+ * `Cancellable`, and its delegate). See `Mocks.generated.swift` for the generated mock.
  */
-protocol DummyDefaultPodzStatusObservingState:
-  DefaultPodzStatusObservingState, Cancellable, ValidPodzStatusObserving {}
+protocol DummyDefaultPodzStatusObservingState: DefaultPodzStatusObservingState {}

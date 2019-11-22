@@ -90,30 +90,6 @@ final class MainViewController: UIViewController {
 
   private func handleError(_ error: Error) {
     setErrorText(error.name)
-
-    if case BlippitError.invalidPodzStatus(PodzStatus.pending(let error)) = error {
-      if error == .locationDenied {
-        showLocationServicesErrorAlert(withTitle: "Location services is disabled, or access to it has been denied")
-      } else if error == .locationNotDetermined {
-        locationManager.requestAlwaysAuthorization()
-      } else if error == .locationRestricted {
-        showLocationServicesErrorAlert(withTitle: "Access to location services has been restricted")
-      }
-    }
-  }
-
-  private func showLocationServicesErrorAlert(withTitle title: String) {
-    let alertController = UIAlertController(
-      title: title,
-      message: "Please enable the setting via the Settings app.",
-      preferredStyle: .alert
-    )
-    alertController.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
-    alertController.addAction(.init(title: "Settings", style: .default) { _ in
-      let openSettingsURL = URL(string: UIApplication.openSettingsURLString)!
-      UIApplication.shared.open(openSettingsURL, options: [:], completionHandler: nil)
-    })
-    present(alertController, animated: true, completion: nil)
   }
 
   private func setErrorText(_ errorText: String) {

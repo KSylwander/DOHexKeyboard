@@ -9,25 +9,19 @@
 import Podz
 
 /* Mix-in that handles propagation of Podz errors */
-protocol DefaultPodzStatusObservingState: State, PodzStatusObserving {
+protocol DefaultPodzStatusObservingState: State, PodzStatusObserving, Cancellable {
   var delegate: StateDelegate? { get }
 }
 
 extension DefaultPodzStatusObservingState {
   func handleStatus(_ status: PodzStatus, for podz: Podz) {
     switch status {
-    case .locked:
-      podz.stop()
-      fallthrough
-    case .pending:
-      if let self = self as? Cancellable {
-        self.cancel()
-      }
-      delegate?.state(self, didFailWithError: BlippitError.invalidPodzStatus(status))
+    case .locked, .pending:
+      /* Allow the next state (e.g., `StartingState`) to handle the failure */
+      cancel()
     default:
-      if let self = self as? ValidPodzStatusObserving {
-        self.handleValidStatus(status, for: podz)
-      }
+      /* Do nothing */
+      break
     }
   }
 }

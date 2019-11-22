@@ -26,7 +26,7 @@ extension HttpRequestState {
         switch error {
         case let error as URLError where error.code == .cancelled:
           return
-        case is URLError, _BlippitError.invalidHttpStatusCode:
+        case is URLError, _NetworkError.invalidHttpStatusCode:
           /* Retry URL and HTTP status errors */
           self.retryHandler.perform(withMaxRetriesExceededError: error, onError: self.handleRetryFailure(_:))
         default:
