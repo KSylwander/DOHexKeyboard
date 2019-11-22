@@ -6,7 +6,7 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import Podz
+import PodzKit
 
 /* Waits for the cloud session to be marked as done */
 final class WaitForCloudSessionDoneState {

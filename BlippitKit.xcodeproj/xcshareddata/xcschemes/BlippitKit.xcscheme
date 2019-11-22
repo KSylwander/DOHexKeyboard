@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3EBAC764227C2CA200D5C693"
-               BuildableName = "Blippit.framework"
-               BlueprintName = "Blippit"
-               ReferencedContainer = "container:Blippit.xcodeproj">
+               BuildableName = "BlippitKit.framework"
+               BlueprintName = "BlippitKit"
+               ReferencedContainer = "container:BlippitKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,9 +32,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3EBAC764227C2CA200D5C693"
-            BuildableName = "Blippit.framework"
-            BlueprintName = "Blippit"
-            ReferencedContainer = "container:Blippit.xcodeproj">
+            BuildableName = "BlippitKit.framework"
+            BlueprintName = "BlippitKit"
+            ReferencedContainer = "container:BlippitKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -44,9 +44,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3E97FA2F22803641003419AE"
-               BuildableName = "BlippitTests.xctest"
-               BlueprintName = "BlippitTests"
-               ReferencedContainer = "container:Blippit.xcodeproj">
+               BuildableName = "BlippitKitTests.xctest"
+               BlueprintName = "BlippitKitTests"
+               ReferencedContainer = "container:BlippitKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3EBAC764227C2CA200D5C693"
-            BuildableName = "Blippit.framework"
-            BlueprintName = "Blippit"
-            ReferencedContainer = "container:Blippit.xcodeproj">
+            BuildableName = "BlippitKit.framework"
+            BlueprintName = "BlippitKit"
+            ReferencedContainer = "container:BlippitKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </LaunchAction>
@@ -81,9 +81,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3EBAC764227C2CA200D5C693"
-            BuildableName = "Blippit.framework"
-            BlueprintName = "Blippit"
-            ReferencedContainer = "container:Blippit.xcodeproj">
+            BuildableName = "BlippitKit.framework"
+            BlueprintName = "BlippitKit"
+            ReferencedContainer = "container:BlippitKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

@@ -6,7 +6,7 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import Podz
+import PodzKit
 
 /* Previous state representations that include relevant metadata to create the corresponding next states */
 enum PreviousState {

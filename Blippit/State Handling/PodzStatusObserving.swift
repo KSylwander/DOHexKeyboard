@@ -6,7 +6,7 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import Podz
+import PodzKit
 
 /* Conforming states can be notified of Podz status changes */
 protocol PodzStatusObserving: AnyObject {

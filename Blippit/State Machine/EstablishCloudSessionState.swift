@@ -6,7 +6,7 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import Podz
+import PodzKit
 
 /* Establishes a session to the Blippit SAC */
 final class EstablishCloudSessionState {

@@ -6,7 +6,7 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import Podz
+import PodzKit
 
 /* Starts Podz and waits for it to run */
 final class StartingState {
@@ -40,6 +40,8 @@ extension StartingState: PodzStatusObserving {
     case .locked:
       podz.stop()
       delegate?.state(self, didFailWithError: ConfigurationError.invalidCredentials)
+    @unknown default:
+      fatalError()
     }
   }
 }

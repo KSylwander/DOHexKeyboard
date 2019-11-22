@@ -63,7 +63,7 @@ archive_xcode_project() {
   # SKIP_INSTALL is to install frameworks into the archive.
   xcodebuild archive \
             ${flags[0]} ${flags[1]} \
-            -scheme Blippit \
+            -scheme BlippitKit \
             -configuration $CONFIGURATION \
             -sdk iphoneos \
             -archivePath "$BUILD_DIR/$ARCHIVE_NAME_IOS" \
@@ -73,7 +73,7 @@ archive_xcode_project() {
   # Build for iOS Simulator.
   xcodebuild archive \
             ${flags[0]} ${flags[1]} \
-            -scheme Blippit \
+            -scheme BlippitKit \
             -configuration $CONFIGURATION \
             -sdk iphonesimulator \
             -archivePath "$BUILD_DIR/$ARCHIVE_NAME_IOS_SIMULATOR" \
@@ -83,7 +83,7 @@ archive_xcode_project() {
 
 run_unit_test() {
   if [[ $RUN_UNIT_TEST == YES ]]; then
-    xcodebuild clean test -project Blippit.xcodeproj -configuration DebugSTAGE -scheme Blippit -destination 'platform=iOS Simulator,name=iPhone 11' || error_occured ${LINENO} "Unit tests failed!"
+    xcodebuild clean test -project BlippitKit.xcodeproj -configuration DebugSTAGE -scheme BlippitKit -destination 'platform=iOS Simulator,name=iPhone 11' || error_occured ${LINENO} "Unit tests failed!"
   else
     echo "Skipping Unit Tests"
   fi
@@ -108,8 +108,8 @@ create_documentation() {
   		--author Crunchfish Proximity \
   		--author_url https://blippit.com/developer \
   		--module-version $RELEASE_VERSION \
-  		--xcodebuild-arguments -scheme,Blippit,-configuration,Release \
-  		--module Blippit \
+  		--xcodebuild-arguments -scheme,BlippitKit,-configuration,Release \
+  		--module BlippitKit \
   		--output docs || error_occured ${LINENO} "Could not produce documentation!"  
 }
 
@@ -177,18 +177,18 @@ while getopts "che:rv:" opt; do
 done
 
 # Script variables
-RELEASE_ZIP_NAME="Blippit-SDK-$RELEASE_VERSION-iOS.zip"
-RELEASE_FOLDER="Blippit-SDK-$RELEASE_VERSION"
+RELEASE_ZIP_NAME="BlippitKit-$RELEASE_VERSION-iOS.zip"
+RELEASE_FOLDER="BlippitKit-$RELEASE_VERSION"
 DOCUMENTATION_FOLDER="$RELEASE_FOLDER/Documentation"
 SDK_FOLDER="$RELEASE_FOLDER/SDK"
 
 BUILD_DIR="build"
-ARCHIVE_NAME_IOS="Blippit-iOS-$RELEASE_VERSION"
-ARCHIVE_NAME_IOS_SIMULATOR="Blippit-iOS-Simulator-$RELEASE_VERSION"
-ARCHIVE_FRAMEWORK_LOCATION="Products/Frameworks/Blippit.framework"
+ARCHIVE_NAME_IOS="BlippitKit-iOS-$RELEASE_VERSION"
+ARCHIVE_NAME_IOS_SIMULATOR="BlippitKit-iOS-Simulator-$RELEASE_VERSION"
+ARCHIVE_FRAMEWORK_LOCATION="Products/Frameworks/BlippitKit.framework"
 
 FRAMEWORK_FOLDER="Build/Frameworks"
-FRAMEWORK_NAME="Blippit.xcframework"
+FRAMEWORK_NAME="BlippitKit.xcframework"
 
 # Source the common_functions.sh files to have access to common functions.
 . buildscripts/common_functions.sh
@@ -218,9 +218,9 @@ echo "Generating Documentation..."
 create_documentation
 
 #
-# Archive Blippit project
+# Archive BlippitKit project
 #
-echo "Archiving Blippit..."
+echo "Archiving BlippitKit..."
 archive_xcode_project
 
 #

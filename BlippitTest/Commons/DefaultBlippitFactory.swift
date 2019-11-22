@@ -6,7 +6,7 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import Blippit
+import BlippitKit
 
 struct DefaultBlippitFactory {
   let apiKey: UUID
