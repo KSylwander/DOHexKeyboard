@@ -6,7 +6,7 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import Podz
+import PodzKit
 
 /* Mix-in that allows a transfer ID to be sent to the pod via its session */
 protocol TransferIdState: State, Startable {

@@ -6,7 +6,7 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import Podz
+import PodzKit
 
 /* Allows `Podz` to be mocked from within this project. See `Mocks.generated.swift` for the generated mock. */
 protocol DummyPodz: Podz {

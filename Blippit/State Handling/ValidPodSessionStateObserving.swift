@@ -6,7 +6,7 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import Podz
+import PodzKit
 
 /* Conforming states can be notified of pod session state changes if the latter is valid, and the state also conforms to
  * `DefaultPodSessionStateObservingState`

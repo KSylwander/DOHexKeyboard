@@ -6,7 +6,7 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import Blippit
+import BlippitKit
 
 protocol BlippitFactory {
   func makeBlippit(delegate: BlippitDelegate, payerId: String) throws -> Blippit

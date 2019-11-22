@@ -6,9 +6,9 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import Blippit
+import BlippitKit
 import CoreLocation
-import Podz
+import PodzKit
 import UIKit
 
 final class MainViewController: UIViewController {

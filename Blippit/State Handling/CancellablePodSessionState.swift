@@ -6,7 +6,7 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import Podz
+import PodzKit
 
 /* Mix-in that supports cancelling of a pod session-based state */
 protocol CancellablePodSessionState: State, Cancellable {

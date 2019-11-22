@@ -8,10 +8,10 @@
 
 import Cuckoo
 import Nimble
-import Podz
+import PodzKit
 import Quick
 
-@testable import Blippit
+@testable import BlippitKit
 
 final class StartingStateSpec: QuickSpec {
   override func spec() {

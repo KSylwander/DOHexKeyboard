@@ -4,7 +4,6 @@
 
 cleanup() {
   rm -rf docs
-  rm -rf Frameworks
   rm -rf Build
 }
 
@@ -38,7 +37,7 @@ Example:
 EOF
 }
 
-build_xcode_project() {
+archive_xcode_project() {
   # Change to target directory where the xcode project is located
   flags=()
 
@@ -51,19 +50,40 @@ build_xcode_project() {
 
   echo "Building for Environment: $ENVIRONMENT"
   if [[ $ENVIRONMENT == "STAGE" ]]; then
-    xcodebuild clean build ${flags[0]} ${flags[1]} -configuration ReleaseSTAGE || error_occured ${LINENO} "Build failed"
+    CONFIGURATION=ReleaseSTAGE
   elif [[ $ENVIRONMENT == "PROD" ]]; then
-    xcodebuild clean build ${flags[0]} ${flags[1]} -configuration ReleasePROD || error_occured ${LINENO} "Build failed"
+    CONFIGURATION=ReleasePROD
   else
     echo "Building for unsupported environment: $ENVIRONMENT"
     usage
     error_occured ${LINENO} "Unsupported Environment"
   fi
+
+  # Build for iOS. 
+  # SKIP_INSTALL is to install frameworks into the archive.
+  xcodebuild archive \
+            ${flags[0]} ${flags[1]} \
+            -scheme BlippitKit \
+            -configuration $CONFIGURATION \
+            -sdk iphoneos \
+            -archivePath "$BUILD_DIR/$ARCHIVE_NAME_IOS" \
+            SKIP_INSTALL=NO \
+            || error_occured ${LINENO} "Build failed"
+
+  # Build for iOS Simulator.
+  xcodebuild archive \
+            ${flags[0]} ${flags[1]} \
+            -scheme BlippitKit \
+            -configuration $CONFIGURATION \
+            -sdk iphonesimulator \
+            -archivePath "$BUILD_DIR/$ARCHIVE_NAME_IOS_SIMULATOR" \
+            SKIP_INSTALL=NO \
+            || error_occured ${LINENO} "Build failed"
 }
 
 run_unit_test() {
   if [[ $RUN_UNIT_TEST == YES ]]; then
-    xcodebuild clean test -project Blippit.xcodeproj -configuration DebugSTAGE -scheme Blippit -destination 'platform=iOS Simulator,name=iPhone 11' || error_occured ${LINENO} "Unit tests failed!"
+    xcodebuild clean test -project BlippitKit.xcodeproj -configuration DebugSTAGE -scheme BlippitKit -destination 'platform=iOS Simulator,name=iPhone 11' || error_occured ${LINENO} "Unit tests failed!"
   else
     echo "Skipping Unit Tests"
   fi
@@ -88,23 +108,22 @@ create_documentation() {
   		--author Crunchfish Proximity \
   		--author_url https://blippit.com/developer \
   		--module-version $RELEASE_VERSION \
-  		--xcodebuild-arguments -scheme,Blippit,-configuration,Release \
-  		--module Blippit \
+  		--xcodebuild-arguments -scheme,BlippitKit,-configuration,Release \
+  		--module BlippitKit \
   		--output docs || error_occured ${LINENO} "Could not produce documentation!"  
 }
 
 assemble_sdk() {
-  RELEASE_ZIP_NAME="Blippit-SDK-$RELEASE_VERSION-iOS"
-  RELEASE_FOLDER="Blippit-SDK-$RELEASE_VERSION"
-  DOCUMENTATION_FOLDER="$RELEASE_FOLDER/Documentation"
-  SDK_FOLDER="$RELEASE_FOLDER/SDK"
-  FRAMEWORK_FOLDER="Build/Frameworks"
+
+  # Create xcframework containing iOS and iOS Simulator frameworks
+  xcodebuild -create-xcframework \
+             -framework $BUILD_DIR/$ARCHIVE_NAME_IOS.xcarchive/$ARCHIVE_FRAMEWORK_LOCATION \
+             -framework $BUILD_DIR/$ARCHIVE_NAME_IOS_SIMULATOR.xcarchive/$ARCHIVE_FRAMEWORK_LOCATION \
+             -output $BUILD_DIR/$FRAMEWORK_NAME
 
   mkdir -p $RELEASE_FOLDER $SDK_FOLDER $DOCUMENTATION_FOLDER
 
-  # SDK
-  RELEASE_ZIP_NAME+=".zip"
-  cp -R "$FRAMEWORK_FOLDER/Blippit.framework" $SDK_FOLDER
+  cp -R "$BUILD_DIR/$FRAMEWORK_NAME" $SDK_FOLDER
 
   # Documentation
   cp -R docs $DOCUMENTATION_FOLDER
@@ -116,11 +135,14 @@ assemble_sdk() {
   mkdir -p artifacts
   mv $RELEASE_ZIP_NAME artifacts/
 
-  # Symbols 
-  cp -R "$FRAMEWORK_FOLDER/Blippit.framework.dSYM" .
-  zip -r symbols "Blippit.framework.dSYM"
-  rm -r "Blippit.framework.dSYM"
-  mv symbols.zip artifacts/
+  # Copy archives 
+  pushd $BUILD_DIR > /dev/null
+  zip -r "$ARCHIVE_NAME_IOS.xcarchive.zip" "$ARCHIVE_NAME_IOS.xcarchive"
+  zip -r "$ARCHIVE_NAME_IOS_SIMULATOR.xcarchive.zip" "$ARCHIVE_NAME_IOS_SIMULATOR.xcarchive"
+  popd > /dev/null
+
+  mv "$BUILD_DIR/$ARCHIVE_NAME_IOS.xcarchive.zip" artifacts/
+  mv "$BUILD_DIR/$ARCHIVE_NAME_IOS_SIMULATOR.xcarchive.zip" artifacts/
 }
 
 # ------------------------------------------------------
@@ -154,6 +176,20 @@ while getopts "che:rv:" opt; do
   esac
 done
 
+# Script variables
+RELEASE_ZIP_NAME="BlippitKit-$RELEASE_VERSION-iOS.zip"
+RELEASE_FOLDER="BlippitKit-$RELEASE_VERSION"
+DOCUMENTATION_FOLDER="$RELEASE_FOLDER/Documentation"
+SDK_FOLDER="$RELEASE_FOLDER/SDK"
+
+BUILD_DIR="build"
+ARCHIVE_NAME_IOS="BlippitKit-iOS-$RELEASE_VERSION"
+ARCHIVE_NAME_IOS_SIMULATOR="BlippitKit-iOS-Simulator-$RELEASE_VERSION"
+ARCHIVE_FRAMEWORK_LOCATION="Products/Frameworks/BlippitKit.framework"
+
+FRAMEWORK_FOLDER="Build/Frameworks"
+FRAMEWORK_NAME="BlippitKit.xcframework"
+
 # Source the common_functions.sh files to have access to common functions.
 . buildscripts/common_functions.sh
 
@@ -182,10 +218,10 @@ echo "Generating Documentation..."
 create_documentation
 
 #
-# Build Podz project
+# Archive BlippitKit project
 #
-echo "Building Podz..."
-build_xcode_project
+echo "Archiving BlippitKit..."
+archive_xcode_project
 
 #
 # Assemble the SDK

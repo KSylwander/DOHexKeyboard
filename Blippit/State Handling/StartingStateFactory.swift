@@ -6,7 +6,7 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import Podz
+import PodzKit
 
 protocol StartingStateFactory {
   func makeState(delegate: StateDelegate, podz: Podz) -> State

@@ -17,14 +17,12 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3E97FA2F22803641003419AE"
-               BuildableName = "BlippitTests.xctest"
-               BlueprintName = "BlippitTests"
-               ReferencedContainer = "container:Blippit.xcodeproj">
+               BuildableName = "BlippitKitTests.xctest"
+               BlueprintName = "BlippitKitTests"
+               ReferencedContainer = "container:BlippitKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "DebugDEV"
@@ -36,8 +34,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "ReleaseSTAGE"

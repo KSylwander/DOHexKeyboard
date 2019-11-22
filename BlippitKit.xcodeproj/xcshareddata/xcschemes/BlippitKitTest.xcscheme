@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3E428BDD2297EB670038FBB9"
-               BuildableName = "BlippitTest.app"
-               BlueprintName = "BlippitTest"
-               ReferencedContainer = "container:Blippit.xcodeproj">
+               BuildableName = "BlippitKitTest.app"
+               BlueprintName = "BlippitKitTest"
+               ReferencedContainer = "container:BlippitKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -31,9 +31,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3E428BDD2297EB670038FBB9"
-            BuildableName = "BlippitTest.app"
-            BlueprintName = "BlippitTest"
-            ReferencedContainer = "container:Blippit.xcodeproj">
+            BuildableName = "BlippitKitTest.app"
+            BlueprintName = "BlippitKitTest"
+            ReferencedContainer = "container:BlippitKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -54,9 +54,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3E428BDD2297EB670038FBB9"
-            BuildableName = "BlippitTest.app"
-            BlueprintName = "BlippitTest"
-            ReferencedContainer = "container:Blippit.xcodeproj">
+            BuildableName = "BlippitKitTest.app"
+            BlueprintName = "BlippitKitTest"
+            ReferencedContainer = "container:BlippitKit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3E428BDD2297EB670038FBB9"
-            BuildableName = "BlippitTest.app"
-            BlueprintName = "BlippitTest"
-            ReferencedContainer = "container:Blippit.xcodeproj">
+            BuildableName = "BlippitKitTest.app"
+            BlueprintName = "BlippitKitTest"
+            ReferencedContainer = "container:BlippitKit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

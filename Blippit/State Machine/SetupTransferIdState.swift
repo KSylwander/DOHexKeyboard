@@ -6,7 +6,7 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import Podz
+import PodzKit
 
 /* Opens the pod session, waits for it to be opened, then checks if transferring of IDs is supported */
 final class SetupTransferIdState {

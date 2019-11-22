@@ -6,7 +6,7 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import Podz
+import PodzKit
 
 /* Sends the session token to the pod via its session, then closes the latter */
 final class TransferSessionTokenState {

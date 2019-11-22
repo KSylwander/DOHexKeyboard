@@ -6,7 +6,7 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-@testable import Blippit
+@testable import BlippitKit
 
 extension PreviousState: Equatable {
   public static func ==(lhs: PreviousState, rhs: PreviousState) -> Bool {

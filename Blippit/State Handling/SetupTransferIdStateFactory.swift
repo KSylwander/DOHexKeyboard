@@ -6,7 +6,7 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import Podz
+import PodzKit
 
 protocol SetupTransferIdStateFactory {
   func makeState(delegate: StateDelegate, pid: UInt32, session: PodSession) -> State

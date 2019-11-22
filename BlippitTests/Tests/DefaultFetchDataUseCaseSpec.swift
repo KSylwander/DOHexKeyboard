@@ -10,7 +10,7 @@ import Cuckoo
 import Nimble
 import Quick
 
-@testable import Blippit
+@testable import BlippitKit
 
 final class DefaultFetchDataUseCaseSpec: QuickSpec {
   override func spec() {

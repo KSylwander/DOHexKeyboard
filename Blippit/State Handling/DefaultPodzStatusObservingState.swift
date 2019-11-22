@@ -6,7 +6,7 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import Podz
+import PodzKit
 
 /* Mix-in that handles propagation of Podz errors */
 protocol DefaultPodzStatusObservingState: State, PodzStatusObserving, Cancellable {

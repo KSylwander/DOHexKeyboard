@@ -53,10 +53,8 @@
 		3E428BE12297EB670038FBB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E428BE02297EB670038FBB9 /* AppDelegate.swift */; };
 		3E428BE82297EB680038FBB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E428BE72297EB680038FBB9 /* Assets.xcassets */; };
 		3E428BEB2297EB680038FBB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E428BE92297EB680038FBB9 /* LaunchScreen.storyboard */; };
-		3E428BF22297EC690038FBB9 /* Podz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC773227C30A500D5C693 /* Podz.framework */; };
-		3E428BF32297EC690038FBB9 /* Podz.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC773227C30A500D5C693 /* Podz.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3E428BF52297EC6C0038FBB9 /* Blippit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC765227C2CA200D5C693 /* Blippit.framework */; };
-		3E428BF62297EC6C0038FBB9 /* Blippit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC765227C2CA200D5C693 /* Blippit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3E428BF52297EC6C0038FBB9 /* BlippitKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC765227C2CA200D5C693 /* BlippitKit.framework */; };
+		3E428BF62297EC6C0038FBB9 /* BlippitKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC765227C2CA200D5C693 /* BlippitKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3E535304229550BC004FD948 /* URLSession+RetainedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E535303229550BC004FD948 /* URLSession+RetainedDelegate.swift */; };
 		3E535306229555C9004FD948 /* abubbl.crt in Resources */ = {isa = PBXBuildFile; fileRef = 3E535305229555C9004FD948 /* abubbl.crt */; };
 		3E5353102295669F004FD948 /* AsyncRetryHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E53530F2295669F004FD948 /* AsyncRetryHandling.swift */; };
@@ -109,9 +107,7 @@
 		3E97FA262280313F003419AE /* DataTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA252280313F003419AE /* DataTaskFactory.swift */; };
 		3E97FA282280318B003419AE /* URLSession+DataTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA272280318B003419AE /* URLSession+DataTaskFactory.swift */; };
 		3E97FA2A228031CF003419AE /* DefaultFetchDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA29228031CF003419AE /* DefaultFetchDataUseCase.swift */; };
-		3E97FA3522803641003419AE /* Blippit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC765227C2CA200D5C693 /* Blippit.framework */; };
-		3E97FA3D2280375E003419AE /* Podz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC773227C30A500D5C693 /* Podz.framework */; };
-		3E97FA40228037F7003419AE /* Podz.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3EBAC773227C30A500D5C693 /* Podz.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3E97FA3522803641003419AE /* BlippitKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC765227C2CA200D5C693 /* BlippitKit.framework */; };
 		3E97FA422280385B003419AE /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E97FA412280385B003419AE /* Cuckoo.framework */; };
 		3E97FA4322803869003419AE /* Cuckoo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E97FA412280385B003419AE /* Cuckoo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3E97FA4722804537003419AE /* Mocks.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA4622804537003419AE /* Mocks.generated.swift */; };
@@ -142,8 +138,7 @@
 		3EB8229D229C21BF00826236 /* Data+LogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB8229C229C21BF00826236 /* Data+LogDescription.swift */; };
 		3EB8229F229C222800826236 /* HTTPURLResponse+LogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB8229E229C222800826236 /* HTTPURLResponse+LogDescription.swift */; };
 		3EB822A3229C228300826236 /* URLRequest+LogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB822A2229C228300826236 /* URLRequest+LogDescription.swift */; };
-		3EBAC76A227C2CA200D5C693 /* Blippit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EBAC768227C2CA200D5C693 /* Blippit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3EBAC774227C30A500D5C693 /* Podz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC773227C30A500D5C693 /* Podz.framework */; };
+		3EBAC76A227C2CA200D5C693 /* BlippitKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EBAC768227C2CA200D5C693 /* BlippitKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3EC4DE45228306F1007A05C9 /* PodStateObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE44228306F1007A05C9 /* PodStateObserving.swift */; };
 		3EC4DE472283073A007A05C9 /* WaitForBlipState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE462283073A007A05C9 /* WaitForBlipState.swift */; };
 		3EC4DE49228307CC007A05C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE48228307CC007A05C9 /* Constants.swift */; };
@@ -186,6 +181,12 @@
 		3EFADD54228D9F6600B3559A /* TransferSessionTokenStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD53228D9F6600B3559A /* TransferSessionTokenStateFactory.swift */; };
 		3EFADD56228D9F9100B3559A /* DefaultTransferSessionTokenStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD55228D9F9100B3559A /* DefaultTransferSessionTokenStateFactory.swift */; };
 		3EFDCAC22282F42400774A21 /* StartingStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */; };
+		EC546BEC2387F5E1003142FA /* PodzKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC546BEB2387F5E1003142FA /* PodzKit.framework */; };
+		EC546BED2387F5E1003142FA /* PodzKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC546BEB2387F5E1003142FA /* PodzKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EC546BEF2387F76C003142FA /* PodzKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC546BEB2387F5E1003142FA /* PodzKit.framework */; };
+		EC546BF02387F76C003142FA /* PodzKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC546BEB2387F5E1003142FA /* PodzKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EC78AC692387FCEA006D3EC3 /* PodzKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC546BEB2387F5E1003142FA /* PodzKit.framework */; };
+		EC92D7D12387FD70000A8BB6 /* PodzKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EC546BEB2387F5E1003142FA /* PodzKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,8 +213,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3E428BF32297EC690038FBB9 /* Podz.framework in Embed Frameworks */,
-				3E428BF62297EC6C0038FBB9 /* Blippit.framework in Embed Frameworks */,
+				EC546BF02387F76C003142FA /* PodzKit.framework in Embed Frameworks */,
+				3E428BF62297EC6C0038FBB9 /* BlippitKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,11 +225,22 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				EC92D7D12387FD70000A8BB6 /* PodzKit.framework in CopyFiles */,
 				3E97FA52228053D0003419AE /* Nimble.framework in CopyFiles */,
 				3E97FA51228053CC003419AE /* Quick.framework in CopyFiles */,
 				3E97FA4322803869003419AE /* Cuckoo.framework in CopyFiles */,
-				3E97FA40228037F7003419AE /* Podz.framework in CopyFiles */,
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC546BEE2387F5E1003142FA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EC546BED2387F5E1003142FA /* PodzKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -277,7 +289,7 @@
 		3E38F9182281AB9300C114B7 /* DummyPodz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyPodz.swift; sourceTree = "<group>"; };
 		3E38F91A2281BA8000C114B7 /* DummyDefaultPodzStatusObservingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyDefaultPodzStatusObservingState.swift; sourceTree = "<group>"; };
 		3E38F91E2281C44000C114B7 /* DefaultPodzStatusObservingStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPodzStatusObservingStateSpec.swift; sourceTree = "<group>"; };
-		3E428BDE2297EB670038FBB9 /* BlippitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlippitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E428BDE2297EB670038FBB9 /* BlippitKitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlippitKitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E428BE02297EB670038FBB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E428BE72297EB680038FBB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E428BEA2297EB680038FBB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -335,7 +347,7 @@
 		3E97FA272280318B003419AE /* URLSession+DataTaskFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+DataTaskFactory.swift"; sourceTree = "<group>"; };
 		3E97FA29228031CF003419AE /* DefaultFetchDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchDataUseCase.swift; sourceTree = "<group>"; };
 		3E97FA2B2280349A003419AE /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = SOURCE_ROOT; };
-		3E97FA3022803641003419AE /* BlippitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlippitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E97FA3022803641003419AE /* BlippitKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlippitKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E97FA3422803641003419AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E97FA412280385B003419AE /* Cuckoo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cuckoo.framework; path = Carthage/Build/iOS/Cuckoo.framework; sourceTree = "<group>"; };
 		3E97FA4622804537003419AE /* Mocks.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mocks.generated.swift; sourceTree = "<group>"; };
@@ -364,11 +376,10 @@
 		3EB8229C229C21BF00826236 /* Data+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+LogDescription.swift"; sourceTree = "<group>"; };
 		3EB8229E229C222800826236 /* HTTPURLResponse+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+LogDescription.swift"; sourceTree = "<group>"; };
 		3EB822A2229C228300826236 /* URLRequest+LogDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+LogDescription.swift"; sourceTree = "<group>"; };
-		3EBAC765227C2CA200D5C693 /* Blippit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Blippit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3EBAC768227C2CA200D5C693 /* Blippit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Blippit.h; sourceTree = "<group>"; };
+		3EBAC765227C2CA200D5C693 /* BlippitKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BlippitKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EBAC768227C2CA200D5C693 /* BlippitKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlippitKit.h; sourceTree = "<group>"; };
 		3EBAC769227C2CA200D5C693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EBAC770227C2FC200D5C693 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
-		3EBAC773227C30A500D5C693 /* Podz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Podz.framework; path = Carthage/Build/iOS/Podz.framework; sourceTree = "<group>"; };
 		3EC4DE44228306F1007A05C9 /* PodStateObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodStateObserving.swift; sourceTree = "<group>"; };
 		3EC4DE462283073A007A05C9 /* WaitForBlipState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitForBlipState.swift; sourceTree = "<group>"; };
 		3EC4DE48228307CC007A05C9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -411,6 +422,7 @@
 		3EFADD53228D9F6600B3559A /* TransferSessionTokenStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSessionTokenStateFactory.swift; sourceTree = "<group>"; };
 		3EFADD55228D9F9100B3559A /* DefaultTransferSessionTokenStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTransferSessionTokenStateFactory.swift; sourceTree = "<group>"; };
 		3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingStateSpec.swift; sourceTree = "<group>"; };
+		EC546BEB2387F5E1003142FA /* PodzKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PodzKit.framework; path = Carthage/Build/iOS/PodzKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -418,8 +430,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E428BF22297EC690038FBB9 /* Podz.framework in Frameworks */,
-				3E428BF52297EC6C0038FBB9 /* Blippit.framework in Frameworks */,
+				EC546BEF2387F76C003142FA /* PodzKit.framework in Frameworks */,
+				3E428BF52297EC6C0038FBB9 /* BlippitKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,11 +439,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC78AC692387FCEA006D3EC3 /* PodzKit.framework in Frameworks */,
 				3E97FA50228053BF003419AE /* Nimble.framework in Frameworks */,
 				3E97FA4E228053B2003419AE /* Quick.framework in Frameworks */,
 				3E97FA422280385B003419AE /* Cuckoo.framework in Frameworks */,
-				3E97FA3D2280375E003419AE /* Podz.framework in Frameworks */,
-				3E97FA3522803641003419AE /* Blippit.framework in Frameworks */,
+				3E97FA3522803641003419AE /* BlippitKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +451,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EBAC774227C30A500D5C693 /* Podz.framework in Frameworks */,
+				EC546BEC2387F5E1003142FA /* PodzKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,7 +719,7 @@
 			isa = PBXGroup;
 			children = (
 				3E535305229555C9004FD948 /* abubbl.crt */,
-				3EBAC768227C2CA200D5C693 /* Blippit.h */,
+				3EBAC768227C2CA200D5C693 /* BlippitKit.h */,
 				3EBAC770227C2FC200D5C693 /* Cartfile */,
 				3E97FA2B2280349A003419AE /* Cartfile.private */,
 				3EBAC769227C2CA200D5C693 /* Info.plist */,
@@ -742,9 +754,9 @@
 		3EBAC766227C2CA200D5C693 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3EBAC765227C2CA200D5C693 /* Blippit.framework */,
-				3E97FA3022803641003419AE /* BlippitTests.xctest */,
-				3E428BDE2297EB670038FBB9 /* BlippitTest.app */,
+				3EBAC765227C2CA200D5C693 /* BlippitKit.framework */,
+				3E97FA3022803641003419AE /* BlippitKitTests.xctest */,
+				3E428BDE2297EB670038FBB9 /* BlippitKitTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -774,10 +786,10 @@
 		3EBAC772227C30A500D5C693 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC546BEB2387F5E1003142FA /* PodzKit.framework */,
 				3E97FA4F228053BF003419AE /* Nimble.framework */,
 				3E97FA4D228053B2003419AE /* Quick.framework */,
 				3E97FA412280385B003419AE /* Cuckoo.framework */,
-				3EBAC773227C30A500D5C693 /* Podz.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -860,16 +872,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EBAC76A227C2CA200D5C693 /* Blippit.h in Headers */,
+				3EBAC76A227C2CA200D5C693 /* BlippitKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3E428BDD2297EB670038FBB9 /* BlippitTest */ = {
+		3E428BDD2297EB670038FBB9 /* BlippitKitTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3E428BEF2297EB680038FBB9 /* Build configuration list for PBXNativeTarget "BlippitTest" */;
+			buildConfigurationList = 3E428BEF2297EB680038FBB9 /* Build configuration list for PBXNativeTarget "BlippitKitTest" */;
 			buildPhases = (
 				3E428BDA2297EB670038FBB9 /* Sources */,
 				3E428BDB2297EB670038FBB9 /* Frameworks */,
@@ -881,14 +893,14 @@
 			dependencies = (
 				3E428BF82297EC6C0038FBB9 /* PBXTargetDependency */,
 			);
-			name = BlippitTest;
+			name = BlippitKitTest;
 			productName = BlippitTest;
-			productReference = 3E428BDE2297EB670038FBB9 /* BlippitTest.app */;
+			productReference = 3E428BDE2297EB670038FBB9 /* BlippitKitTest.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3E97FA2F22803641003419AE /* BlippitTests */ = {
+		3E97FA2F22803641003419AE /* BlippitKitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3E97FA3A22803641003419AE /* Build configuration list for PBXNativeTarget "BlippitTests" */;
+			buildConfigurationList = 3E97FA3A22803641003419AE /* Build configuration list for PBXNativeTarget "BlippitKitTests" */;
 			buildPhases = (
 				3E97FA4A22804ADA003419AE /* ShellScript */,
 				3E97FA2C22803641003419AE /* Sources */,
@@ -901,28 +913,28 @@
 			dependencies = (
 				3E97FA3722803641003419AE /* PBXTargetDependency */,
 			);
-			name = BlippitTests;
+			name = BlippitKitTests;
 			productName = BlippitTests;
-			productReference = 3E97FA3022803641003419AE /* BlippitTests.xctest */;
+			productReference = 3E97FA3022803641003419AE /* BlippitKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3EBAC764227C2CA200D5C693 /* Blippit */ = {
+		3EBAC764227C2CA200D5C693 /* BlippitKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3EBAC76D227C2CA200D5C693 /* Build configuration list for PBXNativeTarget "Blippit" */;
+			buildConfigurationList = 3EBAC76D227C2CA200D5C693 /* Build configuration list for PBXNativeTarget "BlippitKit" */;
 			buildPhases = (
 				3EBAC760227C2CA200D5C693 /* Headers */,
 				3EBAC761227C2CA200D5C693 /* Sources */,
 				3EBAC762227C2CA200D5C693 /* Frameworks */,
 				3EBAC763227C2CA200D5C693 /* Resources */,
-				835EDACA236B13E400884837 /* Copy Symbols */,
+				EC546BEE2387F5E1003142FA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Blippit;
+			name = BlippitKit;
 			productName = Blippit;
-			productReference = 3EBAC765227C2CA200D5C693 /* Blippit.framework */;
+			productReference = 3EBAC765227C2CA200D5C693 /* BlippitKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -948,7 +960,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3EBAC75F227C2CA200D5C693 /* Build configuration list for PBXProject "Blippit" */;
+			buildConfigurationList = 3EBAC75F227C2CA200D5C693 /* Build configuration list for PBXProject "BlippitKit" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -961,9 +973,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3EBAC764227C2CA200D5C693 /* Blippit */,
-				3E97FA2F22803641003419AE /* BlippitTests */,
-				3E428BDD2297EB670038FBB9 /* BlippitTest */,
+				3EBAC764227C2CA200D5C693 /* BlippitKit */,
+				3E97FA2F22803641003419AE /* BlippitKitTests */,
+				3E428BDD2297EB670038FBB9 /* BlippitKitTest */,
 			);
 		};
 /* End PBXProject section */
@@ -1006,44 +1018,26 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(PROJECT_DIR)/$(PROJECT_NAME)/Networking/DataTaskFactory.swift",
-				"$(PROJECT_DIR)/$(PROJECT_NAME)Tests/Mocks/DummyURLSessionDataTask.swift",
-				"$(PROJECT_DIR)/$(PROJECT_NAME)Tests/Mocks/DummyPodz.swift",
-				"$(PROJECT_DIR)/$(PROJECT_NAME)/State Handling/StateDelegate.swift",
-				"$(PROJECT_DIR)/$(PROJECT_NAME)/State Handling/DefaultPodzStatusObservingState.swift",
-				"$(PROJECT_DIR)/$(PROJECT_NAME)/Commons/Cancellable.swift",
-				"$(PROJECT_DIR)/$(PROJECT_NAME)/State Handling/ValidPodzStatusObserving.swift",
-				"$(PROJECT_DIR)/$(PROJECT_NAME)Tests/Mocks/DummyDefaultPodzStatusObservingState.swift",
-				"$(PROJECT_DIR)/$(PROJECT_NAME)Tests/Mocks/DummyPod.swift",
-				"$(PROJECT_DIR)/$(PROJECT_NAME)Tests/Mocks/DummyPodSession.swift",
-				"$(PROJECT_DIR)/$(PROJECT_NAME)/Networking/HttpUrlResponseValidator.swift",
+				"$(PROJECT_DIR)/Blippit/Networking/DataTaskFactory.swift",
+				"$(PROJECT_DIR)/BlippitTests/Mocks/DummyURLSessionDataTask.swift",
+				"$(PROJECT_DIR)/BlippitTests/Mocks/DummyPodz.swift",
+				"$(PROJECT_DIR)/Blippit/State Handling/StateDelegate.swift",
+				"$(PROJECT_DIR)/Blippit/State Handling/DefaultPodzStatusObservingState.swift",
+				"$(PROJECT_DIR)/Blippit/Commons/Cancellable.swift",
+				"$(PROJECT_DIR)/Blippit/State Handling/ValidPodzStatusObserving.swift",
+				"$(PROJECT_DIR)/BlippitTests/Mocks/DummyDefaultPodzStatusObservingState.swift",
+				"$(PROJECT_DIR)/BlippitTests/Mocks/DummyPod.swift",
+				"$(PROJECT_DIR)/BlippitTests/Mocks/DummyPodSession.swift",
+				"$(PROJECT_DIR)/Blippit/Networking/HttpUrlResponseValidator.swift",
 			);
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${PROJECT_DIR}/${PROJECT_NAME}Tests/Mocks/Mocks.generated.swift",
+				"${PROJECT_DIR}/BlippitTests/Mocks/Mocks.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/Mocks/Mocks.generated.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PROJECT_DIR}/Carthage/Checkouts/Cuckoo/run\" generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\"\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `Mocks.generated.swift` and drag it into your Xcode test target group.\n";
-		};
-		835EDACA236B13E400884837 /* Copy Symbols */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Symbols";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Copy the symbols to install location if present.\nSYMBOL_DIRECTORY=\"$BUILD_DIR/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/$DWARF_DSYM_FILE_NAME\"\nTARGET_FILE=$INSTALL_ROOT/$INSTALL_PATH/$DWARF_DSYM_FILE_NAME\n\nrm -fR $TARGET_FILE\n\nif [ -d \"$SYMBOL_DIRECTORY\" ]; then\ncp -fR $SYMBOL_DIRECTORY $TARGET_FILE\nfi\n";
+			shellScript = "# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/BlippitTests/Mocks/Mocks.generated.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/Blippit\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PROJECT_DIR}/Carthage/Checkouts/Cuckoo/run\" generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\"\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `Mocks.generated.swift` and drag it into your Xcode test target group.\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1233,12 +1227,12 @@
 /* Begin PBXTargetDependency section */
 		3E428BF82297EC6C0038FBB9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3EBAC764227C2CA200D5C693 /* Blippit */;
+			target = 3EBAC764227C2CA200D5C693 /* BlippitKit */;
 			targetProxy = 3E428BF72297EC6C0038FBB9 /* PBXContainerItemProxy */;
 		};
 		3E97FA3722803641003419AE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3EBAC764227C2CA200D5C693 /* Blippit */;
+			target = 3EBAC764227C2CA200D5C693 /* BlippitKit */;
 			targetProxy = 3E97FA3622803641003419AE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1375,6 +1369,7 @@
 		3E7CD6CF23044E4C00951B5D /* DebugSTAGE */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1400,9 +1395,10 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.crunchfish.Blippit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.crunchfish.BlippitKit;
+				PRODUCT_NAME = BlippitKit;
 				SKIP_INSTALL = NO;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1526,6 +1522,7 @@
 		3E7CD6D323044E6700951B5D /* ReleasePROD */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1552,10 +1549,11 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.crunchfish.Blippit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.crunchfish.BlippitKit;
+				PRODUCT_NAME = BlippitKit;
 				SKIP_INSTALL = NO;
 				STRIP_STYLE = "non-global";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1794,6 +1792,7 @@
 		3EBAC76E227C2CA200D5C693 /* DebugDEV */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1819,9 +1818,10 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.crunchfish.Blippit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.crunchfish.BlippitKit;
+				PRODUCT_NAME = BlippitKit;
 				SKIP_INSTALL = NO;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1832,6 +1832,7 @@
 		3EBAC76F227C2CA200D5C693 /* ReleaseSTAGE */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1858,10 +1859,11 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.crunchfish.Blippit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.crunchfish.BlippitKit;
+				PRODUCT_NAME = BlippitKit;
 				SKIP_INSTALL = NO;
 				STRIP_STYLE = "non-global";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1871,7 +1873,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3E428BEF2297EB680038FBB9 /* Build configuration list for PBXNativeTarget "BlippitTest" */ = {
+		3E428BEF2297EB680038FBB9 /* Build configuration list for PBXNativeTarget "BlippitKitTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3E428BED2297EB680038FBB9 /* DebugDEV */,
@@ -1882,7 +1884,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = ReleaseSTAGE;
 		};
-		3E97FA3A22803641003419AE /* Build configuration list for PBXNativeTarget "BlippitTests" */ = {
+		3E97FA3A22803641003419AE /* Build configuration list for PBXNativeTarget "BlippitKitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3E97FA3822803641003419AE /* DebugDEV */,
@@ -1893,7 +1895,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = ReleaseSTAGE;
 		};
-		3EBAC75F227C2CA200D5C693 /* Build configuration list for PBXProject "Blippit" */ = {
+		3EBAC75F227C2CA200D5C693 /* Build configuration list for PBXProject "BlippitKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3EBAC76B227C2CA200D5C693 /* DebugDEV */,
@@ -1904,7 +1906,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = ReleaseSTAGE;
 		};
-		3EBAC76D227C2CA200D5C693 /* Build configuration list for PBXNativeTarget "Blippit" */ = {
+		3EBAC76D227C2CA200D5C693 /* Build configuration list for PBXNativeTarget "BlippitKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3EBAC76E227C2CA200D5C693 /* DebugDEV */,

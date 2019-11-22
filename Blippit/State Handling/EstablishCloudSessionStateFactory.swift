@@ -6,7 +6,7 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import Podz
+import PodzKit
 
 protocol EstablishCloudSessionStateFactory {
   func makeState(delegate: StateDelegate, pid: UInt32, podSession: PodSession) -> State

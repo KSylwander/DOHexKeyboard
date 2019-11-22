@@ -6,7 +6,7 @@
 //  Copyright © 2019 Crunchfish AB. All rights reserved.
 //
 
-import Podz
+import PodzKit
 
 /* Mix-in that handles propagation of pod session errors */
 protocol DefaultPodSessionStateObservingState: State, PodSessionStateObserving {
