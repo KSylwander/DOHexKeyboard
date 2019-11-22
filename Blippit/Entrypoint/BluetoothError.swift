@@ -33,8 +33,6 @@ public enum BluetoothError {
    *
    * Receive these errors by implementing the `BlippitDelegate.blippit(_:didFailWithError:)` method, and passing the
    * delegate implementation to the `BlippitSetup.setup(delegate:configuration:)` method.
-   *
-   * However, there is currently no way to receive this error because we don't use BLE in the background.
    */
   case unauthorized
 }
