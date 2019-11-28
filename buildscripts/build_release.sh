@@ -120,7 +120,9 @@ assemble_sdk() {
   cp -R "$BUILD_DIR/$FRAMEWORK_NAME" $SDK_FOLDER
 
   # Documentation
-  cp -R Docs/output $DOCUMENTATION_FOLDER
+  pushd Docs/output
+  cp -R . ../../$DOCUMENTATION_FOLDER
+  popd
 
   zip -r $RELEASE_ZIP_NAME $RELEASE_FOLDER
   rm -r $RELEASE_FOLDER
