@@ -23,7 +23,7 @@ To use BlippitKit in your project, you need to embed its framework file:
 2. Press the `+` button in the "Frameworks and Libraries" section.
 3. Select and add the `BlippitKit.xcframework` file.
 
-BlippitKit uses PodzKit to communicate with the app terminal (see the PodzKit documentation for more details). It is therefore required that you also add PodzKit to your project. Do this in the same manner as with `BlippitKit.xcframework`.
+BlippitKit uses PodzKit to communicate with the app terminal. It is therefore required that you also add PodzKit to your project. Do this in the same manner as with `BlippitKit.xcframework`.
 
 ### Using BlippitKit
 
