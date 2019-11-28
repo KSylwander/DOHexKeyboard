@@ -1,0 +1,54 @@
+{
+    "clean": true,
+    "sdk": "iphoneos",
+    "xcodebuild_arguments": ["-scheme", "BlippitKit", "-configuration", "ReleasePROD"],
+    "author": "Crunchfish Proximity",
+    "author_url": "https://www.crunchfish.com/m-commerce-social-applications/m-commerce/",
+    "module": "BlippitKit",
+    "theme": "Docs/jazzy-theme",
+    "output": "Docs/output",
+
+    "hide_documentation_coverage": true,
+    "disable_search": true,
+
+    "documentation": "Docs/*.md",
+
+    "custom_categories": [
+        {
+            "name": "Entrypoints",
+            "children": [
+                "Blippit",
+                "BlippitSetup"
+            ]
+        },
+        {
+            "name": "Configuration",
+            "children": [
+                "BlippitConfiguration",
+                "BlippitMode"
+            ]
+        },
+        {
+            "name": "State Management",
+            "children": [
+                "BlippitDelegate",
+                "BlippitState"
+            ]
+        },
+        {
+            "name": "Error Handling",
+            "children": [
+                "AppTerminalError",
+                "BluetoothError",
+                "NetworkError",
+                "PayloadError"
+            ]
+        },
+        {
+            "name": "Miscellaneous",
+            "children": [
+                "Changelog"
+            ]
+        }
+    ]
+}

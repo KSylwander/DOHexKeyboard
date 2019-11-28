@@ -1,20 +1,95 @@
-# CHANGELOG
+BlippitKit for iOS
+======================================
 
-## 0.4.0
- - Update to Swift 5.1 (Xcode 11.2.1)
- - Improved error handling
- - Improved API documentation
+## Introduction
 
-## 0.3.0
- - Single transfer flow
- - Various bug fixes
+BlippitKit provides functionality that enables an app to interact with a Blippit app terminal. The SDK currently supports the following interaction modes:
 
-## 0.2.1
- - Remove BSAC workarounds
- - Add environment configurations
+1. `BlippitMode.payerId(_:)`: Allows sending a payer ID (e.g. phone number) to the cash register directly over the app terminal. This allows payments where the payment service integration is provided by the cash register itself.
 
-## 0.2.0
- - Implemented payment token flow 
+## System Requirements
 
-## 0.1.0
- - Initial version
+* Minimum iOS version: 10.0
+* Minimum Swift version: 5.1
+* Minimum PodzKit version: 0.13.0
+
+## Getting Started
+
+### Including BlippitKit in your project
+
+To use BlippitKit in your project, you need to embed its framework file:
+
+1. Navigate to the "General" tab in your target configuration.
+2. Press the `+` button in the "Frameworks and Libraries" section.
+3. Select and add the `BlippitKit.xcframework` file.
+
+BlippitKit uses PodzKit to communicate with the app terminal (see the PodzKit documentation for more details). It is therefore required that you also add PodzKit to your project. Do this in the same manner as with `BlippitKit.xcframework`.
+
+### Using BlippitKit
+
+To use BlippitKit, you need to first create an instance of the `Blippit` object:
+
+```swift
+import BlippitKit
+
+// ...
+
+let blippit = try BlippitSetup.setup(
+    delegate: delegate,
+    configuration: BlippitConfiguration(
+        mode: .payerId("0701234567")
+    )
+)
+
+// ...
+```
+
+When creating the instance, you pass in a configuration which specifies the interaction mode.
+
+You also give it a delegate that conforms to the `BlippitDelegate` protocol to receive state change events and errors that may occur during a payment session:
+
+```swift
+extension MyController: BlippitDelegate {
+    func blippit(_ blippit: Blippit, didChangeState state: BlippitState) {
+        // ...
+    }
+
+    func blippit(_ blippit: Blippit, didFailWithError error: Error) {
+        // ...
+    }
+}
+```
+
+Then start the SDK:
+
+```swift
+blippit.start()
+```
+
+This will ask the SDK to start looking for app terminals and process blips depending on the active mode.
+
+It is possible to cancel an ongoing session; e.g., If the user changes their mind and does not want to pay right now:
+
+```swift
+blippit.cancelOngoingSession()
+```
+
+When the SDK is no longer used, you need to stop it:
+
+```swift
+blippit.stop()
+```
+
+## Known Limitations
+
+### Blips on multiple devices
+
+Blips on multiple devices are possible in following situations:
+
+* When one mobile device covers the light sensor while doing a normal blip. This can trigger blip on additional devices if they are too close to the app terminal and have the app up and running. Since only one device is allowed to be connected to the app terminal at any time, it is not well defined which of the active devices will connect.
+* When the app terminal is in a low-light environment, or when covered by an object (for instance a hand), it will trigger the same behaviour.
+There is no immediate workaround for this behaviour. It will be properly addressed in future releases.
+
+## Support
+
+In case you have any questions or concerns regarding BlippitKit, please contact: info@crunchfish.com

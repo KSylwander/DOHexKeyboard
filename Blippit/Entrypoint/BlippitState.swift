@@ -11,6 +11,8 @@ import Foundation
 /**
  * States of the Blippit SDK instance.
  *
+ * ![Blippit state transitions](../img/blippit_states.png)
+ *
  * Receive state changes by implementing the `BlippitDelegate.blippit(_:didChangeState:)` method, and passing the
  * delegate implementation to the `BlippitSetup.setup(delegate:configuration:)` method.
  */

@@ -3,7 +3,7 @@
 # Run this script from the git root directory.
 
 cleanup() {
-  rm -rf docs
+  rm -rf Docs/output
   rm -rf Build
 }
 
@@ -102,15 +102,9 @@ run_carthage() {
 }
 
 create_documentation() {
-
-	jazzy \
-  		--clean \
-  		--author Crunchfish Proximity \
-  		--author_url https://blippit.com/developer \
-  		--module-version $RELEASE_VERSION \
-  		--xcodebuild-arguments -scheme,BlippitKit,-configuration,Release \
-  		--module BlippitKit \
-  		--output docs || error_occured ${LINENO} "Could not produce documentation!"  
+  jazzy \
+    --config .jazzy.json \
+    --module-version $RELEASE_VERSION || error_occured ${LINENO} "Could not produce documentation!"  
 }
 
 assemble_sdk() {
@@ -126,7 +120,7 @@ assemble_sdk() {
   cp -R "$BUILD_DIR/$FRAMEWORK_NAME" $SDK_FOLDER
 
   # Documentation
-  cp -R docs $DOCUMENTATION_FOLDER
+  cp -R Docs/output $DOCUMENTATION_FOLDER
 
   zip -r $RELEASE_ZIP_NAME $RELEASE_FOLDER
   rm -r $RELEASE_FOLDER
