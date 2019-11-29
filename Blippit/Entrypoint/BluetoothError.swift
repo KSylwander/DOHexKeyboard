@@ -13,8 +13,8 @@ public enum BluetoothError {
   /**
    * This device does not support BLE.
    *
-   * This error is thrown while creating the `Blippit` instance (i.e., via the `Blippit.setup(delegate:configuration:)`
-   * method).
+   * This error is thrown while creating the `Blippit` instance (i.e., via the
+   * `BlippitSetup.setup(delegate:configuration:)` method).
    */
   case unsupported
 
