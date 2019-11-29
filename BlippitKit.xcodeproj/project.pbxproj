@@ -182,7 +182,6 @@
 		3EFADD56228D9F9100B3559A /* DefaultTransferSessionTokenStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD55228D9F9100B3559A /* DefaultTransferSessionTokenStateFactory.swift */; };
 		3EFDCAC22282F42400774A21 /* StartingStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */; };
 		EC546BEC2387F5E1003142FA /* PodzKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC546BEB2387F5E1003142FA /* PodzKit.framework */; };
-		EC546BED2387F5E1003142FA /* PodzKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC546BEB2387F5E1003142FA /* PodzKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EC546BEF2387F76C003142FA /* PodzKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC546BEB2387F5E1003142FA /* PodzKit.framework */; };
 		EC546BF02387F76C003142FA /* PodzKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC546BEB2387F5E1003142FA /* PodzKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EC78AC692387FCEA006D3EC3 /* PodzKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC546BEB2387F5E1003142FA /* PodzKit.framework */; };
@@ -230,17 +229,6 @@
 				3E97FA51228053CC003419AE /* Quick.framework in CopyFiles */,
 				3E97FA4322803869003419AE /* Cuckoo.framework in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EC546BEE2387F5E1003142FA /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				EC546BED2387F5E1003142FA /* PodzKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -926,7 +914,6 @@
 				3EBAC761227C2CA200D5C693 /* Sources */,
 				3EBAC762227C2CA200D5C693 /* Frameworks */,
 				3EBAC763227C2CA200D5C693 /* Resources */,
-				EC546BEE2387F5E1003142FA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
