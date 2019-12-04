@@ -50,5 +50,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Using Bluetooth for blips</string>
 </dict>
 </plist>
