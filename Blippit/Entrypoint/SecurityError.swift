@@ -8,7 +8,9 @@
 
 import Foundation
 
+// swiftlint:disable todo
 /* TODO: Make public when `_BlippitMode.payment` is exposed publicly */
+// swiftlint:enable todo
 enum SecurityError: Error {
   case applyTrustPoliciesFailed(OSStatus)
   case applyTrustAnchorCertificatesFailed(OSStatus)

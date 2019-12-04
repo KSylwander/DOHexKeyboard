@@ -26,8 +26,8 @@ public enum BlippitState {
   case started
 
   /**
-   * The internal state has been configured successfully, and the Blippit SDK is waiting for the first app terminal to be
-   * found.
+   * The internal state has been configured successfully,
+   * and the Blippit SDK is waiting for the first app terminal to be found.
    */
   case lookingForAppTerminals
 

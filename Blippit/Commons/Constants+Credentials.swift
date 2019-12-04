@@ -9,8 +9,8 @@
 import Foundation
 
 extension Constants {
-  enum credentials {
-    enum podz {
+  enum Credentials {
+    enum Podz {
 #if PRODUCTION
       static let apiKey = UUID(uuidString: "B6FF07D1-C5A0-438E-9202-44B92F7BBB09")!
       static let appId = UUID(uuidString: "81B56222-084E-44C4-8C36-AA2E6F69E8FD")!

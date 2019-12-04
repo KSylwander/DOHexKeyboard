@@ -22,7 +22,9 @@ public enum BlippitMode {
   case payerId(String)
 }
 
+// swiftlint:disable todo
 /* TODO: Remove when `.payment` is exposed publicly */
+// swiftlint:enable todo
 enum _BlippitMode {
   case payment(apiKey: UUID, appId: UUID, serviceInfo: ServiceInfo)
   case payerId(String)

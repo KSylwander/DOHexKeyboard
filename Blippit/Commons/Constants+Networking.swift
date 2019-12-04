@@ -9,10 +9,10 @@
 import Foundation
 
 extension Constants {
-  enum api {
+  enum Api {
     static let version = "0"
 
-    enum defaults {
+    enum Defaults {
       /* Trailing slash on base path required */
 #if PRODUCTION
       static let basePath = "https://prod-bsac.bubbelskum.com/api/\(version)/"
@@ -28,14 +28,14 @@ extension Constants {
       static let timeoutInterval = TimeInterval(60.0)
     }
 
-    enum establishCloudSession {
+    enum EstablishCloudSession {
       static let config = ApiConfig(
         method: .post,
         resource: "session"
       )
     }
 
-    enum getCloudSessionStatus {
+    enum GetCloudSessionStatus {
       static let config = ApiConfig(
         method: .get,
         resource: "session/%@/status")

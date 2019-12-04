@@ -29,8 +29,8 @@ public enum BlippitSetup {
                             errorHandler: ErrorHandling) throws -> Blippit {
 
     let podz = try PodzSetup.setup(
-      appId: Constants.credentials.podz.appId,
-      apiKey: Constants.credentials.podz.apiKey
+      appId: Constants.Credentials.Podz.appId,
+      apiKey: Constants.Credentials.Podz.apiKey
     )
 
     let scenarioFactory: ScenarioFactory = try {
@@ -79,7 +79,7 @@ public enum BlippitSetup {
             establishCloudSessionUseCase: DefaultEstablishCloudSessionUseCase(
               appId: appId,
               requestBuilder: DefaultURLRequestBuilder(
-                apiConfig: Constants.api.establishCloudSession.config,
+                apiConfig: Constants.Api.EstablishCloudSession.config,
                 apiKey: apiKey
               ),
               encoder: encoder,
@@ -90,20 +90,20 @@ public enum BlippitSetup {
               )
             ),
             retryHandlerFactory: DefaultAsyncRetryHandlerFactory(
-              maxRetries: Constants.states.establishCloudSession.maxRetries,
-              retryInterval: Constants.states.establishCloudSession.retryInterval
+              maxRetries: Constants.States.EstablishCloudSession.maxRetries,
+              retryInterval: Constants.States.EstablishCloudSession.retryInterval
             )
           ),
           transferSessionTokenStateFactory: DefaultTransferSessionTokenStateFactory(
             retryHandlerFactory: DefaultRetryHandlerFactory(
-              maxRetries: Constants.states.transferSessionToken.maxRetries
+              maxRetries: Constants.States.TransferSessionToken.maxRetries
             )
           ),
           waitForCloudSessionDoneStateFactory: DefaultWaitForCloudSessionDoneStateFactory(
-            pollInterval: Constants.states.waitForCloudSessionDone.pollInterval,
+            pollInterval: Constants.States.WaitForCloudSessionDone.pollInterval,
             getCloudSessionStatusUseCase: DefaultGetCloudSessionStatusUseCase(
               requestBuilder: DefaultURLRequestBuilder(
-                apiConfig: Constants.api.getCloudSessionStatus.config,
+                apiConfig: Constants.Api.GetCloudSessionStatus.config,
                 apiKey: apiKey
               ),
               decoder: decoder,
@@ -113,8 +113,8 @@ public enum BlippitSetup {
               )
             ),
             retryHandlerFactory: DefaultAsyncRetryHandlerFactory(
-              maxRetries: Constants.states.waitForCloudSessionDone.maxRetries,
-              retryInterval: Constants.states.waitForCloudSessionDone.retryInterval
+              maxRetries: Constants.States.WaitForCloudSessionDone.maxRetries,
+              retryInterval: Constants.States.WaitForCloudSessionDone.retryInterval
             )
           )
         )
@@ -127,7 +127,7 @@ public enum BlippitSetup {
           setupTransferIdStateFactory: DefaultSetupTransferIdStateFactory(),
           transferPayerIdStateFactory: DefaultTransferPayerIdStateFactory(
             retryHandlerFactory: DefaultRetryHandlerFactory(
-              maxRetries: Constants.states.transferPayerId.maxRetries
+              maxRetries: Constants.States.TransferPayerId.maxRetries
             ),
             payerId: try TransferId(from: value)
           )

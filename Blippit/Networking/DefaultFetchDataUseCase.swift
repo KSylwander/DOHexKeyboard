@@ -19,7 +19,9 @@ extension DefaultFetchDataUseCase: FetchDataUseCase {
 
     Log.debug(.public(request.logDescription(.long)))
     let task = dataTaskFactory.dataTask(with: request) { data, response, error in
+      // swiftlint:disable force_cast
       let response = response.map { $0 as! HTTPURLResponse }
+      // swiftlint:enable force_cast
       Log.debug(.public("""
         \(response.logDescription(with: request)), Data: \(data.logDescription), Error: \(error.logDescription)
         """

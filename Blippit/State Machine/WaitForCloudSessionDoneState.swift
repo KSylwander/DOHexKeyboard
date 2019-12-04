@@ -55,7 +55,7 @@ extension WaitForCloudSessionDoneState: HttpRequestState {
       return
     }
 
-    task = getCloudSessionStatusUseCase.getCloudSessionStatus(sessionId: cloudSessionId) { response, result in
+    task = getCloudSessionStatusUseCase.getCloudSessionStatus(sessionId: cloudSessionId) { _, result in
       switch result {
       case let .failure(error):
         self.handleError(error)
