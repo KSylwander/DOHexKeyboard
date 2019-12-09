@@ -9,24 +9,24 @@
 import Foundation
 
 extension Constants {
-  enum states {
-    enum establishCloudSession {
+  enum States {
+    enum EstablishCloudSession {
       static let maxRetries = 3
       static let retryInterval = TimeInterval(1.0)
     }
 
-    enum transferSessionToken {
+    enum TransferSessionToken {
       static let maxRetries = 3
     }
 
-    enum waitForCloudSessionDone {
+    enum WaitForCloudSessionDone {
       static let maxRetries = 3
       static let retryInterval = TimeInterval(1.0)
 
       static let pollInterval = TimeInterval(1.0)
     }
 
-    enum transferPayerId {
+    enum TransferPayerId {
       static let maxRetries = 3
     }
   }

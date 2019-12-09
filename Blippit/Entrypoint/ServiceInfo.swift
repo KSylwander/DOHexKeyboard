@@ -8,5 +8,7 @@
 
 import Foundation
 
+// swiftlint:disable todo
 /* TODO: Expose publicly when `_BlippitMode.payment` is exposed publicly */
-typealias ServiceInfo = Dictionary<String, String>
+// swiftlint:enable todo
+typealias ServiceInfo = [String: String]

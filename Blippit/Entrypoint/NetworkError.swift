@@ -23,7 +23,9 @@ public enum NetworkError {
 
 extension NetworkError: Error {}
 
+// swiftlint:disable todo
 /* TODO: Merge to `NetworkError` when `_BlippitMode.payment` is exposed publicly */
+// swiftlint:enable todo
 enum _NetworkError {
   case invalidHttpStatusCode(Int, responseData: Data?)
 }

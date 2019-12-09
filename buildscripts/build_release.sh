@@ -30,9 +30,10 @@ Usage: $0 [options]
 -e    The environment for which the product is built. Takes an argument: STAGE or PROD
 -r    Run unit tests (These are executed with a DebugSTAGE configuration)
 -v    Specify the version of this release. Takes an argument.
+-p    Package and assemble the SDK (archive, generate documentation and assembles SDK)
 
 Example:
-  ./buildscripts/build_release.sh -e PROD -r -v 2.0
+  ./buildscripts/build_release.sh -p -e PROD -r -v 2.0
 
 EOF
 }
@@ -148,7 +149,7 @@ assemble_sdk() {
 # ------------------------------------------------------
 
 # Parse any command line argument
-while getopts "che:rv:" opt; do
+while getopts "che:prv:" opt; do
   case $opt in
     c)
       CODE_SIGN_RELEASE=YES
@@ -159,6 +160,9 @@ while getopts "che:rv:" opt; do
       ;;
     e)
       ENVIRONMENT=$OPTARG
+      ;;
+    p)
+      PACKAGE_SDK=YES
       ;;
     r)
       RUN_UNIT_TEST=YES
@@ -191,9 +195,8 @@ FRAMEWORK_NAME="BlippitKit.xcframework"
 
 #
 # Check if all commands and tools are available.
-# jazzy: https://github.com/realm/jazzy
 #
-commands_exist xcodebuild jazzy carthage || error_occured ${LINENO} "Missing needed commands"
+commands_exist xcodebuild carthage || error_occured ${LINENO} "Missing needed commands"
 
 #
 # Carthage
@@ -207,24 +210,32 @@ run_carthage
 echo "Run Unit tests..."
 run_unit_test
 
-#
-# Create documentation
-#
-echo "Generating Documentation..."
-create_documentation
+if [[ $PACKAGE_SDK == YES ]]; then
 
-#
-# Archive BlippitKit project
-#
-echo "Archiving BlippitKit..."
-archive_xcode_project
+  # jazzy: https://github.com/realm/jazzy
+  commands_exist jazzy || error_occured ${LINENO} "Missing needed commands"
 
-#
-# Assemble the SDK
-#
-echo "Assembling SDK..."
-assemble_sdk
+  #
+  # Create documentation
+  #
+  echo "Generating Documentation..."
+  create_documentation
+
+  #
+  # Archive BlippitKit project
+  #
+  echo "Archiving BlippitKit..."
+  archive_xcode_project
+
+  #
+  # Assemble the SDK
+  #
+  echo "Assembling SDK..."
+  assemble_sdk
+
+  echo "SDK Built and Assembled successfully"    
+else
+  echo "Skipping package and assemble SDK."
+fi
+
 cleanup
-
-echo "SDK Built and Assembled successfully"
-

@@ -12,12 +12,12 @@ struct ApiConfig {
   let method: HttpMethod
 
   /* Trailing slash on base path required */
-  let basePath = Constants.api.defaults.basePath
+  let basePath = Constants.Api.Defaults.basePath
 
   let resource: String
 
-  let contentType = Constants.api.defaults.contentType
+  let contentType = Constants.Api.Defaults.contentType
 
-  let cachePolicy = Constants.api.defaults.cachePolicy
-  let timeoutInterval = Constants.api.defaults.timeoutInterval
+  let cachePolicy = Constants.Api.Defaults.cachePolicy
+  let timeoutInterval = Constants.Api.Defaults.timeoutInterval
 }

@@ -1,0 +1,8 @@
+# https://github.com/realm/SwiftLint
+
+disabled_rules: # rule identifiers to exclude from running
+  - identifier_name
+  - nesting
+  - no_fallthrough_only
+  - function_body_length
+  - type_name
