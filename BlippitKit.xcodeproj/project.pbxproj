@@ -181,6 +181,7 @@
 		3EFADD54228D9F6600B3559A /* TransferSessionTokenStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD53228D9F6600B3559A /* TransferSessionTokenStateFactory.swift */; };
 		3EFADD56228D9F9100B3559A /* DefaultTransferSessionTokenStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD55228D9F9100B3559A /* DefaultTransferSessionTokenStateFactory.swift */; };
 		3EFDCAC22282F42400774A21 /* StartingStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */; };
+		830EEF77239E6E4300ED008C /* BlippitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830EEF76239E6E4300ED008C /* BlippitInfo.swift */; };
 		EC546BEC2387F5E1003142FA /* PodzKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC546BEB2387F5E1003142FA /* PodzKit.framework */; };
 		EC546BEF2387F76C003142FA /* PodzKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC546BEB2387F5E1003142FA /* PodzKit.framework */; };
 		EC546BF02387F76C003142FA /* PodzKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC546BEB2387F5E1003142FA /* PodzKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -410,6 +411,7 @@
 		3EFADD53228D9F6600B3559A /* TransferSessionTokenStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSessionTokenStateFactory.swift; sourceTree = "<group>"; };
 		3EFADD55228D9F9100B3559A /* DefaultTransferSessionTokenStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTransferSessionTokenStateFactory.swift; sourceTree = "<group>"; };
 		3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingStateSpec.swift; sourceTree = "<group>"; };
+		830EEF76239E6E4300ED008C /* BlippitInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlippitInfo.swift; sourceTree = "<group>"; };
 		EC546BEB2387F5E1003142FA /* PodzKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PodzKit.framework; path = Carthage/Build/iOS/PodzKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -834,6 +836,7 @@
 		3EFADD2C228D532300B3559A /* Entrypoint */ = {
 			isa = PBXGroup;
 			children = (
+				830EEF76239E6E4300ED008C /* BlippitInfo.swift */,
 				3E20B66923841965001BEB88 /* AppTerminalError.swift */,
 				3EFADD2F228D53B100B3559A /* Blippit.swift */,
 				3EFADD2D228D534F00B3559A /* BlippitConfiguration.swift */,
@@ -1147,6 +1150,7 @@
 				3E0652F0235F3517009B9B93 /* Scenario.swift in Sources */,
 				3E790F8E228AD9FB00DB072F /* CertificateHandling.swift in Sources */,
 				3EE673B822B77D78004EC0E5 /* WaitForPodStateFactory.swift in Sources */,
+				830EEF77239E6E4300ED008C /* BlippitInfo.swift in Sources */,
 				3E38F90E2281A0ED00C114B7 /* PodzStatusObserving.swift in Sources */,
 				3E23C239228C2AA800DA3305 /* CancellablePodSessionState.swift in Sources */,
 				3E1AF04A22AA517C00066C80 /* CloudSession.swift in Sources */,
