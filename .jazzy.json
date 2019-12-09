@@ -18,6 +18,7 @@
             "name": "Entrypoints",
             "children": [
                 "Blippit",
+                "BlippitInfo",
                 "BlippitSetup"
             ]
         },
