@@ -21,6 +21,7 @@ final class MainViewController: UIViewController {
   @IBOutlet private var payerIdLengthLabel: UILabel!
   @IBOutlet private var randomPayerIdLengthTextField: UITextField!
   @IBOutlet private var randomPayerIdButton: UIButton!
+  @IBOutlet private var blippitVersion: UILabel!
 
   @IBOutlet private var toggleBlippitButton: UIButton!
   @IBOutlet private var cancelSessionButton: UIButton!
@@ -44,6 +45,12 @@ final class MainViewController: UIViewController {
     viewController.blippitFactory = blippitFactory
 
     return viewController
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    blippitVersion.text = BlippitInfo.versionName
   }
 
   override func viewWillDisappear(_ animated: Bool) {
