@@ -8,12 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for Blippit.
-FOUNDATION_EXPORT double BlippitVersionNumber;
-
-//! Project version string for Blippit.
-FOUNDATION_EXPORT const unsigned char BlippitVersionString[];
-
 // In this header, you should import all the public headers of your framework using statements like #import <Blippit/PublicHeader.h>
 
 
