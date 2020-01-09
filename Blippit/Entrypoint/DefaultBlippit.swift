@@ -61,11 +61,13 @@ final class DefaultBlippit {
   }
 
   private func handleNewPod(_ pod: Pod) {
+    /* Manage new pod before the current state causes any changes in the state machine */
+    managedPods[pod.pid] = pod
+
     /* Propagate new pod event to the current state, if applicable */
     if let currentState = currentState as? NewPodObserving {
       currentState.handleNewPod(pod)
     }
-    managedPods[pod.pid] = pod
 
     pod.onStateChanged = { [weak self] pod, state in
       self?.handleState(state, for: pod)
@@ -73,11 +75,13 @@ final class DefaultBlippit {
   }
 
   private func handleLostPod(_ pod: Pod) {
+    /* Unmanage lost pod before the current state causes any changes in the state machine */
+    managedPods.removeValue(forKey: pod.pid)
+
     /* Propagate lost pod event to the current state, if applicable */
     if let currentState = currentState as? LostPodObserving {
       currentState.handleLostPod(pod)
     }
-    managedPods.removeValue(forKey: pod.pid)
   }
 
   private func handleState(_ state: PodState, for pod: Pod) {
