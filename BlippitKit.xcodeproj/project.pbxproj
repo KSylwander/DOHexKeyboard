@@ -120,6 +120,7 @@
 		3E97FA51228053CC003419AE /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E97FA4D228053B2003419AE /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3E97FA52228053D0003419AE /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E97FA4F228053BF003419AE /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3E97FA562280548B003419AE /* DefaultFetchDataUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97FA552280548B003419AE /* DefaultFetchDataUseCaseSpec.swift */; };
+		3E9DF2BF23C84BAA00C4AB37 /* BaseScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9DF2BE23C84BAA00C4AB37 /* BaseScenario.swift */; };
 		3E9EA1882281829B00B1B837 /* Any.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9EA1872281829B00B1B837 /* Any.swift */; };
 		3E9EA18A228182B800B1B837 /* Immaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9EA189228182B800B1B837 /* Immaterial.swift */; };
 		3E9EA18C228182CE00B1B837 /* Result+IsSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9EA18B228182CE00B1B837 /* Result+IsSuccess.swift */; };
@@ -350,6 +351,7 @@
 		3E97FA4D228053B2003419AE /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		3E97FA4F228053BF003419AE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		3E97FA552280548B003419AE /* DefaultFetchDataUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchDataUseCaseSpec.swift; sourceTree = "<group>"; };
+		3E9DF2BE23C84BAA00C4AB37 /* BaseScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScenario.swift; sourceTree = "<group>"; };
 		3E9EA1872281829B00B1B837 /* Any.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Any.swift; sourceTree = "<group>"; };
 		3E9EA189228182B800B1B837 /* Immaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Immaterial.swift; sourceTree = "<group>"; };
 		3E9EA18B228182CE00B1B837 /* Result+IsSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+IsSuccess.swift"; sourceTree = "<group>"; };
@@ -457,6 +459,7 @@
 		3E0652EE235F34F0009B9B93 /* Scenario Handling */ = {
 			isa = PBXGroup;
 			children = (
+				3E9DF2BE23C84BAA00C4AB37 /* BaseScenario.swift */,
 				3E0652F5235F3EF9009B9B93 /* PayerIdScenario.swift */,
 				3E0652F1235F35D6009B9B93 /* PaymentScenario.swift */,
 				3E0652EF235F3517009B9B93 /* Scenario.swift */,
@@ -1215,6 +1218,7 @@
 				3EFADD2B228D4D9B00B3559A /* TransferSessionTokenState.swift in Sources */,
 				3EB82295229C1A9000826236 /* Error+LogDescription.swift in Sources */,
 				3E23C23B228C2E0100DA3305 /* PodSessionStateObserving.swift in Sources */,
+				3E9DF2BF23C84BAA00C4AB37 /* BaseScenario.swift in Sources */,
 				3E790F9E228ADC3000DB072F /* DefaultCertificateFactory.swift in Sources */,
 				3E38F90622819EB100C114B7 /* State.swift in Sources */,
 				3E23C21C228C0E9E00DA3305 /* URLSession+UploadTaskFactory.swift in Sources */,
