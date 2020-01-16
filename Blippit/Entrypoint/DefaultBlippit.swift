@@ -21,7 +21,7 @@ final class DefaultBlippit {
   private var currentState: State?
   private var isStateTransitioningDisabled = false
 
-  private var blippedPod: Pod?
+  private var managedPods = [UInt32: Pod]()
 
   init(delegate: BlippitDelegate, podz: Podz, scenarioFactory: ScenarioFactory, errorHandler: ErrorHandling) {
     self.delegate = delegate
@@ -61,6 +61,9 @@ final class DefaultBlippit {
   }
 
   private func handleNewPod(_ pod: Pod) {
+    /* Manage new pod before the current state causes any changes in the state machine */
+    managedPods[pod.pid] = pod
+
     /* Propagate new pod event to the current state, if applicable */
     if let currentState = currentState as? NewPodObserving {
       currentState.handleNewPod(pod)
@@ -72,10 +75,13 @@ final class DefaultBlippit {
   }
 
   private func handleLostPod(_ pod: Pod) {
-    guard pod.pid == blippedPod?.pid else {
-      return
+    /* Unmanage lost pod before the current state causes any changes in the state machine */
+    managedPods.removeValue(forKey: pod.pid)
+
+    /* Propagate lost pod event to the current state, if applicable */
+    if let currentState = currentState as? LostPodObserving {
+      currentState.handleLostPod(pod)
     }
-    blippedPod = nil
   }
 
   private func handleState(_ state: PodState, for pod: Pod) {
@@ -83,7 +89,6 @@ final class DefaultBlippit {
       session.onSessionStateChanged = { [weak self] session, state in
         self?.handleState(state, for: session)
       }
-      blippedPod = pod
     }
 
     /* Propagate pod state changes to the current state, if applicable */
@@ -117,8 +122,10 @@ final class DefaultBlippit {
       state.start()
     }
 
-    /* Allow interested states (e.g., wait-for-pod) to receive the blipped pod if the latter is still within range */
-    blippedPod.map(handleNewPod(_:))
+    /* Allow interested states (e.g., wait-for-pod, wait-for-blip) to receive all managed pods */
+    if let state = state as? NewPodObserving {
+      managedPods.values.forEach(state.handleNewPod(_:))
+    }
   }
 }
 

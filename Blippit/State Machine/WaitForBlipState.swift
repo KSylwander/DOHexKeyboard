@@ -14,6 +14,8 @@ final class WaitForBlipState {
 
   private var isCancelling = false
 
+  private var managedPods = [UInt32: Pod]()
+
   init(delegate: StateDelegate) {
     self.delegate = delegate
   }
@@ -21,12 +23,29 @@ final class WaitForBlipState {
 
 extension WaitForBlipState: State {}
 
+extension WaitForBlipState: NewPodObserving {
+  func handleNewPod(_ pod: Pod) {
+    managedPods[pod.pid] = pod
+  }
+}
+
+extension WaitForBlipState: LostPodObserving {
+  func handleLostPod(_ pod: Pod) {
+    managedPods.removeValue(forKey: pod.pid)
+
+    /* Go back to previous state when there are no more pods in the vicinity */
+    if managedPods.isEmpty {
+      delegate?.move(to: .previous(from: self))
+    }
+  }
+}
+
 extension WaitForBlipState: PodStateObserving {
   func handleState(_ state: PodState, for pod: Pod) {
     guard case let .blip(session) = state else {
       return
     }
-    delegate?.state(self, moveFrom: .waitForBlip(pid: pod.pid, podSession: session))
+    delegate?.move(to: .next(from: .waitForBlip(pid: pod.pid, podSession: session)))
   }
 }
 
@@ -38,7 +57,7 @@ extension WaitForBlipState: Cancellable {
     isCancelling = true
 
     Log.debug(.public("Cancelling \(logDescription)..."))
-    delegate?.state(self, moveFrom: .cancelling)
+    delegate?.move(to: .cancelled(from: self))
   }
 }
 

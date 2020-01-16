@@ -62,10 +62,12 @@ extension EstablishCloudSessionState: HttpRequestState {
         do {
           let sessionToken = try TransferId(from: "\(Constants.sessionTokenPrefix)\(response.sessionToken)")
           self.move(
-            from: .establishCloudSession(
-              cloudSessionId: response.sessionId,
-              podSession: self.podSession,
-              sessionToken: sessionToken
+            to: .next(
+              from: .establishCloudSession(
+                cloudSessionId: response.sessionId,
+                podSession: self.podSession,
+                sessionToken: sessionToken
+              )
             )
           )
         } catch {
@@ -75,9 +77,9 @@ extension EstablishCloudSessionState: HttpRequestState {
     }
   }
 
-  private func move(from state: PreviousState) {
+  private func move(to transition: StateTransition) {
     DispatchQueue.main.async {
-      self.delegate?.state(self, moveFrom: state)
+      self.delegate?.move(to: transition)
     }
   }
 }

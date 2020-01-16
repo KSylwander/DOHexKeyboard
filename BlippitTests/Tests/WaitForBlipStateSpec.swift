@@ -52,10 +52,10 @@ final class WaitForBlipStateSpec: QuickSpec {
 
       it("transitions to the cancel state when cancelled") {
         /* Arrange */
-        var thePreviousState: PreviousState?
+        var theStateTransition: StateTransition?
         stub(stateDelegate) { stub in
-          when(stub.state(any(), moveFrom: any())).then { _, previousState in
-            thePreviousState = previousState
+          when(stub.move(to: any())).then { stateTransition in
+            theStateTransition = stateTransition
           }
         }
 
@@ -63,8 +63,8 @@ final class WaitForBlipStateSpec: QuickSpec {
         sut.cancel()
 
         /* Assert */
-        expect(thePreviousState).toNot(beNil())
-        expect(thePreviousState).to(equal(.cancelling))
+        expect(theStateTransition).toNot(beNil())
+        expect(theStateTransition).to(equal(.cancelled(from: sut)))
       }
 
       it("ignores multiple cancels") {
@@ -74,7 +74,7 @@ final class WaitForBlipStateSpec: QuickSpec {
         sut.cancel()
 
         /* Assert */
-        verify(stateDelegate, times(1)).state(any(), moveFrom: any())
+        verify(stateDelegate, times(1)).move(to: any())
       }
     }
   }

@@ -66,7 +66,7 @@ extension WaitForCloudSessionDoneState: HttpRequestState {
         case .done:
           do {
             try self.podSession.close()
-            self.move(from: .waitForCloudSessionDone)
+            self.move(to: .next(from: .waitForCloudSessionDone))
           } catch {
             self.handleError(error)
           }
@@ -82,9 +82,9 @@ extension WaitForCloudSessionDoneState: HttpRequestState {
     )
   }
 
-  private func move(from state: PreviousState) {
+  private func move(to transition: StateTransition) {
     DispatchQueue.main.async {
-      self.delegate?.state(self, moveFrom: state)
+      self.delegate?.move(to: transition)
     }
   }
 }
