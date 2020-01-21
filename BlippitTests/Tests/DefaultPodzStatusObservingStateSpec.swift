@@ -33,13 +33,11 @@ final class DefaultPodzStatusObservingStateSpec: QuickSpec {
       }
 
       let invalidStates: [PodzStatus] = [
-        .locked,
         .pending(error: .bluetoothOff),
         .pending(error: .bluetoothUnauthorized),
         .pending(error: .locationDenied),
         .pending(error: .locationNotDetermined),
-        .pending(error: .locationRestricted),
-        .pending(error: .internetNotAvailable)
+        .pending(error: .locationRestricted)
       ]
       invalidStates.forEach { status in
         it("cancels itself when Podz is \(status)") {

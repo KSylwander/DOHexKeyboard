@@ -37,9 +37,6 @@ extension StartingState: PodzStatusObserving {
       delegate?.state(self, didFailWithError: error)
     case .running:
       delegate?.move(to: .next(from: .starting))
-    case .locked:
-      podz.stop()
-      delegate?.state(self, didFailWithError: ConfigurationError.invalidCredentials)
     @unknown default:
       fatalError()
     }

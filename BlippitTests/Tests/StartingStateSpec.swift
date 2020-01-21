@@ -39,13 +39,11 @@ final class StartingStateSpec: QuickSpec {
       }
 
       let invalidStates: [PodzStatus] = [
-        .locked,
         .pending(error: .bluetoothOff),
         .pending(error: .bluetoothUnauthorized),
         .pending(error: .locationDenied),
         .pending(error: .locationNotDetermined),
-        .pending(error: .locationRestricted),
-        .pending(error: .internetNotAvailable)
+        .pending(error: .locationRestricted)
       ]
       invalidStates.forEach { status in
         it("fails when Podz is \(status)") {
@@ -80,14 +78,6 @@ final class StartingStateSpec: QuickSpec {
         /* Assert */
         expect(theStateTransition).toNot(beNil())
         expect(theStateTransition).to(equal(.next(from: .starting)))
-      }
-
-      it("stops Podz when the latter is locked") {
-        /* Act */
-        sut.handleStatus(.locked, for: podz)
-
-        /* Assert */
-        verify(podz).stop()
       }
     }
   }

@@ -21,7 +21,7 @@ extension DefaultHttpUrlResponseValidator: HttpUrlResponseValidator {
       return ConfigurationError.invalidCredentials
     default:
       /* Everything else is an error */
-      return _NetworkError.invalidHttpStatusCode(response.statusCode, responseData: data)
+      return NetworkError.invalidHttpStatusCode(response.statusCode, responseData: data)
     }
   }
 }

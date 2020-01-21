@@ -16,7 +16,7 @@ protocol DefaultPodzStatusObservingState: State, PodzStatusObserving, Cancellabl
 extension DefaultPodzStatusObservingState {
   func handleStatus(_ status: PodzStatus, for podz: Podz) {
     switch status {
-    case .locked, .pending:
+    case .pending:
       /* Allow the next state (e.g., `StartingState`) to handle the failure */
       cancel()
     default:

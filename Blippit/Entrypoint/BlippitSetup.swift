@@ -28,10 +28,7 @@ public enum BlippitSetup {
                             configuration: BlippitConfiguration,
                             errorHandler: ErrorHandling) throws -> Blippit {
 
-    let podz = try PodzSetup.setup(
-      appId: Constants.Credentials.Podz.appId,
-      apiKey: Constants.Credentials.Podz.apiKey
-    )
+    let podz = try PodzSetup.setup(channel: Constants.Credentials.Podz.channel)
 
     let scenarioFactory: ScenarioFactory = try {
       switch _BlippitMode(configuration.mode) {
