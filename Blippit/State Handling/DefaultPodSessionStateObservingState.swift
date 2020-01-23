@@ -15,7 +15,7 @@ protocol DefaultPodSessionStateObservingState: State, PodSessionStateObserving {
 
 extension DefaultPodSessionStateObservingState {
   func handleState(_ state: PodSessionState, for session: PodSession) {
-    guard case .closed = state else {
+    guard case let .closed(reason) = state else {
       if let self = self as? ValidPodSessionStateObserving {
         self.handleValidState(state, for: session)
       }
@@ -25,6 +25,12 @@ extension DefaultPodSessionStateObservingState {
     if let self = self as? Cancellable {
       self.cancel()
     }
-    delegate?.state(self, didFailWithError: AppTerminalError.connectionLost)
+
+    switch reason {
+    case .busy:
+      delegate?.state(self, didFailWithError: AppTerminalError.busy)
+    default:
+      delegate?.state(self, didFailWithError: AppTerminalError.connectionLost)
+    }
   }
 }
