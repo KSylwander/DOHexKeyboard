@@ -28,6 +28,11 @@ public enum AppTerminalError {
    * be fixed by asking the user to blip again.
    */
   case connectionLost
+
+  /**
+   * The app terminal already has an active connection. May be fixed by asking the user to blip again.
+   */
+  case busy
 }
 
 extension AppTerminalError: Error {}
