@@ -15,6 +15,8 @@ extension ErrorHandler: ErrorHandling {
     switch error {
     case PodzSetupError.notSupported:
       return BluetoothError.unsupported
+    case PodzSetupError.invalidChannelFormat:
+      return ConfigurationError.invalidChannelFormat
     case PodzError.bluetoothOff:
       return BluetoothError.poweredOff
     case PodzError.bluetoothUnauthorized:
@@ -25,8 +27,6 @@ extension ErrorHandler: ErrorHandling {
       return LocationError.notDetermined
     case PodzError.locationRestricted:
       return LocationError.restricted
-    case PodzError.internetNotAvailable:
-      return NetworkError.unreachable
     case IdError.invalidSize:
       return PayloadError.invalidLength
     case IdError.invalidFormat:

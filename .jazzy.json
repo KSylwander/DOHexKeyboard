@@ -41,7 +41,6 @@
             "children": [
                 "AppTerminalError",
                 "BluetoothError",
-                "NetworkError",
                 "PayloadError"
             ]
         }

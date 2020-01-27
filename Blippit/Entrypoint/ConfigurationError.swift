@@ -15,6 +15,14 @@ enum ConfigurationError {
    * configuration is up-to-date. If your Blippit credentials is valid, report this problem to Blippit support.
    */
   case invalidCredentials
+
+  /**
+   * The channel passed to Podz has an invalid format.
+   *
+   * This error is thrown while creating the `Blippit` instance (i.e., via the
+   * `BlippitSetup.setup(delegate:configuration:)` method).
+   */
+  case invalidChannelFormat
 }
 
 extension ConfigurationError: Error {}
