@@ -35,3 +35,12 @@ public enum AppTerminalError {
 }
 
 extension AppTerminalError: Error {}
+
+enum InternalAppTerminalError {
+  /**
+   * The blipped app terminal does not support transferring of data. Ask the user to try a different app terminal.
+   */
+  case unsupported
+}
+
+extension InternalAppTerminalError: Error {}
