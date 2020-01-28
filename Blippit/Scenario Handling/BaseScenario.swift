@@ -2,8 +2,7 @@
 //  BaseScenario.swift
 //  BlippitKit
 //
-//  Created by Jerson Perpetua on 2020-01-10.
-//  Copyright © 2020 Crunchfish AB. All rights reserved.
+//  Copyright © 2020 Crunchfish Proximity AB. All rights reserved.
 //
 
 import PodzKit

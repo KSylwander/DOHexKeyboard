@@ -2,8 +2,7 @@
 //  ErrorHandling.swift
 //  Blippit
 //
-//  Created by Jerson Perpetua on 2019-11-19.
-//  Copyright © 2019 Crunchfish AB. All rights reserved.
+//  Copyright © 2019 Crunchfish Proximity AB. All rights reserved.
 //
 
 protocol ErrorHandling {
