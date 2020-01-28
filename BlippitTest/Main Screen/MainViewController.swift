@@ -179,10 +179,12 @@ extension MainViewController: BlippitDelegate {
       loadingIndicator.isHidden = true
       setIsCancelSessionEnabled(false)
     case .sessionInitiated:
+    case .transferInitiated:
       setStatus("Initiating session...")
       loadingIndicator.isHidden = false
       setIsCancelSessionEnabled(true)
     case .sessionDone:
+    case .transferDone:
       setStatus("Session completed")
       loadingIndicator.isHidden = true
       setIsCancelSessionEnabled(false)
@@ -191,6 +193,8 @@ extension MainViewController: BlippitDelegate {
       setStatus("Stopped")
       loadingIndicator.isHidden = true
       setIsCancelSessionEnabled(false)
+    @unknown default:
+      fatalError()
     }
   }
 

@@ -38,14 +38,18 @@ public enum BlippitState {
   /**
    * The user has initiated a payment by blipping on one of the available app terminals. The mode-specific payload is
    * used to initiate the payment through the app terminal.
+   * The user has initiated a transfer by blipping on one of the available app terminals.
    */
   case sessionInitiated
+  case transferInitiated
 
   /**
    * The payment session is successfully completed. The transition to this state only happens momentarily before
+   * The transfer is successfully completed. The transition to this state only happens momentarily before
    * transitioning back to `BlippitState.lookingForAppTerminals`.
    */
   case sessionDone
+  case transferDone
 
   /**
    * The Blippit SDK has been stopped. It is now ready to be deallocated or started again.
