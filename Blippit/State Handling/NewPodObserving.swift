@@ -1,9 +1,8 @@
 //
 //  NewPodObservingState.swift
-//  Blippit
+//  BlippitKit
 //
-//  Created by Jerson Perpetua on 2019-06-17.
-//  Copyright © 2019 Crunchfish AB. All rights reserved.
+//  Copyright © 2019 Crunchfish Proximity AB. All rights reserved.
 //
 
 import PodzKit
