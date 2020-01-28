@@ -1,6 +1,6 @@
 //
 //  BlippitInfo.swift
-//  BlippitKit
+//  BlippitKitKit
 //
 //  Copyright © 2019 Crunchfish Proximity AB. All rights reserved.
 //
