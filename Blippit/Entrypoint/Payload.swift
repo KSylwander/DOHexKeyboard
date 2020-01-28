@@ -2,8 +2,45 @@
 //  Payload.swift
 //  BlippitKit
 //
-//  Created by Kristian Sylwander on 2020-01-28.
-//  Copyright © 2020 Crunchfish AB. All rights reserved.
+//  Copyright © 2020 Crunchfish Proximity AB. All rights reserved.
 //
 
 import Foundation
+import PodzKit
+
+/**
+ * Payload that are transfered upon a blip with an App Terminal.
+ */
+public class Payload {
+
+  /**
+   * The value of the payload.
+   */
+  public var value: String {
+    return transferId.idString
+  }
+
+  private let transferId: TransferId
+
+  /**
+   * Instantiate a payload.
+   *
+   * - parameter value: The payload string passed here must be alphanumeric
+   *                    (i.e., `[a-zA-Z0-9]{1,128}`).
+   * - throws: `PayloadError` if the value is not alphanumeric or has the incorrect size.
+   */
+  public init(value: String) throws {
+    do {
+      try self.transferId = TransferId(from: value)
+    } catch {
+      switch error {
+      case IdError.invalidSize:
+        throw PayloadError.invalidLength
+      case IdError.invalidFormat:
+        throw PayloadError.invalidFormat
+      default:
+        throw error
+      }
+    }
+  }
+}
