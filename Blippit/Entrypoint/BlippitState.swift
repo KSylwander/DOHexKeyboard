@@ -17,16 +17,14 @@ import Foundation
  */
 public enum BlippitState {
   /**
-   * The Blippit SDK has been started. This happens immediately when calling `Blippit.start()`. The internal state is
-   * configured in this state.
+   * The Blippit SDK has been started. This happens immediately when calling `Blippit.start()`.
    *
    * Any errors that occur in this stage will be passed to the `BlippitDelegate.blippit(_:didFailWithError:)` method.
    */
   case started
 
   /**
-   * The internal state has been configured successfully,
-   * and the Blippit SDK is waiting for the first app terminal to be found.
+   * The Blippit SDK is waiting for the first app terminal to be found.
    */
   case lookingForAppTerminals
 
@@ -36,19 +34,14 @@ public enum BlippitState {
   case appTerminalFound
 
   /**
-   * The user has initiated a payment by blipping on one of the available app terminals. The mode-specific payload is
-   * used to initiate the payment through the app terminal.
    * The user has initiated a transfer by blipping on one of the available app terminals.
    */
-  case sessionInitiated
   case transferInitiated
 
   /**
-   * The payment session is successfully completed. The transition to this state only happens momentarily before
    * The transfer is successfully completed. The transition to this state only happens momentarily before
    * transitioning back to `BlippitState.lookingForAppTerminals`.
    */
-  case sessionDone
   case transferDone
 
   /**

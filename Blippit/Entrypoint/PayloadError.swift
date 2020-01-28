@@ -16,12 +16,12 @@
  */
 public enum PayloadError {
   /**
-   * The payload is either too short or too long. Valid length is between 1 and 128 characters.
+   * The payload is either too short or too long. Valid length is [1,128] characters.
    */
   case invalidLength
 
   /**
-   * The payload contains invalid characters. As of writing, all transfer payloads should be alphanumeric.
+   * The payload contains invalid characters. All transfer payloads should be alphanumeric.
    */
   case invalidFormat
 }
