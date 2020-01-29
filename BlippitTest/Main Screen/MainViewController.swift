@@ -24,7 +24,6 @@ final class MainViewController: UIViewController {
   @IBOutlet private var blippitVersion: UILabel!
 
   @IBOutlet private var toggleBlippitButton: UIButton!
-  @IBOutlet private var cancelSessionButton: UIButton!
 
   private lazy var locationManager = CLLocationManager()
 
@@ -103,10 +102,6 @@ final class MainViewController: UIViewController {
     errorLabel.text = errorText
   }
 
-  @IBAction private func cancelSessionButtonTapped() {
-    blippit.cancelOngoingSession()
-  }
-
   private func updatePayerIdUI() {
     let isEnabled = !isBlippitActive
     payerIdTextField.isEnabled = isEnabled
@@ -173,24 +168,21 @@ extension MainViewController: BlippitDelegate {
     case .lookingForAppTerminals:
       setStatus("Looking for app terminals...")
       loadingIndicator.isHidden = false
-      setIsCancelSessionEnabled(false)
     case .appTerminalFound:
       setStatus("App terminal found")
       loadingIndicator.isHidden = true
-      setIsCancelSessionEnabled(false)
-    case .sessionInitiated:
+    case .transferInitiated:
       setStatus("Initiating session...")
       loadingIndicator.isHidden = false
-      setIsCancelSessionEnabled(true)
-    case .sessionDone:
+    case .transferDone:
       setStatus("Session completed")
       loadingIndicator.isHidden = true
-      setIsCancelSessionEnabled(false)
     case .stopped:
       isBlippitActive = false
       setStatus("Stopped")
       loadingIndicator.isHidden = true
-      setIsCancelSessionEnabled(false)
+    @unknown default:
+      fatalError()
     }
   }
 
@@ -198,11 +190,6 @@ extension MainViewController: BlippitDelegate {
     handleError(error)
 
     loadingIndicator.isHidden = true
-  }
-
-  private func setIsCancelSessionEnabled(_ isCancelSessionEnabled: Bool) {
-    cancelSessionButton.isEnabled = isCancelSessionEnabled
-    cancelSessionButton.alpha = isCancelSessionEnabled ? 1.0 : 0.7
   }
 
   private func setStatus(_ status: String) {

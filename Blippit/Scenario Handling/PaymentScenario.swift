@@ -57,7 +57,7 @@ final class PaymentScenario: BaseScenario {
         podSession: podSession
       )
     case .waitForCloudSessionDone:
-      delegate?.scenario(self, didChangeBlippitState: .sessionDone)
+      delegate?.scenario(self, didChangeBlippitState: .transferDone)
       delegate?.scenario(self, didChangeBlippitState: .appTerminalFound)
       return waitForBlipStateFactory.makeState(delegate: self)
     default:

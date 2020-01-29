@@ -15,11 +15,6 @@ struct DefaultBlippitFactory {
 
 extension DefaultBlippitFactory: BlippitFactory {
   func makeBlippit(delegate: BlippitDelegate, payerId: String) throws -> Blippit {
-    return try BlippitSetup.setup(
-      delegate: delegate,
-      configuration: BlippitConfiguration(
-        mode: .payerId(payerId)
-      )
-    )
+    return try BlippitSetup.setup(delegate: delegate, onBlipPayload: Payload(containing: payerId))
   }
 }

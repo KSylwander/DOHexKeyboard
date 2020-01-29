@@ -19,7 +19,7 @@ enum ConfigurationError {
    * The channel passed to Podz has an invalid format.
    *
    * This error is thrown while creating the `Blippit` instance (i.e., via the
-   * `BlippitSetup.setup(delegate:configuration:)` method).
+   * `BlippitSetup.setup(delegate:onBlipPayload:)` method).
    */
   case invalidChannelFormat
 }

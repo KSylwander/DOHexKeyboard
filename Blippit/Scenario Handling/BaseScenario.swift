@@ -72,7 +72,7 @@ class BaseScenario {
       delegate?.scenario(self, didChangeBlippitState: .appTerminalFound)
       return waitForBlipStateFactory.makeState(delegate: self)
     case let .waitForBlip(pid, podSession):
-      delegate?.scenario(self, didChangeBlippitState: .sessionInitiated)
+      delegate?.scenario(self, didChangeBlippitState: .transferInitiated)
       return setupTransferIdStateFactory.makeState(delegate: self, pid: pid, session: podSession)
     default:
       fatalError("Unsupported state output: \(stateOutput)")

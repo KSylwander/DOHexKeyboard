@@ -11,17 +11,17 @@
  * These errors can be received by:
  *
  * 1. Implementing the `BlippitDelegate.blippit(_:didFailWithError:)` method, and passing the delegate implementation
- *    to the `BlippitSetup.setup(delegate:configuration:)` method.
- * 2. Performing a do-catch around the `BlippitSetup.setup(delegate:configuration:)` method.
+ *    to the `BlippitSetup.setup(delegate:onBlipPayload:)` method.
+ * 2. Performing a do-catch around the `BlippitSetup.setup(delegate:onBlipPayload:)` method.
  */
 public enum PayloadError {
   /**
-   * The payload is either too short or too long. Valid length is between 1 and 128 characters.
+   * The payload is either too short or too long. Valid length is [1,128] characters.
    */
   case invalidLength
 
   /**
-   * The payload contains invalid characters. As of writing, all transfer payloads should be alphanumeric.
+   * The payload contains invalid characters. All transfer payloads should be alphanumeric.
    */
   case invalidFormat
 }

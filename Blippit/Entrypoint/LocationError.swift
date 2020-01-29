@@ -15,7 +15,7 @@
  * Errors that may occur in the location services setup stage.
  *
  * Receive these errors by implementing the `BlippitDelegate.blippit(_:didFailWithError:)` method, and passing the
- * delegate implementation to the `BlippitSetup.setup(delegate:configuration:)` method.
+ * delegate implementation to the `BlippitSetup.setup(delegate:onBlipPayload:)` method.
  */
 enum LocationError {
   /**

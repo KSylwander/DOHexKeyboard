@@ -26,10 +26,6 @@ extension ErrorHandler: ErrorHandling {
       return LocationError.notDetermined
     case PodzError.locationRestricted:
       return LocationError.restricted
-    case IdError.invalidSize:
-      return PayloadError.invalidLength
-    case IdError.invalidFormat:
-      return PayloadError.invalidFormat
     default:
       return error
     }

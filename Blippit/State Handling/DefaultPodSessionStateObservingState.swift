@@ -28,6 +28,8 @@ extension DefaultPodSessionStateObservingState {
     switch reason {
     case .busy:
       delegate?.state(self, didFailWithError: AppTerminalError.busy)
+    case .sessionOpen:
+      delegate?.state(self, didFailWithError: AppTerminalError.concurrentConnections)
     default:
       delegate?.state(self, didFailWithError: AppTerminalError.connectionLost)
     }
