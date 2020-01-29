@@ -3,9 +3,8 @@ BlippitKit for iOS
 
 ## Introduction
 
-BlippitKit provides functionality that enables an app to interact with a Blippit app terminal. The SDK currently supports the following interaction modes:
-
-1. `BlippitMode.payerId(_:)`: Allows sending a payer ID (e.g. phone number) to the cash register directly over the app terminal. This allows payments where the payment service integration is provided by the cash register itself.
+BlippitKit provides functionality that enables an app to interact with a Blippit app terminal. The SDK supports sending a payload (e.g. phone number) to the cash register directly over the app terminal. 
+This allows payments where the payment service integration is provided by the cash register itself.
 
 ## System Requirements
 
@@ -37,9 +36,7 @@ import BlippitKit
 
 let blippit = try BlippitSetup.setup(
     delegate: delegate,
-    configuration: BlippitConfiguration(
-        mode: .payerId("0701234567")
-    )
+    onBlipPayload: Payload(value: "0701234567") 
 )
 
 // ...
@@ -67,13 +64,7 @@ Then start the SDK:
 blippit.start()
 ```
 
-This will ask the SDK to start looking for app terminals and process blips depending on the active mode.
-
-It is possible to cancel an ongoing session; e.g., If the user changes their mind and does not want to pay right now:
-
-```swift
-blippit.cancelOngoingSession()
-```
+This will ask the SDK to start looking for app terminals and transfer payload on blip.
 
 When the SDK is no longer used, you need to stop it:
 

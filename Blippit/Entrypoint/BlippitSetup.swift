@@ -43,7 +43,7 @@ public enum BlippitSetup {
         retryHandlerFactory: DefaultRetryHandlerFactory(
           maxRetries: Constants.States.TransferPayerId.maxRetries
         ),
-        payerId: try TransferId(from: onBlipPayload.value)))
+        payerId: onBlipPayload.transferId))
 
     return DefaultBlippit(
       delegate: delegate,
