@@ -8,7 +8,7 @@
 import Foundation
 
 /**
- Contains information about the Blippit SDK.
+ Contains information about BlippitKit.
  */
 public enum BlippitInfo {
   /**

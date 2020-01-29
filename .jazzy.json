@@ -19,14 +19,8 @@
             "children": [
                 "Blippit",
                 "BlippitInfo",
-                "BlippitSetup"
-            ]
-        },
-        {
-            "name": "Configuration",
-            "children": [
-                "BlippitConfiguration",
-                "BlippitMode"
+                "BlippitSetup",
+                "Payload"
             ]
         },
         {

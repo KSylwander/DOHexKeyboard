@@ -9,16 +9,9 @@ import Foundation
 import PodzKit
 
 /**
- * Payload that are transfered upon a blip with an App Terminal.
+ * Payload that is transferred on blip with an app terminal.
  */
-public struct Payload {
-
-  /**
-   * The value of the payload.
-   */
-  public var value: String {
-    return transferId.idString
-  }
+public struct Payload: Equatable {
 
   let transferId: TransferId
 
@@ -29,7 +22,7 @@ public struct Payload {
    *                    (i.e., `[a-zA-Z0-9]{1,128}`).
    * - throws: `PayloadError` if the value is not alphanumeric or has the incorrect size.
    */
-  public init(value: String) throws {
+  public init(containing value: String) throws {
     do {
       transferId = try TransferId(from: value)
     } catch {

@@ -13,7 +13,7 @@ public enum BluetoothError {
    * This device does not support BLE.
    *
    * This error is thrown while creating the `Blippit` instance (i.e., via the
-   * `BlippitSetup.setup(delegate:configuration:)` method).
+   * `BlippitSetup.setup(delegate:onBlipPayload:)` method).
    */
   case unsupported
 
@@ -21,7 +21,7 @@ public enum BluetoothError {
    * Bluetooth is currently disabled for this device.
    *
    * Receive these errors by implementing the `BlippitDelegate.blippit(_:didFailWithError:)` method, and passing the
-   * delegate implementation to the `BlippitSetup.setup(delegate:configuration:)` method.
+   * delegate implementation to the `BlippitSetup.setup(delegate:onBlipPayload:)` method.
    *
    * Blippit will continue on its own after Bluetooth is enabled.
    */
@@ -31,7 +31,7 @@ public enum BluetoothError {
    * The app is not authorized to use the BLE peripheral/central role.
    *
    * Receive these errors by implementing the `BlippitDelegate.blippit(_:didFailWithError:)` method, and passing the
-   * delegate implementation to the `BlippitSetup.setup(delegate:configuration:)` method.
+   * delegate implementation to the `BlippitSetup.setup(delegate:onBlipPayload:)` method.
    */
   case unauthorized
 }

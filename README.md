@@ -3,8 +3,8 @@ BlippitKit for iOS
 
 ## Introduction
 
-BlippitKit provides functionality that enables an app to interact with a Blippit app terminal. The SDK supports sending a payload (e.g. phone number) to the cash register directly over the app terminal. 
-This allows payments where the payment service integration is provided by the cash register itself.
+BlippitKit provides functionality that supports sending a payload (e.g. phone number) over a Blippit app terminal.
+For example, this allows payments where the payment service integration is provided by the cash register itself.
 
 ## System Requirements
 
@@ -36,7 +36,7 @@ import BlippitKit
 
 let blippit = try BlippitSetup.setup(
     delegate: delegate,
-    onBlipPayload: Payload(value: "0701234567") 
+    onBlipPayload: Payload(containing: "0701234567") 
 )
 
 // ...
@@ -44,7 +44,7 @@ let blippit = try BlippitSetup.setup(
 
 When creating the instance, you pass in a configuration which specifies the interaction mode.
 
-You also give it a delegate that conforms to the `BlippitDelegate` protocol to receive state change events and errors that may occur during a payment session:
+You also give it a delegate that conforms to the `BlippitDelegate` protocol to receive state change events and errors that may occur during a transfer:
 
 ```swift
 extension MyController: BlippitDelegate {
@@ -58,15 +58,15 @@ extension MyController: BlippitDelegate {
 }
 ```
 
-Then start the SDK:
+Then start the kit:
 
 ```swift
 blippit.start()
 ```
 
-This will ask the SDK to start looking for app terminals and transfer payload on blip.
+This will ask BlippitKit to start looking for app terminals and transfer payload on blip.
 
-When the SDK is no longer used, you need to stop it:
+When no longer used, you need to stop it:
 
 ```swift
 blippit.stop()

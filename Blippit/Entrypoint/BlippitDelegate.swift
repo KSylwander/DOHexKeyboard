@@ -8,16 +8,16 @@
 import Foundation
 
 /**
- * The delegate for receiving events from the Blippit SDK.
+ * The delegate for receiving events from `Blippit`.
  */
 public protocol BlippitDelegate: AnyObject {
   /**
-   * Called when the Blippit SDK changes state.
+   * Called when `Blippit` changes state.
    */
   func blippit(_ blippit: Blippit, didChangeState state: BlippitState)
 
   /**
-   * Called when an error occurs in the course of running the Blippit SDK.
+   * Called when an error occurs in the course of running `Blippit`.
    */
   func blippit(_ blippit: Blippit, didFailWithError error: Error)
 }

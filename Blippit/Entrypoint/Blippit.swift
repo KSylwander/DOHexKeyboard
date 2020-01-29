@@ -8,18 +8,18 @@
 import Foundation
 
 /**
- * The main interface of the Blippit SDK.
+ * The main interface of the BlippitKit.
  *
- * Create an instance of this through the `BlippitSetup.setup(delegate:configuration:)` method.
+ * Create an instance of this through the `BlippitSetup.setup(delegate:onBlipPayload:)` method.
  */
 public protocol Blippit {
   /**
-   * Call when the app is ready to perform payments via the app terminal.
+   * Call when the app is ready to perform transfers via the app terminal.
    */
   func start()
 
   /**
-   * Call when the app is no longer interested in performing app terminal payments. This makes sure that any ongoing
+   * Call when the app is no longer interested in performing app terminal transfers. This makes sure that any ongoing
    * state is cancelled and cleaned-up.
    */
   func stop()

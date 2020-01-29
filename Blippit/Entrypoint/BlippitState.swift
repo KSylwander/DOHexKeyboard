@@ -8,28 +8,28 @@
 import Foundation
 
 /**
- * States of the Blippit SDK instance.
+ * States of the `Blippit` instance.
  *
  * ![Blippit state transitions](../img/blippit_states.png)
  *
  * Receive state changes by implementing the `BlippitDelegate.blippit(_:didChangeState:)` method, and passing the
- * delegate implementation to the `BlippitSetup.setup(delegate:configuration:)` method.
+ * delegate implementation to the `BlippitSetup.setup(delegate:onBlipPayload:)` method.
  */
 public enum BlippitState {
   /**
-   * The Blippit SDK has been started. This happens immediately when calling `Blippit.start()`.
+   * `Blippit` has been started. This happens immediately when calling `Blippit.start()`.
    *
    * Any errors that occur in this stage will be passed to the `BlippitDelegate.blippit(_:didFailWithError:)` method.
    */
   case started
 
   /**
-   * The Blippit SDK is waiting for the first app terminal to be found.
+   * `Blippit` is waiting for the first app terminal to be found.
    */
   case lookingForAppTerminals
 
   /**
-   * The Blippit SDK found app terminals in the vicinity, and is waiting for the user to blip on any one of them.
+   * `Blippit` found app terminals in the vicinity, and is waiting for the user to blip on any one of them.
    */
   case appTerminalFound
 
@@ -45,7 +45,7 @@ public enum BlippitState {
   case transferDone
 
   /**
-   * The Blippit SDK has been stopped. It is now ready to be deallocated or started again.
+   * `Blippit` has been stopped. It is now ready to be deallocated or started again.
    */
   case stopped
 }

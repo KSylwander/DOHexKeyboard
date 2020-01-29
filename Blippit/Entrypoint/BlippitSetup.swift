@@ -8,15 +8,15 @@
 import PodzKit
 
 /**
- * Main entrypoint where instances of the Blippit SDK can be created.
+ * Main entrypoint where instances of BlippitKit can be created.
  */
 public enum BlippitSetup {
   /**
-   * Builds an instance of the Blippit SDK.
+   * Builds an instance of `Blippit`.
    *
    * - important: The behaviour of multiple `Blippit` instances created from this method is undefined.
    *
-   * - throws: `BluetoothError`, `ConfigurationError`, and `LocationError`.
+   * - throws: `BluetoothError`
    */
   public static func setup(delegate: BlippitDelegate, onBlipPayload: Payload) throws -> Blippit {
     let errorHandler = ErrorHandler()

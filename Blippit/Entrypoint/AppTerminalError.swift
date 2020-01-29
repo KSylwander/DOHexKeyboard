@@ -9,7 +9,7 @@
  * Errors that may occur in relation to an app terminal.
  *
  * Receive these errors by implementing the `BlippitDelegate.blippit(_:didFailWithError:)` method, and passing the
- * delegate implementation to the `BlippitSetup.setup(delegate:configuration:)` method.
+ * delegate implementation to the `BlippitSetup.setup(delegate:onBlipPayload:)` method.
  */
 public enum AppTerminalError {
   /**

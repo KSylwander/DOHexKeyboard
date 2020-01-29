@@ -11,8 +11,8 @@
  * These errors can be received by:
  *
  * 1. Implementing the `BlippitDelegate.blippit(_:didFailWithError:)` method, and passing the delegate implementation
- *    to the `BlippitSetup.setup(delegate:configuration:)` method.
- * 2. Performing a do-catch around the `BlippitSetup.setup(delegate:configuration:)` method.
+ *    to the `BlippitSetup.setup(delegate:onBlipPayload:)` method.
+ * 2. Performing a do-catch around the `BlippitSetup.setup(delegate:onBlipPayload:)` method.
  */
 public enum PayloadError {
   /**
