@@ -11,7 +11,7 @@ import PodzKit
 /**
  * Payload that are transfered upon a blip with an App Terminal.
  */
-public class Payload {
+public struct Payload {
 
   /**
    * The value of the payload.
@@ -20,7 +20,7 @@ public class Payload {
     return transferId.idString
   }
 
-  private let transferId: TransferId
+  let transferId: TransferId
 
   /**
    * Instantiate a payload.
@@ -31,7 +31,7 @@ public class Payload {
    */
   public init(value: String) throws {
     do {
-      try self.transferId = TransferId(from: value)
+      transferId = try TransferId(from: value)
     } catch {
       switch error {
       case IdError.invalidSize:

@@ -37,7 +37,7 @@ extension StartingState: PodzStatusObserving {
     case .running:
       delegate?.move(to: .next(from: .starting))
     @unknown default:
-      fatalError("Unsupported status output: \(status.description)")
+      fatalError("Unsupported Podz status: \(status.description)")
     }
   }
 }
