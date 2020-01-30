@@ -18,10 +18,13 @@ For example, this allows payments where the payment service integration is provi
 
 To use BlippitKit in your project, you need to embed its framework file:
 
-1. Navigate to the "General" tab in your target configuration.
-2. Press the `+` button in the "Frameworks and Libraries" section.
+1. Navigate to the **General** tab in your app target configuration.
+2. Press the `+` button in the **Frameworks and Libraries** section.
 3. Select and add the `BlippitKit.xcframework` file.
-4. Make sure it is marked as "Embed & Sign".
+4. Make sure the framework is marked as **Embed & Sign**.
+5. In the same target configuration, navigate to the **Info** tab.
+6. Add the [`NSBluetoothAlwaysUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nsbluetoothperipheralusagedescription) property list key, and mention that Bluetooth is used for blips.
+7. If your deployment target is **earlier than iOS 13**, add the [`NSBluetoothPeripheralUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nsbluetoothalwaysusagedescription) property list key as well, and use the same description as above.
 
 BlippitKit uses PodzKit to communicate with the app terminal. It is therefore required that you also add PodzKit to your project. Do this in the same manner as with `BlippitKit.xcframework`.
 
