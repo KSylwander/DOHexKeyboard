@@ -1,1 +1,1 @@
-git "git@bitbucket.org:crunchfishab/podz-ios.git" "master"
+git "git@bitbucket.org:crunchfishab/podz-ios.git" ~> 0.14.0
