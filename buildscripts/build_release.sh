@@ -26,7 +26,7 @@ usage() {
 Usage: $0 [options]
 
 -h    This help description.
--c    Code Sign the release.
+-s    Code Sign the release.
 -e    The environment for which the product is built. Takes an argument: STAGE or PROD
 -r    Run unit tests (These are executed with a DebugSTAGE configuration)
 -v    Specify the version of this release. Takes an argument.
@@ -149,9 +149,9 @@ assemble_sdk() {
 # ------------------------------------------------------
 
 # Parse any command line argument
-while getopts "che:prv:" opt; do
+while getopts "she:prv:" opt; do
   case $opt in
-    c)
+    s)
       CODE_SIGN_RELEASE=YES
       ;;
     h)
