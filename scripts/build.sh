@@ -31,6 +31,7 @@ Usage: $0 [options]
 -t    Run unit tests (These are executed with a Debug configuration)
 -v    Specify the version of this release. Takes an argument.
 -p    Package and assemble the SDK (archive, generate documentation and assembles SDK)
+-d    Do not run Carthage setup
 
 Example:
   ./scripts/build.sh -v 1.0.0 -c Release -t -p -s
@@ -82,7 +83,12 @@ run_unit_test() {
 }
 
 run_carthage() {
-  echo "Setting up Podz for configuration: $CONFIGURATION"
+  if [[ $RUN_CARTHAGE == NO ]]; then
+    echo "Skipping Carthage setup"
+    return
+  fi
+
+  echo "Setting up dependencies for configuration: $CONFIGURATION"
   carthage bootstrap --configuration $CONFIGURATION --platform iOS
 }
 
@@ -133,7 +139,7 @@ assemble_sdk() {
 # ------------------------------------------------------
 
 # Parse any command line argument
-while getopts "shc:ptv:" opt; do
+while getopts "shc:ptv:d" opt; do
   case $opt in
     s)
       CODE_SIGN_RELEASE=YES
@@ -159,6 +165,9 @@ while getopts "shc:ptv:" opt; do
       ;;
     v)
       RELEASE_VERSION=$OPTARG
+      ;;
+    d)
+      RUN_CARTHAGE=NO
       ;;
     \?)
       error_occured ${LINENO} "Invalid option: -$OPTARG" 2
@@ -191,7 +200,7 @@ commands_exist xcodebuild carthage || error_occured ${LINENO} "Missing needed co
 #
 # Carthage
 #
-echo "Carthage setup..."
+echo "Running Carthage setup..."
 run_carthage 
 
 #
