@@ -27,13 +27,13 @@ Usage: $0 [options]
 
 -h    This help description.
 -s    Code Sign the release.
--e    The environment for which the product is built. Takes an argument: STAGE or PROD
+-c    The configuration for which the product is built. Takes an argument: Debug or Release
 -t    Run unit tests (These are executed with a Debug configuration)
 -v    Specify the version of this release. Takes an argument.
 -p    Package and assemble the SDK (archive, generate documentation and assembles SDK)
 
 Example:
-  ./buildscripts/build_release.sh -p -e PROD -t -v 2.0
+  ./buildscripts/build_release.sh -p -c Release -t -v 2.0
 
 EOF
 }
@@ -49,16 +49,7 @@ archive_xcode_project() {
     flags+=( CODE_SIGNING_REQUIRED=NO )
   fi
 
-  echo "Building for Environment: $ENVIRONMENT"
-  if [[ $ENVIRONMENT == "STAGE" ]]; then
-    CONFIGURATION=ReleaseSTAGE
-  elif [[ $ENVIRONMENT == "PROD" ]]; then
-    CONFIGURATION=ReleasePROD
-  else
-    echo "Building for unsupported environment: $ENVIRONMENT"
-    usage
-    error_occured ${LINENO} "Unsupported Environment"
-  fi
+  echo "Building for configuration: $CONFIGURATION"
 
   # Build for iOS. 
   # SKIP_INSTALL is to install frameworks into the archive.
@@ -84,22 +75,15 @@ archive_xcode_project() {
 
 run_unit_test() {
   if [[ $RUN_UNIT_TEST == YES ]]; then
-    xcodebuild clean test -project BlippitKit.xcodeproj -configuration DebugSTAGE -scheme BlippitKit -destination 'platform=iOS Simulator,name=iPhone 11' || error_occured ${LINENO} "Unit tests failed!"
+    xcodebuild clean test -project BlippitKit.xcodeproj -configuration Debug -scheme BlippitKit -destination 'platform=iOS Simulator,name=iPhone 11' || error_occured ${LINENO} "Unit tests failed!"
   else
     echo "Skipping Unit Tests"
   fi
 }
 
 run_carthage() {
-  if [[ $ENVIRONMENT == "STAGE" ]]; then
-    carthage bootstrap --configuration ReleaseSTAGE --platform ios
-  elif [[ $ENVIRONMENT == "PROD" ]]; then
-    carthage bootstrap --configuration ReleasePROD --platform ios
-  else
-    echo "Building for unsupported environment: $ENVIRONMENT"
-    usage
-    error_occured ${LINENO} "Unsupported Environment"
-  fi
+  echo "Setting up Podz for configuration: $CONFIGURATION"
+  carthage bootstrap --configuration $CONFIGURATION --platform iOS
 }
 
 create_documentation() {
@@ -149,7 +133,7 @@ assemble_sdk() {
 # ------------------------------------------------------
 
 # Parse any command line argument
-while getopts "she:ptv:" opt; do
+while getopts "shc:ptv:" opt; do
   case $opt in
     s)
       CODE_SIGN_RELEASE=YES
@@ -158,8 +142,14 @@ while getopts "she:ptv:" opt; do
       usage
       exit
       ;;
-    e)
-      ENVIRONMENT=$OPTARG
+    c)
+      # Convert option to title case (e.g. DEBUG -> Debug)
+      CONFIGURATION=`awk '{print toupper($1)tolower($2)}' <<< "${OPTARG:0:1} ${OPTARG:1}"`
+      if [[ "$CONFIGURATION" != "Debug" ]] && [[ "$CONFIGURATION" != "Release" ]]; then
+        echo "Building for unsupported configuration: $CONFIGURATION"
+        usage
+        error_occured ${LINENO} "Unsupported configuration"
+      fi
       ;;
     p)
       PACKAGE_SDK=YES
