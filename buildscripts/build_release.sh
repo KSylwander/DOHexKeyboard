@@ -28,12 +28,12 @@ Usage: $0 [options]
 -h    This help description.
 -s    Code Sign the release.
 -e    The environment for which the product is built. Takes an argument: STAGE or PROD
--r    Run unit tests (These are executed with a DebugSTAGE configuration)
+-t    Run unit tests (These are executed with a Debug configuration)
 -v    Specify the version of this release. Takes an argument.
 -p    Package and assemble the SDK (archive, generate documentation and assembles SDK)
 
 Example:
-  ./buildscripts/build_release.sh -p -e PROD -r -v 2.0
+  ./buildscripts/build_release.sh -p -e PROD -t -v 2.0
 
 EOF
 }
@@ -149,7 +149,7 @@ assemble_sdk() {
 # ------------------------------------------------------
 
 # Parse any command line argument
-while getopts "she:prv:" opt; do
+while getopts "she:ptv:" opt; do
   case $opt in
     s)
       CODE_SIGN_RELEASE=YES
@@ -164,7 +164,7 @@ while getopts "she:prv:" opt; do
     p)
       PACKAGE_SDK=YES
       ;;
-    r)
+    t)
       RUN_UNIT_TEST=YES
       ;;
     v)
