@@ -10,7 +10,6 @@
 		3E0652F0235F3517009B9B93 /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0652EF235F3517009B9B93 /* Scenario.swift */; };
 		3E0652F6235F3EF9009B9B93 /* PayerIdScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0652F5235F3EF9009B9B93 /* PayerIdScenario.swift */; };
 		3E1AF01922AA327800066C80 /* BlippitState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1AF01822AA327800066C80 /* BlippitState.swift */; };
-		3E1AF04822AA4D9900066C80 /* BlippitSessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1AF04722AA4D9900066C80 /* BlippitSessionState.swift */; };
 		3E20B66223841886001BEB88 /* ConfigurationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E20B66123841886001BEB88 /* ConfigurationError.swift */; };
 		3E20B66423841916001BEB88 /* BluetoothError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E20B66323841916001BEB88 /* BluetoothError.swift */; };
 		3E20B6682384194B001BEB88 /* PayloadError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E20B6672384194B001BEB88 /* PayloadError.swift */; };
@@ -157,7 +156,6 @@
 		3E0652EF235F3517009B9B93 /* Scenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
 		3E0652F5235F3EF9009B9B93 /* PayerIdScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayerIdScenario.swift; sourceTree = "<group>"; };
 		3E1AF01822AA327800066C80 /* BlippitState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitState.swift; sourceTree = "<group>"; };
-		3E1AF04722AA4D9900066C80 /* BlippitSessionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitSessionState.swift; sourceTree = "<group>"; };
 		3E20B66123841886001BEB88 /* ConfigurationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationError.swift; sourceTree = "<group>"; };
 		3E20B66323841916001BEB88 /* BluetoothError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothError.swift; sourceTree = "<group>"; };
 		3E20B6672384194B001BEB88 /* PayloadError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadError.swift; sourceTree = "<group>"; };
@@ -322,7 +320,6 @@
 		3E38F9172281A31F00C114B7 /* State Handling */ = {
 			isa = PBXGroup;
 			children = (
-				3E1AF04722AA4D9900066C80 /* BlippitSessionState.swift */,
 				3E23C238228C2AA800DA3305 /* CancellablePodSessionState.swift */,
 				3E23C244228C3DC700DA3305 /* CancellationHandler.swift */,
 				3E23C23E228C32FD00DA3305 /* DefaultPodSessionStateObservingState.swift */,
@@ -802,7 +799,6 @@
 				3E38F9162281A2A200C114B7 /* StartingState.swift in Sources */,
 				3E23C23D228C2F0800DA3305 /* ValidPodSessionStateObserving.swift in Sources */,
 				3EC4DE472283073A007A05C9 /* WaitForBlipState.swift in Sources */,
-				3E1AF04822AA4D9900066C80 /* BlippitSessionState.swift in Sources */,
 				3E38F9122281A16500C114B7 /* DefaultPodzStatusObservingState.swift in Sources */,
 				3E1AF01922AA327800066C80 /* BlippitState.swift in Sources */,
 				3EFADD27228D4D6A00B3559A /* DefaultRetryHandlerFactory.swift in Sources */,

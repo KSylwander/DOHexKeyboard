@@ -33,8 +33,6 @@ final class TransferPayerIdState {
   }
 }
 
-extension TransferPayerIdState: BlippitSessionState {}
-
 extension TransferPayerIdState: TransferIdState {
   func handleTransactionSuccess() throws {
     try session.close()

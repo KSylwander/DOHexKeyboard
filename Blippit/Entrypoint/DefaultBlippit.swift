@@ -148,14 +148,6 @@ extension DefaultBlippit: Blippit {
     scenario.stop()
     podz.stop()
   }
-
-  func cancelOngoingSession() {
-    /* Abort the current stage, if applicable */
-    guard let currentState = currentState as? BlippitSessionState else {
-      return
-    }
-    currentState.cancel()
-  }
 }
 
 extension DefaultBlippit: ScenarioDelegate {
