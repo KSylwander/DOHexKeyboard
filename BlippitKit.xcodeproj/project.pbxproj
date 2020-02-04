@@ -46,40 +46,10 @@
 		3E428BF52297EC6C0038FBB9 /* BlippitKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC765227C2CA200D5C693 /* BlippitKit.framework */; };
 		3E428BF62297EC6C0038FBB9 /* BlippitKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC765227C2CA200D5C693 /* BlippitKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3E4D1E7F23741EF000DE7187 /* StateTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D1E7E23741EF000DE7187 /* StateTransition.swift */; };
-		3E535304229550BC004FD948 /* URLSession+RetainedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E535303229550BC004FD948 /* URLSession+RetainedDelegate.swift */; };
-		3E535306229555C9004FD948 /* abubbl.crt in Resources */ = {isa = PBXBuildFile; fileRef = 3E535305229555C9004FD948 /* abubbl.crt */; };
 		3E5C01B32297FD9700DF47BE /* BlippitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C01B22297FD9700DF47BE /* BlippitFactory.swift */; };
 		3E5C01B52297FDB800DF47BE /* DefaultBlippitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C01B42297FDB800DF47BE /* DefaultBlippitFactory.swift */; };
 		3E722AFE237421B500A1E6F7 /* StateTransition+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E722AFD237421B500A1E6F7 /* StateTransition+Equatable.swift */; };
 		3E722B002374295600A1E6F7 /* LostPodObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E722AFF2374295600A1E6F7 /* LostPodObserving.swift */; };
-		3E790F6D228AD17600DB072F /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F6C228AD17600DB072F /* Curry.swift */; };
-		3E790F6F228AD18800DB072F /* Flip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F6E228AD18800DB072F /* Flip.swift */; };
-		3E790F71228AD19C00DB072F /* Fmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F70228AD19C00DB072F /* Fmap.swift */; };
-		3E790F75228AD1C500DB072F /* Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F74228AD1C500DB072F /* Composition.swift */; };
-		3E790F80228AD93700DB072F /* SecurityPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F7F228AD93700DB072F /* SecurityPolicy.swift */; };
-		3E790F82228AD96200DB072F /* Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F81228AD96200DB072F /* Certificate.swift */; };
-		3E790F84228AD96E00DB072F /* Trust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F83228AD96E00DB072F /* Trust.swift */; };
-		3E790F88228AD99700DB072F /* UnsafeBitCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F87228AD99700DB072F /* UnsafeBitCast.swift */; };
-		3E790F8A228AD9AA00DB072F /* SecurityPolicyHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F89228AD9AA00DB072F /* SecurityPolicyHandling.swift */; };
-		3E790F8C228AD9BF00DB072F /* SecPolicyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F8B228AD9BF00DB072F /* SecPolicyHandler.swift */; };
-		3E790F8E228AD9FB00DB072F /* CertificateHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F8D228AD9FB00DB072F /* CertificateHandling.swift */; };
-		3E790F90228ADA0D00DB072F /* SecCertificateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F8F228ADA0D00DB072F /* SecCertificateHandler.swift */; };
-		3E790F92228ADA1C00DB072F /* TrustHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F91228ADA1C00DB072F /* TrustHandling.swift */; };
-		3E790F94228ADA2700DB072F /* SecTrustHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F93228ADA2700DB072F /* SecTrustHandler.swift */; };
-		3E790F9A228ADC1700DB072F /* SecurityError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F99228ADC1700DB072F /* SecurityError.swift */; };
-		3E790F9C228ADC2500DB072F /* CertificateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F9B228ADC2500DB072F /* CertificateFactory.swift */; };
-		3E790F9E228ADC3000DB072F /* DefaultCertificateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F9D228ADC3000DB072F /* DefaultCertificateFactory.swift */; };
-		3E790FA0228ADC4400DB072F /* ApplyCertificatePinningUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790F9F228ADC4400DB072F /* ApplyCertificatePinningUseCase.swift */; };
-		3E790FA2228ADC5600DB072F /* DefaultApplyCertificatePinningUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FA1228ADC5600DB072F /* DefaultApplyCertificatePinningUseCase.swift */; };
-		3E790FA4228ADC6300DB072F /* ApplyCertificatePinningUseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FA3228ADC6300DB072F /* ApplyCertificatePinningUseCaseFactory.swift */; };
-		3E790FA6228ADC6B00DB072F /* DefaultApplyCertificatePinningUseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FA5228ADC6B00DB072F /* DefaultApplyCertificatePinningUseCaseFactory.swift */; };
-		3E790FA8228ADC7800DB072F /* ValidateTrustUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FA7228ADC7800DB072F /* ValidateTrustUseCase.swift */; };
-		3E790FAC228ADCD400DB072F /* DefaultValidateTrustUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FAB228ADCD400DB072F /* DefaultValidateTrustUseCase.swift */; };
-		3E790FAE228ADD7700DB072F /* ValidateTrustedCertificatesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FAD228ADD7600DB072F /* ValidateTrustedCertificatesUseCase.swift */; };
-		3E790FB0228ADD7D00DB072F /* DefaultValidateTrustedCertificatesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FAF228ADD7D00DB072F /* DefaultValidateTrustedCertificatesUseCase.swift */; };
-		3E790FB2228ADD8B00DB072F /* CertificatePinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FB1228ADD8B00DB072F /* CertificatePinning.swift */; };
-		3E790FB4228ADD9500DB072F /* CertificatePinningManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FB3228ADD9400DB072F /* CertificatePinningManager.swift */; };
-		3E790FB6228AEE1F00DB072F /* SACAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FB5228AEE1F00DB072F /* SACAuthenticationManager.swift */; };
 		3E790FBA228AFA2200DB072F /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FB9228AFA2200DB072F /* HttpMethod.swift */; };
 		3E790FBC228AFA3A00DB072F /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FBB228AFA3A00DB072F /* ApiConfig.swift */; };
 		3E790FBE228AFA4F00DB072F /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E790FBD228AFA4F00DB072F /* URLRequestBuilder.swift */; };
@@ -112,7 +82,6 @@
 		3EAE572B235895AB00645E7A /* DefaultTransferPayerIdStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE572A235895AB00645E7A /* DefaultTransferPayerIdStateFactory.swift */; };
 		3EB024B123697822004112B6 /* Constants+Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB024B023697822004112B6 /* Constants+Credentials.swift */; };
 		3EB8228E229BC72100826236 /* Secular_One.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3EAABD6D2297F40200C0A37A /* Secular_One.ttf */; };
-		3EB82290229BE40200826236 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB8228F229BE40200826236 /* Identity.swift */; };
 		3EB82292229C019400826236 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB82291229C019400826236 /* Log.swift */; };
 		3EB82295229C1A9000826236 /* Error+LogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB82294229C1A9000826236 /* Error+LogDescription.swift */; };
 		3EB82297229C1AD000826236 /* State+LogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB82296229C1AD000826236 /* State+LogDescription.swift */; };
@@ -249,40 +218,10 @@
 		3E428BEA2297EB680038FBB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E428BEC2297EB680038FBB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E4D1E7E23741EF000DE7187 /* StateTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTransition.swift; sourceTree = "<group>"; };
-		3E535303229550BC004FD948 /* URLSession+RetainedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+RetainedDelegate.swift"; sourceTree = "<group>"; };
-		3E535305229555C9004FD948 /* abubbl.crt */ = {isa = PBXFileReference; lastKnownFileType = file; path = abubbl.crt; sourceTree = "<group>"; };
 		3E5C01B22297FD9700DF47BE /* BlippitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitFactory.swift; sourceTree = "<group>"; };
 		3E5C01B42297FDB800DF47BE /* DefaultBlippitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBlippitFactory.swift; sourceTree = "<group>"; };
 		3E722AFD237421B500A1E6F7 /* StateTransition+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StateTransition+Equatable.swift"; sourceTree = "<group>"; };
 		3E722AFF2374295600A1E6F7 /* LostPodObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostPodObserving.swift; sourceTree = "<group>"; };
-		3E790F6C228AD17600DB072F /* Curry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curry.swift; sourceTree = "<group>"; };
-		3E790F6E228AD18800DB072F /* Flip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flip.swift; sourceTree = "<group>"; };
-		3E790F70228AD19C00DB072F /* Fmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fmap.swift; sourceTree = "<group>"; };
-		3E790F74228AD1C500DB072F /* Composition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Composition.swift; sourceTree = "<group>"; };
-		3E790F7F228AD93700DB072F /* SecurityPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityPolicy.swift; sourceTree = "<group>"; };
-		3E790F81228AD96200DB072F /* Certificate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Certificate.swift; sourceTree = "<group>"; };
-		3E790F83228AD96E00DB072F /* Trust.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trust.swift; sourceTree = "<group>"; };
-		3E790F87228AD99700DB072F /* UnsafeBitCast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsafeBitCast.swift; sourceTree = "<group>"; };
-		3E790F89228AD9AA00DB072F /* SecurityPolicyHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityPolicyHandling.swift; sourceTree = "<group>"; };
-		3E790F8B228AD9BF00DB072F /* SecPolicyHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecPolicyHandler.swift; sourceTree = "<group>"; };
-		3E790F8D228AD9FB00DB072F /* CertificateHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificateHandling.swift; sourceTree = "<group>"; };
-		3E790F8F228ADA0D00DB072F /* SecCertificateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecCertificateHandler.swift; sourceTree = "<group>"; };
-		3E790F91228ADA1C00DB072F /* TrustHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrustHandling.swift; sourceTree = "<group>"; };
-		3E790F93228ADA2700DB072F /* SecTrustHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecTrustHandler.swift; sourceTree = "<group>"; };
-		3E790F99228ADC1700DB072F /* SecurityError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityError.swift; sourceTree = "<group>"; };
-		3E790F9B228ADC2500DB072F /* CertificateFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificateFactory.swift; sourceTree = "<group>"; };
-		3E790F9D228ADC3000DB072F /* DefaultCertificateFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCertificateFactory.swift; sourceTree = "<group>"; };
-		3E790F9F228ADC4400DB072F /* ApplyCertificatePinningUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyCertificatePinningUseCase.swift; sourceTree = "<group>"; };
-		3E790FA1228ADC5600DB072F /* DefaultApplyCertificatePinningUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultApplyCertificatePinningUseCase.swift; sourceTree = "<group>"; };
-		3E790FA3228ADC6300DB072F /* ApplyCertificatePinningUseCaseFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyCertificatePinningUseCaseFactory.swift; sourceTree = "<group>"; };
-		3E790FA5228ADC6B00DB072F /* DefaultApplyCertificatePinningUseCaseFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultApplyCertificatePinningUseCaseFactory.swift; sourceTree = "<group>"; };
-		3E790FA7228ADC7800DB072F /* ValidateTrustUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateTrustUseCase.swift; sourceTree = "<group>"; };
-		3E790FAB228ADCD400DB072F /* DefaultValidateTrustUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultValidateTrustUseCase.swift; sourceTree = "<group>"; };
-		3E790FAD228ADD7600DB072F /* ValidateTrustedCertificatesUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateTrustedCertificatesUseCase.swift; sourceTree = "<group>"; };
-		3E790FAF228ADD7D00DB072F /* DefaultValidateTrustedCertificatesUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultValidateTrustedCertificatesUseCase.swift; sourceTree = "<group>"; };
-		3E790FB1228ADD8B00DB072F /* CertificatePinning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificatePinning.swift; sourceTree = "<group>"; };
-		3E790FB3228ADD9400DB072F /* CertificatePinningManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificatePinningManager.swift; sourceTree = "<group>"; };
-		3E790FB5228AEE1F00DB072F /* SACAuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SACAuthenticationManager.swift; sourceTree = "<group>"; };
 		3E790FB9228AFA2200DB072F /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		3E790FBB228AFA3A00DB072F /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
 		3E790FBD228AFA4F00DB072F /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
@@ -314,7 +253,6 @@
 		3EAE57282358958100645E7A /* TransferPayerIdStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPayerIdStateFactory.swift; sourceTree = "<group>"; };
 		3EAE572A235895AB00645E7A /* DefaultTransferPayerIdStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTransferPayerIdStateFactory.swift; sourceTree = "<group>"; };
 		3EB024B023697822004112B6 /* Constants+Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Credentials.swift"; sourceTree = "<group>"; };
-		3EB8228F229BE40200826236 /* Identity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
 		3EB82291229C019400826236 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		3EB82294229C1A9000826236 /* Error+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+LogDescription.swift"; sourceTree = "<group>"; };
 		3EB82296229C1AD000826236 /* State+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "State+LogDescription.swift"; sourceTree = "<group>"; };
@@ -493,7 +431,6 @@
 		3E53531A22956F72004FD948 /* Construction Root */ = {
 			isa = PBXGroup;
 			children = (
-				3E790FA5228ADC6B00DB072F /* DefaultApplyCertificatePinningUseCaseFactory.swift */,
 				3EFADD26228D4D6900B3559A /* DefaultRetryHandlerFactory.swift */,
 				3EFADD51228D9D8200B3559A /* DefaultSetupTransferIdStateFactory.swift */,
 				3EFADD49228D99BB00B3559A /* DefaultStartingStateFactory.swift */,
@@ -503,47 +440,6 @@
 				3EDB14BC236082F60026889F /* PayerIdScenarioFactory.swift */,
 			);
 			path = "Construction Root";
-			sourceTree = "<group>";
-		};
-		3E790F6B228AD15200DB072F /* Functional */ = {
-			isa = PBXGroup;
-			children = (
-				3E790F74228AD1C500DB072F /* Composition.swift */,
-				3E790F6C228AD17600DB072F /* Curry.swift */,
-				3E790F6E228AD18800DB072F /* Flip.swift */,
-				3E790F70228AD19C00DB072F /* Fmap.swift */,
-				3EB8228F229BE40200826236 /* Identity.swift */,
-				3E790F87228AD99700DB072F /* UnsafeBitCast.swift */,
-			);
-			path = Functional;
-			sourceTree = "<group>";
-		};
-		3E790F7E228AD90F00DB072F /* Security */ = {
-			isa = PBXGroup;
-			children = (
-				3E790F9F228ADC4400DB072F /* ApplyCertificatePinningUseCase.swift */,
-				3E790FA3228ADC6300DB072F /* ApplyCertificatePinningUseCaseFactory.swift */,
-				3E790F81228AD96200DB072F /* Certificate.swift */,
-				3E790F9B228ADC2500DB072F /* CertificateFactory.swift */,
-				3E790F8D228AD9FB00DB072F /* CertificateHandling.swift */,
-				3E790FB1228ADD8B00DB072F /* CertificatePinning.swift */,
-				3E790FB3228ADD9400DB072F /* CertificatePinningManager.swift */,
-				3E790FA1228ADC5600DB072F /* DefaultApplyCertificatePinningUseCase.swift */,
-				3E790F9D228ADC3000DB072F /* DefaultCertificateFactory.swift */,
-				3E790FAF228ADD7D00DB072F /* DefaultValidateTrustedCertificatesUseCase.swift */,
-				3E790FAB228ADCD400DB072F /* DefaultValidateTrustUseCase.swift */,
-				3E790F8F228ADA0D00DB072F /* SecCertificateHandler.swift */,
-				3E790F8B228AD9BF00DB072F /* SecPolicyHandler.swift */,
-				3E790F93228ADA2700DB072F /* SecTrustHandler.swift */,
-				3E790F7F228AD93700DB072F /* SecurityPolicy.swift */,
-				3E790F89228AD9AA00DB072F /* SecurityPolicyHandling.swift */,
-				3E790F83228AD96E00DB072F /* Trust.swift */,
-				3E790F91228ADA1C00DB072F /* TrustHandling.swift */,
-				3E535303229550BC004FD948 /* URLSession+RetainedDelegate.swift */,
-				3E790FAD228ADD7600DB072F /* ValidateTrustedCertificatesUseCase.swift */,
-				3E790FA7228ADC7800DB072F /* ValidateTrustUseCase.swift */,
-			);
-			path = Security;
 			sourceTree = "<group>";
 		};
 		3E97FA3122803641003419AE /* BlippitTests */ = {
@@ -626,7 +522,6 @@
 		3EAEA7FD2280109F008B7E77 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3E535305229555C9004FD948 /* abubbl.crt */,
 				3EBAC768227C2CA200D5C693 /* BlippitKit.h */,
 				3EBAC770227C2FC200D5C693 /* Cartfile */,
 				3E97FA2B2280349A003419AE /* Cartfile.private */,
@@ -676,13 +571,11 @@
 				3E53531A22956F72004FD948 /* Construction Root */,
 				3EFADD2C228D532300B3559A /* Entrypoint */,
 				3E20B66D23842949001BEB88 /* Error Handling */,
-				3E790F6B228AD15200DB072F /* Functional */,
 				3EB82293229C15D700826236 /* Logging */,
 				3EC797462280279900AD79CE /* Networking */,
 				3EAEA7FD2280109F008B7E77 /* Resources */,
 				3EFADD1F228D4BF500B3559A /* Retry Handling */,
 				3E0652EE235F34F0009B9B93 /* Scenario Handling */,
-				3E790F7E228AD90F00DB072F /* Security */,
 				3E38F9172281A31F00C114B7 /* State Handling */,
 				3E38F90422819E9100C114B7 /* State Machine */,
 			);
@@ -723,7 +616,6 @@
 				3EC7974B2280298800AD79CE /* FetchDataUseCase.swift */,
 				3E790FB9228AFA2200DB072F /* HttpMethod.swift */,
 				3EFADD41228D808D00B3559A /* HttpUrlResponseValidator.swift */,
-				3E790FB5228AEE1F00DB072F /* SACAuthenticationManager.swift */,
 				3E23C21D228C0EA400DA3305 /* UploadDataUseCase.swift */,
 				3E23C219228C0E9400DA3305 /* UploadTaskFactory.swift */,
 				3E790FBD228AFA4F00DB072F /* URLRequestBuilder.swift */,
@@ -760,7 +652,6 @@
 				3E20B66523841935001BEB88 /* NetworkError.swift */,
 				EC6F8F6623E058C300082721 /* Payload.swift */,
 				3E20B6672384194B001BEB88 /* PayloadError.swift */,
-				3E790F99228ADC1700DB072F /* SecurityError.swift */,
 			);
 			path = Entrypoint;
 			sourceTree = "<group>";
@@ -903,7 +794,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E535306229555C9004FD948 /* abubbl.crt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1000,7 +890,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E790F82228AD96200DB072F /* Certificate.swift in Sources */,
 				3EFADD44228D80B800B3559A /* DefaultHttpUrlResponseValidator.swift in Sources */,
 				3E38F90C2281A09600C114B7 /* Startable.swift in Sources */,
 				3E38F9162281A2A200C114B7 /* StartingState.swift in Sources */,
@@ -1010,16 +899,10 @@
 				3E1AF04822AA4D9900066C80 /* BlippitSessionState.swift in Sources */,
 				3E38F9122281A16500C114B7 /* DefaultPodzStatusObservingState.swift in Sources */,
 				3E23C21E228C0EA400DA3305 /* UploadDataUseCase.swift in Sources */,
-				3E790FAE228ADD7700DB072F /* ValidateTrustedCertificatesUseCase.swift in Sources */,
-				3E790F9A228ADC1700DB072F /* SecurityError.swift in Sources */,
-				3E790FA6228ADC6B00DB072F /* DefaultApplyCertificatePinningUseCaseFactory.swift in Sources */,
 				3E1AF01922AA327800066C80 /* BlippitState.swift in Sources */,
 				3EFADD27228D4D6A00B3559A /* DefaultRetryHandlerFactory.swift in Sources */,
 				3E790FBA228AFA2200DB072F /* HttpMethod.swift in Sources */,
-				3E790FA8228ADC7800DB072F /* ValidateTrustUseCase.swift in Sources */,
 				3E97FA2A228031CF003419AE /* DefaultFetchDataUseCase.swift in Sources */,
-				3E790FB0228ADD7D00DB072F /* DefaultValidateTrustedCertificatesUseCase.swift in Sources */,
-				3E790F71228AD19C00DB072F /* Fmap.swift in Sources */,
 				3E23C241228C35D800DA3305 /* SetupTransferIdState.swift in Sources */,
 				3E20B66F2384296F001BEB88 /* ErrorHandling.swift in Sources */,
 				3EC4DE45228306F1007A05C9 /* PodStateObserving.swift in Sources */,
@@ -1030,20 +913,14 @@
 				EC6F8F6723E058C300082721 /* Payload.swift in Sources */,
 				3EDB14B92360820D0026889F /* ScenarioFactory.swift in Sources */,
 				3EFADD50228D9D2900B3559A /* SetupTransferIdStateFactory.swift in Sources */,
-				3E790FA4228ADC6300DB072F /* ApplyCertificatePinningUseCaseFactory.swift in Sources */,
-				3E790F75228AD1C500DB072F /* Composition.swift in Sources */,
-				3E790FA2228ADC5600DB072F /* DefaultApplyCertificatePinningUseCase.swift in Sources */,
 				3EFADD25228D4D6500B3559A /* RetryHandlerFactory.swift in Sources */,
 				3E20B66A23841965001BEB88 /* AppTerminalError.swift in Sources */,
 				3EFADD34228D567E00B3559A /* BlippitDelegate.swift in Sources */,
-				3E790F9C228ADC2500DB072F /* CertificateFactory.swift in Sources */,
 				3E20B66623841935001BEB88 /* NetworkError.swift in Sources */,
 				3EB82292229C019400826236 /* Log.swift in Sources */,
-				3E790F8A228AD9AA00DB072F /* SecurityPolicyHandling.swift in Sources */,
 				3E97FA262280313F003419AE /* DataTaskFactory.swift in Sources */,
 				3EFADD21228D4D5300B3559A /* RetryHandling.swift in Sources */,
 				3E20B66C23841A25001BEB88 /* LocationError.swift in Sources */,
-				3E790FB2228ADD8B00DB072F /* CertificatePinning.swift in Sources */,
 				3E23C23F228C32FD00DA3305 /* DefaultPodSessionStateObservingState.swift in Sources */,
 				3EB8229F229C222800826236 /* HTTPURLResponse+LogDescription.swift in Sources */,
 				3EFADD36228D56C000B3559A /* DefaultBlippit.swift in Sources */,
@@ -1059,31 +936,20 @@
 				3E20B6712384299E001BEB88 /* ErrorHandler.swift in Sources */,
 				3E23C21A228C0E9400DA3305 /* UploadTaskFactory.swift in Sources */,
 				3E0652F0235F3517009B9B93 /* Scenario.swift in Sources */,
-				3E790F8E228AD9FB00DB072F /* CertificateHandling.swift in Sources */,
 				3EE673B822B77D78004EC0E5 /* WaitForPodStateFactory.swift in Sources */,
 				830EEF77239E6E4300ED008C /* BlippitInfo.swift in Sources */,
 				3E38F90E2281A0ED00C114B7 /* PodzStatusObserving.swift in Sources */,
 				3E23C239228C2AA800DA3305 /* CancellablePodSessionState.swift in Sources */,
 				3E790FBE228AFA4F00DB072F /* URLRequestBuilder.swift in Sources */,
-				3EB82290229BE40200826236 /* Identity.swift in Sources */,
 				3EE673B422B77BF2004EC0E5 /* NewPodObserving.swift in Sources */,
 				3EFADD29228D4D8A00B3559A /* TransferIdState.swift in Sources */,
-				3E790FB4228ADD9500DB072F /* CertificatePinningManager.swift in Sources */,
-				3E790FA0228ADC4400DB072F /* ApplyCertificatePinningUseCase.swift in Sources */,
-				3E790F8C228AD9BF00DB072F /* SecPolicyHandler.swift in Sources */,
-				3E790F84228AD96E00DB072F /* Trust.swift in Sources */,
 				3EAE57272358918E00645E7A /* TransferPayerIdState.swift in Sources */,
 				3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */,
 				3EB024B123697822004112B6 /* Constants+Credentials.swift in Sources */,
 				3E0652F6235F3EF9009B9B93 /* PayerIdScenario.swift in Sources */,
 				3EE673BA22B77DD0004EC0E5 /* DefaultWaitForPodStateFactory.swift in Sources */,
-				3E790FAC228ADCD400DB072F /* DefaultValidateTrustUseCase.swift in Sources */,
-				3E790F92228ADA1C00DB072F /* TrustHandling.swift in Sources */,
 				3EDB14BD236082F60026889F /* PayerIdScenarioFactory.swift in Sources */,
 				3E4D1E7F23741EF000DE7187 /* StateTransition.swift in Sources */,
-				3E790F90228ADA0D00DB072F /* SecCertificateHandler.swift in Sources */,
-				3E790F6F228AD18800DB072F /* Flip.swift in Sources */,
-				3E535304229550BC004FD948 /* URLSession+RetainedDelegate.swift in Sources */,
 				3EFADD52228D9D8200B3559A /* DefaultSetupTransferIdStateFactory.swift in Sources */,
 				3EB82297229C1AD000826236 /* State+LogDescription.swift in Sources */,
 				3EFADD42228D808D00B3559A /* HttpUrlResponseValidator.swift in Sources */,
@@ -1092,26 +958,20 @@
 				3EB82295229C1A9000826236 /* Error+LogDescription.swift in Sources */,
 				3E23C23B228C2E0100DA3305 /* PodSessionStateObserving.swift in Sources */,
 				3E9DF2BF23C84BAA00C4AB37 /* BaseScenario.swift in Sources */,
-				3E790F9E228ADC3000DB072F /* DefaultCertificateFactory.swift in Sources */,
 				3E38F90622819EB100C114B7 /* State.swift in Sources */,
 				3E23C21C228C0E9E00DA3305 /* URLSession+UploadTaskFactory.swift in Sources */,
 				3EFADD4C228D9ADF00B3559A /* WaitForBlipStateFactory.swift in Sources */,
 				3E790FBC228AFA3A00DB072F /* ApiConfig.swift in Sources */,
 				3E8E0FD22297FB6C001B1C35 /* BlippitSetup.swift in Sources */,
-				3E790F88228AD99700DB072F /* UnsafeBitCast.swift in Sources */,
 				3E722B002374295600A1E6F7 /* LostPodObserving.swift in Sources */,
-				3E790F6D228AD17600DB072F /* Curry.swift in Sources */,
 				3E23C245228C3DC700DA3305 /* CancellationHandler.swift in Sources */,
 				3EFADD4A228D99BB00B3559A /* DefaultStartingStateFactory.swift in Sources */,
 				3E20B66423841916001BEB88 /* BluetoothError.swift in Sources */,
-				3E790FB6228AEE1F00DB072F /* SACAuthenticationManager.swift in Sources */,
 				3EC7974E22802A0C00AD79CE /* URLSessionTask+Cancellable.swift in Sources */,
-				3E790F94228ADA2700DB072F /* SecTrustHandler.swift in Sources */,
 				3EE673B622B77C6E004EC0E5 /* WaitForPodState.swift in Sources */,
 				3E38F90A22819F3600C114B7 /* StateDelegate.swift in Sources */,
 				3EC4DE49228307CC007A05C9 /* Constants.swift in Sources */,
 				3E23C220228C0EA900DA3305 /* DefaultUploadDataUseCase.swift in Sources */,
-				3E790F80228AD93700DB072F /* SecurityPolicy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
