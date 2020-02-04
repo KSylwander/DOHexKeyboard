@@ -13,9 +13,9 @@ error_occured() {
   local message="$2"
   local code="${3:-1}"
   if [[ -n "$message" ]] ; then
-    echo "Error on or near line ${parent_lineno}: ${message}\nExiting with status"
+    echo -e "Error on or near line ${parent_lineno}: ${message}\nExiting with status"
   else
-    echo "Error on or near line ${parent_lineno}\nExiting with status"
+    echo -e "Error on or near line ${parent_lineno}\nExiting with status"
   fi
   cleanup
   exit "${code}"
@@ -33,7 +33,7 @@ Usage: $0 [options]
 -p    Package and assemble the SDK (archive, generate documentation and assembles SDK)
 
 Example:
-  ./buildscripts/build_release.sh -p -c Release -t -v 2.0
+  ./scripts/build.sh -v 1.0.0 -c Release -t -p -s
 
 EOF
 }
@@ -181,7 +181,7 @@ FRAMEWORK_FOLDER="Build/Frameworks"
 FRAMEWORK_NAME="BlippitKit.xcframework"
 
 # Source the common_functions.sh files to have access to common functions.
-. buildscripts/common_functions.sh
+. scripts/common_functions.sh
 
 #
 # Check if all commands and tools are available.
