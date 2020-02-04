@@ -18,14 +18,6 @@ extension StateOutput: Equatable {
     case let (.waitForBlip(lhs), .waitForBlip(rhs)),
          let (.setupTransferId(lhs), .setupTransferId(rhs)):
       return lhs.pid == rhs.pid && lhs.podSession === rhs.podSession
-    case let (.establishCloudSession(lhs), .establishCloudSession(rhs)):
-      return lhs.cloudSessionId == rhs.cloudSessionId
-        && lhs.podSession === rhs.podSession
-        && lhs.sessionToken == rhs.sessionToken
-    case let (.transferSessionToken(lhs), .transferSessionToken(rhs)):
-      return lhs.cloudSessionId == rhs.cloudSessionId && lhs.podSession === rhs.podSession
-    case (.waitForCloudSessionDone, .waitForCloudSessionDone):
-      return true
     case (.transferPayerId, .transferPayerId):
       return true
     default:
