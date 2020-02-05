@@ -16,6 +16,8 @@ final class MainViewController: UIViewController {
   @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
   @IBOutlet private var errorLabel: UILabel!
 
+  @IBOutlet private var channelTextField: UITextField!
+
   @IBOutlet private var payerIdContainer: UIView!
   @IBOutlet private var payerIdTextField: UITextField!
   @IBOutlet private var payerIdLengthLabel: UILabel!
@@ -30,6 +32,8 @@ final class MainViewController: UIViewController {
   private var blippitFactory: BlippitFactory!
   private var blippit: Blippit!
 
+  private var propertyStorage: PropertyStorage!
+
   private var isBlippitActive = false {
     didSet {
       updatePayerIdUI()
@@ -37,11 +41,12 @@ final class MainViewController: UIViewController {
     }
   }
 
-  static func instantiate(blippitFactory: BlippitFactory) -> MainViewController {
+  static func instantiate(blippitFactory: BlippitFactory, propertyStorage: PropertyStorage) -> MainViewController {
     let storyboard = UIStoryboard(name: String(describing: self), bundle: nil)
 
     let viewController = storyboard.instantiateInitialViewController() as! MainViewController
     viewController.blippitFactory = blippitFactory
+    viewController.propertyStorage = propertyStorage
 
     return viewController
   }
@@ -50,6 +55,12 @@ final class MainViewController: UIViewController {
     super.viewDidLoad()
 
     blippitVersion.text = BlippitInfo.versionName
+
+    channelTextField.placeholder = PropertyKeys.Podz.channel.defaultValue
+    let channel = propertyStorage.value(for: PropertyKeys.Podz.channel)
+    if channel != PropertyKeys.Podz.channel.defaultValue {
+      channelTextField.text = channel
+    }
   }
 
   override func viewWillDisappear(_ animated: Bool) {
@@ -104,6 +115,7 @@ final class MainViewController: UIViewController {
 
   private func updatePayerIdUI() {
     let isEnabled = !isBlippitActive
+    channelTextField.isEnabled = isEnabled
     payerIdTextField.isEnabled = isEnabled
     randomPayerIdLengthTextField.isEnabled = isEnabled
     randomPayerIdButton.isEnabled = isEnabled
@@ -133,23 +145,37 @@ extension MainViewController: UITextFieldDelegate {
                  shouldChangeCharactersIn range: NSRange,
                  replacementString string: String) -> Bool {
 
-    guard let text = textField.text, let range = Range(range, in: text) else {
-      updatePayerIdLengthLabel()
-      updateToggleBlippitButton()
-      return true
+    if textField == payerIdTextField {
+      guard let text = textField.text, let range = Range(range, in: text) else {
+        updatePayerIdLengthLabel()
+        updateToggleBlippitButton()
+        return true
+      }
+
+      let updatedText = text.replacingCharacters(in: range, with: string)
+      updatePayerIdLengthLabel(withPayerId: updatedText)
+      updateToggleBlippitButton(withPayerId: updatedText)
     }
-
-    let updatedText = text.replacingCharacters(in: range, with: string)
-    updatePayerIdLengthLabel(withPayerId: updatedText)
-    updateToggleBlippitButton(withPayerId: updatedText)
-
     return true
   }
 
   func textFieldShouldClear(_ textField: UITextField) -> Bool {
-    updatePayerIdLengthLabel(withPayerId: "")
-    updateToggleBlippitButton(withPayerId: "")
+    if textField == payerIdTextField {
+      updatePayerIdLengthLabel(withPayerId: "")
+      updateToggleBlippitButton(withPayerId: "")
+    }
     return true
+  }
+
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    if textField == channelTextField {
+      if let channel = textField.text, !channel.isEmpty {
+        propertyStorage.setValue(channel, for: PropertyKeys.Podz.channel)
+      } else {
+        /* Use default value */
+        propertyStorage.removeValue(for: PropertyKeys.Podz.channel)
+      }
+    }
   }
 
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {

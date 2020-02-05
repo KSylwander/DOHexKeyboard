@@ -42,6 +42,12 @@
 		3E3EF65D23EAD6CD00EB1414 /* PropertyKeys+States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EF65C23EAD6CD00EB1414 /* PropertyKeys+States.swift */; };
 		3E3EF65F23EADA9800EB1414 /* PropertyStorage+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EF65E23EADA9800EB1414 /* PropertyStorage+Shared.swift */; };
 		3E3EF66B23EAE06300EB1414 /* BundleLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EF66A23EAE06300EB1414 /* BundleLocator.swift */; };
+		3E3EF66C23EAE1A000EB1414 /* PropertyKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EF65623EAD63000EB1414 /* PropertyKey.swift */; };
+		3E3EF66D23EAE1A000EB1414 /* PropertyKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EF65823EAD64E00EB1414 /* PropertyKeys.swift */; };
+		3E3EF66E23EAE1A000EB1414 /* PropertyKeys+Podz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EF65A23EAD68700EB1414 /* PropertyKeys+Podz.swift */; };
+		3E3EF66F23EAE1A000EB1414 /* PropertyKeys+States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EF65C23EAD6CD00EB1414 /* PropertyKeys+States.swift */; };
+		3E3EF67023EAE1A000EB1414 /* PropertyStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EF65423EAD3C300EB1414 /* PropertyStorage.swift */; };
+		3E3EF67123EAE1A000EB1414 /* PropertyStorage+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EF65E23EADA9800EB1414 /* PropertyStorage+Shared.swift */; };
 		3E428BE12297EB670038FBB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E428BE02297EB670038FBB9 /* AppDelegate.swift */; };
 		3E428BE82297EB680038FBB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E428BE72297EB680038FBB9 /* Assets.xcassets */; };
 		3E428BEB2297EB680038FBB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E428BE92297EB680038FBB9 /* LaunchScreen.storyboard */; };
@@ -784,11 +790,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E3EF66E23EAE1A000EB1414 /* PropertyKeys+Podz.swift in Sources */,
 				3EDB14B423604E130026889F /* TransferId+Random.swift in Sources */,
+				3E3EF66C23EAE1A000EB1414 /* PropertyKey.swift in Sources */,
+				3E3EF66D23EAE1A000EB1414 /* PropertyKeys.swift in Sources */,
 				3E3EF65223EACC8B00EB1414 /* Vibrate.m in Sources */,
 				3E428BE12297EB670038FBB9 /* AppDelegate.swift in Sources */,
 				3EAABD6F2297F42500C0A37A /* UIView+CornerRadius.swift in Sources */,
 				3EAABD672297EEB800C0A37A /* MainViewController.swift in Sources */,
+				3E3EF66F23EAE1A000EB1414 /* PropertyKeys+States.swift in Sources */,
+				3E3EF67123EAE1A000EB1414 /* PropertyStorage+Shared.swift in Sources */,
+				3E3EF67023EAE1A000EB1414 /* PropertyStorage.swift in Sources */,
 				3EAABD6A2297F3C200C0A37A /* Error+Name.swift in Sources */,
 				3E5C01B32297FD9700DF47BE /* BlippitFactory.swift in Sources */,
 				3E5C01B52297FDB800DF47BE /* DefaultBlippitFactory.swift in Sources */,

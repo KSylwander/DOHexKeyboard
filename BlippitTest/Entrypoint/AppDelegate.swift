@@ -20,7 +20,8 @@ extension AppDelegate: UIApplicationDelegate {
 
     let window = self.window!
     window.rootViewController = MainViewController.instantiate(
-      blippitFactory: DefaultBlippitFactory()
+      blippitFactory: DefaultBlippitFactory(),
+      propertyStorage: PropertyStorage.shared
     )
     window.makeKeyAndVisible()
 

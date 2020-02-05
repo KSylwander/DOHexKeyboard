@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Kfp-0V-Zya">
-                                <rect key="frame" x="16" y="24" width="343" height="280"/>
+                                <rect key="frame" x="16" y="24" width="343" height="337"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ejj-d4-uqP">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="85"/>
@@ -92,13 +92,37 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="we6-yT-9oW">
-                                        <rect key="frame" x="0.0" y="101" width="343" height="179"/>
+                                        <rect key="frame" x="0.0" y="101" width="343" height="236"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pkU-gm-R8B">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="111"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="168"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1U-sk-Lc3">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nG7-NC-Icx">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="41"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Channel:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dj4-GC-huR">
+                                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="41"/>
+                                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="18"/>
+                                                                <color key="textColor" name="LightShades"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00000004" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Iju-la-mAZ">
+                                                                <rect key="frame" x="79.5" y="0.0" width="263.5" height="41"/>
+                                                                <color key="backgroundColor" name="LightShades"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="41" id="cjL-DQ-uhM"/>
+                                                                </constraints>
+                                                                <color key="textColor" name="DarkShades"/>
+                                                                <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="9VG-gb-OMM" id="ud9-aV-37u"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1U-sk-Lc3">
+                                                        <rect key="frame" x="0.0" y="57" width="343" height="41"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="a92-ep-f7H">
                                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="41"/>
@@ -139,7 +163,7 @@
                                                                         </constraints>
                                                                         <color key="textColor" name="DarkShades"/>
                                                                         <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="18"/>
-                                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="username"/>
+                                                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                                         <connections>
                                                                             <outlet property="delegate" destination="9VG-gb-OMM" id="SKd-z8-y9N"/>
                                                                         </connections>
@@ -162,7 +186,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DAj-Lu-kd2">
-                                                        <rect key="frame" x="0.0" y="57" width="343" height="54"/>
+                                                        <rect key="frame" x="0.0" y="114" width="343" height="54"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1id-2T-XWR">
                                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="37"/>
@@ -172,6 +196,9 @@
                                                                         <color key="backgroundColor" name="LightShades"/>
                                                                         <fontDescription key="fontDescription" name="SecularOne-Regular" family="Secular One" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad" keyboardAppearance="alert" returnKeyType="done"/>
+                                                                        <connections>
+                                                                            <outlet property="delegate" destination="9VG-gb-OMM" id="fpI-M3-1sQ"/>
+                                                                        </connections>
                                                                     </textField>
                                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3t9-SS-Gvj">
                                                                         <rect key="frame" x="171" y="0.0" width="172" height="37"/>
@@ -206,7 +233,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QR8-O3-O7N">
-                                                <rect key="frame" x="0.0" y="135" width="343" height="44"/>
+                                                <rect key="frame" x="0.0" y="192" width="343" height="44"/>
                                                 <subviews>
                                                     <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEm-xu-ACg">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
@@ -249,6 +276,7 @@
                     </view>
                     <connections>
                         <outlet property="blippitVersion" destination="a8H-Od-imd" id="uUK-g6-4Me"/>
+                        <outlet property="channelTextField" destination="Iju-la-mAZ" id="MTO-lg-MMw"/>
                         <outlet property="errorLabel" destination="dC5-Sf-Kum" id="d23-1H-WsQ"/>
                         <outlet property="loadingIndicator" destination="HqF-iM-zXM" id="frw-Cu-Ji2"/>
                         <outlet property="payerIdContainer" destination="pkU-gm-R8B" id="YKb-3I-2wJ"/>
