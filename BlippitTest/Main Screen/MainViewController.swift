@@ -172,6 +172,7 @@ extension MainViewController: BlippitDelegate {
       setStatus("App terminal found")
       loadingIndicator.isHidden = true
     case .transferInitiated:
+      vibrate(forDuration: 0.1)
       setStatus("Initiating session...")
       loadingIndicator.isHidden = false
     case .transferDone:
