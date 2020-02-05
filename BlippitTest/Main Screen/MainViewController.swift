@@ -12,6 +12,8 @@ import PodzKit
 import UIKit
 
 final class MainViewController: UIViewController {
+  @IBOutlet private var logTextView: UITextView!
+
   @IBOutlet private var statusLabel: UILabel!
   @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
   @IBOutlet private var errorLabel: UILabel!
@@ -34,6 +36,12 @@ final class MainViewController: UIViewController {
 
   private var propertyStorage: PropertyStorage!
 
+  private let logDateFormatter: DateFormatter = {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "HH:mm:ss.SSS"
+    return dateFormatter
+  }()
+
   private var isBlippitActive = false {
     didSet {
       updatePayerIdUI()
@@ -53,6 +61,9 @@ final class MainViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    logTextView.textContainerInset = UIEdgeInsets(top: 4.0, left: 4.0, bottom: 8.0, right: 4.0)
+    logTextView.text = nil
 
     blippitVersion.text = BlippitInfo.versionName
 
@@ -89,24 +100,37 @@ final class MainViewController: UIViewController {
   @IBAction private func toggleBlippitButtonTapped() {
     view.endEditing(true)
     if !isBlippitActive {
+      log("Start button tapped")
       setupBlippitWithPayerId(payerIdTextField.text!)
     } else {
+      log("Stopped button tapped")
       blippit.stop()
     }
     view.endEditing(true)
+  }
+
+  private func log(_ message: String) {
+    let logDate = "\(logDateFormatter.string(from: Date()))"
+    if let text = logTextView.text, !text.isEmpty {
+      logTextView.text = "\(logDate) \(message)\n\(text)"
+    } else {
+      logTextView.text = "\(logDate) \(message)"
+    }
   }
 
   private func setupBlippitWithPayerId(_ payerId: String) {
     do {
       blippit = try blippitFactory.makeBlippit(delegate: self, payerId: payerId)
       blippit.start()
+      log("New Blippit instance with payer ID: \(payerId)")
     } catch {
-      handleError(error)
+      log("Could not create Blippit instance: \(error.logDescription)")
     }
   }
 
   private func handleError(_ error: Error) {
-    setErrorText(error.name)
+    log("Error: \(error.logDescription)")
+    setErrorText(error.logDescription)
   }
 
   private func setErrorText(_ errorText: String) {
@@ -186,6 +210,7 @@ extension MainViewController: UITextFieldDelegate {
 
 extension MainViewController: BlippitDelegate {
   func blippit(_ blippit: Blippit, didChangeState state: BlippitState) {
+    log("\(state.logDescription)")
     switch state {
     case .started:
       isBlippitActive = true

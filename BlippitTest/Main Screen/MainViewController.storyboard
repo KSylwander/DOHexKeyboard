@@ -22,8 +22,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textView multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gWk-OO-b9t">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="330"/>
+                                <color key="backgroundColor" name="LightShades"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" name="DarkShades"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Kfp-0V-Zya">
-                                <rect key="frame" x="16" y="16" width="343" height="276.5"/>
+                                <rect key="frame" x="16" y="346" width="343" height="276.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="yfU-ga-wR2">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="53"/>
@@ -257,7 +265,7 @@
                                 </subviews>
                             </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="HqF-iM-zXM">
-                                <rect key="frame" x="195" y="19.5" width="20" height="20"/>
+                                <rect key="frame" x="195" y="349.5" width="20" height="20"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8H-Od-imd" userLabel="Version">
                                 <rect key="frame" x="325.5" y="638.5" width="33.5" height="20.5"/>
@@ -268,13 +276,17 @@
                         </subviews>
                         <color key="backgroundColor" name="DarkShades"/>
                         <constraints>
+                            <constraint firstItem="t2Q-sD-jTD" firstAttribute="trailing" secondItem="gWk-OO-b9t" secondAttribute="trailing" id="AKl-AM-Vt0"/>
+                            <constraint firstItem="a8H-Od-imd" firstAttribute="top" secondItem="Kfp-0V-Zya" secondAttribute="bottom" constant="16" id="CAa-Wy-TFE"/>
                             <constraint firstItem="HqF-iM-zXM" firstAttribute="leading" secondItem="8dq-p5-osV" secondAttribute="trailing" constant="6" id="HJw-3k-IGz"/>
+                            <constraint firstItem="gWk-OO-b9t" firstAttribute="top" secondItem="ovf-ip-AGl" secondAttribute="top" id="LCL-7a-fSr"/>
                             <constraint firstItem="t2Q-sD-jTD" firstAttribute="bottom" secondItem="a8H-Od-imd" secondAttribute="bottom" constant="8" id="Lfn-yj-91d"/>
-                            <constraint firstItem="Kfp-0V-Zya" firstAttribute="top" secondItem="t2Q-sD-jTD" secondAttribute="top" constant="16" id="Sz7-wV-z6Y"/>
+                            <constraint firstItem="gWk-OO-b9t" firstAttribute="leading" secondItem="t2Q-sD-jTD" secondAttribute="leading" id="NSZ-Pb-Tvj"/>
                             <constraint firstItem="HqF-iM-zXM" firstAttribute="centerY" secondItem="8dq-p5-osV" secondAttribute="centerY" id="ggg-RK-9Lv"/>
                             <constraint firstItem="t2Q-sD-jTD" firstAttribute="trailing" secondItem="Kfp-0V-Zya" secondAttribute="trailing" constant="16" id="glU-AT-YnU"/>
                             <constraint firstItem="t2Q-sD-jTD" firstAttribute="trailing" secondItem="a8H-Od-imd" secondAttribute="trailing" constant="16" id="j3e-s1-AfG"/>
                             <constraint firstItem="Kfp-0V-Zya" firstAttribute="leading" secondItem="t2Q-sD-jTD" secondAttribute="leading" constant="16" id="m4O-Is-R0L"/>
+                            <constraint firstItem="Kfp-0V-Zya" firstAttribute="top" secondItem="gWk-OO-b9t" secondAttribute="bottom" constant="16" id="uM1-dg-GNy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="t2Q-sD-jTD"/>
                     </view>
@@ -283,6 +295,7 @@
                         <outlet property="channelTextField" destination="Iju-la-mAZ" id="MTO-lg-MMw"/>
                         <outlet property="errorLabel" destination="dC5-Sf-Kum" id="d23-1H-WsQ"/>
                         <outlet property="loadingIndicator" destination="HqF-iM-zXM" id="frw-Cu-Ji2"/>
+                        <outlet property="logTextView" destination="gWk-OO-b9t" id="stq-Lm-wdx"/>
                         <outlet property="payerIdContainer" destination="pkU-gm-R8B" id="YKb-3I-2wJ"/>
                         <outlet property="payerIdLengthLabel" destination="pRd-o4-C4q" id="aSM-p7-aeX"/>
                         <outlet property="payerIdTextField" destination="yED-8L-d0W" id="3ta-H4-irr"/>

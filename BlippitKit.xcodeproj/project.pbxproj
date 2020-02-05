@@ -56,6 +56,7 @@
 		3E4D1E7F23741EF000DE7187 /* StateTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D1E7E23741EF000DE7187 /* StateTransition.swift */; };
 		3E5C01B32297FD9700DF47BE /* BlippitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C01B22297FD9700DF47BE /* BlippitFactory.swift */; };
 		3E5C01B52297FDB800DF47BE /* DefaultBlippitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C01B42297FDB800DF47BE /* DefaultBlippitFactory.swift */; };
+		3E65B3C823EB825B00456BFB /* BlippitState+LogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E65B3C623EB823400456BFB /* BlippitState+LogDescription.swift */; };
 		3E722AFE237421B500A1E6F7 /* StateTransition+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E722AFD237421B500A1E6F7 /* StateTransition+Equatable.swift */; };
 		3E722B002374295600A1E6F7 /* LostPodObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E722AFF2374295600A1E6F7 /* LostPodObserving.swift */; };
 		3E8E0FD22297FB6C001B1C35 /* BlippitSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8E0FD12297FB6C001B1C35 /* BlippitSetup.swift */; };
@@ -69,7 +70,7 @@
 		3E97FA52228053D0003419AE /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E97FA4F228053BF003419AE /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3E9DF2BF23C84BAA00C4AB37 /* BaseScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9DF2BE23C84BAA00C4AB37 /* BaseScenario.swift */; };
 		3EAABD672297EEB800C0A37A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAABD662297EEB800C0A37A /* MainViewController.swift */; };
-		3EAABD6A2297F3C200C0A37A /* Error+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAABD692297F3C200C0A37A /* Error+Name.swift */; };
+		3EAABD6A2297F3C200C0A37A /* Error+LogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAABD692297F3C200C0A37A /* Error+LogDescription.swift */; };
 		3EAABD6C2297F3E500C0A37A /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAABD6B2297F3E500C0A37A /* MainViewController.storyboard */; };
 		3EAABD6F2297F42500C0A37A /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAABD6E2297F42500C0A37A /* UIView+CornerRadius.swift */; };
 		3EAE57272358918E00645E7A /* TransferPayerIdState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE57262358918E00645E7A /* TransferPayerIdState.swift */; };
@@ -209,6 +210,7 @@
 		3E4D1E7E23741EF000DE7187 /* StateTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTransition.swift; sourceTree = "<group>"; };
 		3E5C01B22297FD9700DF47BE /* BlippitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitFactory.swift; sourceTree = "<group>"; };
 		3E5C01B42297FDB800DF47BE /* DefaultBlippitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBlippitFactory.swift; sourceTree = "<group>"; };
+		3E65B3C623EB823400456BFB /* BlippitState+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BlippitState+LogDescription.swift"; sourceTree = "<group>"; };
 		3E722AFD237421B500A1E6F7 /* StateTransition+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StateTransition+Equatable.swift"; sourceTree = "<group>"; };
 		3E722AFF2374295600A1E6F7 /* LostPodObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostPodObserving.swift; sourceTree = "<group>"; };
 		3E8E0FD12297FB6C001B1C35 /* BlippitSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlippitSetup.swift; sourceTree = "<group>"; };
@@ -221,7 +223,7 @@
 		3E97FA4F228053BF003419AE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		3E9DF2BE23C84BAA00C4AB37 /* BaseScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScenario.swift; sourceTree = "<group>"; };
 		3EAABD662297EEB800C0A37A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		3EAABD692297F3C200C0A37A /* Error+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Name.swift"; sourceTree = "<group>"; };
+		3EAABD692297F3C200C0A37A /* Error+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+LogDescription.swift"; sourceTree = "<group>"; };
 		3EAABD6B2297F3E500C0A37A /* MainViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		3EAABD6D2297F40200C0A37A /* Secular_One.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Secular_One.ttf; sourceTree = "<group>"; };
 		3EAABD6E2297F42500C0A37A /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
@@ -471,8 +473,9 @@
 			children = (
 				3E5C01B22297FD9700DF47BE /* BlippitFactory.swift */,
 				3E3EF64F23EACC8B00EB1414 /* BlippitKitTest-Bridging-Header.h */,
+				3E65B3C623EB823400456BFB /* BlippitState+LogDescription.swift */,
 				3E5C01B42297FDB800DF47BE /* DefaultBlippitFactory.swift */,
-				3EAABD692297F3C200C0A37A /* Error+Name.swift */,
+				3EAABD692297F3C200C0A37A /* Error+LogDescription.swift */,
 				3EDB14B323604E130026889F /* TransferId+Random.swift */,
 				3EAABD6E2297F42500C0A37A /* UIView+CornerRadius.swift */,
 				3E3EF65023EACC8B00EB1414 /* Vibrate.h */,
@@ -794,6 +797,7 @@
 				3EDB14B423604E130026889F /* TransferId+Random.swift in Sources */,
 				3E3EF66C23EAE1A000EB1414 /* PropertyKey.swift in Sources */,
 				3E3EF66D23EAE1A000EB1414 /* PropertyKeys.swift in Sources */,
+				3E65B3C823EB825B00456BFB /* BlippitState+LogDescription.swift in Sources */,
 				3E3EF65223EACC8B00EB1414 /* Vibrate.m in Sources */,
 				3E428BE12297EB670038FBB9 /* AppDelegate.swift in Sources */,
 				3EAABD6F2297F42500C0A37A /* UIView+CornerRadius.swift in Sources */,
@@ -801,7 +805,7 @@
 				3E3EF66F23EAE1A000EB1414 /* PropertyKeys+States.swift in Sources */,
 				3E3EF67123EAE1A000EB1414 /* PropertyStorage+Shared.swift in Sources */,
 				3E3EF67023EAE1A000EB1414 /* PropertyStorage.swift in Sources */,
-				3EAABD6A2297F3C200C0A37A /* Error+Name.swift in Sources */,
+				3EAABD6A2297F3C200C0A37A /* Error+LogDescription.swift in Sources */,
 				3E5C01B32297FD9700DF47BE /* BlippitFactory.swift in Sources */,
 				3E5C01B52297FDB800DF47BE /* DefaultBlippitFactory.swift in Sources */,
 			);
