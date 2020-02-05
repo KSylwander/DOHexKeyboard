@@ -41,7 +41,7 @@ public enum BlippitSetup {
       setupTransferIdStateFactory: DefaultSetupTransferIdStateFactory(),
       transferPayerIdStateFactory: DefaultTransferPayerIdStateFactory(
         retryHandlerFactory: DefaultRetryHandlerFactory(
-          maxRetries: Constants.States.TransferPayerId.maxRetries
+          maxRetries: propertyStorage.value(for: PropertyKeys.States.TransferPayerId.maxRetries)
         ),
         payerId: onBlipPayload.transferId
       )

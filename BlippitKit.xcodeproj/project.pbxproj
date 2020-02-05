@@ -39,6 +39,7 @@
 		3E3EF65723EAD63000EB1414 /* PropertyKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EF65623EAD63000EB1414 /* PropertyKey.swift */; };
 		3E3EF65923EAD64E00EB1414 /* PropertyKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EF65823EAD64E00EB1414 /* PropertyKeys.swift */; };
 		3E3EF65B23EAD68700EB1414 /* PropertyKeys+Podz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EF65A23EAD68700EB1414 /* PropertyKeys+Podz.swift */; };
+		3E3EF65D23EAD6CD00EB1414 /* PropertyKeys+States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EF65C23EAD6CD00EB1414 /* PropertyKeys+States.swift */; };
 		3E3EF65F23EADA9800EB1414 /* PropertyStorage+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EF65E23EADA9800EB1414 /* PropertyStorage+Shared.swift */; };
 		3E3EF66B23EAE06300EB1414 /* BundleLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EF66A23EAE06300EB1414 /* BundleLocator.swift */; };
 		3E428BE12297EB670038FBB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E428BE02297EB670038FBB9 /* AppDelegate.swift */; };
@@ -75,7 +76,6 @@
 		3EBAC76A227C2CA200D5C693 /* BlippitKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EBAC768227C2CA200D5C693 /* BlippitKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3EC4DE45228306F1007A05C9 /* PodStateObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE44228306F1007A05C9 /* PodStateObserving.swift */; };
 		3EC4DE472283073A007A05C9 /* WaitForBlipState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE462283073A007A05C9 /* WaitForBlipState.swift */; };
-		3EC4DE49228307CC007A05C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE48228307CC007A05C9 /* Constants.swift */; };
 		3EC4DE4B228308D4007A05C9 /* DummyPod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE4A228308D4007A05C9 /* DummyPod.swift */; };
 		3EC4DE4D22830991007A05C9 /* DummyPodSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE4C22830991007A05C9 /* DummyPodSession.swift */; };
 		3EC4DE4F22830CA2007A05C9 /* WaitForBlipStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE4E22830CA2007A05C9 /* WaitForBlipStateSpec.swift */; };
@@ -96,7 +96,6 @@
 		3EFADD30228D53B100B3559A /* Blippit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD2F228D53B100B3559A /* Blippit.swift */; };
 		3EFADD34228D567E00B3559A /* BlippitDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD33228D567E00B3559A /* BlippitDelegate.swift */; };
 		3EFADD36228D56C000B3559A /* DefaultBlippit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD35228D56C000B3559A /* DefaultBlippit.swift */; };
-		3EFADD40228D6EF500B3559A /* Constants+States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD3F228D6EF500B3559A /* Constants+States.swift */; };
 		3EFADD48228D999800B3559A /* StartingStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD47228D999800B3559A /* StartingStateFactory.swift */; };
 		3EFADD4A228D99BB00B3559A /* DefaultStartingStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD49228D99BB00B3559A /* DefaultStartingStateFactory.swift */; };
 		3EFADD4C228D9ADF00B3559A /* WaitForBlipStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD4B228D9ADF00B3559A /* WaitForBlipStateFactory.swift */; };
@@ -193,6 +192,7 @@
 		3E3EF65623EAD63000EB1414 /* PropertyKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKey.swift; sourceTree = "<group>"; };
 		3E3EF65823EAD64E00EB1414 /* PropertyKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKeys.swift; sourceTree = "<group>"; };
 		3E3EF65A23EAD68700EB1414 /* PropertyKeys+Podz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PropertyKeys+Podz.swift"; sourceTree = "<group>"; };
+		3E3EF65C23EAD6CD00EB1414 /* PropertyKeys+States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PropertyKeys+States.swift"; sourceTree = "<group>"; };
 		3E3EF65E23EADA9800EB1414 /* PropertyStorage+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PropertyStorage+Shared.swift"; sourceTree = "<group>"; };
 		3E3EF66A23EAE06300EB1414 /* BundleLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleLocator.swift; sourceTree = "<group>"; };
 		3E428BDE2297EB670038FBB9 /* BlippitKitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlippitKitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,7 +231,6 @@
 		3EBAC770227C2FC200D5C693 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		3EC4DE44228306F1007A05C9 /* PodStateObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodStateObserving.swift; sourceTree = "<group>"; };
 		3EC4DE462283073A007A05C9 /* WaitForBlipState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitForBlipState.swift; sourceTree = "<group>"; };
-		3EC4DE48228307CC007A05C9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3EC4DE4A228308D4007A05C9 /* DummyPod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyPod.swift; sourceTree = "<group>"; };
 		3EC4DE4C22830991007A05C9 /* DummyPodSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyPodSession.swift; sourceTree = "<group>"; };
 		3EC4DE4E22830CA2007A05C9 /* WaitForBlipStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitForBlipStateSpec.swift; sourceTree = "<group>"; };
@@ -252,7 +251,6 @@
 		3EFADD2F228D53B100B3559A /* Blippit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blippit.swift; sourceTree = "<group>"; };
 		3EFADD33228D567E00B3559A /* BlippitDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitDelegate.swift; sourceTree = "<group>"; };
 		3EFADD35228D56C000B3559A /* DefaultBlippit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultBlippit.swift; sourceTree = "<group>"; };
-		3EFADD3F228D6EF500B3559A /* Constants+States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+States.swift"; sourceTree = "<group>"; };
 		3EFADD47228D999800B3559A /* StartingStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingStateFactory.swift; sourceTree = "<group>"; };
 		3EFADD49228D99BB00B3559A /* DefaultStartingStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStartingStateFactory.swift; sourceTree = "<group>"; };
 		3EFADD4B228D9ADF00B3559A /* WaitForBlipStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitForBlipStateFactory.swift; sourceTree = "<group>"; };
@@ -552,11 +550,10 @@
 			children = (
 				3E3EF66A23EAE06300EB1414 /* BundleLocator.swift */,
 				3EC79740228025BE00AD79CE /* Cancellable.swift */,
-				3EC4DE48228307CC007A05C9 /* Constants.swift */,
-				3EFADD3F228D6EF500B3559A /* Constants+States.swift */,
 				3E3EF65623EAD63000EB1414 /* PropertyKey.swift */,
 				3E3EF65823EAD64E00EB1414 /* PropertyKeys.swift */,
 				3E3EF65A23EAD68700EB1414 /* PropertyKeys+Podz.swift */,
+				3E3EF65C23EAD6CD00EB1414 /* PropertyKeys+States.swift */,
 				3E3EF65423EAD3C300EB1414 /* PropertyStorage.swift */,
 				3E3EF65E23EADA9800EB1414 /* PropertyStorage+Shared.swift */,
 			);
@@ -836,6 +833,7 @@
 				EC6F8F6723E058C300082721 /* Payload.swift in Sources */,
 				3EDB14B92360820D0026889F /* ScenarioFactory.swift in Sources */,
 				3EFADD50228D9D2900B3559A /* SetupTransferIdStateFactory.swift in Sources */,
+				3E3EF65D23EAD6CD00EB1414 /* PropertyKeys+States.swift in Sources */,
 				3EFADD25228D4D6500B3559A /* RetryHandlerFactory.swift in Sources */,
 				3E20B66A23841965001BEB88 /* AppTerminalError.swift in Sources */,
 				3EFADD34228D567E00B3559A /* BlippitDelegate.swift in Sources */,
@@ -846,7 +844,6 @@
 				3EFADD36228D56C000B3559A /* DefaultBlippit.swift in Sources */,
 				3EFADD4E228D9B0000B3559A /* DefaultWaitForBlipStateFactory.swift in Sources */,
 				3EDB14B7236081A40026889F /* ScenarioDelegate.swift in Sources */,
-				3EFADD40228D6EF500B3559A /* Constants+States.swift in Sources */,
 				3E3EF65523EAD3C300EB1414 /* PropertyStorage.swift in Sources */,
 				3E3EF65F23EADA9800EB1414 /* PropertyStorage+Shared.swift in Sources */,
 				3EAE57292358958100645E7A /* TransferPayerIdStateFactory.swift in Sources */,
@@ -885,7 +882,6 @@
 				3E20B66423841916001BEB88 /* BluetoothError.swift in Sources */,
 				3EE673B622B77C6E004EC0E5 /* WaitForPodState.swift in Sources */,
 				3E38F90A22819F3600C114B7 /* StateDelegate.swift in Sources */,
-				3EC4DE49228307CC007A05C9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
