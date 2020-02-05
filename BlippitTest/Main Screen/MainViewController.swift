@@ -16,7 +16,6 @@ final class MainViewController: UIViewController {
 
   @IBOutlet private var statusLabel: UILabel!
   @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
-  @IBOutlet private var errorLabel: UILabel!
 
   @IBOutlet private var channelTextField: UITextField!
 
@@ -28,8 +27,6 @@ final class MainViewController: UIViewController {
   @IBOutlet private var blippitVersion: UILabel!
 
   @IBOutlet private var toggleBlippitButton: UIButton!
-
-  private lazy var locationManager = CLLocationManager()
 
   private var blippitFactory: BlippitFactory!
   private var blippit: Blippit!
@@ -106,7 +103,6 @@ final class MainViewController: UIViewController {
       log("Stopped button tapped")
       blippit.stop()
     }
-    view.endEditing(true)
   }
 
   private func log(_ message: String) {
@@ -130,11 +126,6 @@ final class MainViewController: UIViewController {
 
   private func handleError(_ error: Error) {
     log("Error: \(error.logDescription)")
-    setErrorText(error.logDescription)
-  }
-
-  private func setErrorText(_ errorText: String) {
-    errorLabel.text = errorText
   }
 
   private func updatePayerIdUI() {
@@ -215,7 +206,6 @@ extension MainViewController: BlippitDelegate {
     case .started:
       isBlippitActive = true
       setStatus("Started")
-      setErrorText("None")
     case .lookingForAppTerminals:
       setStatus("Looking for app terminals...")
       loadingIndicator.isHidden = false
