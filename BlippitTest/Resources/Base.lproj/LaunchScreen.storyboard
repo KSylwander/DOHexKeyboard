@@ -1,35 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9fb-qH-Jfm">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
+        <scene sceneID="nPF-JR-0Ht">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                <viewController id="9fb-qH-Jfm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9UD-qa-0gP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRf-qn-H59">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="561.5"/>
+                                <color key="backgroundColor" name="LightShades"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0H-NQ-76c">
+                                <rect key="frame" x="373" y="520.5" width="41" height="41"/>
+                                <color key="backgroundColor" name="DarkAccent"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="41" id="XA0-Ha-Ta2"/>
+                                    <constraint firstAttribute="height" constant="41" id="Zan-ud-Cz3"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="wKS-hA-DQe">
+                                <rect key="frame" x="16" y="577.5" width="382" height="240"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IiB-t8-h0w">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="131"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="e0k-Wt-kxw">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="41"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kkg-2G-YgQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="78.5" height="41"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="78.5" id="OXJ-4i-Bis"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYU-GS-9hI">
+                                                        <rect key="frame" x="86.5" y="0.0" width="295.5" height="41"/>
+                                                        <color key="backgroundColor" name="LightShades"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="41" id="MdE-9C-hCv"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jri-ss-sCn">
+                                                <rect key="frame" x="0.0" y="49" width="382" height="82"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gcN-Ao-hhp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="82"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3WH-lj-CpA">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="41"/>
+                                                                <color key="backgroundColor" name="LightShades"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="41" id="LrW-iI-fWE"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hqv-QZ-9u6">
+                                                                <rect key="frame" x="0.0" y="41" width="382" height="41"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5O-vp-4vJ">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="206" height="41"/>
+                                                                        <color key="backgroundColor" name="LightShades"/>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4Y-Pv-hKh">
+                                                                        <rect key="frame" x="206" y="0.0" width="176" height="41"/>
+                                                                        <color key="backgroundColor" name="Main"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="41" id="bEb-w1-GHX"/>
+                                                                            <constraint firstAttribute="width" constant="176" id="h2y-vq-ACF"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" name="LightShades"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="gcN-Ao-hhp" secondAttribute="trailing" id="OtZ-qk-gjb"/>
+                                                    <constraint firstItem="gcN-Ao-hhp" firstAttribute="leading" secondItem="jri-ss-sCn" secondAttribute="leading" id="Uf0-rb-VDB"/>
+                                                    <constraint firstAttribute="bottom" secondItem="gcN-Ao-hhp" secondAttribute="bottom" id="mnl-El-i8g"/>
+                                                    <constraint firstItem="gcN-Ao-hhp" firstAttribute="top" secondItem="jri-ss-sCn" secondAttribute="top" id="y3q-MH-cUK"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXa-lE-cIV">
+                                        <rect key="frame" x="0.0" y="196" width="382" height="44"/>
+                                        <color key="backgroundColor" name="LightShades"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="ZKK-eo-jsv"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" name="DarkShades"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="N0H-NQ-76c" firstAttribute="trailing" secondItem="wRf-qn-H59" secondAttribute="trailing" id="0ol-HF-HjR"/>
+                            <constraint firstItem="1Ro-wS-BUf" firstAttribute="trailing" secondItem="wRf-qn-H59" secondAttribute="trailing" id="97i-Vb-H6t"/>
+                            <constraint firstItem="wKS-hA-DQe" firstAttribute="leading" secondItem="1Ro-wS-BUf" secondAttribute="leading" constant="16" id="TOC-ge-E6I"/>
+                            <constraint firstItem="wRf-qn-H59" firstAttribute="top" secondItem="9UD-qa-0gP" secondAttribute="top" id="Z51-q5-USF"/>
+                            <constraint firstItem="N0H-NQ-76c" firstAttribute="bottom" secondItem="wRf-qn-H59" secondAttribute="bottom" id="Zl2-xO-xFv"/>
+                            <constraint firstItem="wRf-qn-H59" firstAttribute="leading" secondItem="1Ro-wS-BUf" secondAttribute="leading" id="g3L-4m-qVY"/>
+                            <constraint firstItem="1Ro-wS-BUf" firstAttribute="bottom" secondItem="wKS-hA-DQe" secondAttribute="bottom" constant="44.5" id="p2b-yn-psb"/>
+                            <constraint firstItem="wKS-hA-DQe" firstAttribute="top" secondItem="wRf-qn-H59" secondAttribute="bottom" constant="16" id="sAd-wa-sPt"/>
+                            <constraint firstItem="1Ro-wS-BUf" firstAttribute="trailing" secondItem="wKS-hA-DQe" secondAttribute="trailing" constant="16" id="wGw-m7-zGs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1Ro-wS-BUf"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7di-yO-SEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="142" y="113"/>
         </scene>
     </scenes>
     <resources>
+        <namedColor name="DarkAccent">
+            <color red="0.83099997043609619" green="0.23899999260902405" blue="0.41999998688697815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="DarkShades">
             <color red="0.18799999356269836" green="0.19599999487400055" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LightShades">
+            <color red="0.96100002527236938" green="0.96899998188018799" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Main">
+            <color red="0.2630000114440918" green="0.63099998235702515" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
