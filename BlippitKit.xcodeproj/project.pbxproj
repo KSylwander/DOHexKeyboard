@@ -54,6 +54,7 @@
 		3E428BF52297EC6C0038FBB9 /* BlippitKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC765227C2CA200D5C693 /* BlippitKit.framework */; };
 		3E428BF62297EC6C0038FBB9 /* BlippitKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC765227C2CA200D5C693 /* BlippitKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3E4D1E7F23741EF000DE7187 /* StateTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D1E7E23741EF000DE7187 /* StateTransition.swift */; };
+		3E4D4BDD23EC1E1F00B6040D /* SimpleLinearGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D4BDB23EC1CF300B6040D /* SimpleLinearGradientView.swift */; };
 		3E5C01B32297FD9700DF47BE /* BlippitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C01B22297FD9700DF47BE /* BlippitFactory.swift */; };
 		3E5C01B52297FDB800DF47BE /* DefaultBlippitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C01B42297FDB800DF47BE /* DefaultBlippitFactory.swift */; };
 		3E65B3C823EB825B00456BFB /* BlippitState+LogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E65B3C623EB823400456BFB /* BlippitState+LogDescription.swift */; };
@@ -208,6 +209,7 @@
 		3E428BEA2297EB680038FBB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E428BEC2297EB680038FBB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E4D1E7E23741EF000DE7187 /* StateTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTransition.swift; sourceTree = "<group>"; };
+		3E4D4BDB23EC1CF300B6040D /* SimpleLinearGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLinearGradientView.swift; sourceTree = "<group>"; };
 		3E5C01B22297FD9700DF47BE /* BlippitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitFactory.swift; sourceTree = "<group>"; };
 		3E5C01B42297FDB800DF47BE /* DefaultBlippitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBlippitFactory.swift; sourceTree = "<group>"; };
 		3E65B3C623EB823400456BFB /* BlippitState+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BlippitState+LogDescription.swift"; sourceTree = "<group>"; };
@@ -476,6 +478,7 @@
 				3E65B3C623EB823400456BFB /* BlippitState+LogDescription.swift */,
 				3E5C01B42297FDB800DF47BE /* DefaultBlippitFactory.swift */,
 				3EAABD692297F3C200C0A37A /* Error+LogDescription.swift */,
+				3E4D4BDB23EC1CF300B6040D /* SimpleLinearGradientView.swift */,
 				3EDB14B323604E130026889F /* TransferId+Random.swift */,
 				3EAABD6E2297F42500C0A37A /* UIView+CornerRadius.swift */,
 				3E3EF65023EACC8B00EB1414 /* Vibrate.h */,
@@ -799,6 +802,7 @@
 				3E3EF66D23EAE1A000EB1414 /* PropertyKeys.swift in Sources */,
 				3E65B3C823EB825B00456BFB /* BlippitState+LogDescription.swift in Sources */,
 				3E3EF65223EACC8B00EB1414 /* Vibrate.m in Sources */,
+				3E4D4BDD23EC1E1F00B6040D /* SimpleLinearGradientView.swift in Sources */,
 				3E428BE12297EB670038FBB9 /* AppDelegate.swift in Sources */,
 				3EAABD6F2297F42500C0A37A /* UIView+CornerRadius.swift in Sources */,
 				3EAABD672297EEB800C0A37A /* MainViewController.swift in Sources */,
