@@ -112,9 +112,17 @@ final class MainViewController: UIViewController {
   private func log(_ message: String) {
     let logDate = "\(logDateFormatter.string(from: Date()))"
     if let text = logTextView.text, !text.isEmpty {
-      logTextView.text = "\(logDate) \(message)\n\(text)"
+      logTextView.text = "\(text)\n\(logDate) \(message)"
     } else {
       logTextView.text = "\(logDate) \(message)"
+    }
+
+    /* Scroll to the bottom of the logs */
+    let bottomOffset = (logTextView.contentSize.height - logTextView.bounds.height)
+      + logTextView.contentInset.bottom
+
+    if bottomOffset > 0 {
+      logTextView.setContentOffset(CGPoint(x: 0.0, y: bottomOffset), animated: true)
     }
   }
 
