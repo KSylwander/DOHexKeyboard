@@ -1,9 +1,8 @@
 //
 //  Vibrate.c
-//  PodzTest
+//  BlippitTest
 //
-//  Created by Jerson Perpetua on 2020-01-14.
-//  Copyright © 2020 Crunchfish. All rights reserved.
+//  Copyright © 2020 Crunchfish Proximity AB. All rights reserved.
 //
 
 #import <AudioToolbox/AudioToolbox.h>

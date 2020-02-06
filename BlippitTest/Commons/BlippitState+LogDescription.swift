@@ -1,4 +1,4 @@
-////
+//
 //  BlippitState+LogDescription
 //  BlippitKit
 //

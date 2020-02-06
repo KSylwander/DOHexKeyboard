@@ -2,8 +2,7 @@
 //  DefaultBlippitFactory.swift
 //  BlippitTest
 //
-//  Created by Jerson Perpetua on 2019-05-24.
-//  Copyright © 2019 Crunchfish AB. All rights reserved.
+//  Copyright © 2019 Crunchfish Proximity AB. All rights reserved.
 //
 
 import BlippitKit

@@ -2,8 +2,7 @@
 //  DummyPodSession.swift
 //  BlippitTests
 //
-//  Created by Jerson Perpetua on 2019-05-08.
-//  Copyright © 2019 Crunchfish AB. All rights reserved.
+//  Copyright © 2019 Crunchfish Proximity AB. All rights reserved.
 //
 
 import PodzKit
