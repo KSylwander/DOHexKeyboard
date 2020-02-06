@@ -55,6 +55,11 @@
 		3E428BF62297EC6C0038FBB9 /* BlippitKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBAC765227C2CA200D5C693 /* BlippitKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3E4D1E7F23741EF000DE7187 /* StateTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D1E7E23741EF000DE7187 /* StateTransition.swift */; };
 		3E4D4BDD23EC1E1F00B6040D /* SimpleLinearGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D4BDB23EC1CF300B6040D /* SimpleLinearGradientView.swift */; };
+		3E4D4BE923EC593700B6040D /* DefaultKeyboardHandlerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D4BE723EC58D100B6040D /* DefaultKeyboardHandlerFactory.swift */; };
+		3E4D4BEA23EC593700B6040D /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D4BDE23EC568E00B6040D /* KeyboardHandler.swift */; };
+		3E4D4BEB23EC593700B6040D /* KeyboardHandlerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D4BE523EC58A800B6040D /* KeyboardHandlerFactory.swift */; };
+		3E4D4BEC23EC593700B6040D /* KeyboardHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D4BE323EC588C00B6040D /* KeyboardHandling.swift */; };
+		3E4D4BED23EC593700B6040D /* KeyboardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D4BE023EC573700B6040D /* KeyboardInfo.swift */; };
 		3E5C01B32297FD9700DF47BE /* BlippitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C01B22297FD9700DF47BE /* BlippitFactory.swift */; };
 		3E5C01B52297FDB800DF47BE /* DefaultBlippitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C01B42297FDB800DF47BE /* DefaultBlippitFactory.swift */; };
 		3E65B3C823EB825B00456BFB /* BlippitState+LogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E65B3C623EB823400456BFB /* BlippitState+LogDescription.swift */; };
@@ -210,6 +215,11 @@
 		3E428BEC2297EB680038FBB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E4D1E7E23741EF000DE7187 /* StateTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTransition.swift; sourceTree = "<group>"; };
 		3E4D4BDB23EC1CF300B6040D /* SimpleLinearGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLinearGradientView.swift; sourceTree = "<group>"; };
+		3E4D4BDE23EC568E00B6040D /* KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
+		3E4D4BE023EC573700B6040D /* KeyboardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardInfo.swift; sourceTree = "<group>"; };
+		3E4D4BE323EC588C00B6040D /* KeyboardHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandling.swift; sourceTree = "<group>"; };
+		3E4D4BE523EC58A800B6040D /* KeyboardHandlerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandlerFactory.swift; sourceTree = "<group>"; };
+		3E4D4BE723EC58D100B6040D /* DefaultKeyboardHandlerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeyboardHandlerFactory.swift; sourceTree = "<group>"; };
 		3E5C01B22297FD9700DF47BE /* BlippitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitFactory.swift; sourceTree = "<group>"; };
 		3E5C01B42297FDB800DF47BE /* DefaultBlippitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBlippitFactory.swift; sourceTree = "<group>"; };
 		3E65B3C623EB823400456BFB /* BlippitState+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BlippitState+LogDescription.swift"; sourceTree = "<group>"; };
@@ -372,6 +382,7 @@
 			children = (
 				3EAABD682297F39F00C0A37A /* Commons */,
 				3E428BF12297EC120038FBB9 /* Entrypoint */,
+				3E4D4BE223EC57F200B6040D /* Keyboard Handling */,
 				3EAABD652297EE9800C0A37A /* Main Screen */,
 				3E428BF02297EB720038FBB9 /* Resources */,
 			);
@@ -395,6 +406,18 @@
 				3E428BE02297EB670038FBB9 /* AppDelegate.swift */,
 			);
 			path = Entrypoint;
+			sourceTree = "<group>";
+		};
+		3E4D4BE223EC57F200B6040D /* Keyboard Handling */ = {
+			isa = PBXGroup;
+			children = (
+				3E4D4BE723EC58D100B6040D /* DefaultKeyboardHandlerFactory.swift */,
+				3E4D4BDE23EC568E00B6040D /* KeyboardHandler.swift */,
+				3E4D4BE523EC58A800B6040D /* KeyboardHandlerFactory.swift */,
+				3E4D4BE323EC588C00B6040D /* KeyboardHandling.swift */,
+				3E4D4BE023EC573700B6040D /* KeyboardInfo.swift */,
+			);
+			path = "Keyboard Handling";
 			sourceTree = "<group>";
 		};
 		3E53531A22956F72004FD948 /* Construction Root */ = {
@@ -799,15 +822,20 @@
 				3E3EF66E23EAE1A000EB1414 /* PropertyKeys+Podz.swift in Sources */,
 				3EDB14B423604E130026889F /* TransferId+Random.swift in Sources */,
 				3E3EF66C23EAE1A000EB1414 /* PropertyKey.swift in Sources */,
+				3E4D4BEA23EC593700B6040D /* KeyboardHandler.swift in Sources */,
 				3E3EF66D23EAE1A000EB1414 /* PropertyKeys.swift in Sources */,
 				3E65B3C823EB825B00456BFB /* BlippitState+LogDescription.swift in Sources */,
 				3E3EF65223EACC8B00EB1414 /* Vibrate.m in Sources */,
+				3E4D4BEC23EC593700B6040D /* KeyboardHandling.swift in Sources */,
+				3E4D4BEB23EC593700B6040D /* KeyboardHandlerFactory.swift in Sources */,
 				3E4D4BDD23EC1E1F00B6040D /* SimpleLinearGradientView.swift in Sources */,
 				3E428BE12297EB670038FBB9 /* AppDelegate.swift in Sources */,
+				3E4D4BED23EC593700B6040D /* KeyboardInfo.swift in Sources */,
 				3EAABD6F2297F42500C0A37A /* UIView+CornerRadius.swift in Sources */,
 				3EAABD672297EEB800C0A37A /* MainViewController.swift in Sources */,
 				3E3EF66F23EAE1A000EB1414 /* PropertyKeys+States.swift in Sources */,
 				3E3EF67123EAE1A000EB1414 /* PropertyStorage+Shared.swift in Sources */,
+				3E4D4BE923EC593700B6040D /* DefaultKeyboardHandlerFactory.swift in Sources */,
 				3E3EF67023EAE1A000EB1414 /* PropertyStorage.swift in Sources */,
 				3EAABD6A2297F3C200C0A37A /* Error+LogDescription.swift in Sources */,
 				3E5C01B32297FD9700DF47BE /* BlippitFactory.swift in Sources */,

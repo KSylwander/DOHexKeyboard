@@ -12,6 +12,8 @@ import PodzKit
 import UIKit
 
 final class MainViewController: UIViewController {
+  @IBOutlet private var mainScrollView: UIScrollView!
+
   @IBOutlet private var logTextView: UITextView!
   @IBOutlet private var clearLogsButton: UIButton!
 
@@ -28,6 +30,9 @@ final class MainViewController: UIViewController {
   @IBOutlet private var blippitVersion: UILabel!
 
   @IBOutlet private var toggleBlippitButton: UIButton!
+
+  private var keyboardHandlerFactory: KeyboardHandlerFactory!
+  private lazy var keyboardHandler = keyboardHandlerFactory.makeKeyboardHandler(scrollView: mainScrollView)
 
   private var blippitFactory: BlippitFactory!
   private var blippit: Blippit!
@@ -47,10 +52,14 @@ final class MainViewController: UIViewController {
     }
   }
 
-  static func instantiate(blippitFactory: BlippitFactory, propertyStorage: PropertyStorage) -> MainViewController {
+  static func instantiate(keyboardHandlerFactory: KeyboardHandlerFactory,
+                          blippitFactory: BlippitFactory,
+                          propertyStorage: PropertyStorage) -> MainViewController {
+
     let storyboard = UIStoryboard(name: String(describing: self), bundle: nil)
 
     let viewController = storyboard.instantiateInitialViewController() as! MainViewController
+    viewController.keyboardHandlerFactory = keyboardHandlerFactory
     viewController.blippitFactory = blippitFactory
     viewController.propertyStorage = propertyStorage
 
@@ -72,10 +81,17 @@ final class MainViewController: UIViewController {
     }
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+
+    keyboardHandler.setup()
+  }
+
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
 
     blippit?.stop()
+    keyboardHandler.teardown()
   }
 
   override func viewWillLayoutSubviews() {
@@ -170,6 +186,18 @@ final class MainViewController: UIViewController {
 
     toggleBlippitButton.isEnabled = isEnabled
     toggleBlippitButton.alpha = isEnabled ? 1.0 : 0.7
+  }
+}
+
+extension MainViewController: UIScrollViewDelegate {
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    if scrollView == mainScrollView {
+      if scrollView.contentOffset.y < 0.0 {
+        view.backgroundColor = UIColor(named: "LightShades")
+      } else {
+        view.backgroundColor = UIColor(named: "DarkShades")
+      }
+    }
   }
 }
 

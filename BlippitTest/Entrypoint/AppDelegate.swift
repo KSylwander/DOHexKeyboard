@@ -20,6 +20,7 @@ extension AppDelegate: UIApplicationDelegate {
 
     let window = self.window!
     window.rootViewController = MainViewController.instantiate(
+      keyboardHandlerFactory: DefaultKeyboardHandlerFactory(),
       blippitFactory: DefaultBlippitFactory(),
       propertyStorage: PropertyStorage.shared
     )
