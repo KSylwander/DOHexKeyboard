@@ -38,6 +38,8 @@
 		3E3EF65523EAD3C300EB1414 /* PropertyStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EF65423EAD3C300EB1414 /* PropertyStorage.swift */; };
 		3E3EF65723EAD63000EB1414 /* PropertyKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EF65623EAD63000EB1414 /* PropertyKey.swift */; };
 		3E3EF65923EAD64E00EB1414 /* PropertyKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EF65823EAD64E00EB1414 /* PropertyKeys.swift */; };
+		3E3EF65F23EADA9800EB1414 /* PropertyStorage+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EF65E23EADA9800EB1414 /* PropertyStorage+Shared.swift */; };
+		3E3EF66B23EAE06300EB1414 /* BundleLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EF66A23EAE06300EB1414 /* BundleLocator.swift */; };
 		3E428BE12297EB670038FBB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E428BE02297EB670038FBB9 /* AppDelegate.swift */; };
 		3E428BE82297EB680038FBB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E428BE72297EB680038FBB9 /* Assets.xcassets */; };
 		3E428BEB2297EB680038FBB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E428BE92297EB680038FBB9 /* LaunchScreen.storyboard */; };
@@ -190,6 +192,8 @@
 		3E3EF65423EAD3C300EB1414 /* PropertyStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyStorage.swift; sourceTree = "<group>"; };
 		3E3EF65623EAD63000EB1414 /* PropertyKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKey.swift; sourceTree = "<group>"; };
 		3E3EF65823EAD64E00EB1414 /* PropertyKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKeys.swift; sourceTree = "<group>"; };
+		3E3EF65E23EADA9800EB1414 /* PropertyStorage+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PropertyStorage+Shared.swift"; sourceTree = "<group>"; };
+		3E3EF66A23EAE06300EB1414 /* BundleLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleLocator.swift; sourceTree = "<group>"; };
 		3E428BDE2297EB670038FBB9 /* BlippitKitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlippitKitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E428BE02297EB670038FBB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E428BE72297EB680038FBB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -546,6 +550,7 @@
 		3EC79744228026F100AD79CE /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				3E3EF66A23EAE06300EB1414 /* BundleLocator.swift */,
 				3EC79740228025BE00AD79CE /* Cancellable.swift */,
 				3EC4DE48228307CC007A05C9 /* Constants.swift */,
 				3EB024B023697822004112B6 /* Constants+Credentials.swift */,
@@ -553,6 +558,7 @@
 				3E3EF65623EAD63000EB1414 /* PropertyKey.swift */,
 				3E3EF65823EAD64E00EB1414 /* PropertyKeys.swift */,
 				3E3EF65423EAD3C300EB1414 /* PropertyStorage.swift */,
+				3E3EF65E23EADA9800EB1414 /* PropertyStorage+Shared.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -842,6 +848,7 @@
 				3EDB14B7236081A40026889F /* ScenarioDelegate.swift in Sources */,
 				3EFADD40228D6EF500B3559A /* Constants+States.swift in Sources */,
 				3E3EF65523EAD3C300EB1414 /* PropertyStorage.swift in Sources */,
+				3E3EF65F23EADA9800EB1414 /* PropertyStorage+Shared.swift in Sources */,
 				3EAE57292358958100645E7A /* TransferPayerIdStateFactory.swift in Sources */,
 				3E38F90822819EE300C114B7 /* StateOutput.swift in Sources */,
 				3E20B66223841886001BEB88 /* ConfigurationError.swift in Sources */,
@@ -868,6 +875,7 @@
 				3E23C23B228C2E0100DA3305 /* PodSessionStateObserving.swift in Sources */,
 				3E9DF2BF23C84BAA00C4AB37 /* BaseScenario.swift in Sources */,
 				3E38F90622819EB100C114B7 /* State.swift in Sources */,
+				3E3EF66B23EAE06300EB1414 /* BundleLocator.swift in Sources */,
 				3EFADD4C228D9ADF00B3559A /* WaitForBlipStateFactory.swift in Sources */,
 				3E8E0FD22297FB6C001B1C35 /* BlippitSetup.swift in Sources */,
 				3E722B002374295600A1E6F7 /* LostPodObserving.swift in Sources */,
