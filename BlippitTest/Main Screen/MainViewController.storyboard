@@ -253,7 +253,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vND-mv-k4p">
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vND-mv-k4p">
                                 <rect key="frame" x="373" y="520.5" width="41" height="41"/>
                                 <color key="backgroundColor" name="DarkAccent"/>
                                 <constraints>
@@ -302,6 +302,7 @@
                     <connections>
                         <outlet property="blippitVersion" destination="a8H-Od-imd" id="uUK-g6-4Me"/>
                         <outlet property="channelTextField" destination="Iju-la-mAZ" id="MTO-lg-MMw"/>
+                        <outlet property="clearLogsButton" destination="vND-mv-k4p" id="Qyp-Mr-Bew"/>
                         <outlet property="loadingIndicator" destination="HqF-iM-zXM" id="frw-Cu-Ji2"/>
                         <outlet property="logTextView" destination="gWk-OO-b9t" id="stq-Lm-wdx"/>
                         <outlet property="payerIdContainer" destination="pkU-gm-R8B" id="YKb-3I-2wJ"/>

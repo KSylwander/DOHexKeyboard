@@ -13,6 +13,7 @@ import UIKit
 
 final class MainViewController: UIViewController {
   @IBOutlet private var logTextView: UITextView!
+  @IBOutlet private var clearLogsButton: UIButton!
 
   @IBOutlet private var statusLabel: UILabel!
   @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
@@ -77,6 +78,12 @@ final class MainViewController: UIViewController {
     blippit?.stop()
   }
 
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+
+    logTextView.scrollIndicatorInsets.bottom = clearLogsButton.bounds.height
+  }
+
   @IBAction private func clearLogsButtonTapped() {
     logTextView.text = nil
   }
@@ -118,11 +125,10 @@ final class MainViewController: UIViewController {
     }
 
     /* Scroll to the bottom of the logs */
-    let bottomOffset = (logTextView.contentSize.height - logTextView.bounds.height)
-      + logTextView.contentInset.bottom
-
-    if bottomOffset > 0 {
-      logTextView.setContentOffset(CGPoint(x: 0.0, y: bottomOffset), animated: true)
+    let contentHeight = logTextView.contentSize.height
+    if contentHeight > logTextView.bounds.height {
+      let bottomRect = CGRect(x: 0.0, y: contentHeight - 1.0, width: 1.0, height: 1.0)
+      logTextView.scrollRectToVisible(bottomRect, animated: true)
     }
   }
 

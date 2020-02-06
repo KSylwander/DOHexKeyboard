@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="561.5"/>
                                 <color key="backgroundColor" name="LightShades"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0H-NQ-76c">
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0H-NQ-76c">
                                 <rect key="frame" x="373" y="520.5" width="41" height="41"/>
                                 <color key="backgroundColor" name="DarkAccent"/>
                                 <constraints>
