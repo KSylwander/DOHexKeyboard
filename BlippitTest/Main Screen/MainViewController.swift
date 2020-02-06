@@ -77,6 +77,10 @@ final class MainViewController: UIViewController {
     blippit?.stop()
   }
 
+  @IBAction private func clearLogsButtonTapped() {
+    logTextView.text = nil
+  }
+
   @IBAction private func randomPayerIdButtonTapped() {
     view.endEditing(true)
     do {

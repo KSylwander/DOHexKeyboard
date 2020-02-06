@@ -236,6 +236,20 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vND-mv-k4p">
+                                <rect key="frame" x="334" y="325.5" width="41" height="41"/>
+                                <color key="backgroundColor" name="DarkAccent"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="41" id="1mm-S8-deg"/>
+                                    <constraint firstAttribute="height" constant="41" id="l4b-Gw-01J"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" image="Trash"/>
+                                <connections>
+                                    <action selector="clearLogsButtonTapped" destination="9VG-gb-OMM" eventType="touchUpInside" id="ovS-Vp-qaq"/>
+                                </connections>
+                            </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="HqF-iM-zXM">
                                 <rect key="frame" x="187" y="549.5" width="20" height="20"/>
                             </activityIndicatorView>
@@ -254,9 +268,11 @@
                             <constraint firstItem="gWk-OO-b9t" firstAttribute="top" secondItem="ovf-ip-AGl" secondAttribute="top" id="LCL-7a-fSr"/>
                             <constraint firstItem="t2Q-sD-jTD" firstAttribute="bottom" secondItem="a8H-Od-imd" secondAttribute="bottom" constant="8" id="Lfn-yj-91d"/>
                             <constraint firstItem="gWk-OO-b9t" firstAttribute="leading" secondItem="t2Q-sD-jTD" secondAttribute="leading" id="NSZ-Pb-Tvj"/>
+                            <constraint firstItem="vND-mv-k4p" firstAttribute="trailing" secondItem="gWk-OO-b9t" secondAttribute="trailing" id="VMO-ld-4fV"/>
                             <constraint firstItem="t2Q-sD-jTD" firstAttribute="trailing" secondItem="Kfp-0V-Zya" secondAttribute="trailing" constant="16" id="glU-AT-YnU"/>
                             <constraint firstItem="t2Q-sD-jTD" firstAttribute="trailing" secondItem="a8H-Od-imd" secondAttribute="trailing" constant="16" id="j3e-s1-AfG"/>
                             <constraint firstItem="Kfp-0V-Zya" firstAttribute="leading" secondItem="t2Q-sD-jTD" secondAttribute="leading" constant="16" id="m4O-Is-R0L"/>
+                            <constraint firstItem="vND-mv-k4p" firstAttribute="bottom" secondItem="gWk-OO-b9t" secondAttribute="bottom" id="tHV-ip-W00"/>
                             <constraint firstItem="Kfp-0V-Zya" firstAttribute="top" secondItem="gWk-OO-b9t" secondAttribute="bottom" constant="16" id="uM1-dg-GNy"/>
                             <constraint firstItem="HqF-iM-zXM" firstAttribute="centerY" secondItem="8dq-p5-osV" secondAttribute="centerY" id="wmT-ty-9yE"/>
                         </constraints>
@@ -282,6 +298,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Trash" width="100" height="100"/>
         <namedColor name="DarkAccent">
             <color red="0.83099997043609619" green="0.23899999260902405" blue="0.41999998688697815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
