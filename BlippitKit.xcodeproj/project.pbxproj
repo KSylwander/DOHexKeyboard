@@ -83,7 +83,7 @@
 		3EC4DE4D22830991007A05C9 /* DummyPodSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE4C22830991007A05C9 /* DummyPodSession.swift */; };
 		3EC4DE4F22830CA2007A05C9 /* WaitForBlipStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4DE4E22830CA2007A05C9 /* WaitForBlipStateSpec.swift */; };
 		3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC79740228025BE00AD79CE /* Cancellable.swift */; };
-		3EDB14B423604E130026889F /* TransferId+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB14B323604E130026889F /* TransferId+Random.swift */; };
+		3EDB14B423604E130026889F /* Payload+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB14B323604E130026889F /* Payload+Random.swift */; };
 		3EDB14B7236081A40026889F /* ScenarioDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB14B6236081A40026889F /* ScenarioDelegate.swift */; };
 		3EDB14B92360820D0026889F /* ScenarioFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB14B82360820D0026889F /* ScenarioFactory.swift */; };
 		3EDB14BD236082F60026889F /* PayerIdScenarioFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB14BC236082F60026889F /* PayerIdScenarioFactory.swift */; };
@@ -238,7 +238,7 @@
 		3EC4DE4C22830991007A05C9 /* DummyPodSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyPodSession.swift; sourceTree = "<group>"; };
 		3EC4DE4E22830CA2007A05C9 /* WaitForBlipStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitForBlipStateSpec.swift; sourceTree = "<group>"; };
 		3EC79740228025BE00AD79CE /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
-		3EDB14B323604E130026889F /* TransferId+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransferId+Random.swift"; sourceTree = "<group>"; };
+		3EDB14B323604E130026889F /* Payload+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payload+Random.swift"; sourceTree = "<group>"; };
 		3EDB14B6236081A40026889F /* ScenarioDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioDelegate.swift; sourceTree = "<group>"; };
 		3EDB14B82360820D0026889F /* ScenarioFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioFactory.swift; sourceTree = "<group>"; };
 		3EDB14BC236082F60026889F /* PayerIdScenarioFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayerIdScenarioFactory.swift; sourceTree = "<group>"; };
@@ -480,8 +480,8 @@
 				3E3EF64F23EACC8B00EB1414 /* BlippitKitTest-Bridging-Header.h */,
 				3E65B3C623EB823400456BFB /* BlippitState+LogDescription.swift */,
 				3EAABD692297F3C200C0A37A /* Error+LogDescription.swift */,
+				3EDB14B323604E130026889F /* Payload+Random.swift */,
 				3E4D4BDB23EC1CF300B6040D /* SimpleLinearGradientView.swift */,
-				3EDB14B323604E130026889F /* TransferId+Random.swift */,
 				3EAABD6E2297F42500C0A37A /* UIView+CornerRadius.swift */,
 				3E3EF65023EACC8B00EB1414 /* Vibrate.h */,
 				3E3EF65123EACC8B00EB1414 /* Vibrate.m */,
@@ -795,7 +795,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EDB14B423604E130026889F /* TransferId+Random.swift in Sources */,
+				3EDB14B423604E130026889F /* Payload+Random.swift in Sources */,
 				3E4D4BEA23EC593700B6040D /* KeyboardHandler.swift in Sources */,
 				3E65B3C823EB825B00456BFB /* BlippitState+LogDescription.swift in Sources */,
 				3E3EF65223EACC8B00EB1414 /* Vibrate.m in Sources */,

@@ -94,13 +94,13 @@ final class MainViewController: UIViewController {
   @IBAction private func randomPayerIdButtonTapped() {
     view.endEditing(true)
     do {
-      let id: TransferId
+      let payload: Payload
       if let length = randomPayerIdLengthTextField.text.flatMap(Int.init) {
-        id = try TransferId.random(withLength: length)
+        payload = try Payload.random(withLength: length)
       } else {
-        id = try TransferId.random()
+        payload = try Payload.random()
       }
-      payerIdTextField.text = id.idString
+      payerIdTextField.text = String(payload)
       updatePayerIdLengthLabel()
       updateToggleBlippitButton()
     } catch {
