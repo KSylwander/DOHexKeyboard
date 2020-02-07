@@ -30,13 +30,9 @@ final class MainViewController: UIViewController {
 
   @IBOutlet private var toggleBlippitButton: UIButton!
 
-  private var keyboardHandlerFactory: KeyboardHandlerFactory!
-  private lazy var keyboardHandler = keyboardHandlerFactory.makeKeyboardHandler(scrollView: mainScrollView)
-
-  private var blippitFactory: BlippitFactory!
+  private lazy var keyboardHandler = KeyboardHandler(scrollView: mainScrollView)
   private var blippit: Blippit!
-
-  private var propertyStorage: PropertyStorage!
+  private let propertyStorage = PropertyStorage.shared
 
   private let logDateFormatter: DateFormatter = {
     let dateFormatter = DateFormatter()
@@ -51,17 +47,9 @@ final class MainViewController: UIViewController {
     }
   }
 
-  static func instantiate(keyboardHandlerFactory: KeyboardHandlerFactory,
-                          blippitFactory: BlippitFactory,
-                          propertyStorage: PropertyStorage) -> MainViewController {
-
+  static func instantiate() -> MainViewController {
     let storyboard = UIStoryboard(name: String(describing: self), bundle: nil)
-
     let viewController = storyboard.instantiateInitialViewController() as! MainViewController
-    viewController.keyboardHandlerFactory = keyboardHandlerFactory
-    viewController.blippitFactory = blippitFactory
-    viewController.propertyStorage = propertyStorage
-
     return viewController
   }
 
@@ -149,7 +137,7 @@ final class MainViewController: UIViewController {
 
   private func setupBlippitWithPayerId(_ payerId: String) {
     do {
-      blippit = try blippitFactory.makeBlippit(delegate: self, payerId: payerId)
+      blippit = try BlippitSetup.setup(delegate: self, onBlipPayload: try Payload(containing: payerId))
       blippit.start()
       log("New Blippit instance with payer ID: \(payerId)")
     } catch {

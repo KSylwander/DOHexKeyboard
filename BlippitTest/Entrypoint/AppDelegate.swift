@@ -18,11 +18,7 @@ extension AppDelegate: UIApplicationDelegate {
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     let window = self.window!
-    window.rootViewController = MainViewController.instantiate(
-      keyboardHandlerFactory: DefaultKeyboardHandlerFactory(),
-      blippitFactory: DefaultBlippitFactory(),
-      propertyStorage: PropertyStorage.shared
-    )
+    window.rootViewController = MainViewController.instantiate()
     window.makeKeyAndVisible()
 
     return true
