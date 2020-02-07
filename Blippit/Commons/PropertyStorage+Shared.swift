@@ -6,10 +6,10 @@
 //
 
 extension PropertyStorage {
-  static let shared: PropertyStorage = {
+  static var shared: PropertyStorage {
     let bundle = Bundle(for: NSClassFromString("BlippitKit.BundleLocator")!)
     let userDefaults = UserDefaults(suiteName: bundle.bundleIdentifier)!
 
     return PropertyStorage(userDefaults: userDefaults)
-  }()
+  }
 }
