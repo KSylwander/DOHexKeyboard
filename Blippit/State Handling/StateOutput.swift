@@ -13,11 +13,6 @@ enum StateOutput {
   case waitForPod
   case waitForBlip(pid: UInt32, podSession: PodSession)
   case setupTransferId(pid: UInt32, podSession: PodSession)
-
-  case establishCloudSession(cloudSessionId: String, podSession: PodSession, sessionToken: TransferId)
-  case transferSessionToken(cloudSessionId: String, podSession: PodSession)
-  case waitForCloudSessionDone
-
   case transferPayerId
 }
 

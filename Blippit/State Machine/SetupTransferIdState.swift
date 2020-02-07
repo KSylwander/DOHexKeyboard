@@ -22,8 +22,6 @@ final class SetupTransferIdState {
   }
 }
 
-extension SetupTransferIdState: BlippitSessionState {}
-
 extension SetupTransferIdState: Startable {
   func start() {
     do {

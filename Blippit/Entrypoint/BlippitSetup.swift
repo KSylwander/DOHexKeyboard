@@ -21,9 +21,7 @@ public enum BlippitSetup {
   public static func setup(delegate: BlippitDelegate, onBlipPayload: Payload) throws -> Blippit {
     let errorHandler = ErrorHandler()
     return try errorHandler.handleErrors {
-      return try setup(delegate: delegate,
-                       onBlipPayload: onBlipPayload,
-                       errorHandler: errorHandler)
+      return try setup(delegate: delegate, onBlipPayload: onBlipPayload, errorHandler: errorHandler)
     }
   }
 
@@ -43,7 +41,9 @@ public enum BlippitSetup {
         retryHandlerFactory: DefaultRetryHandlerFactory(
           maxRetries: Constants.States.TransferPayerId.maxRetries
         ),
-        payerId: onBlipPayload.transferId))
+        payerId: onBlipPayload.transferId
+      )
+    )
 
     return DefaultBlippit(
       delegate: delegate,

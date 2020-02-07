@@ -8,10 +8,7 @@
 
 import BlippitKit
 
-struct DefaultBlippitFactory {
-  let apiKey: UUID
-  let appId: UUID
-}
+struct DefaultBlippitFactory {}
 
 extension DefaultBlippitFactory: BlippitFactory {
   func makeBlippit(delegate: BlippitDelegate, payerId: String) throws -> Blippit {

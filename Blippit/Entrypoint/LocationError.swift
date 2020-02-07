@@ -5,12 +5,6 @@
 //  Copyright © 2019 Crunchfish Proximity AB. All rights reserved.
 //
 
-// swiftlint:disable todo
-/* TODO: Make public when `_BlippitMode.payment` is exposed publicly (i.e., revert the access modifier change to the
- * `LocationError` enum below).
- */
-// swiftlint:enable todo
-
 /**
  * Errors that may occur in the location services setup stage.
  *
