@@ -415,6 +415,16 @@
 			path = "Construction Root";
 			sourceTree = "<group>";
 		};
+		3E540F1923EDAE82005DA811 /* Property Handling */ = {
+			isa = PBXGroup;
+			children = (
+				3E540F1123ED9AB2005DA811 /* PropertyKeys+Blippit.swift */,
+				3E3EF65423EAD3C300EB1414 /* PropertyStorage.swift */,
+				3E3EF65E23EADA9800EB1414 /* PropertyStorage+Shared.swift */,
+			);
+			path = "Property Handling";
+			sourceTree = "<group>";
+		};
 		3E97FA3122803641003419AE /* BlippitTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,6 +549,7 @@
 				3EFADD2C228D532300B3559A /* Entrypoint */,
 				3E20B66D23842949001BEB88 /* Error Handling */,
 				3EB82293229C15D700826236 /* Logging */,
+				3E540F1923EDAE82005DA811 /* Property Handling */,
 				3EAEA7FD2280109F008B7E77 /* Resources */,
 				3EFADD1F228D4BF500B3559A /* Retry Handling */,
 				3E0652EE235F34F0009B9B93 /* Scenario Handling */,
@@ -564,9 +575,6 @@
 			children = (
 				3E3EF66A23EAE06300EB1414 /* BundleLocator.swift */,
 				3EC79740228025BE00AD79CE /* Cancellable.swift */,
-				3E540F1123ED9AB2005DA811 /* PropertyKeys+Blippit.swift */,
-				3E3EF65423EAD3C300EB1414 /* PropertyStorage.swift */,
-				3E3EF65E23EADA9800EB1414 /* PropertyStorage+Shared.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
