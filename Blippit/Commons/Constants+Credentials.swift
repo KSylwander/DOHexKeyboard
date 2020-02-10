@@ -10,12 +10,10 @@ import Foundation
 extension Constants {
   enum Credentials {
     enum Podz {
-#if PRODUCTION
-      static let channel = "c562f73f"
-#elseif STAGE
+#if DEBUG
       static let channel = "00000004"
 #else
-      static let channel = "00000004"
+      static let channel = "c562f73f"
 #endif
     }
   }

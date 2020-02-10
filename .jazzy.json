@@ -1,7 +1,7 @@
 {
     "clean": true,
     "sdk": "iphoneos",
-    "xcodebuild_arguments": ["-scheme", "BlippitKit", "-configuration", "ReleasePROD"],
+    "xcodebuild_arguments": ["-scheme", "BlippitKit", "-configuration", "Release"],
     "author": "Crunchfish Proximity",
     "author_url": "https://www.crunchfish.com/m-commerce-social-applications/m-commerce/",
     "module": "BlippitKit",
