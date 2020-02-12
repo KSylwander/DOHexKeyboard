@@ -2,8 +2,7 @@
 //  AppDelegate.swift
 //  BlippitTest
 //
-//  Created by Jerson Perpetua on 2019-05-24.
-//  Copyright © 2019 Crunchfish AB. All rights reserved.
+//  Copyright © 2019 Crunchfish Proximity AB. All rights reserved.
 //
 
 import BlippitKit
@@ -19,9 +18,7 @@ extension AppDelegate: UIApplicationDelegate {
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     let window = self.window!
-    window.rootViewController = MainViewController.instantiate(
-      blippitFactory: DefaultBlippitFactory()
-    )
+    window.rootViewController = MainViewController.instantiate()
     window.makeKeyAndVisible()
 
     return true

@@ -37,3 +37,23 @@ public struct Payload: Equatable {
     }
   }
 }
+
+extension Payload: LosslessStringConvertible {
+  /**
+   * Instantiates a payload from a string representation.
+   */
+  public init?(_ description: String) {
+    do {
+      try self.init(containing: description)
+    } catch {
+      return nil
+    }
+  }
+
+  /**
+   * A textual representation of this payload.
+   */
+  public var description: String {
+    return transferId.idString
+  }
+}

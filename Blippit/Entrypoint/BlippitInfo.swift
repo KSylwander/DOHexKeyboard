@@ -15,12 +15,10 @@ public enum BlippitInfo {
    Returns the current version of this framework.
    */
   public static let versionName: String = {
-    let bundle = Bundle(for: BlippitBundle.self)
+    let bundle = Bundle(for: BundleLocator.self)
     if let build = bundle.infoDictionary?["CFBundleShortVersionString"] as? String {
       return build
     }
     return "version not found"
   }()
-
-  private class BlippitBundle {}
 }
