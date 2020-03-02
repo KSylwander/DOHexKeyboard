@@ -20,6 +20,10 @@ extension ErrorHandler: ErrorHandling {
       return BluetoothError.poweredOff
     case PodzError.bluetoothUnauthorized:
       return BluetoothError.unauthorized
+    case PodzError.bluetoothRestricted:
+      return BluetoothError.restricted
+    case PodzError.bluetoothDenied:
+      return BluetoothError.denied
     case PodzError.locationDenied:
       return LocationError.denied
     case PodzError.locationNotDetermined:
