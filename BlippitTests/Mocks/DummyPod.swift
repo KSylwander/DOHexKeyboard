@@ -14,5 +14,4 @@ protocol DummyPod: Pod {
   var state: PodState { get }
 
   var onStateChanged: ((Pod, PodState) -> Void)? { get set }
-  var onUpdated: ((Pod, Date, Int, Int, UInt?) -> Void)? { get set }
 }
