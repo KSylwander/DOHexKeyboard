@@ -261,6 +261,7 @@
 		3EFADD4F228D9D2900B3559A /* SetupTransferIdStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTransferIdStateFactory.swift; sourceTree = "<group>"; };
 		3EFADD51228D9D8200B3559A /* DefaultSetupTransferIdStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSetupTransferIdStateFactory.swift; sourceTree = "<group>"; };
 		3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingStateSpec.swift; sourceTree = "<group>"; };
+		8309635123FFD624005ACD04 /* BlippitKitTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlippitKitTest.entitlements; sourceTree = "<group>"; };
 		830EEF76239E6E4300ED008C /* BlippitInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlippitInfo.swift; sourceTree = "<group>"; };
 		EC546BEB2387F5E1003142FA /* PodzKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PodzKit.framework; path = Carthage/Build/iOS/PodzKit.framework; sourceTree = "<group>"; };
 		EC6F8F6623E058C300082721 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
@@ -376,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				3E428BE72297EB680038FBB9 /* Assets.xcassets */,
+				8309635123FFD624005ACD04 /* BlippitKitTest.entitlements */,
 				3E428BEC2297EB680038FBB9 /* Info.plist */,
 				3E428BE92297EB680038FBB9 /* LaunchScreen.storyboard */,
 				3EAABD6D2297F40200C0A37A /* Secular_One.ttf */,
@@ -940,6 +942,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = BlippitTest/Resources/BlippitKitTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F75CSJAHS9;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1098,6 +1101,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = BlippitTest/Resources/BlippitKitTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F75CSJAHS9;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1112,7 +1116,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.crunchfish.BlippitTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crunchfish.BlippitKitTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BlippitTest/Commons/BlippitKitTest-Bridging-Header.h";
