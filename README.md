@@ -10,7 +10,7 @@ For example, this allows payments where the payment service integration is provi
 
 * Minimum iOS version: 10.0
 * Minimum Swift version: 5.1
-* Minimum PodzKit version: 0.13.0
+* Minimum PodzKit version: 0.15.0
 
 ## Getting Started
 
