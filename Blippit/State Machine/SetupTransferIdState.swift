@@ -39,7 +39,7 @@ extension SetupTransferIdState: ValidPodSessionStateObserving {
         return
       }
 
-      guard try session.availableTransactions().contains(.transferIdViaUSBSerial) else {
+      guard try session.availableTransactions().contains(.payloadAsUSBSerial) else {
         /* Allow clients to handle blipping on pods that do not support transferring of IDs */
         throw InternalAppTerminalError.unsupported
       }

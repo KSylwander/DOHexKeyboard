@@ -11,7 +11,7 @@ import PodzKit
 protocol TransferIdState: State, Startable {
   var delegate: StateDelegate? { get }
   var session: PodSession { get }
-  var transferId: TransferId { get }
+  var transferId: PodzPayload { get }
 
   var transaction: Transaction? { get set }
 
@@ -26,7 +26,7 @@ extension TransferIdState {
   }
 
   func performAction() throws {
-    let transaction = TransferIdViaUSBSerialTransactionBuilder().build(id: transferId)
+    let transaction = PayloadAsUSBSerialTransactionBuilder().build(payload: transferId)
     transaction.onDone = { [weak self] _, status in
       self?.handleTransactionStatus(status)
     }

@@ -9,7 +9,7 @@ import PodzKit
 
 struct DefaultTransferPayerIdStateFactory {
   let retryHandlerFactory: RetryHandlerFactory
-  let payerId: TransferId
+  let payerId: PodzPayload
 }
 
 extension DefaultTransferPayerIdStateFactory: TransferPayerIdStateFactory {

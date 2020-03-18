@@ -24,6 +24,7 @@
 		3E23C241228C35D800DA3305 /* SetupTransferIdState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C240228C35D800DA3305 /* SetupTransferIdState.swift */; };
 		3E23C245228C3DC700DA3305 /* CancellationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C244228C3DC700DA3305 /* CancellationHandler.swift */; };
 		3E23C252228C4B4E00DA3305 /* StateOutput+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C251228C4B4E00DA3305 /* StateOutput+Equatable.swift */; };
+		3E2F5B712421A20500352276 /* PodzPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2F5B702421A20500352276 /* PodzPayload.swift */; };
 		3E38F90622819EB100C114B7 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90522819EB100C114B7 /* State.swift */; };
 		3E38F90822819EE300C114B7 /* StateOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90722819EE300C114B7 /* StateOutput.swift */; };
 		3E38F90A22819F3600C114B7 /* StateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38F90922819F3600C114B7 /* StateDelegate.swift */; };
@@ -178,6 +179,7 @@
 		3E23C240228C35D800DA3305 /* SetupTransferIdState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTransferIdState.swift; sourceTree = "<group>"; };
 		3E23C244228C3DC700DA3305 /* CancellationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationHandler.swift; sourceTree = "<group>"; };
 		3E23C251228C4B4E00DA3305 /* StateOutput+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StateOutput+Equatable.swift"; sourceTree = "<group>"; };
+		3E2F5B702421A20500352276 /* PodzPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodzPayload.swift; sourceTree = "<group>"; };
 		3E38F90522819EB100C114B7 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		3E38F90722819EE300C114B7 /* StateOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateOutput.swift; sourceTree = "<group>"; };
 		3E38F90922819F3600C114B7 /* StateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDelegate.swift; sourceTree = "<group>"; };
@@ -577,6 +579,7 @@
 			children = (
 				3E3EF66A23EAE06300EB1414 /* BundleLocator.swift */,
 				3EC79740228025BE00AD79CE /* Cancellable.swift */,
+				3E2F5B702421A20500352276 /* PodzPayload.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -862,6 +865,7 @@
 				3EFADD25228D4D6500B3559A /* RetryHandlerFactory.swift in Sources */,
 				3E20B66A23841965001BEB88 /* AppTerminalError.swift in Sources */,
 				3EFADD34228D567E00B3559A /* BlippitDelegate.swift in Sources */,
+				3E2F5B712421A20500352276 /* PodzPayload.swift in Sources */,
 				3EB82292229C019400826236 /* Log.swift in Sources */,
 				3EFADD21228D4D5300B3559A /* RetryHandling.swift in Sources */,
 				3E20B66C23841A25001BEB88 /* LocationError.swift in Sources */,

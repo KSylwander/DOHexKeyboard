@@ -10,7 +10,7 @@ import PodzKit
 final class TransferPayerIdState {
   weak var delegate: StateDelegate?
   let session: PodSession
-  let transferId: TransferId
+  let transferId: PodzPayload
 
   var transaction: Transaction?
 
@@ -23,7 +23,7 @@ final class TransferPayerIdState {
 
   init(delegate: StateDelegate,
        session: PodSession,
-       payerId: TransferId,
+       payerId: PodzPayload,
        retryHandlerFactory: RetryHandlerFactory) {
 
     self.delegate = delegate
