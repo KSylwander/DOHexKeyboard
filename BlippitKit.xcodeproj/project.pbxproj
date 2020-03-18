@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E0652F0235F3517009B9B93 /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0652EF235F3517009B9B93 /* Scenario.swift */; };
-		3E0652F6235F3EF9009B9B93 /* PayerIdScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0652F5235F3EF9009B9B93 /* PayerIdScenario.swift */; };
+		3E0652F6235F3EF9009B9B93 /* TransferPayloadOnBlipScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0652F5235F3EF9009B9B93 /* TransferPayloadOnBlipScenario.swift */; };
 		3E1AF01922AA327800066C80 /* BlippitState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1AF01822AA327800066C80 /* BlippitState.swift */; };
 		3E20B66223841886001BEB88 /* ConfigurationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E20B66123841886001BEB88 /* ConfigurationError.swift */; };
 		3E20B66423841916001BEB88 /* BluetoothError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E20B66323841916001BEB88 /* BluetoothError.swift */; };
@@ -21,7 +21,7 @@
 		3E23C23B228C2E0100DA3305 /* PodSessionStateObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C23A228C2E0100DA3305 /* PodSessionStateObserving.swift */; };
 		3E23C23D228C2F0800DA3305 /* ValidPodSessionStateObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C23C228C2F0800DA3305 /* ValidPodSessionStateObserving.swift */; };
 		3E23C23F228C32FD00DA3305 /* DefaultPodSessionStateObservingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C23E228C32FD00DA3305 /* DefaultPodSessionStateObservingState.swift */; };
-		3E23C241228C35D800DA3305 /* SetupTransferIdState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C240228C35D800DA3305 /* SetupTransferIdState.swift */; };
+		3E23C241228C35D800DA3305 /* SetupTransferPayloadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C240228C35D800DA3305 /* SetupTransferPayloadState.swift */; };
 		3E23C245228C3DC700DA3305 /* CancellationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C244228C3DC700DA3305 /* CancellationHandler.swift */; };
 		3E23C252228C4B4E00DA3305 /* StateOutput+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C251228C4B4E00DA3305 /* StateOutput+Equatable.swift */; };
 		3E2F5B712421A20500352276 /* PodzPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2F5B702421A20500352276 /* PodzPayload.swift */; };
@@ -70,9 +70,9 @@
 		3EAABD6A2297F3C200C0A37A /* Error+LogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAABD692297F3C200C0A37A /* Error+LogDescription.swift */; };
 		3EAABD6C2297F3E500C0A37A /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAABD6B2297F3E500C0A37A /* MainViewController.storyboard */; };
 		3EAABD6F2297F42500C0A37A /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAABD6E2297F42500C0A37A /* UIView+CornerRadius.swift */; };
-		3EAE57272358918E00645E7A /* TransferPayerIdState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE57262358918E00645E7A /* TransferPayerIdState.swift */; };
-		3EAE57292358958100645E7A /* TransferPayerIdStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE57282358958100645E7A /* TransferPayerIdStateFactory.swift */; };
-		3EAE572B235895AB00645E7A /* DefaultTransferPayerIdStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE572A235895AB00645E7A /* DefaultTransferPayerIdStateFactory.swift */; };
+		3EAE57272358918E00645E7A /* TransferPayloadOnBlipState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE57262358918E00645E7A /* TransferPayloadOnBlipState.swift */; };
+		3EAE57292358958100645E7A /* TransferPayloadOnBlipStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE57282358958100645E7A /* TransferPayloadOnBlipStateFactory.swift */; };
+		3EAE572B235895AB00645E7A /* TransferPayloadOnBlipScenarioFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE572A235895AB00645E7A /* TransferPayloadOnBlipScenarioFactory.swift */; };
 		3EB8228E229BC72100826236 /* Secular_One.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3EAABD6D2297F40200C0A37A /* Secular_One.ttf */; };
 		3EB82292229C019400826236 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB82291229C019400826236 /* Log.swift */; };
 		3EB82295229C1A9000826236 /* Error+LogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB82294229C1A9000826236 /* Error+LogDescription.swift */; };
@@ -87,7 +87,7 @@
 		3EDB14B423604E130026889F /* Payload+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB14B323604E130026889F /* Payload+Random.swift */; };
 		3EDB14B7236081A40026889F /* ScenarioDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB14B6236081A40026889F /* ScenarioDelegate.swift */; };
 		3EDB14B92360820D0026889F /* ScenarioFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB14B82360820D0026889F /* ScenarioFactory.swift */; };
-		3EDB14BD236082F60026889F /* PayerIdScenarioFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB14BC236082F60026889F /* PayerIdScenarioFactory.swift */; };
+		3EDB14BD236082F60026889F /* DefaultTransferPayloadOnBlipStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB14BC236082F60026889F /* DefaultTransferPayloadOnBlipStateFactory.swift */; };
 		3EE673B422B77BF2004EC0E5 /* NewPodObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE673B322B77BF2004EC0E5 /* NewPodObserving.swift */; };
 		3EE673B622B77C6E004EC0E5 /* WaitForPodState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE673B522B77C6E004EC0E5 /* WaitForPodState.swift */; };
 		3EE673B822B77D78004EC0E5 /* WaitForPodStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE673B722B77D78004EC0E5 /* WaitForPodStateFactory.swift */; };
@@ -96,7 +96,7 @@
 		3EFADD23228D4D5E00B3559A /* RetryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD22228D4D5E00B3559A /* RetryHandler.swift */; };
 		3EFADD25228D4D6500B3559A /* RetryHandlerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD24228D4D6500B3559A /* RetryHandlerFactory.swift */; };
 		3EFADD27228D4D6A00B3559A /* DefaultRetryHandlerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD26228D4D6900B3559A /* DefaultRetryHandlerFactory.swift */; };
-		3EFADD29228D4D8A00B3559A /* TransferIdState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD28228D4D8A00B3559A /* TransferIdState.swift */; };
+		3EFADD29228D4D8A00B3559A /* TransferPayloadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD28228D4D8A00B3559A /* TransferPayloadState.swift */; };
 		3EFADD30228D53B100B3559A /* Blippit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD2F228D53B100B3559A /* Blippit.swift */; };
 		3EFADD34228D567E00B3559A /* BlippitDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD33228D567E00B3559A /* BlippitDelegate.swift */; };
 		3EFADD36228D56C000B3559A /* DefaultBlippit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD35228D56C000B3559A /* DefaultBlippit.swift */; };
@@ -104,8 +104,8 @@
 		3EFADD4A228D99BB00B3559A /* DefaultStartingStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD49228D99BB00B3559A /* DefaultStartingStateFactory.swift */; };
 		3EFADD4C228D9ADF00B3559A /* WaitForBlipStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD4B228D9ADF00B3559A /* WaitForBlipStateFactory.swift */; };
 		3EFADD4E228D9B0000B3559A /* DefaultWaitForBlipStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD4D228D9B0000B3559A /* DefaultWaitForBlipStateFactory.swift */; };
-		3EFADD50228D9D2900B3559A /* SetupTransferIdStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD4F228D9D2900B3559A /* SetupTransferIdStateFactory.swift */; };
-		3EFADD52228D9D8200B3559A /* DefaultSetupTransferIdStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD51228D9D8200B3559A /* DefaultSetupTransferIdStateFactory.swift */; };
+		3EFADD50228D9D2900B3559A /* SetupTransferPayloadStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD4F228D9D2900B3559A /* SetupTransferPayloadStateFactory.swift */; };
+		3EFADD52228D9D8200B3559A /* DefaultSetupTransferPayloadStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFADD51228D9D8200B3559A /* DefaultSetupTransferPayloadStateFactory.swift */; };
 		3EFDCAC22282F42400774A21 /* StartingStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */; };
 		830EEF77239E6E4300ED008C /* BlippitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830EEF76239E6E4300ED008C /* BlippitInfo.swift */; };
 		EC546BEC2387F5E1003142FA /* PodzKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC546BEB2387F5E1003142FA /* PodzKit.framework */; };
@@ -163,7 +163,7 @@
 
 /* Begin PBXFileReference section */
 		3E0652EF235F3517009B9B93 /* Scenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
-		3E0652F5235F3EF9009B9B93 /* PayerIdScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayerIdScenario.swift; sourceTree = "<group>"; };
+		3E0652F5235F3EF9009B9B93 /* TransferPayloadOnBlipScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPayloadOnBlipScenario.swift; sourceTree = "<group>"; };
 		3E1AF01822AA327800066C80 /* BlippitState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitState.swift; sourceTree = "<group>"; };
 		3E20B66123841886001BEB88 /* ConfigurationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationError.swift; sourceTree = "<group>"; };
 		3E20B66323841916001BEB88 /* BluetoothError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothError.swift; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 		3E23C23A228C2E0100DA3305 /* PodSessionStateObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodSessionStateObserving.swift; sourceTree = "<group>"; };
 		3E23C23C228C2F0800DA3305 /* ValidPodSessionStateObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidPodSessionStateObserving.swift; sourceTree = "<group>"; };
 		3E23C23E228C32FD00DA3305 /* DefaultPodSessionStateObservingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPodSessionStateObservingState.swift; sourceTree = "<group>"; };
-		3E23C240228C35D800DA3305 /* SetupTransferIdState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTransferIdState.swift; sourceTree = "<group>"; };
+		3E23C240228C35D800DA3305 /* SetupTransferPayloadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTransferPayloadState.swift; sourceTree = "<group>"; };
 		3E23C244228C3DC700DA3305 /* CancellationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationHandler.swift; sourceTree = "<group>"; };
 		3E23C251228C4B4E00DA3305 /* StateOutput+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StateOutput+Equatable.swift"; sourceTree = "<group>"; };
 		3E2F5B702421A20500352276 /* PodzPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodzPayload.swift; sourceTree = "<group>"; };
@@ -224,9 +224,9 @@
 		3EAABD6B2297F3E500C0A37A /* MainViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		3EAABD6D2297F40200C0A37A /* Secular_One.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Secular_One.ttf; sourceTree = "<group>"; };
 		3EAABD6E2297F42500C0A37A /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
-		3EAE57262358918E00645E7A /* TransferPayerIdState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPayerIdState.swift; sourceTree = "<group>"; };
-		3EAE57282358958100645E7A /* TransferPayerIdStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPayerIdStateFactory.swift; sourceTree = "<group>"; };
-		3EAE572A235895AB00645E7A /* DefaultTransferPayerIdStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTransferPayerIdStateFactory.swift; sourceTree = "<group>"; };
+		3EAE57262358918E00645E7A /* TransferPayloadOnBlipState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPayloadOnBlipState.swift; sourceTree = "<group>"; };
+		3EAE57282358958100645E7A /* TransferPayloadOnBlipStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPayloadOnBlipStateFactory.swift; sourceTree = "<group>"; };
+		3EAE572A235895AB00645E7A /* TransferPayloadOnBlipScenarioFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPayloadOnBlipScenarioFactory.swift; sourceTree = "<group>"; };
 		3EB82291229C019400826236 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		3EB82294229C1A9000826236 /* Error+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+LogDescription.swift"; sourceTree = "<group>"; };
 		3EB82296229C1AD000826236 /* State+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "State+LogDescription.swift"; sourceTree = "<group>"; };
@@ -243,7 +243,7 @@
 		3EDB14B323604E130026889F /* Payload+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payload+Random.swift"; sourceTree = "<group>"; };
 		3EDB14B6236081A40026889F /* ScenarioDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioDelegate.swift; sourceTree = "<group>"; };
 		3EDB14B82360820D0026889F /* ScenarioFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioFactory.swift; sourceTree = "<group>"; };
-		3EDB14BC236082F60026889F /* PayerIdScenarioFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayerIdScenarioFactory.swift; sourceTree = "<group>"; };
+		3EDB14BC236082F60026889F /* DefaultTransferPayloadOnBlipStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTransferPayloadOnBlipStateFactory.swift; sourceTree = "<group>"; };
 		3EE673B322B77BF2004EC0E5 /* NewPodObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPodObserving.swift; sourceTree = "<group>"; };
 		3EE673B522B77C6E004EC0E5 /* WaitForPodState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitForPodState.swift; sourceTree = "<group>"; };
 		3EE673B722B77D78004EC0E5 /* WaitForPodStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitForPodStateFactory.swift; sourceTree = "<group>"; };
@@ -252,7 +252,7 @@
 		3EFADD22228D4D5E00B3559A /* RetryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetryHandler.swift; sourceTree = "<group>"; };
 		3EFADD24228D4D6500B3559A /* RetryHandlerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetryHandlerFactory.swift; sourceTree = "<group>"; };
 		3EFADD26228D4D6900B3559A /* DefaultRetryHandlerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultRetryHandlerFactory.swift; sourceTree = "<group>"; };
-		3EFADD28228D4D8A00B3559A /* TransferIdState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferIdState.swift; sourceTree = "<group>"; };
+		3EFADD28228D4D8A00B3559A /* TransferPayloadState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferPayloadState.swift; sourceTree = "<group>"; };
 		3EFADD2F228D53B100B3559A /* Blippit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blippit.swift; sourceTree = "<group>"; };
 		3EFADD33228D567E00B3559A /* BlippitDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlippitDelegate.swift; sourceTree = "<group>"; };
 		3EFADD35228D56C000B3559A /* DefaultBlippit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultBlippit.swift; sourceTree = "<group>"; };
@@ -260,8 +260,8 @@
 		3EFADD49228D99BB00B3559A /* DefaultStartingStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStartingStateFactory.swift; sourceTree = "<group>"; };
 		3EFADD4B228D9ADF00B3559A /* WaitForBlipStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitForBlipStateFactory.swift; sourceTree = "<group>"; };
 		3EFADD4D228D9B0000B3559A /* DefaultWaitForBlipStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultWaitForBlipStateFactory.swift; sourceTree = "<group>"; };
-		3EFADD4F228D9D2900B3559A /* SetupTransferIdStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTransferIdStateFactory.swift; sourceTree = "<group>"; };
-		3EFADD51228D9D8200B3559A /* DefaultSetupTransferIdStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSetupTransferIdStateFactory.swift; sourceTree = "<group>"; };
+		3EFADD4F228D9D2900B3559A /* SetupTransferPayloadStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTransferPayloadStateFactory.swift; sourceTree = "<group>"; };
+		3EFADD51228D9D8200B3559A /* DefaultSetupTransferPayloadStateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSetupTransferPayloadStateFactory.swift; sourceTree = "<group>"; };
 		3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingStateSpec.swift; sourceTree = "<group>"; };
 		8309635123FFD624005ACD04 /* BlippitKitTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlippitKitTest.entitlements; sourceTree = "<group>"; };
 		830EEF76239E6E4300ED008C /* BlippitInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlippitInfo.swift; sourceTree = "<group>"; };
@@ -306,10 +306,10 @@
 			isa = PBXGroup;
 			children = (
 				3E9DF2BE23C84BAA00C4AB37 /* BaseScenario.swift */,
-				3E0652F5235F3EF9009B9B93 /* PayerIdScenario.swift */,
 				3E0652EF235F3517009B9B93 /* Scenario.swift */,
 				3EDB14B6236081A40026889F /* ScenarioDelegate.swift */,
 				3EDB14B82360820D0026889F /* ScenarioFactory.swift */,
+				3E0652F5235F3EF9009B9B93 /* TransferPayloadOnBlipScenario.swift */,
 			);
 			path = "Scenario Handling";
 			sourceTree = "<group>";
@@ -326,9 +326,9 @@
 		3E38F90422819E9100C114B7 /* State Machine */ = {
 			isa = PBXGroup;
 			children = (
-				3E23C240228C35D800DA3305 /* SetupTransferIdState.swift */,
+				3E23C240228C35D800DA3305 /* SetupTransferPayloadState.swift */,
 				3E38F9152281A2A200C114B7 /* StartingState.swift */,
-				3EAE57262358918E00645E7A /* TransferPayerIdState.swift */,
+				3EAE57262358918E00645E7A /* TransferPayloadOnBlipState.swift */,
 				3EC4DE462283073A007A05C9 /* WaitForBlipState.swift */,
 				3EE673B522B77C6E004EC0E5 /* WaitForPodState.swift */,
 			);
@@ -347,15 +347,15 @@
 				3E23C23A228C2E0100DA3305 /* PodSessionStateObserving.swift */,
 				3EC4DE44228306F1007A05C9 /* PodStateObserving.swift */,
 				3E38F90D2281A0ED00C114B7 /* PodzStatusObserving.swift */,
-				3EFADD4F228D9D2900B3559A /* SetupTransferIdStateFactory.swift */,
+				3EFADD4F228D9D2900B3559A /* SetupTransferPayloadStateFactory.swift */,
 				3E38F90B2281A09600C114B7 /* Startable.swift */,
 				3EFADD47228D999800B3559A /* StartingStateFactory.swift */,
 				3E38F90522819EB100C114B7 /* State.swift */,
 				3E38F90922819F3600C114B7 /* StateDelegate.swift */,
 				3E38F90722819EE300C114B7 /* StateOutput.swift */,
 				3E4D1E7E23741EF000DE7187 /* StateTransition.swift */,
-				3EFADD28228D4D8A00B3559A /* TransferIdState.swift */,
-				3EAE57282358958100645E7A /* TransferPayerIdStateFactory.swift */,
+				3EAE57282358958100645E7A /* TransferPayloadOnBlipStateFactory.swift */,
+				3EFADD28228D4D8A00B3559A /* TransferPayloadState.swift */,
 				3E23C23C228C2F0800DA3305 /* ValidPodSessionStateObserving.swift */,
 				3EFADD4B228D9ADF00B3559A /* WaitForBlipStateFactory.swift */,
 				3EE673B722B77D78004EC0E5 /* WaitForPodStateFactory.swift */,
@@ -409,12 +409,12 @@
 			isa = PBXGroup;
 			children = (
 				3EFADD26228D4D6900B3559A /* DefaultRetryHandlerFactory.swift */,
-				3EFADD51228D9D8200B3559A /* DefaultSetupTransferIdStateFactory.swift */,
+				3EFADD51228D9D8200B3559A /* DefaultSetupTransferPayloadStateFactory.swift */,
 				3EFADD49228D99BB00B3559A /* DefaultStartingStateFactory.swift */,
-				3EAE572A235895AB00645E7A /* DefaultTransferPayerIdStateFactory.swift */,
+				3EDB14BC236082F60026889F /* DefaultTransferPayloadOnBlipStateFactory.swift */,
 				3EFADD4D228D9B0000B3559A /* DefaultWaitForBlipStateFactory.swift */,
 				3EE673B922B77DD0004EC0E5 /* DefaultWaitForPodStateFactory.swift */,
-				3EDB14BC236082F60026889F /* PayerIdScenarioFactory.swift */,
+				3EAE572A235895AB00645E7A /* TransferPayloadOnBlipScenarioFactory.swift */,
 			);
 			path = "Construction Root";
 			sourceTree = "<group>";
@@ -853,7 +853,7 @@
 				3E38F9122281A16500C114B7 /* DefaultPodzStatusObservingState.swift in Sources */,
 				3E1AF01922AA327800066C80 /* BlippitState.swift in Sources */,
 				3EFADD27228D4D6A00B3559A /* DefaultRetryHandlerFactory.swift in Sources */,
-				3E23C241228C35D800DA3305 /* SetupTransferIdState.swift in Sources */,
+				3E23C241228C35D800DA3305 /* SetupTransferPayloadState.swift in Sources */,
 				3E20B66F2384296F001BEB88 /* ErrorHandling.swift in Sources */,
 				3EC4DE45228306F1007A05C9 /* PodStateObserving.swift in Sources */,
 				3EFADD30228D53B100B3559A /* Blippit.swift in Sources */,
@@ -861,7 +861,7 @@
 				3E20B6682384194B001BEB88 /* PayloadError.swift in Sources */,
 				EC6F8F6723E058C300082721 /* Payload.swift in Sources */,
 				3EDB14B92360820D0026889F /* ScenarioFactory.swift in Sources */,
-				3EFADD50228D9D2900B3559A /* SetupTransferIdStateFactory.swift in Sources */,
+				3EFADD50228D9D2900B3559A /* SetupTransferPayloadStateFactory.swift in Sources */,
 				3EFADD25228D4D6500B3559A /* RetryHandlerFactory.swift in Sources */,
 				3E20B66A23841965001BEB88 /* AppTerminalError.swift in Sources */,
 				3EFADD34228D567E00B3559A /* BlippitDelegate.swift in Sources */,
@@ -876,7 +876,7 @@
 				3EDB14B7236081A40026889F /* ScenarioDelegate.swift in Sources */,
 				3E3EF65523EAD3C300EB1414 /* PropertyStorage.swift in Sources */,
 				3E3EF65F23EADA9800EB1414 /* PropertyStorage+Shared.swift in Sources */,
-				3EAE57292358958100645E7A /* TransferPayerIdStateFactory.swift in Sources */,
+				3EAE57292358958100645E7A /* TransferPayloadOnBlipStateFactory.swift in Sources */,
 				3E38F90822819EE300C114B7 /* StateOutput.swift in Sources */,
 				3E20B66223841886001BEB88 /* ConfigurationError.swift in Sources */,
 				3E20B6712384299E001BEB88 /* ErrorHandler.swift in Sources */,
@@ -886,16 +886,16 @@
 				3E38F90E2281A0ED00C114B7 /* PodzStatusObserving.swift in Sources */,
 				3E23C239228C2AA800DA3305 /* CancellablePodSessionState.swift in Sources */,
 				3EE673B422B77BF2004EC0E5 /* NewPodObserving.swift in Sources */,
-				3EFADD29228D4D8A00B3559A /* TransferIdState.swift in Sources */,
-				3EAE57272358918E00645E7A /* TransferPayerIdState.swift in Sources */,
+				3EFADD29228D4D8A00B3559A /* TransferPayloadState.swift in Sources */,
+				3EAE57272358918E00645E7A /* TransferPayloadOnBlipState.swift in Sources */,
 				3EC79741228025BE00AD79CE /* Cancellable.swift in Sources */,
-				3E0652F6235F3EF9009B9B93 /* PayerIdScenario.swift in Sources */,
+				3E0652F6235F3EF9009B9B93 /* TransferPayloadOnBlipScenario.swift in Sources */,
 				3EE673BA22B77DD0004EC0E5 /* DefaultWaitForPodStateFactory.swift in Sources */,
-				3EDB14BD236082F60026889F /* PayerIdScenarioFactory.swift in Sources */,
+				3EDB14BD236082F60026889F /* DefaultTransferPayloadOnBlipStateFactory.swift in Sources */,
 				3E4D1E7F23741EF000DE7187 /* StateTransition.swift in Sources */,
-				3EFADD52228D9D8200B3559A /* DefaultSetupTransferIdStateFactory.swift in Sources */,
+				3EFADD52228D9D8200B3559A /* DefaultSetupTransferPayloadStateFactory.swift in Sources */,
 				3EB82297229C1AD000826236 /* State+LogDescription.swift in Sources */,
-				3EAE572B235895AB00645E7A /* DefaultTransferPayerIdStateFactory.swift in Sources */,
+				3EAE572B235895AB00645E7A /* TransferPayloadOnBlipScenarioFactory.swift in Sources */,
 				3EFADD48228D999800B3559A /* StartingStateFactory.swift in Sources */,
 				3EB82295229C1A9000826236 /* Error+LogDescription.swift in Sources */,
 				3E23C23B228C2E0100DA3305 /* PodSessionStateObserving.swift in Sources */,

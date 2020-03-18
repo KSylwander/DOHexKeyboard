@@ -15,9 +15,9 @@ extension StateOutput: Equatable {
     case (.waitForPod, .waitForPod):
       return true
     case let (.waitForBlip(lhs), .waitForBlip(rhs)),
-         let (.setupTransferId(lhs), .setupTransferId(rhs)):
+         let (.setupTransferPayload(lhs), .setupTransferPayload(rhs)):
       return lhs.pid == rhs.pid && lhs.podSession === rhs.podSession
-    case (.transferPayerId, .transferPayerId):
+    case (.transferPayloadOnBlip, .transferPayloadOnBlip):
       return true
     default:
       return false

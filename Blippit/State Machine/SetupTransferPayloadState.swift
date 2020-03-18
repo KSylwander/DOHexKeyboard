@@ -1,5 +1,5 @@
 //
-//  SetupTransferIdState.swift
+//  SetupTransferPayloadState.swift
 //  BlippitKit
 //
 //  Copyright © 2019 Crunchfish Proximity AB. All rights reserved.
@@ -7,8 +7,8 @@
 
 import PodzKit
 
-/* Opens the pod session, waits for it to be opened, then checks if transferring of IDs is supported */
-final class SetupTransferIdState {
+/* Opens the pod session, waits for it to be opened, then checks if transferring of payloads is supported */
+final class SetupTransferPayloadState {
   weak var delegate: StateDelegate?
   let session: PodSession
   var isCancelling = false
@@ -22,7 +22,7 @@ final class SetupTransferIdState {
   }
 }
 
-extension SetupTransferIdState: Startable {
+extension SetupTransferPayloadState: Startable {
   func start() {
     do {
       try session.open()
@@ -32,7 +32,7 @@ extension SetupTransferIdState: Startable {
   }
 }
 
-extension SetupTransferIdState: ValidPodSessionStateObserving {
+extension SetupTransferPayloadState: ValidPodSessionStateObserving {
   func handleValidState(_ state: PodSessionState, for session: PodSession) {
     do {
       guard state == .open else {
@@ -40,11 +40,11 @@ extension SetupTransferIdState: ValidPodSessionStateObserving {
       }
 
       guard try session.availableTransactions().contains(.payloadAsUSBSerial) else {
-        /* Allow clients to handle blipping on pods that do not support transferring of IDs */
+        /* Allow clients to handle blipping on pods that do not support transferring of payloads */
         throw InternalAppTerminalError.unsupported
       }
 
-      delegate?.move(to: .next(from: .setupTransferId(pid: pid, podSession: session)))
+      delegate?.move(to: .next(from: .setupTransferPayload(pid: pid, podSession: session)))
     } catch {
       cancel()
       delegate?.state(self, didFailWithError: error)
@@ -52,8 +52,8 @@ extension SetupTransferIdState: ValidPodSessionStateObserving {
   }
 }
 
-extension SetupTransferIdState: DefaultPodSessionStateObservingState {}
+extension SetupTransferPayloadState: DefaultPodSessionStateObservingState {}
 
-extension SetupTransferIdState: CancellablePodSessionState {}
+extension SetupTransferPayloadState: CancellablePodSessionState {}
 
-extension SetupTransferIdState: DefaultPodzStatusObservingState {}
+extension SetupTransferPayloadState: DefaultPodzStatusObservingState {}

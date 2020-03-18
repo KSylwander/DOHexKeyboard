@@ -1,5 +1,5 @@
 //
-//  TransferPayerIdState.swift
+//  TransferPayloadOnBlipState.swift
 //  BlippitKit
 //
 //  Copyright © 2019 Crunchfish Proximity AB. All rights reserved.
@@ -7,10 +7,10 @@
 
 import PodzKit
 
-final class TransferPayerIdState {
+final class TransferPayloadOnBlipState {
   weak var delegate: StateDelegate?
   let session: PodSession
-  let transferId: PodzPayload
+  let payload: PodzPayload
 
   var transaction: Transaction?
 
@@ -23,25 +23,25 @@ final class TransferPayerIdState {
 
   init(delegate: StateDelegate,
        session: PodSession,
-       payerId: PodzPayload,
+       payload: PodzPayload,
        retryHandlerFactory: RetryHandlerFactory) {
 
     self.delegate = delegate
     self.session = session
-    self.transferId = payerId
+    self.payload = payload
     self.retryHandlerFactory = retryHandlerFactory
   }
 }
 
-extension TransferPayerIdState: TransferIdState {
+extension TransferPayloadOnBlipState: TransferPayloadState {
   func handleTransactionSuccess() throws {
     try session.close()
-    delegate?.move(to: .next(from: .transferPayerId))
+    delegate?.move(to: .next(from: .transferPayloadOnBlip))
   }
 }
 
-extension TransferPayerIdState: CancellablePodSessionState {}
+extension TransferPayloadOnBlipState: CancellablePodSessionState {}
 
-extension TransferPayerIdState: DefaultPodSessionStateObservingState {}
+extension TransferPayloadOnBlipState: DefaultPodSessionStateObservingState {}
 
-extension TransferPayerIdState: DefaultPodzStatusObservingState {}
+extension TransferPayloadOnBlipState: DefaultPodzStatusObservingState {}

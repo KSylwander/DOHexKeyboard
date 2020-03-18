@@ -1,5 +1,5 @@
 //
-//  DefaultTransferPayerIdStateFactory.swift
+//  DefaultTransferPayloadOnBlipStateFactory.swift
 //  BlippitKit
 //
 //  Copyright © 2019 Crunchfish Proximity AB. All rights reserved.
@@ -7,17 +7,17 @@
 
 import PodzKit
 
-struct DefaultTransferPayerIdStateFactory {
+struct DefaultTransferPayloadOnBlipStateFactory {
   let retryHandlerFactory: RetryHandlerFactory
-  let payerId: PodzPayload
+  let payload: PodzPayload
 }
 
-extension DefaultTransferPayerIdStateFactory: TransferPayerIdStateFactory {
+extension DefaultTransferPayloadOnBlipStateFactory: TransferPayloadOnBlipStateFactory {
   func makeState(delegate: StateDelegate, session: PodSession) -> State {
-    return TransferPayerIdState(
+    return TransferPayloadOnBlipState(
       delegate: delegate,
       session: session,
-      payerId: payerId,
+      payload: payload,
       retryHandlerFactory: retryHandlerFactory
     )
   }

@@ -1,5 +1,5 @@
 //
-//  TransferIdState.swift
+//  TransferPayloadState.swift
 //  BlippitKit
 //
 //  Copyright © 2019 Crunchfish Proximity AB. All rights reserved.
@@ -7,11 +7,11 @@
 
 import PodzKit
 
-/* Mix-in that allows a transfer ID to be sent to the pod via its session */
-protocol TransferIdState: State, Startable {
+/* Mix-in that allows a payload to be sent to the pod via its session */
+protocol TransferPayloadState: State, Startable {
   var delegate: StateDelegate? { get }
   var session: PodSession { get }
-  var transferId: PodzPayload { get }
+  var payload: PodzPayload { get }
 
   var transaction: Transaction? { get set }
 
@@ -20,13 +20,13 @@ protocol TransferIdState: State, Startable {
   func handleTransactionSuccess() throws
 }
 
-extension TransferIdState {
+extension TransferPayloadState {
   func start() {
     handleErrors(in: performAction)
   }
 
   func performAction() throws {
-    let transaction = PayloadAsUSBSerialTransactionBuilder().build(payload: transferId)
+    let transaction = PayloadAsUSBSerialTransactionBuilder().build(payload: payload)
     transaction.onDone = { [weak self] _, status in
       self?.handleTransactionStatus(status)
     }

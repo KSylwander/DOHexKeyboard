@@ -15,21 +15,21 @@ class BaseScenario {
   let startingStateFactory: StartingStateFactory
   let waitForPodStateFactory: WaitForPodStateFactory
   let waitForBlipStateFactory: WaitForBlipStateFactory
-  let setupTransferIdStateFactory: SetupTransferIdStateFactory
+  let setupTransferPayloadStateFactory: SetupTransferPayloadStateFactory
 
   init(delegate: ScenarioDelegate,
        podz: Podz,
        startingStateFactory: StartingStateFactory,
        waitForPodStateFactory: WaitForPodStateFactory,
        waitForBlipStateFactory: WaitForBlipStateFactory,
-       setupTransferIdStateFactory: SetupTransferIdStateFactory) {
+       setupTransferPayloadStateFactory: SetupTransferPayloadStateFactory) {
 
     self.delegate = delegate
     self.podz = podz
     self.startingStateFactory = startingStateFactory
     self.waitForPodStateFactory = waitForPodStateFactory
     self.waitForBlipStateFactory = waitForBlipStateFactory
-    self.setupTransferIdStateFactory = setupTransferIdStateFactory
+    self.setupTransferPayloadStateFactory = setupTransferPayloadStateFactory
   }
 
   func makeStartState() -> State {
@@ -73,7 +73,7 @@ class BaseScenario {
       return waitForBlipStateFactory.makeState(delegate: self)
     case let .waitForBlip(pid, podSession):
       delegate?.scenario(self, didChangeBlippitState: .transferInitiated)
-      return setupTransferIdStateFactory.makeState(delegate: self, pid: pid, session: podSession)
+      return setupTransferPayloadStateFactory.makeState(delegate: self, pid: pid, session: podSession)
     default:
       fatalError("Unsupported state output: \(stateOutput)")
     }
