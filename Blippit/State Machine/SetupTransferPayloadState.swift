@@ -39,7 +39,7 @@ extension SetupTransferPayloadState: ValidPodSessionStateObserving {
         return
       }
 
-      guard try session.availableTransactions().contains(.payloadAsUSBSerial) else {
+      guard try session.availableTransactions().contains(.usbSerialWrite) else {
         /* Allow clients to handle blipping on pods that do not support transferring of payloads */
         throw InternalAppTerminalError.unsupported
       }

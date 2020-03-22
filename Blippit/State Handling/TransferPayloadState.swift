@@ -26,7 +26,7 @@ extension TransferPayloadState {
   }
 
   func performAction() throws {
-    let transaction = PayloadAsUSBSerialTransactionBuilder().build(payload: payload)
+    let transaction = USBSerialWriteTransactionBuilder().build(payload: payload)
     transaction.onDone = { [weak self] _, status in
       self?.handleTransactionStatus(status)
     }
