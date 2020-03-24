@@ -13,7 +13,7 @@ import PodzKit
  */
 public struct Payload: Equatable {
 
-  let transferId: TransferId
+  let podzValue: PodzPayload
 
   /**
    * Instantiate a payload.
@@ -24,13 +24,11 @@ public struct Payload: Equatable {
    */
   public init(containing value: String) throws {
     do {
-      transferId = try TransferId(from: value)
+      podzValue = try PodzPayload(Data(value.utf8))
     } catch {
       switch error {
-      case IdError.invalidSize:
+      case PodzPayloadError.invalidSize:
         throw PayloadError.invalidLength
-      case IdError.invalidFormat:
-        throw PayloadError.invalidFormat
       default:
         throw error
       }
@@ -54,6 +52,6 @@ extension Payload: LosslessStringConvertible {
    * A textual representation of this payload.
    */
   public var description: String {
-    return transferId.idString
+    return String(bytes: podzValue.data, encoding: .utf8) ?? "\(podzValue.data)"
   }
 }

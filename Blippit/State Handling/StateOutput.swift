@@ -12,8 +12,8 @@ enum StateOutput {
   case starting
   case waitForPod
   case waitForBlip(pid: UInt32, podSession: PodSession)
-  case setupTransferId(pid: UInt32, podSession: PodSession)
-  case transferPayerId
+  case setupTransferPayload(pid: UInt32, podSession: PodSession)
+  case transferPayloadOnBlip
 }
 
 /* NOTE: Don't forget to update the `StateOutput+Equatable.swift` file in the test target when updating the cases */

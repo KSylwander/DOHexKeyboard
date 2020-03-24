@@ -7,7 +7,6 @@
 
 import BlippitKit
 import CoreLocation
-import PodzKit
 import UIKit
 
 final class MainViewController: UIViewController {

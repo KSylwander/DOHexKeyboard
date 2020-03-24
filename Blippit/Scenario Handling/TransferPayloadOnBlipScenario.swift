@@ -1,5 +1,5 @@
 //
-//  PayerIdScenario.swift
+//  TransferPayloadOnBlipScenario.swift
 //  BlippitKit
 //
 //  Copyright © 2019 Crunchfish Proximity AB. All rights reserved.
@@ -7,33 +7,33 @@
 
 import PodzKit
 
-final class PayerIdScenario: BaseScenario {
-  private let transferPayerIdStateFactory: TransferPayerIdStateFactory
+final class TransferPayloadOnBlipScenario: BaseScenario {
+  private let transferPayloadOnBlipStateFactory: TransferPayloadOnBlipStateFactory
 
   init(delegate: ScenarioDelegate,
        podz: Podz,
        startingStateFactory: StartingStateFactory,
        waitForPodStateFactory: WaitForPodStateFactory,
        waitForBlipStateFactory: WaitForBlipStateFactory,
-       setupTransferIdStateFactory: SetupTransferIdStateFactory,
-       transferPayerIdStateFactory: TransferPayerIdStateFactory) {
+       setupTransferPayloadStateFactory: SetupTransferPayloadStateFactory,
+       transferPayloadOnBlipStateFactory: TransferPayloadOnBlipStateFactory) {
 
-    self.transferPayerIdStateFactory = transferPayerIdStateFactory
+    self.transferPayloadOnBlipStateFactory = transferPayloadOnBlipStateFactory
     super.init(
       delegate: delegate,
       podz: podz,
       startingStateFactory: startingStateFactory,
       waitForPodStateFactory: waitForPodStateFactory,
       waitForBlipStateFactory: waitForBlipStateFactory,
-      setupTransferIdStateFactory: setupTransferIdStateFactory
+      setupTransferPayloadStateFactory: setupTransferPayloadStateFactory
     )
   }
 
   override func makeNextState(from stateOutput: StateOutput) -> State {
     switch stateOutput {
-    case let .setupTransferId(_, podSession):
-      return transferPayerIdStateFactory.makeState(delegate: self, session: podSession)
-    case .transferPayerId:
+    case let .setupTransferPayload(_, podSession):
+      return transferPayloadOnBlipStateFactory.makeState(delegate: self, session: podSession)
+    case .transferPayloadOnBlip:
       delegate?.scenario(self, didChangeBlippitState: .transferDone)
       delegate?.scenario(self, didChangeBlippitState: .appTerminalFound)
       return waitForBlipStateFactory.makeState(delegate: self)

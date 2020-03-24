@@ -33,17 +33,17 @@ public enum BlippitSetup {
 
     let podz = try PodzSetup.setup(channel: propertyStorage.value(for: PropertyKeys.Podz.channel))
 
-    let scenarioFactory = PayerIdScenarioFactory(
+    let scenarioFactory = TransferPayloadOnBlipScenarioFactory(
       podz: podz,
       startingStateFactory: DefaultStartingStateFactory(),
       waitForPodStateFactory: DefaultWaitForPodStateFactory(),
       waitForBlipStateFactory: DefaultWaitForBlipStateFactory(),
-      setupTransferIdStateFactory: DefaultSetupTransferIdStateFactory(),
-      transferPayerIdStateFactory: DefaultTransferPayerIdStateFactory(
+      setupTransferPayloadStateFactory: DefaultSetupTransferPayloadStateFactory(),
+      transferPayloadOnBlipStateFactory: DefaultTransferPayloadOnBlipStateFactory(
         retryHandlerFactory: DefaultRetryHandlerFactory(
-          maxRetries: propertyStorage.value(for: PropertyKeys.States.TransferPayerId.maxRetries)
+          maxRetries: propertyStorage.value(for: PropertyKeys.States.TransferPayloadOnBlip.maxRetries)
         ),
-        payerId: onBlipPayload.transferId
+        payload: onBlipPayload.podzValue
       )
     )
 

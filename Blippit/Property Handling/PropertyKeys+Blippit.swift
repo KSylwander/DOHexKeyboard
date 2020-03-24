@@ -20,9 +20,9 @@ extension PropertyKeys {
   }
 
   enum States {
-    enum TransferPayerId {
+    enum TransferPayloadOnBlip {
       enum MaxRetries: PropertyKey {
-        static let name = "States.TransferPayerId.MaxRetries"
+        static let name = "States.TransferPayloadOnBlip.MaxRetries"
         static let defaultValue = 3
       }
       static let maxRetries = MaxRetries.self
