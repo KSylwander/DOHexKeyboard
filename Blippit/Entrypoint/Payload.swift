@@ -12,7 +12,6 @@ import PodzKit
  * Payload that is transferred on blip with an app terminal.
  */
 public struct Payload: Equatable {
-
   let podzValue: PodzPayload
 
   /**
@@ -23,6 +22,14 @@ public struct Payload: Equatable {
    * - throws: `PayloadError` if the value is not alphanumeric or has the incorrect size.
    */
   public init(containing value: String) throws {
+    guard CharacterSet.alphanumerics.isSuperset(of: CharacterSet(charactersIn: value)) else {
+      throw PayloadError.invalidFormat
+    }
+
+    guard value.allSatisfy({ $0.isASCII }) else {
+      throw PayloadError.invalidFormat
+    }
+
     do {
       podzValue = try PodzPayload(Data(value.utf8))
     } catch {
