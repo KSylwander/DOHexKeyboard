@@ -23,7 +23,6 @@ public enum PayloadError {
   /**
    * The payload contains invalid characters. All transfer payloads should be alphanumeric.
    */
-  @available(*, deprecated, message: "This is no longer thrown, and will be removed in future releases.")
   case invalidFormat
 }
 

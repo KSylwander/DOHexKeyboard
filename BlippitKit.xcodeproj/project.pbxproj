@@ -53,6 +53,7 @@
 		3E4D4BED23EC593700B6040D /* KeyboardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D4BE023EC573700B6040D /* KeyboardInfo.swift */; };
 		3E540F1223ED9AB2005DA811 /* PropertyKeys+Blippit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E540F1123ED9AB2005DA811 /* PropertyKeys+Blippit.swift */; };
 		3E540F1323ED9AD2005DA811 /* PropertyKeys+Blippit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E540F1123ED9AB2005DA811 /* PropertyKeys+Blippit.swift */; };
+		3E608A31242B8BE400F012D2 /* PayloadSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E608A2F242B8BB300F012D2 /* PayloadSpec.swift */; };
 		3E65B3C823EB825B00456BFB /* BlippitState+LogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E65B3C623EB823400456BFB /* BlippitState+LogDescription.swift */; };
 		3E722AFE237421B500A1E6F7 /* StateTransition+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E722AFD237421B500A1E6F7 /* StateTransition+Equatable.swift */; };
 		3E722B002374295600A1E6F7 /* LostPodObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E722AFF2374295600A1E6F7 /* LostPodObserving.swift */; };
@@ -207,6 +208,7 @@
 		3E4D4BE023EC573700B6040D /* KeyboardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardInfo.swift; sourceTree = "<group>"; };
 		3E4D4BE323EC588C00B6040D /* KeyboardHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandling.swift; sourceTree = "<group>"; };
 		3E540F1123ED9AB2005DA811 /* PropertyKeys+Blippit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PropertyKeys+Blippit.swift"; sourceTree = "<group>"; };
+		3E608A2F242B8BB300F012D2 /* PayloadSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadSpec.swift; sourceTree = "<group>"; };
 		3E65B3C623EB823400456BFB /* BlippitState+LogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BlippitState+LogDescription.swift"; sourceTree = "<group>"; };
 		3E722AFD237421B500A1E6F7 /* StateTransition+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StateTransition+Equatable.swift"; sourceTree = "<group>"; };
 		3E722AFF2374295600A1E6F7 /* LostPodObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostPodObserving.swift; sourceTree = "<group>"; };
@@ -464,6 +466,7 @@
 			isa = PBXGroup;
 			children = (
 				3E38F91E2281C44000C114B7 /* DefaultPodzStatusObservingStateSpec.swift */,
+				3E608A2F242B8BB300F012D2 /* PayloadSpec.swift */,
 				3EFDCAC12282F42400774A21 /* StartingStateSpec.swift */,
 				3EC4DE4E22830CA2007A05C9 /* WaitForBlipStateSpec.swift */,
 			);
@@ -829,6 +832,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E608A31242B8BE400F012D2 /* PayloadSpec.swift in Sources */,
 				3E38F9192281AB9300C114B7 /* DummyPodz.swift in Sources */,
 				3E97FA4722804537003419AE /* Mocks.generated.swift in Sources */,
 				3E722AFE237421B500A1E6F7 /* StateTransition+Equatable.swift in Sources */,
