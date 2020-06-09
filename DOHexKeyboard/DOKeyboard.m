@@ -53,30 +53,40 @@ DOKeyboardKeyTapAction const DOKeyboardKeyTapReturn = ^(DOKeyboard *keyboard, UI
 
 DOKeyboardLayoutBlock const DOKeyboardLayoutDefault = ^(DOKeyboard *keyboard, NSArray *keys) {
     id <DOKConfiguring> config = keyboard.configuration;
+    
     CGSize keyboardSize = config.keyboardSize;
     keyboard.frame = CGRectMake(0, 0, keyboardSize.width, keyboardSize.height);
     
     CGFloat spacing = config.keySpacing;
-    CGFloat keyWidth = (config.keyboardSize.width - (config.columnCount - 1) * config.keySpacing) / config.columnCount;
-    CGFloat keyHeight = (config.keyboardSize.height - (config.rowCount - 1) * config.keySpacing) / config.rowCount;
-    keyWidth = floor(keyWidth);
-    keyHeight = floor(keyHeight);
+    CGFloat keyWidth = floor((keyboardSize.width - (config.columnCount + 1) * spacing) / config.columnCount);
+    CGFloat keyHeight = floor((keyboardSize.height - (config.rowCount + 1) * spacing) / config.rowCount);
+    
     NSUInteger keyCount = config.keyCount;
     for (int i = 0; i < keyCount; i++) {
         UIButton *key = config.keyAtIndex(keyboard, i);
+        
         DOKKeyFrame frame = config.frameOfKeyAtIndex(keyboard, i);
         DOKKeyOrigin origin = frame.origin;
         DOKKeySpan span = frame.span;
         
-        CGPoint originInPoint = CGPointMake(spacing + frame.origin.column * (keyWidth + spacing),
-                                     spacing + frame.origin.row * (keyHeight + spacing));
-        BOOL isLastKeyAtRow = (origin.row + span.row) == (config.rowCount);
-        BOOL isLastKeyAtColumn = (origin.column + span.column) == (config.columnCount);
-        CGFloat widthInPoint = isLastKeyAtColumn ? (keyboardSize.width - originInPoint.x) : keyWidth;
-        CGFloat heightInPoint = isLastKeyAtRow ? (keyboardSize.height - originInPoint.y) : keyHeight;
-        CGRect frameInPoint = CGRectMake(originInPoint.x, originInPoint.y, widthInPoint, heightInPoint);
-
-        key.frame = frameInPoint;
+        CGFloat x = spacing + origin.column * (keyWidth + spacing);
+        CGFloat y = spacing + origin.row * (keyHeight + spacing);
+        
+        CGFloat width;
+        if (origin.column + span.column < config.columnCount) {
+            width = span.row * (keyWidth + spacing) - spacing;
+        } else {
+            width = keyboardSize.width - (x + spacing);
+        }
+        
+        CGFloat height;
+        if (origin.row + span.row < config.rowCount) {
+            height = span.column * (keyHeight + spacing) - spacing;
+        } else {
+            height = keyboardSize.height - (y + spacing);
+        }
+        
+        key.frame = CGRectMake(x, y, width, height);
     }
 };
 
