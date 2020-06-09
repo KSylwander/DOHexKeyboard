@@ -12,17 +12,19 @@ CGSize const DOKKeyNormalSize = (CGSize){63, 53};
 CGFloat const DOKKeyNormalSpace = 1;
 
 UIImage *createImageWithColor(UIColor *color) {
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-    UIGraphicsBeginImageContext(rect.size);
+    CGRect rect = CGRectMake(0.0f, 0.0f, 12.0f, 12.0f);
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
+    UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:5];
+    [roundedRect fill];
     
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    return image;
+    return [image resizableImageWithCapInsets:UIEdgeInsetsMake(5, 5, 5, 5)
+                                 resizingMode:UIImageResizingModeTile];
 };
 
 UIButton *createKey(UIImage *background,
@@ -42,7 +44,10 @@ UIButton *createKey(UIImage *background,
     if (highlightedBackground) {
         [key setBackgroundImage:highlightedBackground forState:UIControlStateHighlighted];
     }
-    [key.layer setCornerRadius:1];
+    [key.layer setShadowColor:[UIColor blackColor].CGColor];
+    [key.layer setShadowOffset:CGSizeMake(0, 1)];
+    [key.layer setShadowOpacity:1];
+    [key.layer setShadowRadius:0.5];
     
     if (keyImage) {
         [key setImage:keyImage forState:UIControlStateNormal];
