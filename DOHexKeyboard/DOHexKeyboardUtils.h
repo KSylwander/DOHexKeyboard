@@ -21,9 +21,9 @@ extern UIButton *createKey(UIImage *background,
                            UIColor *textColor,
                            UIFont *font);
 
-extern UIButton *createKeyWithHex(NSString *hexCharactor);
-extern UIButton *createKeyWithNormal(NSString *normalCharactor);
-extern UIButton *createKeyWithText(NSString *longText);
-extern UIButton *createKeyWithImage(UIImage *image);
+extern UIButton *createKeyWithHex(NSString *hexCharactor, NSInteger theme);
+extern UIButton *createKeyWithNormal(NSString *normalCharactor, NSInteger theme);
+extern UIButton *createKeyWithText(NSString *longText, NSInteger theme);
+extern UIButton *createKeyWithImage(UIImage *image, NSInteger theme);
 
 

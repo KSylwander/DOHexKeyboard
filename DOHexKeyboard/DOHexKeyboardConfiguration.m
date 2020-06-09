@@ -46,7 +46,7 @@
             for (int column = 0; column < 5; column++) {
                 NSString *keyName = keyNames[row * 5 + column];
                 BOOL isHex = [keyName compare:@"9"] == NSOrderedDescending;
-                UIButton *key = isHex ? createKeyWithHex(keyName) : createKeyWithNormal(keyName);
+                UIButton *key = isHex ? createKeyWithHex(keyName, 1) : createKeyWithNormal(keyName, 1);
                 [keys addObject:key];
                 DOKKeyFrame frame;
                 frame.origin = (DOKKeyOrigin){row, column};
@@ -57,19 +57,19 @@
         
         // create "clear", "0", "delete" and "return" keys
         DOKKeyFrame frame;
-        UIButton *clearKey = createKeyWithText(@"clear");
+        UIButton *clearKey = createKeyWithText(@"clear", 2);
         clearKey.tag = DOKeyboardKeyTypeClear;
         frame = (DOKKeyFrame){3, 0, 1, 1};
         [keyFrames addObject:[NSValue value:&frame withObjCType:@encode(DOKKeyFrame)]];
-        UIButton *zeroKey = createKeyWithNormal(@"0");
+        UIButton *zeroKey = createKeyWithNormal(@"0", 1);
         zeroKey.tag = DOKeyboardKeyTypeAdd;
         frame = (DOKKeyFrame){3, 1, 1, 1};
         [keyFrames addObject:[NSValue value:&frame withObjCType:@encode(DOKKeyFrame)]];
-        UIButton *deleteKey = createKeyWithImage([UIImage imageNamed:@"delete.png"]);
+        UIButton *deleteKey = createKeyWithImage([UIImage imageNamed:@"delete.png"], 2);
         deleteKey.tag = DOKeyboardKeytypeDelete;
         frame = (DOKKeyFrame){3, 2, 1, 1};
         [keyFrames addObject:[NSValue value:&frame withObjCType:@encode(DOKKeyFrame)]];
-        UIButton *returnKey =  createKeyWithText(@"return");
+        UIButton *returnKey =  createKeyWithText(@"return", 0);
         returnKey.tag = DOKeyboardKeyTypeReturn;
         frame = (DOKKeyFrame){3, 3, 1, 2};
         [keyFrames addObject:[NSValue value:&frame withObjCType:@encode(DOKKeyFrame)]];

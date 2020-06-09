@@ -66,21 +66,24 @@ UIButton *createKey(UIImage *background,
     return key;
 };
 
-static UIImage *background;
-static UIImage *highlightedBackground;
+static UIImage *background[3];
+static UIImage *highlightBackground[3];
+
 static UIFont *fontForNumberNormal;
 static UIFont *fontForNumberHex;
 static UIFont *fontForText;
-static UIColor *textColor;
+static UIColor *foregroundColor;
 
 void initializeKeyConfiguration() {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        if (background == nil) {
-            background = createImageWithColor([UIColor colorWithWhite:0.7 alpha:0.5]);
-            highlightedBackground = createImageWithColor([UIColor colorWithWhite:0.5 alpha:0.5]);
-        }
-        
+        background[0] = createImageWithColor([UIColor systemBlueColor]);
+        highlightBackground[0] = createImageWithColor([UIColor colorWithWhite:0.7 alpha:0.5]);
+        background[1] = highlightBackground[0];
+        highlightBackground[1] = createImageWithColor([UIColor colorWithWhite:0.5 alpha:0.5]);
+        background[2] = createImageWithColor([UIColor colorWithWhite:0.4 alpha:0.5]);
+        highlightBackground[2] = highlightBackground[0];
+
         if (fontForNumberNormal == nil) {
             fontForNumberNormal = [UIFont fontWithName:@"HelveticaNeue-Light" size:29.5];
             fontForNumberHex = [UIFont fontWithName:@"HelveticaNeue-Light" size:28];
@@ -88,37 +91,37 @@ void initializeKeyConfiguration() {
         }
         
         
-        if (textColor == nil) {
-            textColor = [UIColor colorWithWhite:1 alpha:1];
+        if (foregroundColor == nil) {
+            foregroundColor = [UIColor colorWithWhite:1 alpha:1];
         }
     });
 }
 
-UIButton *createKeyWithHex(NSString *hexCharactor) {
+UIButton *createKeyWithHex(NSString *hexCharactor, NSInteger theme) {
     initializeKeyConfiguration();
-    UIButton *key = createKey(background, highlightedBackground, CGSizeZero, nil, hexCharactor, textColor, fontForNumberHex);
+    UIButton *key = createKey(background[theme], highlightBackground[theme], CGSizeZero, nil, hexCharactor, foregroundColor, fontForNumberHex);
     [key sizeToFit];
     return key;
 }
 
-UIButton *createKeyWithNormal(NSString *normalCharactor) {
+UIButton *createKeyWithNormal(NSString *normalCharactor, NSInteger theme) {
     initializeKeyConfiguration();
-    UIButton *key = createKey(background, highlightedBackground, CGSizeZero, nil, normalCharactor, textColor, fontForNumberNormal);
+    UIButton *key = createKey(background[theme], highlightBackground[theme], CGSizeZero, nil, normalCharactor, foregroundColor, fontForNumberNormal);
     [key sizeToFit];
     return key;
 }
 
-UIButton *createKeyWithText(NSString *longText) {
+UIButton *createKeyWithText(NSString *longText, NSInteger theme) {
     initializeKeyConfiguration();
-    UIButton *key = createKey(background, highlightedBackground, CGSizeZero, nil, longText, textColor, fontForText);
+    UIButton *key = createKey(background[theme], highlightBackground[theme], CGSizeZero, nil, longText, foregroundColor, fontForText);
     [key sizeToFit];
     return key;
 }
 
-UIButton *createKeyWithImage(UIImage *image) {
+UIButton *createKeyWithImage(UIImage *image, NSInteger theme) {
     initializeKeyConfiguration();
     UIImage *templateImage = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    UIButton *key = createKey(background, highlightedBackground, CGSizeZero, templateImage, nil, textColor, nil);
+    UIButton *key = createKey(background[theme], highlightBackground[theme], CGSizeZero, templateImage, nil, foregroundColor, nil);
     [key sizeToFit];
     return key;
 }
