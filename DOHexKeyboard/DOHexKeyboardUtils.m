@@ -52,6 +52,7 @@ UIButton *createKey(UIImage *background,
     }
     if (textColor) {
         [key setTitleColor:textColor forState:UIControlStateNormal];
+        [key setTintColor:textColor];
     }
     if (font) {
         key.titleLabel.font = font;
@@ -111,7 +112,8 @@ UIButton *createKeyWithText(NSString *longText) {
 
 UIButton *createKeyWithImage(UIImage *image) {
     initializeKeyConfiguration();
-    UIButton *key = createKey(background, highlightedBackground, CGSizeZero, image, nil, nil, nil);
+    UIImage *templateImage = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIButton *key = createKey(background, highlightedBackground, CGSizeZero, templateImage, nil, textColor, nil);
     [key sizeToFit];
     return key;
 }
