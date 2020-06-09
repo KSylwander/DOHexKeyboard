@@ -24,7 +24,6 @@
 		0488D76A17D71F9E0095CFE9 /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0488D76817D71F9E0095CFE9 /* delete@2x.png */; };
 		DB4A51FF187BF00700527142 /* DOKConfigurationHex.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4A51FE187BF00700527142 /* DOKConfigurationHex.m */; };
 		DB4A5202187D05BB00527142 /* DOKeyboardHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4A5201187D05BB00527142 /* DOKeyboardHelpers.m */; };
-		DB4A5205187D8FF100527142 /* DOKConfigurationNumericNormal.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4A5204187D8FF100527142 /* DOKConfigurationNumericNormal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,8 +52,6 @@
 		DB4A51FE187BF00700527142 /* DOKConfigurationHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOKConfigurationHex.m; sourceTree = "<group>"; };
 		DB4A5200187D05BB00527142 /* DOKeyboardHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOKeyboardHelpers.h; sourceTree = "<group>"; };
 		DB4A5201187D05BB00527142 /* DOKeyboardHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOKeyboardHelpers.m; sourceTree = "<group>"; };
-		DB4A5203187D8FF100527142 /* DOKConfigurationNumericNormal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOKConfigurationNumericNormal.h; sourceTree = "<group>"; };
-		DB4A5204187D8FF100527142 /* DOKConfigurationNumericNormal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOKConfigurationNumericNormal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,8 +132,6 @@
 				04393D0117D5DDD3002FCB6A /* DOKeyboard.m */,
 				DB4A51FD187BF00700527142 /* DOKConfigurationHex.h */,
 				DB4A51FE187BF00700527142 /* DOKConfigurationHex.m */,
-				DB4A5203187D8FF100527142 /* DOKConfigurationNumericNormal.h */,
-				DB4A5204187D8FF100527142 /* DOKConfigurationNumericNormal.m */,
 				DB4A5200187D05BB00527142 /* DOKeyboardHelpers.h */,
 				DB4A5201187D05BB00527142 /* DOKeyboardHelpers.m */,
 				0488D76617D71F9E0095CFE9 /* images */,
@@ -228,7 +223,6 @@
 				DB4A5202187D05BB00527142 /* DOKeyboardHelpers.m in Sources */,
 				04393CED17D5DDBE002FCB6A /* AppDelegate.m in Sources */,
 				04393CF617D5DDBE002FCB6A /* ViewController.m in Sources */,
-				DB4A5205187D8FF100527142 /* DOKConfigurationNumericNormal.m in Sources */,
 				04393D0217D5DDD3002FCB6A /* DOKeyboard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

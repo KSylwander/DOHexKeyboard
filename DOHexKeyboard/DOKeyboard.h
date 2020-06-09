@@ -11,11 +11,6 @@
 @class DOKeyboard;
 
 typedef enum {
-    DOKeyboardTypeHex,
-    DOKeyboardTypeNumericNormal
-} DOKeyboardType;
-
-typedef enum {
     DOKeyboardKeyTypeCustomized,
     DOKeyboardKeyTypeAdd,
     DOKeyboardKeytypeDelete,
@@ -82,9 +77,7 @@ typedef DOKeyboardKeyTapAction (^DOKeyboardKeyTappedBlock) (DOKeyboard *keyboard
 @property (nonatomic, strong) id<UITextInput> input;
 @property (nonatomic, readonly) id<DOKConfiguring> configuration;
 
-- (instancetype)initWithconfiguration:(id<DOKConfiguring>)configuration;
-
-+ (DOKeyboard *)keyboardWithType:(DOKeyboardType)type;
+- (instancetype)init;
 
 - (NSUInteger)indexOfKey:(UIButton *)key;
 

@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		4370FA121C481CE100327119 /* DOKConfigurationHex.h in Headers */ = {isa = PBXBuildFile; fileRef = 4370FA081C481CE100327119 /* DOKConfigurationHex.h */; };
 		4370FA131C481CE100327119 /* DOKConfigurationHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4370FA091C481CE100327119 /* DOKConfigurationHex.m */; };
-		4370FA141C481CE100327119 /* DOKConfigurationNumericNormal.h in Headers */ = {isa = PBXBuildFile; fileRef = 4370FA0A1C481CE100327119 /* DOKConfigurationNumericNormal.h */; };
-		4370FA151C481CE100327119 /* DOKConfigurationNumericNormal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4370FA0B1C481CE100327119 /* DOKConfigurationNumericNormal.m */; };
 		4370FA161C481CE100327119 /* DOKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 4370FA0C1C481CE100327119 /* DOKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4370FA171C481CE100327119 /* DOKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4370FA0D1C481CE100327119 /* DOKeyboard.m */; };
 		4370FA181C481CE100327119 /* DOKeyboardHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 4370FA0E1C481CE100327119 /* DOKeyboardHelpers.h */; };
@@ -22,8 +20,6 @@
 		4370FA021C481C6900327119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4370FA081C481CE100327119 /* DOKConfigurationHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOKConfigurationHex.h; sourceTree = "<group>"; };
 		4370FA091C481CE100327119 /* DOKConfigurationHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOKConfigurationHex.m; sourceTree = "<group>"; };
-		4370FA0A1C481CE100327119 /* DOKConfigurationNumericNormal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOKConfigurationNumericNormal.h; sourceTree = "<group>"; };
-		4370FA0B1C481CE100327119 /* DOKConfigurationNumericNormal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOKConfigurationNumericNormal.m; sourceTree = "<group>"; };
 		4370FA0C1C481CE100327119 /* DOKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOKeyboard.h; sourceTree = "<group>"; };
 		4370FA0D1C481CE100327119 /* DOKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOKeyboard.m; sourceTree = "<group>"; };
 		4370FA0E1C481CE100327119 /* DOKeyboardHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOKeyboardHelpers.h; sourceTree = "<group>"; };
@@ -62,8 +58,6 @@
 			children = (
 				4370FA081C481CE100327119 /* DOKConfigurationHex.h */,
 				4370FA091C481CE100327119 /* DOKConfigurationHex.m */,
-				4370FA0A1C481CE100327119 /* DOKConfigurationNumericNormal.h */,
-				4370FA0B1C481CE100327119 /* DOKConfigurationNumericNormal.m */,
 				4370FA0C1C481CE100327119 /* DOKeyboard.h */,
 				4370FA0D1C481CE100327119 /* DOKeyboard.m */,
 				4370FA0E1C481CE100327119 /* DOKeyboardHelpers.h */,
@@ -80,7 +74,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4370FA141C481CE100327119 /* DOKConfigurationNumericNormal.h in Headers */,
 				4370FA121C481CE100327119 /* DOKConfigurationHex.h in Headers */,
 				4370FA161C481CE100327119 /* DOKeyboard.h in Headers */,
 				4370FA181C481CE100327119 /* DOKeyboardHelpers.h in Headers */,
@@ -157,7 +150,6 @@
 			files = (
 				4370FA171C481CE100327119 /* DOKeyboard.m in Sources */,
 				4370FA191C481CE100327119 /* DOKeyboardHelpers.m in Sources */,
-				4370FA151C481CE100327119 /* DOKConfigurationNumericNormal.m in Sources */,
 				4370FA131C481CE100327119 /* DOKConfigurationHex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,6 @@
 
 #import "DOKeyboard.h"
 #import "DOKConfigurationHex.h"
-#import "DOKConfigurationNumericNormal.h"
 
 DOKeyboardKeyTapAction const DOKeyboardKeyTapAdd = ^(DOKeyboard *keyboard, UIButton *key) {
     id<UITextInput> input = keyboard.input;
@@ -92,10 +91,10 @@ DOKeyboardLayoutBlock const DOKeyboardLayoutDefault = ^(DOKeyboard *keyboard, NS
 
 @implementation DOKeyboard
 
-- (instancetype)initWithconfiguration:(id<DOKConfiguring>)configuration {
+- (instancetype)init {
     self = [super initWithFrame:CGRectZero];
     if (self) {
-        _configuration = configuration;
+        _configuration = [[DOKConfigurationHex alloc] init];
         NSMutableArray *keys = [NSMutableArray array];
         for (int i = 0; i < _configuration.keyCount; i++) {
             UIButton *key = _configuration.keyAtIndex(self, i);
@@ -106,26 +105,10 @@ DOKeyboardLayoutBlock const DOKeyboardLayoutDefault = ^(DOKeyboard *keyboard, NS
             [self addSubview:obj];
             [obj addTarget:self action:@selector(keyTapped:) forControlEvents:UIControlEventTouchUpInside];
         }];
-        configuration.layout(self, keys);
+        _configuration.layout(self, keys);
     }
     
     return self;
-}
-
-+ (DOKeyboard *)keyboardWithType:(DOKeyboardType)type {
-    DOKeyboard *keyboard;
-    
-    if (type == DOKeyboardTypeHex) {
-        DOKConfigurationHex *configuration = [[DOKConfigurationHex alloc] init];
-        keyboard = [[DOKeyboard alloc] initWithconfiguration:configuration];
-    } else if (type == DOKeyboardTypeNumericNormal) {
-        DOKConfigurationNumericNormal *configuration = [[DOKConfigurationNumericNormal alloc] init];
-        keyboard = [[DOKeyboard alloc] initWithconfiguration:configuration];
-    } else {
-        [NSException raise:@"Failure to new keyboard" format:@"Could not create keyboard with type:%d", type];
-    }
-    
-    return keyboard;
 }
 
 - (void)setInput:(id<UITextInput>)input {

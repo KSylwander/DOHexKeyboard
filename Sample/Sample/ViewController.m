@@ -20,7 +20,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 //    DOKeyboard *keyboard = [DOKeyboard keyboardWithType:DOKeyboardTypeHex];
-    DOKeyboard *keyboard = [DOKeyboard keyboardWithType:DOKeyboardTypeNumericNormal];
+    DOKeyboard *keyboard = [[DOKeyboard alloc] init];
     keyboard.input = self.textfield;
     
     self.textfield.delegate = (id)self;
