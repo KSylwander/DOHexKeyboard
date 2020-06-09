@@ -28,8 +28,8 @@
         CGSize keyboardSize = (CGSize){screenWidth, 216};
         _keyboardSize = keyboardSize;
         
-        _insets = UIEdgeInsetsMake(1, 1, 1, 1);
-        _keySpacing = CGSizeMake(1, 1);
+        _insets = UIEdgeInsetsMake(12, 5, 5, 5);
+        _keySpacing = CGSizeMake(6, 14);
         
         _columnCount = 5;
         _rowCount = 4;
