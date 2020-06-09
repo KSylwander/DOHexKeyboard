@@ -69,7 +69,7 @@ typedef DOKeyboardKeyTapAction (^DOKeyboardKeyTappedBlock) (DOHexKeyboard *keybo
 @end
 
 
-@interface DOHexKeyboard : UIView {
+@interface DOHexKeyboard : UIInputView {
     id<DOKeyboardConfiguration> _configuration;
     
     NSArray *_keys;

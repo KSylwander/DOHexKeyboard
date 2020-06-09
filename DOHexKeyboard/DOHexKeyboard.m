@@ -99,7 +99,7 @@ DOKeyboardLayoutBlock const DOKeyboardLayoutDefault = ^(DOHexKeyboard *keyboard,
 @implementation DOHexKeyboard
 
 - (instancetype)init {
-    self = [super initWithFrame:CGRectZero];
+    self = [super initWithFrame:CGRectZero inputViewStyle:UIInputViewStyleKeyboard];
     if (self) {
         _configuration = [[DOHexKeyboardConfiguration alloc] init];
         NSMutableArray *keys = [NSMutableArray array];
