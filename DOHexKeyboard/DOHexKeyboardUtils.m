@@ -72,8 +72,8 @@ void initializeKeyConfiguration() {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         if (background == nil) {
-            background = createImageWithColor([UIColor whiteColor]);
-            highlightedBackground = createImageWithColor([UIColor colorWithWhite:0.80 alpha:1]);
+            background = createImageWithColor([UIColor colorWithWhite:0.7 alpha:0.5]);
+            highlightedBackground = createImageWithColor([UIColor colorWithWhite:0.5 alpha:0.5]);
         }
         
         if (fontForNumberNormal == nil) {
@@ -84,7 +84,7 @@ void initializeKeyConfiguration() {
         
         
         if (textColor == nil) {
-            textColor = [UIColor colorWithWhite:0.1 alpha:1];
+            textColor = [UIColor colorWithWhite:1 alpha:1];
         }
     });
 }
