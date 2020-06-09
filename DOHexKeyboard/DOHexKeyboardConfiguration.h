@@ -12,7 +12,8 @@
 }
 
 @property (nonatomic) CGSize keyboardSize;
-@property (nonatomic) CGFloat keySpacing;
+@property (nonatomic) UIEdgeInsets insets;
+@property (nonatomic) CGSize keySpacing;
 @property (nonatomic) NSUInteger keyCount;
 @property (nonatomic) NSUInteger columnCount;
 @property (nonatomic) NSUInteger rowCount;

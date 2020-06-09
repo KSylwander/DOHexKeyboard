@@ -27,7 +27,9 @@
         CGFloat screenWidth = screenRect.size.width;
         CGSize keyboardSize = (CGSize){screenWidth, 216};
         _keyboardSize = keyboardSize;
-        _keySpacing = 1;
+        
+        _insets = UIEdgeInsetsMake(1, 1, 1, 1);
+        _keySpacing = CGSizeMake(1, 1);
         
         _columnCount = 5;
         _rowCount = 4;

@@ -56,9 +56,16 @@ DOKeyboardLayoutBlock const DOKeyboardLayoutDefault = ^(DOHexKeyboard *keyboard,
     CGSize keyboardSize = config.keyboardSize;
     keyboard.frame = CGRectMake(0, 0, keyboardSize.width, keyboardSize.height);
     
-    CGFloat spacing = config.keySpacing;
-    CGFloat keyWidth = floor((keyboardSize.width - (config.columnCount + 1) * spacing) / config.columnCount);
-    CGFloat keyHeight = floor((keyboardSize.height - (config.rowCount + 1) * spacing) / config.rowCount);
+    UIEdgeInsets insets = config.insets;
+    CGSize spacing = config.keySpacing;
+    
+    CGFloat horizontalInset = insets.left + insets.right;
+    CGFloat horizontalSpacing = (config.columnCount - 1) * spacing.width;
+    CGFloat keyWidth = floor((keyboardSize.width - (horizontalInset + horizontalSpacing)) / config.columnCount);
+    
+    CGFloat verticalInset = insets.top + insets.bottom;
+    CGFloat verticalSpacing = (config.rowCount - 1) * spacing.height;
+    CGFloat keyHeight = floor((keyboardSize.height - (verticalInset + verticalSpacing)) / config.rowCount);
     
     NSUInteger keyCount = config.keyCount;
     for (int i = 0; i < keyCount; i++) {
@@ -68,21 +75,21 @@ DOKeyboardLayoutBlock const DOKeyboardLayoutDefault = ^(DOHexKeyboard *keyboard,
         DOKKeyOrigin origin = frame.origin;
         DOKKeySpan span = frame.span;
         
-        CGFloat x = spacing + origin.column * (keyWidth + spacing);
-        CGFloat y = spacing + origin.row * (keyHeight + spacing);
+        CGFloat x = insets.left + origin.column * (keyWidth + spacing.width);
+        CGFloat y = insets.top + origin.row * (keyHeight + spacing.height);
         
         CGFloat width;
         if (origin.column + span.column < config.columnCount) {
-            width = span.row * (keyWidth + spacing) - spacing;
+            width = span.row * (keyWidth + spacing.width) - spacing.width;
         } else {
-            width = keyboardSize.width - (x + spacing);
+            width = keyboardSize.width - (x + insets.right);
         }
         
         CGFloat height;
         if (origin.row + span.row < config.rowCount) {
-            height = span.column * (keyHeight + spacing) - spacing;
+            height = span.column * (keyHeight + spacing.height) - spacing.height;
         } else {
-            height = keyboardSize.height - (y + spacing);
+            height = keyboardSize.height - (y + insets.bottom);
         }
         
         key.frame = CGRectMake(x, y, width, height);
