@@ -15,8 +15,6 @@
 		4370FA171C481CE100327119 /* DOKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4370FA0D1C481CE100327119 /* DOKeyboard.m */; };
 		4370FA181C481CE100327119 /* DOKeyboardHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 4370FA0E1C481CE100327119 /* DOKeyboardHelpers.h */; };
 		4370FA191C481CE100327119 /* DOKeyboardHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4370FA0F1C481CE100327119 /* DOKeyboardHelpers.m */; };
-		4370FA1A1C481CE100327119 /* DOKeyItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 4370FA101C481CE100327119 /* DOKeyItem.h */; };
-		4370FA1B1C481CE100327119 /* DOKeyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4370FA111C481CE100327119 /* DOKeyItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +28,6 @@
 		4370FA0D1C481CE100327119 /* DOKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOKeyboard.m; sourceTree = "<group>"; };
 		4370FA0E1C481CE100327119 /* DOKeyboardHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOKeyboardHelpers.h; sourceTree = "<group>"; };
 		4370FA0F1C481CE100327119 /* DOKeyboardHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOKeyboardHelpers.m; sourceTree = "<group>"; };
-		4370FA101C481CE100327119 /* DOKeyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOKeyItem.h; sourceTree = "<group>"; };
-		4370FA111C481CE100327119 /* DOKeyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOKeyItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +68,6 @@
 				4370FA0D1C481CE100327119 /* DOKeyboard.m */,
 				4370FA0E1C481CE100327119 /* DOKeyboardHelpers.h */,
 				4370FA0F1C481CE100327119 /* DOKeyboardHelpers.m */,
-				4370FA101C481CE100327119 /* DOKeyItem.h */,
-				4370FA111C481CE100327119 /* DOKeyItem.m */,
 				4370FA021C481C6900327119 /* Info.plist */,
 			);
 			path = DOHexKeyboard;
@@ -88,7 +82,6 @@
 			files = (
 				4370FA141C481CE100327119 /* DOKConfigurationNumericNormal.h in Headers */,
 				4370FA121C481CE100327119 /* DOKConfigurationHex.h in Headers */,
-				4370FA1A1C481CE100327119 /* DOKeyItem.h in Headers */,
 				4370FA161C481CE100327119 /* DOKeyboard.h in Headers */,
 				4370FA181C481CE100327119 /* DOKeyboardHelpers.h in Headers */,
 			);
@@ -163,7 +156,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4370FA171C481CE100327119 /* DOKeyboard.m in Sources */,
-				4370FA1B1C481CE100327119 /* DOKeyItem.m in Sources */,
 				4370FA191C481CE100327119 /* DOKeyboardHelpers.m in Sources */,
 				4370FA151C481CE100327119 /* DOKConfigurationNumericNormal.m in Sources */,
 				4370FA131C481CE100327119 /* DOKConfigurationHex.m in Sources */,
