@@ -1,14 +1,14 @@
 //
-//  DOKeyboardHex.h
+//  DOHexKeyboardConfiguration.h
 //  Sample
 //
 //  Created by olive on 1/7/14.
 //  Copyright (c) 2014 durian. All rights reserved.
 //
 
-#import "DOKeyboard.h"
+#import "DOHexKeyboard.h"
 
-@interface DOKConfigurationHex : NSObject <DOKConfiguring> {
+@interface DOHexKeyboardConfiguration : NSObject <DOKeyboardConfiguration> {
 }
 
 @property (nonatomic) CGSize keyboardSize;

@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-@class DOKeyboard;
+@class DOHexKeyboard;
 
 typedef enum {
     DOKeyboardKeyTypeCustomized,
@@ -19,7 +19,7 @@ typedef enum {
 } DOKeyboardKeyType;
 
 // The action block when key is tapped.
-typedef void(^DOKeyboardKeyTapAction) (DOKeyboard *keyboard, UIButton *key);
+typedef void(^DOKeyboardKeyTapAction) (DOHexKeyboard *keyboard, UIButton *key);
 // Here are some default implementations about text adding, deleting, and clearing, returning.
 extern DOKeyboardKeyTapAction const DOKeyboardKeyTapAdd; // Add key's title to inputview's text.
 extern DOKeyboardKeyTapAction const DOKeyboardKeyTapDelete; // Delete one charactor of inputview'text.
@@ -45,15 +45,15 @@ typedef struct {
     DOKKeySpan span;
 } DOKKeyFrame;
 
-typedef UIButton * (^DOKeyboardKeyBlock)(DOKeyboard *keyboard, NSUInteger index);
-typedef DOKKeyFrame (^DOKeyboardKeyFrameBlock)(DOKeyboard *keyboard, NSUInteger index);
-typedef void (^DOKeyboardLayoutBlock) (DOKeyboard *keyboard, NSArray *keys);
+typedef UIButton * (^DOKeyboardKeyBlock)(DOHexKeyboard *keyboard, NSUInteger index);
+typedef DOKKeyFrame (^DOKeyboardKeyFrameBlock)(DOHexKeyboard *keyboard, NSUInteger index);
+typedef void (^DOKeyboardLayoutBlock) (DOHexKeyboard *keyboard, NSArray *keys);
 extern DOKeyboardLayoutBlock const DOKeyboardLayoutDefault;
 
-typedef DOKeyboardKeyTapAction (^DOKeyboardKeyTappedBlock) (DOKeyboard *keyboard, UIButton *button);
+typedef DOKeyboardKeyTapAction (^DOKeyboardKeyTappedBlock) (DOHexKeyboard *keyboard, UIButton *button);
 
 
-@protocol DOKConfiguring <NSObject>
+@protocol DOKeyboardConfiguration <NSObject>
 
 @property (nonatomic) CGSize keyboardSize;
 @property (nonatomic) CGFloat keySpacing;
@@ -68,14 +68,14 @@ typedef DOKeyboardKeyTapAction (^DOKeyboardKeyTappedBlock) (DOKeyboard *keyboard
 @end
 
 
-@interface DOKeyboard : UIView {
-    id<DOKConfiguring> _configuration;
+@interface DOHexKeyboard : UIView {
+    id<DOKeyboardConfiguration> _configuration;
     
     NSArray *_keys;
 }
 
 @property (nonatomic, strong) id<UITextInput> input;
-@property (nonatomic, readonly) id<DOKConfiguring> configuration;
+@property (nonatomic, readonly) id<DOKeyboardConfiguration> configuration;
 
 - (instancetype)init;
 

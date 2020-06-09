@@ -1,12 +1,12 @@
 //
-//  DOKConfigurationGeneral.h
+//  DOHexKeyboardUtils.h
 //  Sample
 //
 //  Created by olive on 1/8/14.
 //  Copyright (c) 2014 durian. All rights reserved.
 //
 
-#import "DOKeyboard.h"
+#import "DOHexKeyboard.h"
 
 extern CGSize const DOKKeyNormalSize; // (63, 53)
 extern CGFloat const DOKKeyNormalSpace; // 1

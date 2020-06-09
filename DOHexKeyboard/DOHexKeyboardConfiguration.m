@@ -1,22 +1,22 @@
 //
-//  DOKeyboardHex.m
+//  DOHexKeyboardConfiguration.m
 //  Sample
 //
 //  Created by olive on 1/7/14.
 //  Copyright (c) 2014 durian. All rights reserved.
 //
 
-#import "DOKConfigurationHex.h"
-#import "DOKeyboardHelpers.h"
+#import "DOHexKeyboardConfiguration.h"
+#import "DOHexKeyboardUtils.h"
 
 
-@interface DOKConfigurationHex () {
+@interface DOHexKeyboardConfiguration () {
 }
 
 
 @end
 
-@implementation DOKConfigurationHex
+@implementation DOHexKeyboardConfiguration
 
 - (instancetype)init {
     self = [super init];
@@ -74,10 +74,10 @@
         
         [keys addObjectsFromArray:@[clearKey, zeroKey, deleteKey, returnKey]];
 
-        _keyAtIndex = ^(DOKeyboard *keyboard, NSUInteger index) {
+        _keyAtIndex = ^(DOHexKeyboard *keyboard, NSUInteger index) {
             return keys[index];
         };
-        _frameOfKeyAtIndex = ^(DOKeyboard *keyboard, NSUInteger index) {
+        _frameOfKeyAtIndex = ^(DOHexKeyboard *keyboard, NSUInteger index) {
             NSValue *value = keyFrames[index];
             DOKKeyFrame frame;
             [value getValue:&frame];
@@ -86,7 +86,7 @@
         
         _layout = DOKeyboardLayoutDefault;
         
-        _keyTapped = ^(DOKeyboard *keyboard, UIButton *key) {
+        _keyTapped = ^(DOHexKeyboard *keyboard, UIButton *key) {
             NSUInteger tag = key.tag;
             if (tag == DOKeyboardKeyTypeClear) {
                 return DOKeyboardKeyTapClear;

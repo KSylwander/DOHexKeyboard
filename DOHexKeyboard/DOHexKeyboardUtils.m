@@ -1,12 +1,12 @@
 //
-//  DOKConfigurationGeneral.m
+//  DOHexKeyboardUtils.m
 //  Sample
 //
 //  Created by olive on 1/8/14.
 //  Copyright (c) 2014 durian. All rights reserved.
 //
 
-#import "DOKeyboardHelpers.h"
+#import "DOHexKeyboardUtils.h"
 
 CGSize const DOKKeyNormalSize = (CGSize){63, 53};
 CGFloat const DOKKeyNormalSpace = 1;

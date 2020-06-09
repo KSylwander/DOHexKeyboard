@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "DOKeyboard.h"
+#import "DOHexKeyboard.h"
 
 @interface ViewController ()
 
@@ -19,8 +19,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-//    DOKeyboard *keyboard = [DOKeyboard keyboardWithType:DOKeyboardTypeHex];
-    DOKeyboard *keyboard = [[DOKeyboard alloc] init];
+    DOHexKeyboard *keyboard = [[DOHexKeyboard alloc] init];
     keyboard.input = self.textfield;
     
     self.textfield.delegate = (id)self;

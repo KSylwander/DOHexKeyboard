@@ -5,15 +5,15 @@
 //  Copyright (c) 2013 durian. All rights reserved.
 //
 
-#import "DOKeyboard.h"
-#import "DOKConfigurationHex.h"
+#import "DOHexKeyboard.h"
+#import "DOHexKeyboardConfiguration.h"
 
-DOKeyboardKeyTapAction const DOKeyboardKeyTapAdd = ^(DOKeyboard *keyboard, UIButton *key) {
+DOKeyboardKeyTapAction const DOKeyboardKeyTapAdd = ^(DOHexKeyboard *keyboard, UIButton *key) {
     id<UITextInput> input = keyboard.input;
     [keyboard textInput:input replaceTextAtTextRange:input.selectedTextRange withString:key.currentTitle];
 };
 
-DOKeyboardKeyTapAction const DOKeyboardKeyTapDelete = ^(DOKeyboard *keyboard, UIButton *key) {
+DOKeyboardKeyTapAction const DOKeyboardKeyTapDelete = ^(DOHexKeyboard *keyboard, UIButton *key) {
     id<UITextInput> input = keyboard.input;
     
     UITextRange *selectedTextRange = input.selectedTextRange;
@@ -30,14 +30,14 @@ DOKeyboardKeyTapAction const DOKeyboardKeyTapDelete = ^(DOKeyboard *keyboard, UI
     [keyboard textInput:input replaceTextAtTextRange:rangeToDelete withString:@""];
 };
 
-DOKeyboardKeyTapAction const DOKeyboardKeyTapClear = ^(DOKeyboard *keyboard, UIButton *key) {
+DOKeyboardKeyTapAction const DOKeyboardKeyTapClear = ^(DOHexKeyboard *keyboard, UIButton *key) {
     id<UITextInput> input = keyboard.input;
     UITextRange *allTextRange = [input textRangeFromPosition:input.beginningOfDocument
                                                    toPosition:input.endOfDocument];
     [keyboard textInput:input replaceTextAtTextRange:allTextRange withString:@""];
 };
 
-DOKeyboardKeyTapAction const DOKeyboardKeyTapReturn = ^(DOKeyboard *keyboard, UIButton *key) {
+DOKeyboardKeyTapAction const DOKeyboardKeyTapReturn = ^(DOHexKeyboard *keyboard, UIButton *key) {
     id<UITextInput> input = keyboard.input;
     
     if ([input isKindOfClass:[UITextField class]]) {
@@ -50,8 +50,8 @@ DOKeyboardKeyTapAction const DOKeyboardKeyTapReturn = ^(DOKeyboard *keyboard, UI
     }
 };
 
-DOKeyboardLayoutBlock const DOKeyboardLayoutDefault = ^(DOKeyboard *keyboard, NSArray *keys) {
-    id <DOKConfiguring> config = keyboard.configuration;
+DOKeyboardLayoutBlock const DOKeyboardLayoutDefault = ^(DOHexKeyboard *keyboard, NSArray *keys) {
+    id <DOKeyboardConfiguration> config = keyboard.configuration;
     
     CGSize keyboardSize = config.keyboardSize;
     keyboard.frame = CGRectMake(0, 0, keyboardSize.width, keyboardSize.height);
@@ -89,12 +89,12 @@ DOKeyboardLayoutBlock const DOKeyboardLayoutDefault = ^(DOKeyboard *keyboard, NS
     }
 };
 
-@implementation DOKeyboard
+@implementation DOHexKeyboard
 
 - (instancetype)init {
     self = [super initWithFrame:CGRectZero];
     if (self) {
-        _configuration = [[DOKConfigurationHex alloc] init];
+        _configuration = [[DOHexKeyboardConfiguration alloc] init];
         NSMutableArray *keys = [NSMutableArray array];
         for (int i = 0; i < _configuration.keyCount; i++) {
             UIButton *key = _configuration.keyAtIndex(self, i);

@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4370FA121C481CE100327119 /* DOKConfigurationHex.h in Headers */ = {isa = PBXBuildFile; fileRef = 4370FA081C481CE100327119 /* DOKConfigurationHex.h */; };
-		4370FA131C481CE100327119 /* DOKConfigurationHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4370FA091C481CE100327119 /* DOKConfigurationHex.m */; };
-		4370FA161C481CE100327119 /* DOKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 4370FA0C1C481CE100327119 /* DOKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4370FA171C481CE100327119 /* DOKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4370FA0D1C481CE100327119 /* DOKeyboard.m */; };
-		4370FA181C481CE100327119 /* DOKeyboardHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 4370FA0E1C481CE100327119 /* DOKeyboardHelpers.h */; };
-		4370FA191C481CE100327119 /* DOKeyboardHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4370FA0F1C481CE100327119 /* DOKeyboardHelpers.m */; };
+		4370FA121C481CE100327119 /* DOHexKeyboardConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 4370FA081C481CE100327119 /* DOHexKeyboardConfiguration.h */; };
+		4370FA131C481CE100327119 /* DOHexKeyboardConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4370FA091C481CE100327119 /* DOHexKeyboardConfiguration.m */; };
+		4370FA161C481CE100327119 /* DOHexKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 4370FA0C1C481CE100327119 /* DOHexKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4370FA171C481CE100327119 /* DOHexKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4370FA0D1C481CE100327119 /* DOHexKeyboard.m */; };
+		4370FA181C481CE100327119 /* DOHexKeyboardUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4370FA0E1C481CE100327119 /* DOHexKeyboardUtils.h */; };
+		4370FA191C481CE100327119 /* DOHexKeyboardUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4370FA0F1C481CE100327119 /* DOHexKeyboardUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4370F9FD1C481C6900327119 /* DOHexKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DOHexKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4370FA021C481C6900327119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4370FA081C481CE100327119 /* DOKConfigurationHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOKConfigurationHex.h; sourceTree = "<group>"; };
-		4370FA091C481CE100327119 /* DOKConfigurationHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOKConfigurationHex.m; sourceTree = "<group>"; };
-		4370FA0C1C481CE100327119 /* DOKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOKeyboard.h; sourceTree = "<group>"; };
-		4370FA0D1C481CE100327119 /* DOKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOKeyboard.m; sourceTree = "<group>"; };
-		4370FA0E1C481CE100327119 /* DOKeyboardHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOKeyboardHelpers.h; sourceTree = "<group>"; };
-		4370FA0F1C481CE100327119 /* DOKeyboardHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOKeyboardHelpers.m; sourceTree = "<group>"; };
+		4370FA081C481CE100327119 /* DOHexKeyboardConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOHexKeyboardConfiguration.h; sourceTree = "<group>"; };
+		4370FA091C481CE100327119 /* DOHexKeyboardConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOHexKeyboardConfiguration.m; sourceTree = "<group>"; };
+		4370FA0C1C481CE100327119 /* DOHexKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOHexKeyboard.h; sourceTree = "<group>"; };
+		4370FA0D1C481CE100327119 /* DOHexKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOHexKeyboard.m; sourceTree = "<group>"; };
+		4370FA0E1C481CE100327119 /* DOHexKeyboardUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOHexKeyboardUtils.h; sourceTree = "<group>"; };
+		4370FA0F1C481CE100327119 /* DOHexKeyboardUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOHexKeyboardUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +56,12 @@
 		4370F9FF1C481C6900327119 /* DOHexKeyboard */ = {
 			isa = PBXGroup;
 			children = (
-				4370FA081C481CE100327119 /* DOKConfigurationHex.h */,
-				4370FA091C481CE100327119 /* DOKConfigurationHex.m */,
-				4370FA0C1C481CE100327119 /* DOKeyboard.h */,
-				4370FA0D1C481CE100327119 /* DOKeyboard.m */,
-				4370FA0E1C481CE100327119 /* DOKeyboardHelpers.h */,
-				4370FA0F1C481CE100327119 /* DOKeyboardHelpers.m */,
+				4370FA0C1C481CE100327119 /* DOHexKeyboard.h */,
+				4370FA0D1C481CE100327119 /* DOHexKeyboard.m */,
+				4370FA081C481CE100327119 /* DOHexKeyboardConfiguration.h */,
+				4370FA091C481CE100327119 /* DOHexKeyboardConfiguration.m */,
+				4370FA0E1C481CE100327119 /* DOHexKeyboardUtils.h */,
+				4370FA0F1C481CE100327119 /* DOHexKeyboardUtils.m */,
 				4370FA021C481C6900327119 /* Info.plist */,
 			);
 			path = DOHexKeyboard;
@@ -74,9 +74,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4370FA121C481CE100327119 /* DOKConfigurationHex.h in Headers */,
-				4370FA161C481CE100327119 /* DOKeyboard.h in Headers */,
-				4370FA181C481CE100327119 /* DOKeyboardHelpers.h in Headers */,
+				4370FA121C481CE100327119 /* DOHexKeyboardConfiguration.h in Headers */,
+				4370FA161C481CE100327119 /* DOHexKeyboard.h in Headers */,
+				4370FA181C481CE100327119 /* DOHexKeyboardUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,9 +148,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4370FA171C481CE100327119 /* DOKeyboard.m in Sources */,
-				4370FA191C481CE100327119 /* DOKeyboardHelpers.m in Sources */,
-				4370FA131C481CE100327119 /* DOKConfigurationHex.m in Sources */,
+				4370FA171C481CE100327119 /* DOHexKeyboard.m in Sources */,
+				4370FA191C481CE100327119 /* DOHexKeyboardUtils.m in Sources */,
+				4370FA131C481CE100327119 /* DOHexKeyboardConfiguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
