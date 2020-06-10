@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4370F9FD1C481C6900327119 /* DOKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DOKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4370F9FD1C481C6900327119 /* DOHexKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DOHexKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4370FA021C481C6900327119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4370FA081C481CE100327119 /* DOKConfigurationHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOKConfigurationHex.h; sourceTree = "<group>"; };
 		4370FA091C481CE100327119 /* DOKConfigurationHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOKConfigurationHex.m; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		4370F9F31C481C6900327119 = {
 			isa = PBXGroup;
 			children = (
-				4370F9FF1C481C6900327119 /* DOKeyboard */,
+				4370F9FF1C481C6900327119 /* DOHexKeyboard */,
 				4370F9FE1C481C6900327119 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,12 +56,12 @@
 		4370F9FE1C481C6900327119 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4370F9FD1C481C6900327119 /* DOKeyboard.framework */,
+				4370F9FD1C481C6900327119 /* DOHexKeyboard.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4370F9FF1C481C6900327119 /* DOKeyboard */ = {
+		4370F9FF1C481C6900327119 /* DOHexKeyboard */ = {
 			isa = PBXGroup;
 			children = (
 				4370FA081C481CE100327119 /* DOKConfigurationHex.h */,
@@ -76,7 +76,6 @@
 				4370FA111C481CE100327119 /* DOKeyItem.m */,
 				4370FA021C481C6900327119 /* Info.plist */,
 			);
-			name = DOKeyboard;
 			path = DOHexKeyboard;
 			sourceTree = "<group>";
 		};
@@ -98,9 +97,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4370F9FC1C481C6900327119 /* DOKeyboard */ = {
+		4370F9FC1C481C6900327119 /* DOHexKeyboard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4370FA051C481C6900327119 /* Build configuration list for PBXNativeTarget "DOKeyboard" */;
+			buildConfigurationList = 4370FA051C481C6900327119 /* Build configuration list for PBXNativeTarget "DOHexKeyboard" */;
 			buildPhases = (
 				4370F9F81C481C6900327119 /* Sources */,
 				4370F9F91C481C6900327119 /* Frameworks */,
@@ -111,9 +110,9 @@
 			);
 			dependencies = (
 			);
-			name = DOKeyboard;
+			name = DOHexKeyboard;
 			productName = DOHexKeyboard;
-			productReference = 4370F9FD1C481C6900327119 /* DOKeyboard.framework */;
+			productReference = 4370F9FD1C481C6900327119 /* DOHexKeyboard.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -130,7 +129,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4370F9F71C481C6900327119 /* Build configuration list for PBXProject "DOKeyboard" */;
+			buildConfigurationList = 4370F9F71C481C6900327119 /* Build configuration list for PBXProject "DOHexKeyboard" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -143,7 +142,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4370F9FC1C481C6900327119 /* DOKeyboard */,
+				4370F9FC1C481C6900327119 /* DOHexKeyboard */,
 			);
 		};
 /* End PBXProject section */
@@ -295,8 +294,8 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wentingliu.DOKeyboard;
-				PRODUCT_NAME = DOKeyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = wentingliu.DOHexKeyboard;
+				PRODUCT_NAME = DOHexKeyboard;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -312,8 +311,8 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wentingliu.DOKeyboard;
-				PRODUCT_NAME = DOKeyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = wentingliu.DOHexKeyboard;
+				PRODUCT_NAME = DOHexKeyboard;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -321,7 +320,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4370F9F71C481C6900327119 /* Build configuration list for PBXProject "DOKeyboard" */ = {
+		4370F9F71C481C6900327119 /* Build configuration list for PBXProject "DOHexKeyboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4370FA031C481C6900327119 /* Debug */,
@@ -330,7 +329,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4370FA051C481C6900327119 /* Build configuration list for PBXNativeTarget "DOKeyboard" */ = {
+		4370FA051C481C6900327119 /* Build configuration list for PBXNativeTarget "DOHexKeyboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4370FA061C481C6900327119 /* Debug */,

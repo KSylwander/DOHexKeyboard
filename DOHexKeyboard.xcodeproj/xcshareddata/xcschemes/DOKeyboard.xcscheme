@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4370F9FC1C481C6900327119"
-               BuildableName = "DOKeyboard.framework"
-               BlueprintName = "DOKeyboard"
-               ReferencedContainer = "container:DOKeyboard.xcodeproj">
+               BuildableName = "DOHexKeyboard.framework"
+               BlueprintName = "DOHexKeyboard"
+               ReferencedContainer = "container:DOHexKeyboard.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -44,9 +44,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4370F9FC1C481C6900327119"
-            BuildableName = "DOKeyboard.framework"
-            BlueprintName = "DOKeyboard"
-            ReferencedContainer = "container:DOKeyboard.xcodeproj">
+            BuildableName = "DOHexKeyboard.framework"
+            BlueprintName = "DOHexKeyboard"
+            ReferencedContainer = "container:DOHexKeyboard.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </LaunchAction>
@@ -60,9 +60,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4370F9FC1C481C6900327119"
-            BuildableName = "DOKeyboard.framework"
-            BlueprintName = "DOKeyboard"
-            ReferencedContainer = "container:DOKeyboard.xcodeproj">
+            BuildableName = "DOHexKeyboard.framework"
+            BlueprintName = "DOHexKeyboard"
+            ReferencedContainer = "container:DOHexKeyboard.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
