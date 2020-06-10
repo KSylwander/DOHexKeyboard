@@ -20,8 +20,7 @@
 		04393CF917D5DDBE002FCB6A /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04393CF717D5DDBE002FCB6A /* ViewController.xib */; };
 		04393D0217D5DDD3002FCB6A /* DOHexKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 04393D0117D5DDD3002FCB6A /* DOHexKeyboard.m */; };
 		04393D0417D5DDE8002FCB6A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04393D0317D5DDE8002FCB6A /* QuartzCore.framework */; };
-		0488D76917D71F9E0095CFE9 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 0488D76717D71F9E0095CFE9 /* delete.png */; };
-		0488D76A17D71F9E0095CFE9 /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0488D76817D71F9E0095CFE9 /* delete@2x.png */; };
+		3E02B49E2490FF1100F29333 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E02B49D2490FF1100F29333 /* Assets.xcassets */; };
 		DB4A51FF187BF00700527142 /* DOHexKeyboardConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4A51FE187BF00700527142 /* DOHexKeyboardConfiguration.m */; };
 		DB4A5202187D05BB00527142 /* DOHexKeyboardUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4A5201187D05BB00527142 /* DOHexKeyboardUtils.m */; };
 /* End PBXBuildFile section */
@@ -45,8 +44,7 @@
 		04393D0017D5DDD3002FCB6A /* DOHexKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOHexKeyboard.h; sourceTree = "<group>"; };
 		04393D0117D5DDD3002FCB6A /* DOHexKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOHexKeyboard.m; sourceTree = "<group>"; };
 		04393D0317D5DDE8002FCB6A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		0488D76717D71F9E0095CFE9 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
-		0488D76817D71F9E0095CFE9 /* delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@2x.png"; sourceTree = "<group>"; };
+		3E02B49D2490FF1100F29333 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E41D83F2490CFCD00BF23F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ViewController.xib; sourceTree = "<group>"; };
 		DB4A51FD187BF00700527142 /* DOHexKeyboardConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOHexKeyboardConfiguration.h; sourceTree = "<group>"; };
 		DB4A51FE187BF00700527142 /* DOHexKeyboardConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOHexKeyboardConfiguration.m; sourceTree = "<group>"; };
@@ -128,25 +126,16 @@
 		04393CFF17D5DDD2002FCB6A /* DOHexKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				3E02B49D2490FF1100F29333 /* Assets.xcassets */,
 				04393D0017D5DDD3002FCB6A /* DOHexKeyboard.h */,
 				04393D0117D5DDD3002FCB6A /* DOHexKeyboard.m */,
 				DB4A51FD187BF00700527142 /* DOHexKeyboardConfiguration.h */,
 				DB4A51FE187BF00700527142 /* DOHexKeyboardConfiguration.m */,
 				DB4A5200187D05BB00527142 /* DOHexKeyboardUtils.h */,
 				DB4A5201187D05BB00527142 /* DOHexKeyboardUtils.m */,
-				0488D76617D71F9E0095CFE9 /* images */,
 			);
 			name = DOHexKeyboard;
 			path = ../DOHexKeyboard;
-			sourceTree = "<group>";
-		};
-		0488D76617D71F9E0095CFE9 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				0488D76717D71F9E0095CFE9 /* delete.png */,
-				0488D76817D71F9E0095CFE9 /* delete@2x.png */,
-			);
-			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,9 +194,8 @@
 				04393CEF17D5DDBE002FCB6A /* Default.png in Resources */,
 				04393CF117D5DDBE002FCB6A /* Default@2x.png in Resources */,
 				04393CF317D5DDBE002FCB6A /* Default-568h@2x.png in Resources */,
+				3E02B49E2490FF1100F29333 /* Assets.xcassets in Resources */,
 				04393CF917D5DDBE002FCB6A /* ViewController.xib in Resources */,
-				0488D76917D71F9E0095CFE9 /* delete.png in Resources */,
-				0488D76A17D71F9E0095CFE9 /* delete@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

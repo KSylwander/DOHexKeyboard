@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E02B49C2490FB3900F29333 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E02B49B2490FB3900F29333 /* Assets.xcassets */; };
 		4370FA121C481CE100327119 /* DOHexKeyboardConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 4370FA081C481CE100327119 /* DOHexKeyboardConfiguration.h */; };
 		4370FA131C481CE100327119 /* DOHexKeyboardConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4370FA091C481CE100327119 /* DOHexKeyboardConfiguration.m */; };
 		4370FA161C481CE100327119 /* DOHexKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 4370FA0C1C481CE100327119 /* DOHexKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E02B49B2490FB3900F29333 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4370F9FD1C481C6900327119 /* DOHexKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DOHexKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4370FA021C481C6900327119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4370FA081C481CE100327119 /* DOHexKeyboardConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOHexKeyboardConfiguration.h; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		4370F9FF1C481C6900327119 /* DOHexKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				3E02B49B2490FB3900F29333 /* Assets.xcassets */,
 				4370FA0C1C481CE100327119 /* DOHexKeyboard.h */,
 				4370FA0D1C481CE100327119 /* DOHexKeyboard.m */,
 				4370FA081C481CE100327119 /* DOHexKeyboardConfiguration.h */,
@@ -138,6 +141,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E02B49C2490FB3900F29333 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

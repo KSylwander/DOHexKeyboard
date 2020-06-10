@@ -65,7 +65,9 @@
         zeroKey.tag = DOKeyboardKeyTypeAdd;
         frame = (DOKKeyFrame){3, 1, 1, 1};
         [keyFrames addObject:[NSValue value:&frame withObjCType:@encode(DOKKeyFrame)]];
-        UIButton *deleteKey = createKeyWithImage([UIImage imageNamed:@"delete.png"], 2);
+        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+        UIImage *deleteImage = [UIImage imageNamed:@"delete" inBundle:bundle compatibleWithTraitCollection:nil];
+        UIButton *deleteKey = createKeyWithImage(deleteImage, 2);
         deleteKey.tag = DOKeyboardKeytypeDelete;
         frame = (DOKKeyFrame){3, 2, 1, 1};
         [keyFrames addObject:[NSValue value:&frame withObjCType:@encode(DOKKeyFrame)]];
