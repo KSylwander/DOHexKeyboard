@@ -7,93 +7,114 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E02B49C2490FB3900F29333 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E02B49B2490FB3900F29333 /* Assets.xcassets */; };
-		4370FA121C481CE100327119 /* DOHexKeyboardConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 4370FA081C481CE100327119 /* DOHexKeyboardConfiguration.h */; };
-		4370FA131C481CE100327119 /* DOHexKeyboardConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4370FA091C481CE100327119 /* DOHexKeyboardConfiguration.m */; };
-		4370FA161C481CE100327119 /* DOHexKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 4370FA0C1C481CE100327119 /* DOHexKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4370FA171C481CE100327119 /* DOHexKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4370FA0D1C481CE100327119 /* DOHexKeyboard.m */; };
-		4370FA181C481CE100327119 /* DOHexKeyboardUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4370FA0E1C481CE100327119 /* DOHexKeyboardUtils.h */; };
-		4370FA191C481CE100327119 /* DOHexKeyboardUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4370FA0F1C481CE100327119 /* DOHexKeyboardUtils.m */; };
+		EC127904254ABCEA0060BDA9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC127903254ABCEA0060BDA9 /* CoreGraphics.framework */; };
+		OBJ_29 /* DOHexKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* DOHexKeyboard.m */; };
+		OBJ_30 /* DOHexKeyboardConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* DOHexKeyboardConfiguration.m */; };
+		OBJ_31 /* DOHexKeyboardUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* DOHexKeyboardUtils.m */; };
+		OBJ_38 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3E02B49B2490FB3900F29333 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4370F9FD1C481C6900327119 /* DOHexKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DOHexKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4370FA021C481C6900327119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4370FA081C481CE100327119 /* DOHexKeyboardConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOHexKeyboardConfiguration.h; sourceTree = "<group>"; };
-		4370FA091C481CE100327119 /* DOHexKeyboardConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOHexKeyboardConfiguration.m; sourceTree = "<group>"; };
-		4370FA0C1C481CE100327119 /* DOHexKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOHexKeyboard.h; sourceTree = "<group>"; };
-		4370FA0D1C481CE100327119 /* DOHexKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOHexKeyboard.m; sourceTree = "<group>"; };
-		4370FA0E1C481CE100327119 /* DOHexKeyboardUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOHexKeyboardUtils.h; sourceTree = "<group>"; };
-		4370FA0F1C481CE100327119 /* DOHexKeyboardUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOHexKeyboardUtils.m; sourceTree = "<group>"; };
+		"DOHexKeyboard::DOHexKeyboard::Product" /* DOHexKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DOHexKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC127903254ABCEA0060BDA9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		OBJ_10 /* DOHexKeyboardConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOHexKeyboardConfiguration.h; sourceTree = "<group>"; };
+		OBJ_11 /* DOHexKeyboardUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOHexKeyboardUtils.h; sourceTree = "<group>"; };
+		OBJ_12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		OBJ_13 /* DOHexKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DOHexKeyboard.m; sourceTree = "<group>"; };
+		OBJ_14 /* DOHexKeyboardConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DOHexKeyboardConfiguration.m; sourceTree = "<group>"; };
+		OBJ_15 /* DOHexKeyboardUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DOHexKeyboardUtils.m; sourceTree = "<group>"; };
+		OBJ_23 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_9 /* DOHexKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOHexKeyboard.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4370F9F91C481C6900327119 /* Frameworks */ = {
+		OBJ_32 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
+				EC127904254ABCEA0060BDA9 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4370F9F31C481C6900327119 = {
+		EC1278F3254ABACA0060BDA9 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				4370F9FF1C481C6900327119 /* DOHexKeyboard */,
-				4370F9FE1C481C6900327119 /* Products */,
 			);
+			path = include;
 			sourceTree = "<group>";
 		};
-		4370F9FE1C481C6900327119 /* Products */ = {
+		EC127902254ABCEA0060BDA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4370F9FD1C481C6900327119 /* DOHexKeyboard.framework */,
+				EC127903254ABCEA0060BDA9 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		OBJ_16 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_17 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"DOHexKeyboard::DOHexKeyboard::Product" /* DOHexKeyboard.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
+			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		4370F9FF1C481C6900327119 /* DOHexKeyboard */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
-				3E02B49B2490FB3900F29333 /* Assets.xcassets */,
-				4370FA0C1C481CE100327119 /* DOHexKeyboard.h */,
-				4370FA0D1C481CE100327119 /* DOHexKeyboard.m */,
-				4370FA081C481CE100327119 /* DOHexKeyboardConfiguration.h */,
-				4370FA091C481CE100327119 /* DOHexKeyboardConfiguration.m */,
-				4370FA0E1C481CE100327119 /* DOHexKeyboardUtils.h */,
-				4370FA0F1C481CE100327119 /* DOHexKeyboardUtils.m */,
-				4370FA021C481C6900327119 /* Info.plist */,
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_16 /* Tests */,
+				OBJ_17 /* Products */,
+				OBJ_23 /* README.md */,
+				EC127902254ABCEA0060BDA9 /* Frameworks */,
 			);
-			path = DOHexKeyboard;
 			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* DOHexKeyboard */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* DOHexKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_11 /* DOHexKeyboardUtils.h */,
+				OBJ_14 /* DOHexKeyboardConfiguration.m */,
+				OBJ_9 /* DOHexKeyboard.h */,
+				EC1278F3254ABACA0060BDA9 /* include */,
+				OBJ_10 /* DOHexKeyboardConfiguration.h */,
+				OBJ_13 /* DOHexKeyboard.m */,
+				OBJ_15 /* DOHexKeyboardUtils.m */,
+				OBJ_12 /* Info.plist */,
+			);
+			name = DOHexKeyboard;
+			path = Sources/DOHexKeyboard;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		4370F9FA1C481C6900327119 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4370FA121C481CE100327119 /* DOHexKeyboardConfiguration.h in Headers */,
-				4370FA161C481CE100327119 /* DOHexKeyboard.h in Headers */,
-				4370FA181C481CE100327119 /* DOHexKeyboardUtils.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		4370F9FC1C481C6900327119 /* DOHexKeyboard */ = {
+		"DOHexKeyboard::DOHexKeyboard" /* DOHexKeyboard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4370FA051C481C6900327119 /* Build configuration list for PBXNativeTarget "DOHexKeyboard" */;
+			buildConfigurationList = OBJ_25 /* Build configuration list for PBXNativeTarget "DOHexKeyboard" */;
 			buildPhases = (
-				4370F9F81C481C6900327119 /* Sources */,
-				4370F9F91C481C6900327119 /* Frameworks */,
-				4370F9FA1C481C6900327119 /* Headers */,
-				4370F9FB1C481C6900327119 /* Resources */,
+				OBJ_28 /* Sources */,
+				OBJ_32 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -101,24 +122,33 @@
 			);
 			name = DOHexKeyboard;
 			productName = DOHexKeyboard;
-			productReference = 4370F9FD1C481C6900327119 /* DOHexKeyboard.framework */;
+			productReference = "DOHexKeyboard::DOHexKeyboard::Product" /* DOHexKeyboard.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"DOHexKeyboard::SwiftPMPackageDescription" /* DOHexKeyboardPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_34 /* Build configuration list for PBXNativeTarget "DOHexKeyboardPackageDescription" */;
+			buildPhases = (
+				OBJ_37 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DOHexKeyboardPackageDescription;
+			productName = DOHexKeyboardPackageDescription;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		4370F9F41C481C6900327119 /* Project object */ = {
+		OBJ_1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1120;
-				ORGANIZATIONNAME = wentingliu;
-				TargetAttributes = {
-					4370F9FC1C481C6900327119 = {
-						CreatedOnToolsVersion = 7.3;
-					};
-				};
+				LastSwiftMigration = 9999;
+				LastUpgradeCheck = 1210;
 			};
-			buildConfigurationList = 4370F9F71C481C6900327119 /* Build configuration list for PBXProject "DOHexKeyboard" */;
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "DOHexKeyboard" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -126,207 +156,268 @@
 				en,
 				Base,
 			);
-			mainGroup = 4370F9F31C481C6900327119;
-			productRefGroup = 4370F9FE1C481C6900327119 /* Products */;
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_17 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4370F9FC1C481C6900327119 /* DOHexKeyboard */,
+				"DOHexKeyboard::DOHexKeyboard" /* DOHexKeyboard */,
+				"DOHexKeyboard::SwiftPMPackageDescription" /* DOHexKeyboardPackageDescription */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		4370F9FB1C481C6900327119 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
 			files = (
-				3E02B49C2490FB3900F29333 /* Assets.xcassets in Resources */,
+				OBJ_29 /* DOHexKeyboard.m in Sources */,
+				OBJ_30 /* DOHexKeyboardConfiguration.m in Sources */,
+				OBJ_31 /* DOHexKeyboardUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		4370F9F81C481C6900327119 /* Sources */ = {
+		OBJ_37 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				4370FA171C481CE100327119 /* DOHexKeyboard.m in Sources */,
-				4370FA191C481CE100327119 /* DOHexKeyboardUtils.m in Sources */,
-				4370FA131C481CE100327119 /* DOHexKeyboardConfiguration.m in Sources */,
+				OBJ_38 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		4370FA031C481C6900327119 /* Debug */ = {
+		OBJ_26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
+				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/DOHexKeyboard/**",
+				);
+				INFOPLIST_FILE = DOHexKeyboard.xcodeproj/DOHexKeyboard_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					UIKit,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					CoreGraphics,
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = DOHexKeyboard;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				TARGET_NAME = DOHexKeyboard;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
-		4370FA041C481C6900327119 /* Release */ = {
+		OBJ_27 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/DOHexKeyboard/**",
+				);
+				INFOPLIST_FILE = DOHexKeyboard.xcodeproj/DOHexKeyboard_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					UIKit,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					CoreGraphics,
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = DOHexKeyboard;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				TARGET_NAME = DOHexKeyboard;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
-		4370FA061C481C6900327119 /* Debug */ = {
+		OBJ_3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = DOHexKeyboard/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wentingliu.DOHexKeyboard;
-				PRODUCT_NAME = DOHexKeyboard;
-				SKIP_INSTALL = YES;
+				ENABLE_NS_ASSERTIONS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
 			};
 			name = Debug;
 		};
-		4370FA071C481C6900327119 /* Release */ = {
+		OBJ_35 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.3.0";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		OBJ_36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.3.0";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = DOHexKeyboard/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wentingliu.DOHexKeyboard;
-				PRODUCT_NAME = DOHexKeyboard;
-				SKIP_INSTALL = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4370F9F71C481C6900327119 /* Build configuration list for PBXProject "DOHexKeyboard" */ = {
+		OBJ_2 /* Build configuration list for PBXProject "DOHexKeyboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4370FA031C481C6900327119 /* Debug */,
-				4370FA041C481C6900327119 /* Release */,
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4370FA051C481C6900327119 /* Build configuration list for PBXNativeTarget "DOHexKeyboard" */ = {
+		OBJ_25 /* Build configuration list for PBXNativeTarget "DOHexKeyboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4370FA061C481C6900327119 /* Debug */,
-				4370FA071C481C6900327119 /* Release */,
+				OBJ_26 /* Debug */,
+				OBJ_27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_34 /* Build configuration list for PBXNativeTarget "DOHexKeyboardPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_35 /* Debug */,
+				OBJ_36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 4370F9F41C481C6900327119 /* Project object */;
+	rootObject = OBJ_1 /* Project object */;
 }
